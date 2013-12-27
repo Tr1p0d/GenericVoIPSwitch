@@ -95,34 +95,74 @@ Tyto a dal¹í pokyny jsou dostupné té¾ na ¹kolních internetových stránkách \cite{
 %
 
 \chapter{Declarative paradigm}
-Is a programming paradigm that describes computer program logic without describing its control flow. In much more common imperative paradigm one often describes:
+Is a programming paradigm that describes computer program logic without describing its control flow.  In much more common imperative paradigm one often describes:
 \begin{itemize}
-\item  what computer program goals
+\item  what computer program goals are
 \item  how the program should reach given goals
 \end{itemize}
-On the other hand, when talking about declarative paradigm, one only specify:
+Program run is devided into small steps. For example in language C single steps are separated using ;. Program flow is defined as modifiing its internal state using steps.
+
+On the other hand, when talking about declarative paradigm, we mark program state as undefined. Of course programmer is accustomed to programming language evaluation strategy otherwise he would not be able to build program properly. In declarative languages programer only specifies :
 \begin{itemize}
 \item what computer program goals are
 \end{itemize}
+Declarative languages could be devided into following subsets:
+\begin{itemize}
+\item functional
+\item logical
+\item hardware definition languages
+\item DDL and DML such as SQL
+\item ...
+\end{itemize}
+
 
 \chapter{Functional programming}
-Is a subset of declarative paradigm in which programs are constructed using functions. Functional languages ( declarative languages built upon functional programming ) are basically separated into 2 groups: 
+Is a subset of declarative paradigm in which programs are constructed using functions. Functional languages ( languages built upon functional programming ) are basically separated into 2 groups: 
 \begin{itemize}
 \item purely functinal languages such as Haskell, Lisp, ... 
 \item partially functional such as Erlang, Clojure, ...
 \end{itemize}
-Functions in functional programming are much more mathematicaly oriented compare to imperative languages. When an argument is supplied to a function thus calling it, the function will never ever return different value when called again with the same argument. Consequence of this approach is immutable data and undefined program state. Rather than loop recursion is used, 
-Its formal basis is a lambda-calcul, a formal system used in mathematical logic, which was developed in 1930's by Alonzo Church to help solve the Entschiedung problem. Later was used as a formal basis for functional programming.
+Functions in terms of functional programming are much more mathematicaly oriented compare to imperative languages. When an argument is supplied to a function thus calling it, the function will never ever return different value when called again with the same argument. Consequence of this approach is immutable data, often lack of variables and undefined program state. Rather than loop recursion is used. Its formal basis is a lambda-calcul, a formal system used in mathematical logic. It was developed in 1930's by Alonzo Church to support his solution of the Entschiedung problem. Later was used as a formal basis for functional programming.
 
-\subsection{Evaluation}
-\subsection{Functions and function order}
+\subsection{Evaluation strategy}
+Evaluation strategy refers to a approach of evaluating function arguments. Functional languages are usually categorized based on their evaluation strategy. The can use either strict evaluation or non-strict evaluation concept.
 \subsection{Type systems}
-\subsection{}
+If type is a property that can be assigned to various programming construct ( for example a variable, expression or function are programming constructs ), then type system is a pack of rules that assign a type to a construct. Its main purpose is to reduce bugs by defining interfaces between various parts of computer program. These parts when connected ( for example function call ) can be checked for consistency. This check can be performed statically at compile time or dynamically at run time. Various types can be declared implicitly, explicitly or infered.   
+\begin{itemize}
+\item statically typed usually require explicit type declaration, type consistency can be checked at compile time
+\item dynamically typed languages do not require explicit type declarations, their consistency is checked at program run
+\end{itemize}
+Type inference is an action which performs compiler of statically typed language ( such a Haskell ) before checking program for type consistence. Most significant drawback of this approach is that programmer doesn't need to explicitly specify type when declaring constructs. Compiler can infer declaration types from its construct. 
+
+Another important aspect of type system is wheter it is strong or weak.
+\begin{itemize}
+\item weakly typed languages  
+\item strongly typed 
+\end{itemize}
+\subsection{Functions and function order}
     
 \chapter{Erlang programming language}
+Erlang is a functional programming language with high emphasis on high realiability and heavy concurrency. These two main features go hand to hand with support for distribution applications and fault tolerance. It is well suited for applications whose main characteristics are:
+\begin{itemize}
+\item extremly reliable
+\item distributed
+\item soft real-time
+\item concurrent
+\end{itemize}
+
+\subsection{High reliability}
+High reliability is achieved trough fault tolerance.
+\subsection{Massive concurrency}
+Any programming language that features concurrency inherits one of the following models:
+\begin{itemize}
+\item Shared state concurrency. This model use shared state to communicate among processes. Such a state could be represented by a shared piece of memory that processes can access. It is usually very fast but especially in complex systems it requires a lot of synchronization overhead to prevent race-conditions. This synchronisation becomes extremly hard in distributed environment where network faults and other downsides come onto light. It is also harder to proof correct. Shared state concurrency is the approach that almost every programming language use these days.
+\item Message passing concurrency is model where does not exist any shared state among processes. Instead processes communicate by message passing. Messages could be synchronous or asynchronous and reliable or unreliable. It depends on implementation. Advantages of this approach is that one does not need mutual exclusion since every process has its own state, message passing thus serves as a synchronisation mechanism. On the other hand it could be and usually is slower than shared state concurrency.
+\end{itemize}
+Erlang uses message passing concurrency. In case of Erlang it is a model that fits needs for distribution, and fault tolerance trough which high reliability is implemented.
+\section{Erlang history and philosophy}
 \section{Why Erlang}
-\section{Erlang history}
-\section{Erlang philosophy}
+\section{Erlang type system}
+\section{Erlang evaluation strategy}
 \chapter{Open Telecom Platform}
 \chapter{Generic VoIP Switch Design}
 \chapter{Designing application core}
