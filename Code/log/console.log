@@ -1,0 +1,238 @@
+2014-01-05 00:11:27.825 [info] <0.6.0> Application lager started on node nonode@nohost
+2014-01-05 00:36:04.137 [info] <0.6.0> Application lager started on node nonode@nohost
+2014-01-05 00:36:04.139 [error] <0.54.0> Supervisor generic_switch_sup had child udpTransport started with generic_switch_transport_udp:start_link({5060,[binary]}) at undefined exit with reason {'EXIT',{undef,[{generic_switch_transport_udp,start_link,[{5060,[binary]}],[]},{supervisor,do_start_child,2,[{file,"supervisor.erl"},{line,303}]},{supervisor,start_children,3,[{file,"supervisor.erl"},{line,287}]},{supervisor,init_children,2,[{file,"supervisor.erl"},{line,253}]},{gen_server,init_it,6,[{file,"gen_server.erl"},{line,304}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}} in context start_error
+2014-01-05 00:37:05.532 [info] <0.6.0> Application lager started on node nonode@nohost
+2014-01-05 00:37:05.538 [error] <0.52.0> Supervisor generic_switch_sup had child sipDialogRouter started with generic_switch_sip_router:start_link(24595) at undefined exit with reason {'EXIT',{function_clause,[{generic_switch_sip_router,start_link,[24595],[{file,"src/generic_switch_sip_router.erl"},{line,20}]},{supervisor,do_start_child,2,[{file,"supervisor.erl"},{line,303}]},{supervisor,start_children,3,[{file,"supervisor.erl"},{line,287}]},{supervisor,init_children,2,[{file,"supervisor.erl"},{line,253}]},{gen_server,init_it,6,[{file,"gen_server.erl"},{line,304}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}} in context start_error
+2014-01-05 00:40:21.567 [info] <0.6.0> Application lager started on node nonode@nohost
+2014-01-05 00:42:06.389 [info] <0.53.0>@generic_switch_sip_transport_udp:init:25 sip udp transport had started
+2014-01-05 00:42:06.389 [info] <0.6.0> Application lager started on node nonode@nohost
+2014-01-05 00:42:06.391 [info] <0.54.0>@generic_switch_sip_router:init:24 sip dialog router had started
+2014-01-05 00:45:12.244 [info] <0.53.0>@generic_switch_sip_transport_udp:init:25 sip udp transport had started
+2014-01-05 00:45:12.244 [info] <0.6.0> Application lager started on node nonode@nohost
+2014-01-05 00:45:12.245 [info] <0.54.0>@generic_switch_sip_router:init:26 sip dialog router had started
+2014-01-05 00:45:19.137 [warning] <0.53.0>@generic_switch_sip_transport_udp:terminate:71 shutting down the UDP transport
+2014-01-05 00:45:19.137 [error] <0.53.0> gen_server generic_switch_sip_transport_udp terminated with reason: call to undefined function generic_switch_sip_router:async_incommig_message/1 from generic_switch_sip_transport_udp:handle_info/2 line 51
+2014-01-05 00:45:19.138 [error] <0.53.0> CRASH REPORT Process generic_switch_sip_transport_udp with 0 neighbours exited with reason: call to undefined function generic_switch_sip_router:async_incommig_message({sipmsg,<<"R_1ZeZ4O_81msAUacGD2X1VYesuka4Ahjf8Q">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,...},...}) in gen_server:terminate/6 line 747
+2014-01-05 00:45:19.138 [error] <0.52.0> Supervisor generic_switch_sup had child udpTransport started with generic_switch_sip_transport_udp:start_link({5060,[binary]}) at <0.53.0> exit with reason call to undefined function generic_switch_sip_router:async_incommig_message({sipmsg,<<"R_1ZeZ4O_81msAUacGD2X1VYesuka4Ahjf8Q">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,...},...}) in context child_terminated
+2014-01-05 00:45:19.141 [info] <0.56.0>@generic_switch_sip_transport_udp:init:25 sip udp transport had started
+2014-01-05 00:45:19.631 [warning] <0.56.0>@generic_switch_sip_transport_udp:terminate:71 shutting down the UDP transport
+2014-01-05 00:45:19.631 [error] <0.56.0> gen_server generic_switch_sip_transport_udp terminated with reason: call to undefined function generic_switch_sip_router:async_incommig_message/1 from generic_switch_sip_transport_udp:handle_info/2 line 51
+2014-01-05 00:45:19.631 [error] <0.56.0> CRASH REPORT Process generic_switch_sip_transport_udp with 0 neighbours exited with reason: call to undefined function generic_switch_sip_router:async_incommig_message({sipmsg,<<"R_2kXBpU_81msAUacGD2X1VYesuka4Ahjf8Q">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,...},...}) in gen_server:terminate/6 line 747
+2014-01-05 00:45:19.632 [error] <0.52.0> Supervisor generic_switch_sup had child udpTransport started with generic_switch_sip_transport_udp:start_link({5060,[binary]}) at <0.56.0> exit with reason call to undefined function generic_switch_sip_router:async_incommig_message({sipmsg,<<"R_2kXBpU_81msAUacGD2X1VYesuka4Ahjf8Q">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,...},...}) in context child_terminated
+2014-01-05 00:45:19.632 [info] <0.57.0>@generic_switch_sip_transport_udp:init:25 sip udp transport had started
+2014-01-05 00:45:20.632 [warning] <0.57.0>@generic_switch_sip_transport_udp:terminate:71 shutting down the UDP transport
+2014-01-05 00:45:20.632 [error] <0.57.0> gen_server generic_switch_sip_transport_udp terminated with reason: call to undefined function generic_switch_sip_router:async_incommig_message/1 from generic_switch_sip_transport_udp:handle_info/2 line 51
+2014-01-05 00:45:20.632 [error] <0.57.0> CRASH REPORT Process generic_switch_sip_transport_udp with 0 neighbours exited with reason: call to undefined function generic_switch_sip_router:async_incommig_message({sipmsg,<<"R_4C1YHW_81msAUacGD2X1VYesuka4Ahjf8Q">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,...},...}) in gen_server:terminate/6 line 747
+2014-01-05 00:45:20.633 [error] <0.52.0> Supervisor generic_switch_sup had child udpTransport started with generic_switch_sip_transport_udp:start_link({5060,[binary]}) at <0.57.0> exit with reason call to undefined function generic_switch_sip_router:async_incommig_message({sipmsg,<<"R_4C1YHW_81msAUacGD2X1VYesuka4Ahjf8Q">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,...},...}) in context child_terminated
+2014-01-05 00:45:20.633 [info] <0.58.0>@generic_switch_sip_transport_udp:init:25 sip udp transport had started
+2014-01-05 00:45:22.632 [warning] <0.58.0>@generic_switch_sip_transport_udp:terminate:71 shutting down the UDP transport
+2014-01-05 00:45:22.633 [error] <0.58.0> gen_server generic_switch_sip_transport_udp terminated with reason: call to undefined function generic_switch_sip_router:async_incommig_message/1 from generic_switch_sip_transport_udp:handle_info/2 line 51
+2014-01-05 00:45:22.633 [error] <0.58.0> CRASH REPORT Process generic_switch_sip_transport_udp with 0 neighbours exited with reason: call to undefined function generic_switch_sip_router:async_incommig_message({sipmsg,<<"R_224S6y_81msAUacGD2X1VYesuka4Ahjf8Q">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,...},...}) in gen_server:terminate/6 line 747
+2014-01-05 00:45:22.634 [error] <0.52.0> Supervisor generic_switch_sup had child udpTransport started with generic_switch_sip_transport_udp:start_link({5060,[binary]}) at <0.58.0> exit with reason call to undefined function generic_switch_sip_router:async_incommig_message({sipmsg,<<"R_224S6y_81msAUacGD2X1VYesuka4Ahjf8Q">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,...},...}) in context child_terminated
+2014-01-05 00:45:22.634 [info] <0.59.0>@generic_switch_sip_transport_udp:init:25 sip udp transport had started
+2014-01-05 00:45:26.634 [warning] <0.59.0>@generic_switch_sip_transport_udp:terminate:71 shutting down the UDP transport
+2014-01-05 00:45:26.634 [error] <0.59.0> gen_server generic_switch_sip_transport_udp terminated with reason: call to undefined function generic_switch_sip_router:async_incommig_message/1 from generic_switch_sip_transport_udp:handle_info/2 line 51
+2014-01-05 00:45:26.634 [error] <0.59.0> CRASH REPORT Process generic_switch_sip_transport_udp with 0 neighbours exited with reason: call to undefined function generic_switch_sip_router:async_incommig_message({sipmsg,<<"R_ZwQWJ_81msAUacGD2X1VYesuka4Ahjf8Q">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,...},...}) in gen_server:terminate/6 line 747
+2014-01-05 00:45:26.634 [error] <0.52.0> Supervisor generic_switch_sup had child udpTransport started with generic_switch_sip_transport_udp:start_link({5060,[binary]}) at <0.59.0> exit with reason call to undefined function generic_switch_sip_router:async_incommig_message({sipmsg,<<"R_ZwQWJ_81msAUacGD2X1VYesuka4Ahjf8Q">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,...},...}) in context child_terminated
+2014-01-05 00:45:26.635 [info] <0.60.0>@generic_switch_sip_transport_udp:init:25 sip udp transport had started
+2014-01-05 00:45:30.634 [warning] <0.60.0>@generic_switch_sip_transport_udp:terminate:71 shutting down the UDP transport
+2014-01-05 00:45:30.635 [error] <0.60.0> gen_server generic_switch_sip_transport_udp terminated with reason: call to undefined function generic_switch_sip_router:async_incommig_message/1 from generic_switch_sip_transport_udp:handle_info/2 line 51
+2014-01-05 00:45:30.635 [error] <0.60.0> CRASH REPORT Process generic_switch_sip_transport_udp with 0 neighbours exited with reason: call to undefined function generic_switch_sip_router:async_incommig_message({sipmsg,<<"R_2SPDQf_81msAUacGD2X1VYesuka4Ahjf8Q">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,...},...}) in gen_server:terminate/6 line 747
+2014-01-05 00:45:30.637 [error] <0.52.0> Supervisor generic_switch_sup had child udpTransport started with generic_switch_sip_transport_udp:start_link({5060,[binary]}) at <0.60.0> exit with reason call to undefined function generic_switch_sip_router:async_incommig_message({sipmsg,<<"R_2SPDQf_81msAUacGD2X1VYesuka4Ahjf8Q">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,...},...}) in context child_terminated
+2014-01-05 00:45:30.638 [info] <0.61.0>@generic_switch_sip_transport_udp:init:25 sip udp transport had started
+2014-01-05 00:45:34.636 [warning] <0.61.0>@generic_switch_sip_transport_udp:terminate:71 shutting down the UDP transport
+2014-01-05 00:45:34.636 [error] <0.61.0> gen_server generic_switch_sip_transport_udp terminated with reason: call to undefined function generic_switch_sip_router:async_incommig_message/1 from generic_switch_sip_transport_udp:handle_info/2 line 51
+2014-01-05 00:45:34.636 [error] <0.61.0> CRASH REPORT Process generic_switch_sip_transport_udp with 0 neighbours exited with reason: call to undefined function generic_switch_sip_router:async_incommig_message({sipmsg,<<"R_IHOBB_81msAUacGD2X1VYesuka4Ahjf8Q">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,...},...}) in gen_server:terminate/6 line 747
+2014-01-05 00:45:34.637 [error] <0.52.0> Supervisor generic_switch_sup had child udpTransport started with generic_switch_sip_transport_udp:start_link({5060,[binary]}) at <0.61.0> exit with reason call to undefined function generic_switch_sip_router:async_incommig_message({sipmsg,<<"R_IHOBB_81msAUacGD2X1VYesuka4Ahjf8Q">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,...},...}) in context child_terminated
+2014-01-05 00:45:34.637 [info] <0.62.0>@generic_switch_sip_transport_udp:init:25 sip udp transport had started
+2014-01-05 00:45:38.637 [warning] <0.62.0>@generic_switch_sip_transport_udp:terminate:71 shutting down the UDP transport
+2014-01-05 00:45:38.637 [error] <0.62.0> gen_server generic_switch_sip_transport_udp terminated with reason: call to undefined function generic_switch_sip_router:async_incommig_message/1 from generic_switch_sip_transport_udp:handle_info/2 line 51
+2014-01-05 00:45:38.637 [error] <0.62.0> CRASH REPORT Process generic_switch_sip_transport_udp with 0 neighbours exited with reason: call to undefined function generic_switch_sip_router:async_incommig_message({sipmsg,<<"R_27mMat_81msAUacGD2X1VYesuka4Ahjf8Q">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,...},...}) in gen_server:terminate/6 line 747
+2014-01-05 00:45:38.638 [error] <0.52.0> Supervisor generic_switch_sup had child udpTransport started with generic_switch_sip_transport_udp:start_link({5060,[binary]}) at <0.62.0> exit with reason call to undefined function generic_switch_sip_router:async_incommig_message({sipmsg,<<"R_27mMat_81msAUacGD2X1VYesuka4Ahjf8Q">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,...},...}) in context child_terminated
+2014-01-05 00:45:38.638 [info] <0.63.0>@generic_switch_sip_transport_udp:init:25 sip udp transport had started
+2014-01-05 00:46:13.913 [warning] <0.63.0>@generic_switch_sip_transport_udp:terminate:71 shutting down the UDP transport
+2014-01-05 00:46:13.913 [error] <0.63.0> gen_server generic_switch_sip_transport_udp terminated with reason: call to undefined function generic_switch_sip_router:async_incommig_message/1 from generic_switch_sip_transport_udp:handle_info/2 line 51
+2014-01-05 00:46:13.914 [error] <0.63.0> CRASH REPORT Process generic_switch_sip_transport_udp with 0 neighbours exited with reason: call to undefined function generic_switch_sip_router:async_incommig_message({sipmsg,<<"R_4bnZrg_NxMStQxvce4xi3xSHdWXiFYRmC7">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,...},...}) in gen_server:terminate/6 line 747
+2014-01-05 00:46:13.918 [error] <0.52.0> Supervisor generic_switch_sup had child udpTransport started with generic_switch_sip_transport_udp:start_link({5060,[binary]}) at <0.63.0> exit with reason call to undefined function generic_switch_sip_router:async_incommig_message({sipmsg,<<"R_4bnZrg_NxMStQxvce4xi3xSHdWXiFYRmC7">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,...},...}) in context child_terminated
+2014-01-05 00:46:13.918 [info] <0.65.0>@generic_switch_sip_transport_udp:init:25 sip udp transport had started
+2014-01-05 00:46:14.417 [warning] <0.65.0>@generic_switch_sip_transport_udp:terminate:71 shutting down the UDP transport
+2014-01-05 00:46:14.417 [error] <0.65.0> gen_server generic_switch_sip_transport_udp terminated with reason: call to undefined function generic_switch_sip_router:async_incommig_message/1 from generic_switch_sip_transport_udp:handle_info/2 line 51
+2014-01-05 00:46:14.417 [error] <0.65.0> CRASH REPORT Process generic_switch_sip_transport_udp with 0 neighbours exited with reason: call to undefined function generic_switch_sip_router:async_incommig_message({sipmsg,<<"R_3VGoa9_NxMStQxvce4xi3xSHdWXiFYRmC7">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,...},...}) in gen_server:terminate/6 line 747
+2014-01-05 00:46:14.418 [error] <0.52.0> Supervisor generic_switch_sup had child udpTransport started with generic_switch_sip_transport_udp:start_link({5060,[binary]}) at <0.65.0> exit with reason call to undefined function generic_switch_sip_router:async_incommig_message({sipmsg,<<"R_3VGoa9_NxMStQxvce4xi3xSHdWXiFYRmC7">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,...},...}) in context child_terminated
+2014-01-05 00:46:14.418 [info] <0.66.0>@generic_switch_sip_transport_udp:init:25 sip udp transport had started
+2014-01-05 00:48:17.844 [warning] <0.66.0>@generic_switch_sip_transport_udp:terminate:71 shutting down the UDP transport
+2014-01-05 00:48:17.845 [error] <0.66.0> gen_server generic_switch_sip_transport_udp terminated with reason: call to undefined function generic_switch_sip_router:async_incommig_message/1 from generic_switch_sip_transport_udp:handle_info/2 line 51
+2014-01-05 00:48:17.846 [error] <0.66.0> CRASH REPORT Process generic_switch_sip_transport_udp with 0 neighbours exited with reason: call to undefined function generic_switch_sip_router:async_incommig_message({sipmsg,<<"R_11Y6wO_DSYvvzk0q48zU1vDCKOs2CRLm6a">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,...},...}) in gen_server:terminate/6 line 747
+2014-01-05 00:48:17.847 [error] <0.52.0> Supervisor generic_switch_sup had child udpTransport started with generic_switch_sip_transport_udp:start_link({5060,[binary]}) at <0.66.0> exit with reason call to undefined function generic_switch_sip_router:async_incommig_message({sipmsg,<<"R_11Y6wO_DSYvvzk0q48zU1vDCKOs2CRLm6a">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,...},...}) in context child_terminated
+2014-01-05 00:48:17.847 [info] <0.67.0>@generic_switch_sip_transport_udp:init:25 sip udp transport had started
+2014-01-05 00:48:18.348 [warning] <0.67.0>@generic_switch_sip_transport_udp:terminate:71 shutting down the UDP transport
+2014-01-05 00:48:18.349 [error] <0.67.0> gen_server generic_switch_sip_transport_udp terminated with reason: call to undefined function generic_switch_sip_router:async_incommig_message/1 from generic_switch_sip_transport_udp:handle_info/2 line 51
+2014-01-05 00:48:18.351 [error] <0.67.0> CRASH REPORT Process generic_switch_sip_transport_udp with 0 neighbours exited with reason: call to undefined function generic_switch_sip_router:async_incommig_message({sipmsg,<<"R_4VpgL6_DSYvvzk0q48zU1vDCKOs2CRLm6a">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,...},...}) in gen_server:terminate/6 line 747
+2014-01-05 00:48:18.351 [error] <0.52.0> Supervisor generic_switch_sup had child udpTransport started with generic_switch_sip_transport_udp:start_link({5060,[binary]}) at <0.67.0> exit with reason call to undefined function generic_switch_sip_router:async_incommig_message({sipmsg,<<"R_4VpgL6_DSYvvzk0q48zU1vDCKOs2CRLm6a">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,...},...}) in context child_terminated
+2014-01-05 00:48:18.351 [info] <0.68.0>@generic_switch_sip_transport_udp:init:25 sip udp transport had started
+2014-01-05 00:49:03.424 [info] <0.53.0>@generic_switch_sip_transport_udp:init:25 sip udp transport had started
+2014-01-05 00:49:03.424 [info] <0.6.0> Application lager started on node nonode@nohost
+2014-01-05 00:49:03.425 [info] <0.54.0>@generic_switch_sip_router:init:26 sip dialog router had started
+2014-01-05 00:49:06.400 [notice] <0.54.0>@generic_switch_sip_router:handle_cast:30 got sip message {sipmsg,<<"R_4TtYI8_BHHOBoWAzqVs6NoR57SVzwXH6Fz">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK1mpZkR">>},{<<"nksip">>,<<"1Xmabt">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"A2s51">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"BHHOBoWAzqVs6NoR57SVzwXH6Fz">>,17391852,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"A2s51">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388879346395042}
+2014-01-05 00:49:10.392 [notice] <0.54.0>@generic_switch_sip_router:handle_cast:30 got sip message {sipmsg,<<"R_3yAWuB_BHHOBoWAzqVs6NoR57SVzwXH6Fz">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK1mpZkR">>},{<<"nksip">>,<<"1Xmabt">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"A2s51">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"BHHOBoWAzqVs6NoR57SVzwXH6Fz">>,17391852,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"A2s51">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388879350392261}
+2014-01-05 00:49:14.394 [notice] <0.54.0>@generic_switch_sip_router:handle_cast:30 got sip message {sipmsg,<<"R_4YdLZx_BHHOBoWAzqVs6NoR57SVzwXH6Fz">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK1mpZkR">>},{<<"nksip">>,<<"1Xmabt">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"A2s51">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"BHHOBoWAzqVs6NoR57SVzwXH6Fz">>,17391852,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"A2s51">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388879354394165}
+2014-01-05 00:49:18.394 [notice] <0.54.0>@generic_switch_sip_router:handle_cast:30 got sip message {sipmsg,<<"R_32cRss_BHHOBoWAzqVs6NoR57SVzwXH6Fz">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK1mpZkR">>},{<<"nksip">>,<<"1Xmabt">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"A2s51">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"BHHOBoWAzqVs6NoR57SVzwXH6Fz">>,17391852,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"A2s51">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388879358394534}
+2014-01-05 00:49:22.396 [notice] <0.54.0>@generic_switch_sip_router:handle_cast:30 got sip message {sipmsg,<<"R_2daCRl_BHHOBoWAzqVs6NoR57SVzwXH6Fz">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK1mpZkR">>},{<<"nksip">>,<<"1Xmabt">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"A2s51">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"BHHOBoWAzqVs6NoR57SVzwXH6Fz">>,17391852,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"A2s51">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388879362396156}
+2014-01-05 00:49:26.397 [notice] <0.54.0>@generic_switch_sip_router:handle_cast:30 got sip message {sipmsg,<<"R_dF8V8_BHHOBoWAzqVs6NoR57SVzwXH6Fz">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK1mpZkR">>},{<<"nksip">>,<<"1Xmabt">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"A2s51">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"BHHOBoWAzqVs6NoR57SVzwXH6Fz">>,17391852,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"A2s51">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388879366397168}
+2014-01-05 00:49:26.898 [notice] <0.54.0>@generic_switch_sip_router:handle_cast:30 got sip message {sipmsg,<<"R_1sYrut_Yeymc33DMajYun5VjK9wC1bmGpa">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5080,[<<"rport">>,{<<"branch">>,<<"z9hG4bK3vDPiB">>},{<<"nksip">>,<<"1SYieu">>}]}],{uri,<<>>,sip,<<"alice">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"3XZbrZ">>}],[]},{uri,<<>>,sip,<<"alice">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"Yeymc33DMajYun5VjK9wC1bmGpa">>,17391853,'REGISTER',70,[],[{uri,<<>>,sip,<<"alice">>,<<>>,<<"127.0.0.1">>,5080,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"3XZbrZ">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388879366898143}
+2014-01-05 00:49:27.399 [notice] <0.54.0>@generic_switch_sip_router:handle_cast:30 got sip message {sipmsg,<<"R_68THl_Yeymc33DMajYun5VjK9wC1bmGpa">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5080,[<<"rport">>,{<<"branch">>,<<"z9hG4bK3vDPiB">>},{<<"nksip">>,<<"1SYieu">>}]}],{uri,<<>>,sip,<<"alice">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"3XZbrZ">>}],[]},{uri,<<>>,sip,<<"alice">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"Yeymc33DMajYun5VjK9wC1bmGpa">>,17391853,'REGISTER',70,[],[{uri,<<>>,sip,<<"alice">>,<<>>,<<"127.0.0.1">>,5080,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"3XZbrZ">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388879367399210}
+2014-01-05 00:49:28.400 [notice] <0.54.0>@generic_switch_sip_router:handle_cast:30 got sip message {sipmsg,<<"R_4P2u4e_Yeymc33DMajYun5VjK9wC1bmGpa">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5080,[<<"rport">>,{<<"branch">>,<<"z9hG4bK3vDPiB">>},{<<"nksip">>,<<"1SYieu">>}]}],{uri,<<>>,sip,<<"alice">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"3XZbrZ">>}],[]},{uri,<<>>,sip,<<"alice">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"Yeymc33DMajYun5VjK9wC1bmGpa">>,17391853,'REGISTER',70,[],[{uri,<<>>,sip,<<"alice">>,<<>>,<<"127.0.0.1">>,5080,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"3XZbrZ">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388879368400256}
+2014-01-05 00:49:30.401 [notice] <0.54.0>@generic_switch_sip_router:handle_cast:30 got sip message {sipmsg,<<"R_iAqw1_Yeymc33DMajYun5VjK9wC1bmGpa">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5080,[<<"rport">>,{<<"branch">>,<<"z9hG4bK3vDPiB">>},{<<"nksip">>,<<"1SYieu">>}]}],{uri,<<>>,sip,<<"alice">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"3XZbrZ">>}],[]},{uri,<<>>,sip,<<"alice">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"Yeymc33DMajYun5VjK9wC1bmGpa">>,17391853,'REGISTER',70,[],[{uri,<<>>,sip,<<"alice">>,<<>>,<<"127.0.0.1">>,5080,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"3XZbrZ">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388879370401229}
+2014-01-05 00:49:34.403 [notice] <0.54.0>@generic_switch_sip_router:handle_cast:30 got sip message {sipmsg,<<"R_iOupy_Yeymc33DMajYun5VjK9wC1bmGpa">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5080,[<<"rport">>,{<<"branch">>,<<"z9hG4bK3vDPiB">>},{<<"nksip">>,<<"1SYieu">>}]}],{uri,<<>>,sip,<<"alice">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"3XZbrZ">>}],[]},{uri,<<>>,sip,<<"alice">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"Yeymc33DMajYun5VjK9wC1bmGpa">>,17391853,'REGISTER',70,[],[{uri,<<>>,sip,<<"alice">>,<<>>,<<"127.0.0.1">>,5080,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"3XZbrZ">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388879374403223}
+2014-01-05 00:49:38.404 [notice] <0.54.0>@generic_switch_sip_router:handle_cast:30 got sip message {sipmsg,<<"R_Ny9YX_Yeymc33DMajYun5VjK9wC1bmGpa">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5080,[<<"rport">>,{<<"branch">>,<<"z9hG4bK3vDPiB">>},{<<"nksip">>,<<"1SYieu">>}]}],{uri,<<>>,sip,<<"alice">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"3XZbrZ">>}],[]},{uri,<<>>,sip,<<"alice">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"Yeymc33DMajYun5VjK9wC1bmGpa">>,17391853,'REGISTER',70,[],[{uri,<<>>,sip,<<"alice">>,<<>>,<<"127.0.0.1">>,5080,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"3XZbrZ">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388879378404400}
+2014-01-05 00:49:42.406 [notice] <0.54.0>@generic_switch_sip_router:handle_cast:30 got sip message {sipmsg,<<"R_1JjV4U_Yeymc33DMajYun5VjK9wC1bmGpa">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5080,[<<"rport">>,{<<"branch">>,<<"z9hG4bK3vDPiB">>},{<<"nksip">>,<<"1SYieu">>}]}],{uri,<<>>,sip,<<"alice">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"3XZbrZ">>}],[]},{uri,<<>>,sip,<<"alice">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"Yeymc33DMajYun5VjK9wC1bmGpa">>,17391853,'REGISTER',70,[],[{uri,<<>>,sip,<<"alice">>,<<>>,<<"127.0.0.1">>,5080,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"3XZbrZ">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388879382406300}
+2014-01-05 00:49:46.407 [notice] <0.54.0>@generic_switch_sip_router:handle_cast:30 got sip message {sipmsg,<<"R_yYTP7_Yeymc33DMajYun5VjK9wC1bmGpa">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5080,[<<"rport">>,{<<"branch">>,<<"z9hG4bK3vDPiB">>},{<<"nksip">>,<<"1SYieu">>}]}],{uri,<<>>,sip,<<"alice">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"3XZbrZ">>}],[]},{uri,<<>>,sip,<<"alice">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"Yeymc33DMajYun5VjK9wC1bmGpa">>,17391853,'REGISTER',70,[],[{uri,<<>>,sip,<<"alice">>,<<>>,<<"127.0.0.1">>,5080,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"3XZbrZ">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388879386407255}
+2014-01-05 00:49:50.408 [notice] <0.54.0>@generic_switch_sip_router:handle_cast:30 got sip message {sipmsg,<<"R_4SiUxl_Yeymc33DMajYun5VjK9wC1bmGpa">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5080,[<<"rport">>,{<<"branch">>,<<"z9hG4bK3vDPiB">>},{<<"nksip">>,<<"1SYieu">>}]}],{uri,<<>>,sip,<<"alice">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"3XZbrZ">>}],[]},{uri,<<>>,sip,<<"alice">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"Yeymc33DMajYun5VjK9wC1bmGpa">>,17391853,'REGISTER',70,[],[{uri,<<>>,sip,<<"alice">>,<<>>,<<"127.0.0.1">>,5080,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"3XZbrZ">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388879390408440}
+2014-01-05 00:49:54.410 [notice] <0.54.0>@generic_switch_sip_router:handle_cast:30 got sip message {sipmsg,<<"R_3GZsxN_Yeymc33DMajYun5VjK9wC1bmGpa">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5080,[<<"rport">>,{<<"branch">>,<<"z9hG4bK3vDPiB">>},{<<"nksip">>,<<"1SYieu">>}]}],{uri,<<>>,sip,<<"alice">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"3XZbrZ">>}],[]},{uri,<<>>,sip,<<"alice">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"Yeymc33DMajYun5VjK9wC1bmGpa">>,17391853,'REGISTER',70,[],[{uri,<<>>,sip,<<"alice">>,<<>>,<<"127.0.0.1">>,5080,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"3XZbrZ">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388879394409702}
+2014-01-05 00:49:58.411 [notice] <0.54.0>@generic_switch_sip_router:handle_cast:30 got sip message {sipmsg,<<"R_1EB8l6_Yeymc33DMajYun5VjK9wC1bmGpa">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5080,[<<"rport">>,{<<"branch">>,<<"z9hG4bK3vDPiB">>},{<<"nksip">>,<<"1SYieu">>}]}],{uri,<<>>,sip,<<"alice">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"3XZbrZ">>}],[]},{uri,<<>>,sip,<<"alice">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"Yeymc33DMajYun5VjK9wC1bmGpa">>,17391853,'REGISTER',70,[],[{uri,<<>>,sip,<<"alice">>,<<>>,<<"127.0.0.1">>,5080,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"3XZbrZ">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388879398411421}
+2014-01-05 01:11:50.195 [info] <0.53.0>@generic_switch_sip_transport_udp:init:25 sip udp transport had started
+2014-01-05 01:11:50.195 [info] <0.6.0> Application lager started on node nonode@nohost
+2014-01-05 01:11:50.196 [info] <0.54.0>@generic_switch_sip_router:init:26 sip dialog router had started
+2014-01-05 01:11:54.494 [notice] <0.54.0>@generic_switch_sip_router:handle_cast:30 got sip message {sipmsg,<<"R_2kzQeC_YU48oB4TV2IqPBvaSk3ZkiGgX9c">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK1MLEEv">>},{<<"nksip">>,<<"2zZ3OT">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"1cgEQM">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"YU48oB4TV2IqPBvaSk3ZkiGgX9c">>,17391854,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"1cgEQM">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388880714490545}
+2014-01-05 01:11:54.494 [info] <0.54.0>@generic_switch_sip_router:handle_cast:60  ID <<"R_2kzQeC_YU48oB4TV2IqPBvaSk3ZkiGgX9c">>
+ Class {req,'REGISTER'}
+ Ruri {uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]}
+ Vias [{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK1MLEEv">>},{<<"nksip">>,<<"2zZ3OT">>}]}]
+ Event undefined
+ Headers [{<<"User-Agent">>,<<"NkSIP 0.1.0">>}]
+ Candidate <<>>
+2014-01-05 01:11:54.989 [notice] <0.54.0>@generic_switch_sip_router:handle_cast:30 got sip message {sipmsg,<<"R_2Rz56p_YU48oB4TV2IqPBvaSk3ZkiGgX9c">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK1MLEEv">>},{<<"nksip">>,<<"2zZ3OT">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"1cgEQM">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"YU48oB4TV2IqPBvaSk3ZkiGgX9c">>,17391854,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"1cgEQM">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388880714989418}
+2014-01-05 01:11:54.990 [info] <0.54.0>@generic_switch_sip_router:handle_cast:60  ID <<"R_2Rz56p_YU48oB4TV2IqPBvaSk3ZkiGgX9c">>
+ Class {req,'REGISTER'}
+ Ruri {uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]}
+ Vias [{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK1MLEEv">>},{<<"nksip">>,<<"2zZ3OT">>}]}]
+ Event undefined
+ Headers [{<<"User-Agent">>,<<"NkSIP 0.1.0">>}]
+ Candidate <<>>
+2014-01-05 01:11:55.990 [notice] <0.54.0>@generic_switch_sip_router:handle_cast:30 got sip message {sipmsg,<<"R_1XMPQw_YU48oB4TV2IqPBvaSk3ZkiGgX9c">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK1MLEEv">>},{<<"nksip">>,<<"2zZ3OT">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"1cgEQM">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"YU48oB4TV2IqPBvaSk3ZkiGgX9c">>,17391854,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"1cgEQM">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388880715990241}
+2014-01-05 01:11:55.990 [info] <0.54.0>@generic_switch_sip_router:handle_cast:60  ID <<"R_1XMPQw_YU48oB4TV2IqPBvaSk3ZkiGgX9c">>
+ Class {req,'REGISTER'}
+ Ruri {uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]}
+ Vias [{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK1MLEEv">>},{<<"nksip">>,<<"2zZ3OT">>}]}]
+ Event undefined
+ Headers [{<<"User-Agent">>,<<"NkSIP 0.1.0">>}]
+ Candidate <<>>
+2014-01-05 01:11:57.992 [notice] <0.54.0>@generic_switch_sip_router:handle_cast:30 got sip message {sipmsg,<<"R_2ECsy1_YU48oB4TV2IqPBvaSk3ZkiGgX9c">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK1MLEEv">>},{<<"nksip">>,<<"2zZ3OT">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"1cgEQM">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"YU48oB4TV2IqPBvaSk3ZkiGgX9c">>,17391854,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"1cgEQM">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388880717991617}
+2014-01-05 01:11:57.992 [info] <0.54.0>@generic_switch_sip_router:handle_cast:60  ID <<"R_2ECsy1_YU48oB4TV2IqPBvaSk3ZkiGgX9c">>
+ Class {req,'REGISTER'}
+ Ruri {uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]}
+ Vias [{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK1MLEEv">>},{<<"nksip">>,<<"2zZ3OT">>}]}]
+ Event undefined
+ Headers [{<<"User-Agent">>,<<"NkSIP 0.1.0">>}]
+ Candidate <<>>
+2014-01-05 01:12:01.992 [notice] <0.54.0>@generic_switch_sip_router:handle_cast:30 got sip message {sipmsg,<<"R_4YPldY_YU48oB4TV2IqPBvaSk3ZkiGgX9c">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK1MLEEv">>},{<<"nksip">>,<<"2zZ3OT">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"1cgEQM">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"YU48oB4TV2IqPBvaSk3ZkiGgX9c">>,17391854,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"1cgEQM">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388880721992452}
+2014-01-05 01:12:01.993 [info] <0.54.0>@generic_switch_sip_router:handle_cast:60  ID <<"R_4YPldY_YU48oB4TV2IqPBvaSk3ZkiGgX9c">>
+ Class {req,'REGISTER'}
+ Ruri {uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]}
+ Vias [{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK1MLEEv">>},{<<"nksip">>,<<"2zZ3OT">>}]}]
+ Event undefined
+ Headers [{<<"User-Agent">>,<<"NkSIP 0.1.0">>}]
+ Candidate <<>>
+2014-01-05 01:12:05.994 [notice] <0.54.0>@generic_switch_sip_router:handle_cast:30 got sip message {sipmsg,<<"R_YZu3z_YU48oB4TV2IqPBvaSk3ZkiGgX9c">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK1MLEEv">>},{<<"nksip">>,<<"2zZ3OT">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"1cgEQM">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"YU48oB4TV2IqPBvaSk3ZkiGgX9c">>,17391854,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"1cgEQM">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388880725993537}
+2014-01-05 01:12:05.994 [info] <0.54.0>@generic_switch_sip_router:handle_cast:60  ID <<"R_YZu3z_YU48oB4TV2IqPBvaSk3ZkiGgX9c">>
+ Class {req,'REGISTER'}
+ Ruri {uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]}
+ Vias [{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK1MLEEv">>},{<<"nksip">>,<<"2zZ3OT">>}]}]
+ Event undefined
+ Headers [{<<"User-Agent">>,<<"NkSIP 0.1.0">>}]
+ Candidate <<>>
+2014-01-05 01:12:09.994 [notice] <0.54.0>@generic_switch_sip_router:handle_cast:30 got sip message {sipmsg,<<"R_40h8nk_YU48oB4TV2IqPBvaSk3ZkiGgX9c">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK1MLEEv">>},{<<"nksip">>,<<"2zZ3OT">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"1cgEQM">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"YU48oB4TV2IqPBvaSk3ZkiGgX9c">>,17391854,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"1cgEQM">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388880729994251}
+2014-01-05 01:12:09.994 [info] <0.54.0>@generic_switch_sip_router:handle_cast:60  ID <<"R_40h8nk_YU48oB4TV2IqPBvaSk3ZkiGgX9c">>
+ Class {req,'REGISTER'}
+ Ruri {uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]}
+ Vias [{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK1MLEEv">>},{<<"nksip">>,<<"2zZ3OT">>}]}]
+ Event undefined
+ Headers [{<<"User-Agent">>,<<"NkSIP 0.1.0">>}]
+ Candidate <<>>
+2014-01-05 01:12:22.379 [info] <0.53.0>@generic_switch_sip_transport_udp:init:25 sip udp transport had started
+2014-01-05 01:12:22.379 [info] <0.6.0> Application lager started on node nonode@nohost
+2014-01-05 01:12:22.380 [info] <0.54.0>@generic_switch_sip_router:init:26 sip dialog router had started
+2014-01-05 01:12:26.007 [info] <0.54.0>@generic_switch_sip_router:handle_cast:59  ID <<"R_4Dzk1r_YU48oB4TV2IqPBvaSk3ZkiGgX9c">>
+ Class {req,'REGISTER'}
+ Ruri {uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]}
+ Vias [{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK1MLEEv">>},{<<"nksip">>,<<"2zZ3OT">>}]}]
+ Event undefined
+ Headers [{<<"User-Agent">>,<<"NkSIP 0.1.0">>}]
+ Candidate <<>>
+2014-01-05 01:12:26.490 [info] <0.54.0>@generic_switch_sip_router:handle_cast:59  ID <<"R_1drYHa_EbTDVDjks5dRj9EnCnCIdKIliJk">>
+ Class {req,'REGISTER'}
+ Ruri {uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]}
+ Vias [{via,udp,<<"127.0.0.1">>,5080,[<<"rport">>,{<<"branch">>,<<"z9hG4bK4bgrHO">>},{<<"nksip">>,<<"4XNhnG">>}]}]
+ Event undefined
+ Headers [{<<"User-Agent">>,<<"NkSIP 0.1.0">>}]
+ Candidate <<>>
+2014-01-05 01:12:26.992 [info] <0.54.0>@generic_switch_sip_router:handle_cast:59  ID <<"R_3OvJ9A_EbTDVDjks5dRj9EnCnCIdKIliJk">>
+ Class {req,'REGISTER'}
+ Ruri {uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]}
+ Vias [{via,udp,<<"127.0.0.1">>,5080,[<<"rport">>,{<<"branch">>,<<"z9hG4bK4bgrHO">>},{<<"nksip">>,<<"4XNhnG">>}]}]
+ Event undefined
+ Headers [{<<"User-Agent">>,<<"NkSIP 0.1.0">>}]
+ Candidate <<>>
+2014-01-05 01:12:27.992 [info] <0.54.0>@generic_switch_sip_router:handle_cast:59  ID <<"R_Sn4Oq_EbTDVDjks5dRj9EnCnCIdKIliJk">>
+ Class {req,'REGISTER'}
+ Ruri {uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]}
+ Vias [{via,udp,<<"127.0.0.1">>,5080,[<<"rport">>,{<<"branch">>,<<"z9hG4bK4bgrHO">>},{<<"nksip">>,<<"4XNhnG">>}]}]
+ Event undefined
+ Headers [{<<"User-Agent">>,<<"NkSIP 0.1.0">>}]
+ Candidate <<>>
+2014-01-05 01:12:29.993 [info] <0.54.0>@generic_switch_sip_router:handle_cast:59  ID <<"R_415fyH_EbTDVDjks5dRj9EnCnCIdKIliJk">>
+ Class {req,'REGISTER'}
+ Ruri {uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]}
+ Vias [{via,udp,<<"127.0.0.1">>,5080,[<<"rport">>,{<<"branch">>,<<"z9hG4bK4bgrHO">>},{<<"nksip">>,<<"4XNhnG">>}]}]
+ Event undefined
+ Headers [{<<"User-Agent">>,<<"NkSIP 0.1.0">>}]
+ Candidate <<>>
+2014-01-05 01:12:33.995 [info] <0.54.0>@generic_switch_sip_router:handle_cast:59  ID <<"R_31xQh_EbTDVDjks5dRj9EnCnCIdKIliJk">>
+ Class {req,'REGISTER'}
+ Ruri {uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]}
+ Vias [{via,udp,<<"127.0.0.1">>,5080,[<<"rport">>,{<<"branch">>,<<"z9hG4bK4bgrHO">>},{<<"nksip">>,<<"4XNhnG">>}]}]
+ Event undefined
+ Headers [{<<"User-Agent">>,<<"NkSIP 0.1.0">>}]
+ Candidate <<>>
+2014-01-05 01:12:37.995 [info] <0.54.0>@generic_switch_sip_router:handle_cast:59  ID <<"R_2T9Wyg_EbTDVDjks5dRj9EnCnCIdKIliJk">>
+ Class {req,'REGISTER'}
+ Ruri {uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]}
+ Vias [{via,udp,<<"127.0.0.1">>,5080,[<<"rport">>,{<<"branch">>,<<"z9hG4bK4bgrHO">>},{<<"nksip">>,<<"4XNhnG">>}]}]
+ Event undefined
+ Headers [{<<"User-Agent">>,<<"NkSIP 0.1.0">>}]
+ Candidate <<>>
+2014-01-05 01:12:41.997 [info] <0.54.0>@generic_switch_sip_router:handle_cast:59  ID <<"R_cukYh_EbTDVDjks5dRj9EnCnCIdKIliJk">>
+ Class {req,'REGISTER'}
+ Ruri {uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]}
+ Vias [{via,udp,<<"127.0.0.1">>,5080,[<<"rport">>,{<<"branch">>,<<"z9hG4bK4bgrHO">>},{<<"nksip">>,<<"4XNhnG">>}]}]
+ Event undefined
+ Headers [{<<"User-Agent">>,<<"NkSIP 0.1.0">>}]
+ Candidate <<>>
+2014-01-05 01:12:45.998 [info] <0.54.0>@generic_switch_sip_router:handle_cast:59  ID <<"R_2vaY0z_EbTDVDjks5dRj9EnCnCIdKIliJk">>
+ Class {req,'REGISTER'}
+ Ruri {uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]}
+ Vias [{via,udp,<<"127.0.0.1">>,5080,[<<"rport">>,{<<"branch">>,<<"z9hG4bK4bgrHO">>},{<<"nksip">>,<<"4XNhnG">>}]}]
+ Event undefined
+ Headers [{<<"User-Agent">>,<<"NkSIP 0.1.0">>}]
+ Candidate <<>>
+2014-01-05 01:12:49.999 [info] <0.54.0>@generic_switch_sip_router:handle_cast:59  ID <<"R_1DvhvY_EbTDVDjks5dRj9EnCnCIdKIliJk">>
+ Class {req,'REGISTER'}
+ Ruri {uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]}
+ Vias [{via,udp,<<"127.0.0.1">>,5080,[<<"rport">>,{<<"branch">>,<<"z9hG4bK4bgrHO">>},{<<"nksip">>,<<"4XNhnG">>}]}]
+ Event undefined
+ Headers [{<<"User-Agent">>,<<"NkSIP 0.1.0">>}]
+ Candidate <<>>
+2014-01-05 01:12:54.001 [info] <0.54.0>@generic_switch_sip_router:handle_cast:59  ID <<"R_WCGv9_EbTDVDjks5dRj9EnCnCIdKIliJk">>
+ Class {req,'REGISTER'}
+ Ruri {uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]}
+ Vias [{via,udp,<<"127.0.0.1">>,5080,[<<"rport">>,{<<"branch">>,<<"z9hG4bK4bgrHO">>},{<<"nksip">>,<<"4XNhnG">>}]}]
+ Event undefined
+ Headers [{<<"User-Agent">>,<<"NkSIP 0.1.0">>}]
+ Candidate <<>>
+2014-01-05 01:12:58.003 [info] <0.54.0>@generic_switch_sip_router:handle_cast:59  ID <<"R_1RE7th_EbTDVDjks5dRj9EnCnCIdKIliJk">>
+ Class {req,'REGISTER'}
+ Ruri {uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]}
+ Vias [{via,udp,<<"127.0.0.1">>,5080,[<<"rport">>,{<<"branch">>,<<"z9hG4bK4bgrHO">>},{<<"nksip">>,<<"4XNhnG">>}]}]
+ Event undefined
+ Headers [{<<"User-Agent">>,<<"NkSIP 0.1.0">>}]
+ Candidate <<>>

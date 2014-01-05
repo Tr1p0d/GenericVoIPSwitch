@@ -1,0 +1,15 @@
+{application, generic_switch,
+ [
+  {description, ""},
+  {vsn, "1"},
+  {registered, []},
+  {applications, [
+                  kernel,
+                  stdlib,
+				  nksip,
+				  lager,
+				  basho
+                 ]},
+  {mod, { generic_switch, []}},
+  {env, []}
+ ]}.
