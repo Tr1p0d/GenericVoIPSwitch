@@ -24,6 +24,32 @@ start_link() ->
 %% ===================================================================
 
 init([]) ->
+	GenericSwitchSIPGateway = 
+	{
+		sipGateway,
+		{
+			generic_switch_sip_gateway,
+			start_link,
+			[]
+		},
+		permanent,
+		2000,
+		worker,
+		[client_switch_sip_gateway]
+	},
+	GenericClientDatabase =
+	{
+		genericClientDatabase,
+		{
+			client_database,
+			start_link,
+			[]
+		},
+		permanent,
+		2000,
+		worker,
+		[client_database]
+	},
 	SIPUDPTransportSpecs = 
 	{
 		udpTransport,
@@ -44,7 +70,7 @@ init([]) ->
 		{
 			generic_switch_sip_router,
 			start_link,
-			[ets:new(sipDialogTable,[ public ])]
+			[ets:new(sipClientMapTable,[ public ])]
 		},
 		permanent,
 		2000,
@@ -52,5 +78,10 @@ init([]) ->
 		[generic_switch_sip_router]
 	},
 
-    {ok, { {one_for_one, 5, 10}, [SIPUDPTransportSpecs, SIPRouterSpecs]}}.
+    {ok, { {one_for_one, 5, 10}, [
+				SIPUDPTransportSpecs,
+				SIPRouterSpecs,
+				GenericClientDatabase,
+				GenericSwitchSIPGateway]
+		}}.
 

@@ -41,14 +41,16 @@ handle_call({get_socket}, _From, #udpstate{socket=Socket}=State) ->
 handle_cast(_Request, _State) -> 
 	lager:warning("asynchronous calls not supported").
 
-handle_info({udp, Socket, _IP, _Port, Packet}, State=#udpstate{socket=Socket}) ->
+%% a packet was received
+handle_info({udp, Socket, IP, Port, Packet}, State=#udpstate{socket=Socket}) ->
 	case nksip_parse:packet(0, #transport{proto=0}, Packet) of
 		{ok, RawSipMsg, _More} ->
 			case nksip_parse:raw_sipmsg(RawSipMsg) of
 				Msg=#sipmsg{} ->
 					% sends our sip message to dialog router for further
 					% processing
-					generic_switch_sip_router:async_incomming_message(Msg);
+					generic_switch_sip_router:
+					async_incomming_sip_message(Msg, IP, Port);
 				{error, Code, _} -> 
 					lager:warning("response code ~p" , [Code]);
 				{error, _ } -> 
@@ -60,7 +62,6 @@ handle_info({udp, Socket, _IP, _Port, Packet}, State=#udpstate{socket=Socket}) -
 			lager:warning("NOT IMPLEMENTED more")
 	end,
 	{noreply, State};
-
 
 handle_info(Request, _State) -> 
 	lager:notice("unknown message received ~p", [Request]),
