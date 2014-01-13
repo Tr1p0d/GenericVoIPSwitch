@@ -70,7 +70,7 @@ init([]) ->
 		{
 			generic_switch_sip_router,
 			start_link,
-			[ets:new(sipClientMapTable,[ public ])]
+			[ets:new(sipClientMapTable,[ public, bag, named_table ])]
 		},
 		permanent,
 		2000,

@@ -1,7 +1,7 @@
 -module(generic_switch_sip_transport_udp).
 -export([start_link/1, code_change/3, init/1, handle_call/3, handle_cast/2]).
 -export([handle_info/2, terminate/2]).
--export([get_socket/0]).
+-export([get_socket/0, send/3]).
 -behaviour(gen_server).
 
 -include("../deps/nksip/include/nksip.hrl").
@@ -12,11 +12,18 @@
 	}
 ).
 
-start_link(GenUDPSpecs) ->
-	gen_server:start_link({local, ?MODULE}, ?MODULE, GenUDPSpecs, []).
+%% API
+
+send(SipMsg, Ip ,Port) ->
+	gen_server:cast(?MODULE, {send,{nksip_unparse:packet(SipMsg), Ip, Port}}).
 
 get_socket() ->
 	gen_server:call(?MODULE, {get_socket}).
+
+
+start_link(GenUDPSpecs) ->
+	gen_server:start_link({local, ?MODULE}, ?MODULE, GenUDPSpecs, []).
+
 
 init({Port, Specs}) ->
 	%case gen_udp:open(5060, [binary, {active, false}]) of 
@@ -37,6 +44,11 @@ code_change(_Old, _State, _Extra) ->
 
 handle_call({get_socket}, _From, #udpstate{socket=Socket}=State) ->
 	{reply, Socket, State}.
+
+handle_cast({send, {Packet, Ip, Port}}, State=#udpstate{socket=Sock}) ->
+	lager:info("message send : ~p ~p", [Ip, Port]),
+	gen_udp:send(Sock, binary_to_list(Ip), Port, Packet),
+	{noreply, State};
 
 handle_cast(_Request, _State) -> 
 	lager:warning("asynchronous calls not supported").
@@ -69,8 +81,7 @@ handle_info(Request, _State) ->
 
 terminate(_Reason, #udpstate{socket=Socket}) ->
 	gen_udp:close(Socket),
-	lager:warning("shutting down the UDP transport"),
-	ok.
+	lager:warning("shutting down the UDP transport").
 	
 
 
