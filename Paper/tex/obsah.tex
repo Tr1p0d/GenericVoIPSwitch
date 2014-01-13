@@ -94,9 +94,33 @@ Tyto a dal¹í pokyny jsou dostupné té¾ na ¹kolních internetových stránkách \cite{
 %
 %
 \chapter{Internet telephony}
-\chapter{Technologies used in Internet telephony}
-\chapter{SIP}
-\chapter{Declarative paradigm}
+The term internet telephony refers to provisioning of a communication services such as voice, fax or text over public internet rather than using dedicated public switched telephone network ( PSTN ). Steps and principes essentially remains the same :
+\begin{itemize}
+\item signaling employs session control and signaling protocols are used to set up or tear down a call
+\item channel setup  
+\item converting analog signal ( voice ) to its digital representation
+\item encoding media using codecs to optimize the stream
+\end{itemize}
+Traffic in PSTN is then transfererd over circuit-switched network. On the other hand, internet covers wide variety of transport technologies where the most common end technologies are based on packet-switched networks ( Ethernet + Internet protocol ).
+
+\chapter{ISO/OSI session layer protocols}
+ISO/OSI session layer is layer where signaling protocols take their place. Their job is to establish a media session among 2 or more participants. Steps involved in establishing media session are :
+\begin{itemize}
+\item localization of endpoint
+\item contact remote endpoints and determine willingness to communicate,
+\item exchange of media session information
+\item tear down media sessions
+\end{itemize}
+Media session can be almost anything from a voice, presence, text messages or fax. Examples of signaling protocols are SIP or H.323. 
+
+Signaling protocol communication flow copies a phone device behaviour.
+\section{H.323}
+H.323 is a group of protocols used for signaling developed by Internet Telecommunication Union, Telecommunications Standard Sector ( ITU-T ). 
+
+\section{SIP}
+SIP or session initiation protocol is signaling protocol developed by IETF, Multi-Party Multimedia Session Control Working Group. First version was 1.0 and was submitted as an Internet Draft in 1997. Since significant changes were done to improve the protocol, version 2.0 was submitted as an Internet Draft in 1998. In 1999 protocol reached the Proposed Standard level and is described in RFC 2543 []. In the following years several SIP extending documents were published.
+From more technical point of view, SIP is a text protocol which makes it well readable. It is based on HTTP protocol from which inherits client-server model and use of URI's. From SMTP SIP borrows header-style ( headers such as From, To, etc... are in both protocols and have similar meaning).   
+\chapter{Declarative programming paradigm}
 Is a programming paradigm that describes computer program logic without describing its control flow.  In much more common imperative paradigm one often describes:
 \begin{itemize}
 \item  what computer program goals are
@@ -126,9 +150,9 @@ Is a subset of declarative paradigm in which programs are constructed using func
 \end{itemize}
 Functions in terms of functional programming are much more mathematicaly oriented compare to imperative languages. When an argument is supplied to a function thus calling it, the function will never ever return different value when called again with the same argument. Consequence of this approach is immutable data, often lack of variables and undefined program state. Rather than loop recursion is used. Its formal basis is a lambda-calcul, a formal system used in mathematical logic. It was developed in 1930's by Alonzo Church to support his solution of the Entschiedung problem. Later was used as a formal basis for functional programming.
 
-\subsection{Evaluation strategy}
+\section{Evaluation strategy}
 Evaluation strategy refers to a approach of evaluating function arguments. Functional languages are usually categorized based on their evaluation strategy. The can use either strict evaluation or non-strict evaluation concept.
-\subsection{Type systems}
+\section{Type systems}
 If type is a property that can be assigned to various programming construct ( for example a variable, expression or function are programming constructs ), then type system is a pack of rules that assign a type to a construct. Its main purpose is to reduce bugs by defining interfaces between various parts of computer program. These parts when connected ( for example function call ) can be checked for consistency. This check can be performed statically at compile time or dynamically at run time. Various types can be declared implicitly, explicitly or infered.   
 \begin{itemize}
 \item statically typed usually require explicit type declaration, type consistency can be checked at compile time
@@ -141,7 +165,7 @@ Another important aspect of type system is wheter it is strong or weak.
 \item weakly typed languages  
 \item strongly typed 
 \end{itemize}
-\subsection{Functions and function order}
+\section{Functions and function order}
     
 \chapter{Erlang programming language}
 Erlang is a functional programming language with high emphasis on high realiability and heavy concurrency. These two main features go hand to hand with support for distribution applications and fault tolerance. It is well suited for applications whose main characteristics are:
@@ -152,9 +176,24 @@ Erlang is a functional programming language with high emphasis on high realiabil
 \item concurrent
 \end{itemize}
 
-\subsection{High reliability}
-High reliability is achieved trough fault tolerance.
-\subsection{Massive concurrency}
+\section{High reliability}
+High reliability is one of Erlang key factors. Although it will not solve all problems, by inheriting different but simple approaches to handle errors and exceptions and using well designed and robust but very general library modules, Erlang will make your job easier and in most cases more native.  
+
+\subsection{Fault tolerace}
+Is a "keep it running" approach to error handling. It means that whenewer a part of system ( process, group of processes ) crashes, we will let the rest of the system alive. The Erlang VM will tell us, when the crash happened and why it did it. It is programmer's responsibility to ensure that the crash will not affect correct system behavior in global. We can take our VoIP switch as an example. If user invokes conference feature which is not implemented and system crashes in local scale user lost his call but in global scale, simultaneous calls should not be affected and switch should be up and running, ready to process any new requests.
+
+Supervision tree is a concept trough which fault tolerance could be reached. Every process in such a model is either a worker or a supervisor. Worker job could be any routine work you can imagine starting from reading a file to a database server. On the other hand supervisor only job is to monitor other processes, workers or other supervisors and if any supervising process goes wrong it will restart it, stop all processes that are being supervised, etc... In general such action is called a restart strategy. 
+
+Each process in Erlang system should have its supervisor. Process diagram will mostly result in a tree where only process without supervision will be a root. 
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=0.8]{fig/erlang_supervision_tree}
+\caption[Erlang supervision tree] {Example supervision tree}
+\end{figure}
+
+\subsection{Hot-code swaping}
+In addition to fault tolerance, when a bug is found but system does not crash of that fault we need to fix our software and provide our feature to customers. In manner of high reliability and high up-time such a fix needs to be done when system is running. Again our VoIP switch can serve as an example. When bug in conferrence system is reported, hot-code swaping allows us to fix source code, recompile selected source files and insert fixed code into a running systems. 
+\section{Massive concurrency}
 Any programming language that features concurrency inherits one of the following models:
 \begin{itemize}
 \item Shared state concurrency. This model use shared state to communicate among processes. Such a state could be represented by a shared piece of memory that processes can access. It is usually very fast but especially in complex systems it requires a lot of synchronization overhead to prevent race-conditions. This synchronisation becomes extremly hard in distributed environment where network faults and other downsides come onto light. It is also harder to proof correct. Shared state concurrency is the approach that almost every programming language use these days.
@@ -164,7 +203,15 @@ Erlang uses message passing concurrency. In case of Erlang it is a model that fi
 \section{Erlang history and philosophy}
 \section{Why Erlang}
 \section{Erlang type system}
+Erlang is dynamically typed language. Erlang compiler will not complain on evident errors, instead every error will be caught at run time and it is programmer responsibility to handle this. This is often understood as one of major Erlang drawbacks. Reasons for this is Erlang uniqueness. Erlang features highly advanced concepts such as hot-code swaping and message passing concurrency which makes difficult to check for type correctness. As an example, it is hard to check types for code that does not exist yet (hot-code swaping ). A number of project tried to create comprehensive type system for Erlang, but none of them really succeeded. Deeper study of this problem is considered beyond this paper but as a final conclusion I will quote Joe Armstrong : It seems like it should be 'easy'-and indeed, a few weeks programming can make a type system that handles 95\% of the language. Several man-years of work [by some of the brightest minds in computer science] have gone into trying to fix up the other 5\%-but this is really difficult.\cite{armstrong_type_system}
+
+Fortunatelly for Erlang engineers a pack of tools which resulted from research on Uppsala University exist to fill this gap. 
+\subsection{TypEr}
+Is a tool for automatic type inference. TypEr will check specified types againts inferred and check for inconsistencies. Specifying function parameter and return types has has yet another important consequence. It makes source code understanding significantly easier.
+\subsection{Dializer}
+Is an acronym for A DIscrepancy AnaLYZer for ERlang programs. It extends Typer and performs static analysis on Erlang programs. Its major function is to reveal software discrepancies such as : unreachable code, obvious type errors, redundant tests etc...
 \section{Erlang evaluation strategy}
+Call-By-Value is Erlang evaluation strategy as described in earlier chapters.
 \chapter{Open Telecom Platform}
 \chapter{Generic VoIP Switch Design}
 \chapter{Designing application core}
