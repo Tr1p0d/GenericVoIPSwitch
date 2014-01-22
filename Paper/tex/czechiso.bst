@@ -265,7 +265,7 @@ FUNCTION {bbl.page}
 { "str." }
 
 FUNCTION {bbl.chapter}
-{ "kapitola" }
+{ "kakakakapitola" }
 
 FUNCTION {bbl.techrep}
 { "Technická Zpráva" }

@@ -1,0 +1,18 @@
+\begin{thebibliography}{1}
+
+\bibitem{armstrong_type_system}
+Joe Armstrong.
+\newblock Joe armstrongs's mailing list post on erlang type systems.
+
+\bibitem{erlang_fsm}
+Ericsson\_AB.
+\newblock Gen\_fsm behaviour.
+\newblock {\tt http://www.erlang.org/doc/design\_principles/fsm.html}, 2013.
+
+\bibitem{computer_protocols_desing_and_validation}
+Gerard~J. Holzmann.
+\newblock {\em Desing and Validation of Computer Protocols}.
+\newblock Prentice Hall, 1991.
+\newblock ISBN~0-13-539834-7.
+
+\end{thebibliography}
