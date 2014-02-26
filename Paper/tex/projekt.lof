@@ -5,10 +5,11 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces Erlang supervision tree}}{13}{figure.6.1}
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Erlang supervision tree}}{13}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {7.1}{\ignorespaces Erlang gen\_event}}{16}{figure.7.1}
-\contentsline {figure}{\numberline {7.2}{\ignorespaces Erlang gen\_event behaviour}}{17}{figure.7.2}
+\contentsline {figure}{\numberline {7.1}{\ignorespaces Erlang gen\_event}}{16}
+\contentsline {figure}{\numberline {7.2}{\ignorespaces Erlang gen\_event behaviour}}{17}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {9.1}{\ignorespaces Generic exchange initial design}}{20}
 \addvspace {10\p@ }
