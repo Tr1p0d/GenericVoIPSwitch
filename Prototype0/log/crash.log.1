@@ -1,0 +1,476 @@
+2014-01-09 00:29:04 =ERROR REPORT====
+** Generic server generic_switch_sip_router terminating 
+** Last message in was {'$gen_cast',{incomming_message,{sipmsg,<<"R_14X9Pe_VAbPJ2zfD19V2Rxz9FUkaxekx5N">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK2Lw6iC">>},{<<"nksip">>,<<"M5kpg">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"1x4NIe">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"VAbPJ2zfD19V2Rxz9FUkaxekx5N">>,17728268,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"1x4NIe">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1389223744306634},{127,0,0,1},5070}}
+** When Server state == {dialogRouterState,sipClientMapTable}
+** Reason for termination == 
+** {'function not exported',[{generic_switch_sip_gateway,async_register,[{unknown_client}],[]},{generic_switch_sip_router,handle_cast,2,[{file,"src/generic_switch_sip_router.erl"},{line,60}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,607}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+2014-01-09 00:29:04 =CRASH REPORT====
+  crasher:
+    initial call: generic_switch_sip_router:init/1
+    pid: <0.54.0>
+    registered_name: generic_switch_sip_router
+    exception exit: {{undef,[{generic_switch_sip_gateway,async_register,[{unknown_client}],[]},{generic_switch_sip_router,handle_cast,2,[{file,"src/generic_switch_sip_router.erl"},{line,60}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,607}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]},[{gen_server,terminate,6,[{file,"gen_server.erl"},{line,747}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [generic_switch_sup,<0.32.0>]
+    messages: [{'$gen_cast',{incomming_message,{sipmsg,<<"R_3pHqPj_9dknu7MPahUHDETWNGb8thNsXUg">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5080,[<<"rport">>,{<<"branch">>,<<"z9hG4bK3lh2TO">>},{<<"nksip">>,<<"2X7SJ7">>}]}],{uri,<<>>,sip,<<"alice">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"4Lq4KB">>}],[]},{uri,<<>>,sip,<<"alice">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"9dknu7MPahUHDETWNGb8thNsXUg">>,17728269,'REGISTER',70,[],[{uri,<<>>,sip,<<"alice">>,<<>>,<<"127.0.0.1">>,5080,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"4Lq4KB">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1389223744310634},{127,0,0,1},5080}}]
+    links: [<0.52.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 2584
+    stack_size: 24
+    reductions: 2431
+  neighbours:
+2014-01-09 00:29:04 =SUPERVISOR REPORT====
+     Supervisor: {local,generic_switch_sup}
+     Context:    child_terminated
+     Reason:     {undef,[{generic_switch_sip_gateway,async_register,[{unknown_client}],[]},{generic_switch_sip_router,handle_cast,2,[{file,"src/generic_switch_sip_router.erl"},{line,60}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,607}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+     Offender:   [{pid,<0.54.0>},{name,sipDialogRouter},{mfargs,{generic_switch_sip_router,start_link,[sipClientMapTable]}},{restart_type,permanent},{shutdown,2000},{child_type,worker}]
+
+2014-01-09 00:29:04 =ERROR REPORT====
+** Generic server generic_switch_sip_router terminating 
+** Last message in was {'$gen_cast',{incomming_message,{sipmsg,<<"R_2HoJnP_9dknu7MPahUHDETWNGb8thNsXUg">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5080,[<<"rport">>,{<<"branch">>,<<"z9hG4bK3lh2TO">>},{<<"nksip">>,<<"2X7SJ7">>}]}],{uri,<<>>,sip,<<"alice">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"4Lq4KB">>}],[]},{uri,<<>>,sip,<<"alice">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"9dknu7MPahUHDETWNGb8thNsXUg">>,17728269,'REGISTER',70,[],[{uri,<<>>,sip,<<"alice">>,<<>>,<<"127.0.0.1">>,5080,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"4Lq4KB">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1389223744805570},{127,0,0,1},5080}}
+** When Server state == {dialogRouterState,sipClientMapTable}
+** Reason for termination == 
+** {'function not exported',[{generic_switch_sip_gateway,async_register,[{unknown_client}],[]},{generic_switch_sip_router,handle_cast,2,[{file,"src/generic_switch_sip_router.erl"},{line,60}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,607}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+2014-01-09 00:29:04 =CRASH REPORT====
+  crasher:
+    initial call: generic_switch_sip_router:init/1
+    pid: <0.60.0>
+    registered_name: generic_switch_sip_router
+    exception exit: {{undef,[{generic_switch_sip_gateway,async_register,[{unknown_client}],[]},{generic_switch_sip_router,handle_cast,2,[{file,"src/generic_switch_sip_router.erl"},{line,60}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,607}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]},[{gen_server,terminate,6,[{file,"gen_server.erl"},{line,747}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [generic_switch_sup,<0.32.0>]
+    messages: []
+    links: [<0.52.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 1597
+    stack_size: 24
+    reductions: 2304
+  neighbours:
+2014-01-09 00:29:04 =SUPERVISOR REPORT====
+     Supervisor: {local,generic_switch_sup}
+     Context:    child_terminated
+     Reason:     {undef,[{generic_switch_sip_gateway,async_register,[{unknown_client}],[]},{generic_switch_sip_router,handle_cast,2,[{file,"src/generic_switch_sip_router.erl"},{line,60}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,607}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+     Offender:   [{pid,<0.60.0>},{name,sipDialogRouter},{mfargs,{generic_switch_sip_router,start_link,[sipClientMapTable]}},{restart_type,permanent},{shutdown,2000},{child_type,worker}]
+
+2014-01-09 00:29:05 =ERROR REPORT====
+** Generic server generic_switch_sip_router terminating 
+** Last message in was {'$gen_cast',{incomming_message,{sipmsg,<<"R_49lTvC_9dknu7MPahUHDETWNGb8thNsXUg">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5080,[<<"rport">>,{<<"branch">>,<<"z9hG4bK3lh2TO">>},{<<"nksip">>,<<"2X7SJ7">>}]}],{uri,<<>>,sip,<<"alice">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"4Lq4KB">>}],[]},{uri,<<>>,sip,<<"alice">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"9dknu7MPahUHDETWNGb8thNsXUg">>,17728269,'REGISTER',70,[],[{uri,<<>>,sip,<<"alice">>,<<>>,<<"127.0.0.1">>,5080,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"4Lq4KB">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1389223745806279},{127,0,0,1},5080}}
+** When Server state == {dialogRouterState,sipClientMapTable}
+** Reason for termination == 
+** {'function not exported',[{generic_switch_sip_gateway,async_register,[{unknown_client}],[]},{generic_switch_sip_router,handle_cast,2,[{file,"src/generic_switch_sip_router.erl"},{line,60}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,607}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+2014-01-09 00:29:05 =CRASH REPORT====
+  crasher:
+    initial call: generic_switch_sip_router:init/1
+    pid: <0.61.0>
+    registered_name: generic_switch_sip_router
+    exception exit: {{undef,[{generic_switch_sip_gateway,async_register,[{unknown_client}],[]},{generic_switch_sip_router,handle_cast,2,[{file,"src/generic_switch_sip_router.erl"},{line,60}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,607}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]},[{gen_server,terminate,6,[{file,"gen_server.erl"},{line,747}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [generic_switch_sup,<0.32.0>]
+    messages: []
+    links: [<0.52.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 1597
+    stack_size: 24
+    reductions: 2304
+  neighbours:
+2014-01-09 00:29:05 =SUPERVISOR REPORT====
+     Supervisor: {local,generic_switch_sup}
+     Context:    child_terminated
+     Reason:     {undef,[{generic_switch_sip_gateway,async_register,[{unknown_client}],[]},{generic_switch_sip_router,handle_cast,2,[{file,"src/generic_switch_sip_router.erl"},{line,60}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,607}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+     Offender:   [{pid,<0.61.0>},{name,sipDialogRouter},{mfargs,{generic_switch_sip_router,start_link,[sipClientMapTable]}},{restart_type,permanent},{shutdown,2000},{child_type,worker}]
+
+2014-01-09 00:31:15 =ERROR REPORT====
+** Generic server generic_switch_sip_gateway terminating 
+** Last message in was {'$gen_cast',{register,{unknown_client}}}
+** When Server state == []
+** Reason for termination == 
+** {'function not exported',[{client_database,addNewClient,[],[]},{generic_switch_sip_gateway,handle_cast,2,[{file,"src/generic_switch_sip_gateway.erl"},{line,28}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,607}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+2014-01-09 00:31:15 =CRASH REPORT====
+  crasher:
+    initial call: generic_switch_sip_gateway:init/1
+    pid: <0.58.0>
+    registered_name: generic_switch_sip_gateway
+    exception exit: {{undef,[{client_database,addNewClient,[],[]},{generic_switch_sip_gateway,handle_cast,2,[{file,"src/generic_switch_sip_gateway.erl"},{line,28}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,607}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]},[{gen_server,terminate,6,[{file,"gen_server.erl"},{line,747}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [generic_switch_sup,<0.32.0>]
+    messages: []
+    links: [<0.52.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 2584
+    stack_size: 24
+    reductions: 1679
+  neighbours:
+2014-01-09 00:31:15 =SUPERVISOR REPORT====
+     Supervisor: {local,generic_switch_sup}
+     Context:    child_terminated
+     Reason:     {undef,[{client_database,addNewClient,[],[]},{generic_switch_sip_gateway,handle_cast,2,[{file,"src/generic_switch_sip_gateway.erl"},{line,28}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,607}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+     Offender:   [{pid,<0.58.0>},{name,sipGateway},{mfargs,{generic_switch_sip_gateway,start_link,[]}},{restart_type,permanent},{shutdown,2000},{child_type,worker}]
+
+2014-01-09 00:31:15 =ERROR REPORT====
+** Generic server generic_switch_sip_gateway terminating 
+** Last message in was {'$gen_cast',{register,{unknown_client}}}
+** When Server state == []
+** Reason for termination == 
+** {'function not exported',[{client_database,addNewClient,[],[]},{generic_switch_sip_gateway,handle_cast,2,[{file,"src/generic_switch_sip_gateway.erl"},{line,28}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,607}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+2014-01-09 00:31:15 =CRASH REPORT====
+  crasher:
+    initial call: generic_switch_sip_gateway:init/1
+    pid: <0.60.0>
+    registered_name: generic_switch_sip_gateway
+    exception exit: {{undef,[{client_database,addNewClient,[],[]},{generic_switch_sip_gateway,handle_cast,2,[{file,"src/generic_switch_sip_gateway.erl"},{line,28}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,607}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]},[{gen_server,terminate,6,[{file,"gen_server.erl"},{line,747}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [generic_switch_sup,<0.32.0>]
+    messages: []
+    links: [<0.52.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 2584
+    stack_size: 24
+    reductions: 1678
+  neighbours:
+2014-01-09 00:31:15 =SUPERVISOR REPORT====
+     Supervisor: {local,generic_switch_sup}
+     Context:    child_terminated
+     Reason:     {undef,[{client_database,addNewClient,[],[]},{generic_switch_sip_gateway,handle_cast,2,[{file,"src/generic_switch_sip_gateway.erl"},{line,28}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,607}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+     Offender:   [{pid,<0.60.0>},{name,sipGateway},{mfargs,{generic_switch_sip_gateway,start_link,[]}},{restart_type,permanent},{shutdown,2000},{child_type,worker}]
+
+2014-01-09 00:31:16 =ERROR REPORT====
+** Generic server generic_switch_sip_gateway terminating 
+** Last message in was {'$gen_cast',{register,{unknown_client}}}
+** When Server state == []
+** Reason for termination == 
+** {'function not exported',[{client_database,addNewClient,[],[]},{generic_switch_sip_gateway,handle_cast,2,[{file,"src/generic_switch_sip_gateway.erl"},{line,28}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,607}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+2014-01-09 00:31:16 =CRASH REPORT====
+  crasher:
+    initial call: generic_switch_sip_gateway:init/1
+    pid: <0.61.0>
+    registered_name: generic_switch_sip_gateway
+    exception exit: {{undef,[{client_database,addNewClient,[],[]},{generic_switch_sip_gateway,handle_cast,2,[{file,"src/generic_switch_sip_gateway.erl"},{line,28}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,607}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]},[{gen_server,terminate,6,[{file,"gen_server.erl"},{line,747}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [generic_switch_sup,<0.32.0>]
+    messages: []
+    links: [<0.52.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 2584
+    stack_size: 24
+    reductions: 1678
+  neighbours:
+2014-01-09 00:31:16 =SUPERVISOR REPORT====
+     Supervisor: {local,generic_switch_sup}
+     Context:    child_terminated
+     Reason:     {undef,[{client_database,addNewClient,[],[]},{generic_switch_sip_gateway,handle_cast,2,[{file,"src/generic_switch_sip_gateway.erl"},{line,28}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,607}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+     Offender:   [{pid,<0.61.0>},{name,sipGateway},{mfargs,{generic_switch_sip_gateway,start_link,[]}},{restart_type,permanent},{shutdown,2000},{child_type,worker}]
+
+2014-01-09 11:00:37 =ERROR REPORT====
+** Generic server generic_switch_sip_router terminating 
+** Last message in was {'$gen_cast',{incomming_message,{sipmsg,<<"R_1P9oQK_JIsYCruXhpw1f68D1QKeZNspZeH">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK1Y9KO9">>},{<<"nksip">>,<<"1u4yfy">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"2HBwug">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"JIsYCruXhpw1f68D1QKeZNspZeH">>,17774162,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"2HBwug">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1389261637798022},{127,0,0,1},5070}}
+** When Server state == {dialogRouterState,sipClientMapTable}
+** Reason for termination == 
+** {'function not exported',[{generic_switch_sip_gateway,async_register,[],[]},{generic_switch_sip_router,handle_cast,2,[{file,"src/generic_switch_sip_router.erl"},{line,74}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,607}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+2014-01-09 11:00:37 =CRASH REPORT====
+  crasher:
+    initial call: generic_switch_sip_router:init/1
+    pid: <0.54.0>
+    registered_name: generic_switch_sip_router
+    exception exit: {{undef,[{generic_switch_sip_gateway,async_register,[],[]},{generic_switch_sip_router,handle_cast,2,[{file,"src/generic_switch_sip_router.erl"},{line,74}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,607}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]},[{gen_server,terminate,6,[{file,"gen_server.erl"},{line,747}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [generic_switch_sup,<0.32.0>]
+    messages: []
+    links: [<0.52.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 1597
+    stack_size: 24
+    reductions: 2229
+  neighbours:
+2014-01-09 11:00:37 =SUPERVISOR REPORT====
+     Supervisor: {local,generic_switch_sup}
+     Context:    child_terminated
+     Reason:     {undef,[{generic_switch_sip_gateway,async_register,[],[]},{generic_switch_sip_router,handle_cast,2,[{file,"src/generic_switch_sip_router.erl"},{line,74}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,607}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+     Offender:   [{pid,<0.54.0>},{name,sipDialogRouter},{mfargs,{generic_switch_sip_router,start_link,[sipClientMapTable]}},{restart_type,permanent},{shutdown,2000},{child_type,worker}]
+
+2014-01-09 11:00:38 =ERROR REPORT====
+** Generic server generic_switch_sip_router terminating 
+** Last message in was {'$gen_cast',{incomming_message,{sipmsg,<<"R_2DhjtO_JIsYCruXhpw1f68D1QKeZNspZeH">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK1Y9KO9">>},{<<"nksip">>,<<"1u4yfy">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"2HBwug">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"JIsYCruXhpw1f68D1QKeZNspZeH">>,17774162,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"2HBwug">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1389261638300260},{127,0,0,1},5070}}
+** When Server state == {dialogRouterState,sipClientMapTable}
+** Reason for termination == 
+** {'function not exported',[{generic_switch_sip_gateway,async_register,[],[]},{generic_switch_sip_router,handle_cast,2,[{file,"src/generic_switch_sip_router.erl"},{line,74}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,607}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+2014-01-09 11:00:38 =CRASH REPORT====
+  crasher:
+    initial call: generic_switch_sip_router:init/1
+    pid: <0.60.0>
+    registered_name: generic_switch_sip_router
+    exception exit: {{undef,[{generic_switch_sip_gateway,async_register,[],[]},{generic_switch_sip_router,handle_cast,2,[{file,"src/generic_switch_sip_router.erl"},{line,74}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,607}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]},[{gen_server,terminate,6,[{file,"gen_server.erl"},{line,747}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [generic_switch_sup,<0.32.0>]
+    messages: []
+    links: [<0.52.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 1597
+    stack_size: 24
+    reductions: 2229
+  neighbours:
+2014-01-09 11:00:38 =SUPERVISOR REPORT====
+     Supervisor: {local,generic_switch_sup}
+     Context:    child_terminated
+     Reason:     {undef,[{generic_switch_sip_gateway,async_register,[],[]},{generic_switch_sip_router,handle_cast,2,[{file,"src/generic_switch_sip_router.erl"},{line,74}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,607}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+     Offender:   [{pid,<0.60.0>},{name,sipDialogRouter},{mfargs,{generic_switch_sip_router,start_link,[sipClientMapTable]}},{restart_type,permanent},{shutdown,2000},{child_type,worker}]
+
+2014-01-09 11:04:45 =ERROR REPORT====
+** Generic server generic_switch_sip_gateway terminating 
+** Last message in was {'$gen_cast',{register,{unknown_client,<<"R_2B3VvY_JIsYCruXhpw1f68D1QKeZNspZeH">>}}}
+** When Server state == []
+** Reason for termination == 
+** {'function not exported',[{gen_server,cast,[{new_client_accepted,{<<"R_2B3VvY_JIsYCruXhpw1f68D1QKeZNspZeH">>,{ok,<0.60.0>}}}],[]},{generic_switch_sip_gateway,handle_cast,2,[{file,"src/generic_switch_sip_gateway.erl"},{line,29}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,607}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+2014-01-09 11:04:45 =CRASH REPORT====
+  crasher:
+    initial call: generic_switch_sip_gateway:init/1
+    pid: <0.58.0>
+    registered_name: generic_switch_sip_gateway
+    exception exit: {{undef,[{gen_server,cast,[{new_client_accepted,{<<"R_2B3VvY_JIsYCruXhpw1f68D1QKeZNspZeH">>,{ok,<0.60.0>}}}],[]},{generic_switch_sip_gateway,handle_cast,2,[{file,"src/generic_switch_sip_gateway.erl"},{line,29}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,607}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]},[{gen_server,terminate,6,[{file,"gen_server.erl"},{line,747}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [generic_switch_sup,<0.32.0>]
+    messages: []
+    links: [<0.52.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 2584
+    stack_size: 24
+    reductions: 2078
+  neighbours:
+2014-01-09 11:04:45 =SUPERVISOR REPORT====
+     Supervisor: {local,generic_switch_sup}
+     Context:    child_terminated
+     Reason:     {undef,[{gen_server,cast,[{new_client_accepted,{<<"R_2B3VvY_JIsYCruXhpw1f68D1QKeZNspZeH">>,{ok,<0.60.0>}}}],[]},{generic_switch_sip_gateway,handle_cast,2,[{file,"src/generic_switch_sip_gateway.erl"},{line,29}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,607}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+     Offender:   [{pid,<0.58.0>},{name,sipGateway},{mfargs,{generic_switch_sip_gateway,start_link,[]}},{restart_type,permanent},{shutdown,2000},{child_type,worker}]
+
+2014-01-09 11:04:45 =ERROR REPORT====
+** Generic server generic_switch_sip_gateway terminating 
+** Last message in was {'$gen_cast',{register,{unknown_client,<<"R_3EB3bv_4c19WxFwSKdER9mRoiUFcGR9j9G">>}}}
+** When Server state == []
+** Reason for termination == 
+** {'function not exported',[{gen_server,cast,[{new_client_accepted,{<<"R_3EB3bv_4c19WxFwSKdER9mRoiUFcGR9j9G">>,{ok,<0.62.0>}}}],[]},{generic_switch_sip_gateway,handle_cast,2,[{file,"src/generic_switch_sip_gateway.erl"},{line,29}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,607}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+2014-01-09 11:04:45 =CRASH REPORT====
+  crasher:
+    initial call: generic_switch_sip_gateway:init/1
+    pid: <0.61.0>
+    registered_name: generic_switch_sip_gateway
+    exception exit: {{undef,[{gen_server,cast,[{new_client_accepted,{<<"R_3EB3bv_4c19WxFwSKdER9mRoiUFcGR9j9G">>,{ok,<0.62.0>}}}],[]},{generic_switch_sip_gateway,handle_cast,2,[{file,"src/generic_switch_sip_gateway.erl"},{line,29}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,607}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]},[{gen_server,terminate,6,[{file,"gen_server.erl"},{line,747}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [generic_switch_sup,<0.32.0>]
+    messages: []
+    links: [<0.52.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 2584
+    stack_size: 24
+    reductions: 2078
+  neighbours:
+2014-01-09 11:04:45 =SUPERVISOR REPORT====
+     Supervisor: {local,generic_switch_sup}
+     Context:    child_terminated
+     Reason:     {undef,[{gen_server,cast,[{new_client_accepted,{<<"R_3EB3bv_4c19WxFwSKdER9mRoiUFcGR9j9G">>,{ok,<0.62.0>}}}],[]},{generic_switch_sip_gateway,handle_cast,2,[{file,"src/generic_switch_sip_gateway.erl"},{line,29}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,607}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+     Offender:   [{pid,<0.61.0>},{name,sipGateway},{mfargs,{generic_switch_sip_gateway,start_link,[]}},{restart_type,permanent},{shutdown,2000},{child_type,worker}]
+
+2014-01-09 11:05:29 =ERROR REPORT====
+** Generic server generic_switch_sip_gateway terminating 
+** Last message in was {'$gen_cast',{register,{unknown_client,<<"R_XRvKA_5mrgIOtqSC9BNu8FaHe7peTDwu5">>}}}
+** When Server state == []
+** Reason for termination == 
+** {'function not exported',[{gen_server,cast,[{new_client_accepted,{<<"R_XRvKA_5mrgIOtqSC9BNu8FaHe7peTDwu5">>,{ok,<0.62.0>}}}],[]},{generic_switch_sip_gateway,handle_cast,2,[{file,"src/generic_switch_sip_gateway.erl"},{line,29}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,607}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+2014-01-09 11:05:29 =CRASH REPORT====
+  crasher:
+    initial call: generic_switch_sip_gateway:init/1
+    pid: <0.60.0>
+    registered_name: generic_switch_sip_gateway
+    exception exit: {{undef,[{gen_server,cast,[{new_client_accepted,{<<"R_XRvKA_5mrgIOtqSC9BNu8FaHe7peTDwu5">>,{ok,<0.62.0>}}}],[]},{generic_switch_sip_gateway,handle_cast,2,[{file,"src/generic_switch_sip_gateway.erl"},{line,29}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,607}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]},[{gen_server,terminate,6,[{file,"gen_server.erl"},{line,747}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [generic_switch_sup,<0.34.0>]
+    messages: []
+    links: [<0.54.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 2584
+    stack_size: 24
+    reductions: 2078
+  neighbours:
+2014-01-09 11:05:29 =SUPERVISOR REPORT====
+     Supervisor: {local,generic_switch_sup}
+     Context:    child_terminated
+     Reason:     {undef,[{gen_server,cast,[{new_client_accepted,{<<"R_XRvKA_5mrgIOtqSC9BNu8FaHe7peTDwu5">>,{ok,<0.62.0>}}}],[]},{generic_switch_sip_gateway,handle_cast,2,[{file,"src/generic_switch_sip_gateway.erl"},{line,29}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,607}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+     Offender:   [{pid,<0.60.0>},{name,sipGateway},{mfargs,{generic_switch_sip_gateway,start_link,[]}},{restart_type,permanent},{shutdown,2000},{child_type,worker}]
+
+2014-01-09 11:28:56 =ERROR REPORT====
+** Generic server generic_switch_sip_gateway terminating 
+** Last message in was {'$gen_cast',{new_client_accepted,{<<"R_nzIau_17qSBjqms6Af006LrLGwpQ0qzac">>,{ok,<0.60.0>}}}}
+** When Server state == []
+** Reason for termination == 
+** {'function not exported',[{generic_switch_sip_router,async_outgoing_sip_message,[{200,<<"R_nzIau_17qSBjqms6Af006LrLGwpQ0qzac">>,{{ok,<0.60.0>}}}],[]},{generic_switch_sip_gateway,handle_cast,2,[{file,"src/generic_switch_sip_gateway.erl"},{line,34}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,607}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+2014-01-09 11:28:56 =CRASH REPORT====
+  crasher:
+    initial call: generic_switch_sip_gateway:init/1
+    pid: <0.58.0>
+    registered_name: generic_switch_sip_gateway
+    exception exit: {{undef,[{generic_switch_sip_router,async_outgoing_sip_message,[{200,<<"R_nzIau_17qSBjqms6Af006LrLGwpQ0qzac">>,{{ok,<0.60.0>}}}],[]},{generic_switch_sip_gateway,handle_cast,2,[{file,"src/generic_switch_sip_gateway.erl"},{line,34}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,607}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]},[{gen_server,terminate,6,[{file,"gen_server.erl"},{line,747}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [generic_switch_sup,<0.32.0>]
+    messages: [{'$gen_cast',{new_client_accepted,{<<"R_4INgXh_KH0DshmDx9zUX3W8oME54CAchqe">>,{ok,<0.61.0>}}}}]
+    links: [<0.52.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 4181
+    stack_size: 24
+    reductions: 2178
+  neighbours:
+2014-01-09 11:28:56 =SUPERVISOR REPORT====
+     Supervisor: {local,generic_switch_sup}
+     Context:    child_terminated
+     Reason:     {undef,[{generic_switch_sip_router,async_outgoing_sip_message,[{200,<<"R_nzIau_17qSBjqms6Af006LrLGwpQ0qzac">>,{{ok,<0.60.0>}}}],[]},{generic_switch_sip_gateway,handle_cast,2,[{file,"src/generic_switch_sip_gateway.erl"},{line,34}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,607}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+     Offender:   [{pid,<0.58.0>},{name,sipGateway},{mfargs,{generic_switch_sip_gateway,start_link,[]}},{restart_type,permanent},{shutdown,2000},{child_type,worker}]
+
+2014-01-09 13:41:35 =ERROR REPORT====
+** Generic server generic_switch_sip_gateway terminating 
+** Last message in was {'$gen_cast',{new_client_accepted,{<<"1BCfoMgOxIRWxO8e78dDS1fmErM">>,{ok,<0.60.0>}}}}
+** When Server state == []
+** Reason for termination == 
+** {badarg,[{generic_switch_sip_gateway,handle_cast,2,[{file,"src/generic_switch_sip_gateway.erl"},{line,38}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,607}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+2014-01-09 13:41:35 =CRASH REPORT====
+  crasher:
+    initial call: generic_switch_sip_gateway:init/1
+    pid: <0.58.0>
+    registered_name: generic_switch_sip_gateway
+    exception exit: {{badarg,[{generic_switch_sip_gateway,handle_cast,2,[{file,"src/generic_switch_sip_gateway.erl"},{line,38}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,607}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]},[{gen_server,terminate,6,[{file,"gen_server.erl"},{line,747}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [generic_switch_sup,<0.32.0>]
+    messages: []
+    links: [<0.52.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 987
+    stack_size: 24
+    reductions: 1526
+  neighbours:
+2014-01-09 13:41:35 =SUPERVISOR REPORT====
+     Supervisor: {local,generic_switch_sup}
+     Context:    child_terminated
+     Reason:     {badarg,[{generic_switch_sip_gateway,handle_cast,2,[{file,"src/generic_switch_sip_gateway.erl"},{line,38}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,607}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+     Offender:   [{pid,<0.58.0>},{name,sipGateway},{mfargs,{generic_switch_sip_gateway,start_link,[]}},{restart_type,permanent},{shutdown,2000},{child_type,worker}]
+
+2014-01-09 14:10:22 =ERROR REPORT====
+** Generic server generic_switch_sip_router terminating 
+** Last message in was {'$gen_cast',{{sipmsg,undefined,{resp,200,<<"OK">>},undefined,undefined,undefined,[],undefined,undefined,undefined,undefined,undefined,undefined,[],[],undefined,[],[],undefined,undefined,[],undefined,undefined,undefined,undefined,undefined,undefined},<<"DdyM7d7cqNUFlz7FsXwmASmVBN0">>,{ok,<0.62.0>}}}
+** When Server state == {dialogRouterState,sipClientMapTable}
+** Reason for termination == 
+** {{badmatch,[[{sipDialog,<<"127.0.0.1">>,5070,{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<>>,{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"411e6O">>}],[]},<<"411e6O">>,undefined,17783822,[<<"rport">>,{<<"branch">>,<<"z9hG4bKFSLJ5">>},{<<"nksip">>,<<"3VLsbE">>}]}]]},[{generic_switch_sip_router,handle_cast,2,[{file,"src/generic_switch_sip_router.erl"},{line,66}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,607}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+2014-01-09 14:10:22 =CRASH REPORT====
+  crasher:
+    initial call: generic_switch_sip_router:init/1
+    pid: <0.56.0>
+    registered_name: generic_switch_sip_router
+    exception exit: {{{badmatch,[[{sipDialog,<<"127.0.0.1">>,5070,{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<>>,{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"411e6O">>}],[]},<<"411e6O">>,undefined,17783822,[<<"rport">>,{<<"branch">>,<<"z9hG4bKFSLJ5">>},{<<"nksip">>,<<"3VLsbE">>}]}]]},[{generic_switch_sip_router,handle_cast,2,[{file,"src/generic_switch_sip_router.erl"},{line,66}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,607}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]},[{gen_server,terminate,6,[{file,"gen_server.erl"},{line,747}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [generic_switch_sup,<0.34.0>]
+    messages: []
+    links: [<0.54.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 987
+    stack_size: 24
+    reductions: 3174
+  neighbours:
+2014-01-09 14:10:22 =SUPERVISOR REPORT====
+     Supervisor: {local,generic_switch_sup}
+     Context:    child_terminated
+     Reason:     {{badmatch,[[{sipDialog,<<"127.0.0.1">>,5070,{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<>>,{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"411e6O">>}],[]},<<"411e6O">>,undefined,17783822,[<<"rport">>,{<<"branch">>,<<"z9hG4bKFSLJ5">>},{<<"nksip">>,<<"3VLsbE">>}]}]]},[{generic_switch_sip_router,handle_cast,2,[{file,"src/generic_switch_sip_router.erl"},{line,66}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,607}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+     Offender:   [{pid,<0.56.0>},{name,sipDialogRouter},{mfargs,{generic_switch_sip_router,start_link,[sipClientMapTable]}},{restart_type,permanent},{shutdown,2000},{child_type,worker}]
+
+2014-01-09 14:10:49 =ERROR REPORT====
+** Generic server generic_switch_sip_router terminating 
+** Last message in was {'$gen_cast',{{sipmsg,undefined,{resp,200,<<"OK">>},undefined,undefined,undefined,[],undefined,undefined,undefined,undefined,undefined,undefined,[],[],undefined,[],[],undefined,undefined,[],undefined,undefined,undefined,undefined,undefined,undefined},<<"DdyM7d7cqNUFlz7FsXwmASmVBN0">>,{ok,<0.60.0>}}}
+** When Server state == {dialogRouterState,sipClientMapTable}
+** Reason for termination == 
+** {{badmatch,[[{sipDialog,<<"127.0.0.1">>,5070,{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<>>,{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"411e6O">>}],[]},<<"411e6O">>,undefined,17783822,[<<"rport">>,{<<"branch">>,<<"z9hG4bKFSLJ5">>},{<<"nksip">>,<<"3VLsbE">>}]}]]},[{generic_switch_sip_router,handle_cast,2,[{file,"src/generic_switch_sip_router.erl"},{line,66}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,607}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+2014-01-09 14:10:49 =CRASH REPORT====
+  crasher:
+    initial call: generic_switch_sip_router:init/1
+    pid: <0.54.0>
+    registered_name: generic_switch_sip_router
+    exception exit: {{{badmatch,[[{sipDialog,<<"127.0.0.1">>,5070,{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<>>,{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"411e6O">>}],[]},<<"411e6O">>,undefined,17783822,[<<"rport">>,{<<"branch">>,<<"z9hG4bKFSLJ5">>},{<<"nksip">>,<<"3VLsbE">>}]}]]},[{generic_switch_sip_router,handle_cast,2,[{file,"src/generic_switch_sip_router.erl"},{line,66}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,607}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]},[{gen_server,terminate,6,[{file,"gen_server.erl"},{line,747}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [generic_switch_sup,<0.32.0>]
+    messages: []
+    links: [<0.52.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 987
+    stack_size: 24
+    reductions: 3175
+  neighbours:
+2014-01-09 14:10:49 =SUPERVISOR REPORT====
+     Supervisor: {local,generic_switch_sup}
+     Context:    child_terminated
+     Reason:     {{badmatch,[[{sipDialog,<<"127.0.0.1">>,5070,{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<>>,{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"411e6O">>}],[]},<<"411e6O">>,undefined,17783822,[<<"rport">>,{<<"branch">>,<<"z9hG4bKFSLJ5">>},{<<"nksip">>,<<"3VLsbE">>}]}]]},[{generic_switch_sip_router,handle_cast,2,[{file,"src/generic_switch_sip_router.erl"},{line,66}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,607}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+     Offender:   [{pid,<0.54.0>},{name,sipDialogRouter},{mfargs,{generic_switch_sip_router,start_link,[sipClientMapTable]}},{restart_type,permanent},{shutdown,2000},{child_type,worker}]
+
+2014-01-09 14:13:48 =ERROR REPORT====
+** Generic server generic_switch_sip_router terminating 
+** Last message in was {'$gen_cast',{{sipmsg,undefined,{resp,200,<<"OK">>},undefined,undefined,undefined,[],undefined,undefined,undefined,undefined,undefined,undefined,[],[],undefined,[],[],undefined,undefined,[],undefined,undefined,undefined,undefined,undefined,undefined},<<"Dyk7WI3UJ1bfkv5hVJo4jDmdnmF">>,{ok,<0.60.0>}}}
+** When Server state == {dialogRouterState,sipClientMapTable}
+** Reason for termination == 
+** {{badmatch,[[{sipDialog,<<"127.0.0.1">>,5070,{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<>>,{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"2DbjOu">>}],[]},<<"2DbjOu">>,undefined,17783824,[<<"rport">>,{<<"branch">>,<<"z9hG4bK29VsWr">>},{<<"nksip">>,<<"1Jy2vp">>}]}]]},[{generic_switch_sip_router,handle_cast,2,[{file,"src/generic_switch_sip_router.erl"},{line,67}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,607}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+2014-01-09 14:13:48 =CRASH REPORT====
+  crasher:
+    initial call: generic_switch_sip_router:init/1
+    pid: <0.54.0>
+    registered_name: generic_switch_sip_router
+    exception exit: {{{badmatch,[[{sipDialog,<<"127.0.0.1">>,5070,{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<>>,{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"2DbjOu">>}],[]},<<"2DbjOu">>,undefined,17783824,[<<"rport">>,{<<"branch">>,<<"z9hG4bK29VsWr">>},{<<"nksip">>,<<"1Jy2vp">>}]}]]},[{generic_switch_sip_router,handle_cast,2,[{file,"src/generic_switch_sip_router.erl"},{line,67}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,607}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]},[{gen_server,terminate,6,[{file,"gen_server.erl"},{line,747}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [generic_switch_sup,<0.32.0>]
+    messages: []
+    links: [<0.52.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 987
+    stack_size: 24
+    reductions: 3179
+  neighbours:
+2014-01-09 14:13:48 =SUPERVISOR REPORT====
+     Supervisor: {local,generic_switch_sup}
+     Context:    child_terminated
+     Reason:     {{badmatch,[[{sipDialog,<<"127.0.0.1">>,5070,{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<>>,{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"2DbjOu">>}],[]},<<"2DbjOu">>,undefined,17783824,[<<"rport">>,{<<"branch">>,<<"z9hG4bK29VsWr">>},{<<"nksip">>,<<"1Jy2vp">>}]}]]},[{generic_switch_sip_router,handle_cast,2,[{file,"src/generic_switch_sip_router.erl"},{line,67}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,607}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+     Offender:   [{pid,<0.54.0>},{name,sipDialogRouter},{mfargs,{generic_switch_sip_router,start_link,[sipClientMapTable]}},{restart_type,permanent},{shutdown,2000},{child_type,worker}]
+
+2014-01-09 14:49:17 =ERROR REPORT====
+** Generic server generic_switch_sip_router terminating 
+** Last message in was {'$gen_cast',{{sipmsg,undefined,{resp,200,<<"OK">>},undefined,undefined,undefined,[],undefined,undefined,undefined,undefined,undefined,undefined,[],[],undefined,[],[],undefined,undefined,[],undefined,undefined,undefined,undefined,undefined,undefined},<<"Dyk7WI3UJ1bfkv5hVJo4jDmdnmF">>,{ok,<0.60.0>}}}
+** When Server state == {dialogRouterState,sipClientMapTable}
+** Reason for termination == 
+** {{badmatch,[[{sipDialog,<<"127.0.0.1">>,5070,{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<>>,{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"2DbjOu">>}],[]},<<"2DbjOu">>,undefined,17783824,[<<"rport">>,{<<"branch">>,<<"z9hG4bK29VsWr">>},{<<"nksip">>,<<"1Jy2vp">>}]}]]},[{generic_switch_sip_router,handle_cast,2,[{file,"src/generic_switch_sip_router.erl"},{line,65}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,607}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+2014-01-09 14:49:17 =CRASH REPORT====
+  crasher:
+    initial call: generic_switch_sip_router:init/1
+    pid: <0.54.0>
+    registered_name: generic_switch_sip_router
+    exception exit: {{{badmatch,[[{sipDialog,<<"127.0.0.1">>,5070,{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<>>,{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"2DbjOu">>}],[]},<<"2DbjOu">>,undefined,17783824,[<<"rport">>,{<<"branch">>,<<"z9hG4bK29VsWr">>},{<<"nksip">>,<<"1Jy2vp">>}]}]]},[{generic_switch_sip_router,handle_cast,2,[{file,"src/generic_switch_sip_router.erl"},{line,65}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,607}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]},[{gen_server,terminate,6,[{file,"gen_server.erl"},{line,747}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [generic_switch_sup,<0.32.0>]
+    messages: []
+    links: [<0.52.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 987
+    stack_size: 24
+    reductions: 3178
+  neighbours:
+2014-01-09 14:49:17 =SUPERVISOR REPORT====
+     Supervisor: {local,generic_switch_sup}
+     Context:    child_terminated
+     Reason:     {{badmatch,[[{sipDialog,<<"127.0.0.1">>,5070,{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<>>,{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"2DbjOu">>}],[]},<<"2DbjOu">>,undefined,17783824,[<<"rport">>,{<<"branch">>,<<"z9hG4bK29VsWr">>},{<<"nksip">>,<<"1Jy2vp">>}]}]]},[{generic_switch_sip_router,handle_cast,2,[{file,"src/generic_switch_sip_router.erl"},{line,65}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,607}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+     Offender:   [{pid,<0.54.0>},{name,sipDialogRouter},{mfargs,{generic_switch_sip_router,start_link,[sipClientMapTable]}},{restart_type,permanent},{shutdown,2000},{child_type,worker}]
+

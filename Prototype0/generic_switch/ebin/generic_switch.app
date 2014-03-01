@@ -1,0 +1,11 @@
+{application,generic_switch,
+             [{description,[]},
+              {vsn,"1"},
+              {registered,[]},
+              {applications,[kernel,stdlib,nksip,lager,basho]},
+              {mod,{generic_switch,[]}},
+              {env,[]},
+              {modules,[generic_switch_app,generic_switch_sip_gateway,
+                        generic_switch_sip_router,
+                        generic_switch_sip_transport_udp,
+                        generic_switch_sup]}]}.
