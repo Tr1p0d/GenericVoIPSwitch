@@ -1,4 +1,28 @@
-http://tools.ietf.org/html/rfc3680#section-4.7.1
-http://tools.ietf.org/search/rfc4235#section-3.7.1
-http://tools.ietf.org/html/rfc6026
+SIP:
+	http://tools.ietf.org/html/rfc3680#section-4.7.1
+	http://tools.ietf.org/search/rfc4235#section-3.7.1
+	http://tools.ietf.org/html/rfc6026
+
+SIP is layered protocol :
+	The lowest layer of SIP is its syntax and encoding.
+	
+	The second layer is the transport layer.  It defines how a client
+   	sends requests and receives responses and how a server receives
+   	requests and sends responses over the network.
+
+	The transaction layer
+   	has a client component (referred to as a client transaction) and a
+   	server component (referred to as a server transaction), each of which
+   	are represented by a finite state machine that is constructed to
+   	process a particular request.
+	
+	The layer above the transaction layer is called the transaction user
+   	(TU).  Each of the SIP entities, except the stateless proxy, is a
+   	transaction user.  When a TU wishes to send a request, it creates a
+   	client transaction instance and passes it the request along with the
+   	destination IP address, port, and transport to which to send the
+   	request. 	
+
+Implementation scope :
+	
 
