@@ -1,0 +1,1172 @@
+2014-01-05 00:11:27.825 [info] <0.6.0> Application lager started on node nonode@nohost
+2014-01-05 00:36:04.137 [info] <0.6.0> Application lager started on node nonode@nohost
+2014-01-05 00:36:04.139 [error] <0.54.0> Supervisor generic_switch_sup had child udpTransport started with generic_switch_transport_udp:start_link({5060,[binary]}) at undefined exit with reason {'EXIT',{undef,[{generic_switch_transport_udp,start_link,[{5060,[binary]}],[]},{supervisor,do_start_child,2,[{file,"supervisor.erl"},{line,303}]},{supervisor,start_children,3,[{file,"supervisor.erl"},{line,287}]},{supervisor,init_children,2,[{file,"supervisor.erl"},{line,253}]},{gen_server,init_it,6,[{file,"gen_server.erl"},{line,304}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}} in context start_error
+2014-01-05 00:37:05.532 [info] <0.6.0> Application lager started on node nonode@nohost
+2014-01-05 00:37:05.538 [error] <0.52.0> Supervisor generic_switch_sup had child sipDialogRouter started with generic_switch_sip_router:start_link(24595) at undefined exit with reason {'EXIT',{function_clause,[{generic_switch_sip_router,start_link,[24595],[{file,"src/generic_switch_sip_router.erl"},{line,20}]},{supervisor,do_start_child,2,[{file,"supervisor.erl"},{line,303}]},{supervisor,start_children,3,[{file,"supervisor.erl"},{line,287}]},{supervisor,init_children,2,[{file,"supervisor.erl"},{line,253}]},{gen_server,init_it,6,[{file,"gen_server.erl"},{line,304}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}} in context start_error
+2014-01-05 00:40:21.567 [info] <0.6.0> Application lager started on node nonode@nohost
+2014-01-05 00:42:06.389 [info] <0.53.0>@generic_switch_sip_transport_udp:init:25 sip udp transport had started
+2014-01-05 00:42:06.389 [info] <0.6.0> Application lager started on node nonode@nohost
+2014-01-05 00:42:06.391 [info] <0.54.0>@generic_switch_sip_router:init:24 sip dialog router had started
+2014-01-05 00:45:12.244 [info] <0.53.0>@generic_switch_sip_transport_udp:init:25 sip udp transport had started
+2014-01-05 00:45:12.244 [info] <0.6.0> Application lager started on node nonode@nohost
+2014-01-05 00:45:12.245 [info] <0.54.0>@generic_switch_sip_router:init:26 sip dialog router had started
+2014-01-05 00:45:19.137 [warning] <0.53.0>@generic_switch_sip_transport_udp:terminate:71 shutting down the UDP transport
+2014-01-05 00:45:19.137 [error] <0.53.0> gen_server generic_switch_sip_transport_udp terminated with reason: call to undefined function generic_switch_sip_router:async_incommig_message/1 from generic_switch_sip_transport_udp:handle_info/2 line 51
+2014-01-05 00:45:19.138 [error] <0.53.0> CRASH REPORT Process generic_switch_sip_transport_udp with 0 neighbours exited with reason: call to undefined function generic_switch_sip_router:async_incommig_message({sipmsg,<<"R_1ZeZ4O_81msAUacGD2X1VYesuka4Ahjf8Q">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,...},...}) in gen_server:terminate/6 line 747
+2014-01-05 00:45:19.138 [error] <0.52.0> Supervisor generic_switch_sup had child udpTransport started with generic_switch_sip_transport_udp:start_link({5060,[binary]}) at <0.53.0> exit with reason call to undefined function generic_switch_sip_router:async_incommig_message({sipmsg,<<"R_1ZeZ4O_81msAUacGD2X1VYesuka4Ahjf8Q">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,...},...}) in context child_terminated
+2014-01-05 00:45:19.141 [info] <0.56.0>@generic_switch_sip_transport_udp:init:25 sip udp transport had started
+2014-01-05 00:45:19.631 [warning] <0.56.0>@generic_switch_sip_transport_udp:terminate:71 shutting down the UDP transport
+2014-01-05 00:45:19.631 [error] <0.56.0> gen_server generic_switch_sip_transport_udp terminated with reason: call to undefined function generic_switch_sip_router:async_incommig_message/1 from generic_switch_sip_transport_udp:handle_info/2 line 51
+2014-01-05 00:45:19.631 [error] <0.56.0> CRASH REPORT Process generic_switch_sip_transport_udp with 0 neighbours exited with reason: call to undefined function generic_switch_sip_router:async_incommig_message({sipmsg,<<"R_2kXBpU_81msAUacGD2X1VYesuka4Ahjf8Q">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,...},...}) in gen_server:terminate/6 line 747
+2014-01-05 00:45:19.632 [error] <0.52.0> Supervisor generic_switch_sup had child udpTransport started with generic_switch_sip_transport_udp:start_link({5060,[binary]}) at <0.56.0> exit with reason call to undefined function generic_switch_sip_router:async_incommig_message({sipmsg,<<"R_2kXBpU_81msAUacGD2X1VYesuka4Ahjf8Q">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,...},...}) in context child_terminated
+2014-01-05 00:45:19.632 [info] <0.57.0>@generic_switch_sip_transport_udp:init:25 sip udp transport had started
+2014-01-05 00:45:20.632 [warning] <0.57.0>@generic_switch_sip_transport_udp:terminate:71 shutting down the UDP transport
+2014-01-05 00:45:20.632 [error] <0.57.0> gen_server generic_switch_sip_transport_udp terminated with reason: call to undefined function generic_switch_sip_router:async_incommig_message/1 from generic_switch_sip_transport_udp:handle_info/2 line 51
+2014-01-05 00:45:20.632 [error] <0.57.0> CRASH REPORT Process generic_switch_sip_transport_udp with 0 neighbours exited with reason: call to undefined function generic_switch_sip_router:async_incommig_message({sipmsg,<<"R_4C1YHW_81msAUacGD2X1VYesuka4Ahjf8Q">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,...},...}) in gen_server:terminate/6 line 747
+2014-01-05 00:45:20.633 [error] <0.52.0> Supervisor generic_switch_sup had child udpTransport started with generic_switch_sip_transport_udp:start_link({5060,[binary]}) at <0.57.0> exit with reason call to undefined function generic_switch_sip_router:async_incommig_message({sipmsg,<<"R_4C1YHW_81msAUacGD2X1VYesuka4Ahjf8Q">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,...},...}) in context child_terminated
+2014-01-05 00:45:20.633 [info] <0.58.0>@generic_switch_sip_transport_udp:init:25 sip udp transport had started
+2014-01-05 00:45:22.632 [warning] <0.58.0>@generic_switch_sip_transport_udp:terminate:71 shutting down the UDP transport
+2014-01-05 00:45:22.633 [error] <0.58.0> gen_server generic_switch_sip_transport_udp terminated with reason: call to undefined function generic_switch_sip_router:async_incommig_message/1 from generic_switch_sip_transport_udp:handle_info/2 line 51
+2014-01-05 00:45:22.633 [error] <0.58.0> CRASH REPORT Process generic_switch_sip_transport_udp with 0 neighbours exited with reason: call to undefined function generic_switch_sip_router:async_incommig_message({sipmsg,<<"R_224S6y_81msAUacGD2X1VYesuka4Ahjf8Q">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,...},...}) in gen_server:terminate/6 line 747
+2014-01-05 00:45:22.634 [error] <0.52.0> Supervisor generic_switch_sup had child udpTransport started with generic_switch_sip_transport_udp:start_link({5060,[binary]}) at <0.58.0> exit with reason call to undefined function generic_switch_sip_router:async_incommig_message({sipmsg,<<"R_224S6y_81msAUacGD2X1VYesuka4Ahjf8Q">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,...},...}) in context child_terminated
+2014-01-05 00:45:22.634 [info] <0.59.0>@generic_switch_sip_transport_udp:init:25 sip udp transport had started
+2014-01-05 00:45:26.634 [warning] <0.59.0>@generic_switch_sip_transport_udp:terminate:71 shutting down the UDP transport
+2014-01-05 00:45:26.634 [error] <0.59.0> gen_server generic_switch_sip_transport_udp terminated with reason: call to undefined function generic_switch_sip_router:async_incommig_message/1 from generic_switch_sip_transport_udp:handle_info/2 line 51
+2014-01-05 00:45:26.634 [error] <0.59.0> CRASH REPORT Process generic_switch_sip_transport_udp with 0 neighbours exited with reason: call to undefined function generic_switch_sip_router:async_incommig_message({sipmsg,<<"R_ZwQWJ_81msAUacGD2X1VYesuka4Ahjf8Q">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,...},...}) in gen_server:terminate/6 line 747
+2014-01-05 00:45:26.634 [error] <0.52.0> Supervisor generic_switch_sup had child udpTransport started with generic_switch_sip_transport_udp:start_link({5060,[binary]}) at <0.59.0> exit with reason call to undefined function generic_switch_sip_router:async_incommig_message({sipmsg,<<"R_ZwQWJ_81msAUacGD2X1VYesuka4Ahjf8Q">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,...},...}) in context child_terminated
+2014-01-05 00:45:26.635 [info] <0.60.0>@generic_switch_sip_transport_udp:init:25 sip udp transport had started
+2014-01-05 00:45:30.634 [warning] <0.60.0>@generic_switch_sip_transport_udp:terminate:71 shutting down the UDP transport
+2014-01-05 00:45:30.635 [error] <0.60.0> gen_server generic_switch_sip_transport_udp terminated with reason: call to undefined function generic_switch_sip_router:async_incommig_message/1 from generic_switch_sip_transport_udp:handle_info/2 line 51
+2014-01-05 00:45:30.635 [error] <0.60.0> CRASH REPORT Process generic_switch_sip_transport_udp with 0 neighbours exited with reason: call to undefined function generic_switch_sip_router:async_incommig_message({sipmsg,<<"R_2SPDQf_81msAUacGD2X1VYesuka4Ahjf8Q">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,...},...}) in gen_server:terminate/6 line 747
+2014-01-05 00:45:30.637 [error] <0.52.0> Supervisor generic_switch_sup had child udpTransport started with generic_switch_sip_transport_udp:start_link({5060,[binary]}) at <0.60.0> exit with reason call to undefined function generic_switch_sip_router:async_incommig_message({sipmsg,<<"R_2SPDQf_81msAUacGD2X1VYesuka4Ahjf8Q">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,...},...}) in context child_terminated
+2014-01-05 00:45:30.638 [info] <0.61.0>@generic_switch_sip_transport_udp:init:25 sip udp transport had started
+2014-01-05 00:45:34.636 [warning] <0.61.0>@generic_switch_sip_transport_udp:terminate:71 shutting down the UDP transport
+2014-01-05 00:45:34.636 [error] <0.61.0> gen_server generic_switch_sip_transport_udp terminated with reason: call to undefined function generic_switch_sip_router:async_incommig_message/1 from generic_switch_sip_transport_udp:handle_info/2 line 51
+2014-01-05 00:45:34.636 [error] <0.61.0> CRASH REPORT Process generic_switch_sip_transport_udp with 0 neighbours exited with reason: call to undefined function generic_switch_sip_router:async_incommig_message({sipmsg,<<"R_IHOBB_81msAUacGD2X1VYesuka4Ahjf8Q">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,...},...}) in gen_server:terminate/6 line 747
+2014-01-05 00:45:34.637 [error] <0.52.0> Supervisor generic_switch_sup had child udpTransport started with generic_switch_sip_transport_udp:start_link({5060,[binary]}) at <0.61.0> exit with reason call to undefined function generic_switch_sip_router:async_incommig_message({sipmsg,<<"R_IHOBB_81msAUacGD2X1VYesuka4Ahjf8Q">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,...},...}) in context child_terminated
+2014-01-05 00:45:34.637 [info] <0.62.0>@generic_switch_sip_transport_udp:init:25 sip udp transport had started
+2014-01-05 00:45:38.637 [warning] <0.62.0>@generic_switch_sip_transport_udp:terminate:71 shutting down the UDP transport
+2014-01-05 00:45:38.637 [error] <0.62.0> gen_server generic_switch_sip_transport_udp terminated with reason: call to undefined function generic_switch_sip_router:async_incommig_message/1 from generic_switch_sip_transport_udp:handle_info/2 line 51
+2014-01-05 00:45:38.637 [error] <0.62.0> CRASH REPORT Process generic_switch_sip_transport_udp with 0 neighbours exited with reason: call to undefined function generic_switch_sip_router:async_incommig_message({sipmsg,<<"R_27mMat_81msAUacGD2X1VYesuka4Ahjf8Q">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,...},...}) in gen_server:terminate/6 line 747
+2014-01-05 00:45:38.638 [error] <0.52.0> Supervisor generic_switch_sup had child udpTransport started with generic_switch_sip_transport_udp:start_link({5060,[binary]}) at <0.62.0> exit with reason call to undefined function generic_switch_sip_router:async_incommig_message({sipmsg,<<"R_27mMat_81msAUacGD2X1VYesuka4Ahjf8Q">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,...},...}) in context child_terminated
+2014-01-05 00:45:38.638 [info] <0.63.0>@generic_switch_sip_transport_udp:init:25 sip udp transport had started
+2014-01-05 00:46:13.913 [warning] <0.63.0>@generic_switch_sip_transport_udp:terminate:71 shutting down the UDP transport
+2014-01-05 00:46:13.913 [error] <0.63.0> gen_server generic_switch_sip_transport_udp terminated with reason: call to undefined function generic_switch_sip_router:async_incommig_message/1 from generic_switch_sip_transport_udp:handle_info/2 line 51
+2014-01-05 00:46:13.914 [error] <0.63.0> CRASH REPORT Process generic_switch_sip_transport_udp with 0 neighbours exited with reason: call to undefined function generic_switch_sip_router:async_incommig_message({sipmsg,<<"R_4bnZrg_NxMStQxvce4xi3xSHdWXiFYRmC7">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,...},...}) in gen_server:terminate/6 line 747
+2014-01-05 00:46:13.918 [error] <0.52.0> Supervisor generic_switch_sup had child udpTransport started with generic_switch_sip_transport_udp:start_link({5060,[binary]}) at <0.63.0> exit with reason call to undefined function generic_switch_sip_router:async_incommig_message({sipmsg,<<"R_4bnZrg_NxMStQxvce4xi3xSHdWXiFYRmC7">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,...},...}) in context child_terminated
+2014-01-05 00:46:13.918 [info] <0.65.0>@generic_switch_sip_transport_udp:init:25 sip udp transport had started
+2014-01-05 00:46:14.417 [warning] <0.65.0>@generic_switch_sip_transport_udp:terminate:71 shutting down the UDP transport
+2014-01-05 00:46:14.417 [error] <0.65.0> gen_server generic_switch_sip_transport_udp terminated with reason: call to undefined function generic_switch_sip_router:async_incommig_message/1 from generic_switch_sip_transport_udp:handle_info/2 line 51
+2014-01-05 00:46:14.417 [error] <0.65.0> CRASH REPORT Process generic_switch_sip_transport_udp with 0 neighbours exited with reason: call to undefined function generic_switch_sip_router:async_incommig_message({sipmsg,<<"R_3VGoa9_NxMStQxvce4xi3xSHdWXiFYRmC7">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,...},...}) in gen_server:terminate/6 line 747
+2014-01-05 00:46:14.418 [error] <0.52.0> Supervisor generic_switch_sup had child udpTransport started with generic_switch_sip_transport_udp:start_link({5060,[binary]}) at <0.65.0> exit with reason call to undefined function generic_switch_sip_router:async_incommig_message({sipmsg,<<"R_3VGoa9_NxMStQxvce4xi3xSHdWXiFYRmC7">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,...},...}) in context child_terminated
+2014-01-05 00:46:14.418 [info] <0.66.0>@generic_switch_sip_transport_udp:init:25 sip udp transport had started
+2014-01-05 00:48:17.844 [warning] <0.66.0>@generic_switch_sip_transport_udp:terminate:71 shutting down the UDP transport
+2014-01-05 00:48:17.845 [error] <0.66.0> gen_server generic_switch_sip_transport_udp terminated with reason: call to undefined function generic_switch_sip_router:async_incommig_message/1 from generic_switch_sip_transport_udp:handle_info/2 line 51
+2014-01-05 00:48:17.846 [error] <0.66.0> CRASH REPORT Process generic_switch_sip_transport_udp with 0 neighbours exited with reason: call to undefined function generic_switch_sip_router:async_incommig_message({sipmsg,<<"R_11Y6wO_DSYvvzk0q48zU1vDCKOs2CRLm6a">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,...},...}) in gen_server:terminate/6 line 747
+2014-01-05 00:48:17.847 [error] <0.52.0> Supervisor generic_switch_sup had child udpTransport started with generic_switch_sip_transport_udp:start_link({5060,[binary]}) at <0.66.0> exit with reason call to undefined function generic_switch_sip_router:async_incommig_message({sipmsg,<<"R_11Y6wO_DSYvvzk0q48zU1vDCKOs2CRLm6a">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,...},...}) in context child_terminated
+2014-01-05 00:48:17.847 [info] <0.67.0>@generic_switch_sip_transport_udp:init:25 sip udp transport had started
+2014-01-05 00:48:18.348 [warning] <0.67.0>@generic_switch_sip_transport_udp:terminate:71 shutting down the UDP transport
+2014-01-05 00:48:18.349 [error] <0.67.0> gen_server generic_switch_sip_transport_udp terminated with reason: call to undefined function generic_switch_sip_router:async_incommig_message/1 from generic_switch_sip_transport_udp:handle_info/2 line 51
+2014-01-05 00:48:18.351 [error] <0.67.0> CRASH REPORT Process generic_switch_sip_transport_udp with 0 neighbours exited with reason: call to undefined function generic_switch_sip_router:async_incommig_message({sipmsg,<<"R_4VpgL6_DSYvvzk0q48zU1vDCKOs2CRLm6a">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,...},...}) in gen_server:terminate/6 line 747
+2014-01-05 00:48:18.351 [error] <0.52.0> Supervisor generic_switch_sup had child udpTransport started with generic_switch_sip_transport_udp:start_link({5060,[binary]}) at <0.67.0> exit with reason call to undefined function generic_switch_sip_router:async_incommig_message({sipmsg,<<"R_4VpgL6_DSYvvzk0q48zU1vDCKOs2CRLm6a">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,...},...}) in context child_terminated
+2014-01-05 00:48:18.351 [info] <0.68.0>@generic_switch_sip_transport_udp:init:25 sip udp transport had started
+2014-01-05 00:49:03.424 [info] <0.53.0>@generic_switch_sip_transport_udp:init:25 sip udp transport had started
+2014-01-05 00:49:03.424 [info] <0.6.0> Application lager started on node nonode@nohost
+2014-01-05 00:49:03.425 [info] <0.54.0>@generic_switch_sip_router:init:26 sip dialog router had started
+2014-01-05 00:49:06.400 [notice] <0.54.0>@generic_switch_sip_router:handle_cast:30 got sip message {sipmsg,<<"R_4TtYI8_BHHOBoWAzqVs6NoR57SVzwXH6Fz">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK1mpZkR">>},{<<"nksip">>,<<"1Xmabt">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"A2s51">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"BHHOBoWAzqVs6NoR57SVzwXH6Fz">>,17391852,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"A2s51">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388879346395042}
+2014-01-05 00:49:10.392 [notice] <0.54.0>@generic_switch_sip_router:handle_cast:30 got sip message {sipmsg,<<"R_3yAWuB_BHHOBoWAzqVs6NoR57SVzwXH6Fz">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK1mpZkR">>},{<<"nksip">>,<<"1Xmabt">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"A2s51">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"BHHOBoWAzqVs6NoR57SVzwXH6Fz">>,17391852,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"A2s51">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388879350392261}
+2014-01-05 00:49:14.394 [notice] <0.54.0>@generic_switch_sip_router:handle_cast:30 got sip message {sipmsg,<<"R_4YdLZx_BHHOBoWAzqVs6NoR57SVzwXH6Fz">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK1mpZkR">>},{<<"nksip">>,<<"1Xmabt">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"A2s51">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"BHHOBoWAzqVs6NoR57SVzwXH6Fz">>,17391852,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"A2s51">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388879354394165}
+2014-01-05 00:49:18.394 [notice] <0.54.0>@generic_switch_sip_router:handle_cast:30 got sip message {sipmsg,<<"R_32cRss_BHHOBoWAzqVs6NoR57SVzwXH6Fz">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK1mpZkR">>},{<<"nksip">>,<<"1Xmabt">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"A2s51">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"BHHOBoWAzqVs6NoR57SVzwXH6Fz">>,17391852,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"A2s51">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388879358394534}
+2014-01-05 00:49:22.396 [notice] <0.54.0>@generic_switch_sip_router:handle_cast:30 got sip message {sipmsg,<<"R_2daCRl_BHHOBoWAzqVs6NoR57SVzwXH6Fz">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK1mpZkR">>},{<<"nksip">>,<<"1Xmabt">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"A2s51">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"BHHOBoWAzqVs6NoR57SVzwXH6Fz">>,17391852,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"A2s51">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388879362396156}
+2014-01-05 00:49:26.397 [notice] <0.54.0>@generic_switch_sip_router:handle_cast:30 got sip message {sipmsg,<<"R_dF8V8_BHHOBoWAzqVs6NoR57SVzwXH6Fz">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK1mpZkR">>},{<<"nksip">>,<<"1Xmabt">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"A2s51">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"BHHOBoWAzqVs6NoR57SVzwXH6Fz">>,17391852,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"A2s51">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388879366397168}
+2014-01-05 00:49:26.898 [notice] <0.54.0>@generic_switch_sip_router:handle_cast:30 got sip message {sipmsg,<<"R_1sYrut_Yeymc33DMajYun5VjK9wC1bmGpa">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5080,[<<"rport">>,{<<"branch">>,<<"z9hG4bK3vDPiB">>},{<<"nksip">>,<<"1SYieu">>}]}],{uri,<<>>,sip,<<"alice">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"3XZbrZ">>}],[]},{uri,<<>>,sip,<<"alice">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"Yeymc33DMajYun5VjK9wC1bmGpa">>,17391853,'REGISTER',70,[],[{uri,<<>>,sip,<<"alice">>,<<>>,<<"127.0.0.1">>,5080,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"3XZbrZ">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388879366898143}
+2014-01-05 00:49:27.399 [notice] <0.54.0>@generic_switch_sip_router:handle_cast:30 got sip message {sipmsg,<<"R_68THl_Yeymc33DMajYun5VjK9wC1bmGpa">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5080,[<<"rport">>,{<<"branch">>,<<"z9hG4bK3vDPiB">>},{<<"nksip">>,<<"1SYieu">>}]}],{uri,<<>>,sip,<<"alice">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"3XZbrZ">>}],[]},{uri,<<>>,sip,<<"alice">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"Yeymc33DMajYun5VjK9wC1bmGpa">>,17391853,'REGISTER',70,[],[{uri,<<>>,sip,<<"alice">>,<<>>,<<"127.0.0.1">>,5080,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"3XZbrZ">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388879367399210}
+2014-01-05 00:49:28.400 [notice] <0.54.0>@generic_switch_sip_router:handle_cast:30 got sip message {sipmsg,<<"R_4P2u4e_Yeymc33DMajYun5VjK9wC1bmGpa">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5080,[<<"rport">>,{<<"branch">>,<<"z9hG4bK3vDPiB">>},{<<"nksip">>,<<"1SYieu">>}]}],{uri,<<>>,sip,<<"alice">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"3XZbrZ">>}],[]},{uri,<<>>,sip,<<"alice">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"Yeymc33DMajYun5VjK9wC1bmGpa">>,17391853,'REGISTER',70,[],[{uri,<<>>,sip,<<"alice">>,<<>>,<<"127.0.0.1">>,5080,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"3XZbrZ">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388879368400256}
+2014-01-05 00:49:30.401 [notice] <0.54.0>@generic_switch_sip_router:handle_cast:30 got sip message {sipmsg,<<"R_iAqw1_Yeymc33DMajYun5VjK9wC1bmGpa">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5080,[<<"rport">>,{<<"branch">>,<<"z9hG4bK3vDPiB">>},{<<"nksip">>,<<"1SYieu">>}]}],{uri,<<>>,sip,<<"alice">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"3XZbrZ">>}],[]},{uri,<<>>,sip,<<"alice">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"Yeymc33DMajYun5VjK9wC1bmGpa">>,17391853,'REGISTER',70,[],[{uri,<<>>,sip,<<"alice">>,<<>>,<<"127.0.0.1">>,5080,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"3XZbrZ">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388879370401229}
+2014-01-05 00:49:34.403 [notice] <0.54.0>@generic_switch_sip_router:handle_cast:30 got sip message {sipmsg,<<"R_iOupy_Yeymc33DMajYun5VjK9wC1bmGpa">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5080,[<<"rport">>,{<<"branch">>,<<"z9hG4bK3vDPiB">>},{<<"nksip">>,<<"1SYieu">>}]}],{uri,<<>>,sip,<<"alice">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"3XZbrZ">>}],[]},{uri,<<>>,sip,<<"alice">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"Yeymc33DMajYun5VjK9wC1bmGpa">>,17391853,'REGISTER',70,[],[{uri,<<>>,sip,<<"alice">>,<<>>,<<"127.0.0.1">>,5080,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"3XZbrZ">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388879374403223}
+2014-01-05 00:49:38.404 [notice] <0.54.0>@generic_switch_sip_router:handle_cast:30 got sip message {sipmsg,<<"R_Ny9YX_Yeymc33DMajYun5VjK9wC1bmGpa">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5080,[<<"rport">>,{<<"branch">>,<<"z9hG4bK3vDPiB">>},{<<"nksip">>,<<"1SYieu">>}]}],{uri,<<>>,sip,<<"alice">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"3XZbrZ">>}],[]},{uri,<<>>,sip,<<"alice">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"Yeymc33DMajYun5VjK9wC1bmGpa">>,17391853,'REGISTER',70,[],[{uri,<<>>,sip,<<"alice">>,<<>>,<<"127.0.0.1">>,5080,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"3XZbrZ">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388879378404400}
+2014-01-05 00:49:42.406 [notice] <0.54.0>@generic_switch_sip_router:handle_cast:30 got sip message {sipmsg,<<"R_1JjV4U_Yeymc33DMajYun5VjK9wC1bmGpa">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5080,[<<"rport">>,{<<"branch">>,<<"z9hG4bK3vDPiB">>},{<<"nksip">>,<<"1SYieu">>}]}],{uri,<<>>,sip,<<"alice">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"3XZbrZ">>}],[]},{uri,<<>>,sip,<<"alice">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"Yeymc33DMajYun5VjK9wC1bmGpa">>,17391853,'REGISTER',70,[],[{uri,<<>>,sip,<<"alice">>,<<>>,<<"127.0.0.1">>,5080,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"3XZbrZ">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388879382406300}
+2014-01-05 00:49:46.407 [notice] <0.54.0>@generic_switch_sip_router:handle_cast:30 got sip message {sipmsg,<<"R_yYTP7_Yeymc33DMajYun5VjK9wC1bmGpa">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5080,[<<"rport">>,{<<"branch">>,<<"z9hG4bK3vDPiB">>},{<<"nksip">>,<<"1SYieu">>}]}],{uri,<<>>,sip,<<"alice">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"3XZbrZ">>}],[]},{uri,<<>>,sip,<<"alice">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"Yeymc33DMajYun5VjK9wC1bmGpa">>,17391853,'REGISTER',70,[],[{uri,<<>>,sip,<<"alice">>,<<>>,<<"127.0.0.1">>,5080,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"3XZbrZ">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388879386407255}
+2014-01-05 00:49:50.408 [notice] <0.54.0>@generic_switch_sip_router:handle_cast:30 got sip message {sipmsg,<<"R_4SiUxl_Yeymc33DMajYun5VjK9wC1bmGpa">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5080,[<<"rport">>,{<<"branch">>,<<"z9hG4bK3vDPiB">>},{<<"nksip">>,<<"1SYieu">>}]}],{uri,<<>>,sip,<<"alice">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"3XZbrZ">>}],[]},{uri,<<>>,sip,<<"alice">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"Yeymc33DMajYun5VjK9wC1bmGpa">>,17391853,'REGISTER',70,[],[{uri,<<>>,sip,<<"alice">>,<<>>,<<"127.0.0.1">>,5080,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"3XZbrZ">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388879390408440}
+2014-01-05 00:49:54.410 [notice] <0.54.0>@generic_switch_sip_router:handle_cast:30 got sip message {sipmsg,<<"R_3GZsxN_Yeymc33DMajYun5VjK9wC1bmGpa">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5080,[<<"rport">>,{<<"branch">>,<<"z9hG4bK3vDPiB">>},{<<"nksip">>,<<"1SYieu">>}]}],{uri,<<>>,sip,<<"alice">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"3XZbrZ">>}],[]},{uri,<<>>,sip,<<"alice">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"Yeymc33DMajYun5VjK9wC1bmGpa">>,17391853,'REGISTER',70,[],[{uri,<<>>,sip,<<"alice">>,<<>>,<<"127.0.0.1">>,5080,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"3XZbrZ">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388879394409702}
+2014-01-05 00:49:58.411 [notice] <0.54.0>@generic_switch_sip_router:handle_cast:30 got sip message {sipmsg,<<"R_1EB8l6_Yeymc33DMajYun5VjK9wC1bmGpa">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5080,[<<"rport">>,{<<"branch">>,<<"z9hG4bK3vDPiB">>},{<<"nksip">>,<<"1SYieu">>}]}],{uri,<<>>,sip,<<"alice">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"3XZbrZ">>}],[]},{uri,<<>>,sip,<<"alice">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"Yeymc33DMajYun5VjK9wC1bmGpa">>,17391853,'REGISTER',70,[],[{uri,<<>>,sip,<<"alice">>,<<>>,<<"127.0.0.1">>,5080,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"3XZbrZ">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388879398411421}
+2014-01-05 01:11:50.195 [info] <0.53.0>@generic_switch_sip_transport_udp:init:25 sip udp transport had started
+2014-01-05 01:11:50.195 [info] <0.6.0> Application lager started on node nonode@nohost
+2014-01-05 01:11:50.196 [info] <0.54.0>@generic_switch_sip_router:init:26 sip dialog router had started
+2014-01-05 01:11:54.494 [notice] <0.54.0>@generic_switch_sip_router:handle_cast:30 got sip message {sipmsg,<<"R_2kzQeC_YU48oB4TV2IqPBvaSk3ZkiGgX9c">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK1MLEEv">>},{<<"nksip">>,<<"2zZ3OT">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"1cgEQM">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"YU48oB4TV2IqPBvaSk3ZkiGgX9c">>,17391854,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"1cgEQM">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388880714490545}
+2014-01-05 01:11:54.494 [info] <0.54.0>@generic_switch_sip_router:handle_cast:60  ID <<"R_2kzQeC_YU48oB4TV2IqPBvaSk3ZkiGgX9c">>
+ Class {req,'REGISTER'}
+ Ruri {uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]}
+ Vias [{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK1MLEEv">>},{<<"nksip">>,<<"2zZ3OT">>}]}]
+ Event undefined
+ Headers [{<<"User-Agent">>,<<"NkSIP 0.1.0">>}]
+ Candidate <<>>
+2014-01-05 01:11:54.989 [notice] <0.54.0>@generic_switch_sip_router:handle_cast:30 got sip message {sipmsg,<<"R_2Rz56p_YU48oB4TV2IqPBvaSk3ZkiGgX9c">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK1MLEEv">>},{<<"nksip">>,<<"2zZ3OT">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"1cgEQM">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"YU48oB4TV2IqPBvaSk3ZkiGgX9c">>,17391854,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"1cgEQM">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388880714989418}
+2014-01-05 01:11:54.990 [info] <0.54.0>@generic_switch_sip_router:handle_cast:60  ID <<"R_2Rz56p_YU48oB4TV2IqPBvaSk3ZkiGgX9c">>
+ Class {req,'REGISTER'}
+ Ruri {uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]}
+ Vias [{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK1MLEEv">>},{<<"nksip">>,<<"2zZ3OT">>}]}]
+ Event undefined
+ Headers [{<<"User-Agent">>,<<"NkSIP 0.1.0">>}]
+ Candidate <<>>
+2014-01-05 01:11:55.990 [notice] <0.54.0>@generic_switch_sip_router:handle_cast:30 got sip message {sipmsg,<<"R_1XMPQw_YU48oB4TV2IqPBvaSk3ZkiGgX9c">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK1MLEEv">>},{<<"nksip">>,<<"2zZ3OT">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"1cgEQM">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"YU48oB4TV2IqPBvaSk3ZkiGgX9c">>,17391854,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"1cgEQM">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388880715990241}
+2014-01-05 01:11:55.990 [info] <0.54.0>@generic_switch_sip_router:handle_cast:60  ID <<"R_1XMPQw_YU48oB4TV2IqPBvaSk3ZkiGgX9c">>
+ Class {req,'REGISTER'}
+ Ruri {uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]}
+ Vias [{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK1MLEEv">>},{<<"nksip">>,<<"2zZ3OT">>}]}]
+ Event undefined
+ Headers [{<<"User-Agent">>,<<"NkSIP 0.1.0">>}]
+ Candidate <<>>
+2014-01-05 01:11:57.992 [notice] <0.54.0>@generic_switch_sip_router:handle_cast:30 got sip message {sipmsg,<<"R_2ECsy1_YU48oB4TV2IqPBvaSk3ZkiGgX9c">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK1MLEEv">>},{<<"nksip">>,<<"2zZ3OT">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"1cgEQM">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"YU48oB4TV2IqPBvaSk3ZkiGgX9c">>,17391854,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"1cgEQM">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388880717991617}
+2014-01-05 01:11:57.992 [info] <0.54.0>@generic_switch_sip_router:handle_cast:60  ID <<"R_2ECsy1_YU48oB4TV2IqPBvaSk3ZkiGgX9c">>
+ Class {req,'REGISTER'}
+ Ruri {uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]}
+ Vias [{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK1MLEEv">>},{<<"nksip">>,<<"2zZ3OT">>}]}]
+ Event undefined
+ Headers [{<<"User-Agent">>,<<"NkSIP 0.1.0">>}]
+ Candidate <<>>
+2014-01-05 01:12:01.992 [notice] <0.54.0>@generic_switch_sip_router:handle_cast:30 got sip message {sipmsg,<<"R_4YPldY_YU48oB4TV2IqPBvaSk3ZkiGgX9c">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK1MLEEv">>},{<<"nksip">>,<<"2zZ3OT">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"1cgEQM">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"YU48oB4TV2IqPBvaSk3ZkiGgX9c">>,17391854,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"1cgEQM">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388880721992452}
+2014-01-05 01:12:01.993 [info] <0.54.0>@generic_switch_sip_router:handle_cast:60  ID <<"R_4YPldY_YU48oB4TV2IqPBvaSk3ZkiGgX9c">>
+ Class {req,'REGISTER'}
+ Ruri {uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]}
+ Vias [{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK1MLEEv">>},{<<"nksip">>,<<"2zZ3OT">>}]}]
+ Event undefined
+ Headers [{<<"User-Agent">>,<<"NkSIP 0.1.0">>}]
+ Candidate <<>>
+2014-01-05 01:12:05.994 [notice] <0.54.0>@generic_switch_sip_router:handle_cast:30 got sip message {sipmsg,<<"R_YZu3z_YU48oB4TV2IqPBvaSk3ZkiGgX9c">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK1MLEEv">>},{<<"nksip">>,<<"2zZ3OT">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"1cgEQM">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"YU48oB4TV2IqPBvaSk3ZkiGgX9c">>,17391854,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"1cgEQM">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388880725993537}
+2014-01-05 01:12:05.994 [info] <0.54.0>@generic_switch_sip_router:handle_cast:60  ID <<"R_YZu3z_YU48oB4TV2IqPBvaSk3ZkiGgX9c">>
+ Class {req,'REGISTER'}
+ Ruri {uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]}
+ Vias [{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK1MLEEv">>},{<<"nksip">>,<<"2zZ3OT">>}]}]
+ Event undefined
+ Headers [{<<"User-Agent">>,<<"NkSIP 0.1.0">>}]
+ Candidate <<>>
+2014-01-05 01:12:09.994 [notice] <0.54.0>@generic_switch_sip_router:handle_cast:30 got sip message {sipmsg,<<"R_40h8nk_YU48oB4TV2IqPBvaSk3ZkiGgX9c">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK1MLEEv">>},{<<"nksip">>,<<"2zZ3OT">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"1cgEQM">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"YU48oB4TV2IqPBvaSk3ZkiGgX9c">>,17391854,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"1cgEQM">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388880729994251}
+2014-01-05 01:12:09.994 [info] <0.54.0>@generic_switch_sip_router:handle_cast:60  ID <<"R_40h8nk_YU48oB4TV2IqPBvaSk3ZkiGgX9c">>
+ Class {req,'REGISTER'}
+ Ruri {uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]}
+ Vias [{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK1MLEEv">>},{<<"nksip">>,<<"2zZ3OT">>}]}]
+ Event undefined
+ Headers [{<<"User-Agent">>,<<"NkSIP 0.1.0">>}]
+ Candidate <<>>
+2014-01-05 01:12:22.379 [info] <0.53.0>@generic_switch_sip_transport_udp:init:25 sip udp transport had started
+2014-01-05 01:12:22.379 [info] <0.6.0> Application lager started on node nonode@nohost
+2014-01-05 01:12:22.380 [info] <0.54.0>@generic_switch_sip_router:init:26 sip dialog router had started
+2014-01-05 01:12:26.007 [info] <0.54.0>@generic_switch_sip_router:handle_cast:59  ID <<"R_4Dzk1r_YU48oB4TV2IqPBvaSk3ZkiGgX9c">>
+ Class {req,'REGISTER'}
+ Ruri {uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]}
+ Vias [{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK1MLEEv">>},{<<"nksip">>,<<"2zZ3OT">>}]}]
+ Event undefined
+ Headers [{<<"User-Agent">>,<<"NkSIP 0.1.0">>}]
+ Candidate <<>>
+2014-01-05 01:12:26.490 [info] <0.54.0>@generic_switch_sip_router:handle_cast:59  ID <<"R_1drYHa_EbTDVDjks5dRj9EnCnCIdKIliJk">>
+ Class {req,'REGISTER'}
+ Ruri {uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]}
+ Vias [{via,udp,<<"127.0.0.1">>,5080,[<<"rport">>,{<<"branch">>,<<"z9hG4bK4bgrHO">>},{<<"nksip">>,<<"4XNhnG">>}]}]
+ Event undefined
+ Headers [{<<"User-Agent">>,<<"NkSIP 0.1.0">>}]
+ Candidate <<>>
+2014-01-05 01:12:26.992 [info] <0.54.0>@generic_switch_sip_router:handle_cast:59  ID <<"R_3OvJ9A_EbTDVDjks5dRj9EnCnCIdKIliJk">>
+ Class {req,'REGISTER'}
+ Ruri {uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]}
+ Vias [{via,udp,<<"127.0.0.1">>,5080,[<<"rport">>,{<<"branch">>,<<"z9hG4bK4bgrHO">>},{<<"nksip">>,<<"4XNhnG">>}]}]
+ Event undefined
+ Headers [{<<"User-Agent">>,<<"NkSIP 0.1.0">>}]
+ Candidate <<>>
+2014-01-05 01:12:27.992 [info] <0.54.0>@generic_switch_sip_router:handle_cast:59  ID <<"R_Sn4Oq_EbTDVDjks5dRj9EnCnCIdKIliJk">>
+ Class {req,'REGISTER'}
+ Ruri {uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]}
+ Vias [{via,udp,<<"127.0.0.1">>,5080,[<<"rport">>,{<<"branch">>,<<"z9hG4bK4bgrHO">>},{<<"nksip">>,<<"4XNhnG">>}]}]
+ Event undefined
+ Headers [{<<"User-Agent">>,<<"NkSIP 0.1.0">>}]
+ Candidate <<>>
+2014-01-05 01:12:29.993 [info] <0.54.0>@generic_switch_sip_router:handle_cast:59  ID <<"R_415fyH_EbTDVDjks5dRj9EnCnCIdKIliJk">>
+ Class {req,'REGISTER'}
+ Ruri {uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]}
+ Vias [{via,udp,<<"127.0.0.1">>,5080,[<<"rport">>,{<<"branch">>,<<"z9hG4bK4bgrHO">>},{<<"nksip">>,<<"4XNhnG">>}]}]
+ Event undefined
+ Headers [{<<"User-Agent">>,<<"NkSIP 0.1.0">>}]
+ Candidate <<>>
+2014-01-05 01:12:33.995 [info] <0.54.0>@generic_switch_sip_router:handle_cast:59  ID <<"R_31xQh_EbTDVDjks5dRj9EnCnCIdKIliJk">>
+ Class {req,'REGISTER'}
+ Ruri {uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]}
+ Vias [{via,udp,<<"127.0.0.1">>,5080,[<<"rport">>,{<<"branch">>,<<"z9hG4bK4bgrHO">>},{<<"nksip">>,<<"4XNhnG">>}]}]
+ Event undefined
+ Headers [{<<"User-Agent">>,<<"NkSIP 0.1.0">>}]
+ Candidate <<>>
+2014-01-05 01:12:37.995 [info] <0.54.0>@generic_switch_sip_router:handle_cast:59  ID <<"R_2T9Wyg_EbTDVDjks5dRj9EnCnCIdKIliJk">>
+ Class {req,'REGISTER'}
+ Ruri {uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]}
+ Vias [{via,udp,<<"127.0.0.1">>,5080,[<<"rport">>,{<<"branch">>,<<"z9hG4bK4bgrHO">>},{<<"nksip">>,<<"4XNhnG">>}]}]
+ Event undefined
+ Headers [{<<"User-Agent">>,<<"NkSIP 0.1.0">>}]
+ Candidate <<>>
+2014-01-05 01:12:41.997 [info] <0.54.0>@generic_switch_sip_router:handle_cast:59  ID <<"R_cukYh_EbTDVDjks5dRj9EnCnCIdKIliJk">>
+ Class {req,'REGISTER'}
+ Ruri {uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]}
+ Vias [{via,udp,<<"127.0.0.1">>,5080,[<<"rport">>,{<<"branch">>,<<"z9hG4bK4bgrHO">>},{<<"nksip">>,<<"4XNhnG">>}]}]
+ Event undefined
+ Headers [{<<"User-Agent">>,<<"NkSIP 0.1.0">>}]
+ Candidate <<>>
+2014-01-05 01:12:45.998 [info] <0.54.0>@generic_switch_sip_router:handle_cast:59  ID <<"R_2vaY0z_EbTDVDjks5dRj9EnCnCIdKIliJk">>
+ Class {req,'REGISTER'}
+ Ruri {uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]}
+ Vias [{via,udp,<<"127.0.0.1">>,5080,[<<"rport">>,{<<"branch">>,<<"z9hG4bK4bgrHO">>},{<<"nksip">>,<<"4XNhnG">>}]}]
+ Event undefined
+ Headers [{<<"User-Agent">>,<<"NkSIP 0.1.0">>}]
+ Candidate <<>>
+2014-01-05 01:12:49.999 [info] <0.54.0>@generic_switch_sip_router:handle_cast:59  ID <<"R_1DvhvY_EbTDVDjks5dRj9EnCnCIdKIliJk">>
+ Class {req,'REGISTER'}
+ Ruri {uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]}
+ Vias [{via,udp,<<"127.0.0.1">>,5080,[<<"rport">>,{<<"branch">>,<<"z9hG4bK4bgrHO">>},{<<"nksip">>,<<"4XNhnG">>}]}]
+ Event undefined
+ Headers [{<<"User-Agent">>,<<"NkSIP 0.1.0">>}]
+ Candidate <<>>
+2014-01-05 01:12:54.001 [info] <0.54.0>@generic_switch_sip_router:handle_cast:59  ID <<"R_WCGv9_EbTDVDjks5dRj9EnCnCIdKIliJk">>
+ Class {req,'REGISTER'}
+ Ruri {uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]}
+ Vias [{via,udp,<<"127.0.0.1">>,5080,[<<"rport">>,{<<"branch">>,<<"z9hG4bK4bgrHO">>},{<<"nksip">>,<<"4XNhnG">>}]}]
+ Event undefined
+ Headers [{<<"User-Agent">>,<<"NkSIP 0.1.0">>}]
+ Candidate <<>>
+2014-01-05 01:12:58.003 [info] <0.54.0>@generic_switch_sip_router:handle_cast:59  ID <<"R_1RE7th_EbTDVDjks5dRj9EnCnCIdKIliJk">>
+ Class {req,'REGISTER'}
+ Ruri {uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]}
+ Vias [{via,udp,<<"127.0.0.1">>,5080,[<<"rport">>,{<<"branch">>,<<"z9hG4bK4bgrHO">>},{<<"nksip">>,<<"4XNhnG">>}]}]
+ Event undefined
+ Headers [{<<"User-Agent">>,<<"NkSIP 0.1.0">>}]
+ Candidate <<>>
+2014-01-05 12:25:04.870 [info] <0.53.0>@generic_switch_sip_transport_udp:init:25 sip udp transport had started
+2014-01-05 12:25:04.870 [info] <0.6.0> Application lager started on node nonode@nohost
+2014-01-05 12:25:04.872 [info] <0.54.0>@generic_switch_sip_router:init:33 sip dialog router had started
+2014-01-05 12:25:10.754 [info] <0.54.0>@generic_switch_sip_router:handle_cast:66  ID <<"R_3WTJJ0_aPs4INKlcZOucdiPczQrYGxWP87">>
+ Class {req,'REGISTER'}
+ Ruri {uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]}
+ Vias [{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK4cF4GK">>},{<<"nksip">>,<<"2wKyIk">>}]}]
+ Event undefined
+ Headers [{<<"User-Agent">>,<<"NkSIP 0.1.0">>}]
+ Candidate <<>>
+2014-01-05 12:25:11.219 [info] <0.54.0>@generic_switch_sip_router:handle_cast:66  ID <<"R_1WBba2_aPs4INKlcZOucdiPczQrYGxWP87">>
+ Class {req,'REGISTER'}
+ Ruri {uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]}
+ Vias [{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK4cF4GK">>},{<<"nksip">>,<<"2wKyIk">>}]}]
+ Event undefined
+ Headers [{<<"User-Agent">>,<<"NkSIP 0.1.0">>}]
+ Candidate <<>>
+2014-01-05 12:25:12.220 [info] <0.54.0>@generic_switch_sip_router:handle_cast:66  ID <<"R_1VNHoJ_aPs4INKlcZOucdiPczQrYGxWP87">>
+ Class {req,'REGISTER'}
+ Ruri {uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]}
+ Vias [{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK4cF4GK">>},{<<"nksip">>,<<"2wKyIk">>}]}]
+ Event undefined
+ Headers [{<<"User-Agent">>,<<"NkSIP 0.1.0">>}]
+ Candidate <<>>
+2014-01-05 12:25:14.223 [info] <0.54.0>@generic_switch_sip_router:handle_cast:66  ID <<"R_wPv0m_aPs4INKlcZOucdiPczQrYGxWP87">>
+ Class {req,'REGISTER'}
+ Ruri {uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]}
+ Vias [{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK4cF4GK">>},{<<"nksip">>,<<"2wKyIk">>}]}]
+ Event undefined
+ Headers [{<<"User-Agent">>,<<"NkSIP 0.1.0">>}]
+ Candidate <<>>
+2014-01-05 12:25:18.223 [info] <0.54.0>@generic_switch_sip_router:handle_cast:66  ID <<"R_clhgQ_aPs4INKlcZOucdiPczQrYGxWP87">>
+ Class {req,'REGISTER'}
+ Ruri {uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]}
+ Vias [{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK4cF4GK">>},{<<"nksip">>,<<"2wKyIk">>}]}]
+ Event undefined
+ Headers [{<<"User-Agent">>,<<"NkSIP 0.1.0">>}]
+ Candidate <<>>
+2014-01-05 12:25:22.224 [info] <0.54.0>@generic_switch_sip_router:handle_cast:66  ID <<"R_2Jt8sH_aPs4INKlcZOucdiPczQrYGxWP87">>
+ Class {req,'REGISTER'}
+ Ruri {uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]}
+ Vias [{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK4cF4GK">>},{<<"nksip">>,<<"2wKyIk">>}]}]
+ Event undefined
+ Headers [{<<"User-Agent">>,<<"NkSIP 0.1.0">>}]
+ Candidate <<>>
+2014-01-05 12:25:26.225 [info] <0.54.0>@generic_switch_sip_router:handle_cast:66  ID <<"R_1H4yrS_aPs4INKlcZOucdiPczQrYGxWP87">>
+ Class {req,'REGISTER'}
+ Ruri {uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]}
+ Vias [{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK4cF4GK">>},{<<"nksip">>,<<"2wKyIk">>}]}]
+ Event undefined
+ Headers [{<<"User-Agent">>,<<"NkSIP 0.1.0">>}]
+ Candidate <<>>
+2014-01-05 12:25:30.226 [info] <0.54.0>@generic_switch_sip_router:handle_cast:66  ID <<"R_3GpVwg_aPs4INKlcZOucdiPczQrYGxWP87">>
+ Class {req,'REGISTER'}
+ Ruri {uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]}
+ Vias [{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK4cF4GK">>},{<<"nksip">>,<<"2wKyIk">>}]}]
+ Event undefined
+ Headers [{<<"User-Agent">>,<<"NkSIP 0.1.0">>}]
+ Candidate <<>>
+2014-01-05 12:25:34.228 [info] <0.54.0>@generic_switch_sip_router:handle_cast:66  ID <<"R_1yR6s_aPs4INKlcZOucdiPczQrYGxWP87">>
+ Class {req,'REGISTER'}
+ Ruri {uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]}
+ Vias [{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK4cF4GK">>},{<<"nksip">>,<<"2wKyIk">>}]}]
+ Event undefined
+ Headers [{<<"User-Agent">>,<<"NkSIP 0.1.0">>}]
+ Candidate <<>>
+2014-01-05 12:25:38.230 [info] <0.54.0>@generic_switch_sip_router:handle_cast:66  ID <<"R_3p0cHE_aPs4INKlcZOucdiPczQrYGxWP87">>
+ Class {req,'REGISTER'}
+ Ruri {uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]}
+ Vias [{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK4cF4GK">>},{<<"nksip">>,<<"2wKyIk">>}]}]
+ Event undefined
+ Headers [{<<"User-Agent">>,<<"NkSIP 0.1.0">>}]
+ Candidate <<>>
+2014-01-05 12:25:42.231 [info] <0.54.0>@generic_switch_sip_router:handle_cast:66  ID <<"R_3ra3bz_aPs4INKlcZOucdiPczQrYGxWP87">>
+ Class {req,'REGISTER'}
+ Ruri {uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]}
+ Vias [{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK4cF4GK">>},{<<"nksip">>,<<"2wKyIk">>}]}]
+ Event undefined
+ Headers [{<<"User-Agent">>,<<"NkSIP 0.1.0">>}]
+ Candidate <<>>
+2014-01-05 12:25:42.763 [info] <0.54.0>@generic_switch_sip_router:handle_cast:66  ID <<"R_2OjyYV_Cw1UMCFE26SmfMQGRSiHmdHDPPa">>
+ Class {req,'REGISTER'}
+ Ruri {uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]}
+ Vias [{via,udp,<<"127.0.0.1">>,5080,[<<"rport">>,{<<"branch">>,<<"z9hG4bK2LcoHX">>},{<<"nksip">>,<<"1sAdRp">>}]}]
+ Event undefined
+ Headers [{<<"User-Agent">>,<<"NkSIP 0.1.0">>}]
+ Candidate <<>>
+2014-01-05 12:25:43.264 [info] <0.54.0>@generic_switch_sip_router:handle_cast:66  ID <<"R_1Yq1ik_Cw1UMCFE26SmfMQGRSiHmdHDPPa">>
+ Class {req,'REGISTER'}
+ Ruri {uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]}
+ Vias [{via,udp,<<"127.0.0.1">>,5080,[<<"rport">>,{<<"branch">>,<<"z9hG4bK2LcoHX">>},{<<"nksip">>,<<"1sAdRp">>}]}]
+ Event undefined
+ Headers [{<<"User-Agent">>,<<"NkSIP 0.1.0">>}]
+ Candidate <<>>
+2014-01-05 12:25:44.265 [info] <0.54.0>@generic_switch_sip_router:handle_cast:66  ID <<"R_2UjnKT_Cw1UMCFE26SmfMQGRSiHmdHDPPa">>
+ Class {req,'REGISTER'}
+ Ruri {uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]}
+ Vias [{via,udp,<<"127.0.0.1">>,5080,[<<"rport">>,{<<"branch">>,<<"z9hG4bK2LcoHX">>},{<<"nksip">>,<<"1sAdRp">>}]}]
+ Event undefined
+ Headers [{<<"User-Agent">>,<<"NkSIP 0.1.0">>}]
+ Candidate <<>>
+2014-01-05 12:25:46.266 [info] <0.54.0>@generic_switch_sip_router:handle_cast:66  ID <<"R_1jnjff_Cw1UMCFE26SmfMQGRSiHmdHDPPa">>
+ Class {req,'REGISTER'}
+ Ruri {uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]}
+ Vias [{via,udp,<<"127.0.0.1">>,5080,[<<"rport">>,{<<"branch">>,<<"z9hG4bK2LcoHX">>},{<<"nksip">>,<<"1sAdRp">>}]}]
+ Event undefined
+ Headers [{<<"User-Agent">>,<<"NkSIP 0.1.0">>}]
+ Candidate <<>>
+2014-01-05 12:25:50.267 [info] <0.54.0>@generic_switch_sip_router:handle_cast:66  ID <<"R_1wNR1X_Cw1UMCFE26SmfMQGRSiHmdHDPPa">>
+ Class {req,'REGISTER'}
+ Ruri {uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]}
+ Vias [{via,udp,<<"127.0.0.1">>,5080,[<<"rport">>,{<<"branch">>,<<"z9hG4bK2LcoHX">>},{<<"nksip">>,<<"1sAdRp">>}]}]
+ Event undefined
+ Headers [{<<"User-Agent">>,<<"NkSIP 0.1.0">>}]
+ Candidate <<>>
+2014-01-05 12:25:54.268 [info] <0.54.0>@generic_switch_sip_router:handle_cast:66  ID <<"R_2uuNNy_Cw1UMCFE26SmfMQGRSiHmdHDPPa">>
+ Class {req,'REGISTER'}
+ Ruri {uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]}
+ Vias [{via,udp,<<"127.0.0.1">>,5080,[<<"rport">>,{<<"branch">>,<<"z9hG4bK2LcoHX">>},{<<"nksip">>,<<"1sAdRp">>}]}]
+ Event undefined
+ Headers [{<<"User-Agent">>,<<"NkSIP 0.1.0">>}]
+ Candidate <<>>
+2014-01-05 12:25:58.270 [info] <0.54.0>@generic_switch_sip_router:handle_cast:66  ID <<"R_N7yyT_Cw1UMCFE26SmfMQGRSiHmdHDPPa">>
+ Class {req,'REGISTER'}
+ Ruri {uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]}
+ Vias [{via,udp,<<"127.0.0.1">>,5080,[<<"rport">>,{<<"branch">>,<<"z9hG4bK2LcoHX">>},{<<"nksip">>,<<"1sAdRp">>}]}]
+ Event undefined
+ Headers [{<<"User-Agent">>,<<"NkSIP 0.1.0">>}]
+ Candidate <<>>
+2014-01-05 12:26:02.272 [info] <0.54.0>@generic_switch_sip_router:handle_cast:66  ID <<"R_2iEokr_Cw1UMCFE26SmfMQGRSiHmdHDPPa">>
+ Class {req,'REGISTER'}
+ Ruri {uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]}
+ Vias [{via,udp,<<"127.0.0.1">>,5080,[<<"rport">>,{<<"branch">>,<<"z9hG4bK2LcoHX">>},{<<"nksip">>,<<"1sAdRp">>}]}]
+ Event undefined
+ Headers [{<<"User-Agent">>,<<"NkSIP 0.1.0">>}]
+ Candidate <<>>
+2014-01-05 12:26:06.273 [info] <0.54.0>@generic_switch_sip_router:handle_cast:66  ID <<"R_2XVr3f_Cw1UMCFE26SmfMQGRSiHmdHDPPa">>
+ Class {req,'REGISTER'}
+ Ruri {uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]}
+ Vias [{via,udp,<<"127.0.0.1">>,5080,[<<"rport">>,{<<"branch">>,<<"z9hG4bK2LcoHX">>},{<<"nksip">>,<<"1sAdRp">>}]}]
+ Event undefined
+ Headers [{<<"User-Agent">>,<<"NkSIP 0.1.0">>}]
+ Candidate <<>>
+2014-01-05 12:26:10.274 [info] <0.54.0>@generic_switch_sip_router:handle_cast:66  ID <<"R_359CLE_Cw1UMCFE26SmfMQGRSiHmdHDPPa">>
+ Class {req,'REGISTER'}
+ Ruri {uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]}
+ Vias [{via,udp,<<"127.0.0.1">>,5080,[<<"rport">>,{<<"branch">>,<<"z9hG4bK2LcoHX">>},{<<"nksip">>,<<"1sAdRp">>}]}]
+ Event undefined
+ Headers [{<<"User-Agent">>,<<"NkSIP 0.1.0">>}]
+ Candidate <<>>
+2014-01-05 12:26:14.276 [info] <0.54.0>@generic_switch_sip_router:handle_cast:66  ID <<"R_2GzRYA_Cw1UMCFE26SmfMQGRSiHmdHDPPa">>
+ Class {req,'REGISTER'}
+ Ruri {uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]}
+ Vias [{via,udp,<<"127.0.0.1">>,5080,[<<"rport">>,{<<"branch">>,<<"z9hG4bK2LcoHX">>},{<<"nksip">>,<<"1sAdRp">>}]}]
+ Event undefined
+ Headers [{<<"User-Agent">>,<<"NkSIP 0.1.0">>}]
+ Candidate <<>>
+2014-01-05 12:28:20.287 [info] <0.53.0>@generic_switch_sip_transport_udp:init:25 sip udp transport had started
+2014-01-05 12:28:20.287 [info] <0.6.0> Application lager started on node nonode@nohost
+2014-01-05 12:28:20.288 [info] <0.54.0>@generic_switch_sip_router:init:33 sip dialog router had started
+2014-01-05 12:28:22.742 [info] <0.54.0>@generic_switch_sip_router:handle_cast:66  Dialog undefined
+ Class {req,'REGISTER'}
+ Ruri {uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]}
+ Vias [{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK1YgOl">>},{<<"nksip">>,<<"37FD3Q">>}]}]
+ From {uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"35hZMv">>}],[]}
+ To {uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]}
+ CallId <<"BXG48kFKhtptYpq8j3NtcHFdsEP">>
+2014-01-05 12:28:23.236 [info] <0.54.0>@generic_switch_sip_router:handle_cast:66  Dialog undefined
+ Class {req,'REGISTER'}
+ Ruri {uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]}
+ Vias [{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK1YgOl">>},{<<"nksip">>,<<"37FD3Q">>}]}]
+ From {uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"35hZMv">>}],[]}
+ To {uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]}
+ CallId <<"BXG48kFKhtptYpq8j3NtcHFdsEP">>
+2014-01-05 12:28:24.237 [info] <0.54.0>@generic_switch_sip_router:handle_cast:66  Dialog undefined
+ Class {req,'REGISTER'}
+ Ruri {uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]}
+ Vias [{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK1YgOl">>},{<<"nksip">>,<<"37FD3Q">>}]}]
+ From {uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"35hZMv">>}],[]}
+ To {uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]}
+ CallId <<"BXG48kFKhtptYpq8j3NtcHFdsEP">>
+2014-01-05 12:28:26.238 [info] <0.54.0>@generic_switch_sip_router:handle_cast:66  Dialog undefined
+ Class {req,'REGISTER'}
+ Ruri {uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]}
+ Vias [{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK1YgOl">>},{<<"nksip">>,<<"37FD3Q">>}]}]
+ From {uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"35hZMv">>}],[]}
+ To {uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]}
+ CallId <<"BXG48kFKhtptYpq8j3NtcHFdsEP">>
+2014-01-05 12:28:30.239 [info] <0.54.0>@generic_switch_sip_router:handle_cast:66  Dialog undefined
+ Class {req,'REGISTER'}
+ Ruri {uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]}
+ Vias [{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK1YgOl">>},{<<"nksip">>,<<"37FD3Q">>}]}]
+ From {uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"35hZMv">>}],[]}
+ To {uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]}
+ CallId <<"BXG48kFKhtptYpq8j3NtcHFdsEP">>
+2014-01-05 12:28:34.241 [info] <0.54.0>@generic_switch_sip_router:handle_cast:66  Dialog undefined
+ Class {req,'REGISTER'}
+ Ruri {uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]}
+ Vias [{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK1YgOl">>},{<<"nksip">>,<<"37FD3Q">>}]}]
+ From {uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"35hZMv">>}],[]}
+ To {uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]}
+ CallId <<"BXG48kFKhtptYpq8j3NtcHFdsEP">>
+2014-01-05 12:28:38.241 [info] <0.54.0>@generic_switch_sip_router:handle_cast:66  Dialog undefined
+ Class {req,'REGISTER'}
+ Ruri {uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]}
+ Vias [{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK1YgOl">>},{<<"nksip">>,<<"37FD3Q">>}]}]
+ From {uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"35hZMv">>}],[]}
+ To {uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]}
+ CallId <<"BXG48kFKhtptYpq8j3NtcHFdsEP">>
+2014-01-05 12:28:42.242 [info] <0.54.0>@generic_switch_sip_router:handle_cast:66  Dialog undefined
+ Class {req,'REGISTER'}
+ Ruri {uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]}
+ Vias [{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK1YgOl">>},{<<"nksip">>,<<"37FD3Q">>}]}]
+ From {uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"35hZMv">>}],[]}
+ To {uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]}
+ CallId <<"BXG48kFKhtptYpq8j3NtcHFdsEP">>
+2014-01-05 12:28:46.244 [info] <0.54.0>@generic_switch_sip_router:handle_cast:66  Dialog undefined
+ Class {req,'REGISTER'}
+ Ruri {uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]}
+ Vias [{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK1YgOl">>},{<<"nksip">>,<<"37FD3Q">>}]}]
+ From {uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"35hZMv">>}],[]}
+ To {uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]}
+ CallId <<"BXG48kFKhtptYpq8j3NtcHFdsEP">>
+2014-01-05 12:28:50.244 [info] <0.54.0>@generic_switch_sip_router:handle_cast:66  Dialog undefined
+ Class {req,'REGISTER'}
+ Ruri {uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]}
+ Vias [{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK1YgOl">>},{<<"nksip">>,<<"37FD3Q">>}]}]
+ From {uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"35hZMv">>}],[]}
+ To {uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]}
+ CallId <<"BXG48kFKhtptYpq8j3NtcHFdsEP">>
+2014-01-05 12:28:54.245 [info] <0.54.0>@generic_switch_sip_router:handle_cast:66  Dialog undefined
+ Class {req,'REGISTER'}
+ Ruri {uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]}
+ Vias [{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK1YgOl">>},{<<"nksip">>,<<"37FD3Q">>}]}]
+ From {uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"35hZMv">>}],[]}
+ To {uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]}
+ CallId <<"BXG48kFKhtptYpq8j3NtcHFdsEP">>
+2014-01-05 12:28:54.737 [info] <0.54.0>@generic_switch_sip_router:handle_cast:66  Dialog undefined
+ Class {req,'REGISTER'}
+ Ruri {uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]}
+ Vias [{via,udp,<<"127.0.0.1">>,5080,[<<"rport">>,{<<"branch">>,<<"z9hG4bKkJqJk">>},{<<"nksip">>,<<"3N1Wbh">>}]}]
+ From {uri,<<>>,sip,<<"alice">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"RnM5u">>}],[]}
+ To {uri,<<>>,sip,<<"alice">>,<<>>,<<"nksip">>,0,[],[],[],[]}
+ CallId <<"EDql1NIbtEk2y0Aw130rvirtE0I">>
+2014-01-05 12:28:55.237 [info] <0.54.0>@generic_switch_sip_router:handle_cast:66  Dialog undefined
+ Class {req,'REGISTER'}
+ Ruri {uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]}
+ Vias [{via,udp,<<"127.0.0.1">>,5080,[<<"rport">>,{<<"branch">>,<<"z9hG4bKkJqJk">>},{<<"nksip">>,<<"3N1Wbh">>}]}]
+ From {uri,<<>>,sip,<<"alice">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"RnM5u">>}],[]}
+ To {uri,<<>>,sip,<<"alice">>,<<>>,<<"nksip">>,0,[],[],[],[]}
+ CallId <<"EDql1NIbtEk2y0Aw130rvirtE0I">>
+2014-01-05 12:28:56.239 [info] <0.54.0>@generic_switch_sip_router:handle_cast:66  Dialog undefined
+ Class {req,'REGISTER'}
+ Ruri {uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]}
+ Vias [{via,udp,<<"127.0.0.1">>,5080,[<<"rport">>,{<<"branch">>,<<"z9hG4bKkJqJk">>},{<<"nksip">>,<<"3N1Wbh">>}]}]
+ From {uri,<<>>,sip,<<"alice">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"RnM5u">>}],[]}
+ To {uri,<<>>,sip,<<"alice">>,<<>>,<<"nksip">>,0,[],[],[],[]}
+ CallId <<"EDql1NIbtEk2y0Aw130rvirtE0I">>
+2014-01-05 12:28:58.239 [info] <0.54.0>@generic_switch_sip_router:handle_cast:66  Dialog undefined
+ Class {req,'REGISTER'}
+ Ruri {uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]}
+ Vias [{via,udp,<<"127.0.0.1">>,5080,[<<"rport">>,{<<"branch">>,<<"z9hG4bKkJqJk">>},{<<"nksip">>,<<"3N1Wbh">>}]}]
+ From {uri,<<>>,sip,<<"alice">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"RnM5u">>}],[]}
+ To {uri,<<>>,sip,<<"alice">>,<<>>,<<"nksip">>,0,[],[],[],[]}
+ CallId <<"EDql1NIbtEk2y0Aw130rvirtE0I">>
+2014-01-05 12:29:02.240 [info] <0.54.0>@generic_switch_sip_router:handle_cast:66  Dialog undefined
+ Class {req,'REGISTER'}
+ Ruri {uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]}
+ Vias [{via,udp,<<"127.0.0.1">>,5080,[<<"rport">>,{<<"branch">>,<<"z9hG4bKkJqJk">>},{<<"nksip">>,<<"3N1Wbh">>}]}]
+ From {uri,<<>>,sip,<<"alice">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"RnM5u">>}],[]}
+ To {uri,<<>>,sip,<<"alice">>,<<>>,<<"nksip">>,0,[],[],[],[]}
+ CallId <<"EDql1NIbtEk2y0Aw130rvirtE0I">>
+2014-01-05 12:29:06.241 [info] <0.54.0>@generic_switch_sip_router:handle_cast:66  Dialog undefined
+ Class {req,'REGISTER'}
+ Ruri {uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]}
+ Vias [{via,udp,<<"127.0.0.1">>,5080,[<<"rport">>,{<<"branch">>,<<"z9hG4bKkJqJk">>},{<<"nksip">>,<<"3N1Wbh">>}]}]
+ From {uri,<<>>,sip,<<"alice">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"RnM5u">>}],[]}
+ To {uri,<<>>,sip,<<"alice">>,<<>>,<<"nksip">>,0,[],[],[],[]}
+ CallId <<"EDql1NIbtEk2y0Aw130rvirtE0I">>
+2014-01-05 12:29:10.242 [info] <0.54.0>@generic_switch_sip_router:handle_cast:66  Dialog undefined
+ Class {req,'REGISTER'}
+ Ruri {uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]}
+ Vias [{via,udp,<<"127.0.0.1">>,5080,[<<"rport">>,{<<"branch">>,<<"z9hG4bKkJqJk">>},{<<"nksip">>,<<"3N1Wbh">>}]}]
+ From {uri,<<>>,sip,<<"alice">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"RnM5u">>}],[]}
+ To {uri,<<>>,sip,<<"alice">>,<<>>,<<"nksip">>,0,[],[],[],[]}
+ CallId <<"EDql1NIbtEk2y0Aw130rvirtE0I">>
+2014-01-05 12:29:14.244 [info] <0.54.0>@generic_switch_sip_router:handle_cast:66  Dialog undefined
+ Class {req,'REGISTER'}
+ Ruri {uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]}
+ Vias [{via,udp,<<"127.0.0.1">>,5080,[<<"rport">>,{<<"branch">>,<<"z9hG4bKkJqJk">>},{<<"nksip">>,<<"3N1Wbh">>}]}]
+ From {uri,<<>>,sip,<<"alice">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"RnM5u">>}],[]}
+ To {uri,<<>>,sip,<<"alice">>,<<>>,<<"nksip">>,0,[],[],[],[]}
+ CallId <<"EDql1NIbtEk2y0Aw130rvirtE0I">>
+2014-01-05 12:29:18.244 [info] <0.54.0>@generic_switch_sip_router:handle_cast:66  Dialog undefined
+ Class {req,'REGISTER'}
+ Ruri {uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]}
+ Vias [{via,udp,<<"127.0.0.1">>,5080,[<<"rport">>,{<<"branch">>,<<"z9hG4bKkJqJk">>},{<<"nksip">>,<<"3N1Wbh">>}]}]
+ From {uri,<<>>,sip,<<"alice">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"RnM5u">>}],[]}
+ To {uri,<<>>,sip,<<"alice">>,<<>>,<<"nksip">>,0,[],[],[],[]}
+ CallId <<"EDql1NIbtEk2y0Aw130rvirtE0I">>
+2014-01-05 12:29:22.246 [info] <0.54.0>@generic_switch_sip_router:handle_cast:66  Dialog undefined
+ Class {req,'REGISTER'}
+ Ruri {uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]}
+ Vias [{via,udp,<<"127.0.0.1">>,5080,[<<"rport">>,{<<"branch">>,<<"z9hG4bKkJqJk">>},{<<"nksip">>,<<"3N1Wbh">>}]}]
+ From {uri,<<>>,sip,<<"alice">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"RnM5u">>}],[]}
+ To {uri,<<>>,sip,<<"alice">>,<<>>,<<"nksip">>,0,[],[],[],[]}
+ CallId <<"EDql1NIbtEk2y0Aw130rvirtE0I">>
+2014-01-05 12:29:26.246 [info] <0.54.0>@generic_switch_sip_router:handle_cast:66  Dialog undefined
+ Class {req,'REGISTER'}
+ Ruri {uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]}
+ Vias [{via,udp,<<"127.0.0.1">>,5080,[<<"rport">>,{<<"branch">>,<<"z9hG4bKkJqJk">>},{<<"nksip">>,<<"3N1Wbh">>}]}]
+ From {uri,<<>>,sip,<<"alice">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"RnM5u">>}],[]}
+ To {uri,<<>>,sip,<<"alice">>,<<>>,<<"nksip">>,0,[],[],[],[]}
+ CallId <<"EDql1NIbtEk2y0Aw130rvirtE0I">>
+2014-01-05 12:45:50.668 [info] <0.53.0>@generic_switch_sip_transport_udp:init:25 sip udp transport had started
+2014-01-05 12:45:50.668 [info] <0.6.0> Application lager started on node nonode@nohost
+2014-01-05 12:45:50.669 [info] <0.54.0>@generic_switch_sip_router:init:33 sip dialog router had started
+2014-01-05 12:45:58.777 [info] <0.54.0>@generic_switch_sip_router:handle_cast:66  Dialog undefined
+ Class {req,'REGISTER'}
+ Ruri {uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]}
+ Vias [{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK3NEYRG">>},{<<"nksip">>,<<"w4m1d">>}]}]
+ From {uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"xpGf0">>}],[]}
+ To {uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]}
+ CallId <<"66RmR28BhgsNohlAP38jOMqG82j">>
+2014-01-05 12:45:58.777 [info] <0.54.0>@generic_switch_sip_router:handle_cast:72 GOT REGISTER PACKET
+2014-01-05 12:45:59.271 [info] <0.54.0>@generic_switch_sip_router:handle_cast:66  Dialog undefined
+ Class {req,'REGISTER'}
+ Ruri {uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]}
+ Vias [{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK3NEYRG">>},{<<"nksip">>,<<"w4m1d">>}]}]
+ From {uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"xpGf0">>}],[]}
+ To {uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]}
+ CallId <<"66RmR28BhgsNohlAP38jOMqG82j">>
+2014-01-05 12:45:59.271 [info] <0.54.0>@generic_switch_sip_router:handle_cast:72 GOT REGISTER PACKET
+2014-01-05 12:46:00.272 [info] <0.54.0>@generic_switch_sip_router:handle_cast:66  Dialog undefined
+ Class {req,'REGISTER'}
+ Ruri {uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]}
+ Vias [{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK3NEYRG">>},{<<"nksip">>,<<"w4m1d">>}]}]
+ From {uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"xpGf0">>}],[]}
+ To {uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]}
+ CallId <<"66RmR28BhgsNohlAP38jOMqG82j">>
+2014-01-05 12:46:00.272 [info] <0.54.0>@generic_switch_sip_router:handle_cast:72 GOT REGISTER PACKET
+2014-01-05 12:46:02.273 [info] <0.54.0>@generic_switch_sip_router:handle_cast:66  Dialog undefined
+ Class {req,'REGISTER'}
+ Ruri {uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]}
+ Vias [{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK3NEYRG">>},{<<"nksip">>,<<"w4m1d">>}]}]
+ From {uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"xpGf0">>}],[]}
+ To {uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]}
+ CallId <<"66RmR28BhgsNohlAP38jOMqG82j">>
+2014-01-05 12:46:02.273 [info] <0.54.0>@generic_switch_sip_router:handle_cast:72 GOT REGISTER PACKET
+2014-01-05 12:46:06.274 [info] <0.54.0>@generic_switch_sip_router:handle_cast:66  Dialog undefined
+ Class {req,'REGISTER'}
+ Ruri {uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]}
+ Vias [{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK3NEYRG">>},{<<"nksip">>,<<"w4m1d">>}]}]
+ From {uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"xpGf0">>}],[]}
+ To {uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]}
+ CallId <<"66RmR28BhgsNohlAP38jOMqG82j">>
+2014-01-05 12:46:06.274 [info] <0.54.0>@generic_switch_sip_router:handle_cast:72 GOT REGISTER PACKET
+2014-01-05 12:46:10.275 [info] <0.54.0>@generic_switch_sip_router:handle_cast:66  Dialog undefined
+ Class {req,'REGISTER'}
+ Ruri {uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]}
+ Vias [{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK3NEYRG">>},{<<"nksip">>,<<"w4m1d">>}]}]
+ From {uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"xpGf0">>}],[]}
+ To {uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]}
+ CallId <<"66RmR28BhgsNohlAP38jOMqG82j">>
+2014-01-05 12:46:10.275 [info] <0.54.0>@generic_switch_sip_router:handle_cast:72 GOT REGISTER PACKET
+2014-01-05 12:46:14.276 [info] <0.54.0>@generic_switch_sip_router:handle_cast:66  Dialog undefined
+ Class {req,'REGISTER'}
+ Ruri {uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]}
+ Vias [{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK3NEYRG">>},{<<"nksip">>,<<"w4m1d">>}]}]
+ From {uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"xpGf0">>}],[]}
+ To {uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]}
+ CallId <<"66RmR28BhgsNohlAP38jOMqG82j">>
+2014-01-05 12:46:14.276 [info] <0.54.0>@generic_switch_sip_router:handle_cast:72 GOT REGISTER PACKET
+2014-01-05 12:46:18.278 [info] <0.54.0>@generic_switch_sip_router:handle_cast:66  Dialog undefined
+ Class {req,'REGISTER'}
+ Ruri {uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]}
+ Vias [{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK3NEYRG">>},{<<"nksip">>,<<"w4m1d">>}]}]
+ From {uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"xpGf0">>}],[]}
+ To {uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]}
+ CallId <<"66RmR28BhgsNohlAP38jOMqG82j">>
+2014-01-05 12:46:18.278 [info] <0.54.0>@generic_switch_sip_router:handle_cast:72 GOT REGISTER PACKET
+2014-01-05 12:46:22.278 [info] <0.54.0>@generic_switch_sip_router:handle_cast:66  Dialog undefined
+ Class {req,'REGISTER'}
+ Ruri {uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]}
+ Vias [{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK3NEYRG">>},{<<"nksip">>,<<"w4m1d">>}]}]
+ From {uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"xpGf0">>}],[]}
+ To {uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]}
+ CallId <<"66RmR28BhgsNohlAP38jOMqG82j">>
+2014-01-05 12:46:22.278 [info] <0.54.0>@generic_switch_sip_router:handle_cast:72 GOT REGISTER PACKET
+2014-01-05 12:46:26.279 [info] <0.54.0>@generic_switch_sip_router:handle_cast:66  Dialog undefined
+ Class {req,'REGISTER'}
+ Ruri {uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]}
+ Vias [{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK3NEYRG">>},{<<"nksip">>,<<"w4m1d">>}]}]
+ From {uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"xpGf0">>}],[]}
+ To {uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]}
+ CallId <<"66RmR28BhgsNohlAP38jOMqG82j">>
+2014-01-05 12:46:26.279 [info] <0.54.0>@generic_switch_sip_router:handle_cast:72 GOT REGISTER PACKET
+2014-01-05 12:46:30.280 [info] <0.54.0>@generic_switch_sip_router:handle_cast:66  Dialog undefined
+ Class {req,'REGISTER'}
+ Ruri {uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]}
+ Vias [{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK3NEYRG">>},{<<"nksip">>,<<"w4m1d">>}]}]
+ From {uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"xpGf0">>}],[]}
+ To {uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]}
+ CallId <<"66RmR28BhgsNohlAP38jOMqG82j">>
+2014-01-05 12:46:30.280 [info] <0.54.0>@generic_switch_sip_router:handle_cast:72 GOT REGISTER PACKET
+2014-01-05 12:46:30.772 [info] <0.54.0>@generic_switch_sip_router:handle_cast:66  Dialog undefined
+ Class {req,'REGISTER'}
+ Ruri {uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]}
+ Vias [{via,udp,<<"127.0.0.1">>,5080,[<<"rport">>,{<<"branch">>,<<"z9hG4bKbcrVl">>},{<<"nksip">>,<<"3HsQL0">>}]}]
+ From {uri,<<>>,sip,<<"alice">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"2S5GBl">>}],[]}
+ To {uri,<<>>,sip,<<"alice">>,<<>>,<<"nksip">>,0,[],[],[],[]}
+ CallId <<"U5PrZiHvBrJLIhVuE1GQTI27hga">>
+2014-01-05 12:46:30.772 [info] <0.54.0>@generic_switch_sip_router:handle_cast:72 GOT REGISTER PACKET
+2014-01-05 12:46:31.272 [info] <0.54.0>@generic_switch_sip_router:handle_cast:66  Dialog undefined
+ Class {req,'REGISTER'}
+ Ruri {uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]}
+ Vias [{via,udp,<<"127.0.0.1">>,5080,[<<"rport">>,{<<"branch">>,<<"z9hG4bKbcrVl">>},{<<"nksip">>,<<"3HsQL0">>}]}]
+ From {uri,<<>>,sip,<<"alice">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"2S5GBl">>}],[]}
+ To {uri,<<>>,sip,<<"alice">>,<<>>,<<"nksip">>,0,[],[],[],[]}
+ CallId <<"U5PrZiHvBrJLIhVuE1GQTI27hga">>
+2014-01-05 12:46:31.272 [info] <0.54.0>@generic_switch_sip_router:handle_cast:72 GOT REGISTER PACKET
+2014-01-05 12:46:32.275 [info] <0.54.0>@generic_switch_sip_router:handle_cast:66  Dialog undefined
+ Class {req,'REGISTER'}
+ Ruri {uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]}
+ Vias [{via,udp,<<"127.0.0.1">>,5080,[<<"rport">>,{<<"branch">>,<<"z9hG4bKbcrVl">>},{<<"nksip">>,<<"3HsQL0">>}]}]
+ From {uri,<<>>,sip,<<"alice">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"2S5GBl">>}],[]}
+ To {uri,<<>>,sip,<<"alice">>,<<>>,<<"nksip">>,0,[],[],[],[]}
+ CallId <<"U5PrZiHvBrJLIhVuE1GQTI27hga">>
+2014-01-05 12:46:32.275 [info] <0.54.0>@generic_switch_sip_router:handle_cast:72 GOT REGISTER PACKET
+2014-01-05 12:46:34.274 [info] <0.54.0>@generic_switch_sip_router:handle_cast:66  Dialog undefined
+ Class {req,'REGISTER'}
+ Ruri {uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]}
+ Vias [{via,udp,<<"127.0.0.1">>,5080,[<<"rport">>,{<<"branch">>,<<"z9hG4bKbcrVl">>},{<<"nksip">>,<<"3HsQL0">>}]}]
+ From {uri,<<>>,sip,<<"alice">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"2S5GBl">>}],[]}
+ To {uri,<<>>,sip,<<"alice">>,<<>>,<<"nksip">>,0,[],[],[],[]}
+ CallId <<"U5PrZiHvBrJLIhVuE1GQTI27hga">>
+2014-01-05 12:46:34.274 [info] <0.54.0>@generic_switch_sip_router:handle_cast:72 GOT REGISTER PACKET
+2014-01-05 12:46:38.276 [info] <0.54.0>@generic_switch_sip_router:handle_cast:66  Dialog undefined
+ Class {req,'REGISTER'}
+ Ruri {uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]}
+ Vias [{via,udp,<<"127.0.0.1">>,5080,[<<"rport">>,{<<"branch">>,<<"z9hG4bKbcrVl">>},{<<"nksip">>,<<"3HsQL0">>}]}]
+ From {uri,<<>>,sip,<<"alice">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"2S5GBl">>}],[]}
+ To {uri,<<>>,sip,<<"alice">>,<<>>,<<"nksip">>,0,[],[],[],[]}
+ CallId <<"U5PrZiHvBrJLIhVuE1GQTI27hga">>
+2014-01-05 12:46:38.276 [info] <0.54.0>@generic_switch_sip_router:handle_cast:72 GOT REGISTER PACKET
+2014-01-05 12:46:42.278 [info] <0.54.0>@generic_switch_sip_router:handle_cast:66  Dialog undefined
+ Class {req,'REGISTER'}
+ Ruri {uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]}
+ Vias [{via,udp,<<"127.0.0.1">>,5080,[<<"rport">>,{<<"branch">>,<<"z9hG4bKbcrVl">>},{<<"nksip">>,<<"3HsQL0">>}]}]
+ From {uri,<<>>,sip,<<"alice">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"2S5GBl">>}],[]}
+ To {uri,<<>>,sip,<<"alice">>,<<>>,<<"nksip">>,0,[],[],[],[]}
+ CallId <<"U5PrZiHvBrJLIhVuE1GQTI27hga">>
+2014-01-05 12:46:42.278 [info] <0.54.0>@generic_switch_sip_router:handle_cast:72 GOT REGISTER PACKET
+2014-01-05 12:46:46.278 [info] <0.54.0>@generic_switch_sip_router:handle_cast:66  Dialog undefined
+ Class {req,'REGISTER'}
+ Ruri {uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]}
+ Vias [{via,udp,<<"127.0.0.1">>,5080,[<<"rport">>,{<<"branch">>,<<"z9hG4bKbcrVl">>},{<<"nksip">>,<<"3HsQL0">>}]}]
+ From {uri,<<>>,sip,<<"alice">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"2S5GBl">>}],[]}
+ To {uri,<<>>,sip,<<"alice">>,<<>>,<<"nksip">>,0,[],[],[],[]}
+ CallId <<"U5PrZiHvBrJLIhVuE1GQTI27hga">>
+2014-01-05 12:46:46.278 [info] <0.54.0>@generic_switch_sip_router:handle_cast:72 GOT REGISTER PACKET
+2014-01-05 12:46:50.280 [info] <0.54.0>@generic_switch_sip_router:handle_cast:66  Dialog undefined
+ Class {req,'REGISTER'}
+ Ruri {uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]}
+ Vias [{via,udp,<<"127.0.0.1">>,5080,[<<"rport">>,{<<"branch">>,<<"z9hG4bKbcrVl">>},{<<"nksip">>,<<"3HsQL0">>}]}]
+ From {uri,<<>>,sip,<<"alice">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"2S5GBl">>}],[]}
+ To {uri,<<>>,sip,<<"alice">>,<<>>,<<"nksip">>,0,[],[],[],[]}
+ CallId <<"U5PrZiHvBrJLIhVuE1GQTI27hga">>
+2014-01-05 12:46:50.280 [info] <0.54.0>@generic_switch_sip_router:handle_cast:72 GOT REGISTER PACKET
+2014-01-05 12:46:54.280 [info] <0.54.0>@generic_switch_sip_router:handle_cast:66  Dialog undefined
+ Class {req,'REGISTER'}
+ Ruri {uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]}
+ Vias [{via,udp,<<"127.0.0.1">>,5080,[<<"rport">>,{<<"branch">>,<<"z9hG4bKbcrVl">>},{<<"nksip">>,<<"3HsQL0">>}]}]
+ From {uri,<<>>,sip,<<"alice">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"2S5GBl">>}],[]}
+ To {uri,<<>>,sip,<<"alice">>,<<>>,<<"nksip">>,0,[],[],[],[]}
+ CallId <<"U5PrZiHvBrJLIhVuE1GQTI27hga">>
+2014-01-05 12:46:54.280 [info] <0.54.0>@generic_switch_sip_router:handle_cast:72 GOT REGISTER PACKET
+2014-01-05 12:46:58.281 [info] <0.54.0>@generic_switch_sip_router:handle_cast:66  Dialog undefined
+ Class {req,'REGISTER'}
+ Ruri {uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]}
+ Vias [{via,udp,<<"127.0.0.1">>,5080,[<<"rport">>,{<<"branch">>,<<"z9hG4bKbcrVl">>},{<<"nksip">>,<<"3HsQL0">>}]}]
+ From {uri,<<>>,sip,<<"alice">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"2S5GBl">>}],[]}
+ To {uri,<<>>,sip,<<"alice">>,<<>>,<<"nksip">>,0,[],[],[],[]}
+ CallId <<"U5PrZiHvBrJLIhVuE1GQTI27hga">>
+2014-01-05 12:46:58.281 [info] <0.54.0>@generic_switch_sip_router:handle_cast:72 GOT REGISTER PACKET
+2014-01-05 12:47:02.283 [info] <0.54.0>@generic_switch_sip_router:handle_cast:66  Dialog undefined
+ Class {req,'REGISTER'}
+ Ruri {uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]}
+ Vias [{via,udp,<<"127.0.0.1">>,5080,[<<"rport">>,{<<"branch">>,<<"z9hG4bKbcrVl">>},{<<"nksip">>,<<"3HsQL0">>}]}]
+ From {uri,<<>>,sip,<<"alice">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"2S5GBl">>}],[]}
+ To {uri,<<>>,sip,<<"alice">>,<<>>,<<"nksip">>,0,[],[],[],[]}
+ CallId <<"U5PrZiHvBrJLIhVuE1GQTI27hga">>
+2014-01-05 12:47:02.283 [info] <0.54.0>@generic_switch_sip_router:handle_cast:72 GOT REGISTER PACKET
+2014-01-05 13:01:58.276 [info] <0.53.0>@generic_switch_sip_transport_udp:init:25 sip udp transport had started
+2014-01-05 13:01:58.276 [info] <0.6.0> Application lager started on node nonode@nohost
+2014-01-05 13:01:58.278 [info] <0.54.0>@generic_switch_sip_router:init:33 sip dialog router had started
+2014-01-05 13:02:00.826 [info] <0.54.0>@generic_switch_sip_router:handle_cast:66  Dialog undefined
+ Class {req,'REGISTER'}
+ Ruri {uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]}
+ Vias [{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bKIzCyx">>},{<<"nksip">>,<<"1b0Plp">>}]}]
+ From {uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"1e4uAB">>}],[]}
+ To {uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]}
+ CallId <<"3Msjh4mAqPUAa7Rpkzk09lfhR6i">>
+2014-01-05 13:02:00.826 [info] <0.54.0>@generic_switch_sip_router:handle_cast:72 GOT REGISTER PACKET
+2014-01-05 13:02:01.316 [info] <0.54.0>@generic_switch_sip_router:handle_cast:66  Dialog undefined
+ Class {req,'REGISTER'}
+ Ruri {uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]}
+ Vias [{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bKIzCyx">>},{<<"nksip">>,<<"1b0Plp">>}]}]
+ From {uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"1e4uAB">>}],[]}
+ To {uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]}
+ CallId <<"3Msjh4mAqPUAa7Rpkzk09lfhR6i">>
+2014-01-05 13:02:01.316 [info] <0.54.0>@generic_switch_sip_router:handle_cast:72 GOT REGISTER PACKET
+2014-01-05 13:02:02.317 [info] <0.54.0>@generic_switch_sip_router:handle_cast:66  Dialog undefined
+ Class {req,'REGISTER'}
+ Ruri {uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]}
+ Vias [{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bKIzCyx">>},{<<"nksip">>,<<"1b0Plp">>}]}]
+ From {uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"1e4uAB">>}],[]}
+ To {uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]}
+ CallId <<"3Msjh4mAqPUAa7Rpkzk09lfhR6i">>
+2014-01-05 13:02:02.317 [info] <0.54.0>@generic_switch_sip_router:handle_cast:72 GOT REGISTER PACKET
+2014-01-05 13:02:04.318 [info] <0.54.0>@generic_switch_sip_router:handle_cast:66  Dialog undefined
+ Class {req,'REGISTER'}
+ Ruri {uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]}
+ Vias [{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bKIzCyx">>},{<<"nksip">>,<<"1b0Plp">>}]}]
+ From {uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"1e4uAB">>}],[]}
+ To {uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]}
+ CallId <<"3Msjh4mAqPUAa7Rpkzk09lfhR6i">>
+2014-01-05 13:02:04.318 [info] <0.54.0>@generic_switch_sip_router:handle_cast:72 GOT REGISTER PACKET
+2014-01-05 13:02:08.320 [info] <0.54.0>@generic_switch_sip_router:handle_cast:66  Dialog undefined
+ Class {req,'REGISTER'}
+ Ruri {uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]}
+ Vias [{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bKIzCyx">>},{<<"nksip">>,<<"1b0Plp">>}]}]
+ From {uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"1e4uAB">>}],[]}
+ To {uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]}
+ CallId <<"3Msjh4mAqPUAa7Rpkzk09lfhR6i">>
+2014-01-05 13:02:08.320 [info] <0.54.0>@generic_switch_sip_router:handle_cast:72 GOT REGISTER PACKET
+2014-01-05 13:02:12.321 [info] <0.54.0>@generic_switch_sip_router:handle_cast:66  Dialog undefined
+ Class {req,'REGISTER'}
+ Ruri {uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]}
+ Vias [{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bKIzCyx">>},{<<"nksip">>,<<"1b0Plp">>}]}]
+ From {uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"1e4uAB">>}],[]}
+ To {uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]}
+ CallId <<"3Msjh4mAqPUAa7Rpkzk09lfhR6i">>
+2014-01-05 13:02:12.321 [info] <0.54.0>@generic_switch_sip_router:handle_cast:72 GOT REGISTER PACKET
+2014-01-05 13:02:16.322 [info] <0.54.0>@generic_switch_sip_router:handle_cast:66  Dialog undefined
+ Class {req,'REGISTER'}
+ Ruri {uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]}
+ Vias [{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bKIzCyx">>},{<<"nksip">>,<<"1b0Plp">>}]}]
+ From {uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"1e4uAB">>}],[]}
+ To {uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]}
+ CallId <<"3Msjh4mAqPUAa7Rpkzk09lfhR6i">>
+2014-01-05 13:02:16.322 [info] <0.54.0>@generic_switch_sip_router:handle_cast:72 GOT REGISTER PACKET
+2014-01-05 13:02:20.323 [info] <0.54.0>@generic_switch_sip_router:handle_cast:66  Dialog undefined
+ Class {req,'REGISTER'}
+ Ruri {uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]}
+ Vias [{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bKIzCyx">>},{<<"nksip">>,<<"1b0Plp">>}]}]
+ From {uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"1e4uAB">>}],[]}
+ To {uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]}
+ CallId <<"3Msjh4mAqPUAa7Rpkzk09lfhR6i">>
+2014-01-05 13:02:20.323 [info] <0.54.0>@generic_switch_sip_router:handle_cast:72 GOT REGISTER PACKET
+2014-01-05 13:02:24.324 [info] <0.54.0>@generic_switch_sip_router:handle_cast:66  Dialog undefined
+ Class {req,'REGISTER'}
+ Ruri {uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]}
+ Vias [{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bKIzCyx">>},{<<"nksip">>,<<"1b0Plp">>}]}]
+ From {uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"1e4uAB">>}],[]}
+ To {uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]}
+ CallId <<"3Msjh4mAqPUAa7Rpkzk09lfhR6i">>
+2014-01-05 13:02:24.324 [info] <0.54.0>@generic_switch_sip_router:handle_cast:72 GOT REGISTER PACKET
+2014-01-05 13:02:28.325 [info] <0.54.0>@generic_switch_sip_router:handle_cast:66  Dialog undefined
+ Class {req,'REGISTER'}
+ Ruri {uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]}
+ Vias [{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bKIzCyx">>},{<<"nksip">>,<<"1b0Plp">>}]}]
+ From {uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"1e4uAB">>}],[]}
+ To {uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]}
+ CallId <<"3Msjh4mAqPUAa7Rpkzk09lfhR6i">>
+2014-01-05 13:02:28.325 [info] <0.54.0>@generic_switch_sip_router:handle_cast:72 GOT REGISTER PACKET
+2014-01-05 13:02:32.326 [info] <0.54.0>@generic_switch_sip_router:handle_cast:66  Dialog undefined
+ Class {req,'REGISTER'}
+ Ruri {uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]}
+ Vias [{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bKIzCyx">>},{<<"nksip">>,<<"1b0Plp">>}]}]
+ From {uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"1e4uAB">>}],[]}
+ To {uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]}
+ CallId <<"3Msjh4mAqPUAa7Rpkzk09lfhR6i">>
+2014-01-05 13:02:32.326 [info] <0.54.0>@generic_switch_sip_router:handle_cast:72 GOT REGISTER PACKET
+2014-01-05 13:02:32.817 [info] <0.54.0>@generic_switch_sip_router:handle_cast:66  Dialog undefined
+ Class {req,'REGISTER'}
+ Ruri {uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]}
+ Vias [{via,udp,<<"127.0.0.1">>,5080,[<<"rport">>,{<<"branch">>,<<"z9hG4bK4R5bhi">>},{<<"nksip">>,<<"2zj4yJ">>}]}]
+ From {uri,<<>>,sip,<<"alice">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"22rYSk">>}],[]}
+ To {uri,<<>>,sip,<<"alice">>,<<>>,<<"nksip">>,0,[],[],[],[]}
+ CallId <<"T1hBz2HBGEZCfr8IYSdbtlVfdKs">>
+2014-01-05 13:02:32.817 [info] <0.54.0>@generic_switch_sip_router:handle_cast:72 GOT REGISTER PACKET
+2014-01-05 13:02:33.318 [info] <0.54.0>@generic_switch_sip_router:handle_cast:66  Dialog undefined
+ Class {req,'REGISTER'}
+ Ruri {uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]}
+ Vias [{via,udp,<<"127.0.0.1">>,5080,[<<"rport">>,{<<"branch">>,<<"z9hG4bK4R5bhi">>},{<<"nksip">>,<<"2zj4yJ">>}]}]
+ From {uri,<<>>,sip,<<"alice">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"22rYSk">>}],[]}
+ To {uri,<<>>,sip,<<"alice">>,<<>>,<<"nksip">>,0,[],[],[],[]}
+ CallId <<"T1hBz2HBGEZCfr8IYSdbtlVfdKs">>
+2014-01-05 13:02:33.318 [info] <0.54.0>@generic_switch_sip_router:handle_cast:72 GOT REGISTER PACKET
+2014-01-05 13:02:34.319 [info] <0.54.0>@generic_switch_sip_router:handle_cast:66  Dialog undefined
+ Class {req,'REGISTER'}
+ Ruri {uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]}
+ Vias [{via,udp,<<"127.0.0.1">>,5080,[<<"rport">>,{<<"branch">>,<<"z9hG4bK4R5bhi">>},{<<"nksip">>,<<"2zj4yJ">>}]}]
+ From {uri,<<>>,sip,<<"alice">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"22rYSk">>}],[]}
+ To {uri,<<>>,sip,<<"alice">>,<<>>,<<"nksip">>,0,[],[],[],[]}
+ CallId <<"T1hBz2HBGEZCfr8IYSdbtlVfdKs">>
+2014-01-05 13:02:34.319 [info] <0.54.0>@generic_switch_sip_router:handle_cast:72 GOT REGISTER PACKET
+2014-01-05 13:02:36.320 [info] <0.54.0>@generic_switch_sip_router:handle_cast:66  Dialog undefined
+ Class {req,'REGISTER'}
+ Ruri {uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]}
+ Vias [{via,udp,<<"127.0.0.1">>,5080,[<<"rport">>,{<<"branch">>,<<"z9hG4bK4R5bhi">>},{<<"nksip">>,<<"2zj4yJ">>}]}]
+ From {uri,<<>>,sip,<<"alice">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"22rYSk">>}],[]}
+ To {uri,<<>>,sip,<<"alice">>,<<>>,<<"nksip">>,0,[],[],[],[]}
+ CallId <<"T1hBz2HBGEZCfr8IYSdbtlVfdKs">>
+2014-01-05 13:02:36.320 [info] <0.54.0>@generic_switch_sip_router:handle_cast:72 GOT REGISTER PACKET
+2014-01-05 13:02:40.321 [info] <0.54.0>@generic_switch_sip_router:handle_cast:66  Dialog undefined
+ Class {req,'REGISTER'}
+ Ruri {uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]}
+ Vias [{via,udp,<<"127.0.0.1">>,5080,[<<"rport">>,{<<"branch">>,<<"z9hG4bK4R5bhi">>},{<<"nksip">>,<<"2zj4yJ">>}]}]
+ From {uri,<<>>,sip,<<"alice">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"22rYSk">>}],[]}
+ To {uri,<<>>,sip,<<"alice">>,<<>>,<<"nksip">>,0,[],[],[],[]}
+ CallId <<"T1hBz2HBGEZCfr8IYSdbtlVfdKs">>
+2014-01-05 13:02:40.321 [info] <0.54.0>@generic_switch_sip_router:handle_cast:72 GOT REGISTER PACKET
+2014-01-05 13:02:44.324 [info] <0.54.0>@generic_switch_sip_router:handle_cast:66  Dialog undefined
+ Class {req,'REGISTER'}
+ Ruri {uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]}
+ Vias [{via,udp,<<"127.0.0.1">>,5080,[<<"rport">>,{<<"branch">>,<<"z9hG4bK4R5bhi">>},{<<"nksip">>,<<"2zj4yJ">>}]}]
+ From {uri,<<>>,sip,<<"alice">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"22rYSk">>}],[]}
+ To {uri,<<>>,sip,<<"alice">>,<<>>,<<"nksip">>,0,[],[],[],[]}
+ CallId <<"T1hBz2HBGEZCfr8IYSdbtlVfdKs">>
+2014-01-05 13:02:44.324 [info] <0.54.0>@generic_switch_sip_router:handle_cast:72 GOT REGISTER PACKET
+2014-01-05 13:02:48.326 [info] <0.54.0>@generic_switch_sip_router:handle_cast:66  Dialog undefined
+ Class {req,'REGISTER'}
+ Ruri {uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]}
+ Vias [{via,udp,<<"127.0.0.1">>,5080,[<<"rport">>,{<<"branch">>,<<"z9hG4bK4R5bhi">>},{<<"nksip">>,<<"2zj4yJ">>}]}]
+ From {uri,<<>>,sip,<<"alice">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"22rYSk">>}],[]}
+ To {uri,<<>>,sip,<<"alice">>,<<>>,<<"nksip">>,0,[],[],[],[]}
+ CallId <<"T1hBz2HBGEZCfr8IYSdbtlVfdKs">>
+2014-01-05 13:02:48.327 [info] <0.54.0>@generic_switch_sip_router:handle_cast:72 GOT REGISTER PACKET
+2014-01-05 13:02:52.328 [info] <0.54.0>@generic_switch_sip_router:handle_cast:66  Dialog undefined
+ Class {req,'REGISTER'}
+ Ruri {uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]}
+ Vias [{via,udp,<<"127.0.0.1">>,5080,[<<"rport">>,{<<"branch">>,<<"z9hG4bK4R5bhi">>},{<<"nksip">>,<<"2zj4yJ">>}]}]
+ From {uri,<<>>,sip,<<"alice">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"22rYSk">>}],[]}
+ To {uri,<<>>,sip,<<"alice">>,<<>>,<<"nksip">>,0,[],[],[],[]}
+ CallId <<"T1hBz2HBGEZCfr8IYSdbtlVfdKs">>
+2014-01-05 13:02:52.328 [info] <0.54.0>@generic_switch_sip_router:handle_cast:72 GOT REGISTER PACKET
+2014-01-05 13:02:56.328 [info] <0.54.0>@generic_switch_sip_router:handle_cast:66  Dialog undefined
+ Class {req,'REGISTER'}
+ Ruri {uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]}
+ Vias [{via,udp,<<"127.0.0.1">>,5080,[<<"rport">>,{<<"branch">>,<<"z9hG4bK4R5bhi">>},{<<"nksip">>,<<"2zj4yJ">>}]}]
+ From {uri,<<>>,sip,<<"alice">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"22rYSk">>}],[]}
+ To {uri,<<>>,sip,<<"alice">>,<<>>,<<"nksip">>,0,[],[],[],[]}
+ CallId <<"T1hBz2HBGEZCfr8IYSdbtlVfdKs">>
+2014-01-05 13:02:56.328 [info] <0.54.0>@generic_switch_sip_router:handle_cast:72 GOT REGISTER PACKET
+2014-01-05 13:03:00.329 [info] <0.54.0>@generic_switch_sip_router:handle_cast:66  Dialog undefined
+ Class {req,'REGISTER'}
+ Ruri {uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]}
+ Vias [{via,udp,<<"127.0.0.1">>,5080,[<<"rport">>,{<<"branch">>,<<"z9hG4bK4R5bhi">>},{<<"nksip">>,<<"2zj4yJ">>}]}]
+ From {uri,<<>>,sip,<<"alice">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"22rYSk">>}],[]}
+ To {uri,<<>>,sip,<<"alice">>,<<>>,<<"nksip">>,0,[],[],[],[]}
+ CallId <<"T1hBz2HBGEZCfr8IYSdbtlVfdKs">>
+2014-01-05 13:03:00.329 [info] <0.54.0>@generic_switch_sip_router:handle_cast:72 GOT REGISTER PACKET
+2014-01-05 13:03:04.331 [info] <0.54.0>@generic_switch_sip_router:handle_cast:66  Dialog undefined
+ Class {req,'REGISTER'}
+ Ruri {uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]}
+ Vias [{via,udp,<<"127.0.0.1">>,5080,[<<"rport">>,{<<"branch">>,<<"z9hG4bK4R5bhi">>},{<<"nksip">>,<<"2zj4yJ">>}]}]
+ From {uri,<<>>,sip,<<"alice">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"22rYSk">>}],[]}
+ To {uri,<<>>,sip,<<"alice">>,<<>>,<<"nksip">>,0,[],[],[],[]}
+ CallId <<"T1hBz2HBGEZCfr8IYSdbtlVfdKs">>
+2014-01-05 13:03:04.331 [info] <0.54.0>@generic_switch_sip_router:handle_cast:72 GOT REGISTER PACKET
+2014-01-05 13:57:55.547 [info] <0.53.0>@generic_switch_sip_transport_udp:init:25 sip udp transport had started
+2014-01-05 13:57:55.547 [info] <0.6.0> Application lager started on node nonode@nohost
+2014-01-05 13:57:55.549 [info] <0.54.0>@generic_switch_sip_router:init:33 sip dialog router had started
+2014-01-05 13:57:58.399 [info] <0.54.0>@generic_switch_sip_router:handle_cast:37 {sipmsg,<<"R_WG4bu_V4JNs7mCHD3saBA6wlQkk6ukIzG">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK2qLbHU">>},{<<"nksip">>,<<"3FDWvl">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"XR076">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"V4JNs7mCHD3saBA6wlQkk6ukIzG">>,17433575,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"XR076">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388926678394509}
+2014-01-05 13:57:58.399 [info] <0.54.0>@generic_switch_sip_router:handle_cast:73 GOT REGISTER PACKET
+2014-01-05 13:57:58.894 [info] <0.54.0>@generic_switch_sip_router:handle_cast:37 {sipmsg,<<"R_1PqfCA_V4JNs7mCHD3saBA6wlQkk6ukIzG">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK2qLbHU">>},{<<"nksip">>,<<"3FDWvl">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"XR076">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"V4JNs7mCHD3saBA6wlQkk6ukIzG">>,17433575,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"XR076">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388926678894443}
+2014-01-05 13:57:58.894 [info] <0.54.0>@generic_switch_sip_router:handle_cast:73 GOT REGISTER PACKET
+2014-01-05 13:57:59.895 [info] <0.54.0>@generic_switch_sip_router:handle_cast:37 {sipmsg,<<"R_l0YDL_V4JNs7mCHD3saBA6wlQkk6ukIzG">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK2qLbHU">>},{<<"nksip">>,<<"3FDWvl">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"XR076">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"V4JNs7mCHD3saBA6wlQkk6ukIzG">>,17433575,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"XR076">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388926679895268}
+2014-01-05 13:57:59.895 [info] <0.54.0>@generic_switch_sip_router:handle_cast:73 GOT REGISTER PACKET
+2014-01-05 13:59:15.103 [info] <0.54.0>@generic_switch_sip_router:handle_cast:37 {sipmsg,<<"R_47OLFW_V4JNs7mCHD3saBA6wlQkk6ukIzG">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK2qLbHU">>},{<<"nksip">>,<<"3FDWvl">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"XR076">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"V4JNs7mCHD3saBA6wlQkk6ukIzG">>,17433575,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"XR076">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388926755102665}
+2014-01-05 13:59:15.103 [info] <0.54.0>@generic_switch_sip_router:handle_cast:73 GOT REGISTER PACKET
+2014-01-05 13:59:15.104 [info] <0.54.0>@generic_switch_sip_router:handle_cast:37 {sipmsg,<<"R_3UP2oG_V4JNs7mCHD3saBA6wlQkk6ukIzG">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK2qLbHU">>},{<<"nksip">>,<<"3FDWvl">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"XR076">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"V4JNs7mCHD3saBA6wlQkk6ukIzG">>,17433575,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"XR076">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388926755102867}
+2014-01-05 13:59:15.105 [info] <0.54.0>@generic_switch_sip_router:handle_cast:73 GOT REGISTER PACKET
+2014-01-05 13:59:15.105 [info] <0.54.0>@generic_switch_sip_router:handle_cast:37 {sipmsg,<<"R_2KgOJd_V4JNs7mCHD3saBA6wlQkk6ukIzG">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK2qLbHU">>},{<<"nksip">>,<<"3FDWvl">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"XR076">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"V4JNs7mCHD3saBA6wlQkk6ukIzG">>,17433575,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"XR076">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388926755102997}
+2014-01-05 13:59:15.105 [info] <0.54.0>@generic_switch_sip_router:handle_cast:73 GOT REGISTER PACKET
+2014-01-05 13:59:15.105 [info] <0.54.0>@generic_switch_sip_router:handle_cast:37 {sipmsg,<<"R_yvt8h_V4JNs7mCHD3saBA6wlQkk6ukIzG">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK2qLbHU">>},{<<"nksip">>,<<"3FDWvl">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"XR076">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"V4JNs7mCHD3saBA6wlQkk6ukIzG">>,17433575,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"XR076">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388926755103444}
+2014-01-05 13:59:15.105 [info] <0.54.0>@generic_switch_sip_router:handle_cast:73 GOT REGISTER PACKET
+2014-01-05 13:59:15.105 [info] <0.54.0>@generic_switch_sip_router:handle_cast:37 {sipmsg,<<"R_3yGDyP_V4JNs7mCHD3saBA6wlQkk6ukIzG">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK2qLbHU">>},{<<"nksip">>,<<"3FDWvl">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"XR076">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"V4JNs7mCHD3saBA6wlQkk6ukIzG">>,17433575,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"XR076">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388926755103694}
+2014-01-05 13:59:15.105 [info] <0.54.0>@generic_switch_sip_router:handle_cast:73 GOT REGISTER PACKET
+2014-01-05 13:59:15.106 [info] <0.54.0>@generic_switch_sip_router:handle_cast:37 {sipmsg,<<"R_4eOoXa_V4JNs7mCHD3saBA6wlQkk6ukIzG">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK2qLbHU">>},{<<"nksip">>,<<"3FDWvl">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"XR076">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"V4JNs7mCHD3saBA6wlQkk6ukIzG">>,17433575,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"XR076">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388926755104070}
+2014-01-05 13:59:15.106 [info] <0.54.0>@generic_switch_sip_router:handle_cast:73 GOT REGISTER PACKET
+2014-01-05 13:59:15.106 [info] <0.54.0>@generic_switch_sip_router:handle_cast:37 {sipmsg,<<"R_4YeJI6_V4JNs7mCHD3saBA6wlQkk6ukIzG">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK2qLbHU">>},{<<"nksip">>,<<"3FDWvl">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"XR076">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"V4JNs7mCHD3saBA6wlQkk6ukIzG">>,17433575,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"XR076">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388926755104192}
+2014-01-05 13:59:15.106 [info] <0.54.0>@generic_switch_sip_router:handle_cast:73 GOT REGISTER PACKET
+2014-01-05 13:59:15.106 [info] <0.54.0>@generic_switch_sip_router:handle_cast:37 {sipmsg,<<"R_1ZqbZq_V4JNs7mCHD3saBA6wlQkk6ukIzG">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK2qLbHU">>},{<<"nksip">>,<<"3FDWvl">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"XR076">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"V4JNs7mCHD3saBA6wlQkk6ukIzG">>,17433575,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"XR076">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388926755104310}
+2014-01-05 13:59:15.106 [info] <0.54.0>@generic_switch_sip_router:handle_cast:73 GOT REGISTER PACKET
+2014-01-05 13:59:15.106 [info] <0.54.0>@generic_switch_sip_router:handle_cast:37 {sipmsg,<<"R_2jbKcD_2JwdKvgqduvOLL9ktGuWXnfNFmM">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5080,[<<"rport">>,{<<"branch">>,<<"z9hG4bK1A0Bh">>},{<<"nksip">>,<<"3zaEO0">>}]}],{uri,<<>>,sip,<<"alice">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"U9ENJ">>}],[]},{uri,<<>>,sip,<<"alice">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"2JwdKvgqduvOLL9ktGuWXnfNFmM">>,17433576,'REGISTER',70,[],[{uri,<<>>,sip,<<"alice">>,<<>>,<<"127.0.0.1">>,5080,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"U9ENJ">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388926755104512}
+2014-01-05 13:59:15.107 [info] <0.54.0>@generic_switch_sip_router:handle_cast:73 GOT REGISTER PACKET
+2014-01-05 13:59:15.107 [info] <0.54.0>@generic_switch_sip_router:handle_cast:37 {sipmsg,<<"R_25bUKG_2JwdKvgqduvOLL9ktGuWXnfNFmM">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5080,[<<"rport">>,{<<"branch">>,<<"z9hG4bK1A0Bh">>},{<<"nksip">>,<<"3zaEO0">>}]}],{uri,<<>>,sip,<<"alice">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"U9ENJ">>}],[]},{uri,<<>>,sip,<<"alice">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"2JwdKvgqduvOLL9ktGuWXnfNFmM">>,17433576,'REGISTER',70,[],[{uri,<<>>,sip,<<"alice">>,<<>>,<<"127.0.0.1">>,5080,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"U9ENJ">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388926755104666}
+2014-01-05 13:59:15.107 [info] <0.54.0>@generic_switch_sip_router:handle_cast:73 GOT REGISTER PACKET
+2014-01-05 13:59:15.108 [info] <0.54.0>@generic_switch_sip_router:handle_cast:37 {sipmsg,<<"R_3ROKPW_2JwdKvgqduvOLL9ktGuWXnfNFmM">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5080,[<<"rport">>,{<<"branch">>,<<"z9hG4bK1A0Bh">>},{<<"nksip">>,<<"3zaEO0">>}]}],{uri,<<>>,sip,<<"alice">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"U9ENJ">>}],[]},{uri,<<>>,sip,<<"alice">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"2JwdKvgqduvOLL9ktGuWXnfNFmM">>,17433576,'REGISTER',70,[],[{uri,<<>>,sip,<<"alice">>,<<>>,<<"127.0.0.1">>,5080,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"U9ENJ">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388926755107241}
+2014-01-05 13:59:15.108 [info] <0.54.0>@generic_switch_sip_router:handle_cast:73 GOT REGISTER PACKET
+2014-01-05 13:59:15.108 [info] <0.54.0>@generic_switch_sip_router:handle_cast:37 {sipmsg,<<"R_2FGrrh_2JwdKvgqduvOLL9ktGuWXnfNFmM">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5080,[<<"rport">>,{<<"branch">>,<<"z9hG4bK1A0Bh">>},{<<"nksip">>,<<"3zaEO0">>}]}],{uri,<<>>,sip,<<"alice">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"U9ENJ">>}],[]},{uri,<<>>,sip,<<"alice">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"2JwdKvgqduvOLL9ktGuWXnfNFmM">>,17433576,'REGISTER',70,[],[{uri,<<>>,sip,<<"alice">>,<<>>,<<"127.0.0.1">>,5080,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"U9ENJ">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388926755107390}
+2014-01-05 13:59:15.108 [info] <0.54.0>@generic_switch_sip_router:handle_cast:73 GOT REGISTER PACKET
+2014-01-05 13:59:15.108 [info] <0.54.0>@generic_switch_sip_router:handle_cast:37 {sipmsg,<<"R_RvErN_2JwdKvgqduvOLL9ktGuWXnfNFmM">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5080,[<<"rport">>,{<<"branch">>,<<"z9hG4bK1A0Bh">>},{<<"nksip">>,<<"3zaEO0">>}]}],{uri,<<>>,sip,<<"alice">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"U9ENJ">>}],[]},{uri,<<>>,sip,<<"alice">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"2JwdKvgqduvOLL9ktGuWXnfNFmM">>,17433576,'REGISTER',70,[],[{uri,<<>>,sip,<<"alice">>,<<>>,<<"127.0.0.1">>,5080,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"U9ENJ">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388926755107521}
+2014-01-05 13:59:15.108 [info] <0.54.0>@generic_switch_sip_router:handle_cast:73 GOT REGISTER PACKET
+2014-01-05 14:11:54.722 [info] <0.53.0>@generic_switch_sip_transport_udp:init:25 sip udp transport had started
+2014-01-05 14:11:54.722 [info] <0.6.0> Application lager started on node nonode@nohost
+2014-01-05 14:11:54.724 [info] <0.54.0>@generic_switch_sip_router:init:33 sip dialog router had started
+2014-01-05 14:11:59.919 [error] <0.52.0> gen_server generic_switch_sup terminated with reason: call to undefined function client_database:start/0 from erl_eval:do_apply/6 line 576
+2014-01-05 14:11:59.920 [error] <0.52.0> CRASH REPORT Process generic_switch_sup with 0 neighbours exited with reason: call to undefined function client_database:start() in gen_server:terminate/6 line 747
+2014-01-05 14:12:18.265 [info] <0.59.0>@generic_switch_sip_transport_udp:init:25 sip udp transport had started
+2014-01-05 14:12:18.267 [info] <0.60.0>@generic_switch_sip_router:init:33 sip dialog router had started
+2014-01-05 14:18:19.827 [info] <0.53.0>@generic_switch_sip_transport_udp:init:25 sip udp transport had started
+2014-01-05 14:18:19.827 [info] <0.6.0> Application lager started on node nonode@nohost
+2014-01-05 14:18:19.828 [info] <0.54.0>@generic_switch_sip_router:init:33 sip dialog router had started
+2014-01-05 14:20:03.704 [info] <0.53.0>@generic_switch_sip_transport_udp:init:25 sip udp transport had started
+2014-01-05 14:20:03.704 [info] <0.6.0> Application lager started on node nonode@nohost
+2014-01-05 14:20:03.706 [info] <0.54.0>@generic_switch_sip_router:init:33 sip dialog router had started
+2014-01-05 14:20:03.711 [info] <0.52.0>@client_database:start_link:7 generic client database application started
+2014-01-05 14:20:03.711 [error] <0.52.0> Supervisor generic_switch_sup had child genericClientDatabase started with client_database:start_link() at undefined exit with reason ok in context start_error
+2014-01-05 14:21:26.343 [info] <0.53.0>@generic_switch_sip_transport_udp:init:25 sip udp transport had started
+2014-01-05 14:21:26.343 [info] <0.6.0> Application lager started on node nonode@nohost
+2014-01-05 14:21:26.345 [info] <0.54.0>@generic_switch_sip_router:init:33 sip dialog router had started
+2014-01-05 14:21:26.349 [info] <0.52.0>@client_database:start_link:6 generic client database application started
+2014-01-05 14:28:13.507 [info] <0.53.0>@generic_switch_sip_transport_udp:init:25 sip udp transport had started
+2014-01-05 14:28:13.507 [info] <0.6.0> Application lager started on node nonode@nohost
+2014-01-05 14:28:13.509 [info] <0.54.0>@generic_switch_sip_router:init:33 sip dialog router had started
+2014-01-05 14:28:13.512 [info] <0.52.0>@client_database:start_link:6 generic client database application started
+2014-01-05 14:28:15.945 [info] <0.54.0>@generic_switch_sip_router:handle_cast:37 {sipmsg,<<"R_3EkagK_JcrO9vU9qfwN6BNNaWD80QwTb4d">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK3VsUFR">>},{<<"nksip">>,<<"Ak35n">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"32rWhd">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"JcrO9vU9qfwN6BNNaWD80QwTb4d">>,17433577,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"32rWhd">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388928495939559} {127,0,0,1} 5070
+2014-01-05 14:28:15.945 [info] <0.54.0>@generic_switch_sip_router:handle_cast:72 GOT REGISTER PACKET
+2014-01-05 14:28:16.439 [info] <0.54.0>@generic_switch_sip_router:handle_cast:37 {sipmsg,<<"R_2TyO5V_JcrO9vU9qfwN6BNNaWD80QwTb4d">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK3VsUFR">>},{<<"nksip">>,<<"Ak35n">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"32rWhd">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"JcrO9vU9qfwN6BNNaWD80QwTb4d">>,17433577,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"32rWhd">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388928496438611} {127,0,0,1} 5070
+2014-01-05 14:28:16.439 [info] <0.54.0>@generic_switch_sip_router:handle_cast:72 GOT REGISTER PACKET
+2014-01-05 14:28:17.439 [info] <0.54.0>@generic_switch_sip_router:handle_cast:37 {sipmsg,<<"R_1AKSne_JcrO9vU9qfwN6BNNaWD80QwTb4d">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK3VsUFR">>},{<<"nksip">>,<<"Ak35n">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"32rWhd">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"JcrO9vU9qfwN6BNNaWD80QwTb4d">>,17433577,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"32rWhd">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388928497439333} {127,0,0,1} 5070
+2014-01-05 14:28:17.439 [info] <0.54.0>@generic_switch_sip_router:handle_cast:72 GOT REGISTER PACKET
+2014-01-05 14:28:19.441 [info] <0.54.0>@generic_switch_sip_router:handle_cast:37 {sipmsg,<<"R_1exkLi_JcrO9vU9qfwN6BNNaWD80QwTb4d">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK3VsUFR">>},{<<"nksip">>,<<"Ak35n">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"32rWhd">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"JcrO9vU9qfwN6BNNaWD80QwTb4d">>,17433577,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"32rWhd">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388928499440548} {127,0,0,1} 5070
+2014-01-05 14:28:19.441 [info] <0.54.0>@generic_switch_sip_router:handle_cast:72 GOT REGISTER PACKET
+2014-01-05 14:28:23.445 [info] <0.54.0>@generic_switch_sip_router:handle_cast:37 {sipmsg,<<"R_8PYuU_JcrO9vU9qfwN6BNNaWD80QwTb4d">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK3VsUFR">>},{<<"nksip">>,<<"Ak35n">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"32rWhd">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"JcrO9vU9qfwN6BNNaWD80QwTb4d">>,17433577,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"32rWhd">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388928503444629} {127,0,0,1} 5070
+2014-01-05 14:28:23.445 [info] <0.54.0>@generic_switch_sip_router:handle_cast:72 GOT REGISTER PACKET
+2014-01-05 14:28:27.443 [info] <0.54.0>@generic_switch_sip_router:handle_cast:37 {sipmsg,<<"R_4eHfTY_JcrO9vU9qfwN6BNNaWD80QwTb4d">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK3VsUFR">>},{<<"nksip">>,<<"Ak35n">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"32rWhd">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"JcrO9vU9qfwN6BNNaWD80QwTb4d">>,17433577,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"32rWhd">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388928507443133} {127,0,0,1} 5070
+2014-01-05 14:28:27.443 [info] <0.54.0>@generic_switch_sip_router:handle_cast:72 GOT REGISTER PACKET
+2014-01-05 14:28:31.444 [info] <0.54.0>@generic_switch_sip_router:handle_cast:37 {sipmsg,<<"R_1DZ1Zp_JcrO9vU9qfwN6BNNaWD80QwTb4d">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK3VsUFR">>},{<<"nksip">>,<<"Ak35n">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"32rWhd">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"JcrO9vU9qfwN6BNNaWD80QwTb4d">>,17433577,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"32rWhd">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388928511443589} {127,0,0,1} 5070
+2014-01-05 14:28:31.444 [info] <0.54.0>@generic_switch_sip_router:handle_cast:72 GOT REGISTER PACKET
+2014-01-05 14:28:35.444 [info] <0.54.0>@generic_switch_sip_router:handle_cast:37 {sipmsg,<<"R_4AyBIl_JcrO9vU9qfwN6BNNaWD80QwTb4d">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK3VsUFR">>},{<<"nksip">>,<<"Ak35n">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"32rWhd">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"JcrO9vU9qfwN6BNNaWD80QwTb4d">>,17433577,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"32rWhd">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388928515444349} {127,0,0,1} 5070
+2014-01-05 14:28:35.444 [info] <0.54.0>@generic_switch_sip_router:handle_cast:72 GOT REGISTER PACKET
+2014-01-05 14:28:39.446 [info] <0.54.0>@generic_switch_sip_router:handle_cast:37 {sipmsg,<<"R_1ujGsF_JcrO9vU9qfwN6BNNaWD80QwTb4d">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK3VsUFR">>},{<<"nksip">>,<<"Ak35n">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"32rWhd">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"JcrO9vU9qfwN6BNNaWD80QwTb4d">>,17433577,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"32rWhd">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388928519445658} {127,0,0,1} 5070
+2014-01-05 14:28:39.446 [info] <0.54.0>@generic_switch_sip_router:handle_cast:72 GOT REGISTER PACKET
+2014-01-05 14:28:43.448 [info] <0.54.0>@generic_switch_sip_router:handle_cast:37 {sipmsg,<<"R_3sJa1F_JcrO9vU9qfwN6BNNaWD80QwTb4d">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK3VsUFR">>},{<<"nksip">>,<<"Ak35n">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"32rWhd">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"JcrO9vU9qfwN6BNNaWD80QwTb4d">>,17433577,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"32rWhd">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388928523447670} {127,0,0,1} 5070
+2014-01-05 14:28:43.448 [info] <0.54.0>@generic_switch_sip_router:handle_cast:72 GOT REGISTER PACKET
+2014-01-05 14:28:47.448 [info] <0.54.0>@generic_switch_sip_router:handle_cast:37 {sipmsg,<<"R_CtAik_JcrO9vU9qfwN6BNNaWD80QwTb4d">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK3VsUFR">>},{<<"nksip">>,<<"Ak35n">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"32rWhd">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"JcrO9vU9qfwN6BNNaWD80QwTb4d">>,17433577,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"32rWhd">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388928527448387} {127,0,0,1} 5070
+2014-01-05 14:28:47.448 [info] <0.54.0>@generic_switch_sip_router:handle_cast:72 GOT REGISTER PACKET
+2014-01-05 14:28:47.940 [info] <0.54.0>@generic_switch_sip_router:handle_cast:37 {sipmsg,<<"R_eMLhx_aRi4XWLTOS6ms1zu89Kqjqe5OYh">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5080,[<<"rport">>,{<<"branch">>,<<"z9hG4bK3rQWaN">>},{<<"nksip">>,<<"1huQ8Y">>}]}],{uri,<<>>,sip,<<"alice">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"ChOCL">>}],[]},{uri,<<>>,sip,<<"alice">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"aRi4XWLTOS6ms1zu89Kqjqe5OYh">>,17433578,'REGISTER',70,[],[{uri,<<>>,sip,<<"alice">>,<<>>,<<"127.0.0.1">>,5080,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"ChOCL">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388928527940175} {127,0,0,1} 5080
+2014-01-05 14:28:47.940 [info] <0.54.0>@generic_switch_sip_router:handle_cast:72 GOT REGISTER PACKET
+2014-01-05 14:28:48.444 [info] <0.54.0>@generic_switch_sip_router:handle_cast:37 {sipmsg,<<"R_2LKUcI_aRi4XWLTOS6ms1zu89Kqjqe5OYh">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5080,[<<"rport">>,{<<"branch">>,<<"z9hG4bK3rQWaN">>},{<<"nksip">>,<<"1huQ8Y">>}]}],{uri,<<>>,sip,<<"alice">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"ChOCL">>}],[]},{uri,<<>>,sip,<<"alice">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"aRi4XWLTOS6ms1zu89Kqjqe5OYh">>,17433578,'REGISTER',70,[],[{uri,<<>>,sip,<<"alice">>,<<>>,<<"127.0.0.1">>,5080,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"ChOCL">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388928528443624} {127,0,0,1} 5080
+2014-01-05 14:28:48.444 [info] <0.54.0>@generic_switch_sip_router:handle_cast:72 GOT REGISTER PACKET
+2014-01-05 14:28:49.441 [info] <0.54.0>@generic_switch_sip_router:handle_cast:37 {sipmsg,<<"R_105wJ6_aRi4XWLTOS6ms1zu89Kqjqe5OYh">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5080,[<<"rport">>,{<<"branch">>,<<"z9hG4bK3rQWaN">>},{<<"nksip">>,<<"1huQ8Y">>}]}],{uri,<<>>,sip,<<"alice">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"ChOCL">>}],[]},{uri,<<>>,sip,<<"alice">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"aRi4XWLTOS6ms1zu89Kqjqe5OYh">>,17433578,'REGISTER',70,[],[{uri,<<>>,sip,<<"alice">>,<<>>,<<"127.0.0.1">>,5080,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"ChOCL">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388928529441543} {127,0,0,1} 5080
+2014-01-05 14:28:49.442 [info] <0.54.0>@generic_switch_sip_router:handle_cast:72 GOT REGISTER PACKET
+2014-01-05 14:28:51.443 [info] <0.54.0>@generic_switch_sip_router:handle_cast:37 {sipmsg,<<"R_2RZIr2_aRi4XWLTOS6ms1zu89Kqjqe5OYh">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5080,[<<"rport">>,{<<"branch">>,<<"z9hG4bK3rQWaN">>},{<<"nksip">>,<<"1huQ8Y">>}]}],{uri,<<>>,sip,<<"alice">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"ChOCL">>}],[]},{uri,<<>>,sip,<<"alice">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"aRi4XWLTOS6ms1zu89Kqjqe5OYh">>,17433578,'REGISTER',70,[],[{uri,<<>>,sip,<<"alice">>,<<>>,<<"127.0.0.1">>,5080,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"ChOCL">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388928531442579} {127,0,0,1} 5080
+2014-01-05 14:28:51.443 [info] <0.54.0>@generic_switch_sip_router:handle_cast:72 GOT REGISTER PACKET
+2014-01-05 14:28:55.444 [info] <0.54.0>@generic_switch_sip_router:handle_cast:37 {sipmsg,<<"R_4WRvez_aRi4XWLTOS6ms1zu89Kqjqe5OYh">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5080,[<<"rport">>,{<<"branch">>,<<"z9hG4bK3rQWaN">>},{<<"nksip">>,<<"1huQ8Y">>}]}],{uri,<<>>,sip,<<"alice">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"ChOCL">>}],[]},{uri,<<>>,sip,<<"alice">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"aRi4XWLTOS6ms1zu89Kqjqe5OYh">>,17433578,'REGISTER',70,[],[{uri,<<>>,sip,<<"alice">>,<<>>,<<"127.0.0.1">>,5080,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"ChOCL">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388928535443615} {127,0,0,1} 5080
+2014-01-05 14:28:55.444 [info] <0.54.0>@generic_switch_sip_router:handle_cast:72 GOT REGISTER PACKET
+2014-01-05 14:28:59.446 [info] <0.54.0>@generic_switch_sip_router:handle_cast:37 {sipmsg,<<"R_494O7A_aRi4XWLTOS6ms1zu89Kqjqe5OYh">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5080,[<<"rport">>,{<<"branch">>,<<"z9hG4bK3rQWaN">>},{<<"nksip">>,<<"1huQ8Y">>}]}],{uri,<<>>,sip,<<"alice">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"ChOCL">>}],[]},{uri,<<>>,sip,<<"alice">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"aRi4XWLTOS6ms1zu89Kqjqe5OYh">>,17433578,'REGISTER',70,[],[{uri,<<>>,sip,<<"alice">>,<<>>,<<"127.0.0.1">>,5080,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"ChOCL">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388928539445766} {127,0,0,1} 5080
+2014-01-05 14:28:59.446 [info] <0.54.0>@generic_switch_sip_router:handle_cast:72 GOT REGISTER PACKET
+2014-01-05 14:29:03.447 [info] <0.54.0>@generic_switch_sip_router:handle_cast:37 {sipmsg,<<"R_1Qv2HJ_aRi4XWLTOS6ms1zu89Kqjqe5OYh">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5080,[<<"rport">>,{<<"branch">>,<<"z9hG4bK3rQWaN">>},{<<"nksip">>,<<"1huQ8Y">>}]}],{uri,<<>>,sip,<<"alice">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"ChOCL">>}],[]},{uri,<<>>,sip,<<"alice">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"aRi4XWLTOS6ms1zu89Kqjqe5OYh">>,17433578,'REGISTER',70,[],[{uri,<<>>,sip,<<"alice">>,<<>>,<<"127.0.0.1">>,5080,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"ChOCL">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388928543446602} {127,0,0,1} 5080
+2014-01-05 14:29:03.447 [info] <0.54.0>@generic_switch_sip_router:handle_cast:72 GOT REGISTER PACKET
+2014-01-05 14:29:07.448 [info] <0.54.0>@generic_switch_sip_router:handle_cast:37 {sipmsg,<<"R_knKCW_aRi4XWLTOS6ms1zu89Kqjqe5OYh">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5080,[<<"rport">>,{<<"branch">>,<<"z9hG4bK3rQWaN">>},{<<"nksip">>,<<"1huQ8Y">>}]}],{uri,<<>>,sip,<<"alice">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"ChOCL">>}],[]},{uri,<<>>,sip,<<"alice">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"aRi4XWLTOS6ms1zu89Kqjqe5OYh">>,17433578,'REGISTER',70,[],[{uri,<<>>,sip,<<"alice">>,<<>>,<<"127.0.0.1">>,5080,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"ChOCL">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388928547447662} {127,0,0,1} 5080
+2014-01-05 14:29:07.448 [info] <0.54.0>@generic_switch_sip_router:handle_cast:72 GOT REGISTER PACKET
+2014-01-05 14:29:11.449 [info] <0.54.0>@generic_switch_sip_router:handle_cast:37 {sipmsg,<<"R_1nVfUk_aRi4XWLTOS6ms1zu89Kqjqe5OYh">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5080,[<<"rport">>,{<<"branch">>,<<"z9hG4bK3rQWaN">>},{<<"nksip">>,<<"1huQ8Y">>}]}],{uri,<<>>,sip,<<"alice">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"ChOCL">>}],[]},{uri,<<>>,sip,<<"alice">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"aRi4XWLTOS6ms1zu89Kqjqe5OYh">>,17433578,'REGISTER',70,[],[{uri,<<>>,sip,<<"alice">>,<<>>,<<"127.0.0.1">>,5080,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"ChOCL">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388928551448703} {127,0,0,1} 5080
+2014-01-05 14:29:11.449 [info] <0.54.0>@generic_switch_sip_router:handle_cast:72 GOT REGISTER PACKET
+2014-01-05 14:29:15.450 [info] <0.54.0>@generic_switch_sip_router:handle_cast:37 {sipmsg,<<"R_2Beh4Q_aRi4XWLTOS6ms1zu89Kqjqe5OYh">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5080,[<<"rport">>,{<<"branch">>,<<"z9hG4bK3rQWaN">>},{<<"nksip">>,<<"1huQ8Y">>}]}],{uri,<<>>,sip,<<"alice">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"ChOCL">>}],[]},{uri,<<>>,sip,<<"alice">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"aRi4XWLTOS6ms1zu89Kqjqe5OYh">>,17433578,'REGISTER',70,[],[{uri,<<>>,sip,<<"alice">>,<<>>,<<"127.0.0.1">>,5080,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"ChOCL">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388928555450261} {127,0,0,1} 5080
+2014-01-05 14:29:15.450 [info] <0.54.0>@generic_switch_sip_router:handle_cast:72 GOT REGISTER PACKET
+2014-01-05 14:29:19.452 [info] <0.54.0>@generic_switch_sip_router:handle_cast:37 {sipmsg,<<"R_26tZqq_aRi4XWLTOS6ms1zu89Kqjqe5OYh">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5080,[<<"rport">>,{<<"branch">>,<<"z9hG4bK3rQWaN">>},{<<"nksip">>,<<"1huQ8Y">>}]}],{uri,<<>>,sip,<<"alice">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"ChOCL">>}],[]},{uri,<<>>,sip,<<"alice">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"aRi4XWLTOS6ms1zu89Kqjqe5OYh">>,17433578,'REGISTER',70,[],[{uri,<<>>,sip,<<"alice">>,<<>>,<<"127.0.0.1">>,5080,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"ChOCL">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388928559451637} {127,0,0,1} 5080
+2014-01-05 14:29:19.452 [info] <0.54.0>@generic_switch_sip_router:handle_cast:72 GOT REGISTER PACKET
+2014-01-05 14:42:41.303 [info] <0.53.0>@generic_switch_sip_transport_udp:init:25 sip udp transport had started
+2014-01-05 14:42:41.303 [info] <0.6.0> Application lager started on node nonode@nohost
+2014-01-05 14:42:41.304 [info] <0.54.0>@generic_switch_sip_router:init:33 sip dialog router had started
+2014-01-05 14:42:41.308 [info] <0.52.0>@client_database:start_link:6 generic client database application started
+2014-01-05 14:42:44.408 [info] <0.54.0>@generic_switch_sip_router:handle_cast:38 {sipmsg,<<"R_1pUMP1_NxpjBZjTnopw1o9KjFf7MqAVHML">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bKs9Hrw">>},{<<"nksip">>,<<"3ulHh3">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"2NYO6d">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"NxpjBZjTnopw1o9KjFf7MqAVHML">>,17433579,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"2NYO6d">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388929364401806} {127,0,0,1} 5070
+2014-01-05 14:42:44.408 [notice] <0.54.0>@generic_switch_sip_router:handle_cast:73 []
+2014-01-05 14:42:44.898 [info] <0.54.0>@generic_switch_sip_router:handle_cast:38 {sipmsg,<<"R_32c4U_NxpjBZjTnopw1o9KjFf7MqAVHML">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bKs9Hrw">>},{<<"nksip">>,<<"3ulHh3">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"2NYO6d">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"NxpjBZjTnopw1o9KjFf7MqAVHML">>,17433579,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"2NYO6d">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388929364898414} {127,0,0,1} 5070
+2014-01-05 14:42:44.898 [notice] <0.54.0>@generic_switch_sip_router:handle_cast:73 []
+2014-01-05 14:42:45.901 [info] <0.54.0>@generic_switch_sip_router:handle_cast:38 {sipmsg,<<"R_3PPZxv_NxpjBZjTnopw1o9KjFf7MqAVHML">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bKs9Hrw">>},{<<"nksip">>,<<"3ulHh3">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"2NYO6d">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"NxpjBZjTnopw1o9KjFf7MqAVHML">>,17433579,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"2NYO6d">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388929365901275} {127,0,0,1} 5070
+2014-01-05 14:42:45.901 [notice] <0.54.0>@generic_switch_sip_router:handle_cast:73 []
+2014-01-05 15:02:27.640 [info] <0.54.0>@generic_switch_sip_transport_udp:init:25 sip udp transport had started
+2014-01-05 15:02:27.640 [info] <0.6.0> Application lager started on node nonode@nohost
+2014-01-05 15:02:27.642 [info] <0.55.0>@generic_switch_sip_router:init:33 sip dialog router had started
+2014-01-05 15:02:27.646 [info] <0.53.0>@client_database:start_link:6 generic client database application started
+2014-01-05 15:02:51.490 [info] <0.55.0>@generic_switch_sip_router:handle_cast:38 {sipmsg,<<"R_3fVSu0_4ev15YXatuMxsF7TlOlIg7ftleM">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK3aRAMN">>},{<<"nksip">>,<<"1AaFJ0">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"1x1Yaz">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"4ev15YXatuMxsF7TlOlIg7ftleM">>,17443094,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"1x1Yaz">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388930571486133} {127,0,0,1} 5070
+2014-01-05 15:02:51.490 [warning] <0.55.0>@generic_switch_sip_router:terminate:97 shutting down the UDP transport {{badmatch,{sipmsg,<<"R_3fVSu0_4ev15YXatuMxsF7TlOlIg7ftleM">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK3aRAMN">>},{<<"nksip">>,<<"1AaFJ0">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"1x1Yaz">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"4ev15YXatuMxsF7TlOlIg7ftleM">>,17443094,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"1x1Yaz">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388930571486133}},[{generic_switch_sip_router,handle_cast,2,[{file,"src/generic_switch_sip_router.erl"},{line,69}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,607}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+2014-01-05 15:02:51.490 [info] <0.60.0>@generic_switch_sip_router:init:33 sip dialog router had started
+2014-01-05 15:02:51.491 [error] <0.55.0> gen_server generic_switch_sip_router terminated with reason: no match of right hand value {sipmsg,<<"R_3fVSu0_4ev15YXatuMxsF7TlOlIg7ftleM">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK3aRAMN">>},{<<"nksip">>,<<"1AaFJ0">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"1x1Yaz">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"4ev15YXatuMxsF7TlOlIg7ftleM">>,17443094,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],...}],...} in generic_switch_sip_router:handle_cast/2 line 69
+2014-01-05 15:02:51.491 [error] <0.55.0> CRASH REPORT Process generic_switch_sip_router with 0 neighbours exited with reason: no match of right hand value {sipmsg,<<"R_3fVSu0_4ev15YXatuMxsF7TlOlIg7ftleM">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK3aRAMN">>},{<<"nksip">>,<<"1AaFJ0">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"1x1Yaz">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"4ev15YXatuMxsF7TlOlIg7ftleM">>,17443094,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],...}],...} in generic_switch_sip_router:handle_cast/2 line 69 in gen_server:terminate/6 line 747
+2014-01-05 15:02:51.492 [error] <0.53.0> Supervisor generic_switch_sup had child sipDialogRouter started with generic_switch_sip_router:start_link(24595) at <0.55.0> exit with reason no match of right hand value {sipmsg,<<"R_3fVSu0_4ev15YXatuMxsF7TlOlIg7ftleM">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK3aRAMN">>},{<<"nksip">>,<<"1AaFJ0">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"1x1Yaz">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"4ev15YXatuMxsF7TlOlIg7ftleM">>,17443094,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],...}],...} in generic_switch_sip_router:handle_cast/2 line 69 in context child_terminated
+2014-01-05 15:02:51.997 [info] <0.60.0>@generic_switch_sip_router:handle_cast:38 {sipmsg,<<"R_1qMmii_4ev15YXatuMxsF7TlOlIg7ftleM">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK3aRAMN">>},{<<"nksip">>,<<"1AaFJ0">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"1x1Yaz">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"4ev15YXatuMxsF7TlOlIg7ftleM">>,17443094,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"1x1Yaz">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388930571996616} {127,0,0,1} 5070
+2014-01-05 15:02:51.997 [warning] <0.60.0>@generic_switch_sip_router:terminate:97 shutting down the UDP transport {{badmatch,{sipmsg,<<"R_1qMmii_4ev15YXatuMxsF7TlOlIg7ftleM">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK3aRAMN">>},{<<"nksip">>,<<"1AaFJ0">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"1x1Yaz">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"4ev15YXatuMxsF7TlOlIg7ftleM">>,17443094,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"1x1Yaz">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388930571996616}},[{generic_switch_sip_router,handle_cast,2,[{file,"src/generic_switch_sip_router.erl"},{line,69}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,607}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+2014-01-05 15:02:51.998 [error] <0.60.0> gen_server generic_switch_sip_router terminated with reason: no match of right hand value {sipmsg,<<"R_1qMmii_4ev15YXatuMxsF7TlOlIg7ftleM">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK3aRAMN">>},{<<"nksip">>,<<"1AaFJ0">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"1x1Yaz">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"4ev15YXatuMxsF7TlOlIg7ftleM">>,17443094,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],...}],...} in generic_switch_sip_router:handle_cast/2 line 69
+2014-01-05 15:02:51.998 [info] <0.61.0>@generic_switch_sip_router:init:33 sip dialog router had started
+2014-01-05 15:02:52.002 [error] <0.60.0> CRASH REPORT Process generic_switch_sip_router with 0 neighbours exited with reason: no match of right hand value {sipmsg,<<"R_1qMmii_4ev15YXatuMxsF7TlOlIg7ftleM">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK3aRAMN">>},{<<"nksip">>,<<"1AaFJ0">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"1x1Yaz">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"4ev15YXatuMxsF7TlOlIg7ftleM">>,17443094,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],...}],...} in generic_switch_sip_router:handle_cast/2 line 69 in gen_server:terminate/6 line 747
+2014-01-05 15:02:52.003 [error] <0.53.0> Supervisor generic_switch_sup had child sipDialogRouter started with generic_switch_sip_router:start_link(24595) at <0.60.0> exit with reason no match of right hand value {sipmsg,<<"R_1qMmii_4ev15YXatuMxsF7TlOlIg7ftleM">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK3aRAMN">>},{<<"nksip">>,<<"1AaFJ0">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"1x1Yaz">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"4ev15YXatuMxsF7TlOlIg7ftleM">>,17443094,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],...}],...} in generic_switch_sip_router:handle_cast/2 line 69 in context child_terminated
+2014-01-05 15:02:52.998 [info] <0.61.0>@generic_switch_sip_router:handle_cast:38 {sipmsg,<<"R_20wHye_4ev15YXatuMxsF7TlOlIg7ftleM">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK3aRAMN">>},{<<"nksip">>,<<"1AaFJ0">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"1x1Yaz">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"4ev15YXatuMxsF7TlOlIg7ftleM">>,17443094,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"1x1Yaz">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388930572997668} {127,0,0,1} 5070
+2014-01-05 15:02:52.998 [warning] <0.61.0>@generic_switch_sip_router:terminate:97 shutting down the UDP transport {{badmatch,{sipmsg,<<"R_20wHye_4ev15YXatuMxsF7TlOlIg7ftleM">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK3aRAMN">>},{<<"nksip">>,<<"1AaFJ0">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"1x1Yaz">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"4ev15YXatuMxsF7TlOlIg7ftleM">>,17443094,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"1x1Yaz">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388930572997668}},[{generic_switch_sip_router,handle_cast,2,[{file,"src/generic_switch_sip_router.erl"},{line,69}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,607}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+2014-01-05 15:02:53.000 [error] <0.61.0> gen_server generic_switch_sip_router terminated with reason: no match of right hand value {sipmsg,<<"R_20wHye_4ev15YXatuMxsF7TlOlIg7ftleM">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK3aRAMN">>},{<<"nksip">>,<<"1AaFJ0">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"1x1Yaz">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"4ev15YXatuMxsF7TlOlIg7ftleM">>,17443094,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],...}],...} in generic_switch_sip_router:handle_cast/2 line 69
+2014-01-05 15:02:53.000 [info] <0.62.0>@generic_switch_sip_router:init:33 sip dialog router had started
+2014-01-05 15:02:53.002 [error] <0.61.0> CRASH REPORT Process generic_switch_sip_router with 0 neighbours exited with reason: no match of right hand value {sipmsg,<<"R_20wHye_4ev15YXatuMxsF7TlOlIg7ftleM">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK3aRAMN">>},{<<"nksip">>,<<"1AaFJ0">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"1x1Yaz">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"4ev15YXatuMxsF7TlOlIg7ftleM">>,17443094,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],...}],...} in generic_switch_sip_router:handle_cast/2 line 69 in gen_server:terminate/6 line 747
+2014-01-05 15:02:53.003 [error] <0.53.0> Supervisor generic_switch_sup had child sipDialogRouter started with generic_switch_sip_router:start_link(24595) at <0.61.0> exit with reason no match of right hand value {sipmsg,<<"R_20wHye_4ev15YXatuMxsF7TlOlIg7ftleM">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK3aRAMN">>},{<<"nksip">>,<<"1AaFJ0">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"1x1Yaz">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"4ev15YXatuMxsF7TlOlIg7ftleM">>,17443094,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],...}],...} in generic_switch_sip_router:handle_cast/2 line 69 in context child_terminated
+2014-01-05 15:02:54.998 [info] <0.62.0>@generic_switch_sip_router:handle_cast:38 {sipmsg,<<"R_3oliOL_4ev15YXatuMxsF7TlOlIg7ftleM">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK3aRAMN">>},{<<"nksip">>,<<"1AaFJ0">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"1x1Yaz">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"4ev15YXatuMxsF7TlOlIg7ftleM">>,17443094,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"1x1Yaz">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388930574998283} {127,0,0,1} 5070
+2014-01-05 15:02:54.999 [warning] <0.62.0>@generic_switch_sip_router:terminate:97 shutting down the UDP transport {{badmatch,{sipmsg,<<"R_3oliOL_4ev15YXatuMxsF7TlOlIg7ftleM">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK3aRAMN">>},{<<"nksip">>,<<"1AaFJ0">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"1x1Yaz">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"4ev15YXatuMxsF7TlOlIg7ftleM">>,17443094,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"1x1Yaz">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388930574998283}},[{generic_switch_sip_router,handle_cast,2,[{file,"src/generic_switch_sip_router.erl"},{line,69}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,607}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+2014-01-05 15:02:55.002 [info] <0.63.0>@generic_switch_sip_router:init:33 sip dialog router had started
+2014-01-05 15:02:55.002 [error] <0.62.0> gen_server generic_switch_sip_router terminated with reason: no match of right hand value {sipmsg,<<"R_3oliOL_4ev15YXatuMxsF7TlOlIg7ftleM">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK3aRAMN">>},{<<"nksip">>,<<"1AaFJ0">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"1x1Yaz">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"4ev15YXatuMxsF7TlOlIg7ftleM">>,17443094,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],...}],...} in generic_switch_sip_router:handle_cast/2 line 69
+2014-01-05 15:02:55.004 [error] <0.62.0> CRASH REPORT Process generic_switch_sip_router with 0 neighbours exited with reason: no match of right hand value {sipmsg,<<"R_3oliOL_4ev15YXatuMxsF7TlOlIg7ftleM">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK3aRAMN">>},{<<"nksip">>,<<"1AaFJ0">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"1x1Yaz">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"4ev15YXatuMxsF7TlOlIg7ftleM">>,17443094,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],...}],...} in generic_switch_sip_router:handle_cast/2 line 69 in gen_server:terminate/6 line 747
+2014-01-05 15:02:55.004 [error] <0.53.0> Supervisor generic_switch_sup had child sipDialogRouter started with generic_switch_sip_router:start_link(24595) at <0.62.0> exit with reason no match of right hand value {sipmsg,<<"R_3oliOL_4ev15YXatuMxsF7TlOlIg7ftleM">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK3aRAMN">>},{<<"nksip">>,<<"1AaFJ0">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"1x1Yaz">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"4ev15YXatuMxsF7TlOlIg7ftleM">>,17443094,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],...}],...} in generic_switch_sip_router:handle_cast/2 line 69 in context child_terminated
+2014-01-05 15:02:59.001 [info] <0.63.0>@generic_switch_sip_router:handle_cast:38 {sipmsg,<<"R_3EkzbJ_4ev15YXatuMxsF7TlOlIg7ftleM">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK3aRAMN">>},{<<"nksip">>,<<"1AaFJ0">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"1x1Yaz">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"4ev15YXatuMxsF7TlOlIg7ftleM">>,17443094,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"1x1Yaz">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388930579000688} {127,0,0,1} 5070
+2014-01-05 15:02:59.001 [warning] <0.63.0>@generic_switch_sip_router:terminate:97 shutting down the UDP transport {{badmatch,{sipmsg,<<"R_3EkzbJ_4ev15YXatuMxsF7TlOlIg7ftleM">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK3aRAMN">>},{<<"nksip">>,<<"1AaFJ0">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"1x1Yaz">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"4ev15YXatuMxsF7TlOlIg7ftleM">>,17443094,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"1x1Yaz">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388930579000688}},[{generic_switch_sip_router,handle_cast,2,[{file,"src/generic_switch_sip_router.erl"},{line,69}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,607}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+2014-01-05 15:02:59.002 [info] <0.64.0>@generic_switch_sip_router:init:33 sip dialog router had started
+2014-01-05 15:02:59.002 [error] <0.63.0> gen_server generic_switch_sip_router terminated with reason: no match of right hand value {sipmsg,<<"R_3EkzbJ_4ev15YXatuMxsF7TlOlIg7ftleM">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK3aRAMN">>},{<<"nksip">>,<<"1AaFJ0">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"1x1Yaz">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"4ev15YXatuMxsF7TlOlIg7ftleM">>,17443094,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],...}],...} in generic_switch_sip_router:handle_cast/2 line 69
+2014-01-05 15:02:59.008 [error] <0.63.0> CRASH REPORT Process generic_switch_sip_router with 0 neighbours exited with reason: no match of right hand value {sipmsg,<<"R_3EkzbJ_4ev15YXatuMxsF7TlOlIg7ftleM">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK3aRAMN">>},{<<"nksip">>,<<"1AaFJ0">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"1x1Yaz">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"4ev15YXatuMxsF7TlOlIg7ftleM">>,17443094,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],...}],...} in generic_switch_sip_router:handle_cast/2 line 69 in gen_server:terminate/6 line 747
+2014-01-05 15:02:59.009 [error] <0.53.0> Supervisor generic_switch_sup had child sipDialogRouter started with generic_switch_sip_router:start_link(24595) at <0.63.0> exit with reason no match of right hand value {sipmsg,<<"R_3EkzbJ_4ev15YXatuMxsF7TlOlIg7ftleM">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK3aRAMN">>},{<<"nksip">>,<<"1AaFJ0">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"1x1Yaz">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"4ev15YXatuMxsF7TlOlIg7ftleM">>,17443094,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],...}],...} in generic_switch_sip_router:handle_cast/2 line 69 in context child_terminated
+2014-01-05 22:09:15.707 [info] <0.53.0>@generic_switch_sip_transport_udp:init:25 sip udp transport had started
+2014-01-05 22:09:15.707 [info] <0.6.0> Application lager started on node nonode@nohost
+2014-01-05 22:09:15.709 [info] <0.54.0>@generic_switch_sip_router:init:33 sip dialog router had started
+2014-01-05 22:09:15.712 [info] <0.52.0>@client_database:start_link:6 generic client database application started
+2014-01-05 22:09:20.904 [info] <0.54.0>@generic_switch_sip_router:handle_cast:38 {sipmsg,<<"R_1FdRsC_Dj1APXlCJ7t9Ql0JQdDuT2VRfWh">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK2s5vgc">>},{<<"nksip">>,<<"CWzZZ">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"7CYrO">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"Dj1APXlCJ7t9Ql0JQdDuT2VRfWh">>,17443096,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"7CYrO">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388956160899474} {127,0,0,1} 5070
+2014-01-05 22:09:20.904 [info] <0.54.0>@generic_switch_sip_router:handle_cast:75 {via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK2s5vgc">>},{<<"nksip">>,<<"CWzZZ">>}]}
+2014-01-05 22:09:20.904 [info] <0.54.0>@generic_switch_sip_router:handle_cast:84 request
+2014-01-05 22:09:21.398 [info] <0.54.0>@generic_switch_sip_router:handle_cast:38 {sipmsg,<<"R_1XeZkY_Dj1APXlCJ7t9Ql0JQdDuT2VRfWh">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK2s5vgc">>},{<<"nksip">>,<<"CWzZZ">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"7CYrO">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"Dj1APXlCJ7t9Ql0JQdDuT2VRfWh">>,17443096,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"7CYrO">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388956161397562} {127,0,0,1} 5070
+2014-01-05 22:09:21.398 [info] <0.54.0>@generic_switch_sip_router:handle_cast:75 {via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK2s5vgc">>},{<<"nksip">>,<<"CWzZZ">>}]}
+2014-01-05 22:09:21.398 [info] <0.54.0>@generic_switch_sip_router:handle_cast:84 request
+2014-01-05 22:09:22.399 [info] <0.54.0>@generic_switch_sip_router:handle_cast:38 {sipmsg,<<"R_4FPk37_Dj1APXlCJ7t9Ql0JQdDuT2VRfWh">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK2s5vgc">>},{<<"nksip">>,<<"CWzZZ">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"7CYrO">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"Dj1APXlCJ7t9Ql0JQdDuT2VRfWh">>,17443096,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"7CYrO">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388956162398630} {127,0,0,1} 5070
+2014-01-05 22:09:22.399 [info] <0.54.0>@generic_switch_sip_router:handle_cast:75 {via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK2s5vgc">>},{<<"nksip">>,<<"CWzZZ">>}]}
+2014-01-05 22:09:22.399 [info] <0.54.0>@generic_switch_sip_router:handle_cast:84 request
+2014-01-05 22:09:24.400 [info] <0.54.0>@generic_switch_sip_router:handle_cast:38 {sipmsg,<<"R_2CUHs8_Dj1APXlCJ7t9Ql0JQdDuT2VRfWh">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK2s5vgc">>},{<<"nksip">>,<<"CWzZZ">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"7CYrO">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"Dj1APXlCJ7t9Ql0JQdDuT2VRfWh">>,17443096,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"7CYrO">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388956164399548} {127,0,0,1} 5070
+2014-01-05 22:09:24.400 [info] <0.54.0>@generic_switch_sip_router:handle_cast:75 {via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK2s5vgc">>},{<<"nksip">>,<<"CWzZZ">>}]}
+2014-01-05 22:09:24.400 [info] <0.54.0>@generic_switch_sip_router:handle_cast:84 request
+2014-01-05 22:09:28.401 [info] <0.54.0>@generic_switch_sip_router:handle_cast:38 {sipmsg,<<"R_35pEOt_Dj1APXlCJ7t9Ql0JQdDuT2VRfWh">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK2s5vgc">>},{<<"nksip">>,<<"CWzZZ">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"7CYrO">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"Dj1APXlCJ7t9Ql0JQdDuT2VRfWh">>,17443096,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"7CYrO">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388956168400598} {127,0,0,1} 5070
+2014-01-05 22:09:28.401 [info] <0.54.0>@generic_switch_sip_router:handle_cast:75 {via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK2s5vgc">>},{<<"nksip">>,<<"CWzZZ">>}]}
+2014-01-05 22:09:28.401 [info] <0.54.0>@generic_switch_sip_router:handle_cast:84 request
+2014-01-05 22:09:32.402 [info] <0.54.0>@generic_switch_sip_router:handle_cast:38 {sipmsg,<<"R_3MnOzN_Dj1APXlCJ7t9Ql0JQdDuT2VRfWh">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK2s5vgc">>},{<<"nksip">>,<<"CWzZZ">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"7CYrO">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"Dj1APXlCJ7t9Ql0JQdDuT2VRfWh">>,17443096,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"7CYrO">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388956172401583} {127,0,0,1} 5070
+2014-01-05 22:09:32.402 [info] <0.54.0>@generic_switch_sip_router:handle_cast:75 {via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK2s5vgc">>},{<<"nksip">>,<<"CWzZZ">>}]}
+2014-01-05 22:09:32.402 [info] <0.54.0>@generic_switch_sip_router:handle_cast:84 request
+2014-01-05 22:09:36.403 [info] <0.54.0>@generic_switch_sip_router:handle_cast:38 {sipmsg,<<"R_2XwrqB_Dj1APXlCJ7t9Ql0JQdDuT2VRfWh">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK2s5vgc">>},{<<"nksip">>,<<"CWzZZ">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"7CYrO">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"Dj1APXlCJ7t9Ql0JQdDuT2VRfWh">>,17443096,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"7CYrO">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388956176402593} {127,0,0,1} 5070
+2014-01-05 22:09:36.403 [info] <0.54.0>@generic_switch_sip_router:handle_cast:75 {via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK2s5vgc">>},{<<"nksip">>,<<"CWzZZ">>}]}
+2014-01-05 22:09:36.403 [info] <0.54.0>@generic_switch_sip_router:handle_cast:84 request
+2014-01-05 22:14:16.883 [info] <0.53.0>@generic_switch_sip_transport_udp:init:25 sip udp transport had started
+2014-01-05 22:14:16.883 [info] <0.6.0> Application lager started on node nonode@nohost
+2014-01-05 22:14:16.885 [info] <0.54.0>@generic_switch_sip_router:init:33 sip dialog router had started
+2014-01-05 22:14:16.888 [info] <0.52.0>@client_database:start_link:6 generic client database application started
+2014-01-05 22:14:23.120 [info] <0.54.0>@generic_switch_sip_router:handle_cast:38 {sipmsg,<<"R_3x1qBs_AHRtfQMOU8ogrtxRDTXh8o4vruJ">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK3npehD">>},{<<"nksip">>,<<"1zWLN3">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"2foQhz">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"AHRtfQMOU8ogrtxRDTXh8o4vruJ">>,17443098,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"2foQhz">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388956463114997} {127,0,0,1} 5070
+2014-01-05 22:14:23.120 [warning] <0.54.0>@generic_switch_sip_router:terminate:99 shutting down the SIP router {{badmatch,{sipmsg,<<"R_3x1qBs_AHRtfQMOU8ogrtxRDTXh8o4vruJ">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK3npehD">>},{<<"nksip">>,<<"1zWLN3">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"2foQhz">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"AHRtfQMOU8ogrtxRDTXh8o4vruJ">>,17443098,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"2foQhz">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388956463114997}},[{generic_switch_sip_router,handle_cast,2,[{file,"src/generic_switch_sip_router.erl"},{line,69}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,607}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+2014-01-05 22:14:23.121 [info] <0.59.0>@generic_switch_sip_router:init:33 sip dialog router had started
+2014-01-05 22:14:23.121 [error] <0.54.0> gen_server generic_switch_sip_router terminated with reason: no match of right hand value {sipmsg,<<"R_3x1qBs_AHRtfQMOU8ogrtxRDTXh8o4vruJ">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK3npehD">>},{<<"nksip">>,<<"1zWLN3">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"2foQhz">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"AHRtfQMOU8ogrtxRDTXh8o4vruJ">>,17443098,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],...}],...} in generic_switch_sip_router:handle_cast/2 line 69
+2014-01-05 22:14:23.122 [error] <0.54.0> CRASH REPORT Process generic_switch_sip_router with 0 neighbours exited with reason: no match of right hand value {sipmsg,<<"R_3x1qBs_AHRtfQMOU8ogrtxRDTXh8o4vruJ">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK3npehD">>},{<<"nksip">>,<<"1zWLN3">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"2foQhz">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"AHRtfQMOU8ogrtxRDTXh8o4vruJ">>,17443098,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],...}],...} in generic_switch_sip_router:handle_cast/2 line 69 in gen_server:terminate/6 line 747
+2014-01-05 22:14:23.122 [error] <0.52.0> Supervisor generic_switch_sup had child sipDialogRouter started with generic_switch_sip_router:start_link(24595) at <0.54.0> exit with reason no match of right hand value {sipmsg,<<"R_3x1qBs_AHRtfQMOU8ogrtxRDTXh8o4vruJ">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK3npehD">>},{<<"nksip">>,<<"1zWLN3">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"2foQhz">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"AHRtfQMOU8ogrtxRDTXh8o4vruJ">>,17443098,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],...}],...} in generic_switch_sip_router:handle_cast/2 line 69 in context child_terminated
+2014-01-05 22:14:23.613 [info] <0.59.0>@generic_switch_sip_router:handle_cast:38 {sipmsg,<<"R_3yk6rH_AHRtfQMOU8ogrtxRDTXh8o4vruJ">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK3npehD">>},{<<"nksip">>,<<"1zWLN3">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"2foQhz">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"AHRtfQMOU8ogrtxRDTXh8o4vruJ">>,17443098,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"2foQhz">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388956463612588} {127,0,0,1} 5070
+2014-01-05 22:14:23.613 [warning] <0.59.0>@generic_switch_sip_router:terminate:99 shutting down the SIP router {{badmatch,{sipmsg,<<"R_3yk6rH_AHRtfQMOU8ogrtxRDTXh8o4vruJ">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK3npehD">>},{<<"nksip">>,<<"1zWLN3">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"2foQhz">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"AHRtfQMOU8ogrtxRDTXh8o4vruJ">>,17443098,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"2foQhz">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388956463612588}},[{generic_switch_sip_router,handle_cast,2,[{file,"src/generic_switch_sip_router.erl"},{line,69}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,607}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+2014-01-05 22:14:23.613 [info] <0.60.0>@generic_switch_sip_router:init:33 sip dialog router had started
+2014-01-05 22:14:23.614 [error] <0.59.0> gen_server generic_switch_sip_router terminated with reason: no match of right hand value {sipmsg,<<"R_3yk6rH_AHRtfQMOU8ogrtxRDTXh8o4vruJ">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK3npehD">>},{<<"nksip">>,<<"1zWLN3">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"2foQhz">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"AHRtfQMOU8ogrtxRDTXh8o4vruJ">>,17443098,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],...}],...} in generic_switch_sip_router:handle_cast/2 line 69
+2014-01-05 22:14:23.614 [error] <0.59.0> CRASH REPORT Process generic_switch_sip_router with 0 neighbours exited with reason: no match of right hand value {sipmsg,<<"R_3yk6rH_AHRtfQMOU8ogrtxRDTXh8o4vruJ">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK3npehD">>},{<<"nksip">>,<<"1zWLN3">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"2foQhz">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"AHRtfQMOU8ogrtxRDTXh8o4vruJ">>,17443098,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],...}],...} in generic_switch_sip_router:handle_cast/2 line 69 in gen_server:terminate/6 line 747
+2014-01-05 22:14:23.614 [error] <0.52.0> Supervisor generic_switch_sup had child sipDialogRouter started with generic_switch_sip_router:start_link(24595) at <0.59.0> exit with reason no match of right hand value {sipmsg,<<"R_3yk6rH_AHRtfQMOU8ogrtxRDTXh8o4vruJ">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK3npehD">>},{<<"nksip">>,<<"1zWLN3">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"2foQhz">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"AHRtfQMOU8ogrtxRDTXh8o4vruJ">>,17443098,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],...}],...} in generic_switch_sip_router:handle_cast/2 line 69 in context child_terminated
+2014-01-05 22:14:24.613 [info] <0.60.0>@generic_switch_sip_router:handle_cast:38 {sipmsg,<<"R_3ZUtgm_AHRtfQMOU8ogrtxRDTXh8o4vruJ">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK3npehD">>},{<<"nksip">>,<<"1zWLN3">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"2foQhz">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"AHRtfQMOU8ogrtxRDTXh8o4vruJ">>,17443098,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"2foQhz">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388956464613338} {127,0,0,1} 5070
+2014-01-05 22:14:24.614 [warning] <0.60.0>@generic_switch_sip_router:terminate:99 shutting down the SIP router {{badmatch,{sipmsg,<<"R_3ZUtgm_AHRtfQMOU8ogrtxRDTXh8o4vruJ">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK3npehD">>},{<<"nksip">>,<<"1zWLN3">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"2foQhz">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"AHRtfQMOU8ogrtxRDTXh8o4vruJ">>,17443098,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"2foQhz">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388956464613338}},[{generic_switch_sip_router,handle_cast,2,[{file,"src/generic_switch_sip_router.erl"},{line,69}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,607}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+2014-01-05 22:14:24.615 [error] <0.60.0> gen_server generic_switch_sip_router terminated with reason: no match of right hand value {sipmsg,<<"R_3ZUtgm_AHRtfQMOU8ogrtxRDTXh8o4vruJ">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK3npehD">>},{<<"nksip">>,<<"1zWLN3">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"2foQhz">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"AHRtfQMOU8ogrtxRDTXh8o4vruJ">>,17443098,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],...}],...} in generic_switch_sip_router:handle_cast/2 line 69
+2014-01-05 22:14:24.616 [info] <0.61.0>@generic_switch_sip_router:init:33 sip dialog router had started
+2014-01-05 22:14:24.616 [error] <0.60.0> CRASH REPORT Process generic_switch_sip_router with 0 neighbours exited with reason: no match of right hand value {sipmsg,<<"R_3ZUtgm_AHRtfQMOU8ogrtxRDTXh8o4vruJ">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK3npehD">>},{<<"nksip">>,<<"1zWLN3">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"2foQhz">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"AHRtfQMOU8ogrtxRDTXh8o4vruJ">>,17443098,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],...}],...} in generic_switch_sip_router:handle_cast/2 line 69 in gen_server:terminate/6 line 747
+2014-01-05 22:14:24.617 [error] <0.52.0> Supervisor generic_switch_sup had child sipDialogRouter started with generic_switch_sip_router:start_link(24595) at <0.60.0> exit with reason no match of right hand value {sipmsg,<<"R_3ZUtgm_AHRtfQMOU8ogrtxRDTXh8o4vruJ">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK3npehD">>},{<<"nksip">>,<<"1zWLN3">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"2foQhz">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"AHRtfQMOU8ogrtxRDTXh8o4vruJ">>,17443098,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],...}],...} in generic_switch_sip_router:handle_cast/2 line 69 in context child_terminated
+2014-01-05 22:16:43.019 [info] <0.53.0>@generic_switch_sip_transport_udp:init:25 sip udp transport had started
+2014-01-05 22:16:43.019 [info] <0.6.0> Application lager started on node nonode@nohost
+2014-01-05 22:16:43.021 [info] <0.54.0>@generic_switch_sip_router:init:33 sip dialog router had started
+2014-01-05 22:16:43.024 [info] <0.52.0>@client_database:start_link:6 generic client database application started
+2014-01-05 22:16:54.180 [info] <0.54.0>@generic_switch_sip_router:handle_cast:38 {sipmsg,<<"R_1kqH5v_RvQutbE6K0QMQey9mXUXG2YZp5a">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK2SwVZR">>},{<<"nksip">>,<<"2nSidF">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"2SbIZD">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"RvQutbE6K0QMQey9mXUXG2YZp5a">>,17469131,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"2SbIZD">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388956614175927} {127,0,0,1} 5070
+2014-01-05 22:16:54.180 [info] <0.54.0>@generic_switch_sip_router:handle_cast:74 <<"127.0.0.1">>
+2014-01-05 22:16:54.180 [info] <0.54.0>@generic_switch_sip_router:handle_cast:83 request
+2014-01-05 22:16:54.686 [info] <0.54.0>@generic_switch_sip_router:handle_cast:38 {sipmsg,<<"R_4Yt9lo_RvQutbE6K0QMQey9mXUXG2YZp5a">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK2SwVZR">>},{<<"nksip">>,<<"2nSidF">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"2SbIZD">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"RvQutbE6K0QMQey9mXUXG2YZp5a">>,17469131,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"2SbIZD">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388956614686260} {127,0,0,1} 5070
+2014-01-05 22:16:54.686 [info] <0.54.0>@generic_switch_sip_router:handle_cast:74 <<"127.0.0.1">>
+2014-01-05 22:16:54.686 [info] <0.54.0>@generic_switch_sip_router:handle_cast:83 request
+2014-01-05 22:16:55.688 [info] <0.54.0>@generic_switch_sip_router:handle_cast:38 {sipmsg,<<"R_1QFeZX_RvQutbE6K0QMQey9mXUXG2YZp5a">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK2SwVZR">>},{<<"nksip">>,<<"2nSidF">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"2SbIZD">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"RvQutbE6K0QMQey9mXUXG2YZp5a">>,17469131,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"2SbIZD">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388956615687664} {127,0,0,1} 5070
+2014-01-05 22:16:55.688 [info] <0.54.0>@generic_switch_sip_router:handle_cast:74 <<"127.0.0.1">>
+2014-01-05 22:16:55.688 [info] <0.54.0>@generic_switch_sip_router:handle_cast:83 request
+2014-01-05 22:16:57.688 [info] <0.54.0>@generic_switch_sip_router:handle_cast:38 {sipmsg,<<"R_2oIQ6A_RvQutbE6K0QMQey9mXUXG2YZp5a">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK2SwVZR">>},{<<"nksip">>,<<"2nSidF">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"2SbIZD">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"RvQutbE6K0QMQey9mXUXG2YZp5a">>,17469131,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"2SbIZD">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388956617688309} {127,0,0,1} 5070
+2014-01-05 22:16:57.688 [info] <0.54.0>@generic_switch_sip_router:handle_cast:74 <<"127.0.0.1">>
+2014-01-05 22:16:57.688 [info] <0.54.0>@generic_switch_sip_router:handle_cast:83 request
+2014-01-05 22:20:06.944 [info] <0.53.0>@generic_switch_sip_transport_udp:init:25 sip udp transport had started
+2014-01-05 22:20:06.944 [info] <0.6.0> Application lager started on node nonode@nohost
+2014-01-05 22:20:06.946 [info] <0.54.0>@generic_switch_sip_router:init:33 sip dialog router had started
+2014-01-05 22:20:06.949 [info] <0.52.0>@client_database:start_link:6 generic client database application started
+2014-01-05 22:20:09.766 [info] <0.54.0>@generic_switch_sip_router:handle_cast:38 {sipmsg,<<"R_nG0ag_WksKW0SlYHVVH7Qlx00ASNdzbQG">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK1YvT3o">>},{<<"nksip">>,<<"2OorKJ">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"4eLTUu">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"WksKW0SlYHVVH7Qlx00ASNdzbQG">>,17469133,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"4eLTUu">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388956809760804} {127,0,0,1} 5070
+2014-01-05 22:20:09.766 [info] <0.54.0>@generic_switch_sip_router:handle_cast:74 udp <<"127.0.0.1">> 5070 [<<"rport">>,{<<"branch">>,<<"z9hG4bK1YvT3o">>},{<<"nksip">>,<<"2OorKJ">>}]
+2014-01-05 22:20:09.766 [info] <0.54.0>@generic_switch_sip_router:handle_cast:83 request
+2014-01-05 22:20:10.259 [info] <0.54.0>@generic_switch_sip_router:handle_cast:38 {sipmsg,<<"R_u07bo_WksKW0SlYHVVH7Qlx00ASNdzbQG">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK1YvT3o">>},{<<"nksip">>,<<"2OorKJ">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"4eLTUu">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"WksKW0SlYHVVH7Qlx00ASNdzbQG">>,17469133,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"4eLTUu">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388956810259402} {127,0,0,1} 5070
+2014-01-05 22:20:10.259 [info] <0.54.0>@generic_switch_sip_router:handle_cast:74 udp <<"127.0.0.1">> 5070 [<<"rport">>,{<<"branch">>,<<"z9hG4bK1YvT3o">>},{<<"nksip">>,<<"2OorKJ">>}]
+2014-01-05 22:20:10.259 [info] <0.54.0>@generic_switch_sip_router:handle_cast:83 request
+2014-01-05 22:20:11.261 [info] <0.54.0>@generic_switch_sip_router:handle_cast:38 {sipmsg,<<"R_3cEBo0_WksKW0SlYHVVH7Qlx00ASNdzbQG">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK1YvT3o">>},{<<"nksip">>,<<"2OorKJ">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"4eLTUu">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"WksKW0SlYHVVH7Qlx00ASNdzbQG">>,17469133,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"4eLTUu">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388956811261534} {127,0,0,1} 5070
+2014-01-05 22:20:11.261 [info] <0.54.0>@generic_switch_sip_router:handle_cast:74 udp <<"127.0.0.1">> 5070 [<<"rport">>,{<<"branch">>,<<"z9hG4bK1YvT3o">>},{<<"nksip">>,<<"2OorKJ">>}]
+2014-01-05 22:20:11.262 [info] <0.54.0>@generic_switch_sip_router:handle_cast:83 request
+2014-01-05 22:20:13.264 [info] <0.54.0>@generic_switch_sip_router:handle_cast:38 {sipmsg,<<"R_BirKb_WksKW0SlYHVVH7Qlx00ASNdzbQG">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK1YvT3o">>},{<<"nksip">>,<<"2OorKJ">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"4eLTUu">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"WksKW0SlYHVVH7Qlx00ASNdzbQG">>,17469133,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"4eLTUu">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388956813263559} {127,0,0,1} 5070
+2014-01-05 22:20:13.264 [info] <0.54.0>@generic_switch_sip_router:handle_cast:74 udp <<"127.0.0.1">> 5070 [<<"rport">>,{<<"branch">>,<<"z9hG4bK1YvT3o">>},{<<"nksip">>,<<"2OorKJ">>}]
+2014-01-05 22:20:13.264 [info] <0.54.0>@generic_switch_sip_router:handle_cast:83 request
+2014-01-05 22:20:17.266 [info] <0.54.0>@generic_switch_sip_router:handle_cast:38 {sipmsg,<<"R_2zMFBk_WksKW0SlYHVVH7Qlx00ASNdzbQG">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK1YvT3o">>},{<<"nksip">>,<<"2OorKJ">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"4eLTUu">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"WksKW0SlYHVVH7Qlx00ASNdzbQG">>,17469133,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"4eLTUu">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388956817265619} {127,0,0,1} 5070
+2014-01-05 22:20:17.266 [info] <0.54.0>@generic_switch_sip_router:handle_cast:74 udp <<"127.0.0.1">> 5070 [<<"rport">>,{<<"branch">>,<<"z9hG4bK1YvT3o">>},{<<"nksip">>,<<"2OorKJ">>}]
+2014-01-05 22:20:17.266 [info] <0.54.0>@generic_switch_sip_router:handle_cast:83 request
+2014-01-05 23:54:44.514 [info] <0.53.0>@generic_switch_sip_transport_udp:init:25 sip udp transport had started
+2014-01-05 23:54:44.514 [info] <0.6.0> Application lager started on node nonode@nohost
+2014-01-05 23:54:44.516 [info] <0.54.0>@generic_switch_sip_router:init:25 sip dialog router had started
+2014-01-05 23:54:44.520 [info] <0.52.0>@client_database:start_link:6 generic client database application started
+2014-01-05 23:54:44.522 [info] <0.52.0>@generic_switch_sip_gateway:start_link:9 generic switch sip gateway had started
+2014-01-05 23:55:00.694 [info] <0.54.0>@generic_switch_sip_router:handle_cast:30 {sipmsg,<<"R_2PNHNz_MgNtiZ5YTrc8VatFov9Pfe0saOy">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK3pPTbT">>},{<<"nksip">>,<<"3zuIWb">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"4ZkXH1">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"MgNtiZ5YTrc8VatFov9Pfe0saOy">>,17469135,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"4ZkXH1">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388962500689403} {127,0,0,1} 5070
+2014-01-05 23:55:00.695 [info] <0.54.0>@generic_switch_sip_router:handle_cast:66 udp <<"127.0.0.1">> 5070 [<<"rport">>,{<<"branch">>,<<"z9hG4bK3pPTbT">>},{<<"nksip">>,<<"3zuIWb">>}]
+2014-01-05 23:55:00.695 [warning] <0.54.0>@generic_switch_sip_router:terminate:106 shutting down the SIP router {undef,[{client_database,addNewClient,[<0.54.0>],[]},{generic_switch_sip_router,handle_cast,2,[{file,"src/generic_switch_sip_router.erl"},{line,75}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,607}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+2014-01-05 23:55:00.699 [error] <0.54.0> gen_server generic_switch_sip_router terminated with reason: call to undefined function client_database:addNewClient/1 from generic_switch_sip_router:handle_cast/2 line 75
+2014-01-05 23:55:00.699 [info] <0.60.0>@generic_switch_sip_router:init:25 sip dialog router had started
+2014-01-05 23:55:00.699 [error] <0.54.0> CRASH REPORT Process generic_switch_sip_router with 0 neighbours exited with reason: call to undefined function client_database:addNewClient(<0.54.0>) in gen_server:terminate/6 line 747
+2014-01-05 23:55:00.700 [error] <0.52.0> Supervisor generic_switch_sup had child sipDialogRouter started with generic_switch_sip_router:start_link(24595) at <0.54.0> exit with reason call to undefined function client_database:addNewClient(<0.54.0>) in context child_terminated
+2014-01-05 23:55:01.188 [info] <0.60.0>@generic_switch_sip_router:handle_cast:30 {sipmsg,<<"R_4BnRHL_MgNtiZ5YTrc8VatFov9Pfe0saOy">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK3pPTbT">>},{<<"nksip">>,<<"3zuIWb">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"4ZkXH1">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"MgNtiZ5YTrc8VatFov9Pfe0saOy">>,17469135,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"4ZkXH1">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388962501187774} {127,0,0,1} 5070
+2014-01-05 23:55:01.188 [info] <0.60.0>@generic_switch_sip_router:handle_cast:66 udp <<"127.0.0.1">> 5070 [<<"rport">>,{<<"branch">>,<<"z9hG4bK3pPTbT">>},{<<"nksip">>,<<"3zuIWb">>}]
+2014-01-05 23:55:01.188 [warning] <0.60.0>@generic_switch_sip_router:terminate:106 shutting down the SIP router {undef,[{client_database,addNewClient,[<0.60.0>],[]},{generic_switch_sip_router,handle_cast,2,[{file,"src/generic_switch_sip_router.erl"},{line,75}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,607}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+2014-01-05 23:55:01.189 [error] <0.60.0> gen_server generic_switch_sip_router terminated with reason: call to undefined function client_database:addNewClient/1 from generic_switch_sip_router:handle_cast/2 line 75
+2014-01-05 23:55:01.189 [error] <0.60.0> CRASH REPORT Process generic_switch_sip_router with 0 neighbours exited with reason: call to undefined function client_database:addNewClient(<0.60.0>) in gen_server:terminate/6 line 747
+2014-01-05 23:55:01.189 [error] <0.52.0> Supervisor generic_switch_sup had child sipDialogRouter started with generic_switch_sip_router:start_link(24595) at <0.60.0> exit with reason call to undefined function client_database:addNewClient(<0.60.0>) in context child_terminated
+2014-01-05 23:55:01.190 [info] <0.61.0>@generic_switch_sip_router:init:25 sip dialog router had started
+2014-01-05 23:58:00.800 [info] <0.53.0>@generic_switch_sip_transport_udp:init:25 sip udp transport had started
+2014-01-05 23:58:00.800 [info] <0.6.0> Application lager started on node nonode@nohost
+2014-01-05 23:58:00.802 [info] <0.54.0>@generic_switch_sip_router:init:25 sip dialog router had started
+2014-01-05 23:58:00.805 [info] <0.52.0>@client_database:start_link:6 generic client database application started
+2014-01-05 23:58:00.807 [info] <0.52.0>@generic_switch_sip_gateway:start_link:9 generic switch sip gateway had started
+2014-01-05 23:59:06.360 [info] <0.54.0>@generic_switch_sip_router:handle_cast:30 {sipmsg,<<"R_EYIeS_9rMMAt9hYZBZrKuCvydjppUppnA">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK2IY6mu">>},{<<"nksip">>,<<"12Wgj2">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"3Dxb9Y">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"9rMMAt9hYZBZrKuCvydjppUppnA">>,17469137,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"3Dxb9Y">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388962746355712} {127,0,0,1} 5070
+2014-01-05 23:59:06.360 [info] <0.54.0>@generic_switch_sip_router:handle_cast:66 udp <<"127.0.0.1">> 5070 [<<"rport">>,{<<"branch">>,<<"z9hG4bK2IY6mu">>},{<<"nksip">>,<<"12Wgj2">>}]
+2014-01-05 23:59:06.856 [info] <0.54.0>@generic_switch_sip_router:handle_cast:30 {sipmsg,<<"R_8vtq4_9rMMAt9hYZBZrKuCvydjppUppnA">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK2IY6mu">>},{<<"nksip">>,<<"12Wgj2">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"3Dxb9Y">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"9rMMAt9hYZBZrKuCvydjppUppnA">>,17469137,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"3Dxb9Y">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388962746855630} {127,0,0,1} 5070
+2014-01-05 23:59:06.856 [info] <0.54.0>@generic_switch_sip_router:handle_cast:66 udp <<"127.0.0.1">> 5070 [<<"rport">>,{<<"branch">>,<<"z9hG4bK2IY6mu">>},{<<"nksip">>,<<"12Wgj2">>}]
+2014-01-05 23:59:07.855 [info] <0.54.0>@generic_switch_sip_router:handle_cast:30 {sipmsg,<<"R_4fztqr_9rMMAt9hYZBZrKuCvydjppUppnA">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK2IY6mu">>},{<<"nksip">>,<<"12Wgj2">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"3Dxb9Y">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"9rMMAt9hYZBZrKuCvydjppUppnA">>,17469137,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"3Dxb9Y">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388962747854546} {127,0,0,1} 5070
+2014-01-05 23:59:07.855 [info] <0.54.0>@generic_switch_sip_router:handle_cast:66 udp <<"127.0.0.1">> 5070 [<<"rport">>,{<<"branch">>,<<"z9hG4bK2IY6mu">>},{<<"nksip">>,<<"12Wgj2">>}]
+2014-01-05 23:59:09.856 [info] <0.54.0>@generic_switch_sip_router:handle_cast:30 {sipmsg,<<"R_enfWv_9rMMAt9hYZBZrKuCvydjppUppnA">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK2IY6mu">>},{<<"nksip">>,<<"12Wgj2">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"3Dxb9Y">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"9rMMAt9hYZBZrKuCvydjppUppnA">>,17469137,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"3Dxb9Y">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388962749855544} {127,0,0,1} 5070
+2014-01-05 23:59:09.856 [info] <0.54.0>@generic_switch_sip_router:handle_cast:66 udp <<"127.0.0.1">> 5070 [<<"rport">>,{<<"branch">>,<<"z9hG4bK2IY6mu">>},{<<"nksip">>,<<"12Wgj2">>}]
+2014-01-05 23:59:13.857 [info] <0.54.0>@generic_switch_sip_router:handle_cast:30 {sipmsg,<<"R_4MJ0Vz_9rMMAt9hYZBZrKuCvydjppUppnA">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK2IY6mu">>},{<<"nksip">>,<<"12Wgj2">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"3Dxb9Y">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"9rMMAt9hYZBZrKuCvydjppUppnA">>,17469137,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"3Dxb9Y">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388962753856667} {127,0,0,1} 5070
+2014-01-05 23:59:13.857 [info] <0.54.0>@generic_switch_sip_router:handle_cast:66 udp <<"127.0.0.1">> 5070 [<<"rport">>,{<<"branch">>,<<"z9hG4bK2IY6mu">>},{<<"nksip">>,<<"12Wgj2">>}]

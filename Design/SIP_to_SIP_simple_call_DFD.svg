@@ -1,0 +1,484 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="297mm"
+   height="210mm"
+   id="svg3454"
+   version="1.1"
+   inkscape:version="0.48.4 r9939"
+   sodipodi:docname="SIP_to_SIP_simple_call_DFD.svg">
+  <defs
+     id="defs3456" />
+  <sodipodi:namedview
+     inkscape:document-units="mm"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.2279853"
+     inkscape:cx="568.78598"
+     inkscape:cy="371.14509"
+     inkscape:current-layer="layer1"
+     id="namedview3458"
+     showgrid="false"
+     inkscape:window-width="1920"
+     inkscape:window-height="1055"
+     inkscape:window-x="1920"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata3460">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="fill:none;stroke:#000000;stroke-width:0.70387316;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+       id="rect3463"
+       width="81.990822"
+       height="75.581909"
+       x="110.64668"
+       y="611.50665" />
+    <text
+       xml:space="preserve"
+       style="font-size:7.73021507px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="158.6163"
+       y="529.8999"
+       id="text3487"
+       sodipodi:linespacing="125%"
+       transform="scale(0.99526611,1.0047564)"><tspan
+         sodipodi:role="line"
+         id="tspan3489"
+         x="158.6163"
+         y="529.8999">INVITE sip:1072@domain.com SIP/2.0</tspan><tspan
+         sodipodi:role="line"
+         x="158.6163"
+         y="539.56268"
+         id="tspan3491">Via: SIP/2.0/UDP pc11.domain.com:5060;branch=unique0 </tspan><tspan
+         sodipodi:role="line"
+         x="158.6163"
+         y="549.22546"
+         id="tspan3493">Max-Forwards: 70</tspan><tspan
+         sodipodi:role="line"
+         x="158.6163"
+         y="558.88818"
+         id="tspan3495">To: 1072 &lt;sip:1072@domain.com&gt;</tspan><tspan
+         sodipodi:role="line"
+         x="158.6163"
+         y="568.55096"
+         id="tspan3497">From: 1071 &lt;sip:1071@domain.com&gt;;tag=unique1</tspan><tspan
+         sodipodi:role="line"
+         x="158.6163"
+         y="578.21375"
+         id="tspan3505">Call-ID: 12345</tspan><tspan
+         sodipodi:role="line"
+         x="158.6163"
+         y="587.87653"
+         id="tspan3511">CSeq: 1 INVITE </tspan><tspan
+         sodipodi:role="line"
+         x="158.6163"
+         y="597.53931"
+         id="tspan3974">Routing-Unspecific-Header : RandomData1</tspan><tspan
+         sodipodi:role="line"
+         x="158.6163"
+         y="607.20203"
+         id="tspan3976" /></text>
+    <rect
+       style="fill:none;stroke:#000000;stroke-width:0.99921262;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+       id="rect3519"
+       width="269.54721"
+       height="13.843814"
+       x="15.472499"
+       y="259.561" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 151.64209,611.50665 0,-336.47315"
+       id="path3521"
+       inkscape:connector-type="orthogonal"
+       inkscape:connector-curvature="3"
+       inkscape:connection-end-point="d4"
+       inkscape:connection-end="#rect3519"
+       inkscape:connection-start-point="d4"
+       inkscape:connection-start="#rect3463" />
+    <text
+       xml:space="preserve"
+       style="font-size:7.73021507px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="34.171146"
+       y="122.06082"
+       id="text3487-6"
+       sodipodi:linespacing="125%"
+       transform="scale(0.99526611,1.0047564)"><tspan
+         sodipodi:role="line"
+         x="34.171146"
+         y="122.06082"
+         id="tspan3511-6">type : make_call</tspan><tspan
+         sodipodi:role="line"
+         x="34.171146"
+         y="131.72359"
+         id="tspan4680">typeSpecifier : [],</tspan><tspan
+         sodipodi:role="line"
+         x="34.171146"
+         y="141.38635"
+         id="tspan3578">target : &lt;&lt;1071@domain.com&gt;&gt;</tspan><tspan
+         sodipodi:role="line"
+         x="34.171146"
+         y="151.04913"
+         id="tspan3580">caller : {1071, 12345, &lt;&lt;unique1&gt;&gt;}</tspan><tspan
+         sodipodi:role="line"
+         x="34.171146"
+         y="160.7119"
+         id="tspan3582">calee : {1072, 12345, &lt;&lt;&gt;&gt;}</tspan><tspan
+         sodipodi:role="line"
+         x="34.171146"
+         y="170.37466"
+         id="tspan3584">upstreamRoute : []</tspan><tspan
+         sodipodi:role="line"
+         x="34.171146"
+         y="180.03743"
+         id="tspan3631">downStreamRoute : [{&lt;&lt;pc11.domain.com&gt;&gt;,192.168.1.1:5060}]</tspan><tspan
+         sodipodi:role="line"
+         x="34.171146"
+         y="189.70021"
+         id="tspan4601">routeToRecord : [],</tspan><tspan
+         sodipodi:role="line"
+         x="34.171146"
+         y="199.36298"
+         id="tspan3635">sequenceNum : 1 </tspan><tspan
+         sodipodi:role="line"
+         x="34.171146"
+         y="209.02574"
+         id="tspan3970">TTL : 70</tspan><tspan
+         sodipodi:role="line"
+         x="34.171146"
+         y="218.68851"
+         id="tspan4609">specificHeaders=[&lt;&lt;Routing-Unspecific-Header : RandomData1&gt;&gt;]</tspan><tspan
+         sodipodi:role="line"
+         x="34.171146"
+         y="228.35127"
+         id="tspan3968" /></text>
+    <path
+       sodipodi:type="arc"
+       style="fill:none;stroke:#000000;stroke-width:0.99921262;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+       id="path3840"
+       sodipodi:cx="496.74863"
+       sodipodi:cy="139.44554"
+       sodipodi:rx="50.489204"
+       sodipodi:ry="49.267693"
+       d="m 547.23783,139.44554 a 50.489204,49.267693 0 1 1 -100.97841,0 50.489204,49.267693 0 1 1 100.97841,0 z"
+       transform="translate(29.316313,18.729867)" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 174.2646,259.561 477.63068,172.13371"
+       id="path3844"
+       inkscape:connector-type="polyline"
+       inkscape:connector-curvature="3"
+       inkscape:connection-start="#rect3519"
+       inkscape:connection-start-point="d4"
+       inkscape:connection-end-point="d4"
+       inkscape:connection-end="#path3840" />
+    <rect
+       style="fill:none;stroke:#000000;stroke-width:0.99921262;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+       id="rect3519-6"
+       width="269.54721"
+       height="13.843814"
+       x="702.41089"
+       y="259.07196" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 573.65578,174.66801 243.55495,84.40395"
+       id="path3864"
+       inkscape:connector-type="polyline"
+       inkscape:connector-curvature="3"
+       inkscape:connection-end="#rect3519-6"
+       inkscape:connection-end-point="d4"
+       inkscape:connection-start-point="d4"
+       inkscape:connection-start="#path3840" />
+    <text
+       xml:space="preserve"
+       style="font-size:7.73021507px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="757.55524"
+       y="124.4108"
+       id="text3487-6-8"
+       sodipodi:linespacing="125%"
+       transform="scale(0.99526611,1.0047564)"><tspan
+         sodipodi:role="line"
+         x="757.55524"
+         y="124.4108"
+         id="tspan3511-6-2">type : make_call</tspan><tspan
+         sodipodi:role="line"
+         x="757.55524"
+         y="134.07356"
+         id="tspan4682">typeSpecifier : [],</tspan><tspan
+         sodipodi:role="line"
+         x="757.55524"
+         y="143.73633"
+         id="tspan3578-8">target : &lt;&lt;1071@domain.com&gt;&gt;</tspan><tspan
+         sodipodi:role="line"
+         x="757.55524"
+         y="153.39911"
+         id="tspan3580-5">caller : {12345, &lt;&lt;unique1&gt;&gt;}</tspan><tspan
+         sodipodi:role="line"
+         x="757.55524"
+         y="163.06187"
+         id="tspan3582-2">calee : {12345, &lt;&lt;&gt;&gt;}</tspan><tspan
+         sodipodi:role="line"
+         x="757.55524"
+         y="172.72464"
+         id="tspan3584-1">upstreamRoute : []</tspan><tspan
+         sodipodi:role="line"
+         x="757.55524"
+         y="182.38741"
+         id="tspan3631-9">downStreamRoute : [{&lt;&lt;pc11.domain.com&gt;&gt;,192.168.1.1:5060},</tspan><tspan
+         sodipodi:role="line"
+         x="757.55524"
+         y="192.05019"
+         id="tspan4071">        {&lt;&lt;proxy.domain.com&gt;&gt;}],</tspan><tspan
+         sodipodi:role="line"
+         x="757.55524"
+         y="201.71295"
+         id="tspan4603">routeToRecord : [],</tspan><tspan
+         sodipodi:role="line"
+         x="757.55524"
+         y="211.37572"
+         id="tspan3635-1">sequenceNum : 1 </tspan><tspan
+         sodipodi:role="line"
+         x="757.55524"
+         y="221.03848"
+         id="tspan3972">TTL : 69</tspan><tspan
+         sodipodi:role="line"
+         x="757.55524"
+         y="230.70125"
+         id="tspan4611">specificHeaders=[&lt;&lt;Routing-Unspecific-Header : RandomData1&gt;&gt;]</tspan></text>
+    <rect
+       style="fill:none;stroke:#000000;stroke-width:0.70387316;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+       id="rect3463-5"
+       width="81.990822"
+       height="75.581909"
+       x="810.80634"
+       y="608.58246" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 851.80175,272.91577 0,335.66669"
+       id="path3925"
+       inkscape:connector-type="orthogonal"
+       inkscape:connector-curvature="3"
+       inkscape:connection-end-point="d4"
+       inkscape:connection-end="#rect3463-5"
+       inkscape:connection-start-point="d4"
+       inkscape:connection-start="#rect3519-6" />
+    <text
+       xml:space="preserve"
+       style="font-size:7.73021507px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="623.41772"
+       y="520.82037"
+       id="text3487-7"
+       sodipodi:linespacing="125%"
+       transform="scale(0.99526611,1.0047564)"><tspan
+         sodipodi:role="line"
+         id="tspan3489-2"
+         x="623.41772"
+         y="520.82037">INVITE sip:1072@domain.com SIP/2.0</tspan><tspan
+         sodipodi:role="line"
+         x="623.41772"
+         y="530.48315"
+         id="tspan3491-6">Via: SIP/2.0/UDP pc11.domain.com:5060;branch=unique0</tspan><tspan
+         sodipodi:role="line"
+         x="623.41772"
+         y="540.14594"
+         id="tspan3966">Via: SIP/2.0/UDP proxy.domain.com:5060;branch=unique2</tspan><tspan
+         sodipodi:role="line"
+         x="623.41772"
+         y="549.80872"
+         id="tspan3493-4">Max-Forwards: 69</tspan><tspan
+         sodipodi:role="line"
+         x="623.41772"
+         y="559.47144"
+         id="tspan3495-6">To: 1072 &lt;sip:1072@domain.com&gt;</tspan><tspan
+         sodipodi:role="line"
+         x="623.41772"
+         y="569.13422"
+         id="tspan3497-2">From: 1071 &lt;sip:1071@domain.com&gt;;tag=unique1</tspan><tspan
+         sodipodi:role="line"
+         x="623.41772"
+         y="578.797"
+         id="tspan3505-7">Call-ID: 12345</tspan><tspan
+         sodipodi:role="line"
+         x="623.41772"
+         y="588.45978"
+         id="tspan3511-9">CSeq: 1 INVITE </tspan><tspan
+         sodipodi:role="line"
+         x="623.41772"
+         y="598.12256"
+         id="tspan3978">Routing-Unspecific-Header : RandomData1</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:7.73021507px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="159.67824"
+       y="281.04251"
+       id="text3487-6-87"
+       sodipodi:linespacing="125%"
+       transform="scale(0.99526611,1.0047564)"><tspan
+         sodipodi:role="line"
+         x="159.67824"
+         y="281.04251"
+         id="tspan4073">Checks for message to be syntactically correct [They are]</tspan><tspan
+         sodipodi:role="line"
+         x="159.67824"
+         y="290.70529"
+         id="tspan4615">Sess if any actions can be done [Sends back trying, not shown]</tspan><tspan
+         sodipodi:role="line"
+         x="159.67824"
+         y="300.36804"
+         id="tspan4613"> Translates it into generic protocol</tspan><tspan
+         sodipodi:role="line"
+         x="159.67824"
+         y="310.03082"
+         id="tspan3968-9" /></text>
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="448.70245"
+       y="44.574696"
+       id="text4439"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan4441"
+         x="448.70245"
+         y="44.574696" /></text>
+    <text
+       xml:space="preserve"
+       style="font-size:7.73021507px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="353.61447"
+       y="53.043259"
+       id="text3487-6-87-1"
+       sodipodi:linespacing="125%"
+       transform="scale(0.99526611,1.0047564)"><tspan
+         sodipodi:role="line"
+         x="353.61447"
+         y="53.043259"
+         id="tspan4073-6">2) Performs a lookp if such a caller already exists. [It doesn't]</tspan><tspan
+         sodipodi:role="line"
+         x="353.61447"
+         y="62.706028"
+         id="tspan4479">Creates a server and client dialogs and saves them under their caller, callee identifiers,</tspan><tspan
+         sodipodi:role="line"
+         x="353.61447"
+         y="72.368797"
+         id="tspan4485">      [caller : server_dialog, callee: client_dialog]</tspan><tspan
+         sodipodi:role="line"
+         x="353.61447"
+         y="82.031563"
+         id="tspan4487">3) Forwards generic message to both dialogs to make execute state transitions</tspan><tspan
+         sodipodi:role="line"
+         x="353.61447"
+         y="91.694336"
+         id="tspan4489">4) Immedietelly after new state is entered, a routing is performed</tspan><tspan
+         sodipodi:role="line"
+         x="353.61447"
+         y="101.3571"
+         id="tspan4483" /><tspan
+         sodipodi:role="line"
+         x="353.61447"
+         y="111.01987"
+         id="tspan3968-9-6" /></text>
+    <text
+       xml:space="preserve"
+       style="font-size:7.73021507px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="528.78583"
+       y="264.81845"
+       id="text3487-6-87-2"
+       sodipodi:linespacing="125%"
+       transform="scale(0.99526611,1.0047564)"><tspan
+         sodipodi:role="line"
+         x="528.78583"
+         y="264.81845"
+         id="tspan4528">5)  Translates generic message into specific</tspan><tspan
+         sodipodi:role="line"
+         x="528.78583"
+         y="274.48123"
+         id="tspan3968-9-2" /></text>
+    <text
+       xml:space="preserve"
+       style="font-size:17.06038475px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="587.44891"
+       y="137.79575"
+       id="text4532"
+       sodipodi:linespacing="125%"
+       transform="scale(0.89427185,1.1182282)"><tspan
+         sodipodi:role="line"
+         id="tspan4534"
+         x="587.44891"
+         y="137.79575">Exchange</tspan><tspan
+         sodipodi:role="line"
+         x="587.44891"
+         y="159.12123"
+         id="tspan4536">Core</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:19.48111916px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="67.517082"
+       y="373.29507"
+       id="text4538"
+       sodipodi:linespacing="125%"
+       transform="scale(1.375809,0.72684507)"><tspan
+         sodipodi:role="line"
+         id="tspan4540"
+         x="67.517082"
+         y="373.29507">SIP GW</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:19.48111916px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="574.70685"
+       y="372.04037"
+       id="text4538-5"
+       sodipodi:linespacing="125%"
+       transform="scale(1.375809,0.72684507)"><tspan
+         sodipodi:role="line"
+         id="tspan4540-2"
+         x="574.70685"
+         y="372.04037">SIP GW</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:26.70192719px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="135.14549"
+       y="576.83948"
+       id="text4563"
+       sodipodi:linespacing="125%"
+       transform="scale(0.87461278,1.1433631)"><tspan
+         sodipodi:role="line"
+         id="tspan4565"
+         x="135.14549"
+         y="576.83948">Caller</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:26.70192719px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="933.60614"
+       y="576.70551"
+       id="text4563-7"
+       sodipodi:linespacing="125%"
+       transform="scale(0.87461279,1.1433631)"><tspan
+         sodipodi:role="line"
+         id="tspan4565-7"
+         x="933.60614"
+         y="576.70551">Callee</tspan></text>
+  </g>
+</svg>

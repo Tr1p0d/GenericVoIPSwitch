@@ -1,0 +1,656 @@
+2014-01-05 00:36:04 =SUPERVISOR REPORT====
+     Supervisor: {local,generic_switch_sup}
+     Context:    start_error
+     Reason:     {'EXIT',{undef,[{generic_switch_transport_udp,start_link,[{5060,[binary]}],[]},{supervisor,do_start_child,2,[{file,"supervisor.erl"},{line,303}]},{supervisor,start_children,3,[{file,"supervisor.erl"},{line,287}]},{supervisor,init_children,2,[{file,"supervisor.erl"},{line,253}]},{gen_server,init_it,6,[{file,"gen_server.erl"},{line,304}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}}
+     Offender:   [{pid,undefined},{name,udpTransport},{mfargs,{generic_switch_transport_udp,start_link,[{5060,[binary]}]}},{restart_type,permanent},{shutdown,2000},{child_type,worker}]
+
+2014-01-05 00:37:05 =SUPERVISOR REPORT====
+     Supervisor: {local,generic_switch_sup}
+     Context:    start_error
+     Reason:     {'EXIT',{function_clause,[{generic_switch_sip_router,start_link,[24595],[{file,"src/generic_switch_sip_router.erl"},{line,20}]},{supervisor,do_start_child,2,[{file,"supervisor.erl"},{line,303}]},{supervisor,start_children,3,[{file,"supervisor.erl"},{line,287}]},{supervisor,init_children,2,[{file,"supervisor.erl"},{line,253}]},{gen_server,init_it,6,[{file,"gen_server.erl"},{line,304}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}}
+     Offender:   [{pid,undefined},{name,sipDialogRouter},{mfargs,{generic_switch_sip_router,start_link,[24595]}},{restart_type,permanent},{shutdown,2000},{child_type,worker}]
+
+2014-01-05 00:45:19 =ERROR REPORT====
+** Generic server generic_switch_sip_transport_udp terminating 
+** Last message in was {udp,#Port<0.3262>,{127,0,0,1},5070,<<"REGISTER sip:127.0.0.1 SIP/2.0\r\nVia: SIP/2.0/UDP 127.0.0.1:5070;rport;branch=z9hG4bK3weFXF;nksip=10JNT2\r\nFrom: <sip:bob@nksip>;tag=3iDDs5\r\nTo: <sip:bob@nksip>\r\nCall-ID: 81msAUacGD2X1VYesuka4Ahjf8Q\r\nCSeq: 17390892 REGISTER\r\nMax-Forwards: 70\r\nContent-Length: 0\r\nContact: <sip:bob@127.0.0.1:5070>\r\nUser-Agent: NkSIP 0.1.0\r\n\r\n">>}
+** When Server state == {udpstate,#Port<0.3262>}
+** Reason for termination == 
+** {'function not exported',[{generic_switch_sip_router,async_incommig_message,[{sipmsg,<<"R_1ZeZ4O_81msAUacGD2X1VYesuka4Ahjf8Q">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK3weFXF">>},{<<"nksip">>,<<"10JNT2">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"3iDDs5">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"81msAUacGD2X1VYesuka4Ahjf8Q">>,17390892,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"3iDDs5">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388879119131220}],[]},{generic_switch_sip_transport_udp,handle_info,2,[{file,"src/generic_switch_sip_transport_udp.erl"},{line,51}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,607}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+2014-01-05 00:45:19 =CRASH REPORT====
+  crasher:
+    initial call: generic_switch_sip_transport_udp:init/1
+    pid: <0.53.0>
+    registered_name: generic_switch_sip_transport_udp
+    exception exit: {{undef,[{generic_switch_sip_router,async_incommig_message,[{sipmsg,<<"R_1ZeZ4O_81msAUacGD2X1VYesuka4Ahjf8Q">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK3weFXF">>},{<<"nksip">>,<<"10JNT2">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"3iDDs5">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"81msAUacGD2X1VYesuka4Ahjf8Q">>,17390892,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"3iDDs5">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388879119131220}],[]},{generic_switch_sip_transport_udp,handle_info,2,[{file,"src/generic_switch_sip_transport_udp.erl"},{line,51}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,607}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]},[{gen_server,terminate,6,[{file,"gen_server.erl"},{line,747}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [generic_switch_sup,<0.32.0>]
+    messages: []
+    links: [<0.52.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 4181
+    stack_size: 24
+    reductions: 1514
+  neighbours:
+2014-01-05 00:45:19 =SUPERVISOR REPORT====
+     Supervisor: {local,generic_switch_sup}
+     Context:    child_terminated
+     Reason:     {undef,[{generic_switch_sip_router,async_incommig_message,[{sipmsg,<<"R_1ZeZ4O_81msAUacGD2X1VYesuka4Ahjf8Q">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK3weFXF">>},{<<"nksip">>,<<"10JNT2">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"3iDDs5">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"81msAUacGD2X1VYesuka4Ahjf8Q">>,17390892,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"3iDDs5">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388879119131220}],[]},{generic_switch_sip_transport_udp,handle_info,2,[{file,"src/generic_switch_sip_transport_udp.erl"},{line,51}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,607}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+     Offender:   [{pid,<0.53.0>},{name,udpTransport},{mfargs,{generic_switch_sip_transport_udp,start_link,[{5060,[binary]}]}},{restart_type,permanent},{shutdown,2000},{child_type,worker}]
+
+2014-01-05 00:45:19 =ERROR REPORT====
+** Generic server generic_switch_sip_transport_udp terminating 
+** Last message in was {udp,#Port<0.3336>,{127,0,0,1},5070,<<"REGISTER sip:127.0.0.1 SIP/2.0\r\nVia: SIP/2.0/UDP 127.0.0.1:5070;rport;branch=z9hG4bK3weFXF;nksip=10JNT2\r\nFrom: <sip:bob@nksip>;tag=3iDDs5\r\nTo: <sip:bob@nksip>\r\nCall-ID: 81msAUacGD2X1VYesuka4Ahjf8Q\r\nCSeq: 17390892 REGISTER\r\nMax-Forwards: 70\r\nContent-Length: 0\r\nContact: <sip:bob@127.0.0.1:5070>\r\nUser-Agent: NkSIP 0.1.0\r\n\r\n">>}
+** When Server state == {udpstate,#Port<0.3336>}
+** Reason for termination == 
+** {'function not exported',[{generic_switch_sip_router,async_incommig_message,[{sipmsg,<<"R_2kXBpU_81msAUacGD2X1VYesuka4Ahjf8Q">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK3weFXF">>},{<<"nksip">>,<<"10JNT2">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"3iDDs5">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"81msAUacGD2X1VYesuka4Ahjf8Q">>,17390892,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"3iDDs5">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388879119630597}],[]},{generic_switch_sip_transport_udp,handle_info,2,[{file,"src/generic_switch_sip_transport_udp.erl"},{line,51}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,607}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+2014-01-05 00:45:19 =CRASH REPORT====
+  crasher:
+    initial call: generic_switch_sip_transport_udp:init/1
+    pid: <0.56.0>
+    registered_name: generic_switch_sip_transport_udp
+    exception exit: {{undef,[{generic_switch_sip_router,async_incommig_message,[{sipmsg,<<"R_2kXBpU_81msAUacGD2X1VYesuka4Ahjf8Q">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK3weFXF">>},{<<"nksip">>,<<"10JNT2">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"3iDDs5">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"81msAUacGD2X1VYesuka4Ahjf8Q">>,17390892,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"3iDDs5">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388879119630597}],[]},{generic_switch_sip_transport_udp,handle_info,2,[{file,"src/generic_switch_sip_transport_udp.erl"},{line,51}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,607}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]},[{gen_server,terminate,6,[{file,"gen_server.erl"},{line,747}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [generic_switch_sup,<0.32.0>]
+    messages: []
+    links: [<0.52.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 4181
+    stack_size: 24
+    reductions: 1458
+  neighbours:
+2014-01-05 00:45:19 =SUPERVISOR REPORT====
+     Supervisor: {local,generic_switch_sup}
+     Context:    child_terminated
+     Reason:     {undef,[{generic_switch_sip_router,async_incommig_message,[{sipmsg,<<"R_2kXBpU_81msAUacGD2X1VYesuka4Ahjf8Q">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK3weFXF">>},{<<"nksip">>,<<"10JNT2">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"3iDDs5">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"81msAUacGD2X1VYesuka4Ahjf8Q">>,17390892,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"3iDDs5">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388879119630597}],[]},{generic_switch_sip_transport_udp,handle_info,2,[{file,"src/generic_switch_sip_transport_udp.erl"},{line,51}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,607}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+     Offender:   [{pid,<0.56.0>},{name,udpTransport},{mfargs,{generic_switch_sip_transport_udp,start_link,[{5060,[binary]}]}},{restart_type,permanent},{shutdown,2000},{child_type,worker}]
+
+2014-01-05 00:45:20 =ERROR REPORT====
+** Generic server generic_switch_sip_transport_udp terminating 
+** Last message in was {udp,#Port<0.3337>,{127,0,0,1},5070,<<"REGISTER sip:127.0.0.1 SIP/2.0\r\nVia: SIP/2.0/UDP 127.0.0.1:5070;rport;branch=z9hG4bK3weFXF;nksip=10JNT2\r\nFrom: <sip:bob@nksip>;tag=3iDDs5\r\nTo: <sip:bob@nksip>\r\nCall-ID: 81msAUacGD2X1VYesuka4Ahjf8Q\r\nCSeq: 17390892 REGISTER\r\nMax-Forwards: 70\r\nContent-Length: 0\r\nContact: <sip:bob@127.0.0.1:5070>\r\nUser-Agent: NkSIP 0.1.0\r\n\r\n">>}
+** When Server state == {udpstate,#Port<0.3337>}
+** Reason for termination == 
+** {'function not exported',[{generic_switch_sip_router,async_incommig_message,[{sipmsg,<<"R_4C1YHW_81msAUacGD2X1VYesuka4Ahjf8Q">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK3weFXF">>},{<<"nksip">>,<<"10JNT2">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"3iDDs5">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"81msAUacGD2X1VYesuka4Ahjf8Q">>,17390892,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"3iDDs5">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388879120631481}],[]},{generic_switch_sip_transport_udp,handle_info,2,[{file,"src/generic_switch_sip_transport_udp.erl"},{line,51}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,607}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+2014-01-05 00:45:20 =CRASH REPORT====
+  crasher:
+    initial call: generic_switch_sip_transport_udp:init/1
+    pid: <0.57.0>
+    registered_name: generic_switch_sip_transport_udp
+    exception exit: {{undef,[{generic_switch_sip_router,async_incommig_message,[{sipmsg,<<"R_4C1YHW_81msAUacGD2X1VYesuka4Ahjf8Q">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK3weFXF">>},{<<"nksip">>,<<"10JNT2">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"3iDDs5">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"81msAUacGD2X1VYesuka4Ahjf8Q">>,17390892,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"3iDDs5">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388879120631481}],[]},{generic_switch_sip_transport_udp,handle_info,2,[{file,"src/generic_switch_sip_transport_udp.erl"},{line,51}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,607}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]},[{gen_server,terminate,6,[{file,"gen_server.erl"},{line,747}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [generic_switch_sup,<0.32.0>]
+    messages: []
+    links: [<0.52.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 4181
+    stack_size: 24
+    reductions: 1458
+  neighbours:
+2014-01-05 00:45:20 =SUPERVISOR REPORT====
+     Supervisor: {local,generic_switch_sup}
+     Context:    child_terminated
+     Reason:     {undef,[{generic_switch_sip_router,async_incommig_message,[{sipmsg,<<"R_4C1YHW_81msAUacGD2X1VYesuka4Ahjf8Q">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK3weFXF">>},{<<"nksip">>,<<"10JNT2">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"3iDDs5">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"81msAUacGD2X1VYesuka4Ahjf8Q">>,17390892,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"3iDDs5">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388879120631481}],[]},{generic_switch_sip_transport_udp,handle_info,2,[{file,"src/generic_switch_sip_transport_udp.erl"},{line,51}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,607}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+     Offender:   [{pid,<0.57.0>},{name,udpTransport},{mfargs,{generic_switch_sip_transport_udp,start_link,[{5060,[binary]}]}},{restart_type,permanent},{shutdown,2000},{child_type,worker}]
+
+2014-01-05 00:45:22 =ERROR REPORT====
+** Generic server generic_switch_sip_transport_udp terminating 
+** Last message in was {udp,#Port<0.3338>,{127,0,0,1},5070,<<"REGISTER sip:127.0.0.1 SIP/2.0\r\nVia: SIP/2.0/UDP 127.0.0.1:5070;rport;branch=z9hG4bK3weFXF;nksip=10JNT2\r\nFrom: <sip:bob@nksip>;tag=3iDDs5\r\nTo: <sip:bob@nksip>\r\nCall-ID: 81msAUacGD2X1VYesuka4Ahjf8Q\r\nCSeq: 17390892 REGISTER\r\nMax-Forwards: 70\r\nContent-Length: 0\r\nContact: <sip:bob@127.0.0.1:5070>\r\nUser-Agent: NkSIP 0.1.0\r\n\r\n">>}
+** When Server state == {udpstate,#Port<0.3338>}
+** Reason for termination == 
+** {'function not exported',[{generic_switch_sip_router,async_incommig_message,[{sipmsg,<<"R_224S6y_81msAUacGD2X1VYesuka4Ahjf8Q">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK3weFXF">>},{<<"nksip">>,<<"10JNT2">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"3iDDs5">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"81msAUacGD2X1VYesuka4Ahjf8Q">>,17390892,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"3iDDs5">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388879122632251}],[]},{generic_switch_sip_transport_udp,handle_info,2,[{file,"src/generic_switch_sip_transport_udp.erl"},{line,51}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,607}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+2014-01-05 00:45:22 =CRASH REPORT====
+  crasher:
+    initial call: generic_switch_sip_transport_udp:init/1
+    pid: <0.58.0>
+    registered_name: generic_switch_sip_transport_udp
+    exception exit: {{undef,[{generic_switch_sip_router,async_incommig_message,[{sipmsg,<<"R_224S6y_81msAUacGD2X1VYesuka4Ahjf8Q">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK3weFXF">>},{<<"nksip">>,<<"10JNT2">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"3iDDs5">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"81msAUacGD2X1VYesuka4Ahjf8Q">>,17390892,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"3iDDs5">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388879122632251}],[]},{generic_switch_sip_transport_udp,handle_info,2,[{file,"src/generic_switch_sip_transport_udp.erl"},{line,51}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,607}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]},[{gen_server,terminate,6,[{file,"gen_server.erl"},{line,747}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [generic_switch_sup,<0.32.0>]
+    messages: []
+    links: [<0.52.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 4181
+    stack_size: 24
+    reductions: 1458
+  neighbours:
+2014-01-05 00:45:22 =SUPERVISOR REPORT====
+     Supervisor: {local,generic_switch_sup}
+     Context:    child_terminated
+     Reason:     {undef,[{generic_switch_sip_router,async_incommig_message,[{sipmsg,<<"R_224S6y_81msAUacGD2X1VYesuka4Ahjf8Q">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK3weFXF">>},{<<"nksip">>,<<"10JNT2">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"3iDDs5">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"81msAUacGD2X1VYesuka4Ahjf8Q">>,17390892,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"3iDDs5">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388879122632251}],[]},{generic_switch_sip_transport_udp,handle_info,2,[{file,"src/generic_switch_sip_transport_udp.erl"},{line,51}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,607}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+     Offender:   [{pid,<0.58.0>},{name,udpTransport},{mfargs,{generic_switch_sip_transport_udp,start_link,[{5060,[binary]}]}},{restart_type,permanent},{shutdown,2000},{child_type,worker}]
+
+2014-01-05 00:45:26 =ERROR REPORT====
+** Generic server generic_switch_sip_transport_udp terminating 
+** Last message in was {udp,#Port<0.3339>,{127,0,0,1},5070,<<"REGISTER sip:127.0.0.1 SIP/2.0\r\nVia: SIP/2.0/UDP 127.0.0.1:5070;rport;branch=z9hG4bK3weFXF;nksip=10JNT2\r\nFrom: <sip:bob@nksip>;tag=3iDDs5\r\nTo: <sip:bob@nksip>\r\nCall-ID: 81msAUacGD2X1VYesuka4Ahjf8Q\r\nCSeq: 17390892 REGISTER\r\nMax-Forwards: 70\r\nContent-Length: 0\r\nContact: <sip:bob@127.0.0.1:5070>\r\nUser-Agent: NkSIP 0.1.0\r\n\r\n">>}
+** When Server state == {udpstate,#Port<0.3339>}
+** Reason for termination == 
+** {'function not exported',[{generic_switch_sip_router,async_incommig_message,[{sipmsg,<<"R_ZwQWJ_81msAUacGD2X1VYesuka4Ahjf8Q">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK3weFXF">>},{<<"nksip">>,<<"10JNT2">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"3iDDs5">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"81msAUacGD2X1VYesuka4Ahjf8Q">>,17390892,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"3iDDs5">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388879126633610}],[]},{generic_switch_sip_transport_udp,handle_info,2,[{file,"src/generic_switch_sip_transport_udp.erl"},{line,51}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,607}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+2014-01-05 00:45:26 =CRASH REPORT====
+  crasher:
+    initial call: generic_switch_sip_transport_udp:init/1
+    pid: <0.59.0>
+    registered_name: generic_switch_sip_transport_udp
+    exception exit: {{undef,[{generic_switch_sip_router,async_incommig_message,[{sipmsg,<<"R_ZwQWJ_81msAUacGD2X1VYesuka4Ahjf8Q">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK3weFXF">>},{<<"nksip">>,<<"10JNT2">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"3iDDs5">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"81msAUacGD2X1VYesuka4Ahjf8Q">>,17390892,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"3iDDs5">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388879126633610}],[]},{generic_switch_sip_transport_udp,handle_info,2,[{file,"src/generic_switch_sip_transport_udp.erl"},{line,51}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,607}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]},[{gen_server,terminate,6,[{file,"gen_server.erl"},{line,747}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [generic_switch_sup,<0.32.0>]
+    messages: []
+    links: [<0.52.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 4181
+    stack_size: 24
+    reductions: 1457
+  neighbours:
+2014-01-05 00:45:26 =SUPERVISOR REPORT====
+     Supervisor: {local,generic_switch_sup}
+     Context:    child_terminated
+     Reason:     {undef,[{generic_switch_sip_router,async_incommig_message,[{sipmsg,<<"R_ZwQWJ_81msAUacGD2X1VYesuka4Ahjf8Q">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK3weFXF">>},{<<"nksip">>,<<"10JNT2">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"3iDDs5">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"81msAUacGD2X1VYesuka4Ahjf8Q">>,17390892,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"3iDDs5">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388879126633610}],[]},{generic_switch_sip_transport_udp,handle_info,2,[{file,"src/generic_switch_sip_transport_udp.erl"},{line,51}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,607}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+     Offender:   [{pid,<0.59.0>},{name,udpTransport},{mfargs,{generic_switch_sip_transport_udp,start_link,[{5060,[binary]}]}},{restart_type,permanent},{shutdown,2000},{child_type,worker}]
+
+2014-01-05 00:45:30 =ERROR REPORT====
+** Generic server generic_switch_sip_transport_udp terminating 
+** Last message in was {udp,#Port<0.3340>,{127,0,0,1},5070,<<"REGISTER sip:127.0.0.1 SIP/2.0\r\nVia: SIP/2.0/UDP 127.0.0.1:5070;rport;branch=z9hG4bK3weFXF;nksip=10JNT2\r\nFrom: <sip:bob@nksip>;tag=3iDDs5\r\nTo: <sip:bob@nksip>\r\nCall-ID: 81msAUacGD2X1VYesuka4Ahjf8Q\r\nCSeq: 17390892 REGISTER\r\nMax-Forwards: 70\r\nContent-Length: 0\r\nContact: <sip:bob@127.0.0.1:5070>\r\nUser-Agent: NkSIP 0.1.0\r\n\r\n">>}
+** When Server state == {udpstate,#Port<0.3340>}
+** Reason for termination == 
+** {'function not exported',[{generic_switch_sip_router,async_incommig_message,[{sipmsg,<<"R_2SPDQf_81msAUacGD2X1VYesuka4Ahjf8Q">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK3weFXF">>},{<<"nksip">>,<<"10JNT2">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"3iDDs5">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"81msAUacGD2X1VYesuka4Ahjf8Q">>,17390892,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"3iDDs5">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388879130634256}],[]},{generic_switch_sip_transport_udp,handle_info,2,[{file,"src/generic_switch_sip_transport_udp.erl"},{line,51}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,607}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+2014-01-05 00:45:30 =CRASH REPORT====
+  crasher:
+    initial call: generic_switch_sip_transport_udp:init/1
+    pid: <0.60.0>
+    registered_name: generic_switch_sip_transport_udp
+    exception exit: {{undef,[{generic_switch_sip_router,async_incommig_message,[{sipmsg,<<"R_2SPDQf_81msAUacGD2X1VYesuka4Ahjf8Q">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK3weFXF">>},{<<"nksip">>,<<"10JNT2">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"3iDDs5">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"81msAUacGD2X1VYesuka4Ahjf8Q">>,17390892,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"3iDDs5">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388879130634256}],[]},{generic_switch_sip_transport_udp,handle_info,2,[{file,"src/generic_switch_sip_transport_udp.erl"},{line,51}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,607}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]},[{gen_server,terminate,6,[{file,"gen_server.erl"},{line,747}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [generic_switch_sup,<0.32.0>]
+    messages: []
+    links: [<0.52.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 4181
+    stack_size: 24
+    reductions: 1458
+  neighbours:
+2014-01-05 00:45:30 =SUPERVISOR REPORT====
+     Supervisor: {local,generic_switch_sup}
+     Context:    child_terminated
+     Reason:     {undef,[{generic_switch_sip_router,async_incommig_message,[{sipmsg,<<"R_2SPDQf_81msAUacGD2X1VYesuka4Ahjf8Q">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK3weFXF">>},{<<"nksip">>,<<"10JNT2">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"3iDDs5">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"81msAUacGD2X1VYesuka4Ahjf8Q">>,17390892,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"3iDDs5">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388879130634256}],[]},{generic_switch_sip_transport_udp,handle_info,2,[{file,"src/generic_switch_sip_transport_udp.erl"},{line,51}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,607}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+     Offender:   [{pid,<0.60.0>},{name,udpTransport},{mfargs,{generic_switch_sip_transport_udp,start_link,[{5060,[binary]}]}},{restart_type,permanent},{shutdown,2000},{child_type,worker}]
+
+2014-01-05 00:45:34 =ERROR REPORT====
+** Generic server generic_switch_sip_transport_udp terminating 
+** Last message in was {udp,#Port<0.3341>,{127,0,0,1},5070,<<"REGISTER sip:127.0.0.1 SIP/2.0\r\nVia: SIP/2.0/UDP 127.0.0.1:5070;rport;branch=z9hG4bK3weFXF;nksip=10JNT2\r\nFrom: <sip:bob@nksip>;tag=3iDDs5\r\nTo: <sip:bob@nksip>\r\nCall-ID: 81msAUacGD2X1VYesuka4Ahjf8Q\r\nCSeq: 17390892 REGISTER\r\nMax-Forwards: 70\r\nContent-Length: 0\r\nContact: <sip:bob@127.0.0.1:5070>\r\nUser-Agent: NkSIP 0.1.0\r\n\r\n">>}
+** When Server state == {udpstate,#Port<0.3341>}
+** Reason for termination == 
+** {'function not exported',[{generic_switch_sip_router,async_incommig_message,[{sipmsg,<<"R_IHOBB_81msAUacGD2X1VYesuka4Ahjf8Q">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK3weFXF">>},{<<"nksip">>,<<"10JNT2">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"3iDDs5">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"81msAUacGD2X1VYesuka4Ahjf8Q">>,17390892,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"3iDDs5">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388879134635527}],[]},{generic_switch_sip_transport_udp,handle_info,2,[{file,"src/generic_switch_sip_transport_udp.erl"},{line,51}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,607}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+2014-01-05 00:45:34 =CRASH REPORT====
+  crasher:
+    initial call: generic_switch_sip_transport_udp:init/1
+    pid: <0.61.0>
+    registered_name: generic_switch_sip_transport_udp
+    exception exit: {{undef,[{generic_switch_sip_router,async_incommig_message,[{sipmsg,<<"R_IHOBB_81msAUacGD2X1VYesuka4Ahjf8Q">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK3weFXF">>},{<<"nksip">>,<<"10JNT2">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"3iDDs5">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"81msAUacGD2X1VYesuka4Ahjf8Q">>,17390892,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"3iDDs5">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388879134635527}],[]},{generic_switch_sip_transport_udp,handle_info,2,[{file,"src/generic_switch_sip_transport_udp.erl"},{line,51}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,607}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]},[{gen_server,terminate,6,[{file,"gen_server.erl"},{line,747}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [generic_switch_sup,<0.32.0>]
+    messages: []
+    links: [<0.52.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 4181
+    stack_size: 24
+    reductions: 1457
+  neighbours:
+2014-01-05 00:45:34 =SUPERVISOR REPORT====
+     Supervisor: {local,generic_switch_sup}
+     Context:    child_terminated
+     Reason:     {undef,[{generic_switch_sip_router,async_incommig_message,[{sipmsg,<<"R_IHOBB_81msAUacGD2X1VYesuka4Ahjf8Q">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK3weFXF">>},{<<"nksip">>,<<"10JNT2">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"3iDDs5">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"81msAUacGD2X1VYesuka4Ahjf8Q">>,17390892,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"3iDDs5">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388879134635527}],[]},{generic_switch_sip_transport_udp,handle_info,2,[{file,"src/generic_switch_sip_transport_udp.erl"},{line,51}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,607}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+     Offender:   [{pid,<0.61.0>},{name,udpTransport},{mfargs,{generic_switch_sip_transport_udp,start_link,[{5060,[binary]}]}},{restart_type,permanent},{shutdown,2000},{child_type,worker}]
+
+2014-01-05 00:45:38 =ERROR REPORT====
+** Generic server generic_switch_sip_transport_udp terminating 
+** Last message in was {udp,#Port<0.3342>,{127,0,0,1},5070,<<"REGISTER sip:127.0.0.1 SIP/2.0\r\nVia: SIP/2.0/UDP 127.0.0.1:5070;rport;branch=z9hG4bK3weFXF;nksip=10JNT2\r\nFrom: <sip:bob@nksip>;tag=3iDDs5\r\nTo: <sip:bob@nksip>\r\nCall-ID: 81msAUacGD2X1VYesuka4Ahjf8Q\r\nCSeq: 17390892 REGISTER\r\nMax-Forwards: 70\r\nContent-Length: 0\r\nContact: <sip:bob@127.0.0.1:5070>\r\nUser-Agent: NkSIP 0.1.0\r\n\r\n">>}
+** When Server state == {udpstate,#Port<0.3342>}
+** Reason for termination == 
+** {'function not exported',[{generic_switch_sip_router,async_incommig_message,[{sipmsg,<<"R_27mMat_81msAUacGD2X1VYesuka4Ahjf8Q">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK3weFXF">>},{<<"nksip">>,<<"10JNT2">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"3iDDs5">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"81msAUacGD2X1VYesuka4Ahjf8Q">>,17390892,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"3iDDs5">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388879138636583}],[]},{generic_switch_sip_transport_udp,handle_info,2,[{file,"src/generic_switch_sip_transport_udp.erl"},{line,51}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,607}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+2014-01-05 00:45:38 =CRASH REPORT====
+  crasher:
+    initial call: generic_switch_sip_transport_udp:init/1
+    pid: <0.62.0>
+    registered_name: generic_switch_sip_transport_udp
+    exception exit: {{undef,[{generic_switch_sip_router,async_incommig_message,[{sipmsg,<<"R_27mMat_81msAUacGD2X1VYesuka4Ahjf8Q">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK3weFXF">>},{<<"nksip">>,<<"10JNT2">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"3iDDs5">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"81msAUacGD2X1VYesuka4Ahjf8Q">>,17390892,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"3iDDs5">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388879138636583}],[]},{generic_switch_sip_transport_udp,handle_info,2,[{file,"src/generic_switch_sip_transport_udp.erl"},{line,51}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,607}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]},[{gen_server,terminate,6,[{file,"gen_server.erl"},{line,747}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [generic_switch_sup,<0.32.0>]
+    messages: []
+    links: [<0.52.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 4181
+    stack_size: 24
+    reductions: 1458
+  neighbours:
+2014-01-05 00:45:38 =SUPERVISOR REPORT====
+     Supervisor: {local,generic_switch_sup}
+     Context:    child_terminated
+     Reason:     {undef,[{generic_switch_sip_router,async_incommig_message,[{sipmsg,<<"R_27mMat_81msAUacGD2X1VYesuka4Ahjf8Q">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK3weFXF">>},{<<"nksip">>,<<"10JNT2">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"3iDDs5">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"81msAUacGD2X1VYesuka4Ahjf8Q">>,17390892,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"3iDDs5">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388879138636583}],[]},{generic_switch_sip_transport_udp,handle_info,2,[{file,"src/generic_switch_sip_transport_udp.erl"},{line,51}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,607}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+     Offender:   [{pid,<0.62.0>},{name,udpTransport},{mfargs,{generic_switch_sip_transport_udp,start_link,[{5060,[binary]}]}},{restart_type,permanent},{shutdown,2000},{child_type,worker}]
+
+2014-01-05 00:46:13 =ERROR REPORT====
+** Generic server generic_switch_sip_transport_udp terminating 
+** Last message in was {udp,#Port<0.3343>,{127,0,0,1},5070,<<"REGISTER sip:127.0.0.1 SIP/2.0\r\nVia: SIP/2.0/UDP 127.0.0.1:5070;rport;branch=z9hG4bK2sQ15d;nksip=2uEd2H\r\nFrom: <sip:bob@nksip>;tag=cl0oo\r\nTo: <sip:bob@nksip>\r\nCall-ID: NxMStQxvce4xi3xSHdWXiFYRmC7\r\nCSeq: 17391681 REGISTER\r\nMax-Forwards: 70\r\nContent-Length: 0\r\nContact: <sip:bob@127.0.0.1:5070>\r\nUser-Agent: NkSIP 0.1.0\r\n\r\n">>}
+** When Server state == {udpstate,#Port<0.3343>}
+** Reason for termination == 
+** {'function not exported',[{generic_switch_sip_router,async_incommig_message,[{sipmsg,<<"R_4bnZrg_NxMStQxvce4xi3xSHdWXiFYRmC7">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK2sQ15d">>},{<<"nksip">>,<<"2uEd2H">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"cl0oo">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"NxMStQxvce4xi3xSHdWXiFYRmC7">>,17391681,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"cl0oo">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388879173913192}],[]},{generic_switch_sip_transport_udp,handle_info,2,[{file,"src/generic_switch_sip_transport_udp.erl"},{line,51}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,607}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+2014-01-05 00:46:13 =CRASH REPORT====
+  crasher:
+    initial call: generic_switch_sip_transport_udp:init/1
+    pid: <0.63.0>
+    registered_name: generic_switch_sip_transport_udp
+    exception exit: {{undef,[{generic_switch_sip_router,async_incommig_message,[{sipmsg,<<"R_4bnZrg_NxMStQxvce4xi3xSHdWXiFYRmC7">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK2sQ15d">>},{<<"nksip">>,<<"2uEd2H">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"cl0oo">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"NxMStQxvce4xi3xSHdWXiFYRmC7">>,17391681,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"cl0oo">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388879173913192}],[]},{generic_switch_sip_transport_udp,handle_info,2,[{file,"src/generic_switch_sip_transport_udp.erl"},{line,51}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,607}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]},[{gen_server,terminate,6,[{file,"gen_server.erl"},{line,747}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [generic_switch_sup,<0.32.0>]
+    messages: []
+    links: [<0.52.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 4181
+    stack_size: 24
+    reductions: 1456
+  neighbours:
+2014-01-05 00:46:13 =SUPERVISOR REPORT====
+     Supervisor: {local,generic_switch_sup}
+     Context:    child_terminated
+     Reason:     {undef,[{generic_switch_sip_router,async_incommig_message,[{sipmsg,<<"R_4bnZrg_NxMStQxvce4xi3xSHdWXiFYRmC7">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK2sQ15d">>},{<<"nksip">>,<<"2uEd2H">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"cl0oo">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"NxMStQxvce4xi3xSHdWXiFYRmC7">>,17391681,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"cl0oo">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388879173913192}],[]},{generic_switch_sip_transport_udp,handle_info,2,[{file,"src/generic_switch_sip_transport_udp.erl"},{line,51}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,607}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+     Offender:   [{pid,<0.63.0>},{name,udpTransport},{mfargs,{generic_switch_sip_transport_udp,start_link,[{5060,[binary]}]}},{restart_type,permanent},{shutdown,2000},{child_type,worker}]
+
+2014-01-05 00:46:14 =ERROR REPORT====
+** Generic server generic_switch_sip_transport_udp terminating 
+** Last message in was {udp,#Port<0.3344>,{127,0,0,1},5070,<<"REGISTER sip:127.0.0.1 SIP/2.0\r\nVia: SIP/2.0/UDP 127.0.0.1:5070;rport;branch=z9hG4bK2sQ15d;nksip=2uEd2H\r\nFrom: <sip:bob@nksip>;tag=cl0oo\r\nTo: <sip:bob@nksip>\r\nCall-ID: NxMStQxvce4xi3xSHdWXiFYRmC7\r\nCSeq: 17391681 REGISTER\r\nMax-Forwards: 70\r\nContent-Length: 0\r\nContact: <sip:bob@127.0.0.1:5070>\r\nUser-Agent: NkSIP 0.1.0\r\n\r\n">>}
+** When Server state == {udpstate,#Port<0.3344>}
+** Reason for termination == 
+** {'function not exported',[{generic_switch_sip_router,async_incommig_message,[{sipmsg,<<"R_3VGoa9_NxMStQxvce4xi3xSHdWXiFYRmC7">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK2sQ15d">>},{<<"nksip">>,<<"2uEd2H">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"cl0oo">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"NxMStQxvce4xi3xSHdWXiFYRmC7">>,17391681,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"cl0oo">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388879174416469}],[]},{generic_switch_sip_transport_udp,handle_info,2,[{file,"src/generic_switch_sip_transport_udp.erl"},{line,51}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,607}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+2014-01-05 00:46:14 =CRASH REPORT====
+  crasher:
+    initial call: generic_switch_sip_transport_udp:init/1
+    pid: <0.65.0>
+    registered_name: generic_switch_sip_transport_udp
+    exception exit: {{undef,[{generic_switch_sip_router,async_incommig_message,[{sipmsg,<<"R_3VGoa9_NxMStQxvce4xi3xSHdWXiFYRmC7">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK2sQ15d">>},{<<"nksip">>,<<"2uEd2H">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"cl0oo">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"NxMStQxvce4xi3xSHdWXiFYRmC7">>,17391681,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"cl0oo">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388879174416469}],[]},{generic_switch_sip_transport_udp,handle_info,2,[{file,"src/generic_switch_sip_transport_udp.erl"},{line,51}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,607}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]},[{gen_server,terminate,6,[{file,"gen_server.erl"},{line,747}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [generic_switch_sup,<0.32.0>]
+    messages: []
+    links: [<0.52.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 4181
+    stack_size: 24
+    reductions: 1456
+  neighbours:
+2014-01-05 00:46:14 =SUPERVISOR REPORT====
+     Supervisor: {local,generic_switch_sup}
+     Context:    child_terminated
+     Reason:     {undef,[{generic_switch_sip_router,async_incommig_message,[{sipmsg,<<"R_3VGoa9_NxMStQxvce4xi3xSHdWXiFYRmC7">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK2sQ15d">>},{<<"nksip">>,<<"2uEd2H">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"cl0oo">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"NxMStQxvce4xi3xSHdWXiFYRmC7">>,17391681,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"cl0oo">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388879174416469}],[]},{generic_switch_sip_transport_udp,handle_info,2,[{file,"src/generic_switch_sip_transport_udp.erl"},{line,51}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,607}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+     Offender:   [{pid,<0.65.0>},{name,udpTransport},{mfargs,{generic_switch_sip_transport_udp,start_link,[{5060,[binary]}]}},{restart_type,permanent},{shutdown,2000},{child_type,worker}]
+
+2014-01-05 00:48:17 =ERROR REPORT====
+** Generic server generic_switch_sip_transport_udp terminating 
+** Last message in was {udp,#Port<0.3345>,{127,0,0,1},5070,<<"REGISTER sip:127.0.0.1 SIP/2.0\r\nVia: SIP/2.0/UDP 127.0.0.1:5070;rport;branch=z9hG4bK2mOAL2;nksip=3OUHMW\r\nFrom: <sip:bob@nksip>;tag=3YVHuw\r\nTo: <sip:bob@nksip>\r\nCall-ID: DSYvvzk0q48zU1vDCKOs2CRLm6a\r\nCSeq: 17391823 REGISTER\r\nMax-Forwards: 70\r\nContent-Length: 0\r\nContact: <sip:bob@127.0.0.1:5070>\r\nUser-Agent: NkSIP 0.1.0\r\n\r\n">>}
+** When Server state == {udpstate,#Port<0.3345>}
+** Reason for termination == 
+** {'function not exported',[{generic_switch_sip_router,async_incommig_message,[{sipmsg,<<"R_11Y6wO_DSYvvzk0q48zU1vDCKOs2CRLm6a">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK2mOAL2">>},{<<"nksip">>,<<"3OUHMW">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"3YVHuw">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"DSYvvzk0q48zU1vDCKOs2CRLm6a">>,17391823,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"3YVHuw">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388879297844254}],[]},{generic_switch_sip_transport_udp,handle_info,2,[{file,"src/generic_switch_sip_transport_udp.erl"},{line,51}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,607}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+2014-01-05 00:48:17 =CRASH REPORT====
+  crasher:
+    initial call: generic_switch_sip_transport_udp:init/1
+    pid: <0.66.0>
+    registered_name: generic_switch_sip_transport_udp
+    exception exit: {{undef,[{generic_switch_sip_router,async_incommig_message,[{sipmsg,<<"R_11Y6wO_DSYvvzk0q48zU1vDCKOs2CRLm6a">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK2mOAL2">>},{<<"nksip">>,<<"3OUHMW">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"3YVHuw">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"DSYvvzk0q48zU1vDCKOs2CRLm6a">>,17391823,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"3YVHuw">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388879297844254}],[]},{generic_switch_sip_transport_udp,handle_info,2,[{file,"src/generic_switch_sip_transport_udp.erl"},{line,51}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,607}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]},[{gen_server,terminate,6,[{file,"gen_server.erl"},{line,747}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [generic_switch_sup,<0.32.0>]
+    messages: []
+    links: [<0.52.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 4181
+    stack_size: 24
+    reductions: 1458
+  neighbours:
+2014-01-05 00:48:17 =SUPERVISOR REPORT====
+     Supervisor: {local,generic_switch_sup}
+     Context:    child_terminated
+     Reason:     {undef,[{generic_switch_sip_router,async_incommig_message,[{sipmsg,<<"R_11Y6wO_DSYvvzk0q48zU1vDCKOs2CRLm6a">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK2mOAL2">>},{<<"nksip">>,<<"3OUHMW">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"3YVHuw">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"DSYvvzk0q48zU1vDCKOs2CRLm6a">>,17391823,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"3YVHuw">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388879297844254}],[]},{generic_switch_sip_transport_udp,handle_info,2,[{file,"src/generic_switch_sip_transport_udp.erl"},{line,51}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,607}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+     Offender:   [{pid,<0.66.0>},{name,udpTransport},{mfargs,{generic_switch_sip_transport_udp,start_link,[{5060,[binary]}]}},{restart_type,permanent},{shutdown,2000},{child_type,worker}]
+
+2014-01-05 00:48:18 =ERROR REPORT====
+** Generic server generic_switch_sip_transport_udp terminating 
+** Last message in was {udp,#Port<0.3346>,{127,0,0,1},5070,<<"REGISTER sip:127.0.0.1 SIP/2.0\r\nVia: SIP/2.0/UDP 127.0.0.1:5070;rport;branch=z9hG4bK2mOAL2;nksip=3OUHMW\r\nFrom: <sip:bob@nksip>;tag=3YVHuw\r\nTo: <sip:bob@nksip>\r\nCall-ID: DSYvvzk0q48zU1vDCKOs2CRLm6a\r\nCSeq: 17391823 REGISTER\r\nMax-Forwards: 70\r\nContent-Length: 0\r\nContact: <sip:bob@127.0.0.1:5070>\r\nUser-Agent: NkSIP 0.1.0\r\n\r\n">>}
+** When Server state == {udpstate,#Port<0.3346>}
+** Reason for termination == 
+** {'function not exported',[{generic_switch_sip_router,async_incommig_message,[{sipmsg,<<"R_4VpgL6_DSYvvzk0q48zU1vDCKOs2CRLm6a">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK2mOAL2">>},{<<"nksip">>,<<"3OUHMW">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"3YVHuw">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"DSYvvzk0q48zU1vDCKOs2CRLm6a">>,17391823,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"3YVHuw">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388879298348276}],[]},{generic_switch_sip_transport_udp,handle_info,2,[{file,"src/generic_switch_sip_transport_udp.erl"},{line,51}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,607}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+2014-01-05 00:48:18 =CRASH REPORT====
+  crasher:
+    initial call: generic_switch_sip_transport_udp:init/1
+    pid: <0.67.0>
+    registered_name: generic_switch_sip_transport_udp
+    exception exit: {{undef,[{generic_switch_sip_router,async_incommig_message,[{sipmsg,<<"R_4VpgL6_DSYvvzk0q48zU1vDCKOs2CRLm6a">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK2mOAL2">>},{<<"nksip">>,<<"3OUHMW">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"3YVHuw">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"DSYvvzk0q48zU1vDCKOs2CRLm6a">>,17391823,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"3YVHuw">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388879298348276}],[]},{generic_switch_sip_transport_udp,handle_info,2,[{file,"src/generic_switch_sip_transport_udp.erl"},{line,51}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,607}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]},[{gen_server,terminate,6,[{file,"gen_server.erl"},{line,747}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [generic_switch_sup,<0.32.0>]
+    messages: []
+    links: [<0.52.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 4181
+    stack_size: 24
+    reductions: 1458
+  neighbours:
+2014-01-05 00:48:18 =SUPERVISOR REPORT====
+     Supervisor: {local,generic_switch_sup}
+     Context:    child_terminated
+     Reason:     {undef,[{generic_switch_sip_router,async_incommig_message,[{sipmsg,<<"R_4VpgL6_DSYvvzk0q48zU1vDCKOs2CRLm6a">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK2mOAL2">>},{<<"nksip">>,<<"3OUHMW">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"3YVHuw">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"DSYvvzk0q48zU1vDCKOs2CRLm6a">>,17391823,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"3YVHuw">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388879298348276}],[]},{generic_switch_sip_transport_udp,handle_info,2,[{file,"src/generic_switch_sip_transport_udp.erl"},{line,51}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,607}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+     Offender:   [{pid,<0.67.0>},{name,udpTransport},{mfargs,{generic_switch_sip_transport_udp,start_link,[{5060,[binary]}]}},{restart_type,permanent},{shutdown,2000},{child_type,worker}]
+
+2014-01-05 14:11:59 =ERROR REPORT====
+** Generic server generic_switch_sup terminating 
+** Last message in was {'EXIT',<0.32.0>,{undef,[{client_database,start,[],[]},{erl_eval,do_apply,6,[{file,"erl_eval.erl"},{line,576}]},{shell,exprs,7,[{file,"shell.erl"},{line,668}]},{shell,eval_exprs,7,[{file,"shell.erl"},{line,623}]},{shell,eval_loop,3,[{file,"shell.erl"},{line,608}]}]}}
+** When Server state == {state,{local,generic_switch_sup},one_for_one,[{child,<0.54.0>,sipDialogRouter,{generic_switch_sip_router,start_link,[24595]},permanent,2000,worker,[generic_switch_sip_router]},{child,<0.53.0>,udpTransport,{generic_switch_sip_transport_udp,start_link,[{5060,[binary]}]},permanent,2000,worker,[generic_switch_sip_transport_udp]}],undefined,5,10,[],generic_switch_sup,[]}
+** Reason for termination == 
+** {'function not exported',[{client_database,start,[],[]},{erl_eval,do_apply,6,[{file,"erl_eval.erl"},{line,576}]},{shell,exprs,7,[{file,"shell.erl"},{line,668}]},{shell,eval_exprs,7,[{file,"shell.erl"},{line,623}]},{shell,eval_loop,3,[{file,"shell.erl"},{line,608}]}]}
+2014-01-05 14:11:59 =CRASH REPORT====
+  crasher:
+    initial call: supervisor:generic_switch_sup/1
+    pid: <0.52.0>
+    registered_name: generic_switch_sup
+    exception exit: {{undef,[{client_database,start,[],[]},{erl_eval,do_apply,6,[{file,"erl_eval.erl"},{line,576}]},{shell,exprs,7,[{file,"shell.erl"},{line,668}]},{shell,eval_exprs,7,[{file,"shell.erl"},{line,623}]},{shell,eval_loop,3,[{file,"shell.erl"},{line,608}]}]},[{gen_server,terminate,6,[{file,"gen_server.erl"},{line,747}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [<0.32.0>]
+    messages: [{'EXIT',<0.32.0>,normal}]
+    links: []
+    dictionary: []
+    trap_exit: true
+    status: running
+    heap_size: 610
+    stack_size: 24
+    reductions: 313
+  neighbours:
+2014-01-05 14:20:03 =SUPERVISOR REPORT====
+     Supervisor: {local,generic_switch_sup}
+     Context:    start_error
+     Reason:     ok
+     Offender:   [{pid,undefined},{name,genericClientDatabase},{mfargs,{client_database,start_link,[]}},{restart_type,permanent},{shutdown,2000},{child_type,worker}]
+
+2014-01-05 15:02:51 =ERROR REPORT====
+** Generic server generic_switch_sip_router terminating 
+** Last message in was {'$gen_cast',{incomming_message,{sipmsg,<<"R_3fVSu0_4ev15YXatuMxsF7TlOlIg7ftleM">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK3aRAMN">>},{<<"nksip">>,<<"1AaFJ0">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"1x1Yaz">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"4ev15YXatuMxsF7TlOlIg7ftleM">>,17443094,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"1x1Yaz">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388930571486133},{127,0,0,1},5070}}
+** When Server state == {dialogRouterState,24595}
+** Reason for termination == 
+** {{badmatch,{sipmsg,<<"R_3fVSu0_4ev15YXatuMxsF7TlOlIg7ftleM">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK3aRAMN">>},{<<"nksip">>,<<"1AaFJ0">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"1x1Yaz">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"4ev15YXatuMxsF7TlOlIg7ftleM">>,17443094,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"1x1Yaz">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388930571486133}},[{generic_switch_sip_router,handle_cast,2,[{file,"src/generic_switch_sip_router.erl"},{line,69}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,607}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+2014-01-05 15:02:51 =CRASH REPORT====
+  crasher:
+    initial call: generic_switch_sip_router:init/1
+    pid: <0.55.0>
+    registered_name: generic_switch_sip_router
+    exception exit: {{{badmatch,{sipmsg,<<"R_3fVSu0_4ev15YXatuMxsF7TlOlIg7ftleM">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK3aRAMN">>},{<<"nksip">>,<<"1AaFJ0">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"1x1Yaz">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"4ev15YXatuMxsF7TlOlIg7ftleM">>,17443094,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"1x1Yaz">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388930571486133}},[{generic_switch_sip_router,handle_cast,2,[{file,"src/generic_switch_sip_router.erl"},{line,69}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,607}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]},[{gen_server,terminate,6,[{file,"gen_server.erl"},{line,747}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [generic_switch_sup,<0.32.0>]
+    messages: []
+    links: [<0.53.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 4181
+    stack_size: 24
+    reductions: 7849
+  neighbours:
+2014-01-05 15:02:51 =SUPERVISOR REPORT====
+     Supervisor: {local,generic_switch_sup}
+     Context:    child_terminated
+     Reason:     {{badmatch,{sipmsg,<<"R_3fVSu0_4ev15YXatuMxsF7TlOlIg7ftleM">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK3aRAMN">>},{<<"nksip">>,<<"1AaFJ0">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"1x1Yaz">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"4ev15YXatuMxsF7TlOlIg7ftleM">>,17443094,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"1x1Yaz">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388930571486133}},[{generic_switch_sip_router,handle_cast,2,[{file,"src/generic_switch_sip_router.erl"},{line,69}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,607}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+     Offender:   [{pid,<0.55.0>},{name,sipDialogRouter},{mfargs,{generic_switch_sip_router,start_link,[24595]}},{restart_type,permanent},{shutdown,2000},{child_type,worker}]
+
+2014-01-05 15:02:51 =ERROR REPORT====
+** Generic server generic_switch_sip_router terminating 
+** Last message in was {'$gen_cast',{incomming_message,{sipmsg,<<"R_1qMmii_4ev15YXatuMxsF7TlOlIg7ftleM">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK3aRAMN">>},{<<"nksip">>,<<"1AaFJ0">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"1x1Yaz">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"4ev15YXatuMxsF7TlOlIg7ftleM">>,17443094,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"1x1Yaz">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388930571996616},{127,0,0,1},5070}}
+** When Server state == {dialogRouterState,24595}
+** Reason for termination == 
+** {{badmatch,{sipmsg,<<"R_1qMmii_4ev15YXatuMxsF7TlOlIg7ftleM">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK3aRAMN">>},{<<"nksip">>,<<"1AaFJ0">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"1x1Yaz">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"4ev15YXatuMxsF7TlOlIg7ftleM">>,17443094,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"1x1Yaz">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388930571996616}},[{generic_switch_sip_router,handle_cast,2,[{file,"src/generic_switch_sip_router.erl"},{line,69}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,607}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+2014-01-05 15:02:52 =CRASH REPORT====
+  crasher:
+    initial call: generic_switch_sip_router:init/1
+    pid: <0.60.0>
+    registered_name: generic_switch_sip_router
+    exception exit: {{{badmatch,{sipmsg,<<"R_1qMmii_4ev15YXatuMxsF7TlOlIg7ftleM">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK3aRAMN">>},{<<"nksip">>,<<"1AaFJ0">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"1x1Yaz">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"4ev15YXatuMxsF7TlOlIg7ftleM">>,17443094,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"1x1Yaz">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388930571996616}},[{generic_switch_sip_router,handle_cast,2,[{file,"src/generic_switch_sip_router.erl"},{line,69}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,607}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]},[{gen_server,terminate,6,[{file,"gen_server.erl"},{line,747}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [generic_switch_sup,<0.32.0>]
+    messages: []
+    links: [<0.53.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 4181
+    stack_size: 24
+    reductions: 7845
+  neighbours:
+2014-01-05 15:02:52 =SUPERVISOR REPORT====
+     Supervisor: {local,generic_switch_sup}
+     Context:    child_terminated
+     Reason:     {{badmatch,{sipmsg,<<"R_1qMmii_4ev15YXatuMxsF7TlOlIg7ftleM">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK3aRAMN">>},{<<"nksip">>,<<"1AaFJ0">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"1x1Yaz">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"4ev15YXatuMxsF7TlOlIg7ftleM">>,17443094,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"1x1Yaz">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388930571996616}},[{generic_switch_sip_router,handle_cast,2,[{file,"src/generic_switch_sip_router.erl"},{line,69}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,607}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+     Offender:   [{pid,<0.60.0>},{name,sipDialogRouter},{mfargs,{generic_switch_sip_router,start_link,[24595]}},{restart_type,permanent},{shutdown,2000},{child_type,worker}]
+
+2014-01-05 15:02:52 =ERROR REPORT====
+** Generic server generic_switch_sip_router terminating 
+** Last message in was {'$gen_cast',{incomming_message,{sipmsg,<<"R_20wHye_4ev15YXatuMxsF7TlOlIg7ftleM">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK3aRAMN">>},{<<"nksip">>,<<"1AaFJ0">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"1x1Yaz">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"4ev15YXatuMxsF7TlOlIg7ftleM">>,17443094,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"1x1Yaz">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388930572997668},{127,0,0,1},5070}}
+** When Server state == {dialogRouterState,24595}
+** Reason for termination == 
+** {{badmatch,{sipmsg,<<"R_20wHye_4ev15YXatuMxsF7TlOlIg7ftleM">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK3aRAMN">>},{<<"nksip">>,<<"1AaFJ0">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"1x1Yaz">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"4ev15YXatuMxsF7TlOlIg7ftleM">>,17443094,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"1x1Yaz">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388930572997668}},[{generic_switch_sip_router,handle_cast,2,[{file,"src/generic_switch_sip_router.erl"},{line,69}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,607}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+2014-01-05 15:02:53 =CRASH REPORT====
+  crasher:
+    initial call: generic_switch_sip_router:init/1
+    pid: <0.61.0>
+    registered_name: generic_switch_sip_router
+    exception exit: {{{badmatch,{sipmsg,<<"R_20wHye_4ev15YXatuMxsF7TlOlIg7ftleM">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK3aRAMN">>},{<<"nksip">>,<<"1AaFJ0">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"1x1Yaz">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"4ev15YXatuMxsF7TlOlIg7ftleM">>,17443094,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"1x1Yaz">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388930572997668}},[{generic_switch_sip_router,handle_cast,2,[{file,"src/generic_switch_sip_router.erl"},{line,69}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,607}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]},[{gen_server,terminate,6,[{file,"gen_server.erl"},{line,747}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [generic_switch_sup,<0.32.0>]
+    messages: []
+    links: [<0.53.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 4181
+    stack_size: 24
+    reductions: 7845
+  neighbours:
+2014-01-05 15:02:53 =SUPERVISOR REPORT====
+     Supervisor: {local,generic_switch_sup}
+     Context:    child_terminated
+     Reason:     {{badmatch,{sipmsg,<<"R_20wHye_4ev15YXatuMxsF7TlOlIg7ftleM">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK3aRAMN">>},{<<"nksip">>,<<"1AaFJ0">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"1x1Yaz">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"4ev15YXatuMxsF7TlOlIg7ftleM">>,17443094,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"1x1Yaz">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388930572997668}},[{generic_switch_sip_router,handle_cast,2,[{file,"src/generic_switch_sip_router.erl"},{line,69}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,607}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+     Offender:   [{pid,<0.61.0>},{name,sipDialogRouter},{mfargs,{generic_switch_sip_router,start_link,[24595]}},{restart_type,permanent},{shutdown,2000},{child_type,worker}]
+
+2014-01-05 15:02:55 =ERROR REPORT====
+** Generic server generic_switch_sip_router terminating 
+** Last message in was {'$gen_cast',{incomming_message,{sipmsg,<<"R_3oliOL_4ev15YXatuMxsF7TlOlIg7ftleM">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK3aRAMN">>},{<<"nksip">>,<<"1AaFJ0">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"1x1Yaz">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"4ev15YXatuMxsF7TlOlIg7ftleM">>,17443094,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"1x1Yaz">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388930574998283},{127,0,0,1},5070}}
+** When Server state == {dialogRouterState,24595}
+** Reason for termination == 
+** {{badmatch,{sipmsg,<<"R_3oliOL_4ev15YXatuMxsF7TlOlIg7ftleM">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK3aRAMN">>},{<<"nksip">>,<<"1AaFJ0">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"1x1Yaz">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"4ev15YXatuMxsF7TlOlIg7ftleM">>,17443094,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"1x1Yaz">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388930574998283}},[{generic_switch_sip_router,handle_cast,2,[{file,"src/generic_switch_sip_router.erl"},{line,69}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,607}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+2014-01-05 15:02:55 =CRASH REPORT====
+  crasher:
+    initial call: generic_switch_sip_router:init/1
+    pid: <0.62.0>
+    registered_name: generic_switch_sip_router
+    exception exit: {{{badmatch,{sipmsg,<<"R_3oliOL_4ev15YXatuMxsF7TlOlIg7ftleM">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK3aRAMN">>},{<<"nksip">>,<<"1AaFJ0">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"1x1Yaz">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"4ev15YXatuMxsF7TlOlIg7ftleM">>,17443094,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"1x1Yaz">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388930574998283}},[{generic_switch_sip_router,handle_cast,2,[{file,"src/generic_switch_sip_router.erl"},{line,69}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,607}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]},[{gen_server,terminate,6,[{file,"gen_server.erl"},{line,747}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [generic_switch_sup,<0.32.0>]
+    messages: []
+    links: [<0.53.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 4181
+    stack_size: 24
+    reductions: 7845
+  neighbours:
+2014-01-05 15:02:55 =SUPERVISOR REPORT====
+     Supervisor: {local,generic_switch_sup}
+     Context:    child_terminated
+     Reason:     {{badmatch,{sipmsg,<<"R_3oliOL_4ev15YXatuMxsF7TlOlIg7ftleM">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK3aRAMN">>},{<<"nksip">>,<<"1AaFJ0">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"1x1Yaz">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"4ev15YXatuMxsF7TlOlIg7ftleM">>,17443094,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"1x1Yaz">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388930574998283}},[{generic_switch_sip_router,handle_cast,2,[{file,"src/generic_switch_sip_router.erl"},{line,69}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,607}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+     Offender:   [{pid,<0.62.0>},{name,sipDialogRouter},{mfargs,{generic_switch_sip_router,start_link,[24595]}},{restart_type,permanent},{shutdown,2000},{child_type,worker}]
+
+2014-01-05 15:02:59 =ERROR REPORT====
+** Generic server generic_switch_sip_router terminating 
+** Last message in was {'$gen_cast',{incomming_message,{sipmsg,<<"R_3EkzbJ_4ev15YXatuMxsF7TlOlIg7ftleM">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK3aRAMN">>},{<<"nksip">>,<<"1AaFJ0">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"1x1Yaz">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"4ev15YXatuMxsF7TlOlIg7ftleM">>,17443094,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"1x1Yaz">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388930579000688},{127,0,0,1},5070}}
+** When Server state == {dialogRouterState,24595}
+** Reason for termination == 
+** {{badmatch,{sipmsg,<<"R_3EkzbJ_4ev15YXatuMxsF7TlOlIg7ftleM">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK3aRAMN">>},{<<"nksip">>,<<"1AaFJ0">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"1x1Yaz">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"4ev15YXatuMxsF7TlOlIg7ftleM">>,17443094,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"1x1Yaz">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388930579000688}},[{generic_switch_sip_router,handle_cast,2,[{file,"src/generic_switch_sip_router.erl"},{line,69}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,607}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+2014-01-05 15:02:59 =CRASH REPORT====
+  crasher:
+    initial call: generic_switch_sip_router:init/1
+    pid: <0.63.0>
+    registered_name: generic_switch_sip_router
+    exception exit: {{{badmatch,{sipmsg,<<"R_3EkzbJ_4ev15YXatuMxsF7TlOlIg7ftleM">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK3aRAMN">>},{<<"nksip">>,<<"1AaFJ0">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"1x1Yaz">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"4ev15YXatuMxsF7TlOlIg7ftleM">>,17443094,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"1x1Yaz">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388930579000688}},[{generic_switch_sip_router,handle_cast,2,[{file,"src/generic_switch_sip_router.erl"},{line,69}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,607}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]},[{gen_server,terminate,6,[{file,"gen_server.erl"},{line,747}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [generic_switch_sup,<0.32.0>]
+    messages: []
+    links: [<0.53.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 4181
+    stack_size: 24
+    reductions: 7849
+  neighbours:
+2014-01-05 15:02:59 =SUPERVISOR REPORT====
+     Supervisor: {local,generic_switch_sup}
+     Context:    child_terminated
+     Reason:     {{badmatch,{sipmsg,<<"R_3EkzbJ_4ev15YXatuMxsF7TlOlIg7ftleM">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK3aRAMN">>},{<<"nksip">>,<<"1AaFJ0">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"1x1Yaz">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"4ev15YXatuMxsF7TlOlIg7ftleM">>,17443094,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"1x1Yaz">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388930579000688}},[{generic_switch_sip_router,handle_cast,2,[{file,"src/generic_switch_sip_router.erl"},{line,69}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,607}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+     Offender:   [{pid,<0.63.0>},{name,sipDialogRouter},{mfargs,{generic_switch_sip_router,start_link,[24595]}},{restart_type,permanent},{shutdown,2000},{child_type,worker}]
+
+2014-01-05 22:14:23 =ERROR REPORT====
+** Generic server generic_switch_sip_router terminating 
+** Last message in was {'$gen_cast',{incomming_message,{sipmsg,<<"R_3x1qBs_AHRtfQMOU8ogrtxRDTXh8o4vruJ">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK3npehD">>},{<<"nksip">>,<<"1zWLN3">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"2foQhz">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"AHRtfQMOU8ogrtxRDTXh8o4vruJ">>,17443098,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"2foQhz">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388956463114997},{127,0,0,1},5070}}
+** When Server state == {dialogRouterState,24595}
+** Reason for termination == 
+** {{badmatch,{sipmsg,<<"R_3x1qBs_AHRtfQMOU8ogrtxRDTXh8o4vruJ">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK3npehD">>},{<<"nksip">>,<<"1zWLN3">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"2foQhz">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"AHRtfQMOU8ogrtxRDTXh8o4vruJ">>,17443098,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"2foQhz">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388956463114997}},[{generic_switch_sip_router,handle_cast,2,[{file,"src/generic_switch_sip_router.erl"},{line,69}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,607}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+2014-01-05 22:14:23 =CRASH REPORT====
+  crasher:
+    initial call: generic_switch_sip_router:init/1
+    pid: <0.54.0>
+    registered_name: generic_switch_sip_router
+    exception exit: {{{badmatch,{sipmsg,<<"R_3x1qBs_AHRtfQMOU8ogrtxRDTXh8o4vruJ">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK3npehD">>},{<<"nksip">>,<<"1zWLN3">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"2foQhz">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"AHRtfQMOU8ogrtxRDTXh8o4vruJ">>,17443098,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"2foQhz">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388956463114997}},[{generic_switch_sip_router,handle_cast,2,[{file,"src/generic_switch_sip_router.erl"},{line,69}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,607}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]},[{gen_server,terminate,6,[{file,"gen_server.erl"},{line,747}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [generic_switch_sup,<0.32.0>]
+    messages: []
+    links: [<0.52.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 4181
+    stack_size: 24
+    reductions: 7845
+  neighbours:
+2014-01-05 22:14:23 =SUPERVISOR REPORT====
+     Supervisor: {local,generic_switch_sup}
+     Context:    child_terminated
+     Reason:     {{badmatch,{sipmsg,<<"R_3x1qBs_AHRtfQMOU8ogrtxRDTXh8o4vruJ">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK3npehD">>},{<<"nksip">>,<<"1zWLN3">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"2foQhz">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"AHRtfQMOU8ogrtxRDTXh8o4vruJ">>,17443098,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"2foQhz">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388956463114997}},[{generic_switch_sip_router,handle_cast,2,[{file,"src/generic_switch_sip_router.erl"},{line,69}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,607}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+     Offender:   [{pid,<0.54.0>},{name,sipDialogRouter},{mfargs,{generic_switch_sip_router,start_link,[24595]}},{restart_type,permanent},{shutdown,2000},{child_type,worker}]
+
+2014-01-05 22:14:23 =ERROR REPORT====
+** Generic server generic_switch_sip_router terminating 
+** Last message in was {'$gen_cast',{incomming_message,{sipmsg,<<"R_3yk6rH_AHRtfQMOU8ogrtxRDTXh8o4vruJ">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK3npehD">>},{<<"nksip">>,<<"1zWLN3">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"2foQhz">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"AHRtfQMOU8ogrtxRDTXh8o4vruJ">>,17443098,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"2foQhz">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388956463612588},{127,0,0,1},5070}}
+** When Server state == {dialogRouterState,24595}
+** Reason for termination == 
+** {{badmatch,{sipmsg,<<"R_3yk6rH_AHRtfQMOU8ogrtxRDTXh8o4vruJ">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK3npehD">>},{<<"nksip">>,<<"1zWLN3">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"2foQhz">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"AHRtfQMOU8ogrtxRDTXh8o4vruJ">>,17443098,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"2foQhz">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388956463612588}},[{generic_switch_sip_router,handle_cast,2,[{file,"src/generic_switch_sip_router.erl"},{line,69}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,607}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+2014-01-05 22:14:23 =CRASH REPORT====
+  crasher:
+    initial call: generic_switch_sip_router:init/1
+    pid: <0.59.0>
+    registered_name: generic_switch_sip_router
+    exception exit: {{{badmatch,{sipmsg,<<"R_3yk6rH_AHRtfQMOU8ogrtxRDTXh8o4vruJ">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK3npehD">>},{<<"nksip">>,<<"1zWLN3">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"2foQhz">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"AHRtfQMOU8ogrtxRDTXh8o4vruJ">>,17443098,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"2foQhz">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388956463612588}},[{generic_switch_sip_router,handle_cast,2,[{file,"src/generic_switch_sip_router.erl"},{line,69}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,607}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]},[{gen_server,terminate,6,[{file,"gen_server.erl"},{line,747}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [generic_switch_sup,<0.32.0>]
+    messages: []
+    links: [<0.52.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 4181
+    stack_size: 24
+    reductions: 7845
+  neighbours:
+2014-01-05 22:14:23 =SUPERVISOR REPORT====
+     Supervisor: {local,generic_switch_sup}
+     Context:    child_terminated
+     Reason:     {{badmatch,{sipmsg,<<"R_3yk6rH_AHRtfQMOU8ogrtxRDTXh8o4vruJ">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK3npehD">>},{<<"nksip">>,<<"1zWLN3">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"2foQhz">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"AHRtfQMOU8ogrtxRDTXh8o4vruJ">>,17443098,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"2foQhz">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388956463612588}},[{generic_switch_sip_router,handle_cast,2,[{file,"src/generic_switch_sip_router.erl"},{line,69}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,607}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+     Offender:   [{pid,<0.59.0>},{name,sipDialogRouter},{mfargs,{generic_switch_sip_router,start_link,[24595]}},{restart_type,permanent},{shutdown,2000},{child_type,worker}]
+
+2014-01-05 22:14:24 =ERROR REPORT====
+** Generic server generic_switch_sip_router terminating 
+** Last message in was {'$gen_cast',{incomming_message,{sipmsg,<<"R_3ZUtgm_AHRtfQMOU8ogrtxRDTXh8o4vruJ">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK3npehD">>},{<<"nksip">>,<<"1zWLN3">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"2foQhz">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"AHRtfQMOU8ogrtxRDTXh8o4vruJ">>,17443098,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"2foQhz">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388956464613338},{127,0,0,1},5070}}
+** When Server state == {dialogRouterState,24595}
+** Reason for termination == 
+** {{badmatch,{sipmsg,<<"R_3ZUtgm_AHRtfQMOU8ogrtxRDTXh8o4vruJ">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK3npehD">>},{<<"nksip">>,<<"1zWLN3">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"2foQhz">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"AHRtfQMOU8ogrtxRDTXh8o4vruJ">>,17443098,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"2foQhz">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388956464613338}},[{generic_switch_sip_router,handle_cast,2,[{file,"src/generic_switch_sip_router.erl"},{line,69}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,607}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+2014-01-05 22:14:24 =CRASH REPORT====
+  crasher:
+    initial call: generic_switch_sip_router:init/1
+    pid: <0.60.0>
+    registered_name: generic_switch_sip_router
+    exception exit: {{{badmatch,{sipmsg,<<"R_3ZUtgm_AHRtfQMOU8ogrtxRDTXh8o4vruJ">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK3npehD">>},{<<"nksip">>,<<"1zWLN3">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"2foQhz">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"AHRtfQMOU8ogrtxRDTXh8o4vruJ">>,17443098,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"2foQhz">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388956464613338}},[{generic_switch_sip_router,handle_cast,2,[{file,"src/generic_switch_sip_router.erl"},{line,69}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,607}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]},[{gen_server,terminate,6,[{file,"gen_server.erl"},{line,747}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [generic_switch_sup,<0.32.0>]
+    messages: []
+    links: [<0.52.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 4181
+    stack_size: 24
+    reductions: 7845
+  neighbours:
+2014-01-05 22:14:24 =SUPERVISOR REPORT====
+     Supervisor: {local,generic_switch_sup}
+     Context:    child_terminated
+     Reason:     {{badmatch,{sipmsg,<<"R_3ZUtgm_AHRtfQMOU8ogrtxRDTXh8o4vruJ">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK3npehD">>},{<<"nksip">>,<<"1zWLN3">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"2foQhz">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"AHRtfQMOU8ogrtxRDTXh8o4vruJ">>,17443098,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"2foQhz">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388956464613338}},[{generic_switch_sip_router,handle_cast,2,[{file,"src/generic_switch_sip_router.erl"},{line,69}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,607}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+     Offender:   [{pid,<0.60.0>},{name,sipDialogRouter},{mfargs,{generic_switch_sip_router,start_link,[24595]}},{restart_type,permanent},{shutdown,2000},{child_type,worker}]
+
+2014-01-05 23:55:00 =ERROR REPORT====
+** Generic server generic_switch_sip_router terminating 
+** Last message in was {'$gen_cast',{incomming_message,{sipmsg,<<"R_2PNHNz_MgNtiZ5YTrc8VatFov9Pfe0saOy">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK3pPTbT">>},{<<"nksip">>,<<"3zuIWb">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"4ZkXH1">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"MgNtiZ5YTrc8VatFov9Pfe0saOy">>,17469135,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"4ZkXH1">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388962500689403},{127,0,0,1},5070}}
+** When Server state == {dialogRouterState,24595}
+** Reason for termination == 
+** {'function not exported',[{client_database,addNewClient,[<0.54.0>],[]},{generic_switch_sip_router,handle_cast,2,[{file,"src/generic_switch_sip_router.erl"},{line,75}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,607}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+2014-01-05 23:55:00 =CRASH REPORT====
+  crasher:
+    initial call: generic_switch_sip_router:init/1
+    pid: <0.54.0>
+    registered_name: generic_switch_sip_router
+    exception exit: {{undef,[{client_database,addNewClient,[<0.54.0>],[]},{generic_switch_sip_router,handle_cast,2,[{file,"src/generic_switch_sip_router.erl"},{line,75}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,607}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]},[{gen_server,terminate,6,[{file,"gen_server.erl"},{line,747}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [generic_switch_sup,<0.32.0>]
+    messages: []
+    links: [<0.52.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 4181
+    stack_size: 24
+    reductions: 5605
+  neighbours:
+2014-01-05 23:55:00 =SUPERVISOR REPORT====
+     Supervisor: {local,generic_switch_sup}
+     Context:    child_terminated
+     Reason:     {undef,[{client_database,addNewClient,[<0.54.0>],[]},{generic_switch_sip_router,handle_cast,2,[{file,"src/generic_switch_sip_router.erl"},{line,75}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,607}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+     Offender:   [{pid,<0.54.0>},{name,sipDialogRouter},{mfargs,{generic_switch_sip_router,start_link,[24595]}},{restart_type,permanent},{shutdown,2000},{child_type,worker}]
+
+2014-01-05 23:55:01 =ERROR REPORT====
+** Generic server generic_switch_sip_router terminating 
+** Last message in was {'$gen_cast',{incomming_message,{sipmsg,<<"R_4BnRHL_MgNtiZ5YTrc8VatFov9Pfe0saOy">>,{req,'REGISTER'},0,undefined,{uri,<<>>,sip,<<>>,<<>>,<<"127.0.0.1">>,0,[],[],[],[]},[{via,udp,<<"127.0.0.1">>,5070,[<<"rport">>,{<<"branch">>,<<"z9hG4bK3pPTbT">>},{<<"nksip">>,<<"3zuIWb">>}]}],{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[{<<"tag">>,<<"4ZkXH1">>}],[]},{uri,<<>>,sip,<<"bob">>,<<>>,<<"nksip">>,0,[],[],[],[]},<<"MgNtiZ5YTrc8VatFov9Pfe0saOy">>,17469135,'REGISTER',70,[],[{uri,<<>>,sip,<<"bob">>,<<>>,<<"127.0.0.1">>,5070,[],[],[],[]}],undefined,[],[],undefined,undefined,[{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,<<"4ZkXH1">>,<<>>,<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined},1388962501187774},{127,0,0,1},5070}}
+** When Server state == {dialogRouterState,24595}
+** Reason for termination == 
+** {'function not exported',[{client_database,addNewClient,[<0.60.0>],[]},{generic_switch_sip_router,handle_cast,2,[{file,"src/generic_switch_sip_router.erl"},{line,75}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,607}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+2014-01-05 23:55:01 =CRASH REPORT====
+  crasher:
+    initial call: generic_switch_sip_router:init/1
+    pid: <0.60.0>
+    registered_name: generic_switch_sip_router
+    exception exit: {{undef,[{client_database,addNewClient,[<0.60.0>],[]},{generic_switch_sip_router,handle_cast,2,[{file,"src/generic_switch_sip_router.erl"},{line,75}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,607}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]},[{gen_server,terminate,6,[{file,"gen_server.erl"},{line,747}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [generic_switch_sup,<0.32.0>]
+    messages: []
+    links: [<0.52.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 4181
+    stack_size: 24
+    reductions: 5603
+  neighbours:
+2014-01-05 23:55:01 =SUPERVISOR REPORT====
+     Supervisor: {local,generic_switch_sup}
+     Context:    child_terminated
+     Reason:     {undef,[{client_database,addNewClient,[<0.60.0>],[]},{generic_switch_sip_router,handle_cast,2,[{file,"src/generic_switch_sip_router.erl"},{line,75}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,607}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+     Offender:   [{pid,<0.60.0>},{name,sipDialogRouter},{mfargs,{generic_switch_sip_router,start_link,[24595]}},{restart_type,permanent},{shutdown,2000},{child_type,worker}]
+

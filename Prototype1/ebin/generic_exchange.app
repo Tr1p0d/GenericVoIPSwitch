@@ -1,0 +1,10 @@
+{application,generic_exchange,
+             [{description,[]},
+              {vsn,"1"},
+              {registered,[]},
+              {applications,[kernel,stdlib]},
+              {mod,{generic_exchange_app,[]}},
+              {env,[]},
+              {modules,[generic_exchange_app,generic_exchange_sup,
+                        generic_exchange_transport_sip_udp,
+                        generic_exchange_transport_sup]}]}.

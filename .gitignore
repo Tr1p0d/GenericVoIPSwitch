@@ -7,3 +7,4 @@ erl_crash.dump
 *.swp
 *.tar.gz
 *~
+*/log/*

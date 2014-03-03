@@ -1,0 +1,906 @@
+2014-01-04 18:28:15 =ERROR REPORT====
+** Generic server generic_switch_transport_udp terminating 
+** Last message in was {get_packet}
+** When Server state == #Port<0.2986>
+** Reason for termination == 
+** {'function not exported',[{gen_udp,recv,[#Port<0.2986>],[]},{generic_switch_transport_udp,handle_call,3,[{file,"src/generic_switch_transport_udp.erl"},{line,26}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,588}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+2014-01-04 18:28:15 =CRASH REPORT====
+  crasher:
+    initial call: generic_switch_transport_udp:init/1
+    pid: <0.53.0>
+    registered_name: generic_switch_transport_udp
+    exception exit: {{undef,[{gen_udp,recv,[#Port<0.2986>],[]},{generic_switch_transport_udp,handle_call,3,[{file,"src/generic_switch_transport_udp.erl"},{line,26}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,588}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]},[{gen_server,terminate,6,[{file,"gen_server.erl"},{line,747}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [generic_switch_sup,<0.32.0>]
+    messages: []
+    links: [<0.52.0>,#Port<0.2986>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 610
+    stack_size: 24
+    reductions: 385
+  neighbours:
+2014-01-04 18:28:15 =SUPERVISOR REPORT====
+     Supervisor: {local,generic_switch_sup}
+     Context:    child_terminated
+     Reason:     {undef,[{gen_udp,recv,[#Port<0.2986>],[]},{generic_switch_transport_udp,handle_call,3,[{file,"src/generic_switch_transport_udp.erl"},{line,26}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,588}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+     Offender:   [{pid,<0.53.0>},{name,udpTransport},{mfargs,{generic_switch_transport_udp,start_link,[{5060,[binary,{active,false}]}]}},{restart_type,permanent},{shutdown,2000},{child_type,worker}]
+
+2014-01-04 18:28:15 =ERROR REPORT====
+** Generic server generic_switch_sup terminating 
+** Last message in was {'EXIT',<0.32.0>,{{{undef,[{gen_udp,recv,[#Port<0.2986>],[]},{generic_switch_transport_udp,handle_call,3,[{file,"src/generic_switch_transport_udp.erl"},{line,26}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,588}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]},{gen_server,call,[generic_switch_transport_udp,{get_packet}]}},[{gen_server,call,2,[{file,"gen_server.erl"},{line,180}]},{erl_eval,do_apply,6,[{file,"erl_eval.erl"},{line,576}]},{shell,exprs,7,[{file,"shell.erl"},{line,668}]},{shell,eval_exprs,7,[{file,"shell.erl"},{line,623}]},{shell,eval_loop,3,[{file,"shell.erl"},{line,608}]}]}}
+** When Server state == {state,{local,generic_switch_sup},one_for_one,[{child,<0.55.0>,udpTransport,{generic_switch_transport_udp,start_link,[{5060,[binary,{active,false}]}]},permanent,2000,worker,[generic_switch_transport_udp]}],undefined,5,10,[{1388,856495,3170}],generic_switch_sup,[]}
+** Reason for termination == 
+** {{{undef,[{gen_udp,recv,[#Port<0.2986>],[]},{generic_switch_transport_udp,handle_call,3,[{file,"src/generic_switch_transport_udp.erl"},{line,26}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,588}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]},{gen_server,call,[generic_switch_transport_udp,{get_packet}]}},[{gen_server,call,2,[{file,"gen_server.erl"},{line,180}]},{erl_eval,do_apply,6,[{file,"erl_eval.erl"},{line,576}]},{shell,exprs,7,[{file,"shell.erl"},{line,668}]},{shell,eval_exprs,7,[{file,"shell.erl"},{line,623}]},{shell,eval_loop,3,[{file,"shell.erl"},{line,608}]}]}
+2014-01-04 18:28:15 =CRASH REPORT====
+  crasher:
+    initial call: supervisor:generic_switch_sup/1
+    pid: <0.52.0>
+    registered_name: generic_switch_sup
+    exception exit: {{{{undef,[{gen_udp,recv,[#Port<0.2986>],[]},{generic_switch_transport_udp,handle_call,3,[{file,"src/generic_switch_transport_udp.erl"},{line,26}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,588}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]},{gen_server,call,[generic_switch_transport_udp,{get_packet}]}},[{gen_server,call,2,[{file,"gen_server.erl"},{line,180}]},{erl_eval,do_apply,6,[{file,"erl_eval.erl"},{line,576}]},{shell,exprs,7,[{file,"shell.erl"},{line,668}]},{shell,eval_exprs,7,[{file,"shell.erl"},{line,623}]},{shell,eval_loop,3,[{file,"shell.erl"},{line,608}]}]},[{gen_server,terminate,6,[{file,"gen_server.erl"},{line,747}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [<0.32.0>]
+    messages: [{'EXIT',<0.32.0>,normal}]
+    links: []
+    dictionary: []
+    trap_exit: true
+    status: running
+    heap_size: 1597
+    stack_size: 24
+    reductions: 349
+  neighbours:
+2014-01-04 18:34:21 =ERROR REPORT====
+** Generic server generic_switch_transport_udp terminating 
+** Last message in was {get_packet}
+** When Server state == {udpstate,#Port<0.3069>}
+** Reason for termination == 
+** {'function not exported',[{gen_udp,recv,[#Port<0.3069>],[]},{generic_switch_transport_udp,handle_call,3,[{file,"src/generic_switch_transport_udp.erl"},{line,35}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,588}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+2014-01-04 18:34:21 =CRASH REPORT====
+  crasher:
+    initial call: generic_switch_transport_udp:init/1
+    pid: <0.56.0>
+    registered_name: generic_switch_transport_udp
+    exception exit: {{undef,[{gen_udp,recv,[#Port<0.3069>],[]},{generic_switch_transport_udp,handle_call,3,[{file,"src/generic_switch_transport_udp.erl"},{line,35}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,588}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]},[{gen_server,terminate,6,[{file,"gen_server.erl"},{line,747}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [generic_switch_sup,<0.35.0>]
+    messages: []
+    links: [<0.55.0>,#Port<0.3069>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 610
+    stack_size: 24
+    reductions: 385
+  neighbours:
+2014-01-04 18:34:21 =SUPERVISOR REPORT====
+     Supervisor: {local,generic_switch_sup}
+     Context:    child_terminated
+     Reason:     {undef,[{gen_udp,recv,[#Port<0.3069>],[]},{generic_switch_transport_udp,handle_call,3,[{file,"src/generic_switch_transport_udp.erl"},{line,35}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,588}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+     Offender:   [{pid,<0.56.0>},{name,udpTransport},{mfargs,{generic_switch_transport_udp,start_link,[{5060,[binary,{active,false}]}]}},{restart_type,permanent},{shutdown,2000},{child_type,worker}]
+
+2014-01-04 18:34:21 =ERROR REPORT====
+** Generic server generic_switch_sup terminating 
+** Last message in was {'EXIT',<0.35.0>,{{{undef,[{gen_udp,recv,[#Port<0.3069>],[]},{generic_switch_transport_udp,handle_call,3,[{file,"src/generic_switch_transport_udp.erl"},{line,35}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,588}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]},{gen_server,call,[generic_switch_transport_udp,{get_packet}]}},[{gen_server,call,2,[{file,"gen_server.erl"},{line,180}]},{erl_eval,do_apply,6,[{file,"erl_eval.erl"},{line,576}]},{shell,exprs,7,[{file,"shell.erl"},{line,668}]},{shell,eval_exprs,7,[{file,"shell.erl"},{line,623}]},{shell,eval_loop,3,[{file,"shell.erl"},{line,608}]}]}}
+** When Server state == {state,{local,generic_switch_sup},one_for_one,[{child,<0.58.0>,udpTransport,{generic_switch_transport_udp,start_link,[{5060,[binary,{active,false}]}]},permanent,2000,worker,[generic_switch_transport_udp]}],undefined,5,10,[{1388,856860,988042}],generic_switch_sup,[]}
+** Reason for termination == 
+** {{{undef,[{gen_udp,recv,[#Port<0.3069>],[]},{generic_switch_transport_udp,handle_call,3,[{file,"src/generic_switch_transport_udp.erl"},{line,35}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,588}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]},{gen_server,call,[generic_switch_transport_udp,{get_packet}]}},[{gen_server,call,2,[{file,"gen_server.erl"},{line,180}]},{erl_eval,do_apply,6,[{file,"erl_eval.erl"},{line,576}]},{shell,exprs,7,[{file,"shell.erl"},{line,668}]},{shell,eval_exprs,7,[{file,"shell.erl"},{line,623}]},{shell,eval_loop,3,[{file,"shell.erl"},{line,608}]}]}
+2014-01-04 18:34:21 =CRASH REPORT====
+  crasher:
+    initial call: supervisor:generic_switch_sup/1
+    pid: <0.55.0>
+    registered_name: generic_switch_sup
+    exception exit: {{{{undef,[{gen_udp,recv,[#Port<0.3069>],[]},{generic_switch_transport_udp,handle_call,3,[{file,"src/generic_switch_transport_udp.erl"},{line,35}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,588}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]},{gen_server,call,[generic_switch_transport_udp,{get_packet}]}},[{gen_server,call,2,[{file,"gen_server.erl"},{line,180}]},{erl_eval,do_apply,6,[{file,"erl_eval.erl"},{line,576}]},{shell,exprs,7,[{file,"shell.erl"},{line,668}]},{shell,eval_exprs,7,[{file,"shell.erl"},{line,623}]},{shell,eval_loop,3,[{file,"shell.erl"},{line,608}]}]},[{gen_server,terminate,6,[{file,"gen_server.erl"},{line,747}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [<0.35.0>]
+    messages: [{'EXIT',<0.35.0>,normal}]
+    links: []
+    dictionary: []
+    trap_exit: true
+    status: running
+    heap_size: 1597
+    stack_size: 24
+    reductions: 349
+  neighbours:
+2014-01-04 20:55:46 =ERROR REPORT====
+** Generic server generic_switch_sup terminating 
+** Last message in was {'EXIT',<0.32.0>,{{badmatch,{error,eaddrinuse}},[{erl_eval,expr,3,[]}]}}
+** When Server state == {state,{local,generic_switch_sup},one_for_one,[{child,<0.53.0>,udpTransport,{generic_switch_transport_udp,start_link,[{5060,[binary,{active,false}]}]},permanent,2000,worker,[generic_switch_transport_udp]}],undefined,5,10,[],generic_switch_sup,[]}
+** Reason for termination == 
+** {{badmatch,{error,eaddrinuse}},[{erl_eval,expr,3,[]}]}
+2014-01-04 20:55:46 =CRASH REPORT====
+  crasher:
+    initial call: supervisor:generic_switch_sup/1
+    pid: <0.52.0>
+    registered_name: generic_switch_sup
+    exception exit: {{{badmatch,{error,eaddrinuse}},[{erl_eval,expr,3,[]}]},[{gen_server,terminate,6,[{file,"gen_server.erl"},{line,747}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [<0.32.0>]
+    messages: [{'EXIT',<0.32.0>,normal}]
+    links: []
+    dictionary: []
+    trap_exit: true
+    status: running
+    heap_size: 377
+    stack_size: 24
+    reductions: 213
+  neighbours:
+2014-01-04 21:01:32 =ERROR REPORT====
+** Generic server generic_switch_sup terminating 
+** Last message in was {'EXIT',<0.36.0>,{undef,[{gen_udp,recv,[#Port<0.3153>],[]},{erl_eval,do_apply,6,[{file,"erl_eval.erl"},{line,576}]},{shell,exprs,7,[{file,"shell.erl"},{line,668}]},{shell,eval_exprs,7,[{file,"shell.erl"},{line,623}]},{shell,eval_loop,3,[{file,"shell.erl"},{line,608}]}]}}
+** When Server state == {state,{local,generic_switch_sup},one_for_one,[{child,<0.57.0>,udpTransport,{generic_switch_transport_udp,start_link,[{5060,[binary,{active,false}]}]},permanent,2000,worker,[generic_switch_transport_udp]}],undefined,5,10,[],generic_switch_sup,[]}
+** Reason for termination == 
+** {'function not exported',[{gen_udp,recv,[#Port<0.3153>],[]},{erl_eval,do_apply,6,[{file,"erl_eval.erl"},{line,576}]},{shell,exprs,7,[{file,"shell.erl"},{line,668}]},{shell,eval_exprs,7,[{file,"shell.erl"},{line,623}]},{shell,eval_loop,3,[{file,"shell.erl"},{line,608}]}]}
+2014-01-04 21:01:32 =CRASH REPORT====
+  crasher:
+    initial call: supervisor:generic_switch_sup/1
+    pid: <0.56.0>
+    registered_name: generic_switch_sup
+    exception exit: {{undef,[{gen_udp,recv,[#Port<0.3153>],[]},{erl_eval,do_apply,6,[{file,"erl_eval.erl"},{line,576}]},{shell,exprs,7,[{file,"shell.erl"},{line,668}]},{shell,eval_exprs,7,[{file,"shell.erl"},{line,623}]},{shell,eval_loop,3,[{file,"shell.erl"},{line,608}]}]},[{gen_server,terminate,6,[{file,"gen_server.erl"},{line,747}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [<0.36.0>]
+    messages: [{'EXIT',<0.36.0>,normal}]
+    links: []
+    dictionary: []
+    trap_exit: true
+    status: running
+    heap_size: 610
+    stack_size: 24
+    reductions: 223
+  neighbours:
+2014-01-04 21:02:08 =ERROR REPORT====
+** Generic server generic_switch_transport_udp terminating 
+** Last message in was {get_packet}
+** When Server state == {udpstate,#Port<0.2986>}
+** Reason for termination == 
+** {'module could not be loaded',[{nksip_parse,packet,[hACK,hACK,<<"REGISTER sip:127.0.0.1 SIP/2.0\r\nVia: SIP/2.0/UDP 127.0.0.1:5080;rport;branch=z9hG4bK2O9kxp;nksip=7Ip8W\r\nFrom: <sip:alice@nksip>;tag=2RNNEl\r\nTo: <sip:alice@nksip>\r\nCall-ID: LjOSc8WKDhCxFo8kfdJA214dh7f\r\nCSeq: 17370034 REGISTER\r\nMax-Forwards: 70\r\nContent-Length: 0\r\nContact: <sip:alice@127.0.0.1:5080>\r\nUser-Agent: NkSIP 0.1.0\r\n\r\n">>],[]},{generic_switch_transport_udp,handle_call,3,[{file,"src/generic_switch_transport_udp.erl"},{line,43}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,588}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+2014-01-04 21:02:08 =CRASH REPORT====
+  crasher:
+    initial call: generic_switch_transport_udp:init/1
+    pid: <0.53.0>
+    registered_name: generic_switch_transport_udp
+    exception exit: {{undef,[{nksip_parse,packet,[hACK,hACK,<<"REGISTER sip:127.0.0.1 SIP/2.0\r\nVia: SIP/2.0/UDP 127.0.0.1:5080;rport;branch=z9hG4bK2O9kxp;nksip=7Ip8W\r\nFrom: <sip:alice@nksip>;tag=2RNNEl\r\nTo: <sip:alice@nksip>\r\nCall-ID: LjOSc8WKDhCxFo8kfdJA214dh7f\r\nCSeq: 17370034 REGISTER\r\nMax-Forwards: 70\r\nContent-Length: 0\r\nContact: <sip:alice@127.0.0.1:5080>\r\nUser-Agent: NkSIP 0.1.0\r\n\r\n">>],[]},{generic_switch_transport_udp,handle_call,3,[{file,"src/generic_switch_transport_udp.erl"},{line,43}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,588}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]},[{gen_server,terminate,6,[{file,"gen_server.erl"},{line,747}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [generic_switch_sup,<0.32.0>]
+    messages: []
+    links: [<0.52.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 610
+    stack_size: 24
+    reductions: 390
+  neighbours:
+2014-01-04 21:02:08 =SUPERVISOR REPORT====
+     Supervisor: {local,generic_switch_sup}
+     Context:    child_terminated
+     Reason:     {undef,[{nksip_parse,packet,[hACK,hACK,<<"REGISTER sip:127.0.0.1 SIP/2.0\r\nVia: SIP/2.0/UDP 127.0.0.1:5080;rport;branch=z9hG4bK2O9kxp;nksip=7Ip8W\r\nFrom: <sip:alice@nksip>;tag=2RNNEl\r\nTo: <sip:alice@nksip>\r\nCall-ID: LjOSc8WKDhCxFo8kfdJA214dh7f\r\nCSeq: 17370034 REGISTER\r\nMax-Forwards: 70\r\nContent-Length: 0\r\nContact: <sip:alice@127.0.0.1:5080>\r\nUser-Agent: NkSIP 0.1.0\r\n\r\n">>],[]},{generic_switch_transport_udp,handle_call,3,[{file,"src/generic_switch_transport_udp.erl"},{line,43}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,588}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+     Offender:   [{pid,<0.53.0>},{name,udpTransport},{mfargs,{generic_switch_transport_udp,start_link,[{5060,[binary,{active,false}]}]}},{restart_type,permanent},{shutdown,2000},{child_type,worker}]
+
+2014-01-04 21:02:08 =ERROR REPORT====
+** Generic server generic_switch_sup terminating 
+** Last message in was {'EXIT',<0.32.0>,{{{undef,[{nksip_parse,packet,[hACK,hACK,<<"REGISTER sip:127.0.0.1 SIP/2.0\r\nVia: SIP/2.0/UDP 127.0.0.1:5080;rport;branch=z9hG4bK2O9kxp;nksip=7Ip8W\r\nFrom: <sip:alice@nksip>;tag=2RNNEl\r\nTo: <sip:alice@nksip>\r\nCall-ID: LjOSc8WKDhCxFo8kfdJA214dh7f\r\nCSeq: 17370034 REGISTER\r\nMax-Forwards: 70\r\nContent-Length: 0\r\nContact: <sip:alice@127.0.0.1:5080>\r\nUser-Agent: NkSIP 0.1.0\r\n\r\n">>],[]},{generic_switch_transport_udp,handle_call,3,[{file,"src/generic_switch_transport_udp.erl"},{line,43}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,588}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]},{gen_server,call,[generic_switch_transport_udp,{get_packet}]}},[{gen_server,call,2,[{file,"gen_server.erl"},{line,180}]},{erl_eval,do_apply,6,[{file,"erl_eval.erl"},{line,576}]},{shell,exprs,7,[{file,"shell.erl"},{line,668}]},{shell,eval_exprs,7,[{file,"shell.erl"},{line,623}]},{shell,eval_loop,3,[{file,"shell.erl"},{line,608}]}]}}
+** When Server state == {state,{local,generic_switch_sup},one_for_one,[{child,<0.55.0>,udpTransport,{generic_switch_transport_udp,start_link,[{5060,[binary,{active,false}]}]},permanent,2000,worker,[generic_switch_transport_udp]}],undefined,5,10,[{1388,865728,88469}],generic_switch_sup,[]}
+** Reason for termination == 
+** {{{undef,[{nksip_parse,packet,[hACK,hACK,<<"REGISTER sip:127.0.0.1 SIP/2.0\r\nVia: SIP/2.0/UDP 127.0.0.1:5080;rport;branch=z9hG4bK2O9kxp;nksip=7Ip8W\r\nFrom: <sip:alice@nksip>;tag=2RNNEl\r\nTo: <sip:alice@nksip>\r\nCall-ID: LjOSc8WKDhCxFo8kfdJA214dh7f\r\nCSeq: 17370034 REGISTER\r\nMax-Forwards: 70\r\nContent-Length: 0\r\nContact: <sip:alice@127.0.0.1:5080>\r\nUser-Agent: NkSIP 0.1.0\r\n\r\n">>],[]},{generic_switch_transport_udp,handle_call,3,[{file,"src/generic_switch_transport_udp.erl"},{line,43}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,588}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]},{gen_server,call,[generic_switch_transport_udp,{get_packet}]}},[{gen_server,call,2,[{file,"gen_server.erl"},{line,180}]},{erl_eval,do_apply,6,[{file,"erl_eval.erl"},{line,576}]},{shell,exprs,7,[{file,"shell.erl"},{line,668}]},{shell,eval_exprs,7,[{file,"shell.erl"},{line,623}]},{shell,eval_loop,3,[{file,"shell.erl"},{line,608}]}]}
+2014-01-04 21:02:08 =CRASH REPORT====
+  crasher:
+    initial call: supervisor:generic_switch_sup/1
+    pid: <0.52.0>
+    registered_name: generic_switch_sup
+    exception exit: {{{{undef,[{nksip_parse,packet,[hACK,hACK,<<"REGISTER sip:127.0.0.1 SIP/2.0\r\nVia: SIP/2.0/UDP 127.0.0.1:5080;rport;branch=z9hG4bK2O9kxp;nksip=7Ip8W\r\nFrom: <sip:alice@nksip>;tag=2RNNEl\r\nTo: <sip:alice@nksip>\r\nCall-ID: LjOSc8WKDhCxFo8kfdJA214dh7f\r\nCSeq: 17370034 REGISTER\r\nMax-Forwards: 70\r\nContent-Length: 0\r\nContact: <sip:alice@127.0.0.1:5080>\r\nUser-Agent: NkSIP 0.1.0\r\n\r\n">>],[]},{generic_switch_transport_udp,handle_call,3,[{file,"src/generic_switch_transport_udp.erl"},{line,43}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,588}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]},{gen_server,call,[generic_switch_transport_udp,{get_packet}]}},[{gen_server,call,2,[{file,"gen_server.erl"},{line,180}]},{erl_eval,do_apply,6,[{file,"erl_eval.erl"},{line,576}]},{shell,exprs,7,[{file,"shell.erl"},{line,668}]},{shell,eval_exprs,7,[{file,"shell.erl"},{line,623}]},{shell,eval_loop,3,[{file,"shell.erl"},{line,608}]}]},[{gen_server,terminate,6,[{file,"gen_server.erl"},{line,747}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [<0.32.0>]
+    messages: [{'EXIT',<0.32.0>,normal}]
+    links: []
+    dictionary: []
+    trap_exit: true
+    status: running
+    heap_size: 1597
+    stack_size: 24
+    reductions: 356
+  neighbours:
+2014-01-04 21:04:12 =ERROR REPORT====
+** Generic server generic_switch_transport_udp terminating 
+** Last message in was {get_packet}
+** When Server state == {udpstate,#Port<0.3081>}
+** Reason for termination == 
+** {'module could not be loaded',[{nksip_parse,packet,[hACK,hACK,<<"REGISTER sip:127.0.0.1 SIP/2.0\r\nVia: SIP/2.0/UDP 127.0.0.1:5080;rport;branch=z9hG4bKrktUa;nksip=1I3Vlf\r\nFrom: <sip:alice@nksip>;tag=24pp41\r\nTo: <sip:alice@nksip>\r\nCall-ID: B8A9jh2lnls5XKizz7BY6v61gsW\r\nCSeq: 17370036 REGISTER\r\nMax-Forwards: 70\r\nContent-Length: 0\r\nContact: <sip:alice@127.0.0.1:5080>\r\nUser-Agent: NkSIP 0.1.0\r\n\r\n">>],[]},{generic_switch_transport_udp,handle_call,3,[{file,"src/generic_switch_transport_udp.erl"},{line,43}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,588}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+2014-01-04 21:04:12 =CRASH REPORT====
+  crasher:
+    initial call: generic_switch_transport_udp:init/1
+    pid: <0.55.0>
+    registered_name: generic_switch_transport_udp
+    exception exit: {{undef,[{nksip_parse,packet,[hACK,hACK,<<"REGISTER sip:127.0.0.1 SIP/2.0\r\nVia: SIP/2.0/UDP 127.0.0.1:5080;rport;branch=z9hG4bKrktUa;nksip=1I3Vlf\r\nFrom: <sip:alice@nksip>;tag=24pp41\r\nTo: <sip:alice@nksip>\r\nCall-ID: B8A9jh2lnls5XKizz7BY6v61gsW\r\nCSeq: 17370036 REGISTER\r\nMax-Forwards: 70\r\nContent-Length: 0\r\nContact: <sip:alice@127.0.0.1:5080>\r\nUser-Agent: NkSIP 0.1.0\r\n\r\n">>],[]},{generic_switch_transport_udp,handle_call,3,[{file,"src/generic_switch_transport_udp.erl"},{line,43}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,588}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]},[{gen_server,terminate,6,[{file,"gen_server.erl"},{line,747}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [generic_switch_sup,<0.34.0>]
+    messages: []
+    links: [<0.54.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 610
+    stack_size: 24
+    reductions: 390
+  neighbours:
+2014-01-04 21:04:12 =SUPERVISOR REPORT====
+     Supervisor: {local,generic_switch_sup}
+     Context:    child_terminated
+     Reason:     {undef,[{nksip_parse,packet,[hACK,hACK,<<"REGISTER sip:127.0.0.1 SIP/2.0\r\nVia: SIP/2.0/UDP 127.0.0.1:5080;rport;branch=z9hG4bKrktUa;nksip=1I3Vlf\r\nFrom: <sip:alice@nksip>;tag=24pp41\r\nTo: <sip:alice@nksip>\r\nCall-ID: B8A9jh2lnls5XKizz7BY6v61gsW\r\nCSeq: 17370036 REGISTER\r\nMax-Forwards: 70\r\nContent-Length: 0\r\nContact: <sip:alice@127.0.0.1:5080>\r\nUser-Agent: NkSIP 0.1.0\r\n\r\n">>],[]},{generic_switch_transport_udp,handle_call,3,[{file,"src/generic_switch_transport_udp.erl"},{line,43}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,588}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+     Offender:   [{pid,<0.55.0>},{name,udpTransport},{mfargs,{generic_switch_transport_udp,start_link,[{5060,[binary,{active,false}]}]}},{restart_type,permanent},{shutdown,2000},{child_type,worker}]
+
+2014-01-04 21:04:12 =ERROR REPORT====
+** Generic server generic_switch_sup terminating 
+** Last message in was {'EXIT',<0.34.0>,{{{undef,[{nksip_parse,packet,[hACK,hACK,<<"REGISTER sip:127.0.0.1 SIP/2.0\r\nVia: SIP/2.0/UDP 127.0.0.1:5080;rport;branch=z9hG4bKrktUa;nksip=1I3Vlf\r\nFrom: <sip:alice@nksip>;tag=24pp41\r\nTo: <sip:alice@nksip>\r\nCall-ID: B8A9jh2lnls5XKizz7BY6v61gsW\r\nCSeq: 17370036 REGISTER\r\nMax-Forwards: 70\r\nContent-Length: 0\r\nContact: <sip:alice@127.0.0.1:5080>\r\nUser-Agent: NkSIP 0.1.0\r\n\r\n">>],[]},{generic_switch_transport_udp,handle_call,3,[{file,"src/generic_switch_transport_udp.erl"},{line,43}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,588}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]},{gen_server,call,[generic_switch_transport_udp,{get_packet}]}},[{gen_server,call,2,[{file,"gen_server.erl"},{line,180}]},{erl_eval,do_apply,6,[{file,"erl_eval.erl"},{line,576}]},{shell,exprs,7,[{file,"shell.erl"},{line,668}]},{shell,eval_exprs,7,[{file,"shell.erl"},{line,623}]},{shell,eval_loop,3,[{file,"shell.erl"},{line,608}]}]}}
+** When Server state == {state,{local,generic_switch_sup},one_for_one,[{child,<0.57.0>,udpTransport,{generic_switch_transport_udp,start_link,[{5060,[binary,{active,false}]}]},permanent,2000,worker,[generic_switch_transport_udp]}],undefined,5,10,[{1388,865852,841280}],generic_switch_sup,[]}
+** Reason for termination == 
+** {{{undef,[{nksip_parse,packet,[hACK,hACK,<<"REGISTER sip:127.0.0.1 SIP/2.0\r\nVia: SIP/2.0/UDP 127.0.0.1:5080;rport;branch=z9hG4bKrktUa;nksip=1I3Vlf\r\nFrom: <sip:alice@nksip>;tag=24pp41\r\nTo: <sip:alice@nksip>\r\nCall-ID: B8A9jh2lnls5XKizz7BY6v61gsW\r\nCSeq: 17370036 REGISTER\r\nMax-Forwards: 70\r\nContent-Length: 0\r\nContact: <sip:alice@127.0.0.1:5080>\r\nUser-Agent: NkSIP 0.1.0\r\n\r\n">>],[]},{generic_switch_transport_udp,handle_call,3,[{file,"src/generic_switch_transport_udp.erl"},{line,43}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,588}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]},{gen_server,call,[generic_switch_transport_udp,{get_packet}]}},[{gen_server,call,2,[{file,"gen_server.erl"},{line,180}]},{erl_eval,do_apply,6,[{file,"erl_eval.erl"},{line,576}]},{shell,exprs,7,[{file,"shell.erl"},{line,668}]},{shell,eval_exprs,7,[{file,"shell.erl"},{line,623}]},{shell,eval_loop,3,[{file,"shell.erl"},{line,608}]}]}
+2014-01-04 21:04:12 =CRASH REPORT====
+  crasher:
+    initial call: supervisor:generic_switch_sup/1
+    pid: <0.54.0>
+    registered_name: generic_switch_sup
+    exception exit: {{{{undef,[{nksip_parse,packet,[hACK,hACK,<<"REGISTER sip:127.0.0.1 SIP/2.0\r\nVia: SIP/2.0/UDP 127.0.0.1:5080;rport;branch=z9hG4bKrktUa;nksip=1I3Vlf\r\nFrom: <sip:alice@nksip>;tag=24pp41\r\nTo: <sip:alice@nksip>\r\nCall-ID: B8A9jh2lnls5XKizz7BY6v61gsW\r\nCSeq: 17370036 REGISTER\r\nMax-Forwards: 70\r\nContent-Length: 0\r\nContact: <sip:alice@127.0.0.1:5080>\r\nUser-Agent: NkSIP 0.1.0\r\n\r\n">>],[]},{generic_switch_transport_udp,handle_call,3,[{file,"src/generic_switch_transport_udp.erl"},{line,43}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,588}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]},{gen_server,call,[generic_switch_transport_udp,{get_packet}]}},[{gen_server,call,2,[{file,"gen_server.erl"},{line,180}]},{erl_eval,do_apply,6,[{file,"erl_eval.erl"},{line,576}]},{shell,exprs,7,[{file,"shell.erl"},{line,668}]},{shell,eval_exprs,7,[{file,"shell.erl"},{line,623}]},{shell,eval_loop,3,[{file,"shell.erl"},{line,608}]}]},[{gen_server,terminate,6,[{file,"gen_server.erl"},{line,747}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [<0.34.0>]
+    messages: [{'EXIT',<0.34.0>,normal}]
+    links: []
+    dictionary: []
+    trap_exit: true
+    status: running
+    heap_size: 1597
+    stack_size: 24
+    reductions: 352
+  neighbours:
+2014-01-04 21:06:07 =ERROR REPORT====
+** Generic server generic_switch_transport_udp terminating 
+** Last message in was {get_packet}
+** When Server state == {udpstate,#Port<0.3100>}
+** Reason for termination == 
+** {'module could not be loaded',[{nksip_parse,packet,[hACK,hACK,<<"REGISTER sip:127.0.0.1 SIP/2.0\r\nVia: SIP/2.0/UDP 127.0.0.1:5070;rport;branch=z9hG4bK1PFBOA;nksip=rxo1r\r\nFrom: <sip:bob@nksip>;tag=1QaHsF\r\nTo: <sip:bob@nksip>\r\nCall-ID: B2LNAlSUFOrAN2wCXSNHvqyURqF\r\nCSeq: 17370037 REGISTER\r\nMax-Forwards: 70\r\nContent-Length: 0\r\nContact: <sip:bob@127.0.0.1:5070>\r\nUser-Agent: NkSIP 0.1.0\r\n\r\n">>],[]},{generic_switch_transport_udp,handle_call,3,[{file,"src/generic_switch_transport_udp.erl"},{line,43}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,588}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+2014-01-04 21:06:07 =CRASH REPORT====
+  crasher:
+    initial call: generic_switch_transport_udp:init/1
+    pid: <0.53.0>
+    registered_name: generic_switch_transport_udp
+    exception exit: {{undef,[{nksip_parse,packet,[hACK,hACK,<<"REGISTER sip:127.0.0.1 SIP/2.0\r\nVia: SIP/2.0/UDP 127.0.0.1:5070;rport;branch=z9hG4bK1PFBOA;nksip=rxo1r\r\nFrom: <sip:bob@nksip>;tag=1QaHsF\r\nTo: <sip:bob@nksip>\r\nCall-ID: B2LNAlSUFOrAN2wCXSNHvqyURqF\r\nCSeq: 17370037 REGISTER\r\nMax-Forwards: 70\r\nContent-Length: 0\r\nContact: <sip:bob@127.0.0.1:5070>\r\nUser-Agent: NkSIP 0.1.0\r\n\r\n">>],[]},{generic_switch_transport_udp,handle_call,3,[{file,"src/generic_switch_transport_udp.erl"},{line,43}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,588}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]},[{gen_server,terminate,6,[{file,"gen_server.erl"},{line,747}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [generic_switch_sup,<0.32.0>]
+    messages: []
+    links: [<0.52.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 610
+    stack_size: 24
+    reductions: 389
+  neighbours:
+2014-01-04 21:06:07 =SUPERVISOR REPORT====
+     Supervisor: {local,generic_switch_sup}
+     Context:    child_terminated
+     Reason:     {undef,[{nksip_parse,packet,[hACK,hACK,<<"REGISTER sip:127.0.0.1 SIP/2.0\r\nVia: SIP/2.0/UDP 127.0.0.1:5070;rport;branch=z9hG4bK1PFBOA;nksip=rxo1r\r\nFrom: <sip:bob@nksip>;tag=1QaHsF\r\nTo: <sip:bob@nksip>\r\nCall-ID: B2LNAlSUFOrAN2wCXSNHvqyURqF\r\nCSeq: 17370037 REGISTER\r\nMax-Forwards: 70\r\nContent-Length: 0\r\nContact: <sip:bob@127.0.0.1:5070>\r\nUser-Agent: NkSIP 0.1.0\r\n\r\n">>],[]},{generic_switch_transport_udp,handle_call,3,[{file,"src/generic_switch_transport_udp.erl"},{line,43}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,588}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+     Offender:   [{pid,<0.53.0>},{name,udpTransport},{mfargs,{generic_switch_transport_udp,start_link,[{5060,[binary,{active,false}]}]}},{restart_type,permanent},{shutdown,2000},{child_type,worker}]
+
+2014-01-04 21:06:07 =ERROR REPORT====
+** Generic server generic_switch_sup terminating 
+** Last message in was {'EXIT',<0.32.0>,{{{undef,[{nksip_parse,packet,[hACK,hACK,<<"REGISTER sip:127.0.0.1 SIP/2.0\r\nVia: SIP/2.0/UDP 127.0.0.1:5070;rport;branch=z9hG4bK1PFBOA;nksip=rxo1r\r\nFrom: <sip:bob@nksip>;tag=1QaHsF\r\nTo: <sip:bob@nksip>\r\nCall-ID: B2LNAlSUFOrAN2wCXSNHvqyURqF\r\nCSeq: 17370037 REGISTER\r\nMax-Forwards: 70\r\nContent-Length: 0\r\nContact: <sip:bob@127.0.0.1:5070>\r\nUser-Agent: NkSIP 0.1.0\r\n\r\n">>],[]},{generic_switch_transport_udp,handle_call,3,[{file,"src/generic_switch_transport_udp.erl"},{line,43}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,588}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]},{gen_server,call,[generic_switch_transport_udp,{get_packet}]}},[{gen_server,call,2,[{file,"gen_server.erl"},{line,180}]},{erl_eval,do_apply,6,[{file,"erl_eval.erl"},{line,576}]},{shell,exprs,7,[{file,"shell.erl"},{line,668}]},{shell,eval_exprs,7,[{file,"shell.erl"},{line,623}]},{shell,eval_loop,3,[{file,"shell.erl"},{line,608}]}]}}
+** When Server state == {state,{local,generic_switch_sup},one_for_one,[{child,<0.55.0>,udpTransport,{generic_switch_transport_udp,start_link,[{5060,[binary,{active,false}]}]},permanent,2000,worker,[generic_switch_transport_udp]}],undefined,5,10,[{1388,865967,712671}],generic_switch_sup,[]}
+** Reason for termination == 
+** {{{undef,[{nksip_parse,packet,[hACK,hACK,<<"REGISTER sip:127.0.0.1 SIP/2.0\r\nVia: SIP/2.0/UDP 127.0.0.1:5070;rport;branch=z9hG4bK1PFBOA;nksip=rxo1r\r\nFrom: <sip:bob@nksip>;tag=1QaHsF\r\nTo: <sip:bob@nksip>\r\nCall-ID: B2LNAlSUFOrAN2wCXSNHvqyURqF\r\nCSeq: 17370037 REGISTER\r\nMax-Forwards: 70\r\nContent-Length: 0\r\nContact: <sip:bob@127.0.0.1:5070>\r\nUser-Agent: NkSIP 0.1.0\r\n\r\n">>],[]},{generic_switch_transport_udp,handle_call,3,[{file,"src/generic_switch_transport_udp.erl"},{line,43}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,588}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]},{gen_server,call,[generic_switch_transport_udp,{get_packet}]}},[{gen_server,call,2,[{file,"gen_server.erl"},{line,180}]},{erl_eval,do_apply,6,[{file,"erl_eval.erl"},{line,576}]},{shell,exprs,7,[{file,"shell.erl"},{line,668}]},{shell,eval_exprs,7,[{file,"shell.erl"},{line,623}]},{shell,eval_loop,3,[{file,"shell.erl"},{line,608}]}]}
+2014-01-04 21:06:07 =CRASH REPORT====
+  crasher:
+    initial call: supervisor:generic_switch_sup/1
+    pid: <0.52.0>
+    registered_name: generic_switch_sup
+    exception exit: {{{{undef,[{nksip_parse,packet,[hACK,hACK,<<"REGISTER sip:127.0.0.1 SIP/2.0\r\nVia: SIP/2.0/UDP 127.0.0.1:5070;rport;branch=z9hG4bK1PFBOA;nksip=rxo1r\r\nFrom: <sip:bob@nksip>;tag=1QaHsF\r\nTo: <sip:bob@nksip>\r\nCall-ID: B2LNAlSUFOrAN2wCXSNHvqyURqF\r\nCSeq: 17370037 REGISTER\r\nMax-Forwards: 70\r\nContent-Length: 0\r\nContact: <sip:bob@127.0.0.1:5070>\r\nUser-Agent: NkSIP 0.1.0\r\n\r\n">>],[]},{generic_switch_transport_udp,handle_call,3,[{file,"src/generic_switch_transport_udp.erl"},{line,43}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,588}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]},{gen_server,call,[generic_switch_transport_udp,{get_packet}]}},[{gen_server,call,2,[{file,"gen_server.erl"},{line,180}]},{erl_eval,do_apply,6,[{file,"erl_eval.erl"},{line,576}]},{shell,exprs,7,[{file,"shell.erl"},{line,668}]},{shell,eval_exprs,7,[{file,"shell.erl"},{line,623}]},{shell,eval_loop,3,[{file,"shell.erl"},{line,608}]}]},[{gen_server,terminate,6,[{file,"gen_server.erl"},{line,747}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [<0.32.0>]
+    messages: [{'EXIT',<0.32.0>,normal}]
+    links: []
+    dictionary: []
+    trap_exit: true
+    status: running
+    heap_size: 1597
+    stack_size: 24
+    reductions: 356
+  neighbours:
+2014-01-04 21:09:11 =ERROR REPORT====
+** Generic server generic_switch_transport_udp terminating 
+** Last message in was {get_packet}
+** When Server state == {udpstate,#Port<0.3262>}
+** Reason for termination == 
+** {function_clause,[{nksip_parse,packet,[hACK,hACK,<<"REGISTER sip:127.0.0.1 SIP/2.0\r\nVia: SIP/2.0/UDP 127.0.0.1:5070;rport;branch=z9hG4bK3WR6Ig;nksip=45sq2U\r\nFrom: <sip:bob@nksip>;tag=1jVJWt\r\nTo: <sip:bob@nksip>\r\nCall-ID: 6tL1eSBwdKP025ug39HaOkX8bGW\r\nCSeq: 17370039 REGISTER\r\nMax-Forwards: 70\r\nContent-Length: 0\r\nContact: <sip:bob@127.0.0.1:5070>\r\nUser-Agent: NkSIP 0.1.0\r\n\r\n">>],[{file,"src/nksip_parse.erl"},{line,187}]},{generic_switch_transport_udp,handle_call,3,[{file,"src/generic_switch_transport_udp.erl"},{line,43}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,588}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+2014-01-04 21:09:11 =CRASH REPORT====
+  crasher:
+    initial call: generic_switch_transport_udp:init/1
+    pid: <0.53.0>
+    registered_name: generic_switch_transport_udp
+    exception exit: {{function_clause,[{nksip_parse,packet,[hACK,hACK,<<"REGISTER sip:127.0.0.1 SIP/2.0\r\nVia: SIP/2.0/UDP 127.0.0.1:5070;rport;branch=z9hG4bK3WR6Ig;nksip=45sq2U\r\nFrom: <sip:bob@nksip>;tag=1jVJWt\r\nTo: <sip:bob@nksip>\r\nCall-ID: 6tL1eSBwdKP025ug39HaOkX8bGW\r\nCSeq: 17370039 REGISTER\r\nMax-Forwards: 70\r\nContent-Length: 0\r\nContact: <sip:bob@127.0.0.1:5070>\r\nUser-Agent: NkSIP 0.1.0\r\n\r\n">>],[{file,"src/nksip_parse.erl"},{line,187}]},{generic_switch_transport_udp,handle_call,3,[{file,"src/generic_switch_transport_udp.erl"},{line,43}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,588}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]},[{gen_server,terminate,6,[{file,"gen_server.erl"},{line,747}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [generic_switch_sup,<0.32.0>]
+    messages: []
+    links: [<0.52.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 987
+    stack_size: 24
+    reductions: 397
+  neighbours:
+2014-01-04 21:09:11 =SUPERVISOR REPORT====
+     Supervisor: {local,generic_switch_sup}
+     Context:    child_terminated
+     Reason:     {function_clause,[{nksip_parse,packet,[hACK,hACK,<<"REGISTER sip:127.0.0.1 SIP/2.0\r\nVia: SIP/2.0/UDP 127.0.0.1:5070;rport;branch=z9hG4bK3WR6Ig;nksip=45sq2U\r\nFrom: <sip:bob@nksip>;tag=1jVJWt\r\nTo: <sip:bob@nksip>\r\nCall-ID: 6tL1eSBwdKP025ug39HaOkX8bGW\r\nCSeq: 17370039 REGISTER\r\nMax-Forwards: 70\r\nContent-Length: 0\r\nContact: <sip:bob@127.0.0.1:5070>\r\nUser-Agent: NkSIP 0.1.0\r\n\r\n">>],[{file,"src/nksip_parse.erl"},{line,187}]},{generic_switch_transport_udp,handle_call,3,[{file,"src/generic_switch_transport_udp.erl"},{line,43}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,588}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+     Offender:   [{pid,<0.53.0>},{name,udpTransport},{mfargs,{generic_switch_transport_udp,start_link,[{5060,[binary,{active,false}]}]}},{restart_type,permanent},{shutdown,2000},{child_type,worker}]
+
+2014-01-04 21:09:11 =ERROR REPORT====
+** Generic server generic_switch_sup terminating 
+** Last message in was {'EXIT',<0.32.0>,{{{function_clause,[{nksip_parse,packet,[hACK,hACK,<<"REGISTER sip:127.0.0.1 SIP/2.0\r\nVia: SIP/2.0/UDP 127.0.0.1:5070;rport;branch=z9hG4bK3WR6Ig;nksip=45sq2U\r\nFrom: <sip:bob@nksip>;tag=1jVJWt\r\nTo: <sip:bob@nksip>\r\nCall-ID: 6tL1eSBwdKP025ug39HaOkX8bGW\r\nCSeq: 17370039 REGISTER\r\nMax-Forwards: 70\r\nContent-Length: 0\r\nContact: <sip:bob@127.0.0.1:5070>\r\nUser-Agent: NkSIP 0.1.0\r\n\r\n">>],[{file,"src/nksip_parse.erl"},{line,187}]},{generic_switch_transport_udp,handle_call,3,[{file,"src/generic_switch_transport_udp.erl"},{line,43}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,588}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]},{gen_server,call,[generic_switch_transport_udp,{get_packet}]}},[{gen_server,call,2,[{file,"gen_server.erl"},{line,180}]},{erl_eval,do_apply,6,[{file,"erl_eval.erl"},{line,576}]},{shell,exprs,7,[{file,"shell.erl"},{line,668}]},{shell,eval_exprs,7,[{file,"shell.erl"},{line,623}]},{shell,eval_loop,3,[{file,"shell.erl"},{line,608}]}]}}
+** When Server state == {state,{local,generic_switch_sup},one_for_one,[{child,<0.55.0>,udpTransport,{generic_switch_transport_udp,start_link,[{5060,[binary,{active,false}]}]},permanent,2000,worker,[generic_switch_transport_udp]}],undefined,5,10,[{1388,866151,932864}],generic_switch_sup,[]}
+** Reason for termination == 
+** {{{function_clause,[{nksip_parse,packet,[hACK,hACK,<<"REGISTER sip:127.0.0.1 SIP/2.0\r\nVia: SIP/2.0/UDP 127.0.0.1:5070;rport;branch=z9hG4bK3WR6Ig;nksip=45sq2U\r\nFrom: <sip:bob@nksip>;tag=1jVJWt\r\nTo: <sip:bob@nksip>\r\nCall-ID: 6tL1eSBwdKP025ug39HaOkX8bGW\r\nCSeq: 17370039 REGISTER\r\nMax-Forwards: 70\r\nContent-Length: 0\r\nContact: <sip:bob@127.0.0.1:5070>\r\nUser-Agent: NkSIP 0.1.0\r\n\r\n">>],[{file,"src/nksip_parse.erl"},{line,187}]},{generic_switch_transport_udp,handle_call,3,[{file,"src/generic_switch_transport_udp.erl"},{line,43}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,588}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]},{gen_server,call,[generic_switch_transport_udp,{get_packet}]}},[{gen_server,call,2,[{file,"gen_server.erl"},{line,180}]},{erl_eval,do_apply,6,[{file,"erl_eval.erl"},{line,576}]},{shell,exprs,7,[{file,"shell.erl"},{line,668}]},{shell,eval_exprs,7,[{file,"shell.erl"},{line,623}]},{shell,eval_loop,3,[{file,"shell.erl"},{line,608}]}]}
+2014-01-04 21:09:11 =CRASH REPORT====
+  crasher:
+    initial call: supervisor:generic_switch_sup/1
+    pid: <0.52.0>
+    registered_name: generic_switch_sup
+    exception exit: {{{{function_clause,[{nksip_parse,packet,[hACK,hACK,<<"REGISTER sip:127.0.0.1 SIP/2.0\r\nVia: SIP/2.0/UDP 127.0.0.1:5070;rport;branch=z9hG4bK3WR6Ig;nksip=45sq2U\r\nFrom: <sip:bob@nksip>;tag=1jVJWt\r\nTo: <sip:bob@nksip>\r\nCall-ID: 6tL1eSBwdKP025ug39HaOkX8bGW\r\nCSeq: 17370039 REGISTER\r\nMax-Forwards: 70\r\nContent-Length: 0\r\nContact: <sip:bob@127.0.0.1:5070>\r\nUser-Agent: NkSIP 0.1.0\r\n\r\n">>],[{file,"src/nksip_parse.erl"},{line,187}]},{generic_switch_transport_udp,handle_call,3,[{file,"src/generic_switch_transport_udp.erl"},{line,43}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,588}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]},{gen_server,call,[generic_switch_transport_udp,{get_packet}]}},[{gen_server,call,2,[{file,"gen_server.erl"},{line,180}]},{erl_eval,do_apply,6,[{file,"erl_eval.erl"},{line,576}]},{shell,exprs,7,[{file,"shell.erl"},{line,668}]},{shell,eval_exprs,7,[{file,"shell.erl"},{line,623}]},{shell,eval_loop,3,[{file,"shell.erl"},{line,608}]}]},[{gen_server,terminate,6,[{file,"gen_server.erl"},{line,747}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [<0.32.0>]
+    messages: [{'EXIT',<0.32.0>,normal}]
+    links: []
+    dictionary: []
+    trap_exit: true
+    status: running
+    heap_size: 1597
+    stack_size: 24
+    reductions: 366
+  neighbours:
+2014-01-04 21:18:26 =ERROR REPORT====
+** Generic server generic_switch_transport_udp terminating 
+** Last message in was {get_packet}
+** When Server state == {udpstate,#Port<0.3262>}
+** Reason for termination == 
+** {function_clause,[{nksip_parse,packet,[0,0,<<"REGISTER sip:127.0.0.1 SIP/2.0\r\nVia: SIP/2.0/UDP 127.0.0.1:5070;rport;branch=z9hG4bK3MTeSX;nksip=4dWQyN\r\nFrom: <sip:bob@nksip>;tag=1XB9pn\r\nTo: <sip:bob@nksip>\r\nCall-ID: DBhDUangXsm3dAmLim9qjYf35G4\r\nCSeq: 17379211 REGISTER\r\nMax-Forwards: 70\r\nContent-Length: 0\r\nContact: <sip:bob@127.0.0.1:5070>\r\nUser-Agent: NkSIP 0.1.0\r\n\r\n">>],[{file,"src/nksip_parse.erl"},{line,187}]},{generic_switch_transport_udp,handle_call,3,[{file,"src/generic_switch_transport_udp.erl"},{line,43}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,588}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+2014-01-04 21:18:26 =CRASH REPORT====
+  crasher:
+    initial call: generic_switch_transport_udp:init/1
+    pid: <0.53.0>
+    registered_name: generic_switch_transport_udp
+    exception exit: {{function_clause,[{nksip_parse,packet,[0,0,<<"REGISTER sip:127.0.0.1 SIP/2.0\r\nVia: SIP/2.0/UDP 127.0.0.1:5070;rport;branch=z9hG4bK3MTeSX;nksip=4dWQyN\r\nFrom: <sip:bob@nksip>;tag=1XB9pn\r\nTo: <sip:bob@nksip>\r\nCall-ID: DBhDUangXsm3dAmLim9qjYf35G4\r\nCSeq: 17379211 REGISTER\r\nMax-Forwards: 70\r\nContent-Length: 0\r\nContact: <sip:bob@127.0.0.1:5070>\r\nUser-Agent: NkSIP 0.1.0\r\n\r\n">>],[{file,"src/nksip_parse.erl"},{line,187}]},{generic_switch_transport_udp,handle_call,3,[{file,"src/generic_switch_transport_udp.erl"},{line,43}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,588}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]},[{gen_server,terminate,6,[{file,"gen_server.erl"},{line,747}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [generic_switch_sup,<0.32.0>]
+    messages: []
+    links: [<0.52.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 987
+    stack_size: 24
+    reductions: 398
+  neighbours:
+2014-01-04 21:18:26 =SUPERVISOR REPORT====
+     Supervisor: {local,generic_switch_sup}
+     Context:    child_terminated
+     Reason:     {function_clause,[{nksip_parse,packet,[0,0,<<"REGISTER sip:127.0.0.1 SIP/2.0\r\nVia: SIP/2.0/UDP 127.0.0.1:5070;rport;branch=z9hG4bK3MTeSX;nksip=4dWQyN\r\nFrom: <sip:bob@nksip>;tag=1XB9pn\r\nTo: <sip:bob@nksip>\r\nCall-ID: DBhDUangXsm3dAmLim9qjYf35G4\r\nCSeq: 17379211 REGISTER\r\nMax-Forwards: 70\r\nContent-Length: 0\r\nContact: <sip:bob@127.0.0.1:5070>\r\nUser-Agent: NkSIP 0.1.0\r\n\r\n">>],[{file,"src/nksip_parse.erl"},{line,187}]},{generic_switch_transport_udp,handle_call,3,[{file,"src/generic_switch_transport_udp.erl"},{line,43}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,588}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+     Offender:   [{pid,<0.53.0>},{name,udpTransport},{mfargs,{generic_switch_transport_udp,start_link,[{5060,[binary,{active,false}]}]}},{restart_type,permanent},{shutdown,2000},{child_type,worker}]
+
+2014-01-04 21:18:26 =ERROR REPORT====
+** Generic server generic_switch_sup terminating 
+** Last message in was {'EXIT',<0.32.0>,{{{function_clause,[{nksip_parse,packet,[0,0,<<"REGISTER sip:127.0.0.1 SIP/2.0\r\nVia: SIP/2.0/UDP 127.0.0.1:5070;rport;branch=z9hG4bK3MTeSX;nksip=4dWQyN\r\nFrom: <sip:bob@nksip>;tag=1XB9pn\r\nTo: <sip:bob@nksip>\r\nCall-ID: DBhDUangXsm3dAmLim9qjYf35G4\r\nCSeq: 17379211 REGISTER\r\nMax-Forwards: 70\r\nContent-Length: 0\r\nContact: <sip:bob@127.0.0.1:5070>\r\nUser-Agent: NkSIP 0.1.0\r\n\r\n">>],[{file,"src/nksip_parse.erl"},{line,187}]},{generic_switch_transport_udp,handle_call,3,[{file,"src/generic_switch_transport_udp.erl"},{line,43}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,588}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]},{gen_server,call,[generic_switch_transport_udp,{get_packet}]}},[{gen_server,call,2,[{file,"gen_server.erl"},{line,180}]},{erl_eval,do_apply,6,[{file,"erl_eval.erl"},{line,576}]},{shell,exprs,7,[{file,"shell.erl"},{line,668}]},{shell,eval_exprs,7,[{file,"shell.erl"},{line,623}]},{shell,eval_loop,3,[{file,"shell.erl"},{line,608}]}]}}
+** When Server state == {state,{local,generic_switch_sup},one_for_one,[{child,<0.55.0>,udpTransport,{generic_switch_transport_udp,start_link,[{5060,[binary,{active,false}]}]},permanent,2000,worker,[generic_switch_transport_udp]}],undefined,5,10,[{1388,866706,906742}],generic_switch_sup,[]}
+** Reason for termination == 
+** {{{function_clause,[{nksip_parse,packet,[0,0,<<"REGISTER sip:127.0.0.1 SIP/2.0\r\nVia: SIP/2.0/UDP 127.0.0.1:5070;rport;branch=z9hG4bK3MTeSX;nksip=4dWQyN\r\nFrom: <sip:bob@nksip>;tag=1XB9pn\r\nTo: <sip:bob@nksip>\r\nCall-ID: DBhDUangXsm3dAmLim9qjYf35G4\r\nCSeq: 17379211 REGISTER\r\nMax-Forwards: 70\r\nContent-Length: 0\r\nContact: <sip:bob@127.0.0.1:5070>\r\nUser-Agent: NkSIP 0.1.0\r\n\r\n">>],[{file,"src/nksip_parse.erl"},{line,187}]},{generic_switch_transport_udp,handle_call,3,[{file,"src/generic_switch_transport_udp.erl"},{line,43}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,588}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]},{gen_server,call,[generic_switch_transport_udp,{get_packet}]}},[{gen_server,call,2,[{file,"gen_server.erl"},{line,180}]},{erl_eval,do_apply,6,[{file,"erl_eval.erl"},{line,576}]},{shell,exprs,7,[{file,"shell.erl"},{line,668}]},{shell,eval_exprs,7,[{file,"shell.erl"},{line,623}]},{shell,eval_loop,3,[{file,"shell.erl"},{line,608}]}]}
+2014-01-04 21:18:26 =CRASH REPORT====
+  crasher:
+    initial call: supervisor:generic_switch_sup/1
+    pid: <0.52.0>
+    registered_name: generic_switch_sup
+    exception exit: {{{{function_clause,[{nksip_parse,packet,[0,0,<<"REGISTER sip:127.0.0.1 SIP/2.0\r\nVia: SIP/2.0/UDP 127.0.0.1:5070;rport;branch=z9hG4bK3MTeSX;nksip=4dWQyN\r\nFrom: <sip:bob@nksip>;tag=1XB9pn\r\nTo: <sip:bob@nksip>\r\nCall-ID: DBhDUangXsm3dAmLim9qjYf35G4\r\nCSeq: 17379211 REGISTER\r\nMax-Forwards: 70\r\nContent-Length: 0\r\nContact: <sip:bob@127.0.0.1:5070>\r\nUser-Agent: NkSIP 0.1.0\r\n\r\n">>],[{file,"src/nksip_parse.erl"},{line,187}]},{generic_switch_transport_udp,handle_call,3,[{file,"src/generic_switch_transport_udp.erl"},{line,43}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,588}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]},{gen_server,call,[generic_switch_transport_udp,{get_packet}]}},[{gen_server,call,2,[{file,"gen_server.erl"},{line,180}]},{erl_eval,do_apply,6,[{file,"erl_eval.erl"},{line,576}]},{shell,exprs,7,[{file,"shell.erl"},{line,668}]},{shell,eval_exprs,7,[{file,"shell.erl"},{line,623}]},{shell,eval_loop,3,[{file,"shell.erl"},{line,608}]}]},[{gen_server,terminate,6,[{file,"gen_server.erl"},{line,747}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [<0.32.0>]
+    messages: [{'EXIT',<0.32.0>,normal}]
+    links: []
+    dictionary: []
+    trap_exit: true
+    status: running
+    heap_size: 1597
+    stack_size: 24
+    reductions: 366
+  neighbours:
+2014-01-04 21:49:55 =ERROR REPORT====
+** Generic server generic_switch_transport_udp terminating 
+** Last message in was {get_packet}
+** When Server state == {udpstate,#Port<0.3428>}
+** Reason for termination == 
+** {'function not exported',[{nksip_parse,raw_packet,[{raw_sipmsg,<<"R_1aYpJy_SKup6aUsBlRqkD8SlWkOJ0jNc5g">>,{req,'REGISTER',<<"sip:127.0.0.1">>},0,<<"SKup6aUsBlRqkD8SlWkOJ0jNc5g">>,1388868595347909,[{<<"Via">>,<<"SIP/2.0/UDP 127.0.0.1:5070;rport;branch=z9hG4bK2i3JTG;nksip=2QJLkJ">>},{<<"From">>,<<"<sip:bob@nksip>;tag=4Howcg">>},{<<"To">>,<<"<sip:bob@nksip>">>},{<<"Call-ID">>,<<"SKup6aUsBlRqkD8SlWkOJ0jNc5g">>},{<<"CSeq">>,<<"17379215 REGISTER">>},{<<"Max-Forwards">>,<<"70">>},{<<"Content-Length">>,<<"0">>},{<<"Contact">>,<<"<sip:bob@127.0.0.1:5070>">>},{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined}}],[]},{generic_switch_transport_udp,handle_call,3,[{file,"src/generic_switch_transport_udp.erl"},{line,46}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,588}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+2014-01-04 21:49:55 =CRASH REPORT====
+  crasher:
+    initial call: generic_switch_transport_udp:init/1
+    pid: <0.57.0>
+    registered_name: generic_switch_transport_udp
+    exception exit: {{undef,[{nksip_parse,raw_packet,[{raw_sipmsg,<<"R_1aYpJy_SKup6aUsBlRqkD8SlWkOJ0jNc5g">>,{req,'REGISTER',<<"sip:127.0.0.1">>},0,<<"SKup6aUsBlRqkD8SlWkOJ0jNc5g">>,1388868595347909,[{<<"Via">>,<<"SIP/2.0/UDP 127.0.0.1:5070;rport;branch=z9hG4bK2i3JTG;nksip=2QJLkJ">>},{<<"From">>,<<"<sip:bob@nksip>;tag=4Howcg">>},{<<"To">>,<<"<sip:bob@nksip>">>},{<<"Call-ID">>,<<"SKup6aUsBlRqkD8SlWkOJ0jNc5g">>},{<<"CSeq">>,<<"17379215 REGISTER">>},{<<"Max-Forwards">>,<<"70">>},{<<"Content-Length">>,<<"0">>},{<<"Contact">>,<<"<sip:bob@127.0.0.1:5070>">>},{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined}}],[]},{generic_switch_transport_udp,handle_call,3,[{file,"src/generic_switch_transport_udp.erl"},{line,46}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,588}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]},[{gen_server,terminate,6,[{file,"gen_server.erl"},{line,747}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [generic_switch_sup,<0.36.0>]
+    messages: []
+    links: [<0.56.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 4181
+    stack_size: 24
+    reductions: 827
+  neighbours:
+2014-01-04 21:49:55 =SUPERVISOR REPORT====
+     Supervisor: {local,generic_switch_sup}
+     Context:    child_terminated
+     Reason:     {undef,[{nksip_parse,raw_packet,[{raw_sipmsg,<<"R_1aYpJy_SKup6aUsBlRqkD8SlWkOJ0jNc5g">>,{req,'REGISTER',<<"sip:127.0.0.1">>},0,<<"SKup6aUsBlRqkD8SlWkOJ0jNc5g">>,1388868595347909,[{<<"Via">>,<<"SIP/2.0/UDP 127.0.0.1:5070;rport;branch=z9hG4bK2i3JTG;nksip=2QJLkJ">>},{<<"From">>,<<"<sip:bob@nksip>;tag=4Howcg">>},{<<"To">>,<<"<sip:bob@nksip>">>},{<<"Call-ID">>,<<"SKup6aUsBlRqkD8SlWkOJ0jNc5g">>},{<<"CSeq">>,<<"17379215 REGISTER">>},{<<"Max-Forwards">>,<<"70">>},{<<"Content-Length">>,<<"0">>},{<<"Contact">>,<<"<sip:bob@127.0.0.1:5070>">>},{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined}}],[]},{generic_switch_transport_udp,handle_call,3,[{file,"src/generic_switch_transport_udp.erl"},{line,46}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,588}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+     Offender:   [{pid,<0.57.0>},{name,udpTransport},{mfargs,{generic_switch_transport_udp,start_link,[{5060,[binary,{active,false}]}]}},{restart_type,permanent},{shutdown,2000},{child_type,worker}]
+
+2014-01-04 21:49:55 =ERROR REPORT====
+** Generic server generic_switch_sup terminating 
+** Last message in was {'EXIT',<0.36.0>,{{{undef,[{nksip_parse,raw_packet,[{raw_sipmsg,<<"R_1aYpJy_SKup6aUsBlRqkD8SlWkOJ0jNc5g">>,{req,'REGISTER',<<"sip:127.0.0.1">>},0,<<"SKup6aUsBlRqkD8SlWkOJ0jNc5g">>,1388868595347909,[{<<"Via">>,<<"SIP/2.0/UDP 127.0.0.1:5070;rport;branch=z9hG4bK2i3JTG;nksip=2QJLkJ">>},{<<"From">>,<<"<sip:bob@nksip>;tag=4Howcg">>},{<<"To">>,<<"<sip:bob@nksip>">>},{<<"Call-ID">>,<<"SKup6aUsBlRqkD8SlWkOJ0jNc5g">>},{<<"CSeq">>,<<"17379215 REGISTER">>},{<<"Max-Forwards">>,<<"70">>},{<<"Content-Length">>,<<"0">>},{<<"Contact">>,<<"<sip:bob@127.0.0.1:5070>">>},{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined}}],[]},{generic_switch_transport_udp,handle_call,3,[{file,"src/generic_switch_transport_udp.erl"},{line,46}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,588}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]},{gen_server,call,[generic_switch_transport_udp,{get_packet}]}},[{gen_server,call,2,[{file,"gen_server.erl"},{line,180}]},{erl_eval,do_apply,6,[{file,"erl_eval.erl"},{line,576}]},{shell,exprs,7,[{file,"shell.erl"},{line,668}]},{shell,eval_exprs,7,[{file,"shell.erl"},{line,623}]},{shell,eval_loop,3,[{file,"shell.erl"},{line,608}]}]}}
+** When Server state == {state,{local,generic_switch_sup},one_for_one,[{child,<0.59.0>,udpTransport,{generic_switch_transport_udp,start_link,[{5060,[binary,{active,false}]}]},permanent,2000,worker,[generic_switch_transport_udp]}],undefined,5,10,[{1388,868595,350182}],generic_switch_sup,[]}
+** Reason for termination == 
+** {{{undef,[{nksip_parse,raw_packet,[{raw_sipmsg,<<"R_1aYpJy_SKup6aUsBlRqkD8SlWkOJ0jNc5g">>,{req,'REGISTER',<<"sip:127.0.0.1">>},0,<<"SKup6aUsBlRqkD8SlWkOJ0jNc5g">>,1388868595347909,[{<<"Via">>,<<"SIP/2.0/UDP 127.0.0.1:5070;rport;branch=z9hG4bK2i3JTG;nksip=2QJLkJ">>},{<<"From">>,<<"<sip:bob@nksip>;tag=4Howcg">>},{<<"To">>,<<"<sip:bob@nksip>">>},{<<"Call-ID">>,<<"SKup6aUsBlRqkD8SlWkOJ0jNc5g">>},{<<"CSeq">>,<<"17379215 REGISTER">>},{<<"Max-Forwards">>,<<"70">>},{<<"Content-Length">>,<<"0">>},{<<"Contact">>,<<"<sip:bob@127.0.0.1:5070>">>},{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined}}],[]},{generic_switch_transport_udp,handle_call,3,[{file,"src/generic_switch_transport_udp.erl"},{line,46}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,588}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]},{gen_server,call,[generic_switch_transport_udp,{get_packet}]}},[{gen_server,call,2,[{file,"gen_server.erl"},{line,180}]},{erl_eval,do_apply,6,[{file,"erl_eval.erl"},{line,576}]},{shell,exprs,7,[{file,"shell.erl"},{line,668}]},{shell,eval_exprs,7,[{file,"shell.erl"},{line,623}]},{shell,eval_loop,3,[{file,"shell.erl"},{line,608}]}]}
+2014-01-04 21:49:55 =CRASH REPORT====
+  crasher:
+    initial call: supervisor:generic_switch_sup/1
+    pid: <0.56.0>
+    registered_name: generic_switch_sup
+    exception exit: {{{{undef,[{nksip_parse,raw_packet,[{raw_sipmsg,<<"R_1aYpJy_SKup6aUsBlRqkD8SlWkOJ0jNc5g">>,{req,'REGISTER',<<"sip:127.0.0.1">>},0,<<"SKup6aUsBlRqkD8SlWkOJ0jNc5g">>,1388868595347909,[{<<"Via">>,<<"SIP/2.0/UDP 127.0.0.1:5070;rport;branch=z9hG4bK2i3JTG;nksip=2QJLkJ">>},{<<"From">>,<<"<sip:bob@nksip>;tag=4Howcg">>},{<<"To">>,<<"<sip:bob@nksip>">>},{<<"Call-ID">>,<<"SKup6aUsBlRqkD8SlWkOJ0jNc5g">>},{<<"CSeq">>,<<"17379215 REGISTER">>},{<<"Max-Forwards">>,<<"70">>},{<<"Content-Length">>,<<"0">>},{<<"Contact">>,<<"<sip:bob@127.0.0.1:5070>">>},{<<"User-Agent">>,<<"NkSIP 0.1.0">>}],<<>>,{transport,0,undefined,undefined,undefined,undefined,undefined,undefined,undefined}}],[]},{generic_switch_transport_udp,handle_call,3,[{file,"src/generic_switch_transport_udp.erl"},{line,46}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,588}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]},{gen_server,call,[generic_switch_transport_udp,{get_packet}]}},[{gen_server,call,2,[{file,"gen_server.erl"},{line,180}]},{erl_eval,do_apply,6,[{file,"erl_eval.erl"},{line,576}]},{shell,exprs,7,[{file,"shell.erl"},{line,668}]},{shell,eval_exprs,7,[{file,"shell.erl"},{line,623}]},{shell,eval_loop,3,[{file,"shell.erl"},{line,608}]}]},[{gen_server,terminate,6,[{file,"gen_server.erl"},{line,747}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [<0.36.0>]
+    messages: [{'EXIT',<0.36.0>,normal}]
+    links: []
+    dictionary: []
+    trap_exit: true
+    status: running
+    heap_size: 1597
+    stack_size: 24
+    reductions: 397
+  neighbours:
+2014-01-04 22:57:03 =SUPERVISOR REPORT====
+     Supervisor: {local,generic_switch_sup}
+     Context:    start_error
+     Reason:     <0.53.0>
+     Offender:   [{pid,undefined},{name,udpTransport},{mfargs,{generic_switch_transport_udp,init,[{5060,[binary,{active,true}]}]}},{restart_type,permanent},{shutdown,2000},{child_type,worker}]
+
+2014-01-04 22:58:21 =SUPERVISOR REPORT====
+     Supervisor: {local,generic_switch_sup}
+     Context:    start_error
+     Reason:     <0.53.0>
+     Offender:   [{pid,undefined},{name,udpTransport},{mfargs,{generic_switch_transport_udp,init,[{5060,[binary,{active,true}]}]}},{restart_type,permanent},{shutdown,2000},{child_type,worker}]
+
+2014-01-04 23:01:04 =SUPERVISOR REPORT====
+     Supervisor: {local,generic_switch_sup}
+     Context:    start_error
+     Reason:     {'EXIT',{function_clause,[{gen_udp,mod,[#Port<0.3262>,undefined],[{file,"gen_udp.erl"},{line,214}]},{gen_udp,open,2,[{file,"gen_udp.erl"},{line,98}]},{generic_switch_transport_udp,loop,1,[{file,"src/generic_switch_transport_udp.erl"},{line,16}]},{supervisor,do_start_child,2,[{file,"supervisor.erl"},{line,303}]},{supervisor,start_children,3,[{file,"supervisor.erl"},{line,287}]},{supervisor,init_children,2,[{file,"supervisor.erl"},{line,253}]},{gen_server,init_it,6,[{file,"gen_server.erl"},{line,304}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}}
+     Offender:   [{pid,undefined},{name,udpTransport},{mfargs,{generic_switch_transport_udp,loop,[{5060,[binary,{active,true}]}]}},{restart_type,permanent},{shutdown,2000},{child_type,worker}]
+
+2014-01-04 23:03:09 =SUPERVISOR REPORT====
+     Supervisor: {local,generic_switch_sup}
+     Context:    start_error
+     Reason:     {'EXIT',{function_clause,[{gen_udp,mod,[#Port<0.3262>,undefined],[{file,"gen_udp.erl"},{line,214}]},{gen_udp,open,2,[{file,"gen_udp.erl"},{line,98}]},{generic_switch_transport_udp,loop,1,[{file,"src/generic_switch_transport_udp.erl"},{line,16}]},{supervisor,do_start_child,2,[{file,"supervisor.erl"},{line,303}]},{supervisor,start_children,3,[{file,"supervisor.erl"},{line,287}]},{supervisor,init_children,2,[{file,"supervisor.erl"},{line,253}]},{gen_server,init_it,6,[{file,"gen_server.erl"},{line,304}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}}
+     Offender:   [{pid,undefined},{name,udpTransport},{mfargs,{generic_switch_transport_udp,loop,[{5060,[binary]}]}},{restart_type,permanent},{shutdown,2000},{child_type,worker}]
+
+2014-01-04 23:05:30 =SUPERVISOR REPORT====
+     Supervisor: {local,generic_switch_sup}
+     Context:    start_error
+     Reason:     ok
+     Offender:   [{pid,undefined},{name,udpTransport},{mfargs,{generic_switch_transport_udp,loop,[{5060,[binary]}]}},{restart_type,permanent},{shutdown,2000},{child_type,worker}]
+
+2014-01-04 23:45:27 =SUPERVISOR REPORT====
+     Supervisor: {local,generic_switch_sup}
+     Context:    start_error
+     Reason:     ok
+     Offender:   [{pid,undefined},{name,udpTransport},{mfargs,{generic_switch_transport_udp,loop,[{5060,[binary]}]}},{restart_type,permanent},{shutdown,2000},{child_type,worker}]
+
+2014-01-04 23:53:17 =ERROR REPORT====
+** Generic server generic_switch_transport_udp terminating 
+** Last message in was {udp,#Port<0.3262>,{127,0,0,1},5070,<<"REGISTER sip:127.0.0.1 SIP/2.0\r\nVia: SIP/2.0/UDP 127.0.0.1:5070;rport;branch=z9hG4bK3vzGJk;nksip=4cMbdX\r\nFrom: <sip:bob@nksip>;tag=1ykgTO\r\nTo: <sip:bob@nksip>\r\nCall-ID: ElCtzsWm0GcgErmKKXLs3UIPm7W\r\nCSeq: 17381223 REGISTER\r\nMax-Forwards: 70\r\nContent-Length: 0\r\nContact: <sip:bob@127.0.0.1:5070>\r\nUser-Agent: NkSIP 0.1.0\r\n\r\n">>}
+** When Server state == {udpstate,#Port<0.3262>}
+** Reason for termination == 
+** {bad_return_value,ok}
+2014-01-04 23:53:17 =CRASH REPORT====
+  crasher:
+    initial call: generic_switch_transport_udp:init/1
+    pid: <0.53.0>
+    registered_name: generic_switch_transport_udp
+    exception exit: {{bad_return_value,ok},[{gen_server,terminate,6,[{file,"gen_server.erl"},{line,747}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [generic_switch_sup,<0.32.0>]
+    messages: []
+    links: [<0.52.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 2584
+    stack_size: 24
+    reductions: 2109
+  neighbours:
+2014-01-04 23:53:17 =SUPERVISOR REPORT====
+     Supervisor: {local,generic_switch_sup}
+     Context:    child_terminated
+     Reason:     {bad_return_value,ok}
+     Offender:   [{pid,<0.53.0>},{name,udpTransport},{mfargs,{generic_switch_transport_udp,start_link,[{5060,[binary]}]}},{restart_type,permanent},{shutdown,2000},{child_type,worker}]
+
+2014-01-04 23:53:17 =ERROR REPORT====
+** Generic server generic_switch_transport_udp terminating 
+** Last message in was {udp,#Port<0.3312>,{127,0,0,1},5070,<<"REGISTER sip:127.0.0.1 SIP/2.0\r\nVia: SIP/2.0/UDP 127.0.0.1:5070;rport;branch=z9hG4bK3vzGJk;nksip=4cMbdX\r\nFrom: <sip:bob@nksip>;tag=1ykgTO\r\nTo: <sip:bob@nksip>\r\nCall-ID: ElCtzsWm0GcgErmKKXLs3UIPm7W\r\nCSeq: 17381223 REGISTER\r\nMax-Forwards: 70\r\nContent-Length: 0\r\nContact: <sip:bob@127.0.0.1:5070>\r\nUser-Agent: NkSIP 0.1.0\r\n\r\n">>}
+** When Server state == {udpstate,#Port<0.3312>}
+** Reason for termination == 
+** {bad_return_value,ok}
+2014-01-04 23:53:17 =CRASH REPORT====
+  crasher:
+    initial call: generic_switch_transport_udp:init/1
+    pid: <0.55.0>
+    registered_name: generic_switch_transport_udp
+    exception exit: {{bad_return_value,ok},[{gen_server,terminate,6,[{file,"gen_server.erl"},{line,747}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [generic_switch_sup,<0.32.0>]
+    messages: []
+    links: [<0.52.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 2584
+    stack_size: 24
+    reductions: 2090
+  neighbours:
+2014-01-04 23:53:17 =SUPERVISOR REPORT====
+     Supervisor: {local,generic_switch_sup}
+     Context:    child_terminated
+     Reason:     {bad_return_value,ok}
+     Offender:   [{pid,<0.55.0>},{name,udpTransport},{mfargs,{generic_switch_transport_udp,start_link,[{5060,[binary]}]}},{restart_type,permanent},{shutdown,2000},{child_type,worker}]
+
+2014-01-04 23:53:18 =ERROR REPORT====
+** Generic server generic_switch_transport_udp terminating 
+** Last message in was {udp,#Port<0.3313>,{127,0,0,1},5070,<<"REGISTER sip:127.0.0.1 SIP/2.0\r\nVia: SIP/2.0/UDP 127.0.0.1:5070;rport;branch=z9hG4bK3vzGJk;nksip=4cMbdX\r\nFrom: <sip:bob@nksip>;tag=1ykgTO\r\nTo: <sip:bob@nksip>\r\nCall-ID: ElCtzsWm0GcgErmKKXLs3UIPm7W\r\nCSeq: 17381223 REGISTER\r\nMax-Forwards: 70\r\nContent-Length: 0\r\nContact: <sip:bob@127.0.0.1:5070>\r\nUser-Agent: NkSIP 0.1.0\r\n\r\n">>}
+** When Server state == {udpstate,#Port<0.3313>}
+** Reason for termination == 
+** {bad_return_value,ok}
+2014-01-04 23:53:18 =CRASH REPORT====
+  crasher:
+    initial call: generic_switch_transport_udp:init/1
+    pid: <0.56.0>
+    registered_name: generic_switch_transport_udp
+    exception exit: {{bad_return_value,ok},[{gen_server,terminate,6,[{file,"gen_server.erl"},{line,747}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [generic_switch_sup,<0.32.0>]
+    messages: []
+    links: [<0.52.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 2584
+    stack_size: 24
+    reductions: 2090
+  neighbours:
+2014-01-04 23:53:18 =SUPERVISOR REPORT====
+     Supervisor: {local,generic_switch_sup}
+     Context:    child_terminated
+     Reason:     {bad_return_value,ok}
+     Offender:   [{pid,<0.56.0>},{name,udpTransport},{mfargs,{generic_switch_transport_udp,start_link,[{5060,[binary]}]}},{restart_type,permanent},{shutdown,2000},{child_type,worker}]
+
+2014-01-04 23:53:20 =ERROR REPORT====
+** Generic server generic_switch_transport_udp terminating 
+** Last message in was {udp,#Port<0.3314>,{127,0,0,1},5070,<<"REGISTER sip:127.0.0.1 SIP/2.0\r\nVia: SIP/2.0/UDP 127.0.0.1:5070;rport;branch=z9hG4bK3vzGJk;nksip=4cMbdX\r\nFrom: <sip:bob@nksip>;tag=1ykgTO\r\nTo: <sip:bob@nksip>\r\nCall-ID: ElCtzsWm0GcgErmKKXLs3UIPm7W\r\nCSeq: 17381223 REGISTER\r\nMax-Forwards: 70\r\nContent-Length: 0\r\nContact: <sip:bob@127.0.0.1:5070>\r\nUser-Agent: NkSIP 0.1.0\r\n\r\n">>}
+** When Server state == {udpstate,#Port<0.3314>}
+** Reason for termination == 
+** {bad_return_value,ok}
+2014-01-04 23:53:20 =CRASH REPORT====
+  crasher:
+    initial call: generic_switch_transport_udp:init/1
+    pid: <0.57.0>
+    registered_name: generic_switch_transport_udp
+    exception exit: {{bad_return_value,ok},[{gen_server,terminate,6,[{file,"gen_server.erl"},{line,747}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [generic_switch_sup,<0.32.0>]
+    messages: []
+    links: [<0.52.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 2584
+    stack_size: 24
+    reductions: 2090
+  neighbours:
+2014-01-04 23:53:20 =SUPERVISOR REPORT====
+     Supervisor: {local,generic_switch_sup}
+     Context:    child_terminated
+     Reason:     {bad_return_value,ok}
+     Offender:   [{pid,<0.57.0>},{name,udpTransport},{mfargs,{generic_switch_transport_udp,start_link,[{5060,[binary]}]}},{restart_type,permanent},{shutdown,2000},{child_type,worker}]
+
+2014-01-04 23:53:24 =ERROR REPORT====
+** Generic server generic_switch_transport_udp terminating 
+** Last message in was {udp,#Port<0.3315>,{127,0,0,1},5070,<<"REGISTER sip:127.0.0.1 SIP/2.0\r\nVia: SIP/2.0/UDP 127.0.0.1:5070;rport;branch=z9hG4bK3vzGJk;nksip=4cMbdX\r\nFrom: <sip:bob@nksip>;tag=1ykgTO\r\nTo: <sip:bob@nksip>\r\nCall-ID: ElCtzsWm0GcgErmKKXLs3UIPm7W\r\nCSeq: 17381223 REGISTER\r\nMax-Forwards: 70\r\nContent-Length: 0\r\nContact: <sip:bob@127.0.0.1:5070>\r\nUser-Agent: NkSIP 0.1.0\r\n\r\n">>}
+** When Server state == {udpstate,#Port<0.3315>}
+** Reason for termination == 
+** {bad_return_value,ok}
+2014-01-04 23:53:24 =CRASH REPORT====
+  crasher:
+    initial call: generic_switch_transport_udp:init/1
+    pid: <0.58.0>
+    registered_name: generic_switch_transport_udp
+    exception exit: {{bad_return_value,ok},[{gen_server,terminate,6,[{file,"gen_server.erl"},{line,747}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [generic_switch_sup,<0.32.0>]
+    messages: []
+    links: [<0.52.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 2584
+    stack_size: 24
+    reductions: 2090
+  neighbours:
+2014-01-04 23:53:24 =SUPERVISOR REPORT====
+     Supervisor: {local,generic_switch_sup}
+     Context:    child_terminated
+     Reason:     {bad_return_value,ok}
+     Offender:   [{pid,<0.58.0>},{name,udpTransport},{mfargs,{generic_switch_transport_udp,start_link,[{5060,[binary]}]}},{restart_type,permanent},{shutdown,2000},{child_type,worker}]
+
+2014-01-04 23:53:28 =ERROR REPORT====
+** Generic server generic_switch_transport_udp terminating 
+** Last message in was {udp,#Port<0.3316>,{127,0,0,1},5070,<<"REGISTER sip:127.0.0.1 SIP/2.0\r\nVia: SIP/2.0/UDP 127.0.0.1:5070;rport;branch=z9hG4bK3vzGJk;nksip=4cMbdX\r\nFrom: <sip:bob@nksip>;tag=1ykgTO\r\nTo: <sip:bob@nksip>\r\nCall-ID: ElCtzsWm0GcgErmKKXLs3UIPm7W\r\nCSeq: 17381223 REGISTER\r\nMax-Forwards: 70\r\nContent-Length: 0\r\nContact: <sip:bob@127.0.0.1:5070>\r\nUser-Agent: NkSIP 0.1.0\r\n\r\n">>}
+** When Server state == {udpstate,#Port<0.3316>}
+** Reason for termination == 
+** {bad_return_value,ok}
+2014-01-04 23:53:28 =CRASH REPORT====
+  crasher:
+    initial call: generic_switch_transport_udp:init/1
+    pid: <0.59.0>
+    registered_name: generic_switch_transport_udp
+    exception exit: {{bad_return_value,ok},[{gen_server,terminate,6,[{file,"gen_server.erl"},{line,747}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [generic_switch_sup,<0.32.0>]
+    messages: []
+    links: [<0.52.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 2584
+    stack_size: 24
+    reductions: 2094
+  neighbours:
+2014-01-04 23:53:28 =SUPERVISOR REPORT====
+     Supervisor: {local,generic_switch_sup}
+     Context:    child_terminated
+     Reason:     {bad_return_value,ok}
+     Offender:   [{pid,<0.59.0>},{name,udpTransport},{mfargs,{generic_switch_transport_udp,start_link,[{5060,[binary]}]}},{restart_type,permanent},{shutdown,2000},{child_type,worker}]
+
+2014-01-04 23:53:32 =ERROR REPORT====
+** Generic server generic_switch_transport_udp terminating 
+** Last message in was {udp,#Port<0.3317>,{127,0,0,1},5070,<<"REGISTER sip:127.0.0.1 SIP/2.0\r\nVia: SIP/2.0/UDP 127.0.0.1:5070;rport;branch=z9hG4bK3vzGJk;nksip=4cMbdX\r\nFrom: <sip:bob@nksip>;tag=1ykgTO\r\nTo: <sip:bob@nksip>\r\nCall-ID: ElCtzsWm0GcgErmKKXLs3UIPm7W\r\nCSeq: 17381223 REGISTER\r\nMax-Forwards: 70\r\nContent-Length: 0\r\nContact: <sip:bob@127.0.0.1:5070>\r\nUser-Agent: NkSIP 0.1.0\r\n\r\n">>}
+** When Server state == {udpstate,#Port<0.3317>}
+** Reason for termination == 
+** {bad_return_value,ok}
+2014-01-04 23:53:32 =CRASH REPORT====
+  crasher:
+    initial call: generic_switch_transport_udp:init/1
+    pid: <0.60.0>
+    registered_name: generic_switch_transport_udp
+    exception exit: {{bad_return_value,ok},[{gen_server,terminate,6,[{file,"gen_server.erl"},{line,747}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [generic_switch_sup,<0.32.0>]
+    messages: []
+    links: [<0.52.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 2584
+    stack_size: 24
+    reductions: 2094
+  neighbours:
+2014-01-04 23:53:32 =SUPERVISOR REPORT====
+     Supervisor: {local,generic_switch_sup}
+     Context:    child_terminated
+     Reason:     {bad_return_value,ok}
+     Offender:   [{pid,<0.60.0>},{name,udpTransport},{mfargs,{generic_switch_transport_udp,start_link,[{5060,[binary]}]}},{restart_type,permanent},{shutdown,2000},{child_type,worker}]
+
+2014-01-04 23:53:36 =ERROR REPORT====
+** Generic server generic_switch_transport_udp terminating 
+** Last message in was {udp,#Port<0.3318>,{127,0,0,1},5070,<<"REGISTER sip:127.0.0.1 SIP/2.0\r\nVia: SIP/2.0/UDP 127.0.0.1:5070;rport;branch=z9hG4bK3vzGJk;nksip=4cMbdX\r\nFrom: <sip:bob@nksip>;tag=1ykgTO\r\nTo: <sip:bob@nksip>\r\nCall-ID: ElCtzsWm0GcgErmKKXLs3UIPm7W\r\nCSeq: 17381223 REGISTER\r\nMax-Forwards: 70\r\nContent-Length: 0\r\nContact: <sip:bob@127.0.0.1:5070>\r\nUser-Agent: NkSIP 0.1.0\r\n\r\n">>}
+** When Server state == {udpstate,#Port<0.3318>}
+** Reason for termination == 
+** {bad_return_value,ok}
+2014-01-04 23:53:36 =CRASH REPORT====
+  crasher:
+    initial call: generic_switch_transport_udp:init/1
+    pid: <0.61.0>
+    registered_name: generic_switch_transport_udp
+    exception exit: {{bad_return_value,ok},[{gen_server,terminate,6,[{file,"gen_server.erl"},{line,747}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [generic_switch_sup,<0.32.0>]
+    messages: []
+    links: [<0.52.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 2584
+    stack_size: 24
+    reductions: 2094
+  neighbours:
+2014-01-04 23:53:36 =SUPERVISOR REPORT====
+     Supervisor: {local,generic_switch_sup}
+     Context:    child_terminated
+     Reason:     {bad_return_value,ok}
+     Offender:   [{pid,<0.61.0>},{name,udpTransport},{mfargs,{generic_switch_transport_udp,start_link,[{5060,[binary]}]}},{restart_type,permanent},{shutdown,2000},{child_type,worker}]
+
+2014-01-04 23:53:40 =ERROR REPORT====
+** Generic server generic_switch_transport_udp terminating 
+** Last message in was {udp,#Port<0.3319>,{127,0,0,1},5070,<<"REGISTER sip:127.0.0.1 SIP/2.0\r\nVia: SIP/2.0/UDP 127.0.0.1:5070;rport;branch=z9hG4bK3vzGJk;nksip=4cMbdX\r\nFrom: <sip:bob@nksip>;tag=1ykgTO\r\nTo: <sip:bob@nksip>\r\nCall-ID: ElCtzsWm0GcgErmKKXLs3UIPm7W\r\nCSeq: 17381223 REGISTER\r\nMax-Forwards: 70\r\nContent-Length: 0\r\nContact: <sip:bob@127.0.0.1:5070>\r\nUser-Agent: NkSIP 0.1.0\r\n\r\n">>}
+** When Server state == {udpstate,#Port<0.3319>}
+** Reason for termination == 
+** {bad_return_value,ok}
+2014-01-04 23:53:40 =CRASH REPORT====
+  crasher:
+    initial call: generic_switch_transport_udp:init/1
+    pid: <0.62.0>
+    registered_name: generic_switch_transport_udp
+    exception exit: {{bad_return_value,ok},[{gen_server,terminate,6,[{file,"gen_server.erl"},{line,747}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [generic_switch_sup,<0.32.0>]
+    messages: []
+    links: [<0.52.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 2584
+    stack_size: 24
+    reductions: 2094
+  neighbours:
+2014-01-04 23:53:40 =SUPERVISOR REPORT====
+     Supervisor: {local,generic_switch_sup}
+     Context:    child_terminated
+     Reason:     {bad_return_value,ok}
+     Offender:   [{pid,<0.62.0>},{name,udpTransport},{mfargs,{generic_switch_transport_udp,start_link,[{5060,[binary]}]}},{restart_type,permanent},{shutdown,2000},{child_type,worker}]
+
+2014-01-04 23:53:44 =ERROR REPORT====
+** Generic server generic_switch_transport_udp terminating 
+** Last message in was {udp,#Port<0.3320>,{127,0,0,1},5070,<<"REGISTER sip:127.0.0.1 SIP/2.0\r\nVia: SIP/2.0/UDP 127.0.0.1:5070;rport;branch=z9hG4bK3vzGJk;nksip=4cMbdX\r\nFrom: <sip:bob@nksip>;tag=1ykgTO\r\nTo: <sip:bob@nksip>\r\nCall-ID: ElCtzsWm0GcgErmKKXLs3UIPm7W\r\nCSeq: 17381223 REGISTER\r\nMax-Forwards: 70\r\nContent-Length: 0\r\nContact: <sip:bob@127.0.0.1:5070>\r\nUser-Agent: NkSIP 0.1.0\r\n\r\n">>}
+** When Server state == {udpstate,#Port<0.3320>}
+** Reason for termination == 
+** {bad_return_value,ok}
+2014-01-04 23:53:44 =CRASH REPORT====
+  crasher:
+    initial call: generic_switch_transport_udp:init/1
+    pid: <0.63.0>
+    registered_name: generic_switch_transport_udp
+    exception exit: {{bad_return_value,ok},[{gen_server,terminate,6,[{file,"gen_server.erl"},{line,747}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [generic_switch_sup,<0.32.0>]
+    messages: []
+    links: [<0.52.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 2584
+    stack_size: 24
+    reductions: 2094
+  neighbours:
+2014-01-04 23:53:44 =SUPERVISOR REPORT====
+     Supervisor: {local,generic_switch_sup}
+     Context:    child_terminated
+     Reason:     {bad_return_value,ok}
+     Offender:   [{pid,<0.63.0>},{name,udpTransport},{mfargs,{generic_switch_transport_udp,start_link,[{5060,[binary]}]}},{restart_type,permanent},{shutdown,2000},{child_type,worker}]
+
+2014-01-04 23:53:48 =ERROR REPORT====
+** Generic server generic_switch_transport_udp terminating 
+** Last message in was {udp,#Port<0.3321>,{127,0,0,1},5070,<<"REGISTER sip:127.0.0.1 SIP/2.0\r\nVia: SIP/2.0/UDP 127.0.0.1:5070;rport;branch=z9hG4bK3vzGJk;nksip=4cMbdX\r\nFrom: <sip:bob@nksip>;tag=1ykgTO\r\nTo: <sip:bob@nksip>\r\nCall-ID: ElCtzsWm0GcgErmKKXLs3UIPm7W\r\nCSeq: 17381223 REGISTER\r\nMax-Forwards: 70\r\nContent-Length: 0\r\nContact: <sip:bob@127.0.0.1:5070>\r\nUser-Agent: NkSIP 0.1.0\r\n\r\n">>}
+** When Server state == {udpstate,#Port<0.3321>}
+** Reason for termination == 
+** {bad_return_value,ok}
+2014-01-04 23:53:48 =CRASH REPORT====
+  crasher:
+    initial call: generic_switch_transport_udp:init/1
+    pid: <0.64.0>
+    registered_name: generic_switch_transport_udp
+    exception exit: {{bad_return_value,ok},[{gen_server,terminate,6,[{file,"gen_server.erl"},{line,747}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [generic_switch_sup,<0.32.0>]
+    messages: []
+    links: [<0.52.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 2584
+    stack_size: 24
+    reductions: 2094
+  neighbours:
+2014-01-04 23:53:48 =SUPERVISOR REPORT====
+     Supervisor: {local,generic_switch_sup}
+     Context:    child_terminated
+     Reason:     {bad_return_value,ok}
+     Offender:   [{pid,<0.64.0>},{name,udpTransport},{mfargs,{generic_switch_transport_udp,start_link,[{5060,[binary]}]}},{restart_type,permanent},{shutdown,2000},{child_type,worker}]
+
+2014-01-04 23:53:49 =ERROR REPORT====
+** Generic server generic_switch_transport_udp terminating 
+** Last message in was {udp,#Port<0.3322>,{127,0,0,1},5080,<<"REGISTER sip:127.0.0.1 SIP/2.0\r\nVia: SIP/2.0/UDP 127.0.0.1:5080;rport;branch=z9hG4bK43Okro;nksip=43wtxN\r\nFrom: <sip:alice@nksip>;tag=3eJyTd\r\nTo: <sip:alice@nksip>\r\nCall-ID: Z69yIk9GT9ZyG3BhCXQjccBvvnr\r\nCSeq: 17381224 REGISTER\r\nMax-Forwards: 70\r\nContent-Length: 0\r\nContact: <sip:alice@127.0.0.1:5080>\r\nUser-Agent: NkSIP 0.1.0\r\n\r\n">>}
+** When Server state == {udpstate,#Port<0.3322>}
+** Reason for termination == 
+** {bad_return_value,ok}
+2014-01-04 23:53:49 =CRASH REPORT====
+  crasher:
+    initial call: generic_switch_transport_udp:init/1
+    pid: <0.65.0>
+    registered_name: generic_switch_transport_udp
+    exception exit: {{bad_return_value,ok},[{gen_server,terminate,6,[{file,"gen_server.erl"},{line,747}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [generic_switch_sup,<0.32.0>]
+    messages: []
+    links: [<0.52.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 2584
+    stack_size: 24
+    reductions: 2125
+  neighbours:
+2014-01-04 23:53:49 =SUPERVISOR REPORT====
+     Supervisor: {local,generic_switch_sup}
+     Context:    child_terminated
+     Reason:     {bad_return_value,ok}
+     Offender:   [{pid,<0.65.0>},{name,udpTransport},{mfargs,{generic_switch_transport_udp,start_link,[{5060,[binary]}]}},{restart_type,permanent},{shutdown,2000},{child_type,worker}]
+
+2014-01-04 23:53:49 =ERROR REPORT====
+** Generic server generic_switch_transport_udp terminating 
+** Last message in was {udp,#Port<0.3323>,{127,0,0,1},5080,<<"REGISTER sip:127.0.0.1 SIP/2.0\r\nVia: SIP/2.0/UDP 127.0.0.1:5080;rport;branch=z9hG4bK43Okro;nksip=43wtxN\r\nFrom: <sip:alice@nksip>;tag=3eJyTd\r\nTo: <sip:alice@nksip>\r\nCall-ID: Z69yIk9GT9ZyG3BhCXQjccBvvnr\r\nCSeq: 17381224 REGISTER\r\nMax-Forwards: 70\r\nContent-Length: 0\r\nContact: <sip:alice@127.0.0.1:5080>\r\nUser-Agent: NkSIP 0.1.0\r\n\r\n">>}
+** When Server state == {udpstate,#Port<0.3323>}
+** Reason for termination == 
+** {bad_return_value,ok}
+2014-01-04 23:53:49 =CRASH REPORT====
+  crasher:
+    initial call: generic_switch_transport_udp:init/1
+    pid: <0.66.0>
+    registered_name: generic_switch_transport_udp
+    exception exit: {{bad_return_value,ok},[{gen_server,terminate,6,[{file,"gen_server.erl"},{line,747}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [generic_switch_sup,<0.32.0>]
+    messages: []
+    links: [<0.52.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 2584
+    stack_size: 24
+    reductions: 2125
+  neighbours:
+2014-01-04 23:53:49 =SUPERVISOR REPORT====
+     Supervisor: {local,generic_switch_sup}
+     Context:    child_terminated
+     Reason:     {bad_return_value,ok}
+     Offender:   [{pid,<0.66.0>},{name,udpTransport},{mfargs,{generic_switch_transport_udp,start_link,[{5060,[binary]}]}},{restart_type,permanent},{shutdown,2000},{child_type,worker}]
+
+2014-01-04 23:53:50 =ERROR REPORT====
+** Generic server generic_switch_transport_udp terminating 
+** Last message in was {udp,#Port<0.3324>,{127,0,0,1},5080,<<"REGISTER sip:127.0.0.1 SIP/2.0\r\nVia: SIP/2.0/UDP 127.0.0.1:5080;rport;branch=z9hG4bK43Okro;nksip=43wtxN\r\nFrom: <sip:alice@nksip>;tag=3eJyTd\r\nTo: <sip:alice@nksip>\r\nCall-ID: Z69yIk9GT9ZyG3BhCXQjccBvvnr\r\nCSeq: 17381224 REGISTER\r\nMax-Forwards: 70\r\nContent-Length: 0\r\nContact: <sip:alice@127.0.0.1:5080>\r\nUser-Agent: NkSIP 0.1.0\r\n\r\n">>}
+** When Server state == {udpstate,#Port<0.3324>}
+** Reason for termination == 
+** {bad_return_value,ok}
+2014-01-04 23:53:50 =CRASH REPORT====
+  crasher:
+    initial call: generic_switch_transport_udp:init/1
+    pid: <0.67.0>
+    registered_name: generic_switch_transport_udp
+    exception exit: {{bad_return_value,ok},[{gen_server,terminate,6,[{file,"gen_server.erl"},{line,747}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [generic_switch_sup,<0.32.0>]
+    messages: []
+    links: [<0.52.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 2584
+    stack_size: 24
+    reductions: 2125
+  neighbours:
+2014-01-04 23:53:50 =SUPERVISOR REPORT====
+     Supervisor: {local,generic_switch_sup}
+     Context:    child_terminated
+     Reason:     {bad_return_value,ok}
+     Offender:   [{pid,<0.67.0>},{name,udpTransport},{mfargs,{generic_switch_transport_udp,start_link,[{5060,[binary]}]}},{restart_type,permanent},{shutdown,2000},{child_type,worker}]
+
+2014-01-04 23:53:50 =SUPERVISOR REPORT====
+     Supervisor: {local,generic_switch_sup}
+     Context:    shutdown
+     Reason:     reached_max_restart_intensity
+     Offender:   [{pid,<0.67.0>},{name,udpTransport},{mfargs,{generic_switch_transport_udp,start_link,[{5060,[binary]}]}},{restart_type,permanent},{shutdown,2000},{child_type,worker}]
+
+2014-01-04 23:54:08 =ERROR REPORT====
+** Generic server generic_switch_transport_udp terminating 
+** Last message in was {udp,#Port<0.3262>,{127,0,0,1},5080,<<"REGISTER sip:127.0.0.1 SIP/2.0\r\nVia: SIP/2.0/UDP 127.0.0.1:5080;rport;branch=z9hG4bK43Okro;nksip=43wtxN\r\nFrom: <sip:alice@nksip>;tag=3eJyTd\r\nTo: <sip:alice@nksip>\r\nCall-ID: Z69yIk9GT9ZyG3BhCXQjccBvvnr\r\nCSeq: 17381224 REGISTER\r\nMax-Forwards: 70\r\nContent-Length: 0\r\nContact: <sip:alice@127.0.0.1:5080>\r\nUser-Agent: NkSIP 0.1.0\r\n\r\n">>}
+** When Server state == {udpstate,#Port<0.3262>}
+** Reason for termination == 
+** {bad_return_value,ok}
+2014-01-04 23:54:08 =CRASH REPORT====
+  crasher:
+    initial call: generic_switch_transport_udp:init/1
+    pid: <0.53.0>
+    registered_name: generic_switch_transport_udp
+    exception exit: {{bad_return_value,ok},[{gen_server,terminate,6,[{file,"gen_server.erl"},{line,747}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,227}]}]}
+    ancestors: [generic_switch_sup,<0.32.0>]
+    messages: []
+    links: [<0.52.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 2584
+    stack_size: 24
+    reductions: 2138
+  neighbours:
+2014-01-04 23:54:08 =SUPERVISOR REPORT====
+     Supervisor: {local,generic_switch_sup}
+     Context:    child_terminated
+     Reason:     {bad_return_value,ok}
+     Offender:   [{pid,<0.53.0>},{name,udpTransport},{mfargs,{generic_switch_transport_udp,start_link,[{5060,[binary]}]}},{restart_type,permanent},{shutdown,2000},{child_type,worker}]
+
