@@ -26,10 +26,12 @@ terminate(_Reason, State) ->
 	lager:warning("?MODULE terminatedi while in ~p", [State]),
 	ok.
 
-handle_call({route_generic_message, _GenMSG}, _From, _DialogAA) ->
-	case dict:find(smt) of
+handle_call({route_generic_message, _GenMSG=#generic_msg(caller=Caller,
+	callee=Callee)}, _From, DialogAA) ->
+
+	case dict:find(Caller, DialogAA) of
 		% dialog found
-		{ok, _Value} ->
+		{ok, CallerValue} ->
 			ok;
 		% new dialog lets create a new one
 		error ->
