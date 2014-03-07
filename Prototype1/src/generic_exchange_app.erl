@@ -11,7 +11,8 @@
 
 
 start(_StartType, _StartArgs) ->
-    generic_exchange_sup:start_link().
+    %generic_exchange_sup:start_link().
+    ok.
 
 start() ->
     generic_exchange_sup:start_link().

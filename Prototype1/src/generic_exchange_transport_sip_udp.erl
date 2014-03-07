@@ -8,6 +8,10 @@
 		socket
 	}
 ).
+-export([start_link/1, code_change/3, init/1, handle_call/3, handle_cast/2]).
+-export([handle_info/2, terminate/2]).
+-export([send/3]).
+
 
 %% API
 
@@ -34,6 +38,9 @@ init({Port, Specs}) ->
 
 code_change(_Old, _State, _Extra) ->
 	lager:warning("hotcode swap not supported").
+
+handle_call(_Msg, _From, _State) ->
+	lager:warning("synchronous calls are not supported at all").
 
 handle_cast({send, {Packet, Ip, Port}}, State=#udpstate{socket=Sock}) ->
 	lager:info("message send : ~p ~p", [Ip, Port]),

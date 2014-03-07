@@ -5,6 +5,7 @@
               {applications,[kernel,stdlib]},
               {mod,{generic_exchange_app,[]}},
               {env,[]},
-              {modules,[generic_exchange_app,generic_exchange_sup,
+              {modules,[generic_dialog_fsm,generic_exchange_app,
+                        generic_exchange_dialog_router,generic_exchange_sup,
                         generic_exchange_transport_sip_udp,
                         generic_exchange_transport_sup]}]}.

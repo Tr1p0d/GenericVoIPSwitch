@@ -10,7 +10,7 @@ app: deps
 	
 	
 run:
-	erl -pa generic_switch/ebin deps/lager/ebin/ deps/goldrush/ebin \
+	erl -pa ebin deps/lager/ebin/ deps/goldrush/ebin \
 		deps/nksip/ebin deps/client_database/ebin
 
 doc:
