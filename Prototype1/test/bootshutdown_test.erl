@@ -1,5 +1,6 @@
--module(bootshutdown_test.erl).
--include("eunit/include/eunit.hrl").
+-module(bootshutdown_test).
+
+-include_lib("eunit/include/eunit.hrl").
 
 
 boot_test() ->

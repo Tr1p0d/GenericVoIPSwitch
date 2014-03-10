@@ -15,4 +15,7 @@ run:
 
 doc:
 
+test:
+	@$(REBAR) eunit skip_deps=true
+
 

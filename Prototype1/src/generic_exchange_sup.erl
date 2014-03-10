@@ -29,7 +29,7 @@ init([]) ->
 		{
 			generic_exchange_transport_sup,
 			start_link,
-			[]
+			[ets:new(dialogETS, {set, protected})]
 		},
 		permanent,
 		2000,
