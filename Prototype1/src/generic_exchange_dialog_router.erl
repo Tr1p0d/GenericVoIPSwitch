@@ -27,26 +27,38 @@ terminate(_Reason, State) ->
 	lager:warning("?MODULE terminatedi while in ~p", [State]),
 	ok.
 
-handle_call({route_generic_message, _GenMSG=#generic_msg{caller=Caller, callee=Callee}}, _From, DialogETS) ->
+handle_call({route_generic_message, GenMSG=#generic_msg{caller=Caller, callee=Callee}}, _From, DialogETS) ->
 
 	Result = case lookup_dialogs(Caller, Callee, DialogETS) of
 		% dialog found
-		{ok, {CallerPart, CallerDialog}, {CalleePart, CalleeDialog}} ->
-			{ok, routed};
+		{ok, {_CallerPart, CallerDialog}, {_CalleePart, CalleeDialog}} ->
+			case {gen_fsm:sync_send_event(CallerDialog, {fromTU, GenMSG}),
+			gen_fsm:sync_send_event(CalleeDialog, {fromRP, GenMSG})} of
 
+				{ok, ok} -> 
+					{ok, transmitted};
+
+				_Err ->
+					{error, not_transmitted}
+			end;
 		% new dialog lets create a new one
 		{error, not_found} ->
 			{_,DialogID, CallerPartID} = Caller,
 			{_,DialogID, CalleePartID} = Callee,
-			case {add_dialog(DialogID, CallerPartID, <<"uniqueCallerTrans">>, DialogETS) 
-				, add_dialog(DialogID, CalleePartID, <<"uniqueCallerTrans2">>, DialogETS) } of
-				
-				{true, true} ->
+			
+			case {generic_dialog_fsm:start_link(_From),
+			generic_dialog_fsm:start_link(_From)} of
+
+				% in case we spawned our dialogs correctly
+				{{ok, CallerDialogPID}, {ok, CalleeDialogPID}} ->
+				  	add_dialog(DialogID, CallerPartID, CallerDialogPID, DialogETS),
+				  	add_dialog(DialogID, CalleePartID, CalleeDialogPID, DialogETS),
 					{ok, created};
 
 				_Err -> 
 					_Err
 			end;
+
 		% serious error, discrepancy found
 		{error, Error} ->
 			{error, Error}

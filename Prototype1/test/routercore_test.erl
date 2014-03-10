@@ -36,7 +36,7 @@ dialog_created_test() ->
 		specificProtocol = [<<"not_important_for_now">>]
 	},
 
-	?assertEqual({ok, routed}, generic_exchange_dialog_router:route_message(MCall)).
+	?assertEqual({ok, transmitted}, generic_exchange_dialog_router:route_message(MCall)).
 
 
 
