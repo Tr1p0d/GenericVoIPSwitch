@@ -1,7 +1,7 @@
 -module(generic_exchange_dialog_router).
 -behaviour(gen_server).
 
--export([start_link/1, init/1, code_change/3, terminate/2]).
+-export([start_link/2, init/1, code_change/3, terminate/2]).
 -export([handle_info/2, handle_cast/2, handle_call/3]).
 
 -export([route_message/1, lookup_dialogs/3]).
@@ -14,11 +14,11 @@
 route_message(GenericMSG) ->
 	gen_server:call( ?MODULE, {route_generic_message, GenericMSG}).
 
-start_link(DialogETS) ->
-	gen_server:start_link({local, generic_exchange_dialog_router}, ?MODULE, [DialogETS], []).
+start_link(DialogETS, AssociationAA) ->
+	gen_server:start_link({local, generic_exchange_dialog_router}, ?MODULE, [DialogETS, AssociationAA], []).
 
-init([DialogETS]) ->
-	{ok,DialogETS}.
+init([DialogETS, AssociationAA]) ->
+	{ok,{DialogETS, AssociationAA}}.
 
 code_change(_Old, State, _Extra)->
 	{ok, State}.
@@ -27,7 +27,7 @@ terminate(_Reason, State) ->
 	lager:warning("?MODULE terminatedi while in ~p", [State]),
 	ok.
 
-handle_call({route_generic_message, GenMSG=#generic_msg{caller=Caller, callee=Callee}}, _From, DialogETS) ->
+handle_call({route_generic_message, GenMSG=#generic_msg{caller=Caller, callee=Callee}}, _From, {DialogETS, ASsociationAA}) ->
 
 	Result = case lookup_dialogs(Caller, Callee, DialogETS) of
 		% dialog found
@@ -64,7 +64,7 @@ handle_call({route_generic_message, GenMSG=#generic_msg{caller=Caller, callee=Ca
 			{error, Error}
 	end,
 
-	{reply, Result, DialogETS};
+	{reply, Result, {DialogETS, ASsociationAA}};
 
 handle_call(_Msg, _From, _State) ->
 	lager:warning('?MODULE received an invalid synchronous message ~p', [_Msg]),

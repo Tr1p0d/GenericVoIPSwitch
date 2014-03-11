@@ -9,7 +9,8 @@
 -include("../include/generic_exchange.hrl").
 
 
-idle({fromTU, _MSG=#generic_msg{type=make_call}}, _From, _Destination) ->
+idle({fromTU, MSG=#generic_msg{type=make_call}}, _From, _Destination) ->
+	gen_server:reply(_Destination, {route_message, route(MSG)}),
 	{reply, ok, dialed, _Destination};
 
 idle({fromRP, _MSG=#generic_msg{type=make_call}}, _From, _Destination) ->
@@ -28,7 +29,7 @@ ringing(_Msg, _From, _Dest) ->
 %teardown() ->
 
 start_link(Destination) ->
-	gen_fsm:start_link(?MODULE, [Destination], []).
+	gen_fsm:start_link(?MODULE, Destination, []).
 
 init(Destination) ->
 	{ok, idle, Destination}.	
@@ -46,10 +47,31 @@ handle_info(_Event, StateName, StateData)->
 
 handle_sync_event(_Event, _From, StateName, StateData) ->
 	lager:warning('received all sync state event'),
-	{reply, ok, StateName, StateData}.
+	{reply, StateName, StateName, StateData}.
 
 terminate(_Reason, StateName, _StateData) ->
 	lager:warning("?MODULE terminatedi while in ~p", [StateName]),
 	ok.
 
+route(_MSG=#generic_msg{      
+	type             = make_call,
+	target 		     = Target,
+	caller 		     = Caller,
+	callee 		     = Callee,
+	upstreamRoute  	 = USRoute,
+	downstreamRoute  = DSRoute,
+	routeToRecord 	 = R2R,
+	sequenceNum	     = SeqNum,
+	specificProtocol = SpecProt }) ->
+	
+	#generic_msg{
+		type             = make_call,
+		target 		     = Target,
+		caller 		     = Caller,
+		callee 		     = Callee,
+		upstreamRoute  	 = USRoute,
+		downstreamRoute  = DSRoute ++ [<<"10.10.10.10">>],
+		routeToRecord 	 = R2R,
+		sequenceNum	     = SeqNum,
+		specificProtocol = SpecProt }.
 
