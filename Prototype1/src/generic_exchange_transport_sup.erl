@@ -27,14 +27,14 @@ SIPUDPTransportSpecs =
 	{
 		udpTransport,
 		{
-			generic_exchange_transport_sip_udp,
+			generic_exchange_sip_transport,
 			start_link,
 			[{5060, [binary]}]
 		},
 		permanent,
 		2000,
 		worker,
-		[generic_exchange_transport_sip_udp]
+		[generic_exchange_sip_transport]
 	},
 
     {ok, { {one_for_one, 5, 10}, [

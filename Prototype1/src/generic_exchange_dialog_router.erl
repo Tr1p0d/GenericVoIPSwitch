@@ -10,12 +10,11 @@
 
 %% an entry point into generic core
 %% should accept any generic message
-
 route_message(GenericMSG) ->
 	gen_server:call( ?MODULE, {route_generic_message, GenericMSG}).
 
 start_link(DialogETS, AssociationAA) ->
-	gen_server:start_link({local, generic_exchange_dialog_router}, ?MODULE, [DialogETS, AssociationAA], []).
+	gen_server:start_link({local, ?MODULE}, ?MODULE, [DialogETS, AssociationAA], []).
 
 init([DialogETS, AssociationAA]) ->
 	{ok,{DialogETS, AssociationAA}}.
@@ -53,7 +52,16 @@ handle_call({route_generic_message, GenMSG=#generic_msg{caller=Caller, callee=Ca
 				{{ok, CallerDialogPID}, {ok, CalleeDialogPID}} ->
 				  	add_dialog(DialogID, CallerPartID, CallerDialogPID, DialogETS),
 				  	add_dialog(DialogID, CalleePartID, CalleeDialogPID, DialogETS),
-					{ok, created};
+
+					case {gen_fsm:sync_send_event(CallerDialogPID, {fromTU, GenMSG}),
+					gen_fsm:sync_send_event(CalleeDialogPID, {fromRP, GenMSG})} of
+
+						{ok, ok} -> 
+							{ok, transmitted};
+
+						_Err ->
+							{error, not_transmitted}
+					end;
 
 				_Err -> 
 					_Err

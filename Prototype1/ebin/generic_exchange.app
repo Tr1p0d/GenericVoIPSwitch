@@ -6,6 +6,10 @@
               {mod,{generic_exchange_app,[]}},
               {env,[]},
               {modules,[generic_dialog_fsm,generic_exchange_app,
-                        generic_exchange_dialog_router,generic_exchange_sup,
+                        generic_exchange_dialog_router,
+                        generic_exchange_gateway_sup,
+                        generic_exchange_sip_gateway,
+                        generic_exchange_sip_generic,
+                        generic_exchange_sip_transport,generic_exchange_sup,
                         generic_exchange_transport_sip_udp,
-                        generic_exchange_transport_sup]}]}.
+                        generic_exchange_transport_sup,simple_sip_client]}]}.

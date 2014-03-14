@@ -9,10 +9,23 @@
 -include("../include/generic_exchange.hrl").
 
 
+
+%% ------------ IDLE -> IDLE TRANSITION --- ASSOCIATION
+idle({fromRP, MSG=#generic_msg{type=associate}}, _From, _Destination) ->
+	gen_server:reply(_Destination, {route_message, route(MSG)}),
+	{reply, ok, dialed, _Destination};
+
+%% ------------ IDLE -> IDLE TRANSITION --- ASSOCIATION
+idle({fromTU, MSG=#generic_msg{type=associate}}, _From, _Destination) ->
+	gen_server:reply(_Destination, {route_message, route(MSG)}),
+	{reply, ok, dialed, _Destination};
+
+%% ------------ IDLE -> DIALED TRANSITION
 idle({fromTU, MSG=#generic_msg{type=make_call}}, _From, _Destination) ->
 	gen_server:reply(_Destination, {route_message, route(MSG)}),
 	{reply, ok, dialed, _Destination};
 
+%% ------------ IDLE -> RINGING TRANSITION
 idle({fromRP, _MSG=#generic_msg{type=make_call}}, _From, _Destination) ->
 	{reply, ok, ringing, _Destination}.
 
@@ -21,12 +34,6 @@ dialed(_Msg, _From, _Dest) ->
 
 ringing(_Msg, _From, _Dest) ->
 	ok.
-
-%ringback() ->
-%
-%incall() ->
-%	
-%teardown() ->
 
 start_link(Destination) ->
 	gen_fsm:start_link(?MODULE, Destination, []).
@@ -73,5 +80,28 @@ route(_MSG=#generic_msg{
 		downstreamRoute  = DSRoute ++ [<<"10.10.10.10">>],
 		routeToRecord 	 = R2R,
 		sequenceNum	     = SeqNum,
-		specificProtocol = SpecProt }.
+		specificProtocol = SpecProt };
 
+
+%% successfull registration
+route(_MSG=#generic_msg{      
+	type             = associate,
+	target 		     = Target,
+	caller 		     = Caller,
+	callee 		     = Callee,
+	upstreamRoute  	 = USRoute,
+	downstreamRoute  = DSRoute,
+	routeToRecord 	 = R2R,
+	sequenceNum	     = SeqNum,
+	specificProtocol = SpecProt }) ->
+	
+	#generic_msg{
+		type             = accept,
+		target 		     = Target,
+		caller 		     = Caller,
+		callee 		     = Callee,
+		upstreamRoute  	 = USRoute,
+		downstreamRoute  = DSRoute ++ [<<"10.10.10.10">>],
+		routeToRecord 	 = R2R,
+		sequenceNum	     = SeqNum,
+		specificProtocol = SpecProt }.
