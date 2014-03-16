@@ -38,6 +38,7 @@
 	routeToRecord 	  :: route_path(),
 	sequenceNum	  :: integer() ,
 	specificProtocol  :: any(),
-	timeToLive 		:: nonegativeinteger()
+	timeToLive 		:: nonegativeinteger(),
+	receivedOn		:: term()
 }).
 

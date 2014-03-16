@@ -1,45 +1,59 @@
 -module(generic_dialog_fsm).
 -behaviour(gen_fsm).
 
--export([start_link/1, init/1, code_change/4, handle_event/3, handle_info/3]).
+-export([start_link/2, init/1, code_change/4, handle_event/3, handle_info/3]).
 -export([handle_sync_event/4, terminate/3]).
 
--export([idle/3, ringing/3, dialed/3]).
+-export([idle/3
+		%,ringing/3, dialed/3
+	]).
 
 -include("../include/generic_exchange.hrl").
 
 
+-record(dialog_state, {
+		specific_gateway		:: pid(),
+		associationAA			:: term()
+	}).
+
 
 %% ------------ IDLE -> IDLE TRANSITION --- ASSOCIATION
-idle({fromRP, MSG=#generic_msg{type=associate}}, _From, _Destination) ->
-	gen_server:reply(_Destination, {route_message, route(MSG)}),
-	{reply, ok, dialed, _Destination};
+idle({fromRP, MSG=#generic_msg{type=associate, callee={Identifier, _, _},
+	receivedOn=RecvOn}}, _From, State=#dialog_state{ specific_gateway=PID,
+	associationAA=AAA }) ->
+
+	UpdatedAAA = addAssociates(Identifier, RecvOn, AAA),
+	gen_server:call(PID, {transmit_generic_msg, route(MSG, RecvOn, UpdatedAAA)}),
+	{reply, ok, idle, State#dialog_state{associationAA=UpdatedAAA}};
 
 %% ------------ IDLE -> IDLE TRANSITION --- ASSOCIATION
-idle({fromTU, MSG=#generic_msg{type=associate}}, _From, _Destination) ->
-	gen_server:reply(_Destination, {route_message, route(MSG)}),
-	{reply, ok, dialed, _Destination};
+idle({fromTU, _MSG=#generic_msg{type=associate}}, _From, State) ->
+	{reply, ok, idle, State};
 
 %% ------------ IDLE -> DIALED TRANSITION
-idle({fromTU, MSG=#generic_msg{type=make_call}}, _From, _Destination) ->
-	gen_server:reply(_Destination, {route_message, route(MSG)}),
-	{reply, ok, dialed, _Destination};
+idle({fromTU, MSG=#generic_msg{type=make_call, callee={Identifier, _, _},
+	receivedOn=RecvOn}}, _From, State=#dialog_state{ specific_gateway=PID,
+	associationAA=_AAA }) ->
+
+	{reply, ok, dialed, State};
 
 %% ------------ IDLE -> RINGING TRANSITION
-idle({fromRP, _MSG=#generic_msg{type=make_call}}, _From, _Destination) ->
-	{reply, ok, ringing, _Destination}.
+idle({fromRP, MSG=#generic_msg{type=make_call, callee={Identifier, _, _},
+	receivedOn=RecvOn}}, _From, State=#dialog_state{ specific_gateway=PID,
+	associationAA=_AAA }) ->
 
-dialed(_Msg, _From, _Dest) ->
-	ok.
+	gen_server:call(PID, {transmit_generic_msg, route(MSG, RecvOn, _AAA)}),
 
-ringing(_Msg, _From, _Dest) ->
-	ok.
+	{reply, ok, ringing, State#dialog_state{associationAA=_AAA}}.
 
-start_link(Destination) ->
-	gen_fsm:start_link(?MODULE, Destination, []).
 
-init(Destination) ->
-	{ok, idle, Destination}.	
+
+
+start_link(Destination, AssociationAA) ->
+	gen_fsm:start_link(?MODULE, [Destination, AssociationAA], []).
+
+init([{PID, _Reference}, AssociationAA]) ->
+	{ok, idle, #dialog_state{specific_gateway=PID, associationAA=AssociationAA}}.	
 
 code_change(_Old, StateName, StateData, _Extra)->
 	{ok, StateName, StateData}.
@@ -57,7 +71,7 @@ handle_sync_event(_Event, _From, StateName, StateData) ->
 	{reply, StateName, StateName, StateData}.
 
 terminate(_Reason, StateName, _StateData) ->
-	lager:warning("?MODULE terminatedi while in ~p", [StateName]),
+	lager:warning("~p terminated because ~p", [?MODULE, _Reason]),
 	ok.
 
 route(_MSG=#generic_msg{      
@@ -69,19 +83,26 @@ route(_MSG=#generic_msg{
 	downstreamRoute  = DSRoute,
 	routeToRecord 	 = R2R,
 	sequenceNum	     = SeqNum,
-	specificProtocol = SpecProt }) ->
-	
-	#generic_msg{
-		type             = make_call,
-		target 		     = Target,
-		caller 		     = Caller,
-		callee 		     = Callee,
-		upstreamRoute  	 = USRoute,
-		downstreamRoute  = DSRoute ++ [<<"10.10.10.10">>],
-		routeToRecord 	 = R2R,
-		sequenceNum	     = SeqNum,
-		specificProtocol = SpecProt };
+	timeToLive		 = TTL,
+	specificProtocol = SpecProt }, {IP, Port}, AAA) ->
 
+	case generic_exchange_networking:resolve_target(Target, AAA) of
+		{ok, IP, RemotePort} ->
+			{#generic_msg{
+				type             = make_call,
+				target 		     = Target,
+				caller 		     = Caller,
+				callee 		     = Callee,
+				upstreamRoute  	 = USRoute,
+				downstreamRoute  = [{<<"127.0.0.1">>, 5060}|DSRoute],
+				routeToRecord 	 = R2R,
+				sequenceNum	     = SeqNum,
+				timeToLive		 = TTL - 1,
+				specificProtocol = SpecProt }, IP, RemotePort};
+
+		{error, _Reason} ->
+			{#generic_msg{}, IP, Port}
+	end;
 
 %% successfull registration
 route(_MSG=#generic_msg{      
@@ -93,15 +114,23 @@ route(_MSG=#generic_msg{
 	downstreamRoute  = DSRoute,
 	routeToRecord 	 = R2R,
 	sequenceNum	     = SeqNum,
-	specificProtocol = SpecProt }) ->
-	
-	#generic_msg{
+	timeToLive		 = TTL,
+	specificProtocol = SpecProt }, {IP, Port}, AAA) ->
+
+	{#generic_msg{
 		type             = accept,
 		target 		     = Target,
 		caller 		     = Caller,
 		callee 		     = Callee,
 		upstreamRoute  	 = USRoute,
-		downstreamRoute  = DSRoute ++ [<<"10.10.10.10">>],
+		downstreamRoute  = [{<<"127.0.0.1">>, 5060}|DSRoute],
 		routeToRecord 	 = R2R,
 		sequenceNum	     = SeqNum,
-		specificProtocol = SpecProt }.
+		timeToLive		 = TTL - 1,
+		specificProtocol = SpecProt }, IP, Port}.
+
+
+addAssociates(Key, Item, AA) ->
+	Dict = dict:append(Key, Item, AA),
+	Dict.
+

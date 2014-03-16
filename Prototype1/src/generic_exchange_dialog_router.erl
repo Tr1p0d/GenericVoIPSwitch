@@ -28,14 +28,16 @@ terminate(_Reason, State) ->
 
 handle_call({route_generic_message, GenMSG=#generic_msg{caller=Caller, callee=Callee}}, _From, {DialogETS, ASsociationAA}) ->
 
-	Result = case lookup_dialogs(Caller, Callee, DialogETS) of
-		% dialog found
+	case lookup_dialogs(Caller, Callee, DialogETS) of
+		% dialog found, we will be able to retransmitt our request so respond
+		% now
 		{ok, {_CallerPart, CallerDialog}, {_CalleePart, CalleeDialog}} ->
+			gen_fsm:reply(_From, {ok, transmitted}),
 			case {gen_fsm:sync_send_event(CallerDialog, {fromTU, GenMSG}),
 			gen_fsm:sync_send_event(CalleeDialog, {fromRP, GenMSG})} of
 
 				{ok, ok} -> 
-					{ok, transmitted};
+					{ok};
 
 				_Err ->
 					{error, not_transmitted}
@@ -45,19 +47,21 @@ handle_call({route_generic_message, GenMSG=#generic_msg{caller=Caller, callee=Ca
 			{_,DialogID, CallerPartID} = Caller,
 			{_,DialogID, CalleePartID} = Callee,
 			
-			case {generic_dialog_fsm:start_link(_From),
-			generic_dialog_fsm:start_link(_From)} of
+			case {generic_dialog_fsm:start_link(_From, ASsociationAA),
+			generic_dialog_fsm:start_link(_From, ASsociationAA)} of
 
 				% in case we spawned our dialogs correctly
 				{{ok, CallerDialogPID}, {ok, CalleeDialogPID}} ->
 				  	add_dialog(DialogID, CallerPartID, CallerDialogPID, DialogETS),
 				  	add_dialog(DialogID, CalleePartID, CalleeDialogPID, DialogETS),
 
+					gen_fsm:reply(_From, {ok, transmitted}),
+
 					case {gen_fsm:sync_send_event(CallerDialogPID, {fromTU, GenMSG}),
 					gen_fsm:sync_send_event(CalleeDialogPID, {fromRP, GenMSG})} of
 
 						{ok, ok} -> 
-							{ok, transmitted};
+							{ok};
 
 						_Err ->
 							{error, not_transmitted}
@@ -72,7 +76,7 @@ handle_call({route_generic_message, GenMSG=#generic_msg{caller=Caller, callee=Ca
 			{error, Error}
 	end,
 
-	{reply, Result, {DialogETS, ASsociationAA}};
+	{noreply, {DialogETS, ASsociationAA}};
 
 handle_call(_Msg, _From, _State) ->
 	lager:warning('?MODULE received an invalid synchronous message ~p', [_Msg]),
@@ -107,4 +111,6 @@ lookup_dialogs({_CallerClientID, CallerDialogID, CallerPartID},
 	end.	
 
 add_dialog(DialogID, CallerPartID, Transaction, DialogETS) ->
-	ets:insert(DialogETS, {DialogID, CallerPartID, Transaction}).
+	ets:insert(DialogETS, {DialogID, CallerPartID, Transaction}),
+	lager:notice("DialogTable content : ~p",
+		[ets:match(DialogETS, {'$1', '$2','$3'})]).

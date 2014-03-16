@@ -1,4 +1,4 @@
--module(generic_exchange_sup).
+-module(generic_exchange_core_sup).
 
 -behaviour(supervisor).
 
@@ -18,60 +18,25 @@
 start_link() ->
     supervisor:start_link({local, ?MODULE}, ?MODULE, []).
 
-
-
 %% ===================================================================
 %% Supervisor callbacks
 %% ===================================================================
-
 init([]) ->
-	TransportSupervisor =
+
+DialogRouter = 
 	{
-		transportSup,
+		dialogRouter,
 		{
-			generic_exchange_transport_sup,
+			generic_exchange_dialog_router,
 			start_link,
-			[]
+			[ets:new(dialogTable,[public, bag]), dict:new()]
 		},
 		permanent,
 		2000,
-		supervisor,
-		[generic_exchange_transport_sup]
+		worker,
+		[generic_exchange_dialog_router]
 	},
 
-	GatewaySupervisor =
-	{
-		gatewaySup,
-		{
-			generic_exchange_gateway_sup,
-			start_link,
-			[]
-		},
-		permanent,
-		2000,
-		supervisor,
-		[generic_exchange_transport_sup]
-	},
-
-	RouterCoreSupervisor =
-	{
-		routerCore,
-		{
-			generic_exchange_core_sup,
-			start_link,
-			[]
-		},
-		permanent,
-		2000,
-		supervisor,
-		[generic_exchange_core_sup]
-	},
-
-
-		
     {ok, { {one_for_one, 5, 10}, [
-	RouterCoreSupervisor,
-	GatewaySupervisor,
-	TransportSupervisor
-			]}}.
-
+				DialogRouter
+	]}}.

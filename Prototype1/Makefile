@@ -8,14 +8,13 @@ deps:
 app: deps
 	@$(REBAR) compile
 	
-	
 run:
 	erl -pa ebin deps/lager/ebin/ deps/goldrush/ebin \
 		deps/nksip/ebin deps/client_database/ebin
 
 doc:
 
-test:
+test: app
 	@$(REBAR) eunit skip_deps=true
 
 
