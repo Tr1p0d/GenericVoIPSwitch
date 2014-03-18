@@ -29,6 +29,9 @@ terminate(_Reason, State) ->
 	lager:warning("~p terminated while because ~p", [?MODULE,  _Reason]),
 	ok.
 
+handle_call({route_sip_msg, _Msg=#sipmsg{class={resp, 100, _}}, IP, Port}, From,State) ->
+	{reply, ok, State};
+	
 handle_call({route_sip_msg, _Msg=#sipmsg{}, IP, Port}, From,State) ->
 	gen_server:reply(From, ok),
 	Result = case generic_exchange_dialog_router:

@@ -4,9 +4,7 @@
 -export([start_link/2, init/1, code_change/4, handle_event/3, handle_info/3]).
 -export([handle_sync_event/4, terminate/3]).
 
--export([idle/3
-		%,ringing/3, dialed/3
-	]).
+-export([idle/3, ringing/3, dialed/3, ringback/3]).
 
 -include("../include/generic_exchange.hrl").
 
@@ -43,8 +41,39 @@ idle({fromRP, MSG=#generic_msg{type=make_call, callee={Identifier, _, _},
 	associationAA=_AAA }) ->
 
 	gen_server:call(PID, {transmit_generic_msg, route(MSG, RecvOn, _AAA)}),
-
 	{reply, ok, ringing, State#dialog_state{associationAA=_AAA}}.
+
+
+%% ------------ RINGING -> RINGING TRANSITION
+ringing({fromTU, MSG=#generic_msg{type=ring, callee={Identifier, _, _},
+	receivedOn=RecvOn}}, _From, State=#dialog_state{ specific_gateway=PID,
+	associationAA=_AAA }) ->
+
+	{reply, ok, ringing, State};
+
+%% ------------ RINGING -> INCALL TRANSITION
+ringing({fromTU, MSG=#generic_msg{type=accept, callee={Identifier, _, _},
+	receivedOn=RecvOn}}, _From, State=#dialog_state{ specific_gateway=PID,
+	associationAA=_AAA }) ->
+
+	{reply, ok, incall, State}.
+
+%% ------------ DIALED -> RINGBACK TRANSITION
+dialed({fromRP, MSG=#generic_msg{type=ring, callee={Identifier, _, _},
+	receivedOn=RecvOn}}, _From, State=#dialog_state{ specific_gateway=PID,
+	associationAA=AAA }) ->
+
+	gen_server:call(PID, {transmit_generic_msg, route(MSG, RecvOn, AAA)}),
+	{reply, ok, ringback, State}.
+
+%% ------------ RINGBACK -> INCALL TRANSITION
+ringback({fromRP, MSG=#generic_msg{type=accept, callee={Identifier, _, _},
+	receivedOn=RecvOn}}, _From, State=#dialog_state{ specific_gateway=PID,
+	associationAA=AAA }) ->
+
+	gen_server:call(PID, {transmit_generic_msg, route(MSG, RecvOn, AAA)}),
+	{reply, ok, incall, State}.
+
 
 
 
@@ -74,6 +103,64 @@ terminate(_Reason, StateName, _StateData) ->
 	lager:warning("~p terminated because ~p", [?MODULE, _Reason]),
 	ok.
 
+%route ringing
+route(_MSG=#generic_msg{      
+	type             = accept,
+	target 		     = Target,
+	caller 		     = Caller,
+	callee 		     = Callee,
+	upstreamRoute  	 = USRoute,
+	downstreamRoute  = DSRoute,
+	routeToRecord 	 = R2R,
+	sequenceNum	     = SeqNum,
+	timeToLive		 = TTL,
+	specificProtocol = SpecProt }, {IP, Port}, AAA) ->
+
+	[ _  | Rest ] = lists:reverse(DSRoute), 	
+	[ {DSIP, DSPort} | _ ] = Rest,
+
+	{#generic_msg{
+		type             = accept,
+		target 		     = Target,
+		caller 		     = Caller,
+		callee 		     = Callee,
+		upstreamRoute  	 = USRoute,
+		downstreamRoute  = lists:reverse(Rest),
+		routeToRecord 	 = R2R,
+		sequenceNum	     = SeqNum,
+		timeToLive		 = TTL - 1,
+		specificProtocol = SpecProt }, DSIP, DSPort};
+
+%route ringing
+route(_MSG=#generic_msg{      
+	type             = ring,
+	target 		     = Target,
+	caller 		     = Caller,
+	callee 		     = Callee,
+	upstreamRoute  	 = USRoute,
+	downstreamRoute  = DSRoute,
+	routeToRecord 	 = R2R,
+	sequenceNum	     = SeqNum,
+	timeToLive		 = TTL,
+	specificProtocol = SpecProt }, {IP, Port}, AAA) ->
+
+	[ _  | Rest ] = lists:reverse(DSRoute), 	
+	[ {DSIP, DSPort} | _ ] = Rest,
+
+	{#generic_msg{
+		type             = ring,
+		target 		     = Target,
+		caller 		     = Caller,
+		callee 		     = Callee,
+		upstreamRoute  	 = USRoute,
+		downstreamRoute  = lists:reverse(Rest),
+		routeToRecord 	 = R2R,
+		sequenceNum	     = SeqNum,
+		timeToLive		 = TTL - 1,
+		specificProtocol = SpecProt }, DSIP, DSPort};
+
+
+% route invite
 route(_MSG=#generic_msg{      
 	type             = make_call,
 	target 		     = Target,

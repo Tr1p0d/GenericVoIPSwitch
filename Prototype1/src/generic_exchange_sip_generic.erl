@@ -5,6 +5,42 @@
 -include("../deps/nksip/include/nksip.hrl").
 
 sip_to_generic(_Msg=#sipmsg{
+    class = {resp, _, _}=Class,
+    vias = Vias,
+    from = #uri{
+		user=FromUser
+		},
+    to  = #uri{
+		user=ToUser
+		},
+    call_id = CallID,
+    cseq = SeqNum,
+    cseq_method = _SeqMethod,
+    forwards = TTL,
+    routes = Route,
+    from_tag = FromTag,
+	to_tag  = ToTag},IP, Port) ->
+	
+#generic_msg{
+	type = sip_class_to_generic_type(Class), 
+	target = undefined,
+	% switch those two !!!
+	callee = {FromUser, CallID, FromTag},
+	caller = {ToUser, CallID, ToTag},		  
+	upstreamRoute = Route,
+	downstreamRoute = lists:foldr( 
+		fun(Via, Acc) ->
+			[{Via#via.domain, Via#via.port}|Acc]
+		end,
+		[], Vias),
+	routeToRecord = [],
+	sequenceNum	= SeqNum,
+	timeToLive=TTL,
+	receivedOn={IP,Port},
+	specificProtocol = _Msg};
+
+
+sip_to_generic(_Msg=#sipmsg{
     class = Class,
     ruri = #uri{
 		user=Target
@@ -41,6 +77,73 @@ sip_to_generic(_Msg=#sipmsg{
 	receivedOn={IP,Port},
 	specificProtocol = _Msg}.
 
+generic_to_sip(GenMsg=#generic_msg{
+	type = accept,
+	target = GenTarget,
+	% switch them back
+	callee = {GenFromUser, GenCallID, GenFromTag},
+	caller = {GenToUser, GenCallID, GenToTag},		  
+	upstreamRoute = UpstreamRoute,
+	downstreamRoute = DownstreamRoute,
+	routeToRecord = [],
+	sequenceNum	= SeqNum,
+	timeToLive=GenTTL,
+	specificProtocol = SpecMsg}) ->
+
+	#sipmsg{
+    ruri = SIPTarget,
+    vias = Vias,
+    from = SipFrom,
+    to  = SipTo
+	}=SpecMsg,
+
+	SpecMsg#sipmsg{
+		class = {resp, 200, "OK"},
+		ruri = undefined,
+		vias = Vias,
+		from=SipFrom#uri{
+				user=GenFromUser
+			},
+		to=SipTo#uri{
+				user=GenToUser
+			},
+		cseq=SeqNum,
+		forwards=GenTTL
+		};
+
+generic_to_sip(GenMsg=#generic_msg{
+	type = ring,
+	target = GenTarget,
+	% switch them back
+	callee = {GenFromUser, GenCallID, GenFromTag},
+	caller = {GenToUser, GenCallID, GenToTag},		  
+	upstreamRoute = UpstreamRoute,
+	downstreamRoute = DownstreamRoute,
+	routeToRecord = [],
+	sequenceNum	= SeqNum,
+	timeToLive=GenTTL,
+	specificProtocol = SpecMsg}) ->
+
+	#sipmsg{
+    ruri = SIPTarget,
+    vias = Vias,
+    from = SipFrom,
+    to  = SipTo
+	}=SpecMsg,
+
+	SpecMsg#sipmsg{
+		class = {resp, 180, "RINGING"},
+		ruri = undefined,
+		vias = Vias,
+		from=SipFrom#uri{
+				user=GenFromUser
+			},
+		to=SipTo#uri{
+				user=GenToUser
+			},
+		cseq=SeqNum,
+		forwards=GenTTL
+		};
 
 generic_to_sip(GenMsg=#generic_msg{
 	type = Type,
@@ -73,7 +176,7 @@ generic_to_sip(GenMsg=#generic_msg{
 		vias=lists:reverse([#via{
 					domain=Domain2,
 					port=Port2,
-					opts=[{branch, <<"blablabla">>},rport]}
+					opts=[{branch, nksip_lib:uid()},rport]}
 					|lists:reverse(lists:zipwith(
 			fun({Domain, Port}, Via) ->
 				Via#via{domain=Domain, port=Port}
@@ -98,14 +201,16 @@ sip_class_to_generic_type({req, Method})->
 		'REGISTER' -> associate
 	end;
 
-sip_class_to_generic_type({resp, Code})->
+sip_class_to_generic_type({resp, Code, _})->
 	case Code of 
-		180 -> ring
+		180 -> ring;
+		200 -> accept
 	end.
 
 generic_type_to_sip_class(Method, #generic_msg{}) ->
 	case Method of
 		accept -> {resp, 200, "OK"};
+		ring -> {resp, 180, "RINGING"};
 
 		make_call -> {req, 'INVITE'}
 	end.

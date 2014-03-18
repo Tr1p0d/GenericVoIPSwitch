@@ -99,14 +99,28 @@ lookup_dialogs({_CallerClientID, CallerDialogID, CallerPartID},
 	DialogETS) ->
 	
 	case ets:match(DialogETS, {CallerDialogID, '$1', '$2'}) of
+
+		% just an order issue
 		[[CallerPartID, CallerDialog], [CalleePartID, CalleeDialog]] ->
 			{ok, {CallerPartID, CallerDialog}, {CalleePartID, CalleeDialog}};
 		[[CalleePartID, CalleeDialog], [CallerPartID, CallerDialog]] ->
 			{ok, {CallerPartID, CallerDialog}, {CalleePartID, CalleeDialog}};
+
+		% in case provisional response returned with correct tag
+		% replace no tag with new tag
+		[[CalleePartID, CalleeDialog],[<<>>,CallerDialog]] ->
+			ets:delete(DialogETS, {CallerDialogID, <<>>, CalleeDialog}),
+			ets:insert(DialogETS, {CallerDialogID, CalleePartID, CalleeDialog}),
+			{ok, {CallerPartID, CallerDialog}, {CalleePartID, CalleeDialog}};
+
 		[] ->
 			{error, not_found};
+
 		_Error  ->
-			lager:warning("ets inconsistency found"),
+			lager:notice("DialogTable content : ~p",
+				[ets:match(DialogETS, {'$1', '$2','$3'})]),
+
+			lager:warning("ets inconsistency found ~p", [_Error]),
 			{error, _Error}
 	end.	
 

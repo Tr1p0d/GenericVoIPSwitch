@@ -38,20 +38,14 @@ double_register_test_() ->
 		?_assertMatch({ok, 200, _}, nksip_uac:register(bob, "sip:127.0.0.1", []))
 	}.
 
-invite_test_() ->
-	{setup,
-		fun() -> 
-			ok
-		end,
-
-		fun(_) ->
-				generic_exchange_app:stop(state),
-				ok = nksip:stop_all()
-		end,
-		
-		?_assertMatch({ok, 200, _}, nksip_uac:invite(bob, "sip:alice@127.0.0.1", [
+call_test() ->
+	{ok, 200, [{dialog_id, Dlg}]} = nksip_uac:invite(bob, "sip:alice@127.0.0.1", [
 					{body, nksip_sdp:new()}
-				]))
-	}.
+				]),
+
+		?assertMatch(ok, nksip_uac:ack(bob, Dlg, [])),
+		?assertMatch({ok, 200, _}, nksip_uac:bye(bob, Dlg, [])).
+
+
 
 
