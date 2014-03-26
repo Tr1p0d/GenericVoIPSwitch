@@ -1,9 +1,9 @@
--module(generic_exchange_gateway_sup).
+-module(generic_exchange_dialog_sup).
 
 -behaviour(supervisor).
 
 %% API
--export([start_link/0]).
+-export([start_link/1]).
 
 %% Supervisor callbacks
 -export([init/1]).
@@ -15,32 +15,27 @@
 %% API functions
 %% ===================================================================
 
--spec start_link() ->
-	{ok, pid()} | {error, term()}.
 
-start_link() ->
+start_link(AssociationETS) ->
     supervisor:start_link({local, ?MODULE}, ?MODULE, []).
 
 %% ===================================================================
 %% Supervisor callbacks
 %% ===================================================================
-init([]) ->
-
-SIPGatewaySpecs = 
+init([]) -> 
+	Spec=
 	{
-		sip_gateway,
+		dialog_fsm,
 		{
-			generic_exchange_sip_gateway,
+			generic_dialog_fsm,
 			start_link,
 			[]
 		},
-		permanent,
+		temporary,
 		2000,
 		worker,
-		[generic_exchange_sip_gateway]
+		[generic_dialog_fsm]
 	},
 
-    {ok, { {one_for_one, 5, 10}, [
-				SIPGatewaySpecs
-	]}}.
 
+    {ok, { {simple_one_for_one, 5, 10}, [Spec]}}.

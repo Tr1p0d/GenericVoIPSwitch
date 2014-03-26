@@ -15,6 +15,9 @@
 %% API functions
 %% ===================================================================
 
+-spec start_link() ->
+	{ok, pid()} | {error, term()}.
+
 start_link() ->
     supervisor:start_link({local, ?MODULE}, ?MODULE, []).
 
@@ -27,14 +30,14 @@ SIPUDPTransportSpecs =
 	{
 		udpTransport,
 		{
-			generic_exchange_sip_transport,
+			generic_exchange_transport_sip_udp,
 			start_link,
 			[{5060, [binary]}]
 		},
 		permanent,
 		2000,
 		worker,
-		[generic_exchange_sip_transport]
+		[generic_exchange_transport_sip_udp]
 	},
 
     {ok, { {one_for_one, 5, 10}, [

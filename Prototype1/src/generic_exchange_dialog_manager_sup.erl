@@ -1,4 +1,4 @@
--module(generic_exchange_gateway_sup).
+-module(generic_exchange_dialog_manager_sup).
 
 -behaviour(supervisor).
 
@@ -15,32 +15,44 @@
 %% API functions
 %% ===================================================================
 
--spec start_link() ->
-	{ok, pid()} | {error, term()}.
-
 start_link() ->
     supervisor:start_link({local, ?MODULE}, ?MODULE, []).
 
 %% ===================================================================
 %% Supervisor callbacks
 %% ===================================================================
-init([]) ->
+init([]) -> 
 
-SIPGatewaySpecs = 
+DialogManager = 
 	{
-		sip_gateway,
+		dialogRouter,
 		{
-			generic_exchange_sip_gateway,
+			generic_exchange_dialog_manager,
 			start_link,
-			[]
+			[ets:new(dialogTable,[public, bag]),
+				ets:new(associationTable,[public, bag])]
 		},
 		permanent,
 		2000,
 		worker,
-		[generic_exchange_sip_gateway]
+		[generic_exchange_dialog_manager]
+	},
+
+DialogSup = 
+	{
+		dialogSup,
+		{
+			generic_exchange_dialog_sup,
+			start_link,
+			[ets:new(associationTable, [public, bag])]
+		},
+		permanent,
+		2000,
+		supervisor,
+		[generic_exchange_dialog_sup]
 	},
 
     {ok, { {one_for_one, 5, 10}, [
-				SIPGatewaySpecs
+				DialogManager,
+				DialogSup
 	]}}.
-

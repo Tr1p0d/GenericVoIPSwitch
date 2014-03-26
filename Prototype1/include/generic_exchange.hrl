@@ -1,3 +1,5 @@
+-define(WARNING(FormatStr, Params), lager:warning(FormatStr, Params)).
+
 
 -type generic_msg_method() ::
 	make_call | teardown | ring | accept | associate.

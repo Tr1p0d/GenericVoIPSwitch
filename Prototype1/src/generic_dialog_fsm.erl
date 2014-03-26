@@ -4,10 +4,11 @@
 -export([start_link/2, init/1, code_change/4, handle_event/3, handle_info/3]).
 -export([handle_sync_event/4, terminate/3]).
 
--export([idle/3, ringing/3, dialed/3, ringback/3]).
+-export([idle/3, idle/2, ringing/3, ringing/2, dialed/3, dialed/2, ringback/3, ringback/2]).
 
 -include("../include/generic_exchange.hrl").
 
+-define(TIMEOUT, 10000).
 
 -record(dialog_state, {
 		specific_gateway		:: pid(),
@@ -20,20 +21,20 @@ idle({fromRP, MSG=#generic_msg{type=associate, callee={Identifier, _, _},
 	receivedOn=RecvOn}}, _From, State=#dialog_state{ specific_gateway=PID,
 	associationAA=AAA }) ->
 
-	UpdatedAAA = addAssociates(Identifier, RecvOn, AAA),
-	gen_server:call(PID, {transmit_generic_msg, route(MSG, RecvOn, UpdatedAAA)}),
-	{reply, ok, idle, State#dialog_state{associationAA=UpdatedAAA}};
+	addAssociates(Identifier, RecvOn, AAA),
+	gen_server:call(PID, {transmit_generic_msg, route(MSG, RecvOn, AAA)}),
+	{stop, normal, ok, State#dialog_state{associationAA=AAA}};
 
 %% ------------ IDLE -> IDLE TRANSITION --- ASSOCIATION
 idle({fromTU, _MSG=#generic_msg{type=associate}}, _From, State) ->
-	{reply, ok, idle, State};
+	{stop, normal, ok, State};
 
 %% ------------ IDLE -> DIALED TRANSITION
 idle({fromTU, MSG=#generic_msg{type=make_call, callee={Identifier, _, _},
 	receivedOn=RecvOn}}, _From, State=#dialog_state{ specific_gateway=PID,
 	associationAA=_AAA }) ->
 
-	{reply, ok, dialed, State};
+	{reply, ok, dialed, State, ?TIMEOUT};
 
 %% ------------ IDLE -> RINGING TRANSITION
 idle({fromRP, MSG=#generic_msg{type=make_call, callee={Identifier, _, _},
@@ -41,7 +42,11 @@ idle({fromRP, MSG=#generic_msg{type=make_call, callee={Identifier, _, _},
 	associationAA=_AAA }) ->
 
 	gen_server:call(PID, {transmit_generic_msg, route(MSG, RecvOn, _AAA)}),
-	{reply, ok, ringing, State#dialog_state{associationAA=_AAA}}.
+	{reply, ok, ringing, State#dialog_state{associationAA=_AAA}, ?TIMEOUT}.
+
+idle(timeout, State) ->
+	?WARNING("dialog timed-out in state ~p", [State]),
+	{stop, normal, State}.
 
 
 %% ------------ RINGING -> RINGING TRANSITION
@@ -49,14 +54,18 @@ ringing({fromTU, MSG=#generic_msg{type=ring, callee={Identifier, _, _},
 	receivedOn=RecvOn}}, _From, State=#dialog_state{ specific_gateway=PID,
 	associationAA=_AAA }) ->
 
-	{reply, ok, ringing, State};
+	{reply, ok, ringing, State, ?TIMEOUT};
 
 %% ------------ RINGING -> INCALL TRANSITION
 ringing({fromTU, MSG=#generic_msg{type=accept, callee={Identifier, _, _},
 	receivedOn=RecvOn}}, _From, State=#dialog_state{ specific_gateway=PID,
 	associationAA=_AAA }) ->
 
-	{reply, ok, incall, State}.
+	{reply, ok, incall, State, ?TIMEOUT}.
+
+ringing(timeout, State) ->
+	?WARNING("dialog timed-out in state ~p", [State]),
+	{stop, normal, State}.
 
 %% ------------ DIALED -> RINGBACK TRANSITION
 dialed({fromRP, MSG=#generic_msg{type=ring, callee={Identifier, _, _},
@@ -64,7 +73,11 @@ dialed({fromRP, MSG=#generic_msg{type=ring, callee={Identifier, _, _},
 	associationAA=AAA }) ->
 
 	gen_server:call(PID, {transmit_generic_msg, route(MSG, RecvOn, AAA)}),
-	{reply, ok, ringback, State}.
+	{reply, ok, ringback, State, ?TIMEOUT}.
+
+dialed(timeout, State) ->
+	?WARNING("dialog timed-out in state ~p", [State]),
+	{stop, normal, State}.
 
 %% ------------ RINGBACK -> INCALL TRANSITION
 ringback({fromRP, MSG=#generic_msg{type=accept, callee={Identifier, _, _},
@@ -72,17 +85,17 @@ ringback({fromRP, MSG=#generic_msg{type=accept, callee={Identifier, _, _},
 	associationAA=AAA }) ->
 
 	gen_server:call(PID, {transmit_generic_msg, route(MSG, RecvOn, AAA)}),
-	{reply, ok, incall, State}.
+	{reply, ok, incall, State, ?TIMEOUT}.
 
-
-
-
+ringback(timeout, State) ->
+	?WARNING("dialog timed-out in state ~p", [State]),
+	{stop, normal, State}.
 
 start_link(Destination, AssociationAA) ->
 	gen_fsm:start_link(?MODULE, [Destination, AssociationAA], []).
 
 init([{PID, _Reference}, AssociationAA]) ->
-	{ok, idle, #dialog_state{specific_gateway=PID, associationAA=AssociationAA}}.	
+	{ok, idle, #dialog_state{specific_gateway=PID, associationAA=AssociationAA}, ?TIMEOUT}.	
 
 code_change(_Old, StateName, StateData, _Extra)->
 	{ok, StateName, StateData}.
@@ -100,7 +113,8 @@ handle_sync_event(_Event, _From, StateName, StateData) ->
 	{reply, StateName, StateName, StateData}.
 
 terminate(_Reason, StateName, _StateData) ->
-	lager:warning("~p terminated because ~p", [?MODULE, _Reason]),
+	generic_exchange_dialog_manager:delete_dialog(self()),
+	lager:info("transaction terminated because ~p in state ~p", [_Reason, StateName]),
 	ok.
 
 %route ringing
@@ -174,7 +188,7 @@ route(_MSG=#generic_msg{
 	specificProtocol = SpecProt }, {IP, Port}, AAA) ->
 
 	case generic_exchange_networking:resolve_target(Target, AAA) of
-		{ok, IP, RemotePort} ->
+		{ok, {IP, RemotePort}} ->
 			{#generic_msg{
 				type             = make_call,
 				target 		     = Target,
@@ -217,7 +231,6 @@ route(_MSG=#generic_msg{
 		specificProtocol = SpecProt }, IP, Port}.
 
 
-addAssociates(Key, Item, AA) ->
-	Dict = dict:append(Key, Item, AA),
-	Dict.
+addAssociates(Key, Item, DT) ->
+	ets:insert(DT, {Key, Item}).
 

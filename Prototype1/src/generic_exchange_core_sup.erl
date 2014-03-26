@@ -15,6 +15,9 @@
 %% API functions
 %% ===================================================================
 
+-spec start_link() ->
+	{ok, pid()} | {error, term()}.
+
 start_link() ->
     supervisor:start_link({local, ?MODULE}, ?MODULE, []).
 
@@ -29,7 +32,7 @@ DialogRouter =
 		{
 			generic_exchange_dialog_router,
 			start_link,
-			[ets:new(dialogTable,[public, bag]), dict:new()]
+			[ets:new(dialogTable,[public, bag, named_table])]
 		},
 		permanent,
 		2000,
@@ -37,6 +40,21 @@ DialogRouter =
 		[generic_exchange_dialog_router]
 	},
 
+ManagerSup=
+	{
+		dialogManagerSup,
+		{
+			generic_exchange_dialog_manager_sup,
+			start_link,
+			[]
+		},
+		permanent,
+		2000,
+		supervisor,
+		[generic_exchange_dialog_manager]
+	},
+
     {ok, { {one_for_one, 5, 10}, [
-				DialogRouter
+				DialogRouter,
+				ManagerSup
 	]}}.

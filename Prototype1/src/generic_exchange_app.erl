@@ -9,10 +9,14 @@
 %% Application callbacks
 %% ===================================================================
 
+-spec start(any(), any()) -> ok.
 
 start(_StartType, _StartArgs) ->
     %generic_exchange_sup:start_link().
     ok.
+
+-spec start() -> 
+	{ok, pid()} | {error, Reason::term()}.
 
 start() ->
     generic_exchange_sup:start_link().

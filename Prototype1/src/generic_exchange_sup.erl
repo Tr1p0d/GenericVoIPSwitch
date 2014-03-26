@@ -15,6 +15,9 @@
 %% API functions
 %% ===================================================================
 
+-spec start_link() ->
+	{ok, pid()} | {error, term()}.
+
 start_link() ->
     supervisor:start_link({local, ?MODULE}, ?MODULE, []).
 
