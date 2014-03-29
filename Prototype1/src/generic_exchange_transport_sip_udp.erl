@@ -63,8 +63,8 @@ handle_call(_Msg, _From, _State) ->
 	{noreply, term()}.
 
 handle_cast({send, {Packet, Ip, Port}}, State=#udpstate{socket=Sock}) ->
-	lager:info("message send : ~p ~p", [Ip, Port]),
-	gen_udp:send(Sock, {127,0,0,1}, Port, Packet),
+	lager:info("message send : ~p ~p ~p", [Ip, Port, Packet]),
+	gen_udp:send(Sock, Ip, Port, Packet),
 	{noreply, State};
 
 handle_cast(_Request, _State) -> 

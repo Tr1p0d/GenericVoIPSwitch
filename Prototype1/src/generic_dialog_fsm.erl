@@ -118,6 +118,9 @@ terminate(_Reason, StateName, _StateData) ->
 	ok.
 
 %route ringing
+
+-spec route(#generic_msg{}, {inet:ip_address(), inet:port_number()} ets:tid() | atom())
+
 route(_MSG=#generic_msg{      
 	type             = accept,
 	target 		     = Target,
@@ -132,6 +135,7 @@ route(_MSG=#generic_msg{
 
 	[ _  | Rest ] = lists:reverse(DSRoute), 	
 	[ {DSIP, DSPort} | _ ] = Rest,
+	{ok,DSIPfinal} = inet:parse_ipv4_address(binary_to_list(DSIP)),
 
 	{#generic_msg{
 		type             = accept,
@@ -143,7 +147,7 @@ route(_MSG=#generic_msg{
 		routeToRecord 	 = R2R,
 		sequenceNum	     = SeqNum,
 		timeToLive		 = TTL - 1,
-		specificProtocol = SpecProt }, DSIP, DSPort};
+		specificProtocol = SpecProt }, DSIPfinal, DSPort};
 
 %route ringing
 route(_MSG=#generic_msg{      
@@ -160,6 +164,7 @@ route(_MSG=#generic_msg{
 
 	[ _  | Rest ] = lists:reverse(DSRoute), 	
 	[ {DSIP, DSPort} | _ ] = Rest,
+	{ok,DSIPfinal} = inet:parse_ipv4_address(binary_to_list(DSIP)),
 
 	{#generic_msg{
 		type             = ring,
@@ -171,7 +176,7 @@ route(_MSG=#generic_msg{
 		routeToRecord 	 = R2R,
 		sequenceNum	     = SeqNum,
 		timeToLive		 = TTL - 1,
-		specificProtocol = SpecProt }, DSIP, DSPort};
+		specificProtocol = SpecProt }, DSIPfinal, DSPort};
 
 
 % route invite
