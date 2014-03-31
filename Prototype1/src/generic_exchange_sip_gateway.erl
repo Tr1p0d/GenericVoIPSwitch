@@ -25,7 +25,7 @@ transmit_generic(Msg=#generic_msg{}) ->
 	gen_server:call(?MODULE, {transmit_generic_msg, Msg}).
 
 start_link() ->
-	gen_server:start_link({local, ?MODULE}, ?MODULE, [], []).
+ 	gen_server:start_link({local, ?MODULE}, ?MODULE, [], []).
 
 init([]) ->
 	{ok,[]}.
@@ -38,7 +38,7 @@ terminate(_Reason, _State) ->
 	normal.
 
 -spec handle_call({Action, Msg, inet:ip_address(), inet:port_number()}, term(), term()) ->
-	ok
+	{reply, ok, term()} | {noreply, term()}
 	when Action :: route_sip_msg | transmit_generic_msg,
 		 Msg :: #sipmsg{} | #generic_msg{}.
 
@@ -51,9 +51,7 @@ handle_call({route_sip_msg, _Msg=#sipmsg{}, IP, Port}, From,State) ->
 		route_message(generic_exchange_sip_generic:sip_to_generic(_Msg,
 			IP, Port)) of
 		{ok, transmitted} ->
-			{noreply, State};
-
-		_Err -> _Err
+			{noreply, State}
 	end,
 	Result;
 

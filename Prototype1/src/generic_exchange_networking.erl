@@ -8,6 +8,6 @@ resolve_target(Target, AA) ->
 	case ets:match(AA, {Target, '$1'}) of
 		[[Value]] ->
 			{ok,Value};
-		error ->
+		[error] ->
 			{error, not_found}
 	end.

@@ -10,15 +10,28 @@
 		dialog_table,
 		association_table}).
 
+-include("../include/generic_exchange.hrl").
+
+-spec create_dialog(pid(), generic_dialog_party_identifier()) ->
+	{ok, pid()}.
+
 create_dialog(Gateway, Client) ->
 	gen_server:call(?MODULE, {create_dialog, Gateway, Client}).
+
+-spec delete_dialog(pid()) ->
+	ok.
 
 delete_dialog(PID) ->
 	gen_server:call(?MODULE, {delete_dialog, PID}).
 
+-spec lookup_dialog(generic_dialog_party_identifier()) ->
+	{ok, pid()}.
+
 lookup_dialog(Client) -> 
 	gen_server:call(?MODULE, {lookup_dialog, Client}).
 
+-spec start_link(ets:tid() | atom(), ets:tid() | atom()) ->
+	{ok, pid()} | {error, term()}.
 
 start_link( _DT, _AT) ->
 	gen_server:start_link({local, ?MODULE}, ?MODULE, {_DT, _AT}, []).
@@ -34,6 +47,15 @@ code_change(_Old, State, _Extra)->
 terminate(_Reason, _State) ->
 	lager:warning("~p terminated while because ~p", [?MODULE,  _Reason]),
 	ok.
+
+-spec handle_call( Message, {pid(), term()}, #dialog_manager_state{}) ->
+	Reply
+	when Message :: {create_dialog, pid(), generic_dialog_party_identifier()} |
+					{delete_dialog, pid()} |
+					{lookup_dialog, generic_dialog_party_identifier()},
+					Reply ::   {reply, {ok, pid()}, #dialog_manager_state{}}
+					| {reply, ok, #dialog_manager_state{}}
+					| {reply, {error, not_found}, #dialog_manager_state{}}.
 
 handle_call({create_dialog, Gateway, {_ClientID, DialogID, PartID}},
 	_From, State=#dialog_manager_state{dialog_table=DT, association_table=AT}) ->
@@ -63,10 +85,7 @@ handle_call({lookup_dialog, {_ClientID, DialogID, PartID}}, _From,
 						{error, not_found}
 				end
 	end,
-	{reply, Result , State};
-
-handle_call(_Msg, _From, _State) ->
-	{noreply, _State}.
+	{reply, Result , State}.
 
 handle_cast(_Msg, _State) ->
 	lager:warning('?MODULE received an unexpected asynchronous message'),

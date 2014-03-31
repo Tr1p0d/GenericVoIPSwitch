@@ -44,7 +44,7 @@ DialogSup =
 		{
 			generic_exchange_dialog_sup,
 			start_link,
-			[ets:new(associationTable, [public, bag])]
+			[]
 		},
 		permanent,
 		2000,

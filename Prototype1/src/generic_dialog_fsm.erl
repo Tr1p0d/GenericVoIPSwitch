@@ -18,7 +18,7 @@
 
 %% ------------ IDLE -> IDLE TRANSITION --- ASSOCIATION
 idle({fromRP, MSG=#generic_msg{type=associate, callee={Identifier, _, _},
-	receivedOn=RecvOn}}, _From, State=#dialog_state{ specific_gateway=PID,
+	receivedOn=RecvOn}}, From, State=#dialog_state{ specific_gateway=PID,
 	associationAA=AAA }) ->
 
 	addAssociates(Identifier, RecvOn, AAA),
@@ -92,7 +92,7 @@ ringback(timeout, State) ->
 	{stop, normal, State}.
 
 start_link(Destination, AssociationAA) ->
-	gen_fsm:start_link(?MODULE, [Destination, AssociationAA], []).
+ 	gen_fsm:start_link(?MODULE, [Destination, AssociationAA], []).
 
 init([{PID, _Reference}, AssociationAA]) ->
 	{ok, idle, #dialog_state{specific_gateway=PID, associationAA=AssociationAA}, ?TIMEOUT}.	
@@ -119,7 +119,8 @@ terminate(_Reason, StateName, _StateData) ->
 
 %route ringing
 
--spec route(#generic_msg{}, {inet:ip_address(), inet:port_number()} ets:tid() | atom())
+-spec route(#generic_msg{}, {inet:ip_address(), inet:port_number()}, ets:tid() | atom()) -> 
+	{#generic_msg{}, inet:ip_address(), inet:port_number()}.
 
 route(_MSG=#generic_msg{      
 	type             = accept,
@@ -131,11 +132,11 @@ route(_MSG=#generic_msg{
 	routeToRecord 	 = R2R,
 	sequenceNum	     = SeqNum,
 	timeToLive		 = TTL,
-	specificProtocol = SpecProt }, {IP, Port}, AAA) ->
+	specificProtocol = SpecProt }, _, _) ->
 
 	[ _  | Rest ] = lists:reverse(DSRoute), 	
 	[ {DSIP, DSPort} | _ ] = Rest,
-	{ok,DSIPfinal} = inet:parse_ipv4_address(binary_to_list(DSIP)),
+	{ok,DSIPfinal} = inet_parse:ipv4_address(binary_to_list(DSIP)),
 
 	{#generic_msg{
 		type             = accept,
@@ -160,11 +161,12 @@ route(_MSG=#generic_msg{
 	routeToRecord 	 = R2R,
 	sequenceNum	     = SeqNum,
 	timeToLive		 = TTL,
-	specificProtocol = SpecProt }, {IP, Port}, AAA) ->
+	specificProtocol = SpecProt }, _, _) ->
+
 
 	[ _  | Rest ] = lists:reverse(DSRoute), 	
 	[ {DSIP, DSPort} | _ ] = Rest,
-	{ok,DSIPfinal} = inet:parse_ipv4_address(binary_to_list(DSIP)),
+	{ok,DSIPfinal} = inet_parse:ipv4_address(binary_to_list(DSIP)),
 
 	{#generic_msg{
 		type             = ring,
@@ -190,7 +192,7 @@ route(_MSG=#generic_msg{
 	routeToRecord 	 = R2R,
 	sequenceNum	     = SeqNum,
 	timeToLive		 = TTL,
-	specificProtocol = SpecProt }, {IP, Port}, AAA) ->
+	specificProtocol = SpecProt }, {_IP, _Port}, AAA) ->
 
 	case generic_exchange_networking:resolve_target(Target, AAA) of
 		{ok, {IP, RemotePort}} ->
@@ -204,10 +206,7 @@ route(_MSG=#generic_msg{
 				routeToRecord 	 = R2R,
 				sequenceNum	     = SeqNum,
 				timeToLive		 = TTL - 1,
-				specificProtocol = SpecProt }, IP, RemotePort};
-
-		{error, _Reason} ->
-			{#generic_msg{}, IP, Port}
+				specificProtocol = SpecProt }, IP, RemotePort}
 	end;
 
 %% successfull registration
@@ -221,7 +220,7 @@ route(_MSG=#generic_msg{
 	routeToRecord 	 = R2R,
 	sequenceNum	     = SeqNum,
 	timeToLive		 = TTL,
-	specificProtocol = SpecProt }, {IP, Port}, AAA) ->
+	specificProtocol = SpecProt }, {IP, Port}, _) ->
 
 	{#generic_msg{
 		type             = accept,
@@ -235,6 +234,9 @@ route(_MSG=#generic_msg{
 		timeToLive		 = TTL - 1,
 		specificProtocol = SpecProt }, IP, Port}.
 
+
+-spec addAssociates(term(), term(), ets:tid() | atom()) ->
+	true.
 
 addAssociates(Key, Item, DT) ->
 	ets:insert(DT, {Key, Item}).

@@ -46,11 +46,11 @@ init({Port, Specs}) ->
 	end.
 
 -spec code_change(term() , term(), term()) -> 
-	ok.
+	{ok, list()}.
 
 code_change(_Old, _State, _Extra) ->
 	lager:warning("hotcode swap not supported"),
-	ok.
+	{ok, "alles gut"}.
 
 -spec handle_call(term(), term(), term()) ->
 	{noreply, term()}.
@@ -75,7 +75,7 @@ handle_cast(_Request, _State) ->
 
 %% a packet was received
 handle_info({udp, Socket, IP, Port, Packet}, State=#udpstate{socket=Socket}) ->
-	case nksip_parse:packet(0, #transport{proto=0}, Packet) of
+	case nksip_parse:packet(0, #transport{proto= <<0>>}, Packet) of
 		{ok, RawSipMsg, _More} ->
 			case nksip_parse:raw_sipmsg(RawSipMsg) of
 				Msg=#sipmsg{} ->
@@ -92,8 +92,8 @@ handle_info(Request, _State) ->
 	{noreply, _State}.
 
 -spec terminate(term(), #udpstate{}) ->
-	normal.
+	ok.
 
-terminate(_Reason, #udpstate{socket=Socket}) ->
+terminate(_Reason, #udpstate{socket=_Socket}) ->
 	lager:warning("shutting down the SIP UDP transport : ~p", [_Reason]),
 	ok.
