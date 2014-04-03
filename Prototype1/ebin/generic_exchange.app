@@ -12,8 +12,13 @@
                         generic_exchange_dialog_router,
                         generic_exchange_dialog_sup,
                         generic_exchange_gateway_sup,
+                        generic_exchange_lcp_client_fsm,
+                        generic_exchange_lcp_client_sup,
+                        generic_exchange_lcp_gateway,
                         generic_exchange_networking,
                         generic_exchange_sip_gateway,
                         generic_exchange_sip_generic,generic_exchange_sup,
+                        generic_exchange_transport_lcp,
                         generic_exchange_transport_sip_udp,
-                        generic_exchange_transport_sup,simple_sip_client]}]}.
+                        generic_exchange_transport_sup,simple_lcp_client,
+                        simple_sip_client]}]}.

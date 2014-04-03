@@ -1,4 +1,4 @@
--module(generic_exchange_transport_sup).
+-module(generic_exchange_lcp_client_sup).
 
 -behaviour(supervisor).
 
@@ -15,34 +15,26 @@
 %% API functions
 %% ===================================================================
 
--spec start_link() ->
-	{ok, pid()} | {error, term()}.
-
 start_link() ->
     supervisor:start_link({local, ?MODULE}, ?MODULE, []).
 
 %% ===================================================================
 %% Supervisor callbacks
 %% ===================================================================
-init([]) ->
-
-SIPUDPTransportSpecs = 
+init([]) -> 
+	Spec=
 	{
-		udpTransport,
+		lcp_client,
 		{
-			generic_exchange_transport_sip_udp,
+			generic_exchange_lcp_client_fsm,
 			start_link,
-			[{5060, [binary]}]
+			[]
 		},
-		permanent,
+		temporary,
 		2000,
 		worker,
-		[generic_exchange_transport_sip_udp]
+		[generic_exchange_lcp_client_fsm]
 	},
 
-	generic_exchange_transport_lcp:start(),
-		
-    {ok, { {one_for_one, 5, 10}, [
-				SIPUDPTransportSpecs
-	]}}.
 
+    {ok, { {simple_one_for_one, 5, 10}, [Spec]}}.

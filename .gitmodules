@@ -1,0 +1,3 @@
+[submodule "Prototype1/deps/elcpcp"]
+	path = Prototype1/deps/elcpcp
+	url = https://bitbucket.org/jan_wozniak/elcpcp.git

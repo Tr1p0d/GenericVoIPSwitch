@@ -12,7 +12,8 @@ app: deps
 	
 run:
 	erl -pa ebin deps/lager/ebin/ deps/goldrush/ebin \
-		deps/nksip/ebin deps/client_database/ebin
+		deps/nksip/ebin deps/client_database/ebin \
+		deps/elcpcp/ebin
 
 build-plt:
 	@$(DIALYZER) --build_plt --output_plt .$(PROJECT).plt \

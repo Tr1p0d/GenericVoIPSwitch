@@ -40,7 +40,37 @@ SIPGatewaySpecs =
 		[generic_exchange_sip_gateway]
 	},
 
+LCPGatewaySpecs = 
+	{
+		lcp_gateway,
+		{
+			generic_exchange_lcp_gateway,
+			start_link,
+			[ets:new(lCPClientTable, [bag, public])]
+		},
+		permanent,
+		2000,
+		worker,
+		[generic_exchange_lcp_gateway]
+	},
+
+LCPClientSupSpecs = 
+	{
+		lcp_client_sup,
+		{
+			generic_exchange_lcp_client_sup,
+			start_link,
+			[]
+		},
+		permanent,
+		2000,
+		worker,
+		[generic_exchange_lcp_client_sup]
+	},
+
     {ok, { {one_for_one, 5, 10}, [
-				SIPGatewaySpecs
+				SIPGatewaySpecs,
+				LCPClientSupSpecs,
+				LCPGatewaySpecs
 	]}}.
 
