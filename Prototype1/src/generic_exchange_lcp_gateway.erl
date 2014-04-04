@@ -25,6 +25,12 @@ route_lcp(Msg, _IP, _Port) ->
 transmit_generic(Msg=#generic_msg{}) ->
 	gen_server:call(?MODULE, {transmit_generic_msg, Msg}).
 
+-spec remove_lcp_client(pid())->
+	ok.
+
+remove_lcp_client(PID) ->
+	gen_server:call(?MODULE, {remove_lcp_client, PID}).
+
 start_link(LCPClientEts) ->
  	gen_server:start_link({local, ?MODULE}, ?MODULE, [LCPClientEts], []).
 
@@ -57,7 +63,7 @@ handle_call({route_lcp_msg, Msg, IP, Port}, From,
 			gen_fsm:sync_send_event(PID, Msg);
 		{error, not_found} ->
 			{ok, PID} = supervisor:start_child(generic_exchange_lcp_client_sup, []),
-			ets:insert(Table, {IP, Port, PID}),
+			add_lcp_client(IP, Port, PID, Table),
 			gen_fsm:sync_send_event(PID, Msg)
 	end,
 
@@ -67,6 +73,15 @@ handle_call({transmit_generic_msg, {_Msg=#generic_msg{}, IP, Port}}, _From, _Sta
 	generic_exchange_transport_sip_udp:send(
 		generic_exchange_sip_generic:generic_to_sip(_Msg), IP, Port),
 	{reply, ok, _State};
+
+handle_call({remove_lcp_client, PID}, _From, State=#lcp_gateway_state{client_table=Table}) ->
+	Result = case remove_lcp_client(PID, Table) of 
+		true ->
+			ok;
+		Error -> 
+			{error, couldnt_remove_lcp_client}
+	end,
+	{reply, Result, State};
 
 handle_call(_Msg, _From, _State) ->
 	lager:warning('~p received an invalid synchronous message ~p', [?MODULE, _Msg]),
@@ -92,3 +107,12 @@ resolve_lcp_client(IP, Port, Ets) ->
 		[[PID]] -> {ok, PID};
 		[] -> {error, not_found}
 	end.
+
+remove_lcp_client(PID, Ets) ->
+	ets:match_delete(Ets, {'_', '_', PID}).
+
+-spec add_lcp_client(inet:ip_address(), inet:network_port(), pid(), ets:table()) ->
+	true.
+
+add_lcp_client(IP, Port, PID, ETS) ->
+	ets:insert(ETS, {IP, Port, PID}).

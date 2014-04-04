@@ -12,7 +12,7 @@ simple_message_test_() ->
 			ok
 		end,
 		
-		?_assertMatch({ok, 200, _}, simple_lcp_client:send_message())
+		?_assertMatch(ok, simple_lcp_client:send_message())
 	}.
 
 

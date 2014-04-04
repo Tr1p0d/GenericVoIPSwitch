@@ -18,7 +18,9 @@
 
 
 online(Msg, _From, State) ->
-	lager:info("message in lcp_client : ~p", [Msg]),
+	lager:error("", []),
+	lager:error("message in lcp_client : ~p", [Msg]),
+	lager:error("", []),
 	{reply, ok, online, State, ?TIMEOUT}.
 
 start_link() ->
@@ -44,6 +46,6 @@ handle_sync_event(_Event, _From, StateName, StateData) ->
 	{reply, StateName, StateName, StateData}.
 
 terminate(_Reason, StateName, _StateData) ->
-	generic_exchange_lcp_gateway:delete_client(self()),
+	generic_exchange_lcp_gateway:remove_lcp_client(self()),
 	lager:info("transaction terminated because ~p in state ~p", [_Reason, StateName]),
-	ok.
+	normal.
