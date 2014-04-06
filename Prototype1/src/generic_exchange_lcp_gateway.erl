@@ -5,7 +5,7 @@
 -export([start_link/1, init/1, code_change/3, terminate/2]).
 -export([handle_info/2, handle_cast/2, handle_call/3]).
 
--export([route_lcp/3, transmit_generic/1]).
+-export([route_lcp/3, transmit_generic/1, remove_lcp_client/1]).
 
 -include("../include/generic_exchange.hrl").
 
@@ -53,25 +53,69 @@ terminate(_Reason, _State) ->
 
 
 handle_call({route_lcp_msg, Msg, IP, Port}, From, 
-	State=#lcp_gateway_state{client_table=Table}) ->
-
-	lager:notice("msg from ~p ~p: ~p~n", [IP, Port, Msg]),
+	state=#lcp_gateway_state{client_table=table}) ->
 	gen_server:reply(From, ok),
 
 	case resolve_lcp_client(IP, Port, Table) of 
 		{ok, PID} ->
-			gen_fsm:sync_send_event(PID, Msg);
+			case gen_fsm:sync_send_event(PID, Msg) of
+				{route, MSG} -> 
+					%generic_exchange_dialog_router:route_message(Msg);
+					ok;
+				do_nothing ->
+					do_nothing;
+				Error ->
+					lager:info("this should never ever happen ~p", [Error])
+
+			end
 		{error, not_found} ->
-			{ok, PID} = supervisor:start_child(generic_exchange_lcp_client_sup, []),
+			{ok, PID} = supervisor:start_child(generic_exchange_lcp_client_sup,
+				[IP,Port,"1018"]),
 			add_lcp_client(IP, Port, PID, Table),
-			gen_fsm:sync_send_event(PID, Msg)
-	end,
+			case gen_fsm:sync_send_event(PID, Msg) of
+				{route, MSG} -> 
+					%generic_exchange_dialog_router:route_message(Msg);
+					ok;
+				do_nothing ->
+					do_nothing;
+				Error ->
+					lager:info("this should never ever happen ~p", [Error])
+
+			end
+	end,	
 
 	{noreply, State};
 
-handle_call({transmit_generic_msg, {_Msg=#generic_msg{}, IP, Port}}, _From, _State) ->
-	generic_exchange_transport_sip_udp:send(
-		generic_exchange_sip_generic:generic_to_sip(_Msg), IP, Port),
+handle_call({transmit_generic_msg, {_Msg=#generic_msg{}, IP, Port}}, From,
+	State=#lcp_gateway_state{client_table=Table}) ->
+	
+	gen_server:reply(From, ok),
+	case resolve_lcp_client(IP, Port, Table) of 
+		{ok, PID} ->
+			case gen_fsm:sync_send_event(PID, Msg) of
+				{route, MSG} -> 
+					%generic_exchange_dialog_router:route_message(Msg);
+					ok;
+				do_nothing ->
+					do_nothing;
+				Error ->
+					lager:info("this should never ever happen ~p", [Error])
+
+			end
+		{error, not_found} ->
+			{ok, PID} = supervisor:start_child(generic_exchange_lcp_client_sup,
+				[IP,Port,"1018"]),
+			add_lcp_client(IP, Port, PID, Table),
+			case gen_fsm:sync_send_event(PID, Msg) of
+				{transmit, MSG} -> 
+					generic_exchange_transport_lcp:
+					ok;
+				do_nothing ->
+					do_nothing;
+				Error ->
+					lager:info("this should never ever happen ~p", [Error])
+
+			end
 	{reply, ok, _State};
 
 handle_call({remove_lcp_client, PID}, _From, State=#lcp_gateway_state{client_table=Table}) ->
@@ -101,6 +145,10 @@ handle_cast(_Msg, _State) ->
 handle_info(_Msg, _State) ->
 	lager:warning('?MODULE received an unexpected message'),
 	{noreply, _State}.
+
+
+% helper functions
+
 
 resolve_lcp_client(IP, Port, Ets) ->
 	case ets:match(Ets, {IP, Port, '$1'}) of
