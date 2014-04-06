@@ -5,7 +5,7 @@
 simple_message_test_() ->
 	{setup,
 		fun() -> 
-				ok
+			generic_exchange_app:start()
 		end,
 
 		fun(_) ->

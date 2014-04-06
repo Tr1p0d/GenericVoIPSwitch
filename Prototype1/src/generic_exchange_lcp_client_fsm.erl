@@ -24,16 +24,22 @@
 
 
 available({transport_cookie_ind, <<"cookie">>}, _Frm, State) ->
-	Gen_msg=create_generic_message(State),
-	{reply, {route, Gen_msg}
-		, next_state, associating, ?TIMEOUT}.
+	Gen_msg=create_generic_message(State, associate),
+	{reply, {route, Gen_msg}, associating, ?TIMEOUT}.
 
 associating(#generic_msg{type = accept}, _From, State) ->
-	ok.
+	lager:warning("client lcp associated"),
+	{reply, do_nothing, online, State};
 
+associating(timeout, _From, State) ->
+	{stop, normal, State}.
 
-online(Msg, _From, State) ->
-	ok.
+online({transport_cookie_ind, <<"cookie">>}, From, State) ->
+	NewState=State#lcp_client_state{keyboard_state="alice"},
+	{reply, {route, create_generic_message(make_call, NewState)}, online, NewState};
+
+online(#generic_msg{type=accept}, From, State) ->
+	lager:warning('ringing').
 
 start_link(IP, Port, Ident) ->
  	gen_fsm:start_link(?MODULE, [IP, Port, Ident], []).
@@ -64,23 +70,23 @@ handle_sync_event(_Event, _From, StateName, StateData) ->
 	{reply, StateName, StateName, StateData}.
 
 terminate(_Reason, StateName, _StateData) ->
+	lager:info("lcp transaction terminated because ~p in state ~p", [_Reason, StateName]),
 	generic_exchange_lcp_gateway:remove_lcp_client(self()),
-	lager:info("transaction terminated because ~p in state ~p", [_Reason, StateName]),
 	normal.
 
--spec create_generic_message(#lcp_client_state{}) ->
+-spec create_generic_message(#lcp_client_state{}, term()) ->
 	#generic_msg{}.
 
 create_generic_message(#lcp_client_state{
 	keyboard_state=KBD,
 	identifier=Client_identifier,
 	ip=IP,
-	port=Port}) ->
+	port=Port}, Method) ->
 
 	Dialog = nksip_lib:uid(),
 
 	#generic_msg{      
-	type			 =associate,
+	type			 =Method,
 	target 		  	 =list_to_binary(KBD),
 	caller 		  	 ={list_to_binary(Client_identifier), Dialog, nksip_lib:uid()},
 	callee 		  	 ={list_to_binary(KBD), Dialog, <<>>},

@@ -53,70 +53,53 @@ terminate(_Reason, _State) ->
 
 
 handle_call({route_lcp_msg, Msg, IP, Port}, From, 
-	state=#lcp_gateway_state{client_table=table}) ->
+	State=#lcp_gateway_state{client_table=Table}) ->
 	gen_server:reply(From, ok),
 
 	case resolve_lcp_client(IP, Port, Table) of 
 		{ok, PID} ->
 			case gen_fsm:sync_send_event(PID, Msg) of
 				{route, MSG} -> 
-					%generic_exchange_dialog_router:route_message(Msg);
-					ok;
+					generic_exchange_dialog_router:route_message(MSG);
 				do_nothing ->
 					do_nothing;
 				Error ->
 					lager:info("this should never ever happen ~p", [Error])
 
-			end
+			end;
 		{error, not_found} ->
 			{ok, PID} = supervisor:start_child(generic_exchange_lcp_client_sup,
 				[IP,Port,"1018"]),
 			add_lcp_client(IP, Port, PID, Table),
 			case gen_fsm:sync_send_event(PID, Msg) of
 				{route, MSG} -> 
-					%generic_exchange_dialog_router:route_message(Msg);
-					ok;
+					lager:info("message routed", []),
+					generic_exchange_dialog_router:route_message(MSG);
 				do_nothing ->
 					do_nothing;
 				Error ->
-					lager:info("this should never ever happen ~p", [Error])
-
+					io:format("this should never ever happen ~p", [Error])
 			end
 	end,	
 
 	{noreply, State};
 
-handle_call({transmit_generic_msg, {_Msg=#generic_msg{}, IP, Port}}, From,
+handle_call({transmit_generic_msg, {Msg=#generic_msg{}, IP, Port}}, From,
 	State=#lcp_gateway_state{client_table=Table}) ->
-	
+	io:format("received generic message ~p", [Msg]),	
 	gen_server:reply(From, ok),
 	case resolve_lcp_client(IP, Port, Table) of 
 		{ok, PID} ->
 			case gen_fsm:sync_send_event(PID, Msg) of
 				{route, MSG} -> 
-					%generic_exchange_dialog_router:route_message(Msg);
-					ok;
+					generic_exchange_dialog_router:route_message(MSG);
 				do_nothing ->
-					do_nothing;
+					ok;
 				Error ->
 					lager:info("this should never ever happen ~p", [Error])
-
 			end
-		{error, not_found} ->
-			{ok, PID} = supervisor:start_child(generic_exchange_lcp_client_sup,
-				[IP,Port,"1018"]),
-			add_lcp_client(IP, Port, PID, Table),
-			case gen_fsm:sync_send_event(PID, Msg) of
-				{transmit, MSG} -> 
-					generic_exchange_transport_lcp:
-					ok;
-				do_nothing ->
-					do_nothing;
-				Error ->
-					lager:info("this should never ever happen ~p", [Error])
-
-			end
-	{reply, ok, _State};
+	end,
+	{reply, ok, State};
 
 handle_call({remove_lcp_client, PID}, _From, State=#lcp_gateway_state{client_table=Table}) ->
 	Result = case remove_lcp_client(PID, Table) of 
@@ -163,4 +146,5 @@ remove_lcp_client(PID, Ets) ->
 	true.
 
 add_lcp_client(IP, Port, PID, ETS) ->
+	io:format("adding new client ~p", [PID]),
 	ets:insert(ETS, {IP, Port, PID}).

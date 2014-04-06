@@ -5,7 +5,7 @@
 
 on_connect(Client) ->
     io:format("connect ~p~n", [Client]),
-    norepl y.
+    noreply.
 
 -spec on_message({inet:ip_address(), inet:network_port()}, term()) ->
 	noreply.
@@ -18,9 +18,8 @@ on_disconnect(Client) ->
     io:format("disconnect ~p~n", [Client]),
      noreply.
 
-send() ->
-	ok.
- 
+send(IP, Port, Msg) ->
+	elcpcp:send_message({{IP}, Port}, Msg).
 
 start() -> 
     ok = application:start(elcpcp),
