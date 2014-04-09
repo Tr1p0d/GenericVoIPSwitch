@@ -21,7 +21,7 @@ idle({fromRP, MSG=#generic_msg{type=associate, callee={Identifier, _, _},
 	receivedOn=RecvOn}}, From, State=#dialog_state{ specific_gateway=PID,
 	associationAA=AAA }) ->
 
-	addAssociates(Identifier, RecvOn, AAA),
+	addAssociates(Identifier, RecvOn, PID, AAA),
 	gen_server:call(PID, {transmit_generic_msg, route(MSG, RecvOn, AAA)}),
 	{stop, normal, ok, State#dialog_state{associationAA=AAA}};
 
@@ -95,6 +95,9 @@ start_link(Destination, AssociationAA) ->
  	gen_fsm:start_link(?MODULE, [Destination, AssociationAA], []).
 
 init([{PID, _Reference}, AssociationAA]) ->
+	{ok, idle, #dialog_state{specific_gateway=PID, associationAA=AssociationAA}, ?TIMEOUT};
+
+init([PID, AssociationAA]) ->
 	{ok, idle, #dialog_state{specific_gateway=PID, associationAA=AssociationAA}, ?TIMEOUT}.	
 
 code_change(_Old, StateName, StateData, _Extra)->
@@ -122,37 +125,37 @@ terminate(_Reason, StateName, _StateData) ->
 -spec route(#generic_msg{}, {inet:ip_address(), inet:port_number()}, ets:tid() | atom()) -> 
 	{#generic_msg{}, inet:ip_address(), inet:port_number()}.
 
-route(_MSG=#generic_msg{      
-	type             = accept,
-	target 		     = Target,
-	caller 		     = Caller,
-	callee 		     = Callee,
-	upstreamRoute  	 = USRoute,
-	downstreamRoute  = DSRoute,
-	routeToRecord 	 = R2R,
-	sequenceNum	     = SeqNum,
-	timeToLive		 = TTL,
-	specificProtocol = SpecProt }, _, _) ->
-
-	[ _  | Rest ] = lists:reverse(DSRoute), 	
-	[ {DSIP, DSPort} | _ ] = Rest,
-	{ok,DSIPfinal} = inet_parse:ipv4_address(binary_to_list(DSIP)),
-
-	{#generic_msg{
-		type             = accept,
-		target 		     = Target,
-		caller 		     = Caller,
-		callee 		     = Callee,
-		upstreamRoute  	 = USRoute,
-		downstreamRoute  = lists:reverse(Rest),
-		routeToRecord 	 = R2R,
-		sequenceNum	     = SeqNum,
-		timeToLive		 = TTL - 1,
-		specificProtocol = SpecProt }, DSIPfinal, DSPort};
+%route(_MSG=#generic_msg{      
+%	type             = accept,
+%	target 		     = Target,
+%	caller 		     = Caller,
+%	callee 		     = Callee,
+%	upstreamRoute  	 = USRoute,
+%	downstreamRoute  = DSRoute,
+%	routeToRecord 	 = R2R,
+%	sequenceNum	     = SeqNum,
+%	timeToLive		 = TTL,
+%	specificProtocol = SpecProt }, _, _) ->
+%
+%	[ _  | Rest ] = lists:reverse(DSRoute), 	
+%	[ {DSIP, DSPort} | _ ] = Rest,
+%	{ok,DSIPfinal} = inet_parse:ipv4_address(binary_to_list(DSIP)),
+%
+%	{#generic_msg{
+%		type             = accept,
+%		target 		     = Target,
+%		caller 		     = Caller,
+%		callee 		     = Callee,
+%		upstreamRoute  	 = USRoute,
+%		downstreamRoute  = lists:reverse(Rest),
+%		routeToRecord 	 = R2R,
+%		sequenceNum	     = SeqNum,
+%		timeToLive		 = TTL - 1,
+%		specificProtocol = SpecProt }, DSIPfinal, DSPort};
 
 %route ringing
 route(_MSG=#generic_msg{      
-	type             = ring,
+	type             = Type,
 	target 		     = Target,
 	caller 		     = Caller,
 	callee 		     = Callee,
@@ -161,25 +164,48 @@ route(_MSG=#generic_msg{
 	routeToRecord 	 = R2R,
 	sequenceNum	     = SeqNum,
 	timeToLive		 = TTL,
-	specificProtocol = SpecProt }, _, _) ->
+	specificProtocol = SpecProt }, _, AETS) when 
+		Type == ring; Type == accept ->
 
+	{CID, _DID, _PartID}  = Callee,
+
+	lager:warning("DSROUTE in route ~p", [DSRoute]),
 
 	[ _  | Rest ] = lists:reverse(DSRoute), 	
-	[ {DSIP, DSPort} | _ ] = Rest,
-	{ok,DSIPfinal} = inet_parse:ipv4_address(binary_to_list(DSIP)),
+	case Rest of 
+		% means THE exchange is destination. So lets see where to which GW shall
+		% we pass the message
+		[] ->
+			case generic_exchange_networking:resolve_target(CID, AETS) of
+				{ok, {IP, Port}} -> 
+					{#generic_msg{
+						type             = Type,
+						target 		     = Target,
+						caller 		     = Caller,
+						callee 		     = Callee,
+						upstreamRoute  	 = USRoute,
+						downstreamRoute  = lists:reverse(Rest),
+						routeToRecord 	 = R2R,
+						sequenceNum	     = SeqNum,
+						timeToLive		 = TTL - 1,
+						specificProtocol = SpecProt }, IP, Port}
+			end;
 
-	{#generic_msg{
-		type             = ring,
-		target 		     = Target,
-		caller 		     = Caller,
-		callee 		     = Callee,
-		upstreamRoute  	 = USRoute,
-		downstreamRoute  = lists:reverse(Rest),
-		routeToRecord 	 = R2R,
-		sequenceNum	     = SeqNum,
-		timeToLive		 = TTL - 1,
-		specificProtocol = SpecProt }, DSIPfinal, DSPort};
-
+		% else just dummy routing based on downstream route
+		[ {DSIP, DSPort, _Opts} | _ ] ->
+			{ok,DSIPfinal} = inet_parse:ipv4_address(binary_to_list(DSIP)),
+			{#generic_msg{
+				type             = Type,
+				target 		     = Target,
+				caller 		     = Caller,
+				callee 		     = Callee,
+				upstreamRoute  	 = USRoute,
+				downstreamRoute  = lists:reverse(Rest),
+				routeToRecord 	 = R2R,
+				sequenceNum	     = SeqNum,
+				timeToLive		 = TTL - 1,
+				specificProtocol = SpecProt }, DSIPfinal, DSPort}
+	end;
 
 % route invite
 route(_MSG=#generic_msg{      
@@ -202,7 +228,7 @@ route(_MSG=#generic_msg{
 				caller 		     = Caller,
 				callee 		     = Callee,
 				upstreamRoute  	 = USRoute,
-				downstreamRoute  = [{<<"127.0.0.1">>, 5060}|DSRoute],
+				downstreamRoute  = [{<<"127.0.0.1">>, 5060, [{<<"branch">>,nksip_lib:uid()}]}|DSRoute],
 				routeToRecord 	 = R2R,
 				sequenceNum	     = SeqNum,
 				timeToLive		 = TTL - 1,
@@ -228,16 +254,16 @@ route(_MSG=#generic_msg{
 		caller 		     = Caller,
 		callee 		     = Callee,
 		upstreamRoute  	 = USRoute,
-		downstreamRoute  = [{<<"127.0.0.1">>, 5060}|DSRoute],
+		downstreamRoute  = DSRoute,
 		routeToRecord 	 = R2R,
 		sequenceNum	     = SeqNum,
 		timeToLive		 = TTL - 1,
 		specificProtocol = SpecProt }, IP, Port}.
 
 
--spec addAssociates(term(), term(), ets:tid() | atom()) ->
+-spec addAssociates(term(), term(), term(), ets:tid() | atom()) ->
 	true.
 
-addAssociates(Key, Item, DT) ->
-	ets:insert(DT, {Key, Item}).
+addAssociates(Key, Item, Item2, DT) ->
+	ets:insert(DT, {Key, Item, Item2}).
 

@@ -1,5 +1,5 @@
 {application,generic_exchange,
-             [{description,[]},
+             [{description,"generic exchange by marek kidon"},
               {vsn,"1"},
               {registered,[]},
               {applications,[kernel,stdlib]},

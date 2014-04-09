@@ -4,7 +4,7 @@
 -include("../include/generic_exchange.hrl").
 -include("../deps/nksip/include/nksip.hrl").
 
-sip_to_generic(_Msg=#sipmsg{
+sip_to_generic(Msg=#sipmsg{
     class = {resp, _, _}=Class,
     vias = Vias,
     from = #uri{
@@ -15,7 +15,7 @@ sip_to_generic(_Msg=#sipmsg{
 		},
     call_id = CallID,
     cseq = SeqNum,
-    cseq_method = _SeqMethod,
+    cseq_method = SeqMethod,
     forwards = TTL,
     routes = Route,
     from_tag = FromTag,
@@ -30,17 +30,18 @@ sip_to_generic(_Msg=#sipmsg{
 	upstreamRoute = Route,
 	downstreamRoute = lists:foldr( 
 		fun(Via, Acc) ->
-			[{Via#via.domain, Via#via.port}|Acc]
+			[{Via#via.domain, Via#via.port, Via#via.opts}|Acc]
 		end,
 		[], Vias),
 	routeToRecord = [],
-	sequenceNum	= SeqNum,
+	sequenceNum	= {SeqNum, SeqMethod},
 	timeToLive=TTL,
 	receivedOn={IP,Port},
-	specificProtocol = _Msg};
+	specificProtocol = add_specific(Msg)
+};
 
 
-sip_to_generic(_Msg=#sipmsg{
+sip_to_generic(Msg=#sipmsg{
     class = Class,
     ruri = #uri{
 		user=Target
@@ -54,7 +55,7 @@ sip_to_generic(_Msg=#sipmsg{
 		},
     call_id = CallID,
     cseq = SeqNum,
-    cseq_method = _SeqMethod,
+    cseq_method = SeqMethod,
     forwards = TTL,
     routes = Route,
     from_tag = FromTag,
@@ -68,82 +69,71 @@ sip_to_generic(_Msg=#sipmsg{
 	upstreamRoute = Route,
 	downstreamRoute = lists:foldr( 
 		fun(Via, Acc) ->
-			[{Via#via.domain, Via#via.port}|Acc]
+			[{Via#via.domain, Via#via.port, Via#via.opts}|Acc]
 		end,
 		[], Vias),
 	routeToRecord = [],
-	sequenceNum	= SeqNum,
+	sequenceNum	= {SeqNum, SeqMethod},
 	timeToLive=TTL,
 	receivedOn={IP,Port},
-	specificProtocol = _Msg}.
+	specificProtocol = add_specific(Msg)}.
 
+
+% ROUTING RESPONSES
 generic_to_sip(GenMsg=#generic_msg{
-	type = accept,
-	target = GenTarget,
-	% switch them back
+	type = Type,
+	target = _GenTarget,
 	callee = {GenFromUser, GenCallID, GenFromTag},
 	caller = {GenToUser, GenCallID, GenToTag},		  
 	upstreamRoute = UpstreamRoute,
 	downstreamRoute = DownstreamRoute,
 	routeToRecord = [],
-	sequenceNum	= SeqNum,
+	sequenceNum	= {SeqNum, SeqMethod},
 	timeToLive=GenTTL,
-	specificProtocol = SpecMsg}) ->
+	specificProtocol = _SpecMsg}) when Type == ring; Type == accept 
+	->
+
 
 	#sipmsg{
-    ruri = SIPTarget,
-    vias = Vias,
-    from = SipFrom,
-    to  = SipTo
-	}=SpecMsg,
-
-	SpecMsg#sipmsg{
-		class = {resp, 200, "OK"},
-		ruri = undefined,
-		vias = Vias,
-		from=SipFrom#uri{
-				user=GenFromUser
-			},
-		to=SipTo#uri{
-				user=GenToUser
-			},
-		cseq=SeqNum,
-		forwards=GenTTL
-		};
-
-generic_to_sip(GenMsg=#generic_msg{
-	type = ring,
-	target = GenTarget,
-	% switch them back
-	callee = {GenFromUser, GenCallID, GenFromTag},
-	caller = {GenToUser, GenCallID, GenToTag},		  
-	upstreamRoute = UpstreamRoute,
-	downstreamRoute = DownstreamRoute,
-	routeToRecord = [],
-	sequenceNum	= SeqNum,
-	timeToLive=GenTTL,
-	specificProtocol = SpecMsg}) ->
-
-	#sipmsg{
-    ruri = SIPTarget,
-    vias = Vias,
-    from = SipFrom,
-    to  = SipTo
-	}=SpecMsg,
-
-	SpecMsg#sipmsg{
-		class = {resp, 180, "RINGING"},
-		ruri = undefined,
-		vias = Vias,
-		from=SipFrom#uri{
-				user=GenFromUser
-			},
-		to=SipTo#uri{
-				user=GenToUser
-			},
-		cseq=SeqNum,
-		forwards=GenTTL
-		};
+    id = <<"cgwmoVbhMTt">>,
+    class = generic_type_to_sip_class(Type, GenMsg),
+    app_id = 0,
+    dialog_id = undefined,
+	ruri = undefined,
+	vias=lists:reverse(lists:map(
+		fun({Domain, Port, Opts}) ->
+			#via{domain=Domain, port=Port, opts=Opts}
+		end,
+		DownstreamRoute)),
+	from=#uri{
+			user=GenFromUser,
+			domain= <<"127.0.0.1">>
+			%ext_opts=[{<<"tag">>, GenFromTag}]
+			
+		},
+	to=#uri{
+			user=GenToUser,
+			domain= <<"127.0.0.1">>
+		},
+    call_id = GenCallID,
+    cseq = SeqNum,
+    cseq_method = SeqMethod,
+    forwards = GenTTL,
+	routes = UpstreamRoute,
+	contacts = [],
+    content_type = resolve_content(GenMsg),
+	require = [],
+	supported = [],
+	expires = undefined,
+    event = undefined, 
+	headers= [],
+	body = extract_body_from_generic(GenMsg),
+    from_tag = GenFromTag,
+    to_tag = GenToTag,
+    to_tag_candidate = <<>>,
+	transport = #transport{},
+    start = 123456789,
+	meta = []};
 
 generic_to_sip(GenMsg=#generic_msg{
 	type = Type,
@@ -153,48 +143,99 @@ generic_to_sip(GenMsg=#generic_msg{
 	upstreamRoute = UpstreamRoute,
 	downstreamRoute = DownstreamRoute,
 	routeToRecord = [],
-	sequenceNum	= SeqNum,
+	sequenceNum	= {SeqNum, SeqMethod},
 	timeToLive=GenTTL,
-	specificProtocol = SpecMsg}) ->
+	specificProtocol = _SpecMsg}) when Type == make_call 
+	->
+
+	lager:warning("DSR ~p", [DownstreamRoute]),
+
+	[{Domain2, _Port2, _Opts} | _ ] = DownstreamRoute,
 
 	#sipmsg{
-    ruri = SIPTarget,
-    vias = Vias,
-    from = SipFrom,
-    to  = SipTo
-	}=SpecMsg,
-
-	lager:info("~p", [DownstreamRoute]),
-
-	[{Domain2, Port2} | DST] = DownstreamRoute,
-
-	SpecMsg#sipmsg{
-		class = generic_type_to_sip_class(Type, GenMsg),
-		ruri = SIPTarget#uri{
-				user=GenTarget
+    id = <<"cgwmoVbhMTt">>,
+    class = generic_type_to_sip_class(Type, GenMsg),
+    app_id = 0,
+    dialog_id = undefined,
+    ruri = #uri{
+				user=GenTarget,
+				domain=Domain2
 			},
-		vias=lists:reverse([#via{
-					domain=Domain2,
-					port=Port2,
-					opts=[{branch, nksip_lib:uid()},rport]}
-					|lists:reverse(lists:zipwith(
-			fun({Domain, Port}, Via) ->
-				Via#via{domain=Domain, port=Port}
-			end,
-			DST, Vias))]),
-		from=SipFrom#uri{
-				user=GenFromUser
-			},
-		to=SipTo#uri{
-				user=GenToUser
-			},
-		cseq=SeqNum,
-		forwards=GenTTL
-		}.
+	vias=lists:reverse(lists:map(
+		fun({Domain, Port, Opts}) ->
+			#via{domain=Domain, port=Port, opts=Opts}
+		end,
+		DownstreamRoute)),
+	from=#uri{
+			user=GenFromUser,
+			domain= <<"127.0.0.1">>,
+			ext_opts=[{<<"tag">>, GenFromTag}]
+			
+		},
+	to=#uri{
+			user=GenToUser,
+			domain= <<"127.0.0.1">>
+		},
+    call_id = GenCallID,
+    cseq = SeqNum,
+    cseq_method = SeqMethod,
+    forwards = GenTTL,
+	routes = UpstreamRoute,
+	contacts = [],
+    content_type = resolve_content(GenMsg),
+	require = [],
+	supported = [],
+	expires = undefined,
+    event = undefined, 
+	headers= [],
+	body = extract_body_from_generic(GenMsg),
+    from_tag = GenFromTag,
+    to_tag = GenToTag,
+    to_tag_candidate = <<>>,
+	transport = #transport{},
+    start = 123456789,
+	meta = []}.
+
 	
 %
 % 	HELPER FUNCTIONS
 %
+
+-spec add_specific(#sipmsg{}) ->
+	term().
+
+add_specific(#sipmsg{body=Body}) ->
+	case nksip_sdp:is_sdp(Body) of
+		true ->
+			Body;
+		false ->
+			[]
+	end.
+
+-spec resolve_content(#generic_msg{}) ->
+	term().
+
+resolve_content(#generic_msg{specificProtocol=Proto}) ->
+	case Proto of
+		#sdp{} ->
+			{<<"application/sdp">>,[]};
+		_ ->
+			undefined
+	end.
+
+-spec extract_body_from_generic(#generic_msg{}) ->
+	term().
+
+extract_body_from_generic(#generic_msg{specificProtocol=Proto}) ->
+	case Proto of
+		#sdp{} ->
+			Proto;
+		_ ->
+			<<>>
+	end.
+
+
+
 sip_class_to_generic_type({req, Method})->
 	case Method of 
 		'INVITE' -> make_call;

@@ -59,7 +59,18 @@ terminate(_Reason, _State) ->
 
 handle_call({create_dialog, Gateway, {_ClientID, DialogID, PartID}},
 	_From, State=#dialog_manager_state{dialog_table=DT, association_table=AT}) ->
-	{ok, PID} = supervisor:start_child(generic_exchange_dialog_sup, [Gateway, AT] ),
+
+	lager:warning("association Table ~p", [ets:match(AT, {'$1', '$2', '$3'})]), 
+
+	case is_client_associated(AT, _ClientID) of
+		{true, AGW} ->
+			% yes our client is already present in associatin table
+			{ok, PID} = supervisor:start_child(generic_exchange_dialog_sup, [AGW, AT] );
+			% no ot is not, lets use incomming gateway as default
+		{false, _ } ->
+			{ok, PID} = supervisor:start_child(generic_exchange_dialog_sup, [Gateway, AT] )
+	end,
+
 	ets:insert(DT, {DialogID, PartID, PID}),
 	{reply,  {ok, PID}, State};
 
@@ -94,3 +105,15 @@ handle_cast(_Msg, _State) ->
 handle_info(_Msg, _State) ->
 	lager:warning('?MODULE received an unexpected message'),
 	{noreply, _State}.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%
+% HELPER FUNCTIONS
+%%%%%%%%%%%%%%%%%%%%%%%
+
+
+is_client_associated(Ets, ClientIdentifier) ->
+	case ets:match(Ets, {ClientIdentifier, '_', '$1'}) of
+		[[PID]] -> {true, PID};
+		[] -> {false, not_found}
+ 	end.

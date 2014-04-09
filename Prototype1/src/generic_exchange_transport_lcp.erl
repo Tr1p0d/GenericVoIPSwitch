@@ -22,5 +22,4 @@ send(IP, Port, Msg) ->
 	elcpcp:send_message({{IP}, Port}, Msg).
 
 start() -> 
-    ok = application:start(elcpcp),
     {ok, _Pid} = elcpcp_listener:create(?MODULE, []).

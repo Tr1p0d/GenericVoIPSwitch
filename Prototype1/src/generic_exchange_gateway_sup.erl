@@ -46,7 +46,7 @@ LCPGatewaySpecs =
 		{
 			generic_exchange_lcp_gateway,
 			start_link,
-			[ets:new(lCPClientTable, [bag, public])]
+			[ets:new(lCPClientTable, [bag, public, named_table])]
 		},
 		permanent,
 		2000,

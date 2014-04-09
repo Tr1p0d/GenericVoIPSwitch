@@ -86,20 +86,18 @@ handle_call({route_lcp_msg, Msg, IP, Port}, From,
 
 handle_call({transmit_generic_msg, {Msg=#generic_msg{}, IP, Port}}, From,
 	State=#lcp_gateway_state{client_table=Table}) ->
-	io:format("received generic message ~p", [Msg]),	
+	lager:info("received generic message in transmit_generic_msg ~p ~p : ~p", [Msg, IP, Port]),	
 	gen_server:reply(From, ok),
 	case resolve_lcp_client(IP, Port, Table) of 
 		{ok, PID} ->
 			case gen_fsm:sync_send_event(PID, Msg) of
-				{route, MSG} -> 
-					generic_exchange_dialog_router:route_message(MSG);
 				do_nothing ->
 					ok;
 				Error ->
 					lager:info("this should never ever happen ~p", [Error])
 			end
 	end,
-	{reply, ok, State};
+	{noreply, State};
 
 handle_call({remove_lcp_client, PID}, _From, State=#lcp_gateway_state{client_table=Table}) ->
 	Result = case remove_lcp_client(PID, Table) of 
@@ -137,8 +135,8 @@ resolve_lcp_client(IP, Port, Ets) ->
 	case ets:match(Ets, {IP, Port, '$1'}) of
 		[[PID]] -> {ok, PID};
 		[] -> {error, not_found}
-	end.
-
+ 	end.
+ 
 remove_lcp_client(PID, Ets) ->
 	ets:match_delete(Ets, {'_', '_', PID}).
 

@@ -21,11 +21,12 @@
 		active_dialog			:: binary()
 	}).
 
+-include("deps/elcpcp/src/msg_type.hrl").
 
 
 available({transport_cookie_ind, <<"cookie">>}, _Frm, State) ->
 	Gen_msg=create_generic_message(State, associate),
-	{reply, {route, Gen_msg}, associating, ?TIMEOUT}.
+	{reply, {route, Gen_msg}, associating, State, ?TIMEOUT}.
 
 associating(#generic_msg{type = accept}, _From, State) ->
 	lager:warning("client lcp associated"),
@@ -35,11 +36,20 @@ associating(timeout, _From, State) ->
 	{stop, normal, State}.
 
 online({transport_cookie_ind, <<"cookie">>}, From, State) ->
-	NewState=State#lcp_client_state{keyboard_state="alice"},
-	{reply, {route, create_generic_message(make_call, NewState)}, online, NewState};
+	NewState = State#lcp_client_state{keyboard_state="alice"},
+	{reply, {route, create_generic_message(NewState,make_call)}, online, NewState};
 
-online(#generic_msg{type=accept}, From, State) ->
-	lager:warning('ringing').
+online(#generic_msg{type=ring}, From, State=#lcp_client_state{
+		ip=IP,
+		port=Port}) ->
+
+	elcpcp:send_message({IP, Port}, {datagram_ind, cornet_msg, {kbd_up_ind, 1}}),
+	lager:warning("ringing"),
+
+	{reply, do_nothing, ringback, State}. 
+
+ringback(#generic_msg{type=accept}, From, State) ->
+	{reply, do_nothing, incall, State}. 
 
 start_link(IP, Port, Ident) ->
  	gen_fsm:start_link(?MODULE, [IP, Port, Ident], []).
@@ -81,6 +91,27 @@ create_generic_message(#lcp_client_state{
 	keyboard_state=KBD,
 	identifier=Client_identifier,
 	ip=IP,
+	port=Port}, associate) ->
+
+	Dialog = nksip_lib:uid(),
+
+	#generic_msg{      
+	type			 =associate,
+	target 		  	 =list_to_binary(KBD),
+	caller 		  	 ={list_to_binary(Client_identifier), Dialog, nksip_lib:uid()},
+	callee 		  	 ={list_to_binary(Client_identifier), Dialog, <<>>},
+	upstreamRoute  	 = [],
+	downstreamRoute  =[],
+	routeToRecord 	 =[],
+	sequenceNum	  	 =1 ,
+	specificProtocol =[],
+	timeToLive 		 =70,
+	receivedOn       = {IP,Port}};
+
+create_generic_message(#lcp_client_state{
+	keyboard_state=KBD,
+	identifier=Client_identifier,
+	ip=IP,
 	port=Port}, Method) ->
 
 	Dialog = nksip_lib:uid(),
@@ -90,12 +121,11 @@ create_generic_message(#lcp_client_state{
 	target 		  	 =list_to_binary(KBD),
 	caller 		  	 ={list_to_binary(Client_identifier), Dialog, nksip_lib:uid()},
 	callee 		  	 ={list_to_binary(KBD), Dialog, <<>>},
-	upstreamRoute  	 = <<>>,
+	upstreamRoute  	 = [],
 	downstreamRoute  =[],
 	routeToRecord 	 =[],
 	sequenceNum	  	 =1 ,
-	specificProtocol =[nksip_sdp:new()],
+	specificProtocol =nksip_sdp:new(),
 	timeToLive 		 =70,
 	receivedOn       = {IP,Port}}.
-
 
