@@ -16,7 +16,7 @@ lcp_only_test_() ->
 				application:unload(elcpcp)
 		end,
 		[	
-			fun(_) ->
+			fun() ->
 				simple_lcp_client:send_message(),
 				timer:sleep(1000),
 				?assertMatch( [[_,_,_]] , ets:match(lCPClientTable, {'$1','$2', '$3'}))
