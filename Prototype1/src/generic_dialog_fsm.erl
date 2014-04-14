@@ -4,7 +4,7 @@
 -export([start_link/2, init/1, code_change/4, handle_event/3, handle_info/3]).
 -export([handle_sync_event/4, terminate/3]).
 
--export([idle/3, idle/2, ringing/3, ringing/2, dialed/3, dialed/2, ringback/3, ringback/2]).
+-export([idle/3, idle/2, ringing/3, ringing/2, dialed/3, dialed/2, ringback/3, ringback/2, incall/3, incall/2, teardown/3, teardown/2]).
 
 -include("../include/generic_exchange.hrl").
 
@@ -18,7 +18,7 @@
 
 %% ------------ IDLE -> IDLE TRANSITION --- ASSOCIATION
 idle({fromRP, MSG=#generic_msg{type=associate, callee={Identifier, _, _},
-	receivedOn=RecvOn}}, From, State=#dialog_state{ specific_gateway=PID,
+	receivedOn=RecvOn}}, _From, State=#dialog_state{ specific_gateway=PID,
 	associationAA=AAA }) ->
 
 	addAssociates(Identifier, RecvOn, PID, AAA),
@@ -30,19 +30,18 @@ idle({fromTU, _MSG=#generic_msg{type=associate}}, _From, State) ->
 	{stop, normal, ok, State};
 
 %% ------------ IDLE -> DIALED TRANSITION
-idle({fromTU, MSG=#generic_msg{type=make_call, callee={Identifier, _, _},
-	receivedOn=RecvOn}}, _From, State=#dialog_state{ specific_gateway=PID,
-	associationAA=_AAA }) ->
+idle({fromTU, #generic_msg{type=make_call}},
+	_From, State)->
 
 	{reply, ok, dialed, State, ?TIMEOUT};
 
 %% ------------ IDLE -> RINGING TRANSITION
-idle({fromRP, MSG=#generic_msg{type=make_call, callee={Identifier, _, _},
+idle({fromRP, MSG=#generic_msg{type=make_call,
 	receivedOn=RecvOn}}, _From, State=#dialog_state{ specific_gateway=PID,
-	associationAA=_AAA }) ->
+	associationAA=AAA }) ->
 
-	gen_server:call(PID, {transmit_generic_msg, route(MSG, RecvOn, _AAA)}),
-	{reply, ok, ringing, State#dialog_state{associationAA=_AAA}, ?TIMEOUT}.
+	gen_server:call(PID, {transmit_generic_msg, route(MSG, RecvOn, AAA)}),
+	{reply, ok, ringing, State#dialog_state{associationAA=AAA}, ?TIMEOUT}.
 
 idle(timeout, State) ->
 	?WARNING("dialog timed-out in state ~p", [State]),
@@ -50,16 +49,12 @@ idle(timeout, State) ->
 
 
 %% ------------ RINGING -> RINGING TRANSITION
-ringing({fromTU, MSG=#generic_msg{type=ring, callee={Identifier, _, _},
-	receivedOn=RecvOn}}, _From, State=#dialog_state{ specific_gateway=PID,
-	associationAA=_AAA }) ->
+ringing({fromTU, #generic_msg{type=ring}}, _From, State) ->
 
 	{reply, ok, ringing, State, ?TIMEOUT};
 
 %% ------------ RINGING -> INCALL TRANSITION
-ringing({fromTU, MSG=#generic_msg{type=accept, callee={Identifier, _, _},
-	receivedOn=RecvOn}}, _From, State=#dialog_state{ specific_gateway=PID,
-	associationAA=_AAA }) ->
+ringing({fromTU, #generic_msg{type=accept}}, _From, State) ->
 
 	{reply, ok, incall, State, ?TIMEOUT}.
 
@@ -68,7 +63,7 @@ ringing(timeout, State) ->
 	{stop, normal, State}.
 
 %% ------------ DIALED -> RINGBACK TRANSITION
-dialed({fromRP, MSG=#generic_msg{type=ring, callee={Identifier, _, _},
+dialed({fromRP, MSG=#generic_msg{type=ring,
 	receivedOn=RecvOn}}, _From, State=#dialog_state{ specific_gateway=PID,
 	associationAA=AAA }) ->
 
@@ -80,7 +75,7 @@ dialed(timeout, State) ->
 	{stop, normal, State}.
 
 %% ------------ RINGBACK -> INCALL TRANSITION
-ringback({fromRP, MSG=#generic_msg{type=accept, callee={Identifier, _, _},
+ringback({fromRP, MSG=#generic_msg{type=accept,
 	receivedOn=RecvOn}}, _From, State=#dialog_state{ specific_gateway=PID,
 	associationAA=AAA }) ->
 
@@ -90,6 +85,38 @@ ringback({fromRP, MSG=#generic_msg{type=accept, callee={Identifier, _, _},
 ringback(timeout, State) ->
 	?WARNING("dialog timed-out in state ~p", [State]),
 	{stop, normal, State}.
+
+incall({fromTU, MSG=#generic_msg{type=teardown,
+	receivedOn=RecvOn}}, _From, State=#dialog_state{ specific_gateway=PID,
+	associationAA=AAA }) ->
+
+	gen_server:call(PID, {transmit_generic_msg, route(MSG, RecvOn, AAA)}),
+	{reply, ok, teardown, State, ?TIMEOUT};
+
+incall({fromRP, #generic_msg{type=teardown}}, _From, State) ->
+	{reply, ok, incall, State, ?TIMEOUT};
+
+incall({fromTU, MSG=#generic_msg{type=accept,
+	receivedOn=RecvOn}}, _From, State=#dialog_state{ specific_gateway=PID,
+	associationAA=AAA }) ->
+
+	gen_server:call(PID, {transmit_generic_msg, route(MSG, RecvOn, AAA)}),
+	{stop, normal, ok, State#dialog_state{associationAA=AAA}}.
+
+incall(timeout, State) ->
+	?WARNING("dialog timed-out in state ~p", [State]),
+	{stop, normal, State}.
+
+teardown({fromRP, #generic_msg{type=accept}}, _From, State) ->
+	{stop, normal, ok, State}.
+
+teardown(timeout, State) ->
+	?WARNING("dialog timed-out in state ~p", [State]),
+	{stop, normal, State}.
+
+
+
+
 
 start_link(Destination, AssociationAA) ->
  	gen_fsm:start_link(?MODULE, [Destination, AssociationAA], []).
@@ -209,7 +236,7 @@ route(_MSG=#generic_msg{
 
 % route invite
 route(_MSG=#generic_msg{      
-	type             = make_call,
+	type             = Type,
 	target 		     = Target,
 	caller 		     = Caller,
 	callee 		     = Callee,
@@ -218,17 +245,20 @@ route(_MSG=#generic_msg{
 	routeToRecord 	 = R2R,
 	sequenceNum	     = SeqNum,
 	timeToLive		 = TTL,
-	specificProtocol = SpecProt }, {_IP, _Port}, AAA) ->
+	specificProtocol = SpecProt }, {_IP, _Port}, AAA) 
+	when Type == make_call; Type == teardown ->
 
 	case generic_exchange_networking:resolve_target(Target, AAA) of
 		{ok, {IP, RemotePort}} ->
 			{#generic_msg{
-				type             = make_call,
+				type             = Type,
 				target 		     = Target,
 				caller 		     = Caller,
 				callee 		     = Callee,
 				upstreamRoute  	 = USRoute,
-				downstreamRoute  = [{<<"127.0.0.1">>, 5060, [{<<"branch">>,nksip_lib:uid()}]}|DSRoute],
+				downstreamRoute  = [{generic_exchange_networking:get_domain(),
+					generic_exchange_networking:get_port(),
+					[{<<"branch">>,nksip_lib:uid()}]}|DSRoute],
 				routeToRecord 	 = R2R,
 				sequenceNum	     = SeqNum,
 				timeToLive		 = TTL - 1,
@@ -240,7 +270,7 @@ route(_MSG=#generic_msg{
 	type             = associate,
 	target 		     = Target,
 	caller 		     = Caller,
-	callee 		     = Callee,
+	callee 		     = {Identifier, DialogID, _DialogPart},
 	upstreamRoute  	 = USRoute,
 	downstreamRoute  = DSRoute,
 	routeToRecord 	 = R2R,
@@ -251,8 +281,8 @@ route(_MSG=#generic_msg{
 	{#generic_msg{
 		type             = accept,
 		target 		     = Target,
-		caller 		     = Caller,
-		callee 		     = Callee,
+		callee 		     = Caller,
+		caller 		     = {Identifier, DialogID, nksip_lib:uid()},
 		upstreamRoute  	 = USRoute,
 		downstreamRoute  = DSRoute,
 		routeToRecord 	 = R2R,

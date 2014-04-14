@@ -1,5 +1,5 @@
 -module(generic_exchange_networking).
--export([resolve_target/2]).
+-export([resolve_target/2, get_domain/0, get_port/0]).
 
 resolve_target(Target, AA) ->
 
@@ -12,3 +12,9 @@ resolve_target(Target, AA) ->
 		[] ->
 			{error, not_found}
 	end.
+
+get_domain() ->
+	<<"127.0.0.1">>.
+
+get_port() ->
+	5060.

@@ -44,14 +44,24 @@ terminate(_Reason, _State) ->
 
 handle_call({route_sip_msg, _Msg=#sipmsg{class={resp, 100, _}}, _IP, _Port}, _From,State) ->
 	{reply, ok, State};
+
+handle_call({route_sip_msg, _Msg=#sipmsg{class={req, 'ACK'}}, _IP, _Port}, _From,State) ->
+	{reply, ok, State};
 	
-handle_call({route_sip_msg, _Msg=#sipmsg{}, IP, Port}, From,State) ->
+handle_call({route_sip_msg, Msg=#sipmsg{}, IP, Port}, From,State) ->
 	gen_server:reply(From, ok),
 	Result = case generic_exchange_dialog_router:
-		route_message(generic_exchange_sip_generic:sip_to_generic(_Msg,
+		route_message(generic_exchange_sip_generic:sip_to_generic(Msg,
 			IP, Port)) of
 		{ok, transmitted} ->
 			{noreply, State}
+	end,
+
+	case Msg of
+		#sipmsg{class={resp, 200, _}, cseq_method='INVITE'} ->
+			handle_specific(create_ACK(Msg), IP, Port);
+		Error ->
+			Error
 	end,
 	Result;
 
@@ -78,4 +88,60 @@ handle_cast(_Msg, _State) ->
 handle_info(_Msg, _State) ->
 	lager:warning('?MODULE received an unexpected message'),
 	{noreply, _State}.
+
+-spec handle_specific( #sipmsg{} , term(), term()) ->
+	ok.
+
+handle_specific( MSG , IP, Port) ->
+	generic_exchange_transport_sip_udp:send(MSG, IP, Port),
+	ok.
+
+-spec create_ACK(#sipmsg{}) ->
+	#sipmsg{}.
+
+create_ACK(MSG) ->
+	MSG#sipmsg{
+	class = {req, 'ACK'},
+	ruri = MSG#sipmsg.to,
+	%vias=lists:reverse(lists:map(
+	%	fun({Domain, Port, Opts}) ->
+	%		#via{domain=Domain, port=Port, opts=Opts}
+	%	end,
+	%	DownstreamRoute)),
+	%from=#uri{
+	%		user=GenFromUser,
+	%		domain= <<"127.0.0.1">>,
+	%		ext_opts=[fill_tag(GenFromTag)]
+	%		
+	%	},
+	%to=#uri{
+	%		user=GenToUser,
+	%		domain= <<"127.0.0.1">>,
+	%		ext_opts=[fill_tag(GenToTag)]
+	%	},
+    %call_id = GenCallID,
+    %cseq = SeqNum,
+    cseq_method = 'ACK',
+    forwards = 70,
+	%routes = UpstreamRoute,
+	contacts = [#uri{
+		%user=GenToUser,
+		domain=generic_exchange_networking:get_domain(),
+		port=generic_exchange_networking:get_port()
+	}],
+	content_type = undefined,
+	require = [],
+	supported = [],
+	expires = undefined,
+    event = undefined, 
+	headers= [],
+	body = [],
+    %from_tag = GenFromTag,
+    %to_tag = GenToTag,
+    to_tag_candidate = <<>>,
+	transport = #transport{},
+    start = 123456789,
+	meta = []}.
+
+
 

@@ -107,20 +107,25 @@ generic_to_sip(GenMsg=#generic_msg{
 		DownstreamRoute)),
 	from=#uri{
 			user=GenFromUser,
-			domain= <<"127.0.0.1">>
-			%ext_opts=[{<<"tag">>, GenFromTag}]
+			domain= <<"127.0.0.1">>,
+			ext_opts=[fill_tag(GenFromTag)]
 			
 		},
 	to=#uri{
 			user=GenToUser,
-			domain= <<"127.0.0.1">>
+			domain= <<"127.0.0.1">>,
+			ext_opts=[fill_tag(GenToTag)]
 		},
     call_id = GenCallID,
     cseq = SeqNum,
     cseq_method = SeqMethod,
     forwards = GenTTL,
 	routes = UpstreamRoute,
-	contacts = [],
+	contacts = [#uri{
+		user=GenToUser,
+		domain=generic_exchange_networking:get_domain(),
+		port=generic_exchange_networking:get_port()
+	}],
     content_type = resolve_content(GenMsg),
 	require = [],
 	supported = [],
@@ -145,7 +150,7 @@ generic_to_sip(GenMsg=#generic_msg{
 	routeToRecord = [],
 	sequenceNum	= {SeqNum, SeqMethod},
 	timeToLive=GenTTL,
-	specificProtocol = _SpecMsg}) when Type == make_call 
+	specificProtocol = _SpecMsg}) when Type == make_call; Type == teardown
 	->
 
 	lager:warning("DSR ~p", [DownstreamRoute]),
@@ -169,19 +174,24 @@ generic_to_sip(GenMsg=#generic_msg{
 	from=#uri{
 			user=GenFromUser,
 			domain= <<"127.0.0.1">>,
-			ext_opts=[{<<"tag">>, GenFromTag}]
+			ext_opts=[fill_tag(GenFromTag)]
 			
 		},
 	to=#uri{
 			user=GenToUser,
-			domain= <<"127.0.0.1">>
+			domain= <<"127.0.0.1">>,
+			ext_opts=[fill_tag(GenToTag)]
 		},
     call_id = GenCallID,
     cseq = SeqNum,
     cseq_method = SeqMethod,
     forwards = GenTTL,
 	routes = UpstreamRoute,
-	contacts = [],
+	contacts = [#uri{
+		user=GenFromUser,
+		domain=generic_exchange_networking:get_domain(),
+		port=generic_exchange_networking:get_port()
+	}],
     content_type = resolve_content(GenMsg),
 	require = [],
 	supported = [],
@@ -200,6 +210,15 @@ generic_to_sip(GenMsg=#generic_msg{
 %
 % 	HELPER FUNCTIONS
 %
+
+fill_tag(Tag) ->
+	case Tag of
+		<<>> ->
+			undefined;
+		Tag ->
+			{<<"tag">>, Tag}
+	end.
+
 
 -spec add_specific(#sipmsg{}) ->
 	term().
@@ -239,7 +258,8 @@ extract_body_from_generic(#generic_msg{specificProtocol=Proto}) ->
 sip_class_to_generic_type({req, Method})->
 	case Method of 
 		'INVITE' -> make_call;
-		'REGISTER' -> associate
+		'REGISTER' -> associate;
+		'BYE'	  -> teardown
 	end;
 
 sip_class_to_generic_type({resp, Code, _})->
@@ -253,5 +273,6 @@ generic_type_to_sip_class(Method, #generic_msg{}) ->
 		accept -> {resp, 200, "OK"};
 		ring -> {resp, 180, "RINGING"};
 
-		make_call -> {req, 'INVITE'}
+		make_call -> {req, 'INVITE'};
+			teardown -> {req, 'BYE'}
 	end.

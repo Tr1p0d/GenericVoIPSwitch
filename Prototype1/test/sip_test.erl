@@ -43,12 +43,13 @@ registration_test_() ->
 			%		nksip_uac:invite(bob, "sip:alice@127.0.0.1",
 			%		[{body, nksip_sdp:new()}]))
 			%end,
-			fun() ->
+			fun() -> 
 				{ok, 200, _} = nksip_uac:register(alice, "sip:127.0.0.1", []),
 				{ok, 200, _} = nksip_uac:register(bob, "sip:127.0.0.1", []),
 				{ok, 200, [{dialog_id, Dlg}]} = nksip_uac:invite(bob, "sip:alice@127.0.0.1",
 					[{body, nksip_sdp:new()}]),
-				?assertMatch(ok, nksip_uac:ack(bob, Dlg, [async]))
+				?assertMatch(ok, nksip_uac:ack(bob, Dlg, [])),
+				?assertMatch({ok, 200, _}, nksip_uac:bye(bob, Dlg, []))
 			end
 		]
 	}.
