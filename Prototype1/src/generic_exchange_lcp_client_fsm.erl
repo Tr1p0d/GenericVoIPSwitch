@@ -4,9 +4,11 @@
 -export([start_link/3, init/1, code_change/4, handle_event/3, handle_info/3]).
 -export([handle_sync_event/4, terminate/3]).
 
--export([available/3, online/3, associating/3]).
+-export([available/3, online/3, associating/3, ringback/3]).
 
 -include("../include/generic_exchange.hrl").
+%-include("../deps/elcpcp/src/msg_type.hrl").
+
 
 -define(TIMEOUT, 10000).
 
@@ -24,8 +26,12 @@
 -include("deps/elcpcp/src/msg_type.hrl").
 
 
-available({transport_cookie_ind, <<"cookie">>}, _Frm, State) ->
+available({transport_cookie_ind, <<"cookie">>}, _Frm, State=#lcp_client_state{
+	ip=IP,
+	port=Port}) ->
+
 	Gen_msg=create_generic_message(State, associate),
+	elcpcp:send_message({IP, Port}, #datagram_cmd{protocol=cornet_msg, msg={led_set_cmd, 0, 1}}),
 	{reply, {route, Gen_msg}, associating, State, ?TIMEOUT}.
 
 associating(#generic_msg{type = accept}, _From, State) ->
@@ -35,20 +41,20 @@ associating(#generic_msg{type = accept}, _From, State) ->
 associating(timeout, _From, State) ->
 	{stop, normal, State}.
 
-online({transport_cookie_ind, <<"cookie">>}, From, State) ->
+online(#datagram_ind{protocol=cornet_msg, msg=#kbd_down_ind{key=_KEY}}, _From, State) ->
 	NewState = State#lcp_client_state{keyboard_state="alice"},
 	{reply, {route, create_generic_message(NewState,make_call)}, online, NewState};
 
-online(#generic_msg{type=ring}, From, State=#lcp_client_state{
-		ip=IP,
-		port=Port}) ->
+online(#generic_msg{type=ring}, _From, State=#lcp_client_state{
+		ip=_IP,
+		port=_Port}) ->
 
-	elcpcp:send_message({IP, Port}, {datagram_ind, cornet_msg, {kbd_up_ind, 1}}),
-	lager:warning("ringing"),
+	elcpcp:send_message({IP, Port}, #datagram_cmd{protocol=cornet_msg, msg={led_set_cmd, 0, 1}}),
 
 	{reply, do_nothing, ringback, State}. 
 
-ringback(#generic_msg{type=accept}, From, State) ->
+ringback(#generic_msg{type=accept}, _From, State) ->
+	lager:warning("accepted in call "),
 	{reply, do_nothing, incall, State}. 
 
 start_link(IP, Port, Ident) ->
@@ -103,7 +109,7 @@ create_generic_message(#lcp_client_state{
 	upstreamRoute  	 = [],
 	downstreamRoute  =[],
 	routeToRecord 	 =[],
-	sequenceNum	  	 =1 ,
+	sequenceNum	  	 = {1, 'REGISTER'},
 	specificProtocol =[],
 	timeToLive 		 =70,
 	receivedOn       = {IP,Port}};
@@ -124,7 +130,7 @@ create_generic_message(#lcp_client_state{
 	upstreamRoute  	 = [],
 	downstreamRoute  =[],
 	routeToRecord 	 =[],
-	sequenceNum	  	 =1 ,
+	sequenceNum	  	 ={1, 'INVITE'},
 	specificProtocol =nksip_sdp:new(),
 	timeToLive 		 =70,
 	receivedOn       = {IP,Port}}.
