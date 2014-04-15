@@ -46,8 +46,8 @@ online(#datagram_ind{protocol=cornet_msg, msg=#kbd_down_ind{key=_KEY}}, _From, S
 	{reply, {route, create_generic_message(NewState,make_call)}, online, NewState};
 
 online(#generic_msg{type=ring}, _From, State=#lcp_client_state{
-		ip=_IP,
-		port=_Port}) ->
+		ip=IP,
+		port=Port}) ->
 
 	elcpcp:send_message({IP, Port}, #datagram_cmd{protocol=cornet_msg, msg={led_set_cmd, 0, 1}}),
 
