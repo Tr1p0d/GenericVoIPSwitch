@@ -46,10 +46,10 @@ lcp_sip_simplecall_test_() ->
 				ok = nksip:stop_all()
 		end,
 		[
-			fun() ->
-				simple_lcp_client:simple_call(),
-				?assertMatch( [[_,_,_]] , ets:match(lCPClientTable, {'$1','$2', '$3'}))
-			end
+			%fun() ->
+			%	simple_lcp_client:simple_call(),
+			%	?assertMatch( [[_,_,_]] , ets:match(lCPClientTable, {'$1','$2', '$3'}))
+			%end
 		]
 	}.
 

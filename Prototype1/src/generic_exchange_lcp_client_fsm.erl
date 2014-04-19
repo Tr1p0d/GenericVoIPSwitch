@@ -31,10 +31,13 @@ available({transport_cookie_ind, <<"cookie">>}, _Frm, State=#lcp_client_state{
 	port=Port}) ->
 
 	Gen_msg=create_generic_message(State, associate),
-	elcpcp:send_message({IP, Port}, #datagram_cmd{protocol=cornet_msg, msg={led_set_cmd, 0, 1}}),
 	{reply, {route, Gen_msg}, associating, State, ?TIMEOUT}.
 
-associating(#generic_msg{type = accept}, _From, State) ->
+associating(#generic_msg{type = accept}, _From, State=#lcp_client_state{
+	ip=IP,
+	port=Port}) ->
+
+	elcpcp:send_message({IP, Port}, <<2#00000000>>),
 	lager:warning("client lcp associated"),
 	{reply, do_nothing, online, State};
 

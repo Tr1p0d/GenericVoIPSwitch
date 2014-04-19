@@ -10,7 +10,7 @@ deps:
 app: deps
 	@$(REBAR) compile
 	
-run:
+run: app
 	erl -pa ebin deps/lager/ebin/ deps/goldrush/ebin \
 		deps/nksip/ebin deps/client_database/ebin \
 		deps/elcpcp/ebin
