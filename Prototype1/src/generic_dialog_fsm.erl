@@ -8,7 +8,7 @@
 
 -include("../include/generic_exchange.hrl").
 
--define(TIMEOUT, 10000).
+-define(TIMEOUT, 100000).
 
 -record(dialog_state, {
 		specific_gateway		:: pid(),
@@ -41,22 +41,35 @@ idle({fromRP, MSG=#generic_msg{type=make_call,
 	associationAA=AAA }) ->
 
 	gen_server:call(PID, {transmit_generic_msg, route(MSG, RecvOn, AAA)}),
-	{reply, ok, ringing, State#dialog_state{associationAA=AAA}, ?TIMEOUT}.
+	{reply, ok, ringing, State#dialog_state{associationAA=AAA}, ?TIMEOUT};
+
+%% ------------ IDLE -> IDLE TRANSITION --- bad message
+idle({ _ , MSG=#generic_msg{}}, _From, State=#dialog_state{ specific_gateway=PID}) ->
+	gen_server:call(PID, {transmit_generic_msg, generic_exchange_gen_message_factory:reject(MSG)}),
+	{stop, normal, ok, State}.
 
 idle(timeout, State) ->
 	?WARNING("dialog timed-out in state ~p", [State]),
 	{stop, normal, State}.
 
 
-%% ------------ RINGING -> RINGING TRANSITION
-ringing({fromTU, #generic_msg{type=ring}}, _From, State) ->
 
+
+%% ------------ ringing -> ringing transition
+ringing({fromTU, #generic_msg{type=ring}}, _From, State) ->
 	{reply, ok, ringing, State, ?TIMEOUT};
 
 %% ------------ RINGING -> INCALL TRANSITION
 ringing({fromTU, #generic_msg{type=accept}}, _From, State) ->
+	{reply, ok, incall, State, ?TIMEOUT};
 
-	{reply, ok, incall, State, ?TIMEOUT}.
+%% ------------ RINGING -> IDLE TRANSITION
+ringing({fromTU, #generic_msg{type=reject}}, _From, State) ->
+	{stop, normal, ok, State};
+
+%% ------------ ringing -> ringing transition
+ringing({fromRP, #generic_msg{type=make_call}}, _From, State) ->
+	{reply, ok, ringing, State, ?TIMEOUT}.
 
 ringing(timeout, State) ->
 	?WARNING("dialog timed-out in state ~p", [State]),
@@ -80,7 +93,31 @@ ringback({fromRP, MSG=#generic_msg{type=accept,
 	associationAA=AAA }) ->
 
 	gen_server:call(PID, {transmit_generic_msg, route(MSG, RecvOn, AAA)}),
-	{reply, ok, incall, State, ?TIMEOUT}.
+	{reply, ok, incall, State, ?TIMEOUT};
+
+%% ------------ RINGBACK -> RINGBACK TRANSITION
+ringback({fromRP, MSG=#generic_msg{type=ring,
+	receivedOn=RecvOn}}, _From, State=#dialog_state{ specific_gateway=PID,
+	associationAA=AAA }) ->
+
+	gen_server:call(PID, {transmit_generic_msg, route(MSG, RecvOn, AAA)}),
+	{reply, ok, ringback, State, ?TIMEOUT};
+
+%% ------------ RINGBACK -> RINGBACK TRANSITION
+ringback({fromTU ,MSG=#generic_msg{type=make_call,
+	receivedOn=RecvOn}}, _From, State=#dialog_state{ specific_gateway=PID,
+	associationAA=AAA }) ->
+
+	gen_server:call(PID, {transmit_generic_msg, route(MSG, RecvOn, AAA)}),
+	{reply, ok, ringback, State, ?TIMEOUT};
+
+%% ------------ RINGBACK -> IDLE TRANSITION
+ringback({fromRP, MSG=#generic_msg{type=reject,
+	receivedOn=RecvOn}}, _From, State=#dialog_state{ specific_gateway=PID,
+	associationAA=AAA }) ->
+
+	gen_server:call(PID, {transmit_generic_msg, route(MSG, RecvOn, AAA)}),
+	{stop, normal, ok, State#dialog_state{associationAA=AAA}}.
 
 ringback(timeout, State) ->
 	?WARNING("dialog timed-out in state ~p", [State]),
@@ -101,7 +138,14 @@ incall({fromTU, MSG=#generic_msg{type=accept,
 	associationAA=AAA }) ->
 
 	gen_server:call(PID, {transmit_generic_msg, route(MSG, RecvOn, AAA)}),
-	{stop, normal, ok, State#dialog_state{associationAA=AAA}}.
+	{reply, ok, incall, State, ?TIMEOUT};
+
+incall({fromRP, MSG=#generic_msg{type=accept,
+	receivedOn=RecvOn}}, _From, State=#dialog_state{ specific_gateway=PID,
+	associationAA=AAA }) ->
+
+	gen_server:call(PID, {transmit_generic_msg, route(MSG, RecvOn, AAA)}),
+	{reply, ok, incall, State, ?TIMEOUT}.
 
 incall(timeout, State) ->
 	?WARNING("dialog timed-out in state ~p", [State]),
@@ -152,34 +196,6 @@ terminate(_Reason, StateName, _StateData) ->
 -spec route(#generic_msg{}, {inet:ip_address(), inet:port_number()}, ets:tid() | atom()) -> 
 	{#generic_msg{}, inet:ip_address(), inet:port_number()}.
 
-%route(_MSG=#generic_msg{      
-%	type             = accept,
-%	target 		     = Target,
-%	caller 		     = Caller,
-%	callee 		     = Callee,
-%	upstreamRoute  	 = USRoute,
-%	downstreamRoute  = DSRoute,
-%	routeToRecord 	 = R2R,
-%	sequenceNum	     = SeqNum,
-%	timeToLive		 = TTL,
-%	specificProtocol = SpecProt }, _, _) ->
-%
-%	[ _  | Rest ] = lists:reverse(DSRoute), 	
-%	[ {DSIP, DSPort} | _ ] = Rest,
-%	{ok,DSIPfinal} = inet_parse:ipv4_address(binary_to_list(DSIP)),
-%
-%	{#generic_msg{
-%		type             = accept,
-%		target 		     = Target,
-%		caller 		     = Caller,
-%		callee 		     = Callee,
-%		upstreamRoute  	 = USRoute,
-%		downstreamRoute  = lists:reverse(Rest),
-%		routeToRecord 	 = R2R,
-%		sequenceNum	     = SeqNum,
-%		timeToLive		 = TTL - 1,
-%		specificProtocol = SpecProt }, DSIPfinal, DSPort};
-
 %route ringing
 route(_MSG=#generic_msg{      
 	type             = Type,
@@ -192,7 +208,7 @@ route(_MSG=#generic_msg{
 	sequenceNum	     = SeqNum,
 	timeToLive		 = TTL,
 	specificProtocol = SpecProt }, _, AETS) when 
-		Type == ring; Type == accept ->
+		Type == ring; Type == accept; Type == reject ->
 
 	{CID, _DID, _PartID}  = Callee,
 

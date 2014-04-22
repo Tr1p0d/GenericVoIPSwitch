@@ -1,5 +1,5 @@
 -module(generic_exchange_networking).
--export([resolve_target/2, get_domain/0, get_port/0]).
+-export([resolve_target/2, get_domain/0, get_port/0, get_remote_port/3]).
 
 resolve_target(Target, AA) ->
 
@@ -18,3 +18,11 @@ get_domain() ->
 
 get_port() ->
 	5060.
+
+get_remote_port(CID, DSIP, AETS) ->
+	case ets:match(AETS, {CID, {DSIP, '$1'}, '_'}) of
+		[[Val]] ->
+			Val;
+		[] ->
+			{error, not_found}
+	end.

@@ -21,6 +21,7 @@ sip_to_generic(Msg=#sipmsg{
     from_tag = FromTag,
 	to_tag  = ToTag},IP, Port) ->
 	
+
 #generic_msg{
 	type = sip_class_to_generic_type(Class), 
 	target = undefined,
@@ -60,6 +61,8 @@ sip_to_generic(Msg=#sipmsg{
     routes = Route,
     from_tag = FromTag,
 	to_tag  = ToTag},IP, Port) ->
+
+	[FirstVia | RestVias] = Vias,
 	
 #generic_msg{
 	type = sip_class_to_generic_type(Class), 
@@ -67,11 +70,21 @@ sip_to_generic(Msg=#sipmsg{
 	caller = {FromUser, CallID, FromTag},
 	callee = {ToUser, CallID, ToTag},		  
 	upstreamRoute = Route,
-	downstreamRoute = lists:foldr( 
-		fun(Via, Acc) ->
-			[{Via#via.domain, Via#via.port, Via#via.opts}|Acc]
-		end,
-		[], Vias),
+	downstreamRoute = 	case FirstVia#via.port  of
+		 0 ->
+			[{FirstVia#via.domain, Port, FirstVia#via.opts}| lists:foldr( 
+			fun(Via, Acc) ->
+				[{Via#via.domain, Via#via.port, Via#via.opts}|Acc]
+			end,
+			[], RestVias)];
+			 
+		_Else ->
+			lists:foldr( 
+			fun(Via, Acc) ->
+				[{Via#via.domain, Via#via.port, Via#via.opts}|Acc]
+			end,
+			[], Vias)
+	end,
 	routeToRecord = [],
 	sequenceNum	= {SeqNum, SeqMethod},
 	timeToLive=TTL,
@@ -90,7 +103,8 @@ generic_to_sip(GenMsg=#generic_msg{
 	routeToRecord = [],
 	sequenceNum	= {SeqNum, SeqMethod},
 	timeToLive=GenTTL,
-	specificProtocol = _SpecMsg}) when Type == ring; Type == accept 
+	specificProtocol = _SpecMsg}) when Type == ring; Type == accept;
+		Type == reject
 	->
 
 
@@ -265,13 +279,15 @@ sip_class_to_generic_type({req, Method})->
 sip_class_to_generic_type({resp, Code, _})->
 	case Code of 
 		180 -> ring;
-		200 -> accept
+		200 -> accept;
+		603 -> reject
 	end.
 
 generic_type_to_sip_class(Method, #generic_msg{}) ->
 	case Method of
 		accept -> {resp, 200, "OK"};
 		ring -> {resp, 180, "RINGING"};
+		reject -> {resp, 603, "REJECTED"};
 
 		make_call -> {req, 'INVITE'};
 			teardown -> {req, 'BYE'}

@@ -13,7 +13,7 @@ app: deps
 run: app
 	erl -pa ebin deps/lager/ebin/ deps/goldrush/ebin \
 		deps/nksip/ebin deps/client_database/ebin \
-		deps/elcpcp/ebin
+		deps/elcpcp/ebin -s elcpcp -s lager
 
 build-plt:
 	@$(DIALYZER) --build_plt --output_plt .$(PROJECT).plt \

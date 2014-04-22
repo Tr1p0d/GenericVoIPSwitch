@@ -26,7 +26,6 @@ send(SipMsg, Ip ,Port) ->
 	{ok, pid} | {error, Error}
 	when Error :: {already_started, pid()}.
 
-
 start_link(GenUDPSpecs) ->
 	gen_server:start_link({local, ?MODULE}, ?MODULE, GenUDPSpecs, []).
 
@@ -63,8 +62,12 @@ handle_call(_Msg, _From, _State) ->
 	{noreply, term()}.
 
 handle_cast({send, {Packet, Ip, Port}}, State=#udpstate{socket=Sock}) ->
-	lager:info("message send : ~p ~p ~p", [Ip, Port, Packet]),
-	gen_udp:send(Sock, Ip, Port, Packet),
+	case gen_udp:send(Sock, Ip, Port, Packet) of 
+		ok ->
+			lager:info("message send : ~p ~p ~p", [Ip, Port, Packet]);
+		{error, Reason} ->
+			lager:error("cannot send packet ~p becase ~p", [Packet, Reason])
+	end,
 	{noreply, State};
 
 handle_cast(_Request, _State) -> 
