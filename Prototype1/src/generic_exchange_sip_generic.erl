@@ -121,13 +121,13 @@ generic_to_sip(GenMsg=#generic_msg{
 		DownstreamRoute)),
 	from=#uri{
 			user=GenFromUser,
-			domain= <<"127.0.0.1">>,
+			domain = generic_exchange_networking:get_domain(),
 			ext_opts=[fill_tag(GenFromTag)]
 			
 		},
 	to=#uri{
 			user=GenToUser,
-			domain= <<"127.0.0.1">>,
+			domain = generic_exchange_networking:get_domain(),
 			ext_opts=[fill_tag(GenToTag)]
 		},
     call_id = GenCallID,
@@ -137,7 +137,7 @@ generic_to_sip(GenMsg=#generic_msg{
 	routes = UpstreamRoute,
 	contacts = [#uri{
 		user=GenToUser,
-		domain=generic_exchange_networking:get_domain(),
+		domain=generic_exchange_networking:get_self_ip(),
 		port=generic_exchange_networking:get_port()
 	}],
     content_type = resolve_content(GenMsg),
@@ -187,13 +187,13 @@ generic_to_sip(GenMsg=#generic_msg{
 		DownstreamRoute)),
 	from=#uri{
 			user=GenFromUser,
-			domain= <<"127.0.0.1">>,
+			domain = generic_exchange_networking:get_domain(),
 			ext_opts=[fill_tag(GenFromTag)]
 			
 		},
 	to=#uri{
 			user=GenToUser,
-			domain= <<"127.0.0.1">>,
+			domain = generic_exchange_networking:get_domain(),
 			ext_opts=[fill_tag(GenToTag)]
 		},
     call_id = GenCallID,
@@ -203,7 +203,7 @@ generic_to_sip(GenMsg=#generic_msg{
 	routes = UpstreamRoute,
 	contacts = [#uri{
 		user=GenFromUser,
-		domain=generic_exchange_networking:get_domain(),
+		domain=generic_exchange_networking:get_self_ip(),
 		port=generic_exchange_networking:get_port()
 	}],
     content_type = resolve_content(GenMsg),
@@ -273,7 +273,8 @@ sip_class_to_generic_type({req, Method})->
 	case Method of 
 		'INVITE' -> make_call;
 		'REGISTER' -> associate;
-		'BYE'	  -> teardown
+		'BYE'	  -> teardown;
+		'CANCEL'  -> teardown
 	end;
 
 sip_class_to_generic_type({resp, Code, _})->
@@ -283,12 +284,20 @@ sip_class_to_generic_type({resp, Code, _})->
 		603 -> reject
 	end.
 
-generic_type_to_sip_class(Method, #generic_msg{}) ->
+generic_type_to_sip_class(Method, 
+	#generic_msg{sequenceNum={_, ContextMethod}}) ->
+	
 	case Method of
 		accept -> {resp, 200, "OK"};
 		ring -> {resp, 180, "RINGING"};
 		reject -> {resp, 603, "REJECTED"};
 
 		make_call -> {req, 'INVITE'};
-			teardown -> {req, 'BYE'}
+		teardown -> 
+			case ContextMethod of
+				'CANCEL' ->
+					{req, 'CANCEL'};
+				'BYE' ->
+					{req, 'BYE'}
+			end
 	end.

@@ -13,7 +13,11 @@ method_not_allowed(Msg=#sipmsg{}) ->
 ack(MSG=#sipmsg{}) ->
 	MSG#sipmsg{
 	class = {req, 'ACK'},
-	ruri = hd(MSG#sipmsg.contacts),
+	ruri = #uri{
+		user=MSG#sipmsg.from#uri.user,
+		domain=generic_exchange_networking:get_self_ip(),
+		port=generic_exchange_networking:get_port()
+	},
 	%vias= lists:sublist(MSG#sipmsg.vias,length(MSG#sipmsg.vias) -1 ),
     cseq_method = 'ACK',
     forwards = 70}.

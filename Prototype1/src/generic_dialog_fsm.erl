@@ -65,11 +65,20 @@ ringing({fromTU, #generic_msg{type=accept}}, _From, State) ->
 
 %% ------------ RINGING -> IDLE TRANSITION
 ringing({fromTU, #generic_msg{type=reject}}, _From, State) ->
+
 	{stop, normal, ok, State};
 
 %% ------------ ringing -> ringing transition
 ringing({fromRP, #generic_msg{type=make_call}}, _From, State) ->
-	{reply, ok, ringing, State, ?TIMEOUT}.
+	{reply, ok, ringing, State, ?TIMEOUT};
+
+%% ------------ ringing -> IDLE transition
+ringing({fromRP, MSG=#generic_msg{type=teardown ,receivedOn=RecvOn}},
+	_From, State=#dialog_state{ specific_gateway=PID,
+	associationAA=AAA }) ->
+
+	gen_server:call(PID, {transmit_generic_msg, route(MSG, RecvOn, AAA)}),
+	{stop, normal, ok, State}.
 
 ringing(timeout, State) ->
 	?WARNING("dialog timed-out in state ~p", [State]),
@@ -117,11 +126,20 @@ ringback({fromRP, MSG=#generic_msg{type=reject,
 	associationAA=AAA }) ->
 
 	gen_server:call(PID, {transmit_generic_msg, route(MSG, RecvOn, AAA)}),
-	{stop, normal, ok, State#dialog_state{associationAA=AAA}}.
+	{stop, normal, ok, State#dialog_state{associationAA=AAA}};
+
+%% ------------ RINGBACK -> TEARDOWN TRANSITION
+ringback({fromTU ,#generic_msg{type=teardown}},
+	_From, State=#dialog_state{}) ->
+
+	{reply, ok, teardown, State, ?TIMEOUT}.
 
 ringback(timeout, State) ->
 	?WARNING("dialog timed-out in state ~p", [State]),
 	{stop, normal, State}.
+
+
+
 
 incall({fromTU, MSG=#generic_msg{type=teardown,
 	receivedOn=RecvOn}}, _From, State=#dialog_state{ specific_gateway=PID,
@@ -150,6 +168,8 @@ incall({fromRP, MSG=#generic_msg{type=accept,
 incall(timeout, State) ->
 	?WARNING("dialog timed-out in state ~p", [State]),
 	{stop, normal, State}.
+
+
 
 teardown({fromRP, #generic_msg{type=accept}}, _From, State) ->
 	{stop, normal, ok, State}.
