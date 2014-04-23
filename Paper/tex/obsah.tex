@@ -284,7 +284,21 @@ Erlang uses message passing concurrency. In case of Erlang it is a model that fi
 
 As an addition to MPC, its processes are lightweight and fast. Erlang does not use OS process/thread capabilities as a backend for its concurrency model. Instead it uses own threads running separately in VM completely indepdendent of the underlying OS. This approach results in extremly fast threads.
 \section{Erlang history and philosophy}
+Erlang as a language was developed in 1986 in Ericson Computer Science Laboratory. Later the laboratory was to Ellemtel company and development continued. Initial motivation which later lead to Erlang was \textit{to make something like PLEX, to run on ordinary hardware, only better}\cite{armstrong_history_erlang} where PLEX is Ericson proprietary language developed to run on AXE platform. Erlang was highly influenced by PLEX design. Members of the laboratory started implementing exchanges in every possible language that could run general purpose machine and operating system ( 4.2 BSD UNIX on Vax/11750 at the time ) and compare results. They tried Ada, Concurrent Euclid, PFL, LPL0, Frames and CLU. The results were pretty simple :
+\begin{itemize}
+\item smaller language is prefered over large and complex language
+\item good concurency support is essential
+\item Logic programming was considered best alongside Functional programming which seemed to have minor issues
+\end{itemize}
+Later experimenting with prolog continued. They developed an meta-interpreter which was rapidly expanding. Next message-passing concurrency was added. This could be considered first Erlang implementation. Written in Prolog. Erlang was popularity was slowly growing in Ericson and was selected as implementation language for a few projects. Later they wanted to leave Prolog experimental implementation and make a stable one. After several exotic attemts such as cross compilation to other languages they implemented Erlang virtual machine in C. This implementation was 70 times faster then its Prolog predecessor.
+
 \section{Why Erlang}
+\begin{itemize}
+\item fast, highly parallel and
+\item good concurency support is essential
+\item Logic programming was considered best alongside Functional programming which seemed to have minor issues
+\end{itemize}
+
 \section{Erlang type system}
 Erlang is dynamically typed language. Erlang compiler will not complain on evident errors, instead every error will be caught at run time and it is programmer responsibility to handle this. This is often understood as one of major Erlang drawbacks. Reasons for this is Erlang uniqueness. Erlang features highly advanced concepts such as hot-code swaping and message passing concurrency which makes difficult to check for type correctness. As an example, it is hard to check types for code that does not exist yet (hot-code swaping ). A number of project tried to create comprehensive type system for Erlang, but none of them really succeeded. Deeper study of this problem is considered beyond this paper but as a final conclusion I will quote Joe Armstrong : \textit{It seems like it should be 'easy'-and indeed, a few weeks programming can make a type system that handles 95\% of the language. Several man-years of work [by some of the brightest minds in computer science] have gone into trying to fix up the other 5\%-but this is really difficult.}\cite{armstrong_type_system}
 
@@ -350,19 +364,22 @@ Event handler behaviour ( gen\_event ) consist of one event handling manager and
 % include picture
 
 \chapter{Designing VoIP Exchange core}
-\section{What is an application core}
+\section{Generic protocol}
 A network protocol is an Agreement of information exchange in distributed networking  \cite{computer_protocols_desing_and_validation}. Although this definition says what network protocols are and what is their purpose, it is too abstract, not really helping us in any way. A lower level definition describes network protocols as a finite state machines. Such technical definition nicely fits into our Erlang/OTP environment especially the finite state machine behaviour ( gen\_fsm ). 
 
 In terms of generic exchange, a core should be generic finite state machine. It is the most crucial part, theoretically shared by an arbitary number of specific protocol ( SIP, H.323, LCPv1). Since every protocol is different designing errorless, shared, generic logic is very difficult.
 
 Our job at this point is to develop a generic protocol using finite state machine as a description technique and Erlang/OTP gen\_fsm behaviours as the right tool to implement it. 
-\section{A solution choice}
+\subsection{Solution choice}
 Every signaling protocol is very complex. Designing a generic protocol for such a vast set of states is beyond the scope of this thesis. Instead, a few sample but significant use cases will be selected, and upon these state set a generic protocol will be developed. A final set of use cases :
 
 \begin{itemize}
 \item successfull registration
-\item simple call
-\item etc... not really final
+\item simple call from SIP to SIP client
+\item simple call from SIP to LCP client
+\item call reject
+\item call cancel
+\item proper handling of out of transaction messages
 \end{itemize}
 
 Generic protocol desing could be handled several ways.
@@ -375,11 +392,31 @@ Generic protocol desing could be handled several ways.
 
 At first sight the second option seems as a simplest and cleanest solution. We have to realize that this decision is not determinated by our feeleings but by the specifications. The specification says to desing a generic protocol. In the second case our generic protocol would not be really generic. It would be generic until it we decided to add a new specific protocol. In such a case we would need to add not only the specific part but we would need to redesign our generic protocol again. It would be a huge and pointless waste of time and resources cause by wrong design decision. Instead what we want is to design a generic protocol which is durable enough to survive adding a new specific protocol. Such a demand leaves as with the first option only.
 
+\section{Generic protocol desing}
+It was designed by taking in account all above mentioned use cases and general phone behaviour. The following finite state machine was found :
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=0.5]{fig/generic_protocol}
+\caption[Generic protocol] {generic protocol}
+\end{figure}
+
+It represents a transaction and its and transitions which could be taken as a reaction various generic messages. When a signaling transaction is started, the exchange creates 2 of this finite state machines. 1 for every part of transaction ( in our case client and server transaction ). The reason why, there are 2 transactions is for cases where 1 transaction wont suffice such as when user calls itself.
+
 \chapter{General VoIP Exchange design}
 \begin{figure}[h!]
 \centering
 \includegraphics[scale=0.4]{fig/exchange_desing_1}
-\caption[Generic exchange initial design] {Generic exchange initial design]}
+\caption[Generic exchange initial design] {Generic exchange initial design}
+\end{figure}
+
+\section{Protocol specific parts of exchange}
+
+
+
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=0.7]{fig/exchange_design_supervision_tree}
+\caption[Generic exchange supervision tree] {Generic exchange supervision tree}
 \end{figure}
 
 \chapter{Conclusion}%Závìreèná kapitola obsahuje zhodnocení dosa¾ených výsledkù se zvlá¹» vyznaèeným vlastním pøínosem studenta. Povinnì se zde objeví i zhodnocení z pohledu dal¹ího vývoje projektu, student uvede námìty vycházející ze zku¹eností s øe¹eným projektem a uvede rovnì¾ návaznosti na právì dokonèené projekty.%=========================================================================

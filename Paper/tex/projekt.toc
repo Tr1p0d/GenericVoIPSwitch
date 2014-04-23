@@ -26,17 +26,18 @@
 \contentsline {section}{\numberline {6.3}Erlang history and philosophy}{14}
 \contentsline {section}{\numberline {6.4}Why Erlang}{14}
 \contentsline {section}{\numberline {6.5}Erlang type system}{14}
-\contentsline {subsection}{\numberline {6.5.1}TypEr}{14}
-\contentsline {subsection}{\numberline {6.5.2}Dializer}{14}
-\contentsline {section}{\numberline {6.6}Erlang evaluation strategy}{14}
-\contentsline {chapter}{\numberline {7}Open Telecom Platform}{15}
-\contentsline {section}{\numberline {7.1}Behaviours}{15}
-\contentsline {section}{\numberline {7.2}Generic servers}{16}
-\contentsline {section}{\numberline {7.3}Finite state machines}{16}
-\contentsline {section}{\numberline {7.4}Event handlers}{16}
-\contentsline {section}{\numberline {7.5}Applications}{17}
-\contentsline {chapter}{\numberline {8}Designing VoIP Exchange core}{18}
-\contentsline {section}{\numberline {8.1}What is an application core}{18}
-\contentsline {section}{\numberline {8.2}A solution choice}{18}
-\contentsline {chapter}{\numberline {9}General VoIP Exchange design}{20}
-\contentsline {chapter}{\numberline {10}Conclusion}{21}
+\contentsline {subsection}{\numberline {6.5.1}TypEr}{15}
+\contentsline {subsection}{\numberline {6.5.2}Dializer}{15}
+\contentsline {section}{\numberline {6.6}Erlang evaluation strategy}{15}
+\contentsline {chapter}{\numberline {7}Open Telecom Platform}{16}
+\contentsline {section}{\numberline {7.1}Behaviours}{16}
+\contentsline {section}{\numberline {7.2}Generic servers}{17}
+\contentsline {section}{\numberline {7.3}Finite state machines}{17}
+\contentsline {section}{\numberline {7.4}Event handlers}{17}
+\contentsline {section}{\numberline {7.5}Applications}{18}
+\contentsline {chapter}{\numberline {8}Designing VoIP Exchange core}{19}
+\contentsline {section}{\numberline {8.1}What is an application core}{19}
+\contentsline {section}{\numberline {8.2}A solution choice}{19}
+\contentsline {section}{\numberline {8.3}Generic protocol desing}{20}
+\contentsline {chapter}{\numberline {9}General VoIP Exchange design}{21}
+\contentsline {chapter}{\numberline {10}Conclusion}{23}

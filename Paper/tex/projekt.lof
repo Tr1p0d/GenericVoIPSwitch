@@ -7,9 +7,11 @@
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {6.1}{\ignorespaces Erlang supervision tree}}{13}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {7.1}{\ignorespaces Erlang gen\_event}}{16}
-\contentsline {figure}{\numberline {7.2}{\ignorespaces Erlang gen\_event behaviour}}{17}
+\contentsline {figure}{\numberline {7.1}{\ignorespaces Erlang gen\_event}}{17}
+\contentsline {figure}{\numberline {7.2}{\ignorespaces Erlang gen\_event behaviour}}{18}
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {8.1}{\ignorespaces Generic protocol}}{20}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {9.1}{\ignorespaces Generic exchange initial design}}{20}
+\contentsline {figure}{\numberline {9.1}{\ignorespaces Generic exchange initial design}}{21}
+\contentsline {figure}{\numberline {9.2}{\ignorespaces Generic exchange supervision tree}}{22}
 \addvspace {10\p@ }

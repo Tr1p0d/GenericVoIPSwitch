@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.12.20)  23 JAN 2014 09:04
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.12.20)  23 APR 2014 23:47
 entering extended mode
  %&-line parsing enabled.
 **projekt
@@ -356,62 +356,78 @@ File: fig/erlang_supervision_tree.pdf Graphic file (type pdf)
 
 <use fig/erlang_supervision_tree.pdf> [12
 
-] [13 <./fig/erlang_supervision_tree.pdf>] [14]
+] [13 <./fig/erlang_supervision_tree.pdf>] [14] [15]
 Chapter 7.
-(./scodes/behaviour_patterns.erl) [15
+(./scodes/behaviour_patterns.erl) [16
 
 ]
-<fig/gen_server_example.pdf, id=81, 371.20876pt x 134.44514pt>
+<fig/gen_server_example.pdf, id=85, 371.20876pt x 134.44514pt>
 File: fig/gen_server_example.pdf Graphic file (type pdf)
 
 <use fig/gen_server_example.pdf>
-Underfull \hbox (badness 10000) in paragraph at lines 329--336
+Underfull \hbox (badness 10000) in paragraph at lines 343--350
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 329--336
+Underfull \hbox (badness 10000) in paragraph at lines 343--350
 
  []
 
-[16 <./fig/gen_server_example.pdf>]
-<fig/event_handler_example.pdf, id=97, 553.59012pt x 272.93071pt>
+[17 <./fig/gen_server_example.pdf>]
+<fig/event_handler_example.pdf, id=100, 553.59012pt x 272.93071pt>
 File: fig/event_handler_example.pdf Graphic file (type pdf)
 
-<use fig/event_handler_example.pdf> [17 <./fig/event_handler_example.pdf>]
+<use fig/event_handler_example.pdf> [18 <./fig/event_handler_example.pdf>]
 Chapter 8.
-[18
+[19
 
-] [19]
+] <fig/generic_protocol.pdf, id=116, 561.12119pt x 388.28134pt>
+File: fig/generic_protocol.pdf Graphic file (type pdf)
+
+<use fig/generic_protocol.pdf> [20 <./fig/generic_protocol.pdf>]
 Chapter 9.
-<fig/exchange_desing_1.png, id=116, 747.79375pt x 1056.94875pt>
+<fig/exchange_desing_1.png, id=122, 747.79375pt x 1056.94875pt>
 File: fig/exchange_desing_1.png Graphic file (type png)
 
-<use fig/exchange_desing_1.png> [20
+<use fig/exchange_desing_1.png>
+<fig/exchange_design_supervision_tree.pdf, id=124, 688.50958pt x 403.24823pt>
+File: fig/exchange_design_supervision_tree.pdf Graphic file (type pdf)
 
- <./fig/exchange_desing_1.png>]
+<use fig/exchange_design_supervision_tree.pdf>
+Overfull \hbox (49.47163pt too wide) in paragraph at lines 414--415
+ [][] 
+ []
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[21
+
+ <./fig/exchange_desing_1.png>] [22 <./fig/exchange_design_supervision_tree.pdf
+>]
 Chapter 10.
-) (./projekt.bbl [21
+) (./projekt.bbl [23
 
 ]
-LaTeX Font Info:    Try loading font information for IL2+cmtt on input line 22.
+LaTeX Font Info:    Try loading font information for IL2+cmtt on input line 26.
 
  (/usr/share/texmf-texlive/tex/latex/cslatex/il2cmtt.fd
 File: il2cmtt.fd 1997/08/20 CSLaTeX font definitions
 ))
-(./prilohy.tex [22
+(./prilohy.tex [24
 
 ] (./projekt.lof)
 \tf@lof=\write4
 \openout4 = `projekt.lof'.
 
- [23
+ [25
 
 ] (./projekt.lol)
 \tf@lol=\write5
 \openout5 = `projekt.lol'.
 
-) [24
+) [26
 
 ] (./projekt.aux)
 
@@ -420,10 +436,10 @@ LaTeX Font Warning: Size substitutions with differences
 
  ) 
 Here is how much of TeX's memory you used:
- 5364 strings out of 495027
- 66678 string characters out of 1181418
- 156537 words of memory out of 3000000
- 8431 multiletter control sequences out of 15000+50000
+ 5375 strings out of 495027
+ 67054 string characters out of 1181418
+ 156542 words of memory out of 3000000
+ 8440 multiletter control sequences out of 15000+50000
  19778 words of font info for 55 fonts, out of 3000000 for 9000
  38 hyphenation exceptions out of 8191
  34i,7n,50p,1326b,1545s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -436,9 +452,9 @@ e/texmf-texlive/fonts/type1/public/cs/csbx12.pfb></usr/share/texmf-texlive/font
 s/type1/public/cs/csr10.pfb></usr/share/texmf-texlive/fonts/type1/public/cs/cst
 i10.pfb></usr/share/texmf-texlive/fonts/type1/public/cs/cstt10.pfb></usr/share/
 texmf-texlive/fonts/type1/urw/helvetic/uhvr8a.pfb>
-Output written on projekt.pdf (27 pages, 208367 bytes).
+Output written on projekt.pdf (29 pages, 261565 bytes).
 PDF statistics:
- 169 PDF objects out of 1000 (max. 8388607)
+ 181 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 31 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 41 words of extra memory for PDF output out of 10000 (max. 10000000)
 

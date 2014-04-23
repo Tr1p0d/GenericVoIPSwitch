@@ -1,4 +1,8 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
+
+\bibitem{armstrong_history_erlang}
+Joe Armstrong.
+\newblock History of erlang.
 
 \bibitem{armstrong_type_system}
 Joe Armstrong.
