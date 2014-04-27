@@ -1,44 +1,46 @@
 \select@language {english}
-\contentsline {chapter}{\numberline {1}Prologue}{2}
-\contentsline {chapter}{\numberline {2}Internet telephony}{3}
-\contentsline {chapter}{\numberline {3}ISO/OSI session and application layer protocols}{4}
-\contentsline {section}{\numberline {3.1}H.323}{4}
-\contentsline {section}{\numberline {3.2}SIP}{5}
-\contentsline {section}{\numberline {3.3}LCPCPv1}{5}
-\contentsline {section}{\numberline {3.4}RTP}{6}
-\contentsline {chapter}{\numberline {4}Declarative programming paradigm}{7}
-\contentsline {chapter}{\numberline {5}Functional programming}{8}
-\contentsline {section}{\numberline {5.1}Evaluation strategy}{8}
-\contentsline {subsection}{\numberline {5.1.1}Call-by-Value}{8}
-\contentsline {subsection}{\numberline {5.1.2}Call-by-Reference}{9}
-\contentsline {subsection}{\numberline {5.1.3}Call-by-Name}{9}
-\contentsline {subsection}{\numberline {5.1.4}Call-by-Need}{9}
-\contentsline {section}{\numberline {5.2}Type systems}{9}
-\contentsline {section}{\numberline {5.3}Functions and function order}{10}
-\contentsline {subsection}{\numberline {5.3.1}Maps}{10}
-\contentsline {subsection}{\numberline {5.3.2}Filters}{10}
-\contentsline {subsection}{\numberline {5.3.3}Folds}{10}
-\contentsline {chapter}{\numberline {6}Erlang programming language}{11}
-\contentsline {section}{\numberline {6.1}High reliability}{11}
-\contentsline {subsection}{\numberline {6.1.1}Fault tolerace}{11}
-\contentsline {subsection}{\numberline {6.1.2}Hot-code swaping}{12}
-\contentsline {section}{\numberline {6.2}Massive concurrency}{12}
-\contentsline {section}{\numberline {6.3}Erlang history and philosophy}{13}
-\contentsline {section}{\numberline {6.4}Why Erlang}{13}
-\contentsline {section}{\numberline {6.5}Erlang type system}{13}
-\contentsline {subsection}{\numberline {6.5.1}TypEr}{14}
-\contentsline {subsection}{\numberline {6.5.2}Dializer}{14}
-\contentsline {section}{\numberline {6.6}Erlang evaluation strategy}{14}
-\contentsline {chapter}{\numberline {7}Open Telecom Platform}{15}
-\contentsline {section}{\numberline {7.1}Behaviours}{15}
-\contentsline {section}{\numberline {7.2}Generic servers}{16}
-\contentsline {section}{\numberline {7.3}Finite state machines}{16}
-\contentsline {section}{\numberline {7.4}Event handlers}{16}
-\contentsline {section}{\numberline {7.5}Applications}{17}
-\contentsline {chapter}{\numberline {8}Designing VoIP Exchange core}{18}
-\contentsline {section}{\numberline {8.1}Generic protocol}{18}
-\contentsline {subsection}{\numberline {8.1.1}Solution choice}{18}
-\contentsline {section}{\numberline {8.2}Generic protocol desing}{19}
-\contentsline {chapter}{\numberline {9}General VoIP Exchange design}{20}
-\contentsline {section}{\numberline {9.1}Protocol specific parts of exchange}{21}
-\contentsline {chapter}{\numberline {10}Conclusion}{22}
+\contentsline {chapter}{\numberline {1}Prologue}{3}
+\contentsline {chapter}{\numberline {2}Internet telephony}{4}
+\contentsline {chapter}{\numberline {3}ISO/OSI session and application layer protocols}{5}
+\contentsline {section}{\numberline {3.1}H.323}{5}
+\contentsline {section}{\numberline {3.2}SIP}{6}
+\contentsline {section}{\numberline {3.3}LCPCPv1}{6}
+\contentsline {section}{\numberline {3.4}RTP}{7}
+\contentsline {chapter}{\numberline {4}Declarative programming paradigm}{8}
+\contentsline {chapter}{\numberline {5}Functional programming}{9}
+\contentsline {section}{\numberline {5.1}Evaluation strategy}{9}
+\contentsline {subsection}{\numberline {5.1.1}Call-by-Value}{9}
+\contentsline {subsection}{\numberline {5.1.2}Call-by-Reference}{10}
+\contentsline {subsection}{\numberline {5.1.3}Call-by-Name}{10}
+\contentsline {subsection}{\numberline {5.1.4}Call-by-Need}{10}
+\contentsline {section}{\numberline {5.2}Type systems}{10}
+\contentsline {section}{\numberline {5.3}Functions and function order}{11}
+\contentsline {subsection}{\numberline {5.3.1}Maps}{11}
+\contentsline {subsection}{\numberline {5.3.2}Filters}{11}
+\contentsline {subsection}{\numberline {5.3.3}Folds}{11}
+\contentsline {chapter}{\numberline {6}Erlang programming language}{12}
+\contentsline {section}{\numberline {6.1}High reliability}{12}
+\contentsline {subsection}{\numberline {6.1.1}Fault tolerace}{12}
+\contentsline {subsection}{\numberline {6.1.2}Hot-code swaping}{13}
+\contentsline {section}{\numberline {6.2}Massive concurrency}{13}
+\contentsline {section}{\numberline {6.3}Erlang history and philosophy}{14}
+\contentsline {section}{\numberline {6.4}Why Erlang}{14}
+\contentsline {section}{\numberline {6.5}Erlang type system}{14}
+\contentsline {subsection}{\numberline {6.5.1}TypEr}{15}
+\contentsline {subsection}{\numberline {6.5.2}Dializer}{15}
+\contentsline {section}{\numberline {6.6}Erlang evaluation strategy}{15}
+\contentsline {chapter}{\numberline {7}Open Telecom Platform}{16}
+\contentsline {section}{\numberline {7.1}Behaviours}{16}
+\contentsline {section}{\numberline {7.2}Generic servers}{17}
+\contentsline {section}{\numberline {7.3}Finite state machines}{17}
+\contentsline {section}{\numberline {7.4}Event handlers}{17}
+\contentsline {section}{\numberline {7.5}Applications}{18}
+\contentsline {chapter}{\numberline {8}Designing VoIP Exchange core}{19}
+\contentsline {section}{\numberline {8.1}Generic protocol}{19}
+\contentsline {subsection}{\numberline {8.1.1}Solution choice}{19}
+\contentsline {section}{\numberline {8.2}Generic protocol desing}{20}
+\contentsline {chapter}{\numberline {9}General VoIP Exchange design}{21}
+\contentsline {section}{\numberline {9.1}Protocol specific parts of exchange}{22}
+\contentsline {chapter}{\numberline {10}Static code analysis}{23}
+\contentsline {section}{\numberline {10.1}Results after applying it to my source code}{23}
+\contentsline {chapter}{\numberline {11}Conclusion}{24}

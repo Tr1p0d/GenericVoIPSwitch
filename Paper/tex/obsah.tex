@@ -419,4 +419,14 @@ It represents a transaction and its and transitions which could be taken as a re
 \caption[Generic exchange supervision tree] {Generic exchange supervision tree}
 \end{figure}
 
-\chapter{Conclusion}%Závìreèná kapitola obsahuje zhodnocení dosa¾ených výsledkù se zvlá¹» vyznaèeným vlastním pøínosem studenta. Povinnì se zde objeví i zhodnocení z pohledu dal¹ího vývoje projektu, student uvede námìty vycházející ze zku¹eností s øe¹eným projektem a uvede rovnì¾ návaznosti na právì dokonèené projekty.%=========================================================================
+\chapter{Static code analysis}
+From beginning Erlang was developed as a dynamically typed language. But in recent years with rapid development of strongly typed functional languages such as Haskell, a requirment for type checking and further static analysis was raised. There were several attempts to implement static type system into Erlang but all of them failed. It was due to Erlang unique features such as : dynamic code swaping, message passing concurrency and other. 
+Although typer and dialyzer can work without any explicit type annontations and infer function types by itself, programmer can explicitly annotate functions with type specification which is then used in type checking ant static analysis.
+
+Dialyzer ( a DIscrepancy AnaLYZer for ERlang programs ) can identify software discrepancies such as obvious type errors, dead code and others.
+
+\section{Results after applying it to my source code}
+Static analysis was run over resulting source code, and I was more than surprised how many errors I have created. Many of them were hidden and hard to discover with unit tests I created. Some of them were more obvious. As a drawback, static analysis performed by Dialyzer takes quite a long time which makes it unsuitable to perform every time i compile my exchange.
+
+\chapter{Conclusion}
+Results were good but not impressive.....
