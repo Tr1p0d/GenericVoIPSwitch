@@ -36,23 +36,38 @@ available({transport_cookie_ind, <<"cookie">>}, _Frm, State=#lcp_client_state{
 associating(#generic_msg{type = accept}, _From, State=#lcp_client_state{
 	ip=IP,
 	port=Port}) ->
+	elcpcp:send_message({IP, Port}, {device_init_req, <<"Telephone1">> } ),
+	{reply, do_nothing, associating, State, ?TIMEOUT};
 
-	elcpcp:send_message({IP, Port}, <<2#00000000>>),
-	lager:warning("client lcp associated"),
+associating({device_init_resp, _RESP}, _From, State=#lcp_client_state{
+	ip=IP,
+	port=Port}) ->
+	lager:info("lcp_client associated"),
+
+	elcpcp:send_message({IP, Port}, #datagram_cmd{
+		protocol=cornet_msg, 
+		msg=#dsp_text_cmd{display_number=0, row=0, column=0, 
+                length=20, attributes=0, text= <<"exchange is proud">>}}
+	),
+
 	{reply, do_nothing, online, State};
 
 associating(timeout, _From, State) ->
 	{stop, normal, State}.
 
-online(#datagram_ind{protocol=cornet_msg, msg=#kbd_down_ind{key=_KEY}}, _From, State) ->
-	NewState = State#lcp_client_state{keyboard_state="alice"},
-	{reply, {route, create_generic_message(NewState,make_call)}, online, NewState};
+online(#datagram_ind{protocol=cornet_msg, msg=#kbd_down_ind{key=KEY}}, _From, State) ->
+	NewState = State#lcp_client_state{
+		keyboard_state=[ KEY | State#lcp_client_state.keyboard_state]
+	},
+
+	lager:info("received key ~p", [KEY]),
+	
+	{reply, do_nothing, online, NewState};
 
 online(#generic_msg{type=ring}, _From, State=#lcp_client_state{
 		ip=IP,
 		port=Port}) ->
 
-	elcpcp:send_message({IP, Port}, #datagram_cmd{protocol=cornet_msg, msg={led_set_cmd, 0, 1}}),
 
 	{reply, do_nothing, ringback, State}. 
 
