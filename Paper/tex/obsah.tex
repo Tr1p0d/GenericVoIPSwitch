@@ -419,14 +419,18 @@ It represents a transaction and its and transitions which could be taken as a re
 \caption[Generic exchange supervision tree] {Generic exchange supervision tree}
 \end{figure}
 
-\chapter{Static code analysis}
-From beginning Erlang was developed as a dynamically typed language. But in recent years with rapid development of strongly typed functional languages such as Haskell, a requirment for type checking and further static analysis was raised. There were several attempts to implement static type system into Erlang but all of them failed. It was due to Erlang unique features such as : dynamic code swaping, message passing concurrency and other. 
+\chapter{Automated software discrepancies discovery }
+From beginning Erlang was developed as a dynamically typed language. But in recent years with rapid development of strongly typed functional languages such as Haskell, software engineers realized it would be very usefull to have something similar in Erlang. Therefore a requirment for type checking and further static analysis was raised. There were several attempts to implement static type system into Erlang but all of them failed. It was due to Erlang unique features such as : dynamic code swaping, message passing concurrency and other. 
+
+\section{Type system and type inference}
+In the first place, type inference tool was developed. Its main requirement was to work automaticly without any explicit guidance. It is called TyPEr and it uses success types mechanism to infer function type. Success typing is unfortunatelly beyond the scope of this book. 
 Although typer and dialyzer can work without any explicit type annontations and infer function types by itself, programmer can explicitly annotate functions with type specification which is then used in type checking ant static analysis.
 
+\section{static analysis
 Dialyzer ( a DIscrepancy AnaLYZer for ERlang programs ) can identify software discrepancies such as obvious type errors, dead code and others.
 
 \section{Results after applying it to my source code}
-Static analysis was run over resulting source code, and I was more than surprised how many errors I have created. Many of them were hidden and hard to discover with unit tests I created. Some of them were more obvious. As a drawback, static analysis performed by Dialyzer takes quite a long time which makes it unsuitable to perform every time i compile my exchange.
+Static analysis was run over resulting source code, and I was more than surprised how many errors I have created. Many of them were hidden and hard to discover with unit tests I created. Some of them were more obvious. As a drawback, static analysis performed by Dialyzer takes quite a long time which makes it unsuitable to perform every time exchange is beeing compiled. Rather, I used it to check the code once in few hours. It took about 15 minutes on average laptop ( place specification here if requested ) to compute the results and the response it I have been given was almost always suprising and full of more or less obvious errors. It definitely helped me in order to produce more reliable code. Most errors it discovered were type errors in clauses that would match rarely usualy in error conditions, thus making them hard to discover. The second kind of errors were wrong type specifications. These are errors where type inference tool infers a function type and compares it with type I specified explicitly. These kind errors are priceless, because they help to discover crucial design flaws in early stages of implementation. They sort of work "Are you sure this function gets an A an produces a B ?".
 
 \chapter{Conclusion}
-Results were good but not impressive.....
+Results were not impressive nor good
