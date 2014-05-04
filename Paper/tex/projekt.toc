@@ -15,9 +15,6 @@
 \contentsline {subsection}{\numberline {5.1.4}Call-by-Need}{10}
 \contentsline {section}{\numberline {5.2}Type systems}{10}
 \contentsline {section}{\numberline {5.3}Functions and function order}{11}
-\contentsline {subsection}{\numberline {5.3.1}Maps}{11}
-\contentsline {subsection}{\numberline {5.3.2}Filters}{11}
-\contentsline {subsection}{\numberline {5.3.3}Folds}{11}
 \contentsline {chapter}{\numberline {6}Erlang programming language}{12}
 \contentsline {section}{\numberline {6.1}High reliability}{12}
 \contentsline {subsection}{\numberline {6.1.1}Fault tolerace}{12}
@@ -40,15 +37,16 @@
 \contentsline {subsection}{\numberline {8.1.1}Solution choice}{19}
 \contentsline {section}{\numberline {8.2}Generic protocol desing}{20}
 \contentsline {chapter}{\numberline {9}Generic exchange core function principes}{22}
-\contentsline {chapter}{\numberline {10}General VoIP Exchange design}{24}
-\contentsline {section}{\numberline {10.1}Generic vs Specific part}{24}
-\contentsline {section}{\numberline {10.2}SIP Specific}{24}
-\contentsline {subsection}{\numberline {10.2.1}SIP 3-way handshake}{25}
-\contentsline {subsection}{\numberline {10.2.2}SIP/CANCEL vs SIP/BYE}{25}
-\contentsline {subsection}{\numberline {10.2.3}Contacts header}{25}
-\contentsline {section}{\numberline {10.3}LCP Specific}{25}
-\contentsline {chapter}{\numberline {11}Automated software discrepancies discovery }{27}
-\contentsline {section}{\numberline {11.1}Type system and type inference}{27}
-\contentsline {section}{\numberline {11.2}static analysis}{27}
-\contentsline {section}{\numberline {11.3}Results after applying it to my source code}{27}
-\contentsline {chapter}{\numberline {12}Conclusion}{29}
+\contentsline {chapter}{\numberline {10}General VoIP Exchange design}{23}
+\contentsline {section}{\numberline {10.1}Generic vs Specific part}{23}
+\contentsline {section}{\numberline {10.2}SIP Specific}{23}
+\contentsline {subsection}{\numberline {10.2.1}SIP 3-way handshake}{24}
+\contentsline {subsection}{\numberline {10.2.2}SIP/CANCEL vs SIP/BYE}{24}
+\contentsline {subsection}{\numberline {10.2.3}Contacts header}{24}
+\contentsline {section}{\numberline {10.3}LCP Specific}{24}
+\contentsline {chapter}{\numberline {11}Erlang role in implementation}{25}
+\contentsline {chapter}{\numberline {12}Automated software discrepancies discovery}{27}
+\contentsline {section}{\numberline {12.1}Type system and type inference}{27}
+\contentsline {section}{\numberline {12.2}static analysis}{27}
+\contentsline {section}{\numberline {12.3}Results after applying it to my source code}{27}
+\contentsline {chapter}{\numberline {13}Conclusion}{29}
