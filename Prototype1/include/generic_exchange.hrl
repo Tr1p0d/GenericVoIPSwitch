@@ -2,10 +2,8 @@
 
 
 -type generic_msg_method() ::
-	make_call | teardown | ring | accept | associate.
+	make_call | teardown | ring | accept | associate | reject.
 
-%this information is needed not to loose any information during translati
-%on process
 -type generic_client_identifier() ::
 	binary().
 
@@ -27,9 +25,6 @@
 -type route_path() ::
 	[route()].
 
--type nonegativeinteger() ::
-	1..9999999999999999.
-
 -record(generic_msg, {      
 	type 		  :: generic_msg_method(),
 	target 		  :: generic_client_identifier(),
@@ -40,7 +35,7 @@
 	routeToRecord 	  :: route_path(),
 	sequenceNum	  :: integer() ,
 	specificProtocol  :: any(),
-	timeToLive 		:: nonegativeinteger(),
+	timeToLive 		:: non_neg_integer(),
 	receivedOn		:: term()
 }).
 

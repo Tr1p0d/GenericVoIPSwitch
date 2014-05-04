@@ -162,8 +162,7 @@ SIP protocol intelligence is distributed across different network devices. Every
 
 \section{LCPCPv1}
 Is a simple signaling protocol developed by a former company Siemens Enterprise Communications. In contrast with previously mentioned protocols, it is much simpler. LCPCP stands for Low-Cost Phone Control Protocols, but important is the phrase Low-Cost. End devices do not hold any signaling logic at all, because that would increase their build cost. Instead they are completely controlled by LCP exchange. 
-
-It is binary protocol with client-server, request-response architecture and only a few basic messages. Such a concept is then reflected in protocol messages. They are much more low-level. For example if there is a call for an end device, exchange wont leave incomming call handling on a device. Instead it will tell which port, should be opened for receiving payload, what codec will be in use and to start ringing.
+It is binary protocol with client-server, request-response architecture and only a few basic messages. Such a concept is then reflected in protocol messages. They are much more low-level. LCPCPv1 device state could be described by 2 states. IDLE and ESTABLISHED. Device begins in state IDLE and transitions to state ESTABISHED as soon as successfuly associates to exchange. As a part of association process, information about device available hardware such as information about display, keyboard, possible codecs and others is exchanged. Responsibility for these devices is then taken by exchange. This is reflected in LCPCPv1 protocol which contains messages such as DSP\_TEXT\_CMD ( to set a text on particular display ) or RTP\_OPEN\_CMD ( to open RTP port ) to operate client devices. On the other hand, client tells exchange which keyboard button were pressed using KBD\_DOWN\_IND or KBD\_DOWN\_IND messages. Complete protocol definition is publicly available.
 
 \section{RTP}
 Is an application layer protocol for real-time transfer of data streams. It is considered a standard for transporting voice or video media in packet-switched networks. It is one of key elements of VoIP. It wokrks in pair with Real-time Transport Control Protocol ( RTCP ) where RTP carries media streams and RTCP carries flow information, creates statistics and optimizes the RTP streams. Since VoIP works upon packet-switched network RTP includes mechanisms to compensate jitter, messages received out of sequence.
@@ -356,11 +355,12 @@ Event handler behaviour ( gen\_event ) consist of one event handling manager and
 
 \begin{figure}[h!]
 \centering
-\includegraphics[scale=0.7]{fig/event_handler_example}
+\includegraphics[scale=0.6]{fig/event_handler_example}
 \caption[Erlang gen\_event behaviour] {Example gen\_event behaviour hierarchy}
 \end{figure}
 
 \section{Applications}
+TODO
 % include picture
 
 \chapter{Designing VoIP Exchange core}
@@ -400,37 +400,68 @@ It was designed by taking in account all above mentioned use cases and general p
 \caption[Generic protocol] {generic protocol}
 \end{figure}
 
-It represents a transaction and its and transitions which could be taken as a reaction various generic messages. When a signaling transaction is started, the exchange creates 2 of this finite state machines. 1 for every part of transaction ( in our case client and server transaction ). The reason why, there are 2 transactions is for cases where 1 transaction wont suffice such as when user calls itself.
+
+Transitions conditions are not yet shown, becase it would make whole protocol hard to understand, they will be shown in a particular use case later. When a signaling transaction is started, the exchange creates 2 of this finite state machines. 1 for every part of transaction (in our case client and server transaction). The reason why, there are 2 transactions is for cases where 1 transaction wont suffice such as when user calls itself. Concept will be explained in more detail later. The following figure shows generic protocol message structure as present in my system. 
+
+\lstinputlisting[caption=generic protocol message structure]{scodes/generic_protocol_dat.erl}
+
+The message is structured into headers. These headers were designed to be sufficient and to contain only the necessary information. Particulary the routing information and message type. Protocol specific headers not present in generic message are dumped in translation process. Problem is raised in case of mandatory headers which are not present in generic protocol. Such situation is usually solved by a deduction of correct or similar header values on specific side of exchange. For better understanding lets now see an example of generic message : 
+
+\lstinputlisting[caption=generic protocol message example]{scodes/generic_message_example.erl}
+
+\chapter{Generic exchange core function principes}
+So finally, exchange core is constructed from the following parts : a dialog manager and supervisor. These 2 processes take care of creation and correctness of dialog database. Dialog database is represented by Erlang table storage, working on similar principes as DBMS. Next important part is the dialog router. Whenewer a generic message arrives at exchange core, it performs a lookup into a dialog databse and gets a pair of generic protocols represented by finite state machine as described earlier. Next is performed resolution which dialog belongs to particular part of dialog. As a final step, generic messages is tagged with on of following atoms : \{fromRP, fromTU\} indicating whenewer the messages arrived from caller or callee and forwarded to a correct dialog.
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=0.4]{fig/core_design}
+\caption[exchange core process diagram] {generic protocol}
+\end{figure}
+If dialog router looks up a dialog and there is no dialog found, it creates new pair of dialogs, and then works as described earlier. When a dialog receives a message and no proper transition can be performes, it indicates that invalid messages was received. In case of anassociated client, exchange still works as described earlier but performs asociation check explicitly in IDLE state. The following process diagram makes understanding easier. 
 
 \chapter{General VoIP Exchange design}
+TODO
+
+\section{Generic vs Specific part}
 \begin{figure}[h!]
 \centering
 \includegraphics[scale=0.4]{fig/exchange_desing_1}
-\caption[Generic exchange initial design] {Generic exchange initial design}
+\caption[Generic exchange design] {Generic exchange design}
 \end{figure}
 
-\section{Protocol specific parts of exchange}
+\section{SIP Specific}
+Basically it consist of 2 processes. The first one is a transport. Its responsibility is to receive and send packet over a socket. Since we use UDP sockets, its an UDP transport. It is used by the second process which is an SIP gateway. Its job is to deterministically translate SIP message into Generic message and vice versa. It also responsible to handle signaling communication which is beyond generic protocol scope.
 
+\subsection{SIP 3-way handshake}
+Such situation happens every INVITE transaction. Since INVITE transaction is a 3-way handshake and generic protocol does not understand concept of 3-way handshake. 
+
+\subsection{SIP/CANCEL vs SIP/BYE}
+Generic protocol is does not recognise difference between BYE and CANCEL messages. They transfer the same information but in different context CANCEL is used to teardown media session before media session is established, BYE is used after. Translation of generic\_protocol/teardown message into SIP/CANCEL or SIP/BYE is performed using context information that is held in specific part of generic message but can only be understood by SIP gateway.
+
+\subsection{Contacts header}
+SIP Contact header holds information about where client could be physically reached. It is usefull in cases when clients do not want to use exchange for signaling once they exchanged Contact information. Simple and extremly usefull concept but absolutely unusable in case when different signaling protocols are used. The problem is overcomed by forcing Contact information of exchange to force both clients to communicate over exchange rather than peer-to-peer. 
+
+\section{LCP Specific}
+TODO
 
 
 \begin{figure}[h!]
 \centering
-\includegraphics[scale=0.7]{fig/exchange_design_supervision_tree}
+\includegraphics[scale=0.5]{fig/exchange_design_supervision_tree}
 \caption[Generic exchange supervision tree] {Generic exchange supervision tree}
 \end{figure}
 
 \chapter{Automated software discrepancies discovery }
-From beginning Erlang was developed as a dynamically typed language. But in recent years with rapid development of strongly typed functional languages such as Haskell, software engineers realized it would be very usefull to have something similar in Erlang. Therefore a requirment for type checking and further static analysis was raised. There were several attempts to implement static type system into Erlang but all of them failed. It was due to Erlang unique features such as : dynamic code swaping, message passing concurrency and other. 
+From beginning Erlang was developed as a dynamically typed language. But in recent years with rapid development of strongly typed functional languages such as Haskell, software engineers realized it would be very usefull to have something similar in Erlang. Therefore a requirment for type checking and further static analysis was raised. There were several attempts to implement static type system into Erlang but all of them failed. It was due to Erlang unique features such as: dynamic code swaping, message passing concurrency and other. 
 
 \section{Type system and type inference}
 In the first place, type inference tool was developed. Its main requirement was to work automaticly without any explicit guidance. It is called TyPEr and it uses success types mechanism to infer function type. Success typing is unfortunatelly beyond the scope of this book. 
 Although typer and dialyzer can work without any explicit type annontations and infer function types by itself, programmer can explicitly annotate functions with type specification which is then used in type checking ant static analysis.
 
-\section{static analysis
-Dialyzer ( a DIscrepancy AnaLYZer for ERlang programs ) can identify software discrepancies such as obvious type errors, dead code and others.
+\section{static analysis}
+Dialyzer (a DIscrepancy AnaLYZer for ERlang programs) can identify software discrepancies such as obvious type errors, dead code and others.
 
 \section{Results after applying it to my source code}
-Static analysis was run over resulting source code, and I was more than surprised how many errors I have created. Many of them were hidden and hard to discover with unit tests I created. Some of them were more obvious. As a drawback, static analysis performed by Dialyzer takes quite a long time which makes it unsuitable to perform every time exchange is beeing compiled. Rather, I used it to check the code once in few hours. It took about 15 minutes on average laptop ( place specification here if requested ) to compute the results and the response it I have been given was almost always suprising and full of more or less obvious errors. It definitely helped me in order to produce more reliable code. Most errors it discovered were type errors in clauses that would match rarely usualy in error conditions, thus making them hard to discover. The second kind of errors were wrong type specifications. These are errors where type inference tool infers a function type and compares it with type I specified explicitly. These kind errors are priceless, because they help to discover crucial design flaws in early stages of implementation. They sort of work "Are you sure this function gets an A an produces a B ?".
+Static analysis was run over resulting source code, and I was more than surprised how many errors I have created. Many of them were hidden and hard to discover with unit tests I created. Some of them were more obvious. As a drawback, static analysis performed by Dialyzer takes quite a long time which makes it unsuitable to perform every time exchange is beeing compiled. Rather, I used it to check the code once in few hours. It took about 15 minutes on average laptop ( place specification here if requested ) to compute the results and the response it I have been given was almost always suprising and full of more or less obvious errors. It definitely helped me in order to produce more reliable code. Most errors it discovered were type errors in clauses that would match rarely usualy in error conditions, thus making them hard to discover. The second kind of errors were wrong type specifications. These are errors where type inference tool infers a function type and compares it with type I specified explicitly. These kind errors are priceless, because they help to discover crucial design flaws in early stages of implementation. They sort of work "Are you sure this function work as you intended ?".
 
 \chapter{Conclusion}
-Results were not impressive nor good
+TODO

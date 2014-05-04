@@ -12,7 +12,9 @@
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {8.1}{\ignorespaces Generic protocol}}{20}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {9.1}{\ignorespaces Generic exchange initial design}}{21}
-\contentsline {figure}{\numberline {9.2}{\ignorespaces Generic exchange supervision tree}}{22}
+\contentsline {figure}{\numberline {9.1}{\ignorespaces exchange core process diagram}}{22}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {10.1}{\ignorespaces Generic exchange design}}{24}
+\contentsline {figure}{\numberline {10.2}{\ignorespaces Generic exchange supervision tree}}{26}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
