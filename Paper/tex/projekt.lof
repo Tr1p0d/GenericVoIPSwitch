@@ -4,18 +4,16 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Erlang supervision tree}}{12}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Erlang gen\_event}}{15}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Erlang gen\_event behaviour}}{16}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces Erlang supervision tree}}{13}
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Generic protocol}}{18}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {7.1}{\ignorespaces Erlang gen\_event}}{17}
-\contentsline {figure}{\numberline {7.2}{\ignorespaces Erlang gen\_event behaviour}}{18}
+\contentsline {figure}{\numberline {7.1}{\ignorespaces exchange core process diagram}}{20}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {8.1}{\ignorespaces Generic protocol}}{20}
-\addvspace {10\p@ }
-\contentsline {figure}{\numberline {9.1}{\ignorespaces exchange core process diagram}}{22}
-\addvspace {10\p@ }
-\contentsline {figure}{\numberline {10.1}{\ignorespaces Generic exchange design}}{23}
-\contentsline {figure}{\numberline {10.2}{\ignorespaces Generic exchange supervision tree}}{24}
+\contentsline {figure}{\numberline {8.1}{\ignorespaces Generic exchange design}}{22}
+\contentsline {figure}{\numberline {8.2}{\ignorespaces Generic exchange supervision tree}}{23}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

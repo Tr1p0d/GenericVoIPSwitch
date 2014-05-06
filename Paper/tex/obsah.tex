@@ -86,7 +86,7 @@ m%=========================================================================
 %Abychom mohli napsat odborný text jasnì a~srozumitelnì, musíme splnit nìkolik základních pøedpokladù:
 %Tyto a dal¹í pokyny jsou dostupné té¾ na ¹kolních internetových stránkách \cite{fitWeb}.
 %In a modern-day Internet environment, transporting a real-time communication such as voice is a 
-With rapid development of information technology in last century a real-time commmunication such as a voice need to be transfered across new media. The Internet. A wide sort of new communication technologies were developed from new protocols to dedicated telephony hardware. Some of these technologies will be covered in later chapters especially the communication protocols. Similarly to traditional public switched telephone network ( PSTN ) a basic demand on telephony devices remains. End user still needs his hardware desktop phone whose basic behavior remains the same. Similarly telephone exchange behaviour remains the same apart from the underlying transport layer. 
+With rapid development of information technology in last century a real-time commmunication such as a voice need to be transfered across new media. The Internet. A wide sort of new communication technologies were developed from new protocols to dedicated telephony hardware. Some of these technologies will be covered in later chapters especially the communication protocols. Similarly to traditional public switched telephone network (PSTN) a basic demand on telephony devices remains. End user still needs his hardware desktop phone whose basic behavior remains the same. Similarly telephone exchange behaviour remains the same apart from the underlying transport layer. 
 
 A wide variety of session establishmet protocols exist these days. We can take SIP or h.323 protocols as examples. Although they are quite different to each other, they share some common behaviour. They were built to provide signaling among exchange devices but more importantly among exchange devices and end devices. And end devices does not differ among different signaling protocols. They always consist of an earphone and a dial. When caller initiates a call remote part need to be somehow advertized usually with a ring and caller knows that remote phone is ringing when hears some sort of tone in his earphone. This behaviour does not change even with wider network bandwiths nor with modern smart phones. Every single signaling protocol was build upon these facts and tough, they share some common behaviour. This thesis focuses on extraction this common behaviour outside each implemented protocol and build them upon these generic protocol. We will also evaluate advantages and disadvantages of this approach. As a practical result VoIP exchange will be developed using these techniques.
  
@@ -94,17 +94,17 @@ Although functional programming is not common these days, it brings many advanta
 
 
 \chapter{Internet telephony}
-The term internet telephony refers to provisioning of a communication services such as voice, fax or text over public internet rather than using dedicated public switched telephone network ( PSTN ). In spite of need to resolve issues like jitter and frequent high latency, this approach inevitably came on to the light with best-effort internet approach and dependent technologies. Steps involved in establishing successful call and corresponding principes remains the same  :
+The term internet telephony refers to provisioning of a communication services such as voice, fax or text over public internet rather than using dedicated public switched telephone network (PSTN). In spite of need to resolve issues like jitter and frequent high latency, this approach inevitably came on to the light with best-effort internet approach and dependent technologies. Steps involved in establishing successful call and corresponding principes remains the same:
 \begin{itemize}
 \item signaling employs session control and signaling protocols are used to set up or tear down a call
 \item channel setup  
-\item converting analog signal ( voice ) to its digital representation for transport over digital ling
+\item converting analog signal (voice) to its digital representation for transport over digital ling
 \item encoding media using codecs to optimize the stream
 \end{itemize}
-Traffic in PSTN is transfererd over circuit-switched network. On the other hand, internet covers wide variety of transport technologies where the most common end technologies are based on packet-switched networks ( Ethernet + Internet protocol ). Since internet was designed as a packet-switched best-effort delivery network it does not incorporate network based mechanism to ensure packets were delivered. As a negative consequence a jitter or high latency may appear. Although widely used reliable TCP exist to outweight some problems, it is not suitable to be used in real-time voice transmission and does not outweight all problems. Network routers may classify network traffic traffic and process several network streams differently thus ensuring VoIP media traffic will be manipulated faster than regular traffic without low latency demands. 
+Traffic in PSTN is transfererd over circuit-switched network. On the other hand, internet covers wide variety of transport technologies where the most common end technologies are based on packet-switched networks (Ethernet + Internet protocol). Since internet was designed as a packet-switched best-effort delivery network it does not incorporate network based mechanism to ensure packets were delivered. As a negative consequence a jitter or high latency may appear. Although widely used reliable TCP exist to outweight some problems, it is not suitable to be used in real-time voice transmission and does not outweight all problems. Network routers may classify network traffic traffic and process several network streams differently thus ensuring VoIP media traffic will be manipulated faster than regular traffic without low latency demands. 
 
 \chapter{ISO/OSI session and application layer protocols}
-ISO/OSI session layer is layer where signaling protocols take their place. Their job is to establish a media session among 2 or more participants.  Steps involved in establishing media session are :
+ISO/OSI session layer is layer where signaling protocols take their place. Their job is to establish a media session among 2 or more participants. Steps involved in establishing media session are:
 \begin{itemize}
 \item localization of endpoint
 \item contact remote endpoints and determine willingness to communicate,
@@ -115,30 +115,30 @@ Media session can be almost anything from a voice, presence, text messages or fa
 
 Signaling protocol communication flow copies a phone device behaviour.
 \section{H.323}
-H.323 is a signaling standard developed by Internet Telecommunication Union, Telecommunications Standard Sector ( ITU-T ). It is a set of protocols encapsulated inside a single standard. It contains protocol for call create and tear down, exchange of media session information. Some of them are listed below :
+H.323 is a signaling standard developed by Internet Telecommunication Union, Telecommunications Standard Sector (ITU-T). It is a set of protocols encapsulated inside a single standard. It contains protocol for call create and tear down, exchange of media session information. Some of them are listed below:
 
 \begin{itemize}
-\item H.225 is responsible for call initiation and Registration, Admission, Status ( RAS ) signaling
+\item H.225 is responsible for call initiation and Registration, Admission, Status (RAS) signaling
 \item H.245 encapsulates logic for call handling, including gateway option exchange such as codec.
 \end{itemize}
 \cite{Telekomunikace_VoIP}
 
-H.323 network device architecture consist of the following network devices :
+H.323 network device architecture consist of the following network devices:
 
 \begin{itemize}
 \item terminal, end end point device such as terminal software running on PC, or a phone
 \item gateway is a device responsible for call routing, between networks and end device localization
 \item gatekeeper is unique device to H.323, it monitors network and in case of high network load wont enable additional calls, thus preventing network overload
-\item multipoint control unit ( MCU ) a device responsible for a conference signaling
+\item multipoint control unit (MCU) a device responsible for a conference signaling
 \end{itemize}
 
 
 \section{SIP}
 SIP or session initiation protocol is signaling protocol developed by IETF, Multi-Party Multimedia Session Control Working Group. First version was 1.0 and was submitted as an Internet Draft in 1997. Since significant changes were done to improve the protocol, version 2.0 was submitted as an Internet Draft in 1998. In 1999 protocol reached the Proposed Standard level and is described in RFC 2543 []. In the following years several SIP extending documents were published.
 
-From more technical point of view, SIP is a text protocol which makes it well readable. It is based on HTTP protocol from which inherits client-server model and use of URI's. From SMTP SIP borrows header-style ( headers such as From, To, etc... are in both protocols and have similar meaning). SIP communication is based on Request-Response mechanims. Where Request points from UAC to UAS and Responses are directed vice-versa. Good Request examples are INVITE ( a join request ) or BYE ( request for session termination ). Response message uses HTTP response codes to indicate request consequences. 
+From more technical point of view, SIP is a text protocol which makes it well readable. It is based on HTTP protocol from which inherits client-server model and use of URI's. From SMTP SIP borrows header-style (headers such as From, To, etc\dots are in both protocols and have similar meaning). SIP communication is based on Request-Response mechanims. Where Request points from UAC to UAS and Responses are directed vice-versa. Good Request examples are INVITE (a join request) or BYE (request for session termination). Response message uses HTTP response codes to indicate request consequences. 
 
-SIP protocol intelligence is distributed across different network devices. Every network device that is part of SIP signalization topology is called a User Agent ( UA ). UA are further divided into a quite complex hierarchy. A picture below serves as an topology example. Otherwise SIP network devices are similar to network devices mentioned in H.323 secion.\cite{VoIP_bez_znalosti}
+SIP protocol intelligence is distributed across different network devices. Every network device that is part of SIP signalization topology is called a User Agent (UA). UA are further divided into a quite complex hierarchy. A picture below serves as an topology example. Otherwise SIP network devices are similar to network devices mentioned in H.323 secion.\cite{VoIP_bez_znalosti}
 
 %\begin{figure}[h!]
 %\centering
@@ -162,12 +162,12 @@ SIP protocol intelligence is distributed across different network devices. Every
 
 \section{LCPCPv1}
 Is a simple signaling protocol developed by a former company Siemens Enterprise Communications. In contrast with previously mentioned protocols, it is much simpler. LCPCP stands for Low-Cost Phone Control Protocols, but important is the phrase Low-Cost. End devices do not hold any signaling logic at all, because that would increase their build cost. Instead they are completely controlled by LCP exchange. 
-It is binary protocol with client-server, request-response architecture and only a few basic messages. Such a concept is then reflected in protocol messages. They are much more low-level. LCPCPv1 device state could be described by 2 states. IDLE and ESTABLISHED. Device begins in state IDLE and transitions to state ESTABISHED as soon as successfuly associates to exchange. As a part of association process, information about device available hardware such as information about display, keyboard, possible codecs and others is exchanged. Responsibility for these devices is then taken by exchange. This is reflected in LCPCPv1 protocol which contains messages such as DSP\_TEXT\_CMD ( to set a text on particular display ) or RTP\_OPEN\_CMD ( to open RTP port ) to operate client devices. On the other hand, client tells exchange which keyboard button were pressed using KBD\_DOWN\_IND or KBD\_DOWN\_IND messages. Complete protocol definition is publicly available.
+It is binary protocol with client-server, request-response architecture and only a few basic messages. Such a concept is then reflected in protocol messages. They are much more low-level. LCPCPv1 device state could be described by 2 states. IDLE and ESTABLISHED.Device begins in state IDLE and transitions to state ESTABISHED as soon as successfuly associates to exchange. As a part of association process, information about device available hardware such as information about display, keyboard, possible codecs and others is exchanged. Responsibility for these devices is then taken by exchange. This is reflected in LCPCPv1 protocol which contains messages such as DSP\_TEXT\_CMD (to set a text on particular display) or RTP\_OPEN\_CMD (to open RTP port) to operate client devices. On the other hand, client tells exchange which keyboard button were pressed using KBD\_DOWN\_IND or KBD\_DOWN\_IND messages. Complete protocol definition is publicly available.
 
 \section{RTP}
-Is an application layer protocol for real-time transfer of data streams. It is considered a standard for transporting voice or video media in packet-switched networks. It is one of key elements of VoIP. It wokrks in pair with Real-time Transport Control Protocol ( RTCP ) where RTP carries media streams and RTCP carries flow information, creates statistics and optimizes the RTP streams. Since VoIP works upon packet-switched network RTP includes mechanisms to compensate jitter, messages received out of sequence.
+Is an application layer protocol for real-time transfer of data streams. It is considered a standard for transporting voice or video media in packet-switched networks. It is one of key elements of VoIP.It wokrks in pair with Real-time Transport Control Protocol (RTCP) where RTP carries media streams and RTCP carries flow information, creates statistics and optimizes the RTP streams. Since VoIP works upon packet-switched network RTP includes mechanisms to compensate jitter, messages received out of sequence.
 
-Before media session ( handled by RTP and RTCP ) can be initiated, a session description need to be negotiated. That where Session Description Protocol ( SDP ) takes its place. SDP is standard format for describing media initialization parameters. It holds necessary information for initiating media session like end device ip address, RTP and RTCP ports and a codec. It is usually transfered as a data part of signaling protcol message.
+Before media session (handled by RTP and RTCP) can be initiated, a session description need to be negotiated. That where Session Description Protocol (SDP) takes its place. SDP is standard format for describing media initialization parameters. It holds necessary information for initiating media session like end device ip address, RTP and RTCP ports and a codec. It is usually transfered as a data part of signaling protcol message.
 
 \chapter{Declarative programming paradigm}
 Is a programming paradigm that describes computer program logic without describing its control flow.  In much more common imperative paradigm one often describes:
@@ -175,9 +175,9 @@ Is a programming paradigm that describes computer program logic without describi
 \item  what computer program goals are
 \item  how the program should reach given goals
 \end{itemize}
-Program run is devided into small steps. For example in language C single steps are separated using ;. Program flow is defined as modifiing its internal state using steps.
+Program run is devided into small steps. For example in language C single steps are separated using a semicon character. Program flow is defined as modifiing its internal state using steps.
 
-On the other hand, when talking about declarative paradigm, we mark program state as undefined. Of course programmer is accustomed to programming language evaluation strategy otherwise he would not be able to build program properly. In declarative languages programer only specifies :
+On the other hand, when talking about declarative paradigm, we mark program state as undefined. Of course programmer is accustomed to programming language evaluation strategy otherwise he would not be able to build program properly. In declarative languages programer only specifies:
 \begin{itemize}
 \item what computer program goals are
 \end{itemize}
@@ -187,19 +187,17 @@ Declarative languages could be devided into following subsets:
 \item logical
 \item hardware definition languages
 \item DDL and DML such as SQL
-\item ...
 \end{itemize}
 
-
-\chapter{Functional programming}
-Is a subset of declarative paradigm in which programs are constructed using functions. Functional languages ( languages built upon functional programming ) are basically separated into 2 groups: 
+\section{Functional programming}
+Is a subset of declarative paradigm in which programs are constructed using functions. Functional languages (languages built upon functional programming) are basically separated into 2 groups: 
 \begin{itemize}
-\item purely functinal languages such as Haskell, Lisp, ... 
-\item partially functional such as Erlang, Clojure, ...
+\item purely functinal languages such as Haskell, Lisp,\dots
+\item partially functional such as Erlang, Clojure,\dots
 \end{itemize}
 Functions in terms of functional programming are much more mathematicaly oriented compare to imperative languages. When an argument is supplied to a function thus calling it, the function will never ever return different value when called again with the same argument. Consequence of this approach is immutable data, often lack of variables and undefined program state. Rather than loop recursion is used. Its formal basis is a lambda-calcul, a formal system used in mathematical logic. It was developed in 1930's by Alonzo Church to support his solution of the Entschiedung problem. Later was used as a formal basis for functional programming.
 
-\section{Evaluation strategy}
+\subsection{Evaluation strategy}
 Evaluation strategy refers to an approach of evaluating function arguments. Function arguments can be evaluated in different manners as we will show later. Evaluation strategy has a huge impact on how whole program is evaluated, on program speed and coding style requirements. From evaluation point important aspects are:
 
 \begin{itemize}
@@ -207,36 +205,35 @@ Evaluation strategy refers to an approach of evaluating function arguments. Func
 \item what value is passed to the function
 \end{itemize} 
 
-\subsection{Call-by-Value}
+\subsubsection{Call-by-Value}
 Call-by-value is the most common approach to evaluating function arguments. It is used by language such as a C or Erlang. When function is called, their arguments are first evaluated and the resulting value is then bound to variable inside function body. This is usually done by copying value to new memory segment. When new value is assigned to function parameter, the original value remains unchanged due to the assignment to different memory region.
 
-\subsection{Call-by-Reference}
+\subsubsection{Call-by-Reference}
 As a counterpart to the Call-by-Value approach, Call-by-Reference does not need to copy memory segments to pass parameters to a function. It rather passes reference. This approach is in some form or another implemented in most languages. Typically languages use Call-by-Value as default evaluation strategy but often support special syntax for Call-by-Reference approach. C programming language is an perfect example offering Call-by-Reference explicitly by introducing the pointer concept.
 
-\subsection{Call-by-Name}
+\subsubsection{Call-by-Name}
 A major drawback of previous evaluation mechanisms were in cases when function argument was never used in function. In spite of argument was never used, it was always evaluated befare the function was called. Such approach wastes CPU resources and makes overall program run slower. A reasonable improvement could be to evaluate arguments only in cases when argument is used inside function body. And it is the point of Call-by-Name evaluation. Drawback is that if argument is used multiple times, it is also multiple-times evaluated.
 
-\subsection{Call-by-Need}
-Call-by-Need, also called the Lazy evaluation delays argument evaluation until it is truly needed. Improvments to Call-by-Name is that arguments are evaluated only once. Such improvement significantly speeds-up overall program run, but since operation order becomes indeterminate it is hard to combine with imperative features such as exception handling. It is main reason why this approach is not widely used. Haskell programming language adopted Lazy evaluation and makes following construct possible. \cite{lyah} 
+\subsubsection{Call-by-Need}
+Call-by-Need, also called the Lazy evaluation delays argument evaluation until it is truly needed. Improvments to Call-by-Name is that arguments are evaluated only once. Such improvement significantly speeds-up overall program run, but since operation order becomes indeterminate it is hard to combine with imperative features such as exception handling. It is main reason why this approach is not widely used. Haskell programming language adopted Lazy evaluation and makes following construct possible.\cite{lyah} 
 
 \lstinputlisting[style=customhaskell, caption=map function example in Haskell programming language]{scodes/lazy_evaluation_example.hs}
 
 In preceeding example is taken sixth element of list. But since our list is infinite in other than lazy evaluation concept program would stuck in endless loop.
 
-\section{Type systems}
-If type is a property that can be assigned to various programming construct ( for example a variable, expression or function are programming constructs ), then type system is a pack of rules that assign a type to a construct. Its main purpose is to reduce bugs by defining interfaces between various parts of computer program. These parts when connected ( for example function call ) can be checked for consistency. This check can be performed statically at compile time or dynamically at run time. Various types can be declared implicitly, explicitly or infered.   
+\subsection{Type systems}
+If type is a property that can be assigned to various programming construct (for example a variable, expression or function are programming constructs), then type system is a pack of rules that assign a type to a construct. Its main purpose is to reduce bugs by defining interfaces between various parts of computer program. These parts when connected (for example function call) can be checked for consistency. This check can be performed statically at compile time or dynamically at run time. Various types can be declared implicitly, explicitly or infered.   
 \begin{itemize}
 \item statically typed usually require explicit type declaration, type consistency can be checked at compile time
 \item dynamically typed languages do not require explicit type declarations, their consistency is checked at program run
 \end{itemize}
-Type inference is an action which performs compiler of statically typed language ( such a Haskell ) before checking program for type consistence. Most significant drawback of this approach is that programmer doesn't need to explicitly specify type when declaring constructs. Compiler can infer declaration types from its construct. 
+Type inference is an action which performs compiler of statically typed language (such as a Haskell) before checking program for type consistence. Most significant drawback of this approach is that programmer doesn't need to explicitly specify type when declaring constructs. Compiler can infer declaration types from its construct. 
 
 Another important aspect of type system is wheter it is strong or weak.
 \begin{itemize}
 \item weakly typed languages 
 \item strongly typed 
 \end{itemize}
-\section{Functions and function order}
 
 \chapter{Erlang programming language}
 Erlang is a functional programming language with high emphasis on high realiability and heavy concurrency. These two main features go hand to hand with support for distribution applications and fault tolerance. It is well suited for applications whose main characteristics are:
@@ -251,9 +248,9 @@ Erlang is a functional programming language with high emphasis on high realiabil
 High reliability is one of Erlang key factors. Although it will not solve all problems, by inheriting different but simple approaches to handle errors and exceptions and using well designed and robust but very general library modules, Erlang will make your job easier and in most cases more native.  
 
 \subsection{Fault tolerace}
-Is a "keep it running" approach to error handling. It means that whenewer a part of system ( process, group of processes ) crashes, we will let the rest of the system alive. The Erlang VM will tell us, when the crash happened and why it did it. It is programmer's responsibility to ensure that the crash will not affect correct system behavior in global. We can take our VoIP switch as an example. If user invokes conference feature which is not implemented and system crashes in local scale user lost his call but in global scale, simultaneous calls should not be affected and switch should be up and running, ready to process any new requests.
+Is a `keep it running' approach to error handling. It means that whenewer a part of system (process, group of processes) crashes, we will let the rest of the system alive. The Erlang VM will tell us, when the crash happened and why it did it. It is programmer's responsibility to ensure that the crash will not affect correct system behavior in global. We can take our VoIP switch as an example. If user invokes conference feature which is not implemented and system crashes in local scale user lost his call but in global scale, simultaneous calls should not be affected and switch should be up and running, ready to process any new requests.
 
-Supervision tree is a concept trough which fault tolerance could be reached. Every process in such a model is either a worker or a supervisor. Worker job could be any routine work you can imagine starting from reading a file to a database server. On the other hand supervisor only job is to monitor other processes, workers or other supervisors and if any supervising process goes wrong it will restart it, stop all processes that are being supervised, etc... In general such action is called a restart strategy. 
+Supervision tree is a concept trough which fault tolerance could be reached. Every process in such a model is either a worker or a supervisor. Worker job could be any routine work you can imagine starting from reading a file to a database server. On the other hand supervisor only job is to monitor other processes, workers or other supervisors and if any supervising process goes wrong it will restart it, stop all processes that are being supervised, etc\dots In general such action is called a restart strategy. 
 
 Each process in Erlang system should have its supervisor. Process diagram will mostly result in a tree where only process without supervision will be a root. 
 \begin{figure}[h!]
@@ -274,9 +271,9 @@ Any programming language that features concurrency inherits one of the following
 \end{itemize}
 Erlang uses message passing concurrency. In case of Erlang it is a model that fits needs for distribution, and fault tolerance trough which high reliability is implemented.
 
-As an addition to MPC, its processes are lightweight and fast. Erlang does not use OS process/thread capabilities as a backend for its concurrency model. Instead it uses own threads running separately in VM completely indepdendent of the underlying OS. This approach results in extremly fast threads.
+As an addition to MPC, its processes are lightweight and fast. Erlang does not use OS process/thread capabilities as a backend for its concurrency model. Instead it uses own threads running separately in VM completely indepdendent of the underlying OS.This approach results in extremly fast threads.
 \section{Erlang history and philosophy}
-Erlang as a language was developed in 1986 in Ericson Computer Science Laboratory. Later the laboratory was to Ellemtel company and development continued. Initial motivation which later lead to Erlang was \textit{to make something like PLEX, to run on ordinary hardware, only better}\cite{armstrong_history_erlang} where PLEX is Ericson proprietary language developed to run on AXE platform. Erlang was highly influenced by PLEX design. Members of the laboratory started implementing exchanges in every possible language that could run general purpose machine and operating system ( 4.2 BSD UNIX on Vax/11750 at the time ) and compare results. They tried Ada, Concurrent Euclid, PFL, LPL0, Frames and CLU. The results were pretty simple :
+Erlang as a language was developed in 1986 in Ericson Computer Science Laboratory. Later the laboratory was to Ellemtel company and development continued. Initial motivation which later lead to Erlang was \textit{to make something like PLEX, to run on ordinary hardware, only better}\cite{armstrong_history_erlang} where PLEX is Ericson proprietary language developed to run on AXE platform. Erlang was highly influenced by PLEX design. Members of the laboratory started implementing exchanges in every possible language that could run general purpose machine and operating system (4.2 BSD UNIX on Vax/11750 at the time) and compare results. They tried Ada, Concurrent Euclid, PFL, LPL0, Frames and CLU. The results were pretty simple:
 \begin{itemize}
 \item smaller language is prefered over large and complex language
 \item good concurency support is essential
@@ -292,37 +289,38 @@ Later experimenting with prolog continued. They developed an meta-interpreter wh
 \end{itemize}
 
 \section{Erlang type system}
-Erlang is dynamically typed language. Erlang compiler will not complain on evident errors, instead every error will be caught at run time and it is programmer responsibility to handle this. This is often understood as one of major Erlang drawbacks. Reasons for this is Erlang uniqueness. Erlang features highly advanced concepts such as hot-code swaping and message passing concurrency which makes difficult to check for type correctness. As an example, it is hard to check types for code that does not exist yet (hot-code swaping ). A number of project tried to create comprehensive type system for Erlang, but none of them really succeeded. Deeper study of this problem is considered beyond this paper but as a final conclusion I will quote Joe Armstrong : \textit{It seems like it should be 'easy'-and indeed, a few weeks programming can make a type system that handles 95\% of the language. Several man-years of work [by some of the brightest minds in computer science] have gone into trying to fix up the other 5\%-but this is really difficult.}\cite{armstrong_type_system}
+Erlang is dynamically typed language. Erlang compiler will not complain on evident errors, instead every error will be caught at run time and it is programmer responsibility to handle this. This is often understood as one of major Erlang drawbacks. Reasons for this is Erlang uniqueness. Erlang features highly advanced concepts such as hot-code swaping and message passing concurrency which makes difficult to check for type correctness. As an example, it is hard to check types for code that does not exist yet (hot-code swaping). A number of project tried to create comprehensive type system for Erlang, but none of them really succeeded. Deeper study of this problem is considered beyond this paper but as a final conclusion I will quote Joe Armstrong: \textit{It seems like it should be `easy'-and indeed, a few weeks programming can make a type system that handles 95\% of the language. Several man-years of work [by some of the brightest minds in computer science] have gone into trying to fix up the other 5\%-but this is really difficult.}\cite{armstrong_type_system}
 
 Fortunatelly for Erlang engineers a pack of tools which resulted from research at Uppsala University exist to fill this gap. 
 \subsection{TypEr}
 Is a tool for automatic type inference. TypEr will check specified types againts inferred and check for inconsistencies. Specifying function parameter and return types has has yet another important consequence. It makes source code understanding significantly easier.
 \subsection{Dializer}
-Is an acronym for A DIscrepancy AnaLYZer for ERlang programs. It extends Typer and performs static analysis on Erlang programs. Its major function is to reveal software discrepancies such as : unreachable code, obvious type errors, redundant tests etc...
+Is an acronym for A DIscrepancy AnaLYZer for ERlang programs. It extends Typer and performs static analysis on Erlang programs. Its major function is to reveal software discrepancies such as: unreachable code, obvious type errors, redundant tests etc\dots
 \section{Erlang evaluation strategy}
 Call-By-Value is Erlang evaluation strategy as described in earlier chapters.
-\chapter{Open Telecom Platform}
+
+\section{Open Telecom Platform}
 OTP is a set of design patters and general behaviours packed in compact library module. It is aware of all concepts mentioned earlier such as distributed programming or hot-code swaping thus making it insdustrial-ready standard for building fast, reliable and distributed applications. 
-While it is not necessary to embed OTP into your system, it is highly advised to do so for at least 2 very good reasons :
+While it is not necessary to embed OTP into your system, it is highly advised to do so for at least 2 very good reasons:
 \begin{itemize}
 \item it is safer than reinventing already invented
-\item it makes source code much more readable because OTP general patterns are visible at first sight as shown in listing 7.1 .
+\item it makes source code much more readable because OTP general patterns are visible at first sight as shown in listing 7.1.
 \end{itemize}
 
 \lstinputlisting[style=customerl, caption=erlang behaviours]{scodes/behaviour_patterns.erl}
 
 \section{Behaviours}
-A behaviour is a formalization of common patterns. For example all supervising processes are similar, the only difference among them is what is their subject of supervision and how should they react when some of them crashes. Everything else is just a generic part, which is constant across all supervisors. What Erlang behaviour do, is encapsulating this generic part into a module and let programmer decide what the specific part will be. In terms of our supervisors : what the supervised processes will be and what should supervisor do when some of them crashes.
+A behaviour is a formalization of common patterns. For example all supervising processes are similar, the only difference among them is what is their subject of supervision and how should they react when some of them crashes. Everything else is just a generic part, which is constant across all supervisors. What Erlang behaviour do, is encapsulating this generic part into a module and let programmer decide what the specific part will be. In terms of our supervisors: what the supervised processes will be and what should supervisor do when some of them crashes.
 
-A Erlang behaviour consist of 2 parts :
+A Erlang behaviour consist of 2 parts:
 \begin{itemize}
 \item generic module
 \item specific module
 \end{itemize}
 
-When using a behaviour, programmer oblige to implement function call-backs in specific module. Such call-backs are then called from generic module. \cite{lyse}
+When using a behaviour, programmer oblige to implement function call-backs in specific module. Such call-backs are then called from generic module.\cite{lyse}
 
-\section{Generic servers}
+\subsection{Generic servers}
 Is a behaviour where client-server relation is defined. This model is usually defined by a single server implemented by fulfilling gen server behaviour and almost any number of clients. As an example, server could handle some kind of resource and clients query server for resource share. Messages could be synchronous or asynchronous. It is important to note that client and server role is not reserved for a concrete process. Clients can in different situations behave like servers and vice versa.
 
 \begin{figure}[h!]
@@ -331,20 +329,20 @@ Is a behaviour where client-server relation is defined. This model is usually de
 \caption[Erlang gen\_event] {Example gen server behaviour hierarchy}
 \end{figure}
 
-\section{Finite state machines}
-As described in Erlang/OTP official documentation. A finite state machine is a relation of the following form :
+\subsection{Finite state machines}
+As described in Erlang/OTP official documentation. A finite state machine is a relation of the following form:
 \\
 \\
 \( State(S) x Event(E) \to Actions(A), State(S') \)
 \\
 \\
-If we are in state S and the event E occurs, we should perform the actions A and make a transition to the state S'. \cite{erlang_fsm}
+If we are in state S and the event E occurs, we should perform the actions A and make a transition to the state S'.\cite{erlang_fsm}
 
-This behaviour as defined in gen\_fsm behaviour is suitable for modeling any system that could be described with finite state machines. Such examples could from something really simple like a door which would consist of a few states and events ( door could be in either open or closed state, and will react to events like open and close ) to complex protocol stack. Later our generic protocol will be described using this behaviour making it simple, readable and easily extendible.
+This behaviour as defined in gen\_fsm behaviour is suitable for modeling any system that could be described with finite state machines. Such examples could from something really simple like a door which would consist of a few states and events (door could be in either open or closed state, and will react to events like open and close) to complex protocol stack. Later our generic protocol will be described using this behaviour making it simple, readable and easily extendible.
 
-\section{Event handlers}
+\subsection{Event handlers}
 
-Event handler behaviour ( gen\_event ) consist of one event handling manager and an arbitary number of event handlers which could be added or removed dynamically. Since event manager is generic, programmer only need is to implement specific event handler which could be inserted into event manager to interact with surrounding world. 
+Event handler behaviour (gen\_event) consist of one event handling manager and an arbitary number of event handlers which could be added or removed dynamically. Since event manager is generic, programmer only need is to implement specific event handler which could be inserted into event manager to interact with surrounding world. 
 
 \begin{figure}[h!]
 \centering
@@ -352,19 +350,20 @@ Event handler behaviour ( gen\_event ) consist of one event handling manager and
 \caption[Erlang gen\_event behaviour] {Example gen\_event behaviour hierarchy}
 \end{figure}
 
-\section{Applications}
+\subsection{Applications}
 TODO
 % include picture
 
-\chapter{Designing VoIP Exchange core}
-\section{Generic protocol}
-A network protocol is an Agreement of information exchange in distributed networking  \cite{computer_protocols_desing_and_validation}. Although this definition says what network protocols are and what is their purpose, it is too abstract, not really helping us in any way. A lower level definition describes network protocols as a finite state machines. Such technical definition nicely fits into our Erlang/OTP environment especially the finite state machine behaviour ( gen\_fsm ). 
+\chapter{Generic VoIP Exchange}
+From far point of view, the exchange is separated into 2 part. The first part is the generic generic core and the second are protocol specific handlers, wrapped under the `specific part' acronym. I call them gateways. Although different approaches exist to design such exchange, there must always be code to handle specific signaling protocols and code to handle the generic behaviour. It is of course possible to avoid using the generic part and somehow translate each implemented signaling protocol to a single specific protocol. In early stages of design I refused this approach because (TODOTODO). In the following sections, I would like to take a closer look at both, the generic part and the specific.
 
-In terms of generic exchange, a core should be generic finite state machine. It is the most crucial part, theoretically shared by an arbitary number of specific protocol ( SIP, H.323, LCPv1). Since every protocol is different designing errorless, shared, generic logic is very difficult.
+\section{Generic VoIP Exchange Core}
+A network protocol is an Agreement of information exchange in distributed networking\cite{computer_protocols_desing_and_validation}. Although this definition says what network protocols are and what is their purpose, it is too abstract, not really helping us in any way. A lower level definition describes network protocols as a finite state machines. Such technical definition nicely fits into our Erlang/OTP environment especially the finite state machine behaviour (gen\_fsm). 
+In terms of generic exchange, a main part of a core should be generic finite state machine. It is the most crucial part, theoretically shared by an arbitary number of specific protocol (SIP, H.323, LCPv1). Since every protocol is different designing errorless, shared, generic logic is very difficult.
 
 Our job at this point is to develop a generic protocol using finite state machine as a description technique and Erlang/OTP gen\_fsm behaviours as the right tool to implement it. 
 \subsection{Solution choice}
-Every signaling protocol is very complex. Designing a generic protocol for such a vast set of states is beyond the scope of this thesis. Instead, a few sample but significant use cases will be selected, and upon these state set a generic protocol will be developed. A final set of use cases :
+Every signaling protocol is very complex. Designing a generic protocol for such a vast set of states is beyond the scope of this thesis. Instead, a few sample but significant use cases will be selected, and upon these state set a generic protocol will be developed. A final set of use cases:
 
 \begin{itemize}
 \item successfull registration
@@ -378,15 +377,15 @@ Every signaling protocol is very complex. Designing a generic protocol for such 
 Generic protocol desing could be handled several ways.
 
 \begin{itemize} 
-\item Do we want a simple generic protocol but for the price of leaving a small ( or maybe a bigger ) piece of functionality in the specific part ?
-\item Or do we want more complex generic protocol with specific part without any logic ?
-\item Or some mix of previous ? 
+\item Do we want a simple generic protocol but for the price of leaving a small (or maybe a bigger) piece of functionality in the specific part?
+\item Or do we want more complex generic protocol with specific part without any logic?
+\item Or some mix of previous? 
 \end{itemize}
 
 At first sight the second option seems as a simplest and cleanest solution. We have to realize that this decision is not determinated by our feeleings but by the specifications. The specification says to desing a generic protocol. In the second case our generic protocol would not be really generic. It would be generic until it we decided to add a new specific protocol. In such a case we would need to add not only the specific part but we would need to redesign our generic protocol again. It would be a huge and pointless waste of time and resources cause by wrong design decision. Instead what we want is to design a generic protocol which is durable enough to survive adding a new specific protocol. Such a demand leaves as with the first option only.
 
 \section{Generic protocol desing}
-It was designed by taking in account all above mentioned use cases and general phone behaviour. The following finite state machine was found :
+It was designed by taking in account all above mentioned use cases and general phone behaviour. The following finite state machine was found:
 \begin{figure}[h!]
 \centering
 \includegraphics[scale=0.5]{fig/generic_protocol}
@@ -396,25 +395,24 @@ It was designed by taking in account all above mentioned use cases and general p
 
 Transitions conditions are not yet shown, becase it would make whole protocol hard to understand, they will be shown in a particular use case later. When a signaling transaction is started, the exchange creates 2 of this finite state machines. 1 for every part of transaction (in our case client and server transaction). The reason why, there are 2 transactions is for cases where 1 transaction wont suffice such as when user calls itself. Concept will be explained in more detail later. The following figure shows generic protocol message structure as present in my system. 
 
-%\lstinputlisting[caption=generic protocol message structure]{scodes/generic_protocol_dat.erl}
+\lstinputlisting[caption=generic protocol message structure]{scodes/generic_protocol_dat.erl}
 
-The message is structured into headers. These headers were designed to be sufficient and to contain only the necessary information. Particulary the routing information and message type. Protocol specific headers not present in generic message are dumped in translation process. Problem is raised in case of mandatory headers which are not present in generic protocol. Such situation is usually solved by a deduction of correct or similar header values on specific side of exchange. For better understanding lets now see an example of generic message : 
+The message is structured into headers. These headers were designed to be sufficient and to contain only the necessary information. Particulary the routing information and message type. Protocol specific headers not present in generic message are dumped in translation process. Problem is raised in case of mandatory headers which are not present in generic protocol. Such situation is usually solved by a deduction of correct or similar header values on specific side of exchange. For better understanding lets now see an example of generic message: 
 
-%\lstinputlisting[caption=generic protocol message example]{scodes/generic_message_example.erl}
+\lstinputlisting[caption=generic protocol message example]{scodes/generic_message_example.erl}
 
 \chapter{Generic exchange core function principes}
-So finally, exchange core is constructed from the following parts : a dialog manager and supervisor. These 2 processes take care of creation and correctness of dialog database. Dialog database is represented by Erlang table storage, working on similar principes as DBMS. Next important part is the dialog router. Whenewer a generic message arrives at exchange core, it performs a lookup into a dialog databse and gets a pair of generic protocols represented by finite state machine as described earlier. Next is performed resolution which dialog belongs to particular part of dialog. As a final step, generic messages is tagged with on of following atoms : \{fromRP, fromTU\} indicating whenewer the messages arrived from caller or callee and forwarded to a correct dialog.
+So finally, exchange core is constructed from the following parts: a dialog manager and a supervisor. These 2 processes take care of creation and correctness of dialog database. Dialog database is represented by Erlang table storage, working on similar principes as DBMS.Next important part is the dialog router. Whenewer a generic message arrives at exchange core, it performs a lookup into a dialog databse and gets a pair of generic protocols represented by finite state machine as described earlier. Next is performed resolution which dialog belongs to particular part of dialog. As a final step, generic messages is tagged with on of following atoms: \{fromRP, fromTU\} indicating whenewer the messages arrived from caller or callee and forwarded to a correct dialog.
 \begin{figure}[h!]
 \centering
-%\includegraphics[scale=0.4]{fig/core_design}
+\includegraphics[scale=0.4]{fig/core_design}
 \caption[exchange core process diagram] {generic protocol}
 \end{figure}
 If dialog router looks up a dialog and there is no dialog found, it creates new pair of dialogs, and then works as described earlier. When a dialog receives a message and no proper transition can be performes, it indicates that invalid messages was received. In case of anassociated client, exchange still works as described earlier but performs asociation check explicitly in IDLE state. The following process diagram makes understanding easier. 
 
-\chapter{General VoIP Exchange design}
+\chapter{General VoIP Exchange peripherals}
 TODO
 
-\section{Generic vs Specific part}
 \begin{figure}[h!]
 \centering
 \includegraphics[scale=0.4]{fig/exchange_desing_1}
@@ -448,14 +446,13 @@ Apart from its significant diference compare to imperative languages. It made so
 
 In the following example a translation from Generic protocol to SIP Via header filed is shown. The reverse is needed to maintain correct order of Vias which is reversed in Generic protocol.
 \lstinputlisting[style=customhaskell, caption=map function example in generic\_exchange\_sip\_generic.erl]{scodes/map_example.erl}
-%\lstinputlisting[style=custompython, caption=similar program written in Python]{scodes/map_example.py}
 
 The following example takes care of translation of SIP Via header field into Generic protocol DownStreamroute which has similar meaning. Instead of complicated loop in arbitrary imperative language, use of foldr funcion makes reading and understanding easier:
 \lstinputlisting[style=customerl, caption=foldr function example in generic\_exchange\_sip\_generic.erl]{scodes/fold_example.erl}
 
-As a huge advantage I consider a combination of Erlang high-level properties combined with OTP and message-passing concurency. Trough implementation phase I encountered numerous errors in design ( that could be preceden by making deeper design ) and other minor errors. Solving these errors never took me more than few minutes. In most cases it usually took me just a few seconds to figure out what's wrong. And trough whole implementation phase, I never used debugger. A huge part in this play Erlang atoms which help to identify software parts and messages nice and easy.
+As a huge advantage I consider a combination of Erlang high-level properties combined with OTP and message-passing concurency. Trough implementation phase I encountered numerous errors in design (that could be preceden by making deeper design) and other minor errors. Solving these errors never took me more than few minutes. In most cases it usually took me just a few seconds to figure out what's wrong. And trough whole implementation phase, I never used debugger. A huge part in this play Erlang atoms which help to identify software parts and messages nice and easy.
 
-As a consequence of Erlang high-expression properties, implementation is really rapid. Instead of focusing on low-level constructions, I could spend my focus on what is trully important. I cought myself many times thinking of what do I want to express. The ratio of time writing time and this 'thinking' time is by my judgement higher than in arbitrary imperative language. Consequence of this is larger ammout if code that stay and will not be edited in the future. 
+As a consequence of Erlang high-expression properties, implementation is really rapid. Instead of focusing on low-level constructions, I could spend my focus on what is trully important. I cought myself many times thinking of what do I want to express. The ratio of time writing time and this `thinking' time is by my judgement higher than in arbitrary imperative language. Consequence of this is larger ammout if code that stay and will not be edited in the future. 
 
 At the end, the biggest advantage I discovered during design phase.
 
@@ -471,7 +468,7 @@ Although typer and dialyzer can work without any explicit type annontations and 
 Dialyzer (a DIscrepancy AnaLYZer for ERlang programs) can identify software discrepancies such as obvious type errors, dead code and others.
 
 \section{Results after applying it to my source code}
-Static analysis was run over resulting source code, and I was more than surprised how many errors I have created. Many of them were hidden and hard to discover with unit tests I created. Some of them were more obvious. As a drawback, static analysis performed by Dialyzer takes quite a long time which makes it unsuitable to perform every time exchange is beeing compiled. Rather, I used it to check the code once in few hours. It took about 15 minutes on average laptop ( place specification here if requested ) to compute the results and the response it I have been given was almost always suprising and full of more or less obvious errors. It definitely helped me in order to produce more reliable code. Most errors it discovered were type errors in clauses that would match rarely usualy in error conditions, thus making them hard to discover. The second kind of errors were wrong type specifications. These are errors where type inference tool infers a function type and compares it with type I specified explicitly. These kind errors are priceless, because they help to discover crucial design flaws in early stages of implementation. They sort of work "Are you sure this function work as you intended ?".
+Static analysis was run over resulting source code, and I was more than surprised how many errors I have created. Many of them were hidden and hard to discover with unit tests I created. Some of them were more obvious. As a drawback, static analysis performed by Dialyzer takes quite a long time which makes it unsuitable to perform every time exchange is beeing compiled. Rather, I used it to check the code once in few hours. It took about 15 minutes on average laptop (place specification here if requested) to compute the results and the response it I have been given was almost always suprising and full of more or less obvious errors. It definitely helped me in order to produce more reliable code. Most errors it discovered were type errors in clauses that would match rarely usualy in error conditions, thus making them hard to discover. The second kind of errors were wrong type specifications. These are errors where type inference tool infers a function type and compares it with type I specified explicitly. These kind errors are priceless, because they help to discover crucial design flaws in early stages of implementation. They sort of work "Are you sure this function work as you intended ?".
 
 \chapter{Conclusion}
 TODO
