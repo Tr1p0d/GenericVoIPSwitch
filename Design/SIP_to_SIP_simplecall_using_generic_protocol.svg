@@ -13,7 +13,7 @@
    height="210mm"
    id="svg2847"
    version="1.1"
-   inkscape:version="0.48.4 r9939"
+   inkscape:version="0.47 r22583"
    sodipodi:docname="SIP_to_SIP_simplecall_using_generic_protocol.svg">
   <defs
      id="defs2849">
@@ -446,6 +446,27 @@
          style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;marker-start:none"
          transform="matrix(-0.8,0,0,-0.8,-10,0)" />
     </marker>
+    <inkscape:perspective
+       id="perspective2969"
+       inkscape:persp3d-origin="0.5 : 0.33333333 : 1"
+       inkscape:vp_z="1 : 0.5 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 0.5 : 1"
+       sodipodi:type="inkscape:persp3d" />
+    <inkscape:perspective
+       id="perspective3008"
+       inkscape:persp3d-origin="0.5 : 0.33333333 : 1"
+       inkscape:vp_z="1 : 0.5 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 0.5 : 1"
+       sodipodi:type="inkscape:persp3d" />
+    <inkscape:perspective
+       id="perspective3033"
+       inkscape:persp3d-origin="0.5 : 0.33333333 : 1"
+       inkscape:vp_z="1 : 0.5 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 0.5 : 1"
+       sodipodi:type="inkscape:persp3d" />
   </defs>
   <sodipodi:namedview
      inkscape:document-units="mm"
@@ -454,16 +475,16 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.2279853"
-     inkscape:cx="503.76274"
-     inkscape:cy="446.85896"
+     inkscape:zoom="0.61399265"
+     inkscape:cx="240.46044"
+     inkscape:cy="356.39914"
      inkscape:current-layer="layer1"
      id="namedview2851"
      showgrid="false"
-     inkscape:window-width="1920"
-     inkscape:window-height="1028"
+     inkscape:window-width="1432"
+     inkscape:window-height="806"
      inkscape:window-x="0"
-     inkscape:window-y="27"
+     inkscape:window-y="0"
      inkscape:window-maximized="1" />
   <metadata
      id="metadata2853">
@@ -975,5 +996,38 @@
          id="tspan4176-3-5-5-7-1"
          x="107.4824"
          y="129.66116">200 OK</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:24.94689178px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       x="488.64963"
+       y="34.390541"
+       id="text2882-2-3"
+       transform="scale(0.92123353,1.0855011)"><tspan
+         sodipodi:role="line"
+         id="tspan2884-3-9"
+         x="488.64963"
+         y="34.390541">Exchange Core</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:24.94689178px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       x="209.6086"
+       y="42.642735"
+       id="text2882-5"
+       transform="scale(0.92123353,1.0855011)"><tspan
+         sodipodi:role="line"
+         id="tspan2884-4"
+         x="209.6086"
+         y="42.642735">SIP GW</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:24.94689178px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       x="841.10638"
+       y="37.391342"
+       id="text2882-5-9"
+       transform="scale(0.92123353,1.0855011)"><tspan
+         sodipodi:role="line"
+         id="tspan2884-4-1"
+         x="841.10638"
+         y="37.391342">SIP GW</tspan></text>
   </g>
 </svg>

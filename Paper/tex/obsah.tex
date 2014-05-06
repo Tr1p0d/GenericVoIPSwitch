@@ -355,15 +355,15 @@ TODO
 % include picture
 
 \chapter{Generic VoIP Exchange}
-From far point of view, the exchange is separated into 2 part. The first part is the generic generic core and the second are protocol specific handlers, wrapped under the `specific part' acronym. I call them gateways. Although different approaches exist to design such exchange, there must always be code to handle specific signaling protocols and code to handle the generic behaviour. It is of course possible to avoid using the generic part and somehow translate each implemented signaling protocol to a single specific protocol. In early stages of design I refused this approach because (TODOTODO). In the following sections, I would like to take a closer look at both, the generic part and the specific.
+From far point of view, the exchange is separated into 2 part. The first part is the generic generic core and the second are protocol specific handlers, wrapped under the `specific part' acronym. I call them gateways. Although different approaches exist to design such exchange, there must always be code to handle specific signaling protocols and code to handle the generic behaviour. It is of course possible to avoid using the generic part and somehow translate each implemented signaling protocol to a single specific protocol. In early stages of design I refused this approach because (TODO). In the following sections, I would like to take a closer look at both, the generic part and the specific.
 
 \section{Generic VoIP Exchange Core}
+The initial problem we need to solve is the border where the generic part should start and what functionality it should cover. I decided to have the smallest possible amount of funcionlity in the core. The reason for this is that whenewer a new protocol is added into the generic exchange we do not want do modify the core at all. The core should persist and live without a change for as long time as possible. In ideal case, forever. Thus it will only consist of a generic protocol and a supporting database which will all necessary information about registrations and running dialogs.
+\subsection{Generic Protocol}
 A network protocol is an Agreement of information exchange in distributed networking\cite{computer_protocols_desing_and_validation}. Although this definition says what network protocols are and what is their purpose, it is too abstract, not really helping us in any way. A lower level definition describes network protocols as a finite state machines. Such technical definition nicely fits into our Erlang/OTP environment especially the finite state machine behaviour (gen\_fsm). 
 In terms of generic exchange, a main part of a core should be generic finite state machine. It is the most crucial part, theoretically shared by an arbitary number of specific protocol (SIP, H.323, LCPv1). Since every protocol is different designing errorless, shared, generic logic is very difficult.
 
-Our job at this point is to develop a generic protocol using finite state machine as a description technique and Erlang/OTP gen\_fsm behaviours as the right tool to implement it. 
-\subsection{Solution choice}
-Every signaling protocol is very complex. Designing a generic protocol for such a vast set of states is beyond the scope of this thesis. Instead, a few sample but significant use cases will be selected, and upon these state set a generic protocol will be developed. A final set of use cases:
+Our job at this point is to develop a generic protocol using finite state machine as a description technique and Erlang/OTP gen\_fsm behaviours as the right tool to implement it. Every signaling protocol is very complex. Designing a generic protocol for such a vast set of states is beyond the scope of this thesis. Instead, a few sample but significant use cases will be selected, and upon these state set a generic protocol will be developed. A final set of use cases:
 
 \begin{itemize}
 \item successfull registration
@@ -374,24 +374,16 @@ Every signaling protocol is very complex. Designing a generic protocol for such 
 \item proper handling of out of transaction messages
 \end{itemize}
 
-Generic protocol desing could be handled several ways.
+Generic protocol desing could be handled several ways. Do we want a simple generic protocol but for the price of leaving a small (or maybe a bigger) piece of functionality in the specific part? Or do we want more complex generic protocol with specific part without any logic?
+Or some mix of previous? 
 
-\begin{itemize} 
-\item Do we want a simple generic protocol but for the price of leaving a small (or maybe a bigger) piece of functionality in the specific part?
-\item Or do we want more complex generic protocol with specific part without any logic?
-\item Or some mix of previous? 
-\end{itemize}
+At the first sight the second option seems as a simplest and cleanest solution. We have to realize that this decision is not determinated by our feeleings but by the specifications. The specification says to desing a generic protocol. In the second case our generic protocol would not be really generic. It would be generic until it we decided to add a new specific protocol. In such a case we would need to add not only the specific part but we would need to redesign our generic protocol again. It would be a huge and pointless waste of time and resources cause by wrong design decision. Instead what we want is to design a generic protocol which is durable enough to survive adding a new specific protocol. Such a demand leaves as with the first option only. It was designed by taking in account all above mentioned use cases and general phone behaviour. The following finite state machine was found:
 
-At first sight the second option seems as a simplest and cleanest solution. We have to realize that this decision is not determinated by our feeleings but by the specifications. The specification says to desing a generic protocol. In the second case our generic protocol would not be really generic. It would be generic until it we decided to add a new specific protocol. In such a case we would need to add not only the specific part but we would need to redesign our generic protocol again. It would be a huge and pointless waste of time and resources cause by wrong design decision. Instead what we want is to design a generic protocol which is durable enough to survive adding a new specific protocol. Such a demand leaves as with the first option only.
-
-\section{Generic protocol desing}
-It was designed by taking in account all above mentioned use cases and general phone behaviour. The following finite state machine was found:
 \begin{figure}[h!]
 \centering
 \includegraphics[scale=0.5]{fig/generic_protocol}
 \caption[Generic protocol] {generic protocol}
 \end{figure}
-
 
 Transitions conditions are not yet shown, becase it would make whole protocol hard to understand, they will be shown in a particular use case later. When a signaling transaction is started, the exchange creates 2 of this finite state machines. 1 for every part of transaction (in our case client and server transaction). The reason why, there are 2 transactions is for cases where 1 transaction wont suffice such as when user calls itself. Concept will be explained in more detail later. The following figure shows generic protocol message structure as present in my system. 
 
@@ -401,16 +393,23 @@ The message is structured into headers. These headers were designed to be suffic
 
 \lstinputlisting[caption=generic protocol message example]{scodes/generic_message_example.erl}
 
-\chapter{Generic exchange core function principes}
+\subsection{Generic exchange core function principes}
 So finally, exchange core is constructed from the following parts: a dialog manager and a supervisor. These 2 processes take care of creation and correctness of dialog database. Dialog database is represented by Erlang table storage, working on similar principes as DBMS.Next important part is the dialog router. Whenewer a generic message arrives at exchange core, it performs a lookup into a dialog databse and gets a pair of generic protocols represented by finite state machine as described earlier. Next is performed resolution which dialog belongs to particular part of dialog. As a final step, generic messages is tagged with on of following atoms: \{fromRP, fromTU\} indicating whenewer the messages arrived from caller or callee and forwarded to a correct dialog.
 \begin{figure}[h!]
 \centering
 \includegraphics[scale=0.4]{fig/core_design}
 \caption[exchange core process diagram] {generic protocol}
 \end{figure}
-If dialog router looks up a dialog and there is no dialog found, it creates new pair of dialogs, and then works as described earlier. When a dialog receives a message and no proper transition can be performes, it indicates that invalid messages was received. In case of anassociated client, exchange still works as described earlier but performs asociation check explicitly in IDLE state. The following process diagram makes understanding easier. 
+If dialog router looks up a dialog and there is no dialog found, it creates new pair of dialogs, and then works as described earlier. When a dialog receives a message and no proper transition can be performes, it indicates that invalid messages was received. In case of anassociated client, exchange still works as described earlier but performs asociation check explicitly in IDLE state. The following process diagram makes understanding easier. For better understanding a media session initiation sequence is shown.
 
-\chapter{General VoIP Exchange peripherals}
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=0.4]{fig/core_design}
+\caption[exchange core process diagram] {generic protocol}
+\end{figure}
+
+
+\section{General VoIP Exchange peripherals}
 TODO
 
 \begin{figure}[h!]
@@ -419,27 +418,62 @@ TODO
 \caption[Generic exchange design] {Generic exchange design}
 \end{figure}
 
-\section{SIP Specific}
+\subsection{SIP Specific}
 Basically it consist of 2 processes. The first one is a transport. Its responsibility is to receive and send packet over a socket. Since we use UDP sockets, its an UDP transport. It is used by the second process which is an SIP gateway. Its job is to deterministically translate SIP message into Generic message and vice versa. It also responsible to handle signaling communication which is beyond generic protocol scope.
 
-\subsection{SIP 3-way handshake}
+\subsubsection{SIP 3-way handshake}
 Such situation happens every INVITE transaction. Since INVITE transaction is a 3-way handshake and generic protocol does not understand concept of 3-way handshake. 
 
-\subsection{SIP/CANCEL vs SIP/BYE}
+\subsubsection{SIP/CANCEL vs SIP/BYE}
 Generic protocol is does not recognise difference between BYE and CANCEL messages. They transfer the same information but in different context CANCEL is used to teardown media session before media session is established, BYE is used after. Translation of generic\_protocol/teardown message into SIP/CANCEL or SIP/BYE is performed using context information that is held in specific part of generic message but can only be understood by SIP gateway.
 
-\subsection{Contacts header}
+\subsubsection{Contacts header}
 SIP Contact header holds information about where client could be physically reached. It is usefull in cases when clients do not want to use exchange for signaling once they exchanged Contact information. Simple and extremly usefull concept but absolutely unusable in case when different signaling protocols are used. The problem is overcomed by forcing Contact information of exchange to force both clients to communicate over exchange rather than peer-to-peer. 
 
-\section{LCP Specific}
+\subsection{LCP Specific}
 TODO
 
+\subsection{Summary}
+In this section I will try to summarize all important factors of the exchange and both parts will be put together to show its functionality as a package. The following diagram shows the supervision tree as it is implemented in the generic exchange. After reading the first two sections of this chapter, the diagram should be self-explanatory. 
 
 \begin{figure}[h!]
 \centering
 \includegraphics[scale=0.5]{fig/exchange_design_supervision_tree}
 \caption[Generic exchange supervision tree] {Generic exchange supervision tree}
 \end{figure}
+
+The following table sumarizes the overal count of active processes during exchange run. The reason for `n' in worker count is that it depends on number of running dialogs and associated clients.
+
+\begin{center}
+\begin{table}[h!]
+\centering
+\begin{tabular}{|r|l|}
+  \hline
+  process type & count \\ \hline
+  supervisor & 6 \\ \hline
+  worker & 7-n \\ \hline
+\end{tabular}
+\caption[GEprocess metrics]{Generic Exchange process diagram metrics}
+\end{table}
+\end{center}
+
+The live working of exchange is by my opinion best understood on a data flow diagram and corresponding message sequence chart. It could be easily understood, how single messages are translated to generic protocol and after routing is performed, how it is then translated back to specific protocol. Consider the following dialog initiation sequence. 
+
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=0.5]{fig/SIP_to_SIP_simplecall_using_generic_protocol}
+\caption[SIP to SIP simple call MSC] {SIP to SIP simple call message sequence chart}
+\end{figure}
+
+To save space, we will only we will only show the SIP invite message and its flow through the exchange. At first, the incomming packet is received by SIP transport, parsed and saved into a sip message which is internally represented by a record. It is then passed to a SIP gateway which takes a look at the minimal context of a message and in case it is needed, it performs a specific action. In this case a 100 messages is replied to a sender. It then translates the SIP message into a generic and passes it to a generic core. After the core recieves a generic message, it looks on the caller and callee headers and passes the message to corresponding caller and callee dialog. The dialog may perform a transition into another state and performs a corresponding action. In this case a routing is performed. Next the generic message is passed to a specific gateway. Every dialog knows the PID of its gateway although it does not know which exactly it is. In our case it is the SIP gateway. It performs all the actions mentioned earlier in reverse order.
+
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=0.5]{fig/SIP_to_SIP_simple_call_DFD}
+\caption[SIP to SIP session initiation] {SIP to SIP session initiation data flow diagram}
+\end{figure}
+
+\chapter{Exchange in action}
 
 \chapter{Erlang role in implementation}
 Apart from its significant diference compare to imperative languages. It made some programming expressions much more readable. As an example the following code snippets were taken directly from exchange source code.
@@ -454,7 +488,7 @@ As a huge advantage I consider a combination of Erlang high-level properties com
 
 As a consequence of Erlang high-expression properties, implementation is really rapid. Instead of focusing on low-level constructions, I could spend my focus on what is trully important. I cought myself many times thinking of what do I want to express. The ratio of time writing time and this `thinking' time is by my judgement higher than in arbitrary imperative language. Consequence of this is larger ammout if code that stay and will not be edited in the future. 
 
-At the end, the biggest advantage I discovered during design phase.
+At the end, the biggest advantage I discovered during the design phase.
 
 \chapter{Automated software discrepancies discovery}
 

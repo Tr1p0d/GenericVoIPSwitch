@@ -31,21 +31,21 @@
 \contentsline {subsection}{\numberline {5.8.2}Finite state machines}{15}
 \contentsline {subsection}{\numberline {5.8.3}Event handlers}{16}
 \contentsline {subsection}{\numberline {5.8.4}Applications}{16}
-\contentsline {chapter}{\numberline {6}Designing VoIP Exchange core}{17}
-\contentsline {section}{\numberline {6.1}Generic protocol}{17}
-\contentsline {subsection}{\numberline {6.1.1}Solution choice}{17}
-\contentsline {section}{\numberline {6.2}Generic protocol desing}{18}
-\contentsline {chapter}{\numberline {7}Generic exchange core function principes}{20}
-\contentsline {chapter}{\numberline {8}General VoIP Exchange design}{22}
-\contentsline {section}{\numberline {8.1}Generic vs Specific part}{22}
-\contentsline {section}{\numberline {8.2}SIP Specific}{22}
-\contentsline {subsection}{\numberline {8.2.1}SIP 3-way handshake}{23}
-\contentsline {subsection}{\numberline {8.2.2}SIP/CANCEL vs SIP/BYE}{23}
-\contentsline {subsection}{\numberline {8.2.3}Contacts header}{23}
-\contentsline {section}{\numberline {8.3}LCP Specific}{23}
-\contentsline {chapter}{\numberline {9}Erlang role in implementation}{24}
-\contentsline {chapter}{\numberline {10}Automated software discrepancies discovery}{26}
-\contentsline {section}{\numberline {10.1}Type system and type inference}{26}
-\contentsline {section}{\numberline {10.2}static analysis}{26}
-\contentsline {section}{\numberline {10.3}Results after applying it to my source code}{26}
-\contentsline {chapter}{\numberline {11}Conclusion}{28}
+\contentsline {chapter}{\numberline {6}Generic VoIP Exchange}{17}
+\contentsline {section}{\numberline {6.1}Generic VoIP Exchange Core}{17}
+\contentsline {subsection}{\numberline {6.1.1}Generic Protocol}{17}
+\contentsline {subsection}{\numberline {6.1.2}Generic exchange core function principes}{20}
+\contentsline {section}{\numberline {6.2}General VoIP Exchange peripherals}{20}
+\contentsline {subsection}{\numberline {6.2.1}SIP Specific}{20}
+\contentsline {subsubsection}{SIP 3-way handshake}{21}
+\contentsline {subsubsection}{SIP/CANCEL vs SIP/BYE}{22}
+\contentsline {subsubsection}{Contacts header}{22}
+\contentsline {subsection}{\numberline {6.2.2}LCP Specific}{22}
+\contentsline {subsection}{\numberline {6.2.3}Summary}{22}
+\contentsline {chapter}{\numberline {7}Exchange in action}{25}
+\contentsline {chapter}{\numberline {8}Erlang role in implementation}{26}
+\contentsline {chapter}{\numberline {9}Automated software discrepancies discovery}{28}
+\contentsline {section}{\numberline {9.1}Type system and type inference}{28}
+\contentsline {section}{\numberline {9.2}static analysis}{28}
+\contentsline {section}{\numberline {9.3}Results after applying it to my source code}{28}
+\contentsline {chapter}{\numberline {10}Conclusion}{30}

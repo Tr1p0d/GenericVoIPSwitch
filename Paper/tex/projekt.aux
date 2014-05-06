@@ -62,44 +62,46 @@
 \@writefile{lof}{\contentsline {figure}{\numberline {5.3}{\ignorespaces Erlang gen\_event behaviour}}{16}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {5.8.4}Applications}{16}}
 \citation{computer_protocols_desing_and_validation}
-\@writefile{toc}{\contentsline {chapter}{\numberline {6}Designing VoIP Exchange core}{17}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {6}Generic VoIP Exchange}{17}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {section}{\numberline {6.1}Generic protocol}{17}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.1.1}Solution choice}{17}}
-\@writefile{toc}{\contentsline {section}{\numberline {6.2}Generic protocol desing}{18}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.1}Generic VoIP Exchange Core}{17}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.1.1}Generic Protocol}{17}}
 \@writefile{lof}{\contentsline {figure}{\numberline {6.1}{\ignorespaces Generic protocol}}{18}}
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {6.1}generic protocol message structure}{18}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {6.1}generic protocol message structure}{19}}
 \@writefile{lol}{\contentsline {lstlisting}{\numberline {6.2}generic protocol message example}{19}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {7}Generic exchange core function principes}{20}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.1.2}Generic exchange core function principes}{20}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.2}{\ignorespaces exchange core process diagram}}{20}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.2}General VoIP Exchange peripherals}{20}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.2.1}SIP Specific}{20}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.3}{\ignorespaces exchange core process diagram}}{21}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.4}{\ignorespaces Generic exchange design}}{21}}
+\@writefile{toc}{\contentsline {subsubsection}{SIP 3-way handshake}{21}}
+\@writefile{toc}{\contentsline {subsubsection}{SIP/CANCEL vs SIP/BYE}{22}}
+\@writefile{toc}{\contentsline {subsubsection}{Contacts header}{22}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.2.2}LCP Specific}{22}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.2.3}Summary}{22}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.5}{\ignorespaces Generic exchange supervision tree}}{22}}
+\@writefile{lot}{\contentsline {table}{\numberline {6.1}{\ignorespaces GEprocess metrics}}{23}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.6}{\ignorespaces SIP to SIP simple call MSC}}{23}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.7}{\ignorespaces SIP to SIP session initiation}}{24}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {7}Exchange in action}{25}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{lof}{\contentsline {figure}{\numberline {7.1}{\ignorespaces exchange core process diagram}}{20}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {8}General VoIP Exchange design}{22}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {8}Erlang role in implementation}{26}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {section}{\numberline {8.1}Generic vs Specific part}{22}}
-\@writefile{lof}{\contentsline {figure}{\numberline {8.1}{\ignorespaces Generic exchange design}}{22}}
-\@writefile{toc}{\contentsline {section}{\numberline {8.2}SIP Specific}{22}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {8.2.1}SIP 3-way handshake}{23}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {8.2.2}SIP/CANCEL vs SIP/BYE}{23}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {8.2.3}Contacts header}{23}}
-\@writefile{toc}{\contentsline {section}{\numberline {8.3}LCP Specific}{23}}
-\@writefile{lof}{\contentsline {figure}{\numberline {8.2}{\ignorespaces Generic exchange supervision tree}}{23}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {9}Erlang role in implementation}{24}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {8.1}map function example in generic\_exchange\_sip\_generic.erl}{26}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {8.2}foldr function example in generic\_exchange\_sip\_generic.erl}{26}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {9}Automated software discrepancies discovery}{28}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {9.1}map function example in generic\_exchange\_sip\_generic.erl}{24}}
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {9.2}foldr function example in generic\_exchange\_sip\_generic.erl}{24}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {10}Automated software discrepancies discovery}{26}}
-\@writefile{lof}{\addvspace {10\p@ }}
-\@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {section}{\numberline {10.1}Type system and type inference}{26}}
-\@writefile{toc}{\contentsline {section}{\numberline {10.2}static analysis}{26}}
-\@writefile{toc}{\contentsline {section}{\numberline {10.3}Results after applying it to my source code}{26}}
+\@writefile{toc}{\contentsline {section}{\numberline {9.1}Type system and type inference}{28}}
+\@writefile{toc}{\contentsline {section}{\numberline {9.2}static analysis}{28}}
+\@writefile{toc}{\contentsline {section}{\numberline {9.3}Results after applying it to my source code}{28}}
 \bibstyle{plain}
 \bibdata{literatura}
-\@writefile{toc}{\contentsline {chapter}{\numberline {11}Conclusion}{28}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {10}Conclusion}{30}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
 \bibcite{armstrong_history_erlang}{1}
