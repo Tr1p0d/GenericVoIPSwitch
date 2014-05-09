@@ -1,4 +1,4 @@
-\begin{thebibliography}{10}
+\begin{thebibliography}{1}
 
 \bibitem{armstrong_history_erlang}
 Joe Armstrong.
@@ -37,12 +37,6 @@ Fred Herbert.
 \newblock {\em Learn You Some Erlang for Great Good!}
 \newblock No Starch Press, 2013.
 \newblock on-line version.
-
-\bibitem{computer_protocols_desing_and_validation}
-Gerard~J. Holzmann.
-\newblock {\em Desing and Validation of Computer Protocols}.
-\newblock Prentice Hall, 1991.
-\newblock ISBN~0-13-539834-7.
 
 \bibitem{lyah}
 Miran Lipovaèa.

@@ -34,18 +34,27 @@
 \contentsline {chapter}{\numberline {6}Generic VoIP Exchange}{17}
 \contentsline {section}{\numberline {6.1}Generic VoIP Exchange Core}{17}
 \contentsline {subsection}{\numberline {6.1.1}Generic Protocol}{17}
-\contentsline {subsection}{\numberline {6.1.2}Generic exchange core function principes}{20}
-\contentsline {section}{\numberline {6.2}General VoIP Exchange peripherals}{20}
-\contentsline {subsection}{\numberline {6.2.1}SIP Specific}{20}
-\contentsline {subsubsection}{SIP 3-way handshake}{21}
-\contentsline {subsubsection}{SIP/CANCEL vs SIP/BYE}{22}
-\contentsline {subsubsection}{Contacts header}{22}
-\contentsline {subsection}{\numberline {6.2.2}LCP Specific}{22}
-\contentsline {subsection}{\numberline {6.2.3}Summary}{22}
-\contentsline {chapter}{\numberline {7}Exchange in action}{25}
-\contentsline {chapter}{\numberline {8}Erlang role in implementation}{26}
-\contentsline {chapter}{\numberline {9}Automated software discrepancies discovery}{28}
-\contentsline {section}{\numberline {9.1}Type system and type inference}{28}
-\contentsline {section}{\numberline {9.2}static analysis}{28}
-\contentsline {section}{\numberline {9.3}Results after applying it to my source code}{28}
-\contentsline {chapter}{\numberline {10}Conclusion}{30}
+\contentsline {subsubsection}{Generic message type header field}{19}
+\contentsline {subsubsection}{Generic message caller and callee header fields}{20}
+\contentsline {subsubsection}{Generic message downstreamRoute and upstreamRoute header field}{20}
+\contentsline {subsubsection}{Generic message routeToRecord header field}{20}
+\contentsline {subsubsection}{Generic message specificProtocol header field}{20}
+\contentsline {subsection}{\numberline {6.1.2}Generic Exchange Core components}{20}
+\contentsline {subsubsection}{Dialog router}{20}
+\contentsline {subsubsection}{Dialog Manager}{20}
+\contentsline {subsubsection}{Dialog finite state machine}{21}
+\contentsline {subsection}{\numberline {6.1.3}Generic exchange core function principes and examples}{21}
+\contentsline {section}{\numberline {6.2}General VoIP Exchange peripherals}{22}
+\contentsline {subsection}{\numberline {6.2.1}SIP peripheral}{23}
+\contentsline {subsubsection}{SIP 3-way handshake}{23}
+\contentsline {subsubsection}{SIP/CANCEL vs SIP/BYE}{23}
+\contentsline {subsubsection}{Contacts header}{23}
+\contentsline {subsection}{\numberline {6.2.2}LCP peripheral}{24}
+\contentsline {section}{\numberline {6.3}Summary}{24}
+\contentsline {chapter}{\numberline {7}Exchange in action}{27}
+\contentsline {chapter}{\numberline {8}Erlang role in implementation}{28}
+\contentsline {chapter}{\numberline {9}Automated software discrepancies discovery}{30}
+\contentsline {section}{\numberline {9.1}Type system and type inference}{30}
+\contentsline {section}{\numberline {9.2}Static analysis}{30}
+\contentsline {section}{\numberline {9.3}Results after applying it to my source code}{30}
+\contentsline {chapter}{\numberline {10}Conclusion}{32}
