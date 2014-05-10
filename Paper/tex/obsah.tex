@@ -360,10 +360,30 @@ The initial motivation hidden behind the Generic Exchange is to have exchange ca
 
 A Generic Exchange on the highest level of abstraction consist of 2 basic parts. The first part is the generic generic core and the second are protocol specific peripherals, wrapped under the `specific part' acronym. We will cover the Generic core in the first place, put some examples of how it works and then we will cover the specific peripherals.
 
+
 \section{Generic VoIP Exchange Core}
+% WHAT IS CORE AND HOW IT WORKS
+%REWORK
+Basically a Generic Core is a high level component, shared by the peripherals. It encapsulates functionality shared by all peripherals into a single package and providing a simple way to access it. The Core should be as persistent and durable as possible and live without a change for as long time as possible. It is important to encapsulate as few components as possible. In case of maintanance or when a new signaling protocol is added to Generic Exchange we do not want to change the core at all. Additional effort and time is usually costly and lot of future funds could be wasted because of bad design decision.
 
-The initial problem we need to solve is where to place the border where the generic part should start and what functionality it should cover. I decided to have the smallest possible amount of funcionlity in the core. The reason for this is that whenewer a new protocol is added into the generic exchange we do not want do modify the core at all. The core should persist and live without a change for as long time as possible. In ideal case, forever. Thus it will only consist of a generic protocol and a supporting database which will all necessary information about registrations and running dialogs. 
+Every VoIP exchange built upon arbitrary VoIP protocol performs routing. It sustains an information storage and informations related to associated clients and their network location. It is also capable of performing a DNS lookup for foreign domain discovery. All these features are independent of underlying VoIP protocols and it is exactly the scope of functionality Generic Exchange Core encapsulates. 
 
+The main part of Core is the Generic Protocol. It is represented by a finite state machine and maintains the functionality of statefull proxy. It is also used for routing purposes. When a peripheral performs routing, it has to fill the Generic Protocol message and pass it to the Core. It means that every peripheral present in Generic Exchange has to be able to deterministically translate its message into the Generic Protocol message. This feature serves as an interface to the Generic Core. After Core receives a message it performs a lookup to associate incoming message with a existing dialog pair ( We will explain later why a single dialog wont suffice). If succeeds the message is passed to a dialog pair if not, a new dialog pair is created. Dialog pair then performs an appropriate action which can be either routing or answer back to sender. New generic message is then passed to coresponding peripheral which sends it to the network. Observe the following process diagram shows a subtree of Generic Exchange supervision tree which represents Generic Exchange Core.
+
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=0.3]{fig/core_design}
+\caption[exchange core process diagram] {Generic Core process diagram}
+\end{figure}
+
+\subsubsection{Dialog router}
+This process is an entry point to the Exchange Core. It has access to all necessary parts of the core. Its main responsibility is to lookup a dialog pair, one for caller part one for callee part, and distribute incomming message to both dialogs. Special case is when dialog does not exist. It then creates a new dialog pair. Since Dialog router is not responsible for dialog creation, it closely cooperates with Dialog manager which holds responsibility upon dialog creation.
+
+\subsubsection{Dialog Manager}
+As mentioned earlier, this process is responsible for dialog databse, dialog creation, dialog destruction and dialog lookup. Dialog database is represented by Erlang table storage, based on relation data model. It is used by both Dialog router and Dialog finite state machines.
+
+\subsubsection{Dialog finite state machine}
+Probably the most important process in whole Exchange. Every instance of this finite state machine represents a single dialog. The dialog could be either caller or callee. The dialog itself performs message routing and checks the state of the dialog. It interacts with Dialog Manager in case it finished its job. Whenever a dialog is stoped (reached the final state IDLE) it asks to remove the dialog from dialog table handled by Dialog manager and then it terminates.
 
 \subsection{Generic Protocol}
 \label{sec:GP}
@@ -383,7 +403,7 @@ Our job at this point is to develop a generic protocol using finite state machin
 
 Generic protocol design could be handled several ways. Do we want a simple generic protocol but for the price of leaving a small (or maybe a bigger) piece of functionality in the specific part? Or do we want more complex generic protocol with specific part without any logic? Or some mix of previous? 
 
-Since we want a Generic core to persist for a long time without a change, a smaller protocol will be better. Let the peripherals handle more logic. Adding new complex peripheral is simpler and easier than implementing a simple peripheral and making changes in the Core. When unapropriate changes in Core are made, we could possibly damage the exchange. Also, in the second case our generic protocol would not be really generic. It would be generic until we decided to add a new specific protocol. In such a case we would need to add not only the specific part but we would need to redesign our Generic protocol again. It would be a huge and pointless waste of time and resources cause by wrong design decision. Instead what we want is to design a Generic protocol which is durable enough to survive adding a new specific protocol. Such a demand leaves as with the first option only. Generic protocol was designed by taking in account all above mentioned use cases and general phone behaviour. The following finite state machine was found:
+Since we want a Generic core to persist for a long time without a change, a smaller protocol will be better. Let the peripherals handle more logic. Adding new complex peripheral is simpler and easier than implementing a simple peripheral and making changes in the Core. When unapropriate changes in Core are made, we could possibly damage the exchange. Also, in the second case our generic protocol would not be really generic. It would be generic until we decided to add a new specific protocol. In such a case we would need to add not only the specific part but we would need to redesign our Generic protocol again. It would be a huge and pointless waste of time and resources cause by wrong design decision. Instead what we want is to design a Generic protocol which is durable enough to survive adding a new specific protocol. Such a demand leaves as with the first option only. Generic protocol was designed by taking in account all above mentioned use cases and general phone behaviour. The following shows the finite state machine as present in my system:
 
 \begin{figure}[h!]
 \centering
@@ -391,7 +411,17 @@ Since we want a Generic core to persist for a long time without a change, a smal
 \caption[Generic protocol] {generic protocol}
 \end{figure}
 
-The above finite state machine displays a Generoc protocol and all possible transitions that could be taken during signaling. Transition conditions are not shown yet, becase it would make whole protocol hard to understand, they will be shown in a particular use case later. When a signaling transaction is started, the exchange creates 2 of this finite state machines. 1 for every part of transaction (in our case client and server transaction). The reason why, there are 2 transactions is for cases where 1 transaction wont suffice such as when user calls itself. Concept will be explained in more detail later. The following figure shows generic protocol message structure as present in my system. 
+
+The above finite state machine displays a Generoc protocol and all possible transitions that could be taken during signaling. Transition conditions are not shown yet, becase it would make whole protocol hard to understand, they will be shown in a particular use case later. When a signaling transaction is started, the exchange creates 2 of this finite state machines. 1 for every part of transaction (in our case client and server transaction). The reason why, there are 2 transactions is for cases where 1 transaction wont suffice such as when user calls itself. Now lets observe messages that Generc Protocol messages.  
+
+\begin{figure}[h!]
+\label{fig:GPusecase}
+\centering
+\includegraphics[scale=0.4]{fig/simplecall_fsm}
+\caption[Generic exchange design] {Generic exchange design}
+\end{figure}
+
+At first a pair of dialogs, is created in state IDLE.The red part stands for a caller initiation sequence and the green one stands for the callee initiation sequence. After both dialogs hit the INCALL state, the caller decides to teardown the media session. Callee immediatelly transtitions to the IDLE final state, the caller takes the teardown sequence represented by blue mark.
 
 \lstinputlisting[caption=generic protocol message structure, style=customdat]{scodes/generic_protocol_dat.erl}
 
@@ -452,37 +482,6 @@ This header field holds information about a new route. The intent behind this fi
 \subsubsection{Generic message specificProtocol header field}
 This header holds all non-mandatory information about specific protocol. This information is not used by the generic part but may be used later by the specific part. A cleaner solution could be to save this information on the specific part of the exchange and retrieve it when needed. This solution wasnt implemented since it is more complicated and additional logic and storage space would be needed at the specific part.
 
-\subsection{Generic Exchange Core components}
-
-\subsubsection{Dialog router}
-This process is an entry point to the Exchange Core. It has access to all necessary parts of the core. Its main responsibility is to lookup a dialog pair, one for caller part one for callee part, and distribute incomming message to both dialogs. Special case is when dialog does not exist. It then creates a new dialog pair. Since Dialog router is not responsible for dialog creation, it closely cooperates with Dialog manager which holds responsibility upon dialog creation.
-\subsubsection{Dialog Manager}
-As mentioned earlier, this process is responsible for dialog databse, dialog creation, dialog destruction and dialog lookup. It is used by both Dialog router and Dialog finite state machines.
-
-\subsubsection{Dialog finite state machine}
-Probably the most important process in whole Exchange. Every instance of this finite state machine represents a single dialog. The dialog could be either caller or callee. The dialog itself performs message routing and checks the state of the dialog. It interacts with Dialog Manager in case it finished its job. Whenever a dialog is stoped (reached the final state IDLE) it asks to remove the dialog from dialog table handled by Dialog manager and then it terminates.
-
-\begin{figure}[h!]
-\centering
-\includegraphics[scale=0.3]{fig/core_design}
-\caption[exchange core process diagram] {Generic Core process diagram}
-\end{figure}
-
-
-\subsection{Generic exchange core function principes and examples}
-\label{sec:GM_sp}
-So finally, exchange core is constructed from the following parts: a dialog manager and a supervisor. These 2 processes take care of creation and correctness of dialog database. Dialog database is represented by Erlang table storage, working on similar principes as DBMS.Next important part is the dialog router. Whenewer a generic message arrives at exchange core, it performs a lookup into a dialog databse and gets a pair of generic protocols represented by finite state machine as described earlier. Next is performed resolution which dialog belongs to particular part of dialog. As a final step, generic messages is tagged with on of following atoms: \{fromRP, fromTU\} indicating whenewer the messages arrived from caller or callee and forwarded to a correct dialog.
-If dialog router looks up a dialog and there is no dialog found, it creates new pair of dialogs, and then works as described earlier. When a dialog receives a message and no proper transition can be performes, it indicates that invalid messages was received. In case of unassociated client, exchange still works as described earlier but performs asociation check explicitly in IDLE state. 
-The following example explains how Generic protocol works, what messages are present in the dialog and how the Generic protocol behaves. (figure \ref{fig:GPusecase}).
-
-\begin{figure}[h!]
-\label{fig:GPusecase}
-\centering
-\includegraphics[scale=0.4]{fig/simplecall_fsm}
-\caption[Generic exchange design] {Generic exchange design}
-\end{figure}
-
-At first a pair of dialogs, is created in state IDLE.The red part stands for a caller initiation sequence and the green one stands for the callee initiation sequence. After both dialogs hit the INCALL state, the caller decides to teardown the media session. Callee immediatelly transtitions to the IDLE final state, the caller takes the teardown sequence represented by blue mark.
 
 \section{General VoIP Exchange peripherals}
 Generic Exchange peripherals also called the specific part, is a part of the exchange, that is handling all specific signlaing protocols. There can be 1 to n peripherals, each handling different signaling protocol. Each peripheral is responsible for receiving packet from network and its parsing, taking care of a minimal context and passing it to generic core. For example, whenewer is signaling packet received from network, it is parsed, next the peripheral looks at minimal context of current message and if necessary, responds to sender with apropriate response. Then message is deterministically translated into generic message as described in section \ref{tab:GM} and passes the message to the exchange core. When a generic message is received from the core, same actions are performed in reverse order. There is currently implemented SIP in full scope as mentioned earlier in section \ref{sec:GP} and LCP, implemented partially. 

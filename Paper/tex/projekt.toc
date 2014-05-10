@@ -33,23 +33,21 @@
 \contentsline {subsection}{\numberline {5.8.4}Applications}{16}
 \contentsline {chapter}{\numberline {6}Generic VoIP Exchange}{17}
 \contentsline {section}{\numberline {6.1}Generic VoIP Exchange Core}{17}
-\contentsline {subsection}{\numberline {6.1.1}Generic Protocol}{17}
-\contentsline {subsubsection}{Generic message type header field}{19}
-\contentsline {subsubsection}{Generic message caller and callee header fields}{20}
-\contentsline {subsubsection}{Generic message downstreamRoute and upstreamRoute header field}{20}
-\contentsline {subsubsection}{Generic message routeToRecord header field}{20}
-\contentsline {subsubsection}{Generic message specificProtocol header field}{20}
-\contentsline {subsection}{\numberline {6.1.2}Generic Exchange Core components}{20}
-\contentsline {subsubsection}{Dialog router}{20}
-\contentsline {subsubsection}{Dialog Manager}{20}
-\contentsline {subsubsection}{Dialog finite state machine}{21}
-\contentsline {subsection}{\numberline {6.1.3}Generic exchange core function principes and examples}{21}
+\contentsline {subsubsection}{Dialog router}{18}
+\contentsline {subsubsection}{Dialog Manager}{18}
+\contentsline {subsubsection}{Dialog finite state machine}{18}
+\contentsline {subsection}{\numberline {6.1.1}Generic Protocol}{18}
+\contentsline {subsubsection}{Generic message type header field}{21}
+\contentsline {subsubsection}{Generic message caller and callee header fields}{21}
+\contentsline {subsubsection}{Generic message downstreamRoute and upstreamRoute header field}{22}
+\contentsline {subsubsection}{Generic message routeToRecord header field}{22}
+\contentsline {subsubsection}{Generic message specificProtocol header field}{22}
 \contentsline {section}{\numberline {6.2}General VoIP Exchange peripherals}{22}
-\contentsline {subsection}{\numberline {6.2.1}SIP peripheral}{23}
+\contentsline {subsection}{\numberline {6.2.1}SIP peripheral}{22}
 \contentsline {subsubsection}{SIP 3-way handshake}{23}
 \contentsline {subsubsection}{SIP/CANCEL vs SIP/BYE}{23}
 \contentsline {subsubsection}{Contacts header}{23}
-\contentsline {subsection}{\numberline {6.2.2}LCP peripheral}{24}
+\contentsline {subsection}{\numberline {6.2.2}LCP peripheral}{23}
 \contentsline {section}{\numberline {6.3}Summary}{24}
 \contentsline {chapter}{\numberline {7}Exchange in action}{27}
 \contentsline {chapter}{\numberline {8}Erlang role in implementation}{28}

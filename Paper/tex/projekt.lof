@@ -8,9 +8,9 @@
 \contentsline {figure}{\numberline {5.2}{\ignorespaces Erlang gen\_event}}{15}
 \contentsline {figure}{\numberline {5.3}{\ignorespaces Erlang gen\_event behaviour}}{16}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces Generic protocol}}{18}
-\contentsline {figure}{\numberline {6.2}{\ignorespaces exchange core process diagram}}{21}
-\contentsline {figure}{\numberline {6.3}{\ignorespaces Generic exchange design}}{22}
+\contentsline {figure}{\numberline {6.1}{\ignorespaces exchange core process diagram}}{18}
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Generic protocol}}{20}
+\contentsline {figure}{\numberline {6.3}{\ignorespaces Generic exchange design}}{20}
 \contentsline {figure}{\numberline {6.4}{\ignorespaces Generic exchange design}}{23}
 \contentsline {figure}{\numberline {6.5}{\ignorespaces Generic exchange supervision tree}}{24}
 \contentsline {figure}{\numberline {6.6}{\ignorespaces SIP to SIP simple call MSC}}{25}

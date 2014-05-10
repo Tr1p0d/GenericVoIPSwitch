@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.13 (TeX Live 2013/dev) (format=pdflatex 2014.4.29)  7 MAY 2014 23:44
+This is pdfTeX, Version 3.1415926-2.5-1.40.13 (TeX Live 2013/dev) (format=pdflatex 2014.4.29)  10 MAY 2014 11:19
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -443,89 +443,100 @@ Package pdftex.def Info: fig/event_handler_example.png used on input line 349.
 (pdftex.def)             Requested size: 332.44456pt x 163.81326pt.
  [16 <./fig/event_handler_example.png>]
 Chapter 6.
-
-LaTeX Warning: Citation `computer_protocols_design_and_validation' on page 17 u
-ndefined on input line 370.
-
 [17
 
-] <fig/generic_protocol.pdf, id=104, 561.12119pt x 388.28134pt>
+] <fig/core_design.pdf, id=104, 845.04686pt x 597.50786pt>
+File: fig/core_design.pdf Graphic file (type pdf)
+
+<use fig/core_design.pdf>
+Package pdftex.def Info: fig/core_design.pdf used on input line 375.
+(pdftex.def)             Requested size: 253.516pt x 179.25374pt.
+
+
+LaTeX Warning: Citation `computer_protocols_design_and_validation' on page 18 u
+ndefined on input line 390.
+
+[18 <./fig/core_design.pdf>]
+<fig/generic_protocol.pdf, id=116, 561.12119pt x 388.28134pt>
 File: fig/generic_protocol.pdf Graphic file (type pdf)
 
 <use fig/generic_protocol.pdf>
-Package pdftex.def Info: fig/generic_protocol.pdf used on input line 390.
+Package pdftex.def Info: fig/generic_protocol.pdf used on input line 410.
 (pdftex.def)             Requested size: 280.5599pt x 194.1402pt.
- [18 <./fig/generic_protocol.pdf>]
-LaTeX Font Info:    Try loading font information for IL2+cmtt on input line 396
-.
 
-(/usr/share/texlive/texmf-dist/tex/cslatex/base/il2cmtt.fd
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<fig/simplecall_fsm.pdf, id=117, 597.50786pt x 845.04686pt>
+File: fig/simplecall_fsm.pdf Graphic file (type pdf)
+
+<use fig/simplecall_fsm.pdf>
+Package pdftex.def Info: fig/simplecall_fsm.pdf used on input line 420.
+(pdftex.def)             Requested size: 238.9989pt x 338.01276pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[19] [20 <./fig/generic_protocol.pdf> <./fig/simplecall_fsm.pdf
+
+pdfTeX warning: pdflatex (file ./fig/simplecall_fsm.pdf): PDF inclusion: multip
+le pdfs with page group included in a single page
+>]
+LaTeX Font Info:    Try loading font information for IL2+cmtt on input line 426
+.
+ (/usr/share/texlive/texmf-dist/tex/cslatex/base/il2cmtt.fd
 File: il2cmtt.fd 1997/08/20 CSLaTeX font definitions
 )
 (./scodes/generic_protocol_dat.erl)
-Overfull \hbox (54.4397pt too wide) in paragraph at lines 402--417
+
+LaTeX Warning: Reference `sec:GM_sp' on page 21 undefined on input line 443.
+
+
+Overfull \hbox (54.4397pt too wide) in paragraph at lines 432--447
 [][] 
  []
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[19] [20] <fig/core_design.pdf, id=117, 845.04686pt x 597.50786pt>
-File: fig/core_design.pdf Graphic file (type pdf)
-
-<use fig/core_design.pdf>
-Package pdftex.def Info: fig/core_design.pdf used on input line 467.
-(pdftex.def)             Requested size: 253.516pt x 179.25374pt.
-
-<fig/simplecall_fsm.pdf, id=118, 597.50786pt x 845.04686pt>
-File: fig/simplecall_fsm.pdf Graphic file (type pdf)
-
-<use fig/simplecall_fsm.pdf>
-Package pdftex.def Info: fig/simplecall_fsm.pdf used on input line 481.
-(pdftex.def)             Requested size: 238.9989pt x 338.01276pt.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[21 <./fig/core_design.pdf>]
-<fig/exchange_desing_1.pdf, id=130, 845.04686pt x 597.50786pt>
+[21] <fig/exchange_desing_1.pdf, id=164, 845.04686pt x 597.50786pt>
 File: fig/exchange_desing_1.pdf Graphic file (type pdf)
 
 <use fig/exchange_desing_1.pdf>
-Package pdftex.def Info: fig/exchange_desing_1.pdf used on input line 492.
+Package pdftex.def Info: fig/exchange_desing_1.pdf used on input line 491.
 (pdftex.def)             Requested size: 338.01276pt x 238.9989pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[22 <./fig/simplecall_fsm.pdf>] [23 <./fig/exchange_desing_1.pdf>]
-<fig/exchange_design_supervision_tree.pdf, id=189, 688.50958pt x 403.24823pt>
+[22] [23 <./fig/exchange_desing_1.pdf>]
+<fig/exchange_design_supervision_tree.pdf, id=188, 688.50958pt x 403.24823pt>
 File: fig/exchange_design_supervision_tree.pdf Graphic file (type pdf)
 
 <use fig/exchange_design_supervision_tree.pdf>
 Package pdftex.def Info: fig/exchange_design_supervision_tree.pdf used on input
- line 516.
+ line 515.
 (pdftex.def)             Requested size: 344.25395pt x 201.62361pt.
 
-<fig/SIP_to_SIP_simplecall_using_generic_protocol.pdf, id=190, 821.41873pt x 55
+<fig/SIP_to_SIP_simplecall_using_generic_protocol.pdf, id=189, 821.41873pt x 55
 5.02756pt>
 File: fig/SIP_to_SIP_simplecall_using_generic_protocol.pdf Graphic file (type p
 df)
  <use fig/SIP_to_SIP_simplecall_using_generic_protocol.pdf>
 Package pdftex.def Info: fig/SIP_to_SIP_simplecall_using_generic_protocol.pdf u
-sed on input line 539.
+sed on input line 538.
 (pdftex.def)             Requested size: 410.70836pt x 277.51309pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [24 <./fig/exchange_design_supervision_tree.pdf>]
-<fig/SIP_to_SIP_simple_call_DFD.pdf, id=196, 805.45308pt x 513.95694pt>
+<fig/SIP_to_SIP_simple_call_DFD.pdf, id=195, 805.45308pt x 513.95694pt>
 File: fig/SIP_to_SIP_simple_call_DFD.pdf Graphic file (type pdf)
 
 <use fig/SIP_to_SIP_simple_call_DFD.pdf>
 Package pdftex.def Info: fig/SIP_to_SIP_simple_call_DFD.pdf used on input line 
-547.
+546.
 (pdftex.def)             Requested size: 402.72556pt x 256.97783pt.
 
 
@@ -579,7 +590,7 @@ LaTeX Warning: There were undefined references.
 Here is how much of TeX's memory you used:
  5797 strings out of 495063
  76082 string characters out of 3182194
- 169712 words of memory out of 3000000
+ 169699 words of memory out of 3000000
  8831 multiletter control sequences out of 15000+200000
  22587 words of font info for 53 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
@@ -595,10 +606,10 @@ texlive/texmf-dist/fonts/type1/public/cs/csti10.pfb></usr/share/texlive/texmf-d
 ist/fonts/type1/public/cs/cstt10.pfb></usr/share/texlive/texmf-dist/fonts/type1
 /public/cs/cstt9.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uh
 vr8a.pfb>
-Output written on projekt.pdf (38 pages, 639153 bytes).
+Output written on projekt.pdf (38 pages, 638886 bytes).
 PDF statistics:
- 276 PDF objects out of 1000 (max. 8388607)
- 187 compressed objects within 2 object streams
+ 275 PDF objects out of 1000 (max. 8388607)
+ 186 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  61 words of extra memory for PDF output out of 10000 (max. 10000000)
 
