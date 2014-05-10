@@ -103,7 +103,7 @@ The term internet telephony refers to provisioning of a communication services s
 \end{itemize}
 Traffic in PSTN is transfererd over circuit-switched network. On the other hand, internet covers wide variety of transport technologies where the most common end technologies are based on packet-switched networks (Ethernet + Internet protocol). Since internet was designed as a packet-switched best-effort delivery network it does not incorporate network based mechanism to ensure packets were delivered. As a negative consequence a jitter or high latency may appear. Although widely used reliable TCP exist to outweight some problems, it is not suitable to be used in real-time voice transmission and does not outweight all problems. Network routers may classify network traffic traffic and process several network streams differently thus ensuring VoIP media traffic will be manipulated faster than regular traffic without low latency demands. 
 
-\chapter{ISO/OSI session and application layer protocols}
+\chapter{VoIP Protocols}
 ISO/OSI session layer is layer where signaling protocols take their place. Their job is to establish a media session among 2 or more participants. Steps involved in establishing media session are:
 \begin{itemize}
 \item localization of endpoint
@@ -351,8 +351,7 @@ Event handler behaviour (gen\_event) consist of one event handling manager and a
 \end{figure}
 
 \subsection{Applications}
-TODO
-% include picture
+Once Erlang application exists, a developer might usually need to safelly start and stop the application. Starting an application is not a big deal, but once application is running and starts numerous processes, stopping these processes one by one a big deal becomes. Also after developers software becomes more populer, a requirment to use it in other projects might get raised. The application behaviour encapsulates both. It provides a way to safely start, stop the application and a general API to use it as subapplication of larger projects. 
 
 \chapter{Generic VoIP Exchange}
 
@@ -368,7 +367,7 @@ Basically a Generic Core is a high level component, shared by the peripherals. I
 
 Every VoIP exchange built upon arbitrary VoIP protocol performs routing. It sustains an information storage and informations related to associated clients and their network location. It is also capable of performing a DNS lookup for foreign domain discovery. All these features are independent of underlying VoIP protocols and it is exactly the scope of functionality Generic Exchange Core encapsulates. 
 
-The main part of Core is the Generic Protocol. It is represented by a finite state machine and maintains the functionality of statefull proxy. It is also used for routing purposes. When a peripheral performs routing, it has to fill the Generic Protocol message and pass it to the Core. It means that every peripheral present in Generic Exchange has to be able to deterministically translate its message into the Generic Protocol message. This feature serves as an interface to the Generic Core. After Core receives a message it performs a lookup to associate incoming message with a existing dialog pair ( We will explain later why a single dialog wont suffice). If succeeds the message is passed to a dialog pair if not, a new dialog pair is created. Dialog pair then performs an appropriate action which can be either routing or answer back to sender. New generic message is then passed to coresponding peripheral which sends it to the network. Observe the following process diagram shows a subtree of Generic Exchange supervision tree which represents Generic Exchange Core.
+The main part of Core is the Generic Protocol. It is represented by a finite state machine and maintains the functionality of statefull proxy. It is also used for routing purposes. When a peripheral performs routing, it has to fill the Generic Protocol message and pass it to the Core. It means that every peripheral present in Generic Exchange has to be able to deterministically translate its message into the Generic Protocol message. This feature serves as an interface to the Generic Core. After Core receives a message it performs a lookup to associate incoming message with a existing dialog pair ( We will explain later why a single dialog wont suffice). If succeeds the message is passed to a dialog pair if not, a new dialog pair is created. Dialog pair then performs an appropriate action which can be either routing or answer back to sender. New generic message is then passed to coresponding peripheral which sends it to the network. The following process diagram shows a Generic Exchange Core subtree:
 
 \begin{figure}[h!]
 \centering
@@ -405,6 +404,7 @@ Generic protocol design could be handled several ways. Do we want a simple gener
 
 Since we want a Generic core to persist for a long time without a change, a smaller protocol will be better. Let the peripherals handle more logic. Adding new complex peripheral is simpler and easier than implementing a simple peripheral and making changes in the Core. When unapropriate changes in Core are made, we could possibly damage the exchange. Also, in the second case our generic protocol would not be really generic. It would be generic until we decided to add a new specific protocol. In such a case we would need to add not only the specific part but we would need to redesign our Generic protocol again. It would be a huge and pointless waste of time and resources cause by wrong design decision. Instead what we want is to design a Generic protocol which is durable enough to survive adding a new specific protocol. Such a demand leaves as with the first option only. Generic protocol was designed by taking in account all above mentioned use cases and general phone behaviour. The following shows the finite state machine as present in my system:
 
+\label{GP}
 \begin{figure}[h!]
 \centering
 \includegraphics[scale=0.5]{fig/generic_protocol}
@@ -414,14 +414,6 @@ Since we want a Generic core to persist for a long time without a change, a smal
 
 The above finite state machine displays a Generoc protocol and all possible transitions that could be taken during signaling. Transition conditions are not shown yet, becase it would make whole protocol hard to understand, they will be shown in a particular use case later. When a signaling transaction is started, the exchange creates 2 of this finite state machines. 1 for every part of transaction (in our case client and server transaction). The reason why, there are 2 transactions is for cases where 1 transaction wont suffice such as when user calls itself. Now lets observe messages that Generc Protocol messages.  
 
-\begin{figure}[h!]
-\label{fig:GPusecase}
-\centering
-\includegraphics[scale=0.4]{fig/simplecall_fsm}
-\caption[Generic exchange design] {Generic exchange design}
-\end{figure}
-
-At first a pair of dialogs, is created in state IDLE.The red part stands for a caller initiation sequence and the green one stands for the callee initiation sequence. After both dialogs hit the INCALL state, the caller decides to teardown the media session. Callee immediatelly transtitions to the IDLE final state, the caller takes the teardown sequence represented by blue mark.
 
 \lstinputlisting[caption=generic protocol message structure, style=customdat]{scodes/generic_protocol_dat.erl}
 
@@ -482,9 +474,22 @@ This header field holds information about a new route. The intent behind this fi
 \subsubsection{Generic message specificProtocol header field}
 This header holds all non-mandatory information about specific protocol. This information is not used by the generic part but may be used later by the specific part. A cleaner solution could be to save this information on the specific part of the exchange and retrieve it when needed. This solution wasnt implemented since it is more complicated and additional logic and storage space would be needed at the specific part.
 
+\subsection{Example}
+
+At the end of this section, I will put an example which I hope will clearify all underlying principes. The following diagram shows a media session initiation use case. When a make\_call message arrives at Core. The Exchange performs a lookup for existing dialog pair. And since it is not found the Core will then create a new dialog pair.
+
+\begin{figure}[h!]
+\label{fig:GPusecase}
+\centering
+\includegraphics[scale=0.4]{fig/simplecall_fsm}
+\caption[Generic exchange design] {Generic exchange design}
+\end{figure}
+
+At first a pair of dialogs, is created in state IDLE.The red part stands for a caller initiation sequence and the green one stands for the callee initiation sequence. After both dialogs hit the INCALL state, the caller decides to teardown the media session. Callee immediatelly transtitions to the IDLE final state, the caller takes the teardown sequence represented by blue mark.
+
 
 \section{General VoIP Exchange peripherals}
-Generic Exchange peripherals also called the specific part, is a part of the exchange, that is handling all specific signlaing protocols. There can be 1 to n peripherals, each handling different signaling protocol. Each peripheral is responsible for receiving packet from network and its parsing, taking care of a minimal context and passing it to generic core. For example, whenewer is signaling packet received from network, it is parsed, next the peripheral looks at minimal context of current message and if necessary, responds to sender with apropriate response. Then message is deterministically translated into generic message as described in section \ref{tab:GM} and passes the message to the exchange core. When a generic message is received from the core, same actions are performed in reverse order. There is currently implemented SIP in full scope as mentioned earlier in section \ref{sec:GP} and LCP, implemented partially. 
+Generic Exchange peripherals also called the specific part, is a part of Generic Exchange, which is handling all specific signaling protocols. There can be 1 to n peripherals, each handling different signaling protocol. Each peripheral is responsible for receiving packet from network and its parsing, taking care of a minimal context and passing it to generic core. For example, whenewer is signaling packet received from network, it is parsed, next the peripheral looks at minimal context of current message and if necessary, responds to sender with apropriate response. Then message is deterministically translated into generic message as described in section \ref{tab:GM} and passes the message to the exchange core. When a generic message is received from the core, same actions are performed in reverse order. There is currently implemented SIP protocol in full scope as mentioned earlier in section \ref{sec:GP} and LCPCPv1, implemented partially. Regarding LCPCPv1 only working feature is registration.
 
 \begin{figure}[h!]
 \centering
@@ -492,12 +497,55 @@ Generic Exchange peripherals also called the specific part, is a part of the exc
 \caption[Generic exchange design] {Generic exchange design}
 \end{figure}
 
-\subsection{SIP peripheral}
-Basically it consist of 2 processes. The first one is a transport. Its responsibility is to receive and send packet over a socket. Since we use UDP sockets, its an UDP transport. It is used by the second process which is an SIP gateway. Its job is to deterministically translate SIP message into Generic message and vice versa. It also responsible to handle signaling communication which is beyond generic protocol scope.
+\subsection{SIP to Generic Protocol translation}
+For every peripheral it is crutial to be able to deterministically translate its message into Generic Protocol message. Otherwise it would be able to use the Generic Exchange Core and perform routing or provide the statefull proxy services. The following table explains how SIP requests and responses match Generic Protocol messaage types.
+
+\label{sec:GM_sip_to_gen_type}
+\begin{center}
+\begin{table}[h!]
+\centering
+\begin{tabular}{|r|l|}
+  \hline
+  SIP request / response & Generic Protocol Message type \\ \hline
+  Register & associate \\ \hline
+  Invite & make\_call \\ \hline
+  200 OK & accept \\ \hline
+  603 Decline & reject \\ \hline
+  180 & ring \\ \hline
+  Bye / Cancel & teardown ( see section \ref{CancelVsBye} ) \\ \hline
+\end{tabular}
+\caption[SIP request / response to Generic Protocol message type]{SIP request / response to Generic Protocol message type}
+\end{table}
+\end{center}
+
+For a full picture the following table shows how particular SIP header fields are translated into Generic Protocol header fields.
+
+\label{sec:GM_sip_to_gen_headers}
+\begin{center}
+\begin{table}[h!]
+\centering
+\begin{tabular}{|r|c|c|}
+  \hline
+  SIP headers & GP header fields & Note \\ \hline
+  Via & downstreamRoute & branch parametr is saved, transport information is dumped \\ \hline
+  Max-Forwards & timeToLive & Value remains unchanged \\ \hline
+  From & caller &  tag and user are saved, domain is dumped \\ \hline
+  To & callee &  tag and user are saved, domain is dumped \\ \hline
+  Call\_ID & caller, callee & is translated as part of both caller and callee \\ \hline
+  Content-Length & - & body length is newly calculated \\ \hline
+  Content-Type & - & information is retrieved from specificProtocol \\ \hline
+  SIP Body & specificProtocol & Usually SDP is saved and remains unchanged \\ \hline
+\end{tabular}
+\caption[SIP request / response to Generic Protocol message headers]{SIP request / response to Generic Protocol message headers}
+\end{table}
+\end{center}
+
+Since the Generic Protocol handles only the basic signaling behaviour, the following out of Generic Protocol scope situations need to be handled in the SIP peripheral. Please note that this approach is in complete harmony with initial design where this logic should be handled here and not in the Generic Protocol. The reasons were examined in section \ref{GP}
 
 \subsubsection{SIP 3-way handshake}
-Such situation happens every INVITE transaction. Since INVITE transaction is a 3-way handshake and generic protocol does not understand concept of 3-way handshake. 
+Such situation happens every INVITE transaction. Since INVITE transaction is a 3-way handshake and generic protocol does not understand concept of 3-way handshake. The result of this that a SIP ACK request is droped every time it reaches the peripheral. In addition to this, when peripheral receives a Generic Protocol accept message in context of media session initiation, it immedietely generates a SIP ACK message. The context is saved in Generic Protocol specificProtocol header field.
 
+\label{CancelVsBye}
 \subsubsection{SIP/CANCEL vs SIP/BYE}
 Generic protocol is does not recognise difference between BYE and CANCEL messages. They transfer the same information but in different context CANCEL is used to teardown media session before media session is established, BYE is used after. Translation of generic\_protocol/teardown message into SIP/CANCEL or SIP/BYE is performed using context information that is held in specific part of generic message but can only be understood by SIP gateway.
 
@@ -508,7 +556,30 @@ SIP Contact header holds information about where client could be physically reac
 TODO
 
 \section{Summary}
-In this section I will try to summarize all important factors of the exchange and both parts will be put together to show its functionality as a package. The following diagram shows the supervision tree as it is implemented in the generic exchange. After reading the first two sections of this chapter, the diagram should be self-explanatory. 
+In this section I will try to summarize all important factors of the exchange and both parts will be put together to show its functionality as a package. First I will put an example, and will end up this chapter with a Generic Exchange Supervision tree.
+
+The live working of exchange is by my opinion best understood on a data flow diagram and corresponding message sequence chart. It could be easily understood, how single messages are translated to generic protocol and after routing is performed, how it is then translated back to specific protocol. Consider the following dialog initiation sequence. 
+
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=0.5]{fig/SIP_to_SIP_simplecall_using_generic_protocol}
+\caption[SIP to SIP simple call MSC] {SIP to SIP simple call message sequence chart}
+\end{figure}
+
+It is similar to a traditional MSC diagrams as present in the SIP rfc. It is enriched by the Generic Protocol translation and the Generic Protocol Core. Now it should be easy to understand how the Generic Exchange works. The only missing piece is the SIP and Generic Protocol messages and the data they carry. For this purpose the following data flow diagram was developed.
+
+
+PUT A READABLE DATA FLOW DIAGRAM HERE
+
+To save space, we will only we will only show the SIP invite message and its flow through the exchange. At first, the incomming packet is received by SIP transport, parsed and saved into a sip message which is internally represented by a record. It is then passed to a SIP gateway which takes a look at the minimal context of a message and in case it is needed, it performs a specific action. In this case a 100 messages is replied to a sender. It then translates the SIP message into a generic and passes it to a generic core. After the core recieves a generic message, it looks on the caller and callee headers and passes the message to corresponding caller and callee dialog. The dialog may perform a transition into another state and performs a corresponding action. In this case a routing is performed. Next the generic message is passed to a specific gateway. Every dialog knows the PID of its gateway although it does not know which exactly it is. In our case it is the SIP gateway. It performs all the actions mentioned earlier in reverse order.
+
+%\begin{figure}[h!]
+%\centering
+%\includegraphics[scale=0.5]{fig/SIP_to_SIP_simple_call_DFD}
+%\caption[SIP to SIP session initiation] {SIP to SIP session initiation data flow diagram}
+%\end{figure}
+
+Finally the Generic Exchange supervision tree followed by some basic metrics.
 
 \begin{figure}[h!]
 \centering
@@ -530,22 +601,6 @@ The following table sumarizes the overal count of active processes during exchan
 \caption[GEprocess metrics]{Generic Exchange process diagram metrics}
 \end{table}
 \end{center}
-
-The live working of exchange is by my opinion best understood on a data flow diagram and corresponding message sequence chart. It could be easily understood, how single messages are translated to generic protocol and after routing is performed, how it is then translated back to specific protocol. Consider the following dialog initiation sequence. 
-
-\begin{figure}[h!]
-\centering
-\includegraphics[scale=0.5]{fig/SIP_to_SIP_simplecall_using_generic_protocol}
-\caption[SIP to SIP simple call MSC] {SIP to SIP simple call message sequence chart}
-\end{figure}
-
-To save space, we will only we will only show the SIP invite message and its flow through the exchange. At first, the incomming packet is received by SIP transport, parsed and saved into a sip message which is internally represented by a record. It is then passed to a SIP gateway which takes a look at the minimal context of a message and in case it is needed, it performs a specific action. In this case a 100 messages is replied to a sender. It then translates the SIP message into a generic and passes it to a generic core. After the core recieves a generic message, it looks on the caller and callee headers and passes the message to corresponding caller and callee dialog. The dialog may perform a transition into another state and performs a corresponding action. In this case a routing is performed. Next the generic message is passed to a specific gateway. Every dialog knows the PID of its gateway although it does not know which exactly it is. In our case it is the SIP gateway. It performs all the actions mentioned earlier in reverse order.
-
-\begin{figure}[h!]
-\centering
-\includegraphics[scale=0.5]{fig/SIP_to_SIP_simple_call_DFD}
-\caption[SIP to SIP session initiation] {SIP to SIP session initiation data flow diagram}
-\end{figure}
 
 \chapter{Exchange in action}
 
@@ -578,5 +633,15 @@ Dialyzer (a DIscrepancy AnaLYZer for ERlang programs) can identify software disc
 \section{Results after applying it to my source code}
 Static analysis was run over resulting source code, and I was more than surprised how many errors I have created. Many of them were hidden and hard to discover with unit tests I created. Some of them were more obvious. As a drawback, static analysis performed by Dialyzer takes quite a long time which makes it unsuitable to perform every time exchange is beeing compiled. Rather, I used it to check the code once in few hours. It took about 15 minutes on average laptop (place specification here if requested) to compute the results and the response it I have been given was almost always suprising and full of more or less obvious errors. It definitely helped me in order to produce more reliable code. Most errors it discovered were type errors in clauses that would match rarely usualy in error conditions, thus making them hard to discover. The second kind of errors were wrong type specifications. These are errors where type inference tool infers a function type and compares it with type I specified explicitly. These kind errors are priceless, because they help to discover crucial design flaws in early stages of implementation. They sort of work `Are you sure this function work as you intended ?'.
 
+\chapter{Generic Exchange in contrast with other VoIP exchange implementations}
+
 \chapter{Conclusion}
-TODO
+This text covered a design, implementation of Generic Exchange. We discovered, that Generic Exchange as a high-level style of design is well-thoughtout, efficient and quite elegant. In addition to this, a low-level design of both the generic and the specific parts was explained. In early chapters, we summarized the role of signaling protocols , we presented Erlang programming language ,its framework Open Telecom Platform, declarative paradigm and how they fit into the Erlang concept. We sketched-out possible advantages of using Erlang and functional programming. 
+
+The Generic Exchange was successfully implemented, SIP is currently supported in full scope, LCPCPv1 is supported partially. Later during implementation phase, I realized the great importance of the design phase. Although design was well-thoughtout, and performed with patience and was rigorous, it was not perfect. I discovered a few minor errors and possible place in Generic Protocol for improvements. The implementation in functional Erlang is trully rapid. It allows developer to focus on what is trully important and does not bother him with low-level programming expressions known from imperative languages. Developer then spends more time thinking about problem and not thinking of how a particular loop should look like. Thanks to Dialyzer performing static analysis, software written in Erlang becomes safer, more reliable and durable. As contrasting VoIP exchange implementation was selected Asterisk. Well known and widely used VoIP exchange. PAR SLOV O ASTERISKU
+
+OSOBNI NAZOR
+
+Although the Generic Exchange was, by my opinion, designed pretty well, it needs a few extra hours ( possibly days ) to be perfect. Generic Protocols was in this case probably the weakest spot. Also for the Generic Exchange to be really usefull, it would need more features to be added. Simple call is not really usefull to anyone. The implementation phase would be easier if a static analysis would be performed every time the exchanges was compiled to see immediate results. This was not possible due to weak hardware, but question remains if it would be possible at all especially in case of larger Erlang projects. % zminit ze implementace neni dokonala
+
+DALSI ZLEPSENI
