@@ -1,48 +1,47 @@
-This is BibTeX, Version 0.99d (TeX Live 2013/dev)
-Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+This is BibTeX, Version 0.99c (TeX Live 2009/Debian)
 The top-level auxiliary file: projekt.aux
 The style file: plain.bst
 Database file #1: literatura.bib
 Warning--I didn't find a database entry for "computer_protocols_design_and_validation"
-You've used 9 entries,
+You've used 14 entries,
             2118 wiz_defined-function locations,
-            541 strings with 4903 characters,
-and the built_in function-call counts, 1958 in all, are:
-= -- 178
-> -- 63
+            552 strings with 4909 characters,
+and the built_in function-call counts, 2873 in all, are:
+= -- 251
+> -- 98
 < -- 0
-+ -- 27
-- -- 18
-* -- 66
-:= -- 346
-add.period$ -- 31
-call.type$ -- 9
-change.case$ -- 30
++ -- 42
+- -- 28
+* -- 92
+:= -- 488
+add.period$ -- 35
+call.type$ -- 14
+change.case$ -- 52
 chr.to.int$ -- 0
-cite$ -- 9
-duplicate$ -- 93
-empty$ -- 199
-format.name$ -- 18
-if$ -- 419
+cite$ -- 14
+duplicate$ -- 118
+empty$ -- 309
+format.name$ -- 28
+if$ -- 620
 int.to.chr$ -- 0
-int.to.str$ -- 9
-missing$ -- 12
-newline$ -- 52
-num.names$ -- 18
-pop$ -- 66
+int.to.str$ -- 14
+missing$ -- 8
+newline$ -- 66
+num.names$ -- 28
+pop$ -- 117
 preamble$ -- 1
-purify$ -- 27
+purify$ -- 42
 quote$ -- 0
-skip$ -- 63
+skip$ -- 106
 stack$ -- 0
-substring$ -- 45
-swap$ -- 9
+substring$ -- 70
+swap$ -- 14
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 24
+type$ -- 48
 warning$ -- 0
-while$ -- 18
-width$ -- 10
-write$ -- 98
+while$ -- 28
+width$ -- 16
+write$ -- 126
 (There was 1 warning)

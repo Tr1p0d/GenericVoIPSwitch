@@ -1,4 +1,4 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 
 \bibitem{armstrong_history_erlang}
 Joe Armstrong.
@@ -14,11 +14,9 @@ Joe Armstrong.
 \newblock The Pragmatic Bookshelf, 2013.
 \newblock ISBN: 978-1-93435-600-5.
 
-\bibitem{Telekomunikace_VoIP}
-David Bazala.
-\newblock {\em Telekomunikace a VoIP telefonie}.
-\newblock Technická literatura BEN, 2006.
-\newblock ISBN~80-7300-201-9.
+\bibitem{LCPCPv1definition}
+Siemens~Enterprise Communication.
+\newblock Lcpcpv1 definition, 2011.
 
 \bibitem{erlang_fsm}
 Ericsson\_AB.
@@ -32,22 +30,38 @@ Simon~Thompson Francesco~Cesarini.
 \newblock O'Reilly Media, June 2009.
 \newblock 978-0-596-51818-9.
 
+\bibitem{SIPrfc2}
+IETF Network~Working Group.
+\newblock Rfc2543, 1999.
+
+\bibitem{SIPrfc}
+IETF Network~Working Group.
+\newblock Rfc3261, 2002.
+
+\bibitem{RTPstandard}
+IETF Network~Working Group.
+\newblock Rfc3550, July 2003.
+
 \bibitem{lyse}
 Fred Herbert.
 \newblock {\em Learn You Some Erlang for Great Good!}
 \newblock No Starch Press, 2013.
-\newblock on-line version.
+
+\bibitem{h225}
+ITU-T.
+\newblock Itu-t h.225, 1996.
+
+\bibitem{h245}
+ITU-T.
+\newblock Itu-t h.245, 1996.
+
+\bibitem{h323standard}
+ITU-T.
+\newblock Itu-t h.323, 1996.
 
 \bibitem{lyah}
 Miran Lipovaèa.
 \newblock {\em Learn You a Haskell for Great Good!}
 \newblock No Starch Press, 2011.
-\newblock on-line version.
-
-\bibitem{VoIP_bez_znalosti}
-Kevin Wallace.
-\newblock {\em VoIP bez pøedchozích znalostí}.
-\newblock Computer Press, 2006.
-\newblock ISBN~978-80-251-1458.
 
 \end{thebibliography}

@@ -83,66 +83,57 @@ m%=========================================================================
 %
 %
 \chapter{Prologue}
-With rapid development of information technology in last century a real-time commmunication such as a voice need to be transfered across new media. The Internet. A wide sort of new communication technologies were developed from new protocols to dedicated telephony hardware. Some of these technologies will be covered in later chapters especially the communication protocols. Similarly to traditional public switched telephone network (PSTN) a basic demand on telephony devices remains. End user still needs his hardware desktop phone whose basic behavior remains the same. Similarly telephone exchange behaviour remains the same apart from the underlying transport layer. 
+With rapid development of information technology in last century a real-time commmunication such as a voice needed to be transfered across new media. The Internet. A wide sort of new communication technologies were developed from starting with communication protocols to dedicated telephony hardware. Some of these technologies will be covered in later chapters especially the communication protocols. Similarly to traditional public switched telephone network (PSTN) a basic demand on telephony devices remains. End user still needs his hardware desktop phone whose basic behavior remains the same. Similarly telephone exchange behaviour remains the same apart from the underlying transport layer. 
 
-A wide variety of session establishmet protocols exist these days. We can take SIP or h.323 protocols as examples. Although they are quite different to each other, they share some common behaviour. They were built to provide signaling among exchange devices but more importantly among exchange devices and end devices. And end devices does not differ among different signaling protocols. They always consist of an earphone and a dial. When caller initiates a call remote part need to be somehow advertized usually with a ring and caller knows that remote phone is ringing when hears some sort of tone in his earphone. This behaviour does not change even with wider network bandwiths nor with modern smart phones. Every single signaling protocol was build upon these facts and tough, they share some common behaviour. This thesis focuses on extraction this common behaviour outside each implemented protocol and build them upon these generic protocol. We will also evaluate advantages and disadvantages of this approach. As a practical result VoIP exchange will be developed using these techniques.
+A wide variety of session establishmet protocols exist these days. We can take SIP\cite{SIPrfc} or h.323\cite{h323standard} protocol family as examples. Although they are quite different to each other, they share some common behaviour. They were built to provide signaling among exchange devices but more importantly among exchange devices and end devices. End devices in concept do not differ among different signaling protocols. They always consist of an earphone, a dial and possibly a display. When caller initiates a call remote part need to be somehow advertized usually with a ring and caller knows that remote phone is ringing when hears some sort of tone in his earphone. This behaviour does not change nor with wider network bandwiths or even with modern smart phones. Every single signaling protocol was build upon these facts and tough, they share some common behaviour. This thesis focuses on extraction of this common behaviour outside each signaling protocol and encapsulate it inside a generic protocol. We will also evaluate advantages and disadvantages of this approach. As a practical result VoIP exchange will be developed using these techniques.
  
 Although functional programming is not common these days, it brings many advantages compare to the more traditional sequential approach to constructing programs. Building software VoIP exchange is a complex task and it requires right tool to be done without sacrificing any of the core aspect such system should have. High level of abstraction, strong typing and other constructs may show its full potential in building such system. Erlang is an industrial quality functional language which was designed to be used inside telecommunication systems. It was selected for its natural pedigree and other characteristics such as high-reliability and soft-realtime properties. Erlang will be closely covered later chapters.
 
-
 \chapter{Internet telephony}
-The term internet telephony refers to provisioning of a communication services such as voice, fax or text over public internet rather than using dedicated public switched telephone network (PSTN). In spite of need to resolve issues like jitter and frequent high latency, this approach inevitably came on to the light with best-effort internet approach and dependent technologies. Steps involved in establishing successful call and corresponding principes remains the same:
+The term Internet telephony refers to a provisioning of a communication services such as voice, fax or text over public Internet rather than using dedicated public switched telephone network (PSTN). In spite of need to resolve issues like jitter and frequent high latency, this approach inevitably came on to the light with best-effort Internet approach and dependent technologies. Steps involved in establishing successful call and corresponding principes remains the same:
 \begin{itemize}
-\item signaling employs session control and signaling protocols are used to set up or tear down a call
-\item channel setup  
-\item converting analog signal (voice) to its digital representation for transport over digital ling
-\item encoding media using codecs to optimize the stream
+\item signaling employs session control and signaling protocols are used to set up or tear down a call,
+\item channel setup,  
+\item converting analog signal (voice) to its digital representation for transport over digital link,
+\item encoding media using codecs to optimize the stream.
 \end{itemize}
-Traffic in PSTN is transfererd over circuit-switched network. On the other hand, internet covers wide variety of transport technologies where the most common end technologies are based on packet-switched networks (Ethernet + Internet protocol). Since internet was designed as a packet-switched best-effort delivery network it does not incorporate network based mechanism to ensure packets were delivered. As a negative consequence a jitter or high latency may appear. Although widely used reliable TCP exist to outweight some problems, it is not suitable to be used in real-time voice transmission and does not outweight all problems. Network routers may classify network traffic traffic and process several network streams differently thus ensuring VoIP media traffic will be manipulated faster than regular traffic without low latency demands. 
+Traffic in PSTN is transfererd over circuit-switched network. On the other hand, Internet covers wide variety of transport technologies where the most common end technologies are based on packet-switched networks (Ethernet + Internet protocol). Since Internet was designed as a packet-switched best-effort delivery network it does not incorporate network based mechanism to ensure packets were delivered. As a negative consequence a jitter or high latency may appear. Although widely used reliable TCP exist to outweight some problems, it is not suitable to be used in real-time voice transmission and does not outweight all problems. Network routers may classify network traffic and process several network streams differently thus ensuring VoIP media traffic will be manipulated faster than regular traffic without low latency demands. 
 
 \chapter{VoIP Protocols}
 ISO/OSI session layer is layer where signaling protocols take their place. Their job is to establish a media session among 2 or more participants. Steps involved in establishing media session are:
 \begin{itemize}
-\item localization of endpoint
+\item localization of an endpoint usually represented by a hardware phone or a softphore,
 \item contact remote endpoints and determine willingness to communicate,
-\item exchange of media session information
-\item tear down media sessions
+\item exchange of media session information,
+\item teardown of media sessions,
 \end{itemize}
-Media session can be almost anything from a voice, presence, text messages or fax. Examples of signaling protocols are SIP or H.323. 
+Media session can be almost anything from a voice, presence, text messages or a fax. Examples of signaling protocols are SIP or H.323 which are currently in use in a majority of VoIP systems. 
 
-Signaling protocol communication flow copies a phone device behaviour.
-\section{H.323}
+\section{H.323\cite{h323standard}}
 H.323 is a signaling standard developed by Internet Telecommunication Union, Telecommunications Standard Sector (ITU-T). It is a set of protocols encapsulated inside a single standard. It contains protocol for call create and tear down, exchange of media session information. Some of them are listed below:
 
 \begin{itemize}
-\item H.225 is responsible for call initiation and Registration, Admission, Status (RAS) signaling
-\item H.245 encapsulates logic for call handling, including gateway option exchange such as codec.
+\item H.225\cite{h225} is responsible for call initiation and Registration, Admission, Status (RAS) signaling
+\item H.245\cite{h245} encapsulates logic for call handling, including gateway option exchange such as codec.
 \end{itemize}
-\cite{Telekomunikace_VoIP}
+%\cite{Telekomunikace_VoIP}
 
 H.323 network device architecture consist of the following network devices:
 
 \begin{itemize}
-\item terminal, end end point device such as terminal software running on PC, or a phone
-\item gateway is a device responsible for call routing, between networks and end device localization
+\item a terminal, end point device such as terminal software running on PC, or a hardware phone
+\item gateway, a device responsible for call routing between networks and end device localization
 \item gatekeeper is unique device to H.323, it monitors network and in case of high network load wont enable additional calls, thus preventing network overload
 \item multipoint control unit (MCU) a device responsible for a conference signaling
 \end{itemize}
+%\cite{VoIP_bez_znalosti}
 
+\section{SIP\cite{SIPrfc}}
+SIP or session initiation protocol is signaling protocol developed by IETF, Multi-Party Multimedia Session Control Working Group. First version was 1.0 and was submitted as an Internet Draft in 1997. Since significant changes were done to improve the protocol, version 2.0 was submitted as an Internet Draft in 1998. In 1999 protocol reached the Proposed Standard level and is described in RFC 2543\cite{SIPrfc2}. In the following years several SIP extending documents were published.
 
-\section{SIP}
-SIP or session initiation protocol is signaling protocol developed by IETF, Multi-Party Multimedia Session Control Working Group. First version was 1.0 and was submitted as an Internet Draft in 1997. Since significant changes were done to improve the protocol, version 2.0 was submitted as an Internet Draft in 1998. In 1999 protocol reached the Proposed Standard level and is described in RFC 2543 []. In the following years several SIP extending documents were published.
+From more technical point of view, SIP is a text protocol which makes it well (and more readable compare to H.323) readable. It is based on HTTP protocol from which inherits client-server model and use of URI's. From SMTP SIP borrows header-style (headers such as From, To, etc\dots are in both protocols and have similar meaning). SIP communication is based on Request-Response mechanims. Where Request points from UAC to UAS and Responses are directed vice-versa. Good Request examples are INVITE (a join request) or BYE (request for session termination). Response message uses HTTP response codes to indicate request consequences which took their place on the UAS side. 
 
-From more technical point of view, SIP is a text protocol which makes it well readable. It is based on HTTP protocol from which inherits client-server model and use of URI's. From SMTP SIP borrows header-style (headers such as From, To, etc\dots are in both protocols and have similar meaning). SIP communication is based on Request-Response mechanims. Where Request points from UAC to UAS and Responses are directed vice-versa. Good Request examples are INVITE (a join request) or BYE (request for session termination). Response message uses HTTP response codes to indicate request consequences. 
-
-SIP protocol intelligence is distributed across different network devices. Every network device that is part of SIP signalization topology is called a User Agent (UA). UA are further divided into a quite complex hierarchy. A picture below serves as an topology example. Otherwise SIP network devices are similar to network devices mentioned in H.323 secion.\cite{VoIP_bez_znalosti}
-
-%\begin{figure}[h!]
-%\centering
-%\includegraphics[scale=0.5]{fig/sip_architecture}
-%\caption[Erlang supervision tree] {Example supervision tree}
-%\end{figure}
-
+SIP protocol intelligence is distributed across different network devices. Every network device that is part of SIP signalization topology is called a User Agent (UA). UA are further divided into a quite complex hierarchy. Otherwise SIP network devices are similar to network devices mentioned in H.323 section.
 
 \begin{itemize}
 \item User Agent Clients, an end user device such as a
@@ -158,23 +149,29 @@ SIP protocol intelligence is distributed across different network devices. Every
 \end{itemize}
 
 \section{LCPCPv1}
-Is a simple signaling protocol developed by a former company Siemens Enterprise Communications. In contrast with previously mentioned protocols, it is much simpler. LCPCP stands for Low-Cost Phone Control Protocols, but important is the phrase Low-Cost. End devices do not hold any signaling logic at all, because that would increase their build cost. Instead they are completely controlled by LCP exchange. 
-It is binary protocol with client-server, request-response architecture and only a few basic messages. Such a concept is then reflected in protocol messages. They are much more low-level. LCPCPv1 device state could be described by 2 states. IDLE and ESTABLISHED.Device begins in state IDLE and transitions to state ESTABISHED as soon as successfuly associates to exchange. As a part of association process, information about device available hardware such as information about display, keyboard, possible codecs and others is exchanged. Responsibility for these devices is then taken by exchange. This is reflected in LCPCPv1 protocol which contains messages such as DSP\_TEXT\_CMD (to set a text on particular display) or RTP\_OPEN\_CMD (to open RTP port) to operate client devices. On the other hand, client tells exchange which keyboard button were pressed using KBD\_DOWN\_IND or KBD\_DOWN\_IND messages. Complete protocol definition is publicly available.
+Is a simple signaling protocol developed by a former company Siemens Enterprise Communications. In contrast with previously mentioned protocols, it is much simpler. LCPCPv1 stands for Low-Cost Phone Control Protocol, but important is the phrase Low-Cost. End devices do not hold any important signaling logic at all, because that would increase their build cost. Instead they are completely controlled by the exchange they are associated with. 
 
-\section{RTP}
-Is an application layer protocol for real-time transfer of data streams. It is considered a standard for transporting voice or video media in packet-switched networks. It is one of key elements of VoIP.It wokrks in pair with Real-time Transport Control Protocol (RTCP) where RTP carries media streams and RTCP carries flow information, creates statistics and optimizes the RTP streams. Since VoIP works upon packet-switched network RTP includes mechanisms to compensate jitter, messages received out of sequence.
+It is binary protocol with client-server, request-response architecture and only a few basic messages. Such a concept is then reflected in protocol messages. They are much more low-level. LCPCPv1 device state could be described by 2 states. IDLE and ESTABLISHED.Device begins in state IDLE and transitions to state ESTABISHED as soon as successfuly associates to exchange. As a part of association process, information about device available hardware such as information about display, keyboard, possible codecs and others is exchanged. Responsibility for these devices is then taken by exchange. LCPCPv1 client does not know nor what text is in its diplay or what media sessions are opened. Everything is handled by the exchange. This is reflected in LCPCPv1 protocol which contains messages such as DSP\_TEXT\_CMD (to set a text on particular display) or RTP\_OPEN\_CMD (to open RTP port) to operate client devices. On the other hand, client tells exchange which keyboard button were pressed using KBD\_DOWN\_IND or KBD\_DOWN\_IND messages. Complete protocol definition is publicly available\cite{LCPCPv1definition}.
 
-Before media session (handled by RTP and RTCP) can be initiated, a session description need to be negotiated. That where Session Description Protocol (SDP) takes its place. SDP is standard format for describing media initialization parameters. It holds necessary information for initiating media session like end device ip address, RTP and RTCP ports and a codec. It is usually transfered as a data part of signaling protcol message.
+For better understanding I will examine a few simple examples. Imagine a caller wants to establish a media session (probably a voice) with LCPCPv1 callee. Since LCPCPv1 client does not maintain an information about active media sessions, exchange does. When a media session initiation arrives at the exchange, it decides whenewer LCPCPv1 client may answer the call. Suppose it may. To maintain proper phone behaviour, exchange tells the LCPCPv1 client to open a port and to be prepared to receive a media session. It then replies to caller that client is ringing and plays a ringing tone to a callee utilizing the RTP protocol.
+
+\section{RTP\cite{RTPstandard}}
+Is an application layer protocol for real-time transfer of data streams. It is considered a standard for transporting voice, video and other media in packet-switched networks. It is one of key elements of VoIP.It works in pair with Real-time Transport Control Protocol (RTCP) where RTP carries media streams and RTCP carries flow information, creates statistics and optimizes the RTP streams. Since VoIP works upon packet-switched network RTP includes mechanisms to compensate jitter, messages received out of sequence.
+
+Before media session (handled by RTP and RTCP) can be initiated, a session description need to be negotiated. And thats where Session Description Protocol (SDP) takes its place. SDP is standard format for describing media initialization parameters. It holds necessary information for initiating media session like end device IP address, RTP and RTCP ports and a codec. It is usually transfered as a data part of signaling protcol message.
+
+\section{Summary}
+All above mentioned protocol (apart from LCPCPv1) are widely used in todays world. They managed to fight their place into the VoIP foreground and persist there for almost two decades now. This fact tells us something about their time overleaping design and robustness. Thus we cannot simply ommit them and some of them we will incorporate them in our exchange.
 
 \chapter{Declarative programming paradigm}
-Is a programming paradigm that describes computer program logic without describing its control flow.  In much more common imperative paradigm one often describes:
+Is a programming paradigm that describes computer program logic without describing its control flow. In much more common imperative paradigm one often describes:
 \begin{itemize}
 \item  what computer program goals are
 \item  how the program should reach given goals
 \end{itemize}
 Program run is devided into small steps. For example in language C single steps are separated using a semicon character. Program flow is defined as modifiing its internal state using steps.
 
-On the other hand, when talking about declarative paradigm, we mark program state as undefined. Of course programmer is accustomed to programming language evaluation strategy otherwise he would not be able to build program properly. In declarative languages programer only specifies:
+On the other hand, when talking about declarative paradigm, we mark program state as undefined. Of course programmer is accustomed to programming language's evaluation strategy otherwise he would not be able to build program properly. In declarative languages programer only specifies:
 \begin{itemize}
 \item what computer program goals are
 \end{itemize}
@@ -205,8 +202,12 @@ Evaluation strategy refers to an approach of evaluating function arguments. Func
 \subsubsection{Call-by-Value}
 Call-by-value is the most common approach to evaluating function arguments. It is used by language such as a C or Erlang. When function is called, their arguments are first evaluated and the resulting value is then bound to variable inside function body. This is usually done by copying value to new memory segment. When new value is assigned to function parameter, the original value remains unchanged due to the assignment to different memory region.
 
+\lstinputlisting[style=customc, caption=Call-by-Value example in C]{scodes/callbyvalue.c}
+
 \subsubsection{Call-by-Reference}
 As a counterpart to the Call-by-Value approach, Call-by-Reference does not need to copy memory segments to pass parameters to a function. It rather passes reference. This approach is in some form or another implemented in most languages. Typically languages use Call-by-Value as default evaluation strategy but often support special syntax for Call-by-Reference approach. C programming language is an perfect example offering Call-by-Reference explicitly by introducing the pointer concept.
+
+\lstinputlisting[style=customc, caption=Call-by-Reference example in C]{scodes/callbyref.c}
 
 \subsubsection{Call-by-Name}
 A major drawback of previous evaluation mechanisms were in cases when function argument was never used in function. In spite of argument was never used, it was always evaluated befare the function was called. Such approach wastes CPU resources and makes overall program run slower. A reasonable improvement could be to evaluate arguments only in cases when argument is used inside function body. And it is the point of Call-by-Name evaluation. Drawback is that if argument is used multiple times, it is also multiple-times evaluated.
@@ -219,21 +220,18 @@ Call-by-Need, also called the Lazy evaluation delays argument evaluation until i
 In preceeding example is taken sixth element of list. But since our list is infinite in other than lazy evaluation concept program would stuck in endless loop.
 
 \subsection{Type systems}
-If type is a property that can be assigned to various programming construct (for example a variable, expression or function are programming constructs), then type system is a pack of rules that assign a type to a construct. Its main purpose is to reduce bugs by defining interfaces between various parts of computer program. These parts when connected (for example function call) can be checked for consistency. This check can be performed statically at compile time or dynamically at run time. Various types can be declared implicitly, explicitly or infered.   
+If type is a property that can be assigned to various programming construct (for example a variable, expression or function are programming constructs), then type system is a pack of rules that assign a type to a construct. Its main purpose is to reduce bugs by defining interfaces between various parts of computer program. These parts when conected (for example by utilizing a function call) can be checked for consistency. This check can be performed statically at compile time or dynamically at run time. Various types can be declared implicitly, explicitly or infered.   
 \begin{itemize}
 \item statically typed usually require explicit type declaration, type consistency can be checked at compile time
 \item dynamically typed languages do not require explicit type declarations, their consistency is checked at program run
 \end{itemize}
 Type inference is an action which performs compiler of statically typed language (such as a Haskell) before checking program for type consistence. Most significant drawback of this approach is that programmer doesn't need to explicitly specify type when declaring constructs. Compiler can infer declaration types from its construct. 
 
-Another important aspect of type system is wheter it is strong or weak.
-\begin{itemize}
-\item weakly typed languages 
-\item strongly typed 
-\end{itemize}
+\section{Summary}
+Declarative programming paradign offers a new approach to quite conservative field of programming languages. Although they are with us for many quite a long time now, they have been continually overlooked in the field of large software systems. Erlang programming language utilized functional programming paradigm and together they offer a new approach to difficult tasks like massive concurrency, high reliability and realtime properties. 
 
 \chapter{Erlang programming language}
-Erlang is a functional programming language with high emphasis on high realiability and heavy concurrency. These two main features go hand to hand with support for distribution applications and fault tolerance. It is well suited for applications whose main characteristics are:
+Erlang is a functional programming language with high emphasis on high realiability and heavy concurrency. These two main features go hand to hand with support for distributed applications and fault tolerance. It is well suited for applications whose main characteristics are:
 \begin{itemize}
 \item extremly reliable
 \item distributed
@@ -245,7 +243,7 @@ Erlang is a functional programming language with high emphasis on high realiabil
 High reliability is one of Erlang key factors. Although it will not solve all problems, by inheriting different but simple approaches to handle errors and exceptions and using well designed and robust but very general library modules, Erlang will make your job easier and in most cases more native.  
 
 \subsection{Fault tolerace}
-Is a `keep it running' approach to error handling. It means that whenewer a part of system (process, group of processes) crashes, we will let the rest of the system alive. The Erlang VM will tell us, when the crash happened and why it did it. It is programmer's responsibility to ensure that the crash will not affect correct system behavior in global. We can take our VoIP switch as an example. If user invokes conference feature which is not implemented and system crashes in local scale user lost his call but in global scale, simultaneous calls should not be affected and switch should be up and running, ready to process any new requests.
+Erlang utilized a `keep it running' approach to error handling. It means that whenewer a part of system (process, group of processes) crashes, we will let the rest of the system alive. The Erlang VM will tell us, when the crash happened and why it did it. It is programmer's responsibility to ensure that the crash will not affect correct system behavior in global. We can take our VoIP switch as an example. If user invokes conference feature which is not implemented and system crashes in local scale user lost his call but in global scale, simultaneous calls should not be affected and switch should be up and running, ready to process any new requests.
 
 Supervision tree is a concept trough which fault tolerance could be reached. Every process in such a model is either a worker or a supervisor. Worker job could be any routine work you can imagine starting from reading a file to a database server. On the other hand supervisor only job is to monitor other processes, workers or other supervisors and if any supervising process goes wrong it will restart it, stop all processes that are being supervised, etc\dots In general such action is called a restart strategy. 
 
@@ -257,9 +255,10 @@ Each process in Erlang system should have its supervisor. Process diagram will m
 \end{figure}
 
 \subsection{Hot-code swaping}
-In addition to fault tolerance, when a bug is found but system does not crash of that fault we need to fix our software and provide our feature to customers. In manner of high reliability and high up-time such a fix needs to be done when system is running. Again our VoIP switch can serve as an example. When bug in conferrence system is reported, hot-code swaping allows us to fix source code, recompile selected source files and insert fixed code into a running systems.
+In addition to fault tolerance, when a bug is found but system does not crash of that fault we need to fix our software and provide our feature to customers. In manner of high reliability and high up-time such a fix needs to be done when system is running. Again our VoIP switch can serve as an example. When bug in conferrence system is reported, hot-code swaping allows us to fix source code, recompile selected source files and insert fixed code into a running systems
 \cite{programming_erlang} 
-\cite{erlang_programming}
+\cite{erlang_programming}.
+
 \section{Massive concurrency}
 Any programming language that features concurrency inherits one of the following models:
 \begin{itemize}
@@ -279,11 +278,7 @@ Erlang as a language was developed in 1986 in Ericson Computer Science Laborator
 Later experimenting with prolog continued. They developed an meta-interpreter which was rapidly expanding. Next message-passing concurrency was added. This could be considered first Erlang implementation. Written in Prolog. Erlang was popularity was slowly growing in Ericson and was selected as implementation language for a few projects. Later they wanted to leave Prolog experimental implementation and make a stable one. After several exotic attemts such as cross compilation to other languages they implemented Erlang virtual machine in C. This implementation was 70 times faster then its Prolog predecessor.
 
 \section{Why Erlang}
-\begin{itemize}
-\item fast, highly parallel and
-\item good concurency support is essential
-\item Logic programming was considered best alongside Functional programming which seemed to have minor issues
-\end{itemize}
+Erlang was selected because among other functional languages, it offers message passing concurrency and a good support for its utilizing in large software projects. For example there is Haskell message passing concurrency model as well but lacks a framework for simple application development on the top of it. Also In Erlang it is not difficult to start developing arbitrary project, because it is not purely functional and developer does not need to dump all of his imperative habbits. A long development and a various large project from VoiP were written in it. So it can be considered well tested in the wild.
 
 \section{Erlang type system}
 Erlang is dynamically typed language. Erlang compiler will not complain on evident errors, instead every error will be caught at run time and it is programmer responsibility to handle this. This is often understood as one of major Erlang drawbacks. Reasons for this is Erlang uniqueness. Erlang features highly advanced concepts such as hot-code swaping and message passing concurrency which makes difficult to check for type correctness. As an example, it is hard to check types for code that does not exist yet (hot-code swaping). A number of project tried to create comprehensive type system for Erlang, but none of them really succeeded. Deeper study of this problem is considered beyond this paper but as a final conclusion I will quote Joe Armstrong: \textit{It seems like it should be `easy'-and indeed, a few weeks programming can make a type system that handles 95\% of the language. Several man-years of work [by some of the brightest minds in computer science] have gone into trying to fix up the other 5\%-but this is really difficult.}\cite{armstrong_type_system}
@@ -297,11 +292,11 @@ Is an acronym for A DIscrepancy AnaLYZer for ERlang programs. It extends Typer a
 Call-By-Value is Erlang evaluation strategy as described in earlier chapters.
 
 \section{Open Telecom Platform}
-OTP is a set of design patters and general behaviours packed in compact library module. It is aware of all concepts mentioned earlier such as distributed programming or hot-code swaping thus making it insdustrial-ready standard for building fast, reliable and distributed applications. 
+Open Telecom Platform (OTP) is a set of design patters and general behaviours packed in compact library module. It is aware of all concepts mentioned earlier such as distributed programming or hot-code swaping thus making it insdustrial-ready standard for building fast, reliable and distributed applications. 
 While it is not necessary to embed OTP into your system, it is highly advised to do so for at least 2 very good reasons:
 \begin{itemize}
-\item it is safer than reinventing already invented
-\item it makes source code much more readable because OTP general patterns are visible at first sight as shown in listing 7.1.
+\item It is safer than reinventing already invented,
+\item it makes source code much more readable because OTP general patterns are visible at first sight as shown in the following listing.
 \end{itemize}
 
 \lstinputlisting[style=customerl, caption=erlang behaviours]{scodes/behaviour_patterns.erl}
@@ -330,10 +325,10 @@ Is a behaviour where client-server relation is defined. This model is usually de
 As described in Erlang/OTP official documentation. A finite state machine is a relation of the following form:
 \\
 \\
-\( State(S) x Event(E) \to Actions(A), State(S') \)
+\( State(S) \times Event(E) \to Actions(A), State(S') \)
 \\
 \\
-If we are in state S and the event E occurs, we should perform the actions A and make a transition to the state S'.\cite{erlang_fsm}
+If we are in state S and the event E occurs, we should perform the actions A and make a transition to the state S'\cite{erlang_fsm}.
 
 This behaviour as defined in gen\_fsm behaviour is suitable for modeling any system that could be described with finite state machines. Such examples could from something really simple like a door which would consist of a few states and events (door could be in either open or closed state, and will react to events like open and close) to complex protocol stack. Later our generic protocol will be described using this behaviour making it simple, readable and easily extendible.
 
@@ -388,14 +383,19 @@ In terms of generic exchange, a main part of a core should be generic finite sta
 
 Our job at this point is to develop a generic protocol using finite state machine as a description technique and Erlang/OTP gen\_fsm behaviours as the right tool to implement it. Every signaling protocol is very complex. Designing a generic protocol for such a vast set of states is beyond the scope of this thesis. Instead, a few sample but significant use cases will be selected, and upon these state set a generic protocol will be developed. A final set of use cases:
 
-\begin{itemize}
-\item successfull registration both SIP and LCPCPv1
-\item simple call from SIP to SIP client
-\item simple call from SIP to LCPCPv1 client
-\item call reject
-\item call cancel
-\item proper handling of out of transaction messages
-\end{itemize}
+\begin{table}[h!]
+\label{tab:GM}
+\begin{tabular}{|r|c|c|}
+  \hline
+ use case & SIP to SIP & SIP to LCPCPv1  \\ \hline
+ registration  & yes & yes  \\ \hline
+ establishing simple call  & yes & yes  \\ \hline
+ call reject & yes & yes \\ \hline
+ call teardown & yes & yes \\ \hline
+ proper handling of various errors & yes & yes \\ \hline
+\end{tabular}
+\caption[Generic Exchange use case scope]{Generic Exchange use case scope}
+\end{table}
 
 Generic protocol design could be handled several ways. Do we want a simple generic protocol but for the price of leaving a small (or maybe a bigger) piece of functionality in the specific part? Or do we want more complex generic protocol with specific part without any logic? Or some mix of previous? 
 
@@ -405,7 +405,7 @@ Since we want a Generic core to persist for a long time without a change, a smal
 \begin{figure}[h!]
 \centering
 \includegraphics[scale=0.5]{fig/generic_protocol}
-\caption[Generic protocol] {generic protocol}
+\caption[Generic protocol] {Generic Protocol}
 \end{figure}
 
 
@@ -669,13 +669,14 @@ From beginning Erlang was developed as a dynamically typed language. But in rece
 In the first place, type inference tool was developed. Its main requirement was to work automaticly without any explicit guidance. It is called TyPEr and it uses success types mechanism to infer function type. Success typing is unfortunatelly beyond the scope of this book. 
 Although typer and dialyzer can work without any explicit type annontations and infer function types by itself, programmer can explicitly annotate functions with type specification which is then used in type checking ant static analysis.
 
-\section{Static analysis}
+\section{Static Analysis}
 Dialyzer (a DIscrepancy AnaLYZer for ERlang programs) can identify software discrepancies such as obvious type errors, dead code and others.
 
 \section{Results after applying it to my source code}
 Static analysis was run over resulting source code, and I was more than surprised how many errors I have created. Many of them were hidden and hard to discover with unit tests I created. Some of them were more obvious. As a drawback, static analysis performed by Dialyzer takes quite a long time which makes it unsuitable to perform every time exchange is beeing compiled. Rather, I used it to check the code once in few hours. It took about 15 minutes on average laptop (place specification here if requested) to compute the results and the response it I have been given was almost always suprising and full of more or less obvious errors. It definitely helped me in order to produce more reliable code. Most errors it discovered were type errors in clauses that would match rarely usualy in error conditions, thus making them hard to discover. The second kind of errors were wrong type specifications. These are errors where type inference tool infers a function type and compares it with type I specified explicitly. These kind errors are priceless, because they help to discover crucial design flaws in early stages of implementation. They sort of work `Are you sure this function work as you intended ?'.
 
 \chapter{Generic Exchange in contrast with Asterisk}
+TODO
 
 \chapter{Conclusion}
 This text covered a design, implementation of Generic Exchange. We discovered, that Generic Exchange as a high-level style of design is well-thoughtout, efficient and quite elegant. In addition to this, a low-level design of both the generic and the specific parts was explained. In early chapters, we summarized the role of signaling protocols, we presented Erlang programming language, its framework Open Telecom Platform, declarative paradigm and how they fit into the Erlang concept. We sketched-out possible advantages of using Erlang and functional programming. 
