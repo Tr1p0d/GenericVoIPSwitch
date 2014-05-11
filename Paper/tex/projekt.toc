@@ -1,7 +1,7 @@
 \select@language {english}
 \contentsline {chapter}{\numberline {1}Prologue}{3}
 \contentsline {chapter}{\numberline {2}Internet telephony}{4}
-\contentsline {chapter}{\numberline {3}ISO/OSI session and application layer protocols}{5}
+\contentsline {chapter}{\numberline {3}VoIP Protocols}{5}
 \contentsline {section}{\numberline {3.1}H.323}{5}
 \contentsline {section}{\numberline {3.2}SIP}{6}
 \contentsline {section}{\numberline {3.3}LCPCPv1}{6}
@@ -42,7 +42,7 @@
 \contentsline {subsubsection}{Generic message downstreamRoute and upstreamRoute header field}{21}
 \contentsline {subsubsection}{Generic message routeToRecord header field}{21}
 \contentsline {subsubsection}{Generic message specificProtocol header field}{21}
-\contentsline {subsection}{\numberline {6.1.2}Example}{22}
+\contentsline {subsection}{\numberline {6.1.2}Example}{21}
 \contentsline {section}{\numberline {6.2}General VoIP Exchange peripherals}{22}
 \contentsline {subsection}{\numberline {6.2.1}SIP to Generic Protocol translation}{23}
 \contentsline {subsubsection}{SIP 3-way handshake}{24}
@@ -51,9 +51,12 @@
 \contentsline {subsection}{\numberline {6.2.2}LCP peripheral}{24}
 \contentsline {section}{\numberline {6.3}Summary}{25}
 \contentsline {chapter}{\numberline {7}Exchange in action}{27}
-\contentsline {chapter}{\numberline {8}Erlang role in implementation}{28}
-\contentsline {chapter}{\numberline {9}Automated software discrepancies discovery}{30}
-\contentsline {section}{\numberline {9.1}Type system and type inference}{30}
-\contentsline {section}{\numberline {9.2}Static analysis}{30}
-\contentsline {section}{\numberline {9.3}Results after applying it to my source code}{30}
-\contentsline {chapter}{\numberline {10}Conclusion}{32}
+\contentsline {section}{\numberline {7.1}SIP registration}{27}
+\contentsline {section}{\numberline {7.2}SIP to SIP simple call}{29}
+\contentsline {chapter}{\numberline {8}Erlang role in implementation}{31}
+\contentsline {chapter}{\numberline {9}Automated software discrepancies discovery}{33}
+\contentsline {section}{\numberline {9.1}Type system and type inference}{33}
+\contentsline {section}{\numberline {9.2}Static analysis}{33}
+\contentsline {section}{\numberline {9.3}Results after applying it to my source code}{33}
+\contentsline {chapter}{\numberline {10}Generic Exchange in contrast with Asterisk}{35}
+\contentsline {chapter}{\numberline {11}Conclusion}{36}

@@ -1,0 +1,14 @@
+Internet Protocol Version 4, Src: 10.0.0.139 , Dst: 10.0.0.139 
+User Datagram Protocol, Src Port: 5070, Dst Port: 5060
+Session Initiation Protocol (REGISTER)
+  REGISTER sip:Nest SIP/2.0
+  Via: SIP/2.0/UDP 10.0.0.139:5070;rport;branch=z9hG4bKpwwgiysh
+  Max-Forwards: 70
+  To: "Marek" <sip:1017@Nest>
+  From: "Marek" <sip:1017@Nest>;tag=bkdrf
+  Call-ID: lfhyrvubwiyllyq@Nest
+  CSeq: 83 REGISTER
+  Contact: <sip:1017@10.0.0.139:5070>;expires=3600
+  Allow: INVITE,ACK,BYE,CANCEL,OPTIONS,PRACK,REFER,NOTIFY,SUBSCRIBE,...
+  User-Agent: Twinkle/1.4.2
+  Content-Length: 0

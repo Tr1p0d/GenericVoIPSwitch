@@ -1,0 +1,18 @@
+Internet Protocol Version 4, Src: 10.0.0.139 , Dst: 10.0.0.139 
+User Datagram Protocol, Src Port: 5070, Dst Port: 5060
+Session Initiation Protocol (INVITE)
+INVITE sip:1016@Nest SIP/2.0
+  Via: SIP/2.0/UDP 10.0.0.139:5070;rport;branch=z9hG4bKnbjmsugd
+  Max-Forwards: 70
+  To: <sip:1016@Nest>
+  From: "Marek" <sip:1017@Nest>;tag=vrbod
+  Call-ID: ielycgdbsgodvue@Nest
+  CSeq: 790 INVITE
+  Contact: <sip:1017@10.0.0.139:5070>
+  Content-Type: application/sdp
+  Allow: INVITE,ACK,BYE,CANCEL,OPTIONS,PRACK,REFER,NOTIFY,...
+  Supported: replaces,norefersub,100rel
+  User-Agent: Twinkle/1.4.2
+  Content-Length: 305
+Message Body
+  Session Description Protocol not shown

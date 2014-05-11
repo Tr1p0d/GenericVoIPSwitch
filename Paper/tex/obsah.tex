@@ -83,9 +83,6 @@ m%=========================================================================
 %
 %
 \chapter{Prologue}
-%Abychom mohli napsat odborný text jasnì a~srozumitelnì, musíme splnit nìkolik základních pøedpokladù:
-%Tyto a dal¹í pokyny jsou dostupné té¾ na ¹kolních internetových stránkách \cite{fitWeb}.
-%In a modern-day Internet environment, transporting a real-time communication such as voice is a 
 With rapid development of information technology in last century a real-time commmunication such as a voice need to be transfered across new media. The Internet. A wide sort of new communication technologies were developed from new protocols to dedicated telephony hardware. Some of these technologies will be covered in later chapters especially the communication protocols. Similarly to traditional public switched telephone network (PSTN) a basic demand on telephony devices remains. End user still needs his hardware desktop phone whose basic behavior remains the same. Similarly telephone exchange behaviour remains the same apart from the underlying transport layer. 
 
 A wide variety of session establishmet protocols exist these days. We can take SIP or h.323 protocols as examples. Although they are quite different to each other, they share some common behaviour. They were built to provide signaling among exchange devices but more importantly among exchange devices and end devices. And end devices does not differ among different signaling protocols. They always consist of an earphone and a dial. When caller initiates a call remote part need to be somehow advertized usually with a ring and caller knows that remote phone is ringing when hears some sort of tone in his earphone. This behaviour does not change even with wider network bandwiths nor with modern smart phones. Every single signaling protocol was build upon these facts and tough, they share some common behaviour. This thesis focuses on extraction this common behaviour outside each implemented protocol and build them upon these generic protocol. We will also evaluate advantages and disadvantages of this approach. As a practical result VoIP exchange will be developed using these techniques.
@@ -603,6 +600,51 @@ The following table sumarizes the overal count of active processes during exchan
 \end{center}
 
 \chapter{Exchange in action}
+In this chapter we will observe a simple call example of 2 SIP clients. As exapmle clients, a pair of SIP softphones were chosen. Twinkle soft phone implementation was selected. (PUT REFERECE), in version 1.4.2.
+
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=0.2]{fig/VoIPnetwork}
+\caption[A sample VoIP network configuration] {A sample VoIP network configuration}
+\end{figure}
+
+\section{SIP registration}
+In this section we will come trough an example of successfull SIP registration and proper handling of method, which are not supported at this time. The registration process is initiated by a client. Client is configured with SIP registrar adress and sends a reigstration request. 
+
+\lstinputlisting[caption=SIP registration request, style=customdat]{pkts/register1.out}
+
+Currently there is no registration restriction implemented in the Generic Exchange. So there is no reason why exchange should reply with other response than 200. 
+
+\lstinputlisting[caption=SIP registration request, style=customdat]{pkts/ok1.out}
+
+Next a client attempts to publish its presence information using the SIP Publish request. 
+
+\lstinputlisting[caption=SIP publish request, style=customdat]{pkts/publish1.out}
+
+Since Generic Exchange does not support this method nor its equivalent is implemented in the Generic Protocol, a 405 Method Not Allowed response is replied back to client. This behaviour is in complete harmony with initial design.
+
+\lstinputlisting[caption=SIP publish request, style=customdat]{pkts/mna1.out}
+
+\section{SIP to SIP simple call}
+
+The following message sequence chart represents a typical SIP to SIP call flow. Since the number of messages in this use case is quite large, only a few sample but important messages will be picked and displayed. A major difference against a arbitrary SIP exchange is the order of SIP ACK requests. Since Generic Protocol does not have concept of three-way handshake. The ACK are either dumped at arrival or generated after 200 response in INVITE context is retrieved. This behaviour is perfectly OK as explained earlier.
+
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=0.4]{fig/SIP_to_SIP_simplecall}
+\caption[SIP to SIP simplecall utilizing Generic Exchange] {SIP to SIP simplecall utilizing Generic Exchange}
+\end{figure}
+
+The Invite SIP request displayed as received from network at SIP peripheral. 
+
+\lstinputlisting[caption=SIP registration request, style=customdat]{pkts/invite11.out}
+
+The SIP Invite request after routing was performed. See that Via header was added and Contact header field was changed. See section [LINK] for further information.
+
+\lstinputlisting[caption=SIP registration request routed, style=customdat]{pkts/invite12.out}
+
+%\lstinputlisting[caption=SIP 100 provisioning response, style=customdat]{pkts/trying1.out}
+
 
 \chapter{Erlang role in implementation}
 Apart from its significant diference compare to imperative languages. It made some programming expressions much more readable. As an example the following code snippets were taken directly from exchange source code.
@@ -633,15 +675,15 @@ Dialyzer (a DIscrepancy AnaLYZer for ERlang programs) can identify software disc
 \section{Results after applying it to my source code}
 Static analysis was run over resulting source code, and I was more than surprised how many errors I have created. Many of them were hidden and hard to discover with unit tests I created. Some of them were more obvious. As a drawback, static analysis performed by Dialyzer takes quite a long time which makes it unsuitable to perform every time exchange is beeing compiled. Rather, I used it to check the code once in few hours. It took about 15 minutes on average laptop (place specification here if requested) to compute the results and the response it I have been given was almost always suprising and full of more or less obvious errors. It definitely helped me in order to produce more reliable code. Most errors it discovered were type errors in clauses that would match rarely usualy in error conditions, thus making them hard to discover. The second kind of errors were wrong type specifications. These are errors where type inference tool infers a function type and compares it with type I specified explicitly. These kind errors are priceless, because they help to discover crucial design flaws in early stages of implementation. They sort of work `Are you sure this function work as you intended ?'.
 
-\chapter{Generic Exchange in contrast with other VoIP exchange implementations}
+\chapter{Generic Exchange in contrast with Asterisk}
 
 \chapter{Conclusion}
-This text covered a design, implementation of Generic Exchange. We discovered, that Generic Exchange as a high-level style of design is well-thoughtout, efficient and quite elegant. In addition to this, a low-level design of both the generic and the specific parts was explained. In early chapters, we summarized the role of signaling protocols , we presented Erlang programming language ,its framework Open Telecom Platform, declarative paradigm and how they fit into the Erlang concept. We sketched-out possible advantages of using Erlang and functional programming. 
+This text covered a design, implementation of Generic Exchange. We discovered, that Generic Exchange as a high-level style of design is well-thoughtout, efficient and quite elegant. In addition to this, a low-level design of both the generic and the specific parts was explained. In early chapters, we summarized the role of signaling protocols, we presented Erlang programming language, its framework Open Telecom Platform, declarative paradigm and how they fit into the Erlang concept. We sketched-out possible advantages of using Erlang and functional programming. 
 
 The Generic Exchange was successfully implemented, SIP is currently supported in full scope, LCPCPv1 is supported partially. Later during implementation phase, I realized the great importance of the design phase. Although design was well-thoughtout, and performed with patience and was rigorous, it was not perfect. I discovered a few minor errors and possible place in Generic Protocol for improvements. The implementation in functional Erlang is trully rapid. It allows developer to focus on what is trully important and does not bother him with low-level programming expressions known from imperative languages. Developer then spends more time thinking about problem and not thinking of how a particular loop should look like. Thanks to Dialyzer performing static analysis, software written in Erlang becomes safer, more reliable and durable. As contrasting VoIP exchange implementation was selected Asterisk. Well known and widely used VoIP exchange. PAR SLOV O ASTERISKU
 
 OSOBNI NAZOR
 
-Although the Generic Exchange was, by my opinion, designed pretty well, it needs a few extra hours ( possibly days ) to be perfect. Generic Protocols was in this case probably the weakest spot. Also for the Generic Exchange to be really usefull, it would need more features to be added. Simple call is not really usefull to anyone. The implementation phase would be easier if a static analysis would be performed every time the exchanges was compiled to see immediate results. This was not possible due to weak hardware, but question remains if it would be possible at all especially in case of larger Erlang projects. % zminit ze implementace neni dokonala
+Although the Generic Exchange was, by my opinion, designed pretty well, it needs a few extra hours (possibly days) to be perfect. Generic Protocols was in this case probably the weakest spot. Also for the Generic Exchange to be really usefull, it would need more features to be added. Simple call is not really usefull to anyone. The implementation phase would be easier if a static analysis would be performed every time the exchanges was compiled to see immediate results. This was not possible due to weak hardware, but question remains if it would be possible at all especially in case of larger Erlang projects. % zminit ze implementace neni dokonala
 
 DALSI ZLEPSENI

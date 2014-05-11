@@ -1,0 +1,18 @@
+Internet Protocol Version 4, Src: 10.0.0.139 , Dst: 10.0.0.139 
+User Datagram Protocol, Src Port: 5060, Dst Port: 507)
+Session Initiation Protocol (405)
+  SIP/2.0 405 Method not allowed
+  Via: SIP/2.0/UDP 10.0.0.139:5070;rport;branch=z9hG4bKtblwdnip
+  From: "Marek" <sip:1017@Nest>;tag=utwfg
+  To: "Marek" <sip:1017@Nest>
+  Call-ID: erqzrumxltojpvt@Nest
+  CSeq: 258 PUBLISH
+  Max-Forwards: 70
+  Content-Length: 183
+  Content-Type: application/pidf+xml
+  Expires: 3600
+  Event: presence
+  User-Agent: Twinkle/1.4.2
+Message Body
+  eXtensible Markup Language
+

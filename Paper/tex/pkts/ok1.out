@@ -1,0 +1,13 @@
+Internet Protocol Version 4, Src: 10.0.0.139, Dst: 10.0.0.139
+User Datagram Protocol, Src Port: 5060, Dst Port: 5070
+Session Initiation Protocol (200)
+  SIP/2.0 200 OK
+  Via: SIP/2.0/UDP 10.0.0.139:5070;rport;branch=z9hG4bKpwwgiysh
+  From: <sip:1017@Nest>;tag=bkdrf
+  To: <sip:1017@Nest>;tag=1dlNmj
+  Call-ID: lfhyrvubwiyllyq@Nest
+  CSeq: 83 REGISTER
+  Max-Forwards: 69
+  Content-Length: 0
+  Contact: <sip:1017@10.0.0.139:5060>
+  Expires: 3600
