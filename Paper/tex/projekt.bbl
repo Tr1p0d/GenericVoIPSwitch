@@ -47,6 +47,12 @@ Fred Herbert.
 \newblock {\em Learn You Some Erlang for Great Good!}
 \newblock No Starch Press, 2013.
 
+\bibitem{computer_protocols_desing_and_validation}
+Gerard~J. Holzmann.
+\newblock {\em Desing and Validation of Computer Protocols}.
+\newblock Prentice Hall, 1991.
+\newblock ISBN~0-13-539834-7.
+
 \bibitem{h225}
 ITU-T.
 \newblock Itu-t h.225, 1996.
@@ -63,5 +69,9 @@ ITU-T.
 Miran Lipovaèa.
 \newblock {\em Learn You a Haskell for Great Good!}
 \newblock No Starch Press, 2011.
+
+\bibitem{GPL}
+Richard Stallman.
+\newblock Gnu general public license, June 2007.
 
 \end{thebibliography}
