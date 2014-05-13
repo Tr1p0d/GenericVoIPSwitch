@@ -89,7 +89,7 @@ A wide variety of session establishmet protocols exist these days. We can take S
  
 Although functional programming is not common these days, it brings many advantages compare to the more traditional sequential approach to constructing programs. Building software VoIP exchange is a complex task and it requires right tool to be done without sacrificing any of the core aspect such system should have. High level of abstraction, strong typing and other constructs may show its full potential in building such system. Erlang is an industrial quality functional language which was designed to be used inside telecommunication systems. It was selected for its natural pedigree and other characteristics such as high-reliability and soft-realtime properties. Erlang will be closely covered later chapters.
 
-\chapter{Internet telephony}
+\section{Internet telephony}
 The term Internet telephony refers to a provisioning of a communication services such as voice, fax or text over public Internet rather than using dedicated public switched telephone network (PSTN). In spite of need to resolve issues like jitter and frequent high latency, this approach inevitably came on to the light with best-effort Internet approach and dependent technologies. Steps involved in establishing successful call and corresponding principes remains the same:
 \begin{itemize}
 \item signaling employs session control and signaling protocols are used to set up or tear down a call,
@@ -97,9 +97,8 @@ The term Internet telephony refers to a provisioning of a communication services
 \item converting analog signal (voice) to its digital representation for transport over digital link,
 \item encoding media using codecs to optimize the stream.
 \end{itemize}
-Traffic in PSTN is transfererd over circuit-switched network. On the other hand, Internet covers wide variety of transport technologies where the most common end technologies are based on packet-switched networks (Ethernet + Internet protocol). Since Internet was designed as a packet-switched best-effort delivery network it does not incorporate network based mechanism to ensure packets were delivered. As a negative consequence a jitter or high latency may appear. Although widely used reliable TCP exist to outweight some problems, it is not suitable to be used in real-time voice transmission and does not outweight all problems. Network routers may classify network traffic and process several network streams differently thus ensuring VoIP media traffic will be manipulated faster than regular traffic without low latency demands. 
 
-\chapter{VoIP Protocols}
+Traffic in PSTN is transfererd over circuit-switched network. On the other hand, Internet covers wide variety of transport technologies where the most common end technologies are based on packet-switched networks (Ethernet + Internet protocol). Since Internet was designed as a packet-switched best-effort delivery network it does not incorporate network based mechanism to ensure packets were delivered. As a negative consequence a jitter or high latency may appear. Although widely used reliable TCP exist to outweight some problems, it is not suitable to be used in real-time voice transmission and does not outweight all problems. Network routers may classify network traffic and process several network streams differently thus ensuring VoIP media traffic will be manipulated faster than regular traffic without low latency demands. 
 ISO/OSI session layer is layer where signaling protocols take their place. Their job is to establish a media session among 2 or more participants. Steps involved in establishing media session are:
 \begin{itemize}
 \item localization of an endpoint usually represented by a hardware phone or a softphore,
@@ -109,8 +108,8 @@ ISO/OSI session layer is layer where signaling protocols take their place. Their
 \end{itemize}
 Media session can be almost anything from a voice, presence, text messages or a fax. Examples of signaling protocols are SIP or H.323 which are currently in use in a majority of VoIP systems. 
 
-\section{H.323\cite{h323standard}}
-H.323 is a signaling standard developed by Internet Telecommunication Union, Telecommunications Standard Sector (ITU-T). It is a set of protocols encapsulated inside a single standard. It contains protocol for call create and tear down, exchange of media session information. Some of them are listed below:
+\section{H.323}
+H.323 \cite{h323standard} is a signaling standard developed by Internet Telecommunication Union, Telecommunications Standard Sector (ITU-T). It is a set of protocols encapsulated inside a single standard. It contains protocol for call create and tear down, exchange of media session information. Some of them are listed below:
 
 \begin{itemize}
 \item H.225\cite{h225} is responsible for call initiation and Registration, Admission, Status (RAS) signaling
@@ -128,8 +127,8 @@ H.323 network device architecture consist of the following network devices:
 \end{itemize}
 %\cite{VoIP_bez_znalosti}
 
-\section{SIP\cite{SIPrfc}}
-SIP or session initiation protocol is signaling protocol developed by IETF, Multi-Party Multimedia Session Control Working Group. First version was 1.0 and was submitted as an Internet Draft in 1997. Since significant changes were done to improve the protocol, version 2.0 was submitted as an Internet Draft in 1998. In 1999 protocol reached the Proposed Standard level and is described in RFC 2543\cite{SIPrfc2}. In the following years several SIP extending documents were published.
+\section{SIP}
+SIP\cite{SIPrfc} or session initiation protocol is signaling protocol developed by IETF, Multi-Party Multimedia Session Control Working Group. First version was 1.0 and was submitted as an Internet Draft in 1997. Since significant changes were done to improve the protocol, version 2.0 was submitted as an Internet Draft in 1998. In 1999 protocol reached the Proposed Standard level and is described in RFC 2543\cite{SIPrfc2}. In the following years several SIP extending documents were published.
 
 From more technical point of view, SIP is a text protocol which makes it well (and more readable compare to H.323) readable. It is based on HTTP protocol from which inherits client-server model and use of URI's. From SMTP SIP borrows header-style (headers such as From, To, etc\dots are in both protocols and have similar meaning). SIP communication is based on Request-Response mechanims. Where Request points from UAC to UAS and Responses are directed vice-versa. Good Request examples are INVITE (a join request) or BYE (request for session termination). Response message uses HTTP response codes to indicate request consequences which took their place on the UAS side. 
 
@@ -155,8 +154,8 @@ It is binary protocol with client-server, request-response architecture and only
 
 For better understanding I will examine a few simple examples. Imagine a caller wants to establish a media session (probably a voice) with LCPCPv1 callee. Since LCPCPv1 client does not maintain an information about active media sessions, exchange does. When a media session initiation arrives at the exchange, it decides whenewer LCPCPv1 client may answer the call. Suppose it may. To maintain proper phone behaviour, exchange tells the LCPCPv1 client to open a port and to be prepared to receive a media session. It then replies to caller that client is ringing and plays a ringing tone to a callee utilizing the RTP protocol.
 
-\section{RTP\cite{RTPstandard}}
-Is an application layer protocol for real-time transfer of data streams. It is considered a standard for transporting voice, video and other media in packet-switched networks. It is one of key elements of VoIP.It works in pair with Real-time Transport Control Protocol (RTCP) where RTP carries media streams and RTCP carries flow information, creates statistics and optimizes the RTP streams. Since VoIP works upon packet-switched network RTP includes mechanisms to compensate jitter, messages received out of sequence.
+\section{RTP}
+RTP\cite{RTPstandard} is an application layer protocol for real-time transfer of data streams. It is considered a standard for transporting voice, video and other media in packet-switched networks. It is one of key elements of VoIP.It works in pair with Real-time Transport Control Protocol (RTCP) where RTP carries media streams and RTCP carries flow information, creates statistics and optimizes the RTP streams. Since VoIP works upon packet-switched network RTP includes mechanisms to compensate jitter, messages received out of sequence.
 
 Before media session (handled by RTP and RTCP) can be initiated, a session description need to be negotiated. And thats where Session Description Protocol (SDP) takes its place. SDP is standard format for describing media initialization parameters. It holds necessary information for initiating media session like end device IP address, RTP and RTCP ports and a codec. It is usually transfered as a data part of signaling protcol message.
 
@@ -230,7 +229,7 @@ Type inference is an action which performs compiler of statically typed language
 \section{Summary}
 Declarative programming paradign offers a new approach to quite conservative field of programming languages. Although they are with us for many quite a long time now, they have been continually overlooked in the field of large software systems. Erlang programming language utilized functional programming paradigm and together they offer a new approach to difficult tasks like massive concurrency, high reliability and realtime properties. 
 
-\chapter{Erlang programming language}
+\chapter{Programming using Erlang}
 Erlang is a functional programming language with high emphasis on high realiability and heavy concurrency. These two main features go hand to hand with support for distributed applications and fault tolerance. It is well suited for applications whose main characteristics are:
 \begin{itemize}
 \item extremly reliable
@@ -251,13 +250,12 @@ Each process in Erlang system should have its supervisor. Process diagram will m
 \begin{figure}[h!]
 \centering
 \includegraphics[scale=0.8]{fig/erlang_supervision_tree}
-\caption[Erlang supervision tree] {Example supervision tree}
+\caption[Erlang supervision tree] {Example of Erlang supervision tree}
 \end{figure}
 
 \subsection{Hot-code swaping}
 In addition to fault tolerance, when a bug is found but system does not crash of that fault we need to fix our software and provide our feature to customers. In manner of high reliability and high up-time such a fix needs to be done when system is running. Again our VoIP switch can serve as an example. When bug in conferrence system is reported, hot-code swaping allows us to fix source code, recompile selected source files and insert fixed code into a running systems
-\cite{programming_erlang} 
-\cite{erlang_programming}.
+\cite{programming_erlang, erlang_programming}.
 
 \section{Massive concurrency}
 Any programming language that features concurrency inherits one of the following models:
@@ -319,7 +317,7 @@ Is a behaviour where client-server relation is defined. This model is usually de
 \begin{figure}[h!]
 \centering
 \includegraphics[scale=1]{fig/gen_server_example}
-\caption[Erlang gen\_event] {Example gen server behaviour hierarchy}
+\caption[Erlang gen\_event behaviour] {Example of gen\_server behaviour hierarchy}
 \end{figure}
 
 \subsection{Finite state machines}
@@ -340,7 +338,7 @@ Event handler behaviour (gen\_event) consist of one event handling manager and a
 \begin{figure}[h!]
 \centering
 \includegraphics[scale=0.6]{fig/event_handler_example}
-\caption[Erlang gen\_event behaviour] {Example gen\_event behaviour hierarchy}
+\caption[Erlang gen\_event behaviour] {Example of gen\_event behaviour hierarchy}
 \end{figure}
 
 
@@ -348,7 +346,7 @@ Event handler behaviour (gen\_event) consist of one event handling manager and a
 \subsection{Applications}
 Once Erlang application exists, a developer might usually need to safelly start and stop the application. Starting an application is not a big deal, but once application is running and starts numerous processes, stopping these processes one by one a big deal becomes. Also after developers software becomes more populer, a requirment to use it in other projects might get raised. The application behaviour encapsulates both. It provides a way to safely start, stop the application and a general API to use it as subapplication of larger projects. 
 
-\chapter{Generic VoIP Exchange}
+\chapter{Design and implementation of Generic VoIP Exchange}
 
 The initial motivation hidden behind the Generic Exchange is to have exchange capable of handling various signaling protocols at once. This would allow us to create media sessions among clients working on the top of different signaling protocols. The Generic Exchange is style of exchange design that would easily allow us these features. This chapter will take us trough the design and implementation of such Generic Exchange.
 
@@ -356,8 +354,6 @@ A Generic Exchange on the highest level of abstraction consist of 2 basic parts.
 
 
 \section{Generic VoIP Exchange Core}
-% WHAT IS CORE AND HOW IT WORKS
-%REWORK
 Basically a Generic Core is a high level component, shared by the peripherals. It encapsulates functionality shared by all peripherals into a single package and providing a simple way to access it. The Core should be as persistent and durable as possible and live without a change for as long time as possible. It is important to encapsulate as few components as possible. In case of maintanance or when a new signaling protocol is added to Generic Exchange we do not want to change the core at all. Additional effort and time is usually costly and lot of future funds could be wasted because of bad design decision.
 
 Every VoIP exchange built upon arbitrary VoIP protocol performs routing. It sustains an information storage and informations related to associated clients and their network location. It is also capable of performing a DNS lookup for foreign domain discovery. All these features are independent of underlying VoIP protocols and it is exactly the scope of functionality Generic Exchange Core encapsulates. 
@@ -366,7 +362,7 @@ The main part of Core is the Generic Protocol. It is represented by a finite sta
 
 \begin{figure}[h!]
 \centering
-\includegraphics[scale=0.3]{fig/core_design}
+\includegraphics[scale=0.5]{fig/core_design}
 \caption[exchange core process diagram] {Generic Core process diagram}
 \end{figure}
 
@@ -388,9 +384,10 @@ Our job at this point is to develop a generic protocol using finite state machin
 
 \begin{table}[h!]
 \label{tab:GM}
+\centering
 \begin{tabular}{|r|c|c|}
   \hline
- use case & SIP to SIP & SIP to LCPCPv1  \\ \hline
+  \textbf{use case} & \textbf{SIP to SIP} & \textbf{SIP to LCPCPv1}  \\ \hline 
  registration  & yes & yes  \\ \hline
  establishing simple call  & yes & yes  \\ \hline
  call reject & yes & yes \\ \hline
@@ -403,8 +400,6 @@ Our job at this point is to develop a generic protocol using finite state machin
 Generic protocol design could be handled several ways. Do we want a simple generic protocol but for the price of leaving a small (or maybe a bigger) piece of functionality in the specific part? Or do we want more complex generic protocol with specific part without any logic? Or some mix of previous? 
 
 Since we want a Generic core to persist for a long time without a change, a smaller protocol will be better. Let the peripherals handle more logic. Adding new complex peripheral is simpler and easier than implementing a simple peripheral and making changes in the Core. When unapropriate changes in Core are made, we could possibly damage the exchange. Also, in the second case our generic protocol would not be really generic. It would be generic until we decided to add a new specific protocol. In such a case we would need to add not only the specific part but we would need to redesign our Generic protocol again. It would be a huge and pointless waste of time and resources cause by wrong design decision. Instead what we want is to design a Generic protocol which is durable enough to survive adding a new specific protocol. Such a demand leaves as with the first option only. Generic protocol was designed by taking in account all above mentioned use cases and general phone behaviour. The following shows the finite state machine as present in my system:
-
-\clearpage
 
 \label{GP}
 \begin{figure}[h!]
@@ -424,9 +419,9 @@ The finite state machine transitions from a state to a state as a reaction to ge
 
 \begin{table}[h!]
 \label{tab:GM}
-\begin{tabular}{|c|c|c|}
+\begin{tabular}{|c{5.5cm}|c{5.5cm}|c{5.5cm}|}
   \hline
-  header field name & example value & description  \\ \hline
+  \textbf{header field name} & \textbf{example value} & \textbf{description}  \\ \hline
   type & make\_call & Message type identifier see \ref{sec:GM_type_fields} for details. \\ \hline
   target & <<1016>> & Information about delivery destination. \\ \hline
   caller & {<<1017>>, call\_id, caller\_part\_id }& Take a closer look at \ref{sec:GM_caller_fields} \\ \hline
@@ -450,7 +445,7 @@ There are currently six generic message types implemented inside the exchange. T
 \centering
 \begin{tabular}{|r|l|}
   \hline
-  generic message type & meaning \\ \hline
+  \textbf{generic message type} & \textbf{meaning} \\ \hline
   associate & ask exchange to associate the client \\ \hline
   make\_call & ask the remote party to start media session \\ \hline
   accept & positive response to a particular request \\ \hline

@@ -1,17 +1,16 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.13 (TeX Live 2013/dev) (format=pdflatex 2014.4.29)  13 MAY 2014 09:49
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.12.20)  13 MAY 2014 17:52
 entering extended mode
- restricted \write18 enabled.
  %&-line parsing enabled.
 **projekt
 (./projekt.tex
-LaTeX2e <2011/06/27>
-Babel <v3.8m> and hyphenation patterns for english, dumylang, nohyphenation, lo
-aded.
+LaTeX2e <2009/09/24>
+Babel <v3.8l> and hyphenation patterns for english, usenglishmax, dumylang, noh
+yphenation, czech, slovak, loaded.
 (./fitthesis.cls
 Document Class: fitthesis 2007/04/13 Sablona pro BP/DP
-(/usr/share/texlive/texmf-dist/tex/latex/base/report.cls
+(/usr/share/texmf-texlive/tex/latex/base/report.cls
 Document Class: report 2007/10/19 v1.4h Standard LaTeX document class
-(/usr/share/texlive/texmf-dist/tex/latex/base/size11.clo
+(/usr/share/texmf-texlive/tex/latex/base/size11.clo
 File: size11.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 )
 \c@part=\count79
@@ -27,41 +26,41 @@ File: size11.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
 )
-(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
-Package: amsmath 2013/01/14 v2.14 AMS math features
+(/usr/share/texmf-texlive/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2000/07/18 v2.13 AMS math features
 \@mathmargin=\skip43
 
 For additional information on amsmath, use the `?' option.
-(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+(/usr/share/texmf-texlive/tex/latex/amsmath/amstext.sty
 Package: amstext 2000/06/29 v2.01
 
-(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty
+(/usr/share/texmf-texlive/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0
 \@emptytoks=\toks14
 \ex@=\dimen103
 ))
-(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty
+(/usr/share/texmf-texlive/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d
 \pmbraise@=\dimen104
 )
-(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
+(/usr/share/texmf-texlive/tex/latex/amsmath/amsopn.sty
 Package: amsopn 1999/12/14 v2.01 operator names
 )
 \inf@bad=\count88
-LaTeX Info: Redefining \frac on input line 210.
+LaTeX Info: Redefining \frac on input line 211.
 \uproot@=\count89
 \leftroot@=\count90
-LaTeX Info: Redefining \overline on input line 306.
+LaTeX Info: Redefining \overline on input line 307.
 \classnum@=\count91
 \DOTSCASE@=\count92
-LaTeX Info: Redefining \ldots on input line 378.
-LaTeX Info: Redefining \dots on input line 381.
-LaTeX Info: Redefining \cdots on input line 466.
+LaTeX Info: Redefining \ldots on input line 379.
+LaTeX Info: Redefining \dots on input line 382.
+LaTeX Info: Redefining \cdots on input line 467.
 \Mathstrutbox@=\box26
 \strutbox@=\box27
 \big@size=\dimen105
-LaTeX Font Info:    Redeclaring font encoding OML on input line 566.
-LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
+LaTeX Font Info:    Redeclaring font encoding OML on input line 567.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 568.
 \macc@depth=\count93
 \c@MaxMatrixCols=\count94
 \dotsspace@=\muskip10
@@ -82,27 +81,27 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
 \multlinegap=\skip44
 \multlinetaggap=\skip45
 \mathdisplay@stack=\toks18
-LaTeX Info: Redefining \[ on input line 2665.
-LaTeX Info: Redefining \] on input line 2666.
+LaTeX Info: Redefining \[ on input line 2666.
+LaTeX Info: Redefining \] on input line 2667.
 )
-(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
-Package: amssymb 2013/01/14 v3.01 AMS font symbols
+(/usr/share/texmf-texlive/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2009/06/22 v3.00
 
-(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty
-Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+(/usr/share/texmf-texlive/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2009/06/22 v3.00 Basic AMSFonts support
 \symAMSa=\mathgroup4
 \symAMSb=\mathgroup5
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
-(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 96.
 ))
-(/usr/share/texlive/texmf-dist/tex/generic/babel/babel.sty
-Package: babel 2008/07/08 v3.8m The Babel package
+(/usr/share/texmf-texlive/tex/generic/babel/babel.sty
+Package: babel 2008/07/06 v3.8l The Babel package
 
-(/usr/share/texlive/texmf-dist/tex/generic/babel/english.ldf
+(/usr/share/texmf-texlive/tex/generic/babel/english.ldf
 Language: english 2005/03/30 v3.3o English support from the babel system
 
-(/usr/share/texlive/texmf-dist/tex/generic/babel/babel.def
-File: babel.def 2008/07/08 v3.8m Babel common definitions
+(/usr/share/texmf-texlive/tex/generic/babel/babel.def
+File: babel.def 2008/07/06 v3.8l Babel common definitions
 \babel@savecnt=\count100
 \U@D=\dimen112
 )
@@ -112,53 +111,40 @@ File: babel.def 2008/07/08 v3.8m Babel common definitions
 \l@australian = a dialect from \language\l@british 
 \l@newzealand = a dialect from \language\l@british 
 )
-(/usr/share/texlive/texmf-dist/tex/generic/babel/czech.ldf
+(/usr/share/texmf-texlive/tex/generic/babel/czech.ldf
 Language: czech 2008/07/06 v3.1a Czech support from the babel system
-
-
-Package babel Warning: No hyphenation patterns were loaded for
-(babel)                the language `Czech'
-(babel)                I will use the patterns loaded for \language=0 instead.
-
-\l@czech = a dialect from \language0
 Package babel Info: Making " an active character on input line 172.
 \cs@wordlen=\count101
 Package babel Info: Making - an active character on input line 226.
-)) (/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
+))
+(/usr/share/texmf-texlive/tex/latex/base/inputenc.sty
 Package: inputenc 2008/03/30 v1.1d Input encoding file
 \inpenc@prehook=\toks19
 \inpenc@posthook=\toks20
 
-(/usr/share/texlive/texmf-dist/tex/latex/base/latin2.def
+(/usr/share/texmf-texlive/tex/latex/base/latin2.def
 File: latin2.def 2008/03/30 v1.1d Input encoding file
 ))
-(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+(/usr/share/texmf-texlive/tex/latex/graphics/graphicx.sty
 Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
 
-(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
+(/usr/share/texmf-texlive/tex/latex/graphics/keyval.sty
 Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
 \KV@toks@=\toks21
 )
-(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+(/usr/share/texmf-texlive/tex/latex/graphics/graphics.sty
 Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
 
-(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
+(/usr/share/texmf-texlive/tex/latex/graphics/trig.sty
 Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
 )
-(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/graphics.cfg
-File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
+(/etc/texmf/tex/latex/config/graphics.cfg
+File: graphics.cfg 2009/08/28 v1.8 graphics configuration of TeX Live
 )
 Package graphics Info: Driver file: pdftex.def on input line 91.
 
-(/usr/share/texlive/texmf-dist/tex/latex/pdftex-def/pdftex.def
-File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
-
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/infwarerr.sty
-Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
-)
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
-Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
-)
+(/usr/share/texmf-texlive/tex/latex/pdftex-def/pdftex.def
+File: pdftex.def 2009/08/25 v0.04m Graphics/color for pdfTeX
 \Gread@gobject=\count102
 ))
 \Gin@req@height=\dimen113
@@ -166,27 +152,27 @@ Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 )
 \mkspc=\skip46
 )
-(/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty
+(/usr/share/texmf-texlive/tex/latex/base/fontenc.sty
 Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
 
-(/usr/share/texlive/texmf-dist/tex/latex/base/t1enc.def
+(/usr/share/texmf-texlive/tex/latex/base/t1enc.def
 File: t1enc.def 2005/09/27 v1.99g Standard LaTeX file
 LaTeX Font Info:    Redeclaring font encoding T1 on input line 43.
 )
-(/usr/share/texlive/texmf-dist/tex/cslatex/base/il2enc.def
+(/usr/share/texmf-texlive/tex/latex/cslatex/il2enc.def
 File: il2enc.def 1997/08/20 CSLaTeX
 )
 LaTeX Font Info:    Try loading font information for IL2+cmr on input line 100.
 
 
-(/usr/share/texlive/texmf-dist/tex/cslatex/base/il2cmr.fd
+(/usr/share/texmf-texlive/tex/latex/cslatex/il2cmr.fd
 File: il2cmr.fd 1997/02/06 CSLaTeX font definitions
 ))
-(/usr/share/texlive/texmf-dist/tex/latex/url/url.sty
+(/usr/share/texmf-texlive/tex/latex/ltxmisc/url.sty
 \Urlmuskip=\muskip11
 Package: url 2006/04/12  ver 3.3  Verb mode for urls, etc.
 )
-(/usr/share/texlive/texmf-dist/tex/latex/listings/listings.sty
+(/usr/share/texmf-texlive/tex/latex/listings/listings.sty
 \lst@mode=\count103
 \lst@gtempboxa=\box28
 \lst@token=\toks22
@@ -200,38 +186,35 @@ Package: url 2006/04/12  ver 3.3  Verb mode for urls, etc.
 \lst@lineno=\count108
 \lst@maxwidth=\dimen118
 
-(/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
+(/usr/share/texmf-texlive/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2007/02/22 1.4 (Carsten Heinz)
 \c@lstnumber=\count109
 \lst@skipnumbers=\count110
 \lst@framebox=\box29
 )
-(/usr/share/texlive/texmf-dist/tex/latex/listings/listings.cfg
+(/usr/share/texmf-texlive/tex/latex/listings/listings.cfg
 File: listings.cfg 2007/02/22 1.4 listings configuration
 ))
 Package: listings 2007/02/22 1.4 (Carsten Heinz)
- (./projekt.aux
 
-LaTeX Warning: Label `tab:GM' multiply defined.
-
-)
+No file projekt.aux.
 \openout1 = `projekt.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 140.
-LaTeX Font Info:    ... okay on input line 140.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 140.
-LaTeX Font Info:    ... okay on input line 140.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 140.
-LaTeX Font Info:    ... okay on input line 140.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 140.
-LaTeX Font Info:    ... okay on input line 140.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 140.
-LaTeX Font Info:    ... okay on input line 140.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 140.
-LaTeX Font Info:    ... okay on input line 140.
-LaTeX Font Info:    Checking defaults for IL2/cmr/m/n on input line 140.
-LaTeX Font Info:    ... okay on input line 140.
- (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 145.
+LaTeX Font Info:    ... okay on input line 145.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 145.
+LaTeX Font Info:    ... okay on input line 145.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 145.
+LaTeX Font Info:    ... okay on input line 145.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 145.
+LaTeX Font Info:    ... okay on input line 145.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 145.
+LaTeX Font Info:    ... okay on input line 145.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 145.
+LaTeX Font Info:    ... okay on input line 145.
+LaTeX Font Info:    Checking defaults for IL2/cmr/m/n on input line 145.
+LaTeX Font Info:    ... okay on input line 145.
+(/usr/share/texmf-texlive/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count111
 \scratchdimen=\dimen119
@@ -242,66 +225,17 @@ LaTeX Font Info:    ... okay on input line 140.
 \MPscratchCnt=\count114
 \MPscratchDim=\dimen120
 \MPnumerator=\count115
-\makeMPintoPDFobject=\count116
 \everyMPtoPDFconversion=\toks24
-) (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
-Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
 )
+\c@lstlisting=\count116
+LaTeX Font Info:    Try loading font information for IL2+phv on input line 148.
 
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifluatex.sty
-Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
-Package ifluatex Info: LuaTeX not detected.
-)
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifpdf.sty
-Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
-Package ifpdf Info: pdfTeX in PDF mode is detected.
-)
-Package pdftexcmds Info: LuaTeX not detected.
-Package pdftexcmds Info: \pdf@primitive is available.
-Package pdftexcmds Info: \pdf@ifprimitive is available.
-Package pdftexcmds Info: \pdfdraftmode found.
-)
-(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
-Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
-
-(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/grfext.sty
-Package: grfext 2010/08/19 v1.1 Manage graphics extensions (HO)
-
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
-Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
-))
-(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/kvoptions.sty
-Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
-
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
-Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
-
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/etexcmds.sty
-Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
-Package etexcmds Info: Could not find \expanded.
-(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
-(etexcmds)             that some package has redefined \expanded.
-(etexcmds)             In the latter case, load this package earlier.
-)))
-Package grfext Info: Graphics extension search list:
-(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
-G,.JBIG2,.JB2,.eps]
-(grfext)             \AppendGraphicsExtensions on input line 452.
-
-(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
-File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
-e
-))
-\c@lstlisting=\count117
-LaTeX Font Info:    Try loading font information for IL2+phv on input line 143.
-
-
-(/usr/share/texlive/texmf-dist/tex/cslatex/cspsfonts/il2phv.fd
-File: il2phv.fd 1998/01/31 CS Helvetica
+ (/usr/share/texmf-texlive/tex/cslatex/base/il2phv.fd
+File: il2phv.fd 1998/12/27 CS Helvetica
 LaTeX Font Info:     CS Helvetica on input line 2.
-LaTeX Font Info:    (C) Z. Wagner,1998/01/31 on input line 3.
-LaTeX Font Info:    Created by CsPsFont utility v.1.0e (C) Z. Wagner, 1998/01/3
-1 on input line 4.
+LaTeX Font Info:    (C) Z. Wagner,1998/12/27 on input line 3.
+LaTeX Font Info:    Created by CsPsFont utility v.1.0f (C) Z. Wagner, 1998/12/2
+7 on input line 4.
 )
 \@obrlogo=\box31
 \@rtext=\box32
@@ -311,308 +245,395 @@ LaTeX Font Info:    Created by CsPsFont utility v.1.0e (C) Z. Wagner, 1998/01/3
 <fig/vut-zp2.pdf, id=1, 109.40875pt x 109.40875pt>
 File: fig/vut-zp2.pdf Graphic file (type pdf)
  <use fig/vut-zp2.pdf>
-Package pdftex.def Info: fig/vut-zp2.pdf used on input line 143.
-(pdftex.def)             Requested size: 99.58464pt x 99.58546pt.
-
-Overfull \hbox (109.58464pt too wide) in paragraph at lines 143--143
+Overfull \hbox (109.58464pt too wide) in paragraph at lines 148--148
 [][] 
  []
 
 <fig/fit-zp2.pdf, id=2, 120.45pt x 120.45pt>
 File: fig/fit-zp2.pdf Graphic file (type pdf)
  <use fig/fit-zp2.pdf>
-Package pdftex.def Info: fig/fit-zp2.pdf used on input line 143.
-(pdftex.def)             Requested size: 99.58464pt x 99.5875pt.
-
-Overfull \hbox (109.58464pt too wide) in paragraph at lines 143--143
+Overfull \hbox (109.58464pt too wide) in paragraph at lines 148--148
 [][] 
  []
 
 
-Overfull \hbox (25.43092pt too wide) in paragraph at lines 143--143
+Overfull \hbox (28.05893pt too wide) in paragraph at lines 148--148
 \IL2/phv/m/n/18 VOIP S VYU®ITÍM FUNKCIONÁL-NÍHO PRO-GRAMOVÁNÍ 
  []
 
 [1
 
-{/usr/share/texlive/texmf/fonts/map/pdftex/updmap/pdftex.map} <./fig/vut-zp2.pd
-f> <./fig/fit-zp2.pdf>]
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./fig/vut-zp2.pdf> <./fig/
+fit-zp2.pdf>]
 
 LaTeX Font Warning: Font shape `IL2/cmr/m/n' in size <16> not available
-(Font)              size <17.28> substituted on input line 143.
+(Font)              size <17.28> substituted on input line 148.
 
 
 LaTeX Font Warning: Font shape `IL2/cmr/bx/n' in size <16> not available
-(Font)              size <17.28> substituted on input line 143.
+(Font)              size <17.28> substituted on input line 148.
 
 [2]
 
 LaTeX Font Warning: Font shape `IL2/cmr/m/n' in size <18> not available
-(Font)              size <17.28> substituted on input line 143.
+(Font)              size <17.28> substituted on input line 148.
 
 
 LaTeX Font Warning: Font shape `IL2/cmr/bx/n' in size <18> not available
-(Font)              size <17.28> substituted on input line 143.
+(Font)              size <17.28> substituted on input line 148.
 
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 143.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 148.
 
-(/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
+(/usr/share/texmf-texlive/tex/latex/base/omscmr.fd
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 143.
- [3] (./projekt.toc
-LaTeX Font Info:    Try loading font information for U+msa on input line 5.
-
-(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Try loading font information for U+msb on input line 5.
-
-(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) [1
-
-
-])
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 148.
+ [3]
+No file projekt.toc.
 \tf@toc=\write3
 \openout3 = `projekt.toc'.
 
- (./obsah.tex
-[2]
+(./obsah.tex [1
+
+
+]
 Chapter 1.
-[3
+
+LaTeX Warning: Citation `SIPrfc' on page 2 undefined on input line 88.
+
+
+LaTeX Warning: Citation `h323standard' on page 2 undefined on input line 88.
+
+[2
 
 ]
+
+LaTeX Warning: Citation `h323standard' on page 3 undefined on input line 112.
+
+
+LaTeX Warning: Citation `h225' on page 3 undefined on input line 115.
+
+
+LaTeX Warning: Citation `h245' on page 3 undefined on input line 116.
+
+[3]
+
+LaTeX Warning: Citation `SIPrfc' on page 4 undefined on input line 131.
+
+
+LaTeX Warning: Citation `SIPrfc2' on page 4 undefined on input line 131.
+
+[4]
+
+LaTeX Warning: Citation `LCPCPv1definition' on page 5 undefined on input line 1
+53.
+
+
+LaTeX Warning: Citation `RTPstandard' on page 5 undefined on input line 158.
+
+[5] [6]
 Chapter 2.
-[4
+[7
 
-]
-Chapter 3.
-[5
-
-] [6] [7]
-Chapter 4.
-[8
-
-] (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+] (/usr/share/texmf-texlive/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2004/09/05 1.3 listings language file
 )
-(/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
+(/usr/share/texmf-texlive/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2007/02/22 1.4 (Carsten Heinz)
 )
-LaTeX Font Info:    Try loading font information for IL2+cmtt on input line 205
+LaTeX Font Info:    Try loading font information for IL2+cmtt on input line 204
 .
 
-(/usr/share/texlive/texmf-dist/tex/cslatex/base/il2cmtt.fd
+(/usr/share/texmf-texlive/tex/latex/cslatex/il2cmtt.fd
 File: il2cmtt.fd 1997/08/20 CSLaTeX font definitions
-)
-(./scodes/callbyvalue.c
+) (./scodes/callbyvalue.c
 LaTeX Font Info:    Font shape `IL2/cmtt/bx/n' in size <8> not available
 (Font)              Font shape `IL2/cmtt/m/n' tried instead on input line 1.
-) [9] (./scodes/callbyref.c)
-(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+) [8] (./scodes/callbyref.c)
+
+LaTeX Warning: Citation `lyah' on page 9 undefined on input line 215.
+
+(/usr/share/texmf-texlive/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2004/09/05 1.3 listings language file
 )
-(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang2.sty
+(/usr/share/texmf-texlive/tex/latex/listings/lstlang2.sty
 File: lstlang2.sty 2004/09/05 1.3 listings language file
 )
-(./scodes/lazy_evaluation_example.hs) [10
+(./scodes/lazy_evaluation_example.hs) [9
 
-] [11]
-Chapter 5.
-<fig/erlang_supervision_tree.pdf, id=60, 513.63593pt x 261.49121pt>
+] [10]
+Chapter 3.
+<fig/erlang_supervision_tree.pdf, id=56, 513.63593pt x 261.49121pt>
 File: fig/erlang_supervision_tree.pdf Graphic file (type pdf)
 
-<use fig/erlang_supervision_tree.pdf>
-Package pdftex.def Info: fig/erlang_supervision_tree.pdf used on input line 253
-.
-(pdftex.def)             Requested size: 410.9093pt x 209.19324pt.
- [12
+<use fig/erlang_supervision_tree.pdf> [11
 
-] [13 <./fig/erlang_supervision_tree.pdf>] [14] [15] (./scodes/behaviour_patter
-ns.erl
-LaTeX Font Info:    Try loading font information for OML+cmr on input line 5.
+]
 
-(/usr/share/texlive/texmf-dist/tex/latex/base/omlcmr.fd
-File: omlcmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
-)
-LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 5.
-)
-<fig/gen_server_example.pdf, id=82, 371.20876pt x 134.44514pt>
+LaTeX Warning: Citation `programming_erlang' on page 12 undefined on input line
+ 258.
+
+
+LaTeX Warning: Citation `erlang_programming' on page 12 undefined on input line
+ 258.
+
+[12 <./fig/erlang_supervision_tree.pdf>]
+
+LaTeX Warning: Citation `armstrong_history_erlang' on page 13 undefined on inpu
+t line 270.
+
+
+LaTeX Warning: Citation `armstrong_type_system' on page 13 undefined on input l
+ine 282.
+
+[13] [14] (./scodes/behaviour_patterns.erl)
+
+LaTeX Warning: Citation `lyse' on page 15 undefined on input line 312.
+
+<fig/gen_server_example.pdf, id=78, 371.20876pt x 134.44514pt>
 File: fig/gen_server_example.pdf Graphic file (type pdf)
 
 <use fig/gen_server_example.pdf>
-Package pdftex.def Info: fig/gen_server_example.pdf used on input line 321.
-(pdftex.def)             Requested size: 371.20784pt x 134.4448pt.
+LaTeX Font Info:    Try loading font information for U+msa on input line 327.
+
+(/usr/share/texmf-texlive/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2009/06/22 v3.00 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 327.
+
+(/usr/share/texmf-texlive/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2009/06/22 v3.00 AMS symbols B
+)
+
+LaTeX Warning: Citation `erlang_fsm' on page 15 undefined on input line 330.
 
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 326--333
+Underfull \hbox (badness 10000) in paragraph at lines 324--331
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 326--333
+Underfull \hbox (badness 10000) in paragraph at lines 324--331
 
  []
 
-[16
+[15
 
-] <fig/event_handler_example.png, id=90, 554.07pt x 273.02pt>
+ <./fig/gen_server_example.pdf>]
+<fig/event_handler_example.png, id=91, 554.07pt x 273.02pt>
 File: fig/event_handler_example.png Graphic file (type png)
 
-<use fig/event_handler_example.png>
-Package pdftex.def Info: fig/event_handler_example.png used on input line 342.
-(pdftex.def)             Requested size: 332.44456pt x 163.81326pt.
- [17 <./fig/gen_server_example.pdf> <./fig/event_handler_example.png>] [18
+<use fig/event_handler_example.png> [16 <./fig/event_handler_example.png>]
+[17
 
 ]
-Chapter 6.
-[19
+Chapter 4.
+[18
 
-] <fig/core_design.pdf, id=111, 845.04686pt x 597.50786pt>
+]
+
+pdfTeX warning: pdflatex (file ./fig/core_design.pdf): PDF inclusion: found PDF
+ version <1.5>, but at most version <1.4> allowed
+<fig/core_design.pdf, id=107, 845.04686pt x 597.50786pt>
 File: fig/core_design.pdf Graphic file (type pdf)
 
-<use fig/core_design.pdf>
-Package pdftex.def Info: fig/core_design.pdf used on input line 369.
-(pdftex.def)             Requested size: 253.516pt x 179.25374pt.
- [20 <./fig/core_design.pdf>] [21]
-<fig/generic_protocol.pdf, id=126, 561.12119pt x 388.28134pt>
+<use fig/core_design.pdf> [19 <./fig/core_design.pdf>]
+
+LaTeX Warning: Citation `computer_protocols_desing_and_validation' on page 20 u
+ndefined on input line 380.
+
+[20] <fig/generic_protocol.pdf, id=122, 561.12119pt x 388.28134pt>
 File: fig/generic_protocol.pdf Graphic file (type pdf)
 
-<use fig/generic_protocol.pdf>
-Package pdftex.def Info: fig/generic_protocol.pdf used on input line 412.
-(pdftex.def)             Requested size: 280.5599pt x 194.1402pt.
- (./scodes/generic_protocol_dat.erl) [22
+<use fig/generic_protocol.pdf> (./scodes/generic_protocol_dat.erl) [21 <./fig/g
+eneric_protocol.pdf>]
 
- <./fig/generic_protocol.pdf>]
+! LaTeX Error: Illegal character in array arg.
 
-LaTeX Warning: Reference `sec:GM_sp' on page 23 undefined on input line 438.
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.422 ...in{tabular}{|c{5.5cm}|c{5.5cm}|c{5.5cm}|}
+                                                  
+? 
+! Interruption.
+\GenericError  ...                                
+                                                  \endgroup 
+l.422 ...in{tabular}{|c{5.5cm}|c{5.5cm}|c{5.5cm}|}
+                                                  
+? 
+
+! LaTeX Error: Illegal character in array arg.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.422 ...in{tabular}{|c{5.5cm}|c{5.5cm}|c{5.5cm}|}
+                                                  
+? 
+
+! LaTeX Error: Illegal character in array arg.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.422 ...in{tabular}{|c{5.5cm}|c{5.5cm}|c{5.5cm}|}
+                                                  
+? q
+OK, entering \batchmode...
+
+LaTeX Warning: Reference `sec:GM_type_fields' on page 22 undefined on input lin
+e 425.
 
 
-Overfull \hbox (54.4397pt too wide) in paragraph at lines 427--442
+LaTeX Warning: Reference `sec:GM_caller_fields' on page 22 undefined on input l
+ine 427.
+
+
+LaTeX Warning: Reference `sec:GM_caller_fields' on page 22 undefined on input l
+ine 428.
+
+
+LaTeX Warning: Reference `sec:GM_route_fields' on page 22 undefined on input li
+ne 429.
+
+
+LaTeX Warning: Reference `sec:GM_route_fields' on page 22 undefined on input li
+ne 430.
+
+
+LaTeX Warning: Reference `sec:GM_rtr' on page 22 undefined on input line 431.
+
+
+LaTeX Warning: Reference `sec:GM_sp' on page 22 undefined on input line 433.
+
+
+Overfull \hbox (55.38176pt too wide) in paragraph at lines 422--437
 [][] 
  []
 
-[23
+ [22
 
-] <fig/simplecall_fsm.pdf, id=136, 597.50786pt x 845.04686pt>
+]
+
+pdfTeX warning: pdflatex (file ./fig/simplecall_fsm.pdf): PDF inclusion: found 
+PDF version <1.5>, but at most version <1.4> allowed
+
+<fig/simplecall_fsm.pdf, id=132, 597.50786pt x 845.04686pt>
 File: fig/simplecall_fsm.pdf Graphic file (type pdf)
+ <use fig/simplecall_fsm.pdf>
 
-<use fig/simplecall_fsm.pdf>
-Package pdftex.def Info: fig/simplecall_fsm.pdf used on input line 487.
-(pdftex.def)             Requested size: 238.9989pt x 338.01276pt.
- [24 <./fig/simplecall_fsm.pdf>]
-<fig/exchange_desing_1.pdf, id=176, 845.04686pt x 597.50786pt>
+LaTeX Warning: Reference `tab:GM' on page 23 undefined on input line 490.
+
+
+LaTeX Warning: Reference `sec:GP' on page 23 undefined on input line 490.
+
+ [23 <./fig/simplecall_fsm.pdf>]
+
+pdfTeX warning: pdflatex (file ./fig/exchange_desing_1.pdf): PDF inclusion: fou
+nd PDF version <1.5>, but at most version <1.4> allowed
+
+<fig/exchange_desing_1.pdf, id=171, 845.04686pt x 597.50786pt>
 File: fig/exchange_desing_1.pdf Graphic file (type pdf)
+ <use fig/exchange_desing_1.pdf>
 
-<use fig/exchange_desing_1.pdf>
-Package pdftex.def Info: fig/exchange_desing_1.pdf used on input line 499.
-(pdftex.def)             Requested size: 338.01276pt x 238.9989pt.
+LaTeX Warning: Reference `CancelVsBye' on page 24 undefined on input line 513.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-Overfull \hbox (50.24829pt too wide) in paragraph at lines 530--542
+Overfull \hbox (50.24829pt too wide) in paragraph at lines 525--537
  [][] 
  []
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[25 <./fig/exchange_desing_1.pdf>] [26]
-<fig/SIP_to_SIP_simplecall_using_generic_protocol.pdf, id=198, 821.41873pt x 55
+
+LaTeX Warning: Reference `GP' on page 24 undefined on input line 541.
+
+ [24 <./fig/exchange_desing_1.pdf>] [25]
+<fig/SIP_to_SIP_simplecall_using_generic_protocol.pdf, id=193, 821.41873pt x 55
 5.02756pt>
 File: fig/SIP_to_SIP_simplecall_using_generic_protocol.pdf Graphic file (type p
 df)
- <use fig/SIP_to_SIP_simplecall_using_generic_protocol.pdf>
-Package pdftex.def Info: fig/SIP_to_SIP_simplecall_using_generic_protocol.pdf u
-sed on input line 568.
-(pdftex.def)             Requested size: 246.42752pt x 166.50955pt.
 
-<fig/dfd.pdf, id=199, 597.50786pt x 845.04686pt>
+<use fig/SIP_to_SIP_simplecall_using_generic_protocol.pdf>
+
+pdfTeX warning: pdflatex (file ./fig/dfd.pdf): PDF inclusion: found PDF version
+ <1.5>, but at most version <1.4> allowed
+ <fig/dfd.pdf, id=195, 597.50786pt x 845.04686pt>
 File: fig/dfd.pdf Graphic file (type pdf)
  <use fig/dfd.pdf>
-Package pdftex.def Info: fig/dfd.pdf used on input line 576.
-(pdftex.def)             Requested size: 298.75319pt x 422.5224pt.
-
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[27 <./fig/SIP_to_SIP_simplecall_using_generic_protocol.pdf>] [28 <./fig/dfd.pd
-f>]
-<fig/exchange_design_supervision_tree.pdf, id=224, 688.50958pt x 403.24823pt>
+ [26 <./fig/SIP_to_SIP_simplecall_using_generic_protocol.pdf>] [27 <./fig/dfd.p
+df>]
+<fig/exchange_design_supervision_tree.pdf, id=218, 688.50958pt x 403.24823pt>
 File: fig/exchange_design_supervision_tree.pdf Graphic file (type pdf)
-
-<use fig/exchange_design_supervision_tree.pdf>
-Package pdftex.def Info: fig/exchange_design_supervision_tree.pdf used on input
- line 593.
-(pdftex.def)             Requested size: 344.25395pt x 201.62361pt.
- [29
+ <use fig/exchange_design_supervision_tree.pdf> [28
 
  <./fig/exchange_design_supervision_tree.pdf>]
-Chapter 7.
-<fig/VoIPnetwork.png, id=230, 1204.5pt x 241.90375pt>
+Chapter 5.
+ <fig/VoIPnetwork.png, id=225, 1204.5pt x 241.90375pt>
 File: fig/VoIPnetwork.png Graphic file (type png)
+ <use fig/VoIPnetwork.png> (./pkts/register1.out) [29
 
-<use fig/VoIPnetwork.png>
-Package pdftex.def Info: fig/VoIPnetwork.png used on input line 617.
-(pdftex.def)             Requested size: 240.89574pt x 48.37988pt.
- (./pkts/register1.out) [30
-
- <./fig/VoIPnetwork.png>]
-(./pkts/ok1.out) (./pkts/publish1.out) (./pkts/mna1.out) [31
+ <./fig/VoIPnetwork.png (PNG copy)>] (./pkts/ok1.out) (./pkts/publish1.out) (./
+pkts/mna1.out) [30
 
 ]
-<fig/SIP_to_SIP_simplecall.pdf, id=237, 845.04686pt x 597.50786pt>
+
+pdfTeX warning: pdflatex (file ./fig/SIP_to_SIP_simplecall.pdf): PDF inclusion:
+ found PDF version <1.5>, but at most version <1.4> allowed
+
+<fig/SIP_to_SIP_simplecall.pdf, id=232, 845.04686pt x 597.50786pt>
 File: fig/SIP_to_SIP_simplecall.pdf Graphic file (type pdf)
+ <use fig/SIP_to_SIP_simplecall.pdf> (./pkts/invite11.out)
 
-<use fig/SIP_to_SIP_simplecall.pdf>
-Package pdftex.def Info: fig/SIP_to_SIP_simplecall.pdf used on input line 645.
-(pdftex.def)             Requested size: 338.01276pt x 238.9989pt.
- (./pkts/invite11.out) [32 <./fig/SIP_to_SIP_simplecall.pdf>] (./pkts/invite12.
-out) [33
+LaTeX Warning: Reference `CancelVsBye' on page 31 undefined on input line 648.
+
+ [31 <./fig/SIP_to_SIP_simplecall.pdf>] (./pkts/invite12.out) [32
 
 ]
-Chapter 8.
-(./scodes/map_example.erl) (./scodes/fold_example.erl
-Overfull \hbox (1.14272pt too wide) in paragraph at lines 3--4
-[][][][][][][][][][][][][][][][][][][][][][][][][][] 
- []
+Chapter 6.
+ (./scodes/map_example.erl) (./scodes/fold_example.erl) [33
 
-) [34
+]
+Chapter 7.
+ [34
 
 ] [35]
-Chapter 9.
-[36
+Chapter 8.
+
+LaTeX Warning: Citation `GPL' on page 36 undefined on input line 683.
+
+ [36
 
 ] [37]
-Chapter 10.
-[38
+Chapter 9.
+ [38
 
-] [39]
-Chapter 11.
-[40
-
-]) (./projekt.bbl [41]) (./prilohy.tex [42
-
-] (./projekt.lof)
+])
+No file projekt.bbl.
+ (./prilohy.tex [39]
+No file projekt.lof.
 \tf@lof=\write4
 \openout4 = `projekt.lof'.
 
- [43
+ [40
 
-]
-(./projekt.lol)
+] (./projekt.lol)
 \tf@lol=\write5
 \openout5 = `projekt.lol'.
 
-) [44
+) [41
 
 ] (./projekt.aux)
 
@@ -623,32 +644,29 @@ LaTeX Font Warning: Size substitutions with differences
 LaTeX Warning: There were undefined references.
 
 
-LaTeX Warning: There were multiply-defined labels.
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
  ) 
 Here is how much of TeX's memory you used:
- 6133 strings out of 495063
- 80319 string characters out of 3182194
- 307007 words of memory out of 3000000
- 9134 multiletter control sequences out of 15000+200000
- 22586 words of font info for 53 fonts, out of 3000000 for 9000
- 14 hyphenation exceptions out of 8191
- 38i,8n,59p,1346b,1533s stack positions out of 5000i,500n,10000p,200000b,50000s
-{/usr/share/texlive/texmf-dist/fonts/enc/dvips/cs/xl2.enc}</usr/share/texlive
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf
--dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/f
-onts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
-blic/cs/csbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/cs/csbx12.
-pfb></usr/share/texlive/texmf-dist/fonts/type1/public/cs/csr10.pfb></usr/share/
-texlive/texmf-dist/fonts/type1/public/cs/csti10.pfb></usr/share/texlive/texmf-d
-ist/fonts/type1/public/cs/cstt10.pfb></usr/share/texlive/texmf-dist/fonts/type1
-/public/cs/cstt8.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uh
-vr8a.pfb>
-Output written on projekt.pdf (47 pages, 398935 bytes).
+ 5524 strings out of 495027
+ 69567 string characters out of 1181418
+ 294986 words of memory out of 3000000
+ 8568 multiletter control sequences out of 15000+50000
+ 20642 words of font info for 57 fonts, out of 3000000 for 9000
+ 38 hyphenation exceptions out of 8191
+ 35i,8n,59p,1346b,1561s stack positions out of 5000i,500n,10000p,200000b,50000s
+{/usr/share/texmf-texlive/fonts/enc/dvips/base/8a.enc}</usr/share/texmf-texli
+ve/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-texlive/fonts/ty
+pe1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-texlive/fonts/type1/public/a
+msfonts/cm/cmsy10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/
+cmsy8.pfb></usr/share/texmf-texlive/fonts/type1/public/cs/csbx10.pfb></usr/shar
+e/texmf-texlive/fonts/type1/public/cs/csbx12.pfb></usr/share/texmf-texlive/font
+s/type1/public/cs/csr10.pfb></usr/share/texmf-texlive/fonts/type1/public/cs/cst
+i10.pfb></usr/share/texmf-texlive/fonts/type1/public/cs/cstt8.pfb></usr/share/t
+exmf-texlive/fonts/type1/urw/helvetic/uhvr8a.pfb>
+Output written on projekt.pdf (44 pages, 417166 bytes).
 PDF statistics:
- 328 PDF objects out of 1000 (max. 8388607)
- 221 compressed objects within 3 object streams
+ 311 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  71 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -2,22 +2,20 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Erlang supervision tree}}{12}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Erlang gen\_event behaviour}}{15}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Erlang gen\_event behaviour}}{16}
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces exchange core process diagram}}{19}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Generic protocol}}{21}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Generic Protocol use case}}{23}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Generic Exchange design}}{24}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces SIP to SIP simple call MSC}}{26}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces SIP Invite DFD}}{27}
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Generic exchange supervision tree}}{28}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Erlang supervision tree}}{13}
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Erlang gen\_event}}{17}
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Erlang gen\_event behaviour}}{17}
-\addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces exchange core process diagram}}{20}
-\contentsline {figure}{\numberline {6.2}{\ignorespaces Generic protocol}}{22}
-\contentsline {figure}{\numberline {6.3}{\ignorespaces Generic Protocol use case}}{24}
-\contentsline {figure}{\numberline {6.4}{\ignorespaces Generic Exchange design}}{25}
-\contentsline {figure}{\numberline {6.5}{\ignorespaces SIP to SIP simple call MSC}}{27}
-\contentsline {figure}{\numberline {6.6}{\ignorespaces SIP Invite DFD}}{28}
-\contentsline {figure}{\numberline {6.7}{\ignorespaces Generic exchange supervision tree}}{29}
-\addvspace {10\p@ }
-\contentsline {figure}{\numberline {7.1}{\ignorespaces A sample VoIP network configuration}}{30}
-\contentsline {figure}{\numberline {7.2}{\ignorespaces SIP to SIP simplecall utilizing Generic Exchange}}{32}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces A sample VoIP network configuration}}{29}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces SIP to SIP simplecall utilizing Generic Exchange}}{31}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
