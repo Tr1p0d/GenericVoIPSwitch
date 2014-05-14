@@ -13,7 +13,7 @@
    height="210mm"
    id="svg2847"
    version="1.1"
-   inkscape:version="0.47 r22583"
+   inkscape:version="0.48.4 r9939"
    sodipodi:docname="SIP_to_SIP_simplecall_using_generic_protocol.svg">
   <defs
      id="defs2849">
@@ -467,6 +467,48 @@
        inkscape:vp_y="0 : 1000 : 0"
        inkscape:vp_x="0 : 0.5 : 1"
        sodipodi:type="inkscape:persp3d" />
+    <marker
+       inkscape:stockid="Arrow1Lstart"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow1Lstart-98-6"
+       style="overflow:visible">
+      <path
+         inkscape:connector-curvature="0"
+         id="path3729-32-5"
+         d="M 0,0 5,-5 -12.5,0 5,5 0,0 z"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;marker-start:none"
+         transform="matrix(0.8,0,0,0.8,10,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Lend"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow1Lend-03-64"
+       style="overflow:visible">
+      <path
+         inkscape:connector-curvature="0"
+         id="path3732-47-4"
+         d="M 0,0 5,-5 -12.5,0 5,5 0,0 z"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;marker-start:none"
+         transform="matrix(-0.8,0,0,-0.8,-10,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Lend"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow1Lend-03-2"
+       style="overflow:visible">
+      <path
+         inkscape:connector-curvature="0"
+         id="path3732-47-82"
+         d="M 0,0 5,-5 -12.5,0 5,5 0,0 z"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;marker-start:none"
+         transform="matrix(-0.8,0,0,-0.8,-10,0)" />
+    </marker>
   </defs>
   <sodipodi:namedview
      inkscape:document-units="mm"
@@ -475,15 +517,15 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.61399265"
-     inkscape:cx="240.46044"
-     inkscape:cy="356.39914"
+     inkscape:zoom="1.2279853"
+     inkscape:cx="305.07692"
+     inkscape:cy="381.79018"
      inkscape:current-layer="layer1"
      id="namedview2851"
      showgrid="false"
-     inkscape:window-width="1432"
-     inkscape:window-height="806"
-     inkscape:window-x="0"
+     inkscape:window-width="1920"
+     inkscape:window-height="1055"
+     inkscape:window-x="1920"
      inkscape:window-y="0"
      inkscape:window-maximized="1" />
   <metadata
@@ -567,38 +609,38 @@
          y="171.64017">INVITE</tspan></text>
     <path
        style="fill:none;stroke:#000000;stroke-width:0.99921262;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-end:url(#Arrow1Lend)"
-       d="m 817.38446,260.77237 176.30504,0"
+       d="m 819.01315,246.92855 176.30504,0"
        id="path2952-0"
        inkscape:connector-type="polyline"
        inkscape:connector-curvature="0" />
     <text
        xml:space="preserve"
        style="font-size:11.36259079px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
-       x="846.19427"
-       y="266.63947"
+       x="847.76471"
+       y="252.28241"
        id="text4174-8"
        transform="scale(1.0370726,0.96425264)"><tspan
          sodipodi:role="line"
          id="tspan4176-3"
-         x="846.19427"
-         y="266.63947">INVITE</tspan></text>
+         x="847.76471"
+         y="252.28241">INVITE</tspan></text>
     <path
        style="fill:none;stroke:#000000;stroke-width:0.99921262;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-start:url(#Arrow1Lstart);marker-end:none"
-       d="m 817.72176,285.88021 176.30505,0"
+       d="m 816.09308,279.36547 176.30505,0"
        id="path2952-0-2"
        inkscape:connector-type="polyline"
        inkscape:connector-curvature="0" />
     <text
        xml:space="preserve"
        style="font-size:11.36259079px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
-       x="836.9823"
-       y="292.85693"
+       x="835.4118"
+       y="286.10068"
        id="text4174-8-1"
        transform="scale(1.0370726,0.96425264)"><tspan
          sodipodi:role="line"
          id="tspan4176-3-5"
-         x="836.9823"
-         y="292.85693">180 RINGING</tspan></text>
+         x="835.4118"
+         y="286.10068">180 RINGING</tspan></text>
     <path
        style="fill:none;stroke:#000000;stroke-width:0.99921262;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-start:url(#Arrow1Lstart);marker-end:none"
        d="m 819.11193,346.89389 176.30506,0"
@@ -618,21 +660,21 @@
          y="354.9382">200 OK</tspan></text>
     <path
        style="fill:none;stroke:#000000;stroke-width:0.99921262;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-start:url(#Arrow1Lstart);marker-end:none"
-       d="m 200.52699,387.81645 176.30506,0"
+       d="m 62.903193,327.55514 176.305057,0"
        id="path2952-0-2-9"
        inkscape:connector-type="polyline"
        inkscape:connector-curvature="0" />
     <text
        xml:space="preserve"
        style="font-size:11.36259079px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
-       x="107.576"
-       y="348.74487"
+       x="106.79076"
+       y="333.5433"
        id="text4174-8-1-0"
        transform="scale(1.0370726,0.96425264)"><tspan
          sodipodi:role="line"
          id="tspan4176-3-5-5"
-         x="107.576"
-         y="348.74487">180 RINGING</tspan></text>
+         x="106.79076"
+         y="333.5433">180 RINGING</tspan></text>
     <path
        style="fill:none;stroke:#000000;stroke-width:0.99921262;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-start:url(#Arrow1Lstart);marker-end:none"
        d="m 61.035997,387.75447 176.305073,0"
@@ -775,40 +817,23 @@
          id="tspan4176-3-5-5-7"
          x="107.97318"
          y="218.58591">100 TRYING</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-size:11.36259079px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
-       x="327.54544"
-       y="237.85495"
-       id="text4174-0"
-       transform="scale(1.0370726,0.96425264)"><tspan
-         sodipodi:role="line"
-         id="tspan4176-0"
-         x="327.54544"
-         y="237.85495">MAKE CALL</tspan></text>
     <path
        style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow1Lend-03)"
-       d="m 236.15918,232.68771 287.7201,0 c 1.5,0 3,-0.81434 3,-1.62868 l 0,0"
-       id="path4816"
-       inkscape:connector-type="orthogonal"
-       inkscape:connector-curvature="3" />
-    <path
-       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow1Lend-03)"
-       d="m 526.06494,245.71717 285.27707,0 c 1.5,0 3,-0.81434 3,-1.62868 l 0,0"
+       d="m 528.50797,225.35862 285.27707,0 c 1.5,0 3,-0.81434 3,-1.62868 l 0,0"
        id="path5024"
        inkscape:connector-type="orthogonal"
        inkscape:connector-curvature="3" />
     <text
        xml:space="preserve"
        style="font-size:11.36259079px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
-       x="615.18457"
-       y="249.67284"
+       x="617.54028"
+       y="228.55954"
        id="text4174-0-5"
        transform="scale(1.0370726,0.96425264)"><tspan
          sodipodi:role="line"
          id="tspan4176-0-4"
-         x="615.18457"
-         y="249.67284">MAKE CALL</tspan></text>
+         x="617.54028"
+         y="228.55954">MAKE CALL</tspan></text>
     <path
        style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow1Lend-03)"
        d="m 815.15635,299.46375 -285.0197,0"
@@ -936,7 +961,7 @@
        inkscape:connector-curvature="3" />
     <path
        style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-start:url(#Arrow1Lstart-98);marker-end:none"
-       d="m 239.62014,123.3876 287.72009,0 c 1.5,0 3,-0.81434 3,-1.62868 l 0,0"
+       d="m 239.62014,118.50155 287.72009,0 c 1.5,0 3,-0.81434 3,-1.62868 l 0,0"
        id="path4816-1-9-8"
        inkscape:connector-type="orthogonal"
        inkscape:connector-curvature="3" />
@@ -955,13 +980,13 @@
        xml:space="preserve"
        style="font-size:11.36259079px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
        x="348.99615"
-       y="120.2746"
+       y="115.20741"
        id="text4174-0-5-6-8-5-1"
        transform="scale(1.0370726,0.96425264)"><tspan
          sodipodi:role="line"
          id="tspan4176-0-4-5-9-4-6"
          x="348.99615"
-         y="120.2746">ACCEPT</tspan></text>
+         y="115.20741">ACCEPT</tspan></text>
     <path
        style="fill:none;stroke:#000000;stroke-width:0.99921262;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-end:url(#Arrow1Lend)"
        d="m 61.381021,73.650996 176.305049,0"
@@ -978,7 +1003,7 @@
          sodipodi:role="line"
          id="tspan4176-42"
          x="121.92728"
-         y="67.513847">INVITE</tspan></text>
+         y="67.513847">REGISTER</tspan></text>
     <path
        style="fill:none;stroke:#000000;stroke-width:0.99921262;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-start:url(#Arrow1Lstart);marker-end:none"
        d="m 61.177425,128.51822 176.305065,0"
@@ -1029,5 +1054,56 @@
          id="tspan2884-4-1"
          x="841.10638"
          y="37.391342">SIP GW</tspan></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-start:url(#Arrow1Lstart-98);marker-end:none"
+       d="m 239.00938,369.49716 287.72009,0 c 1.5,0 3,-0.81434 3,-1.62868 l 0,0"
+       id="path4816-1-9-8-6"
+       inkscape:connector-type="orthogonal"
+       inkscape:connector-curvature="3" />
+    <text
+       xml:space="preserve"
+       style="font-size:11.36259079px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       x="338.92233"
+       y="372.12994"
+       id="text4174-0-5-6-6-7-0"
+       transform="scale(1.0370726,0.96425264)"><tspan
+         sodipodi:role="line"
+         id="tspan4176-0-4-5-6-5-6"
+         x="338.92233"
+         y="372.12994">ACCEPT</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:11.36259079px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       x="331.07898"
+       y="93.674606"
+       id="text4174-0-7"
+       transform="scale(1.0370726,0.96425264)"><tspan
+         sodipodi:role="line"
+         id="tspan4176-0-1"
+         x="331.07898"
+         y="93.674606">ASSOCIATE</tspan></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow1Lend-03)"
+       d="m 239.82372,93.661435 287.7201,0 c 1.5,0 3,-0.81434 3,-1.62868 l 0,0"
+       id="path4816-2"
+       inkscape:connector-type="orthogonal"
+       inkscape:connector-curvature="3" />
+    <text
+       xml:space="preserve"
+       style="font-size:11.36259079px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       x="329.50851"
+       y="198.39655"
+       id="text4174-0-7-6"
+       transform="scale(1.0370726,0.96425264)"><tspan
+         sodipodi:role="line"
+         id="tspan4176-0-1-9"
+         x="329.50851"
+         y="198.39655">MAKE CALL</tspan></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow1Lend-03)"
+       d="m 238.19503,194.63984 287.7201,0 c 1.5,0 3,-0.81434 3,-1.62868 l 0,0"
+       id="path4816-2-4"
+       inkscape:connector-type="orthogonal"
+       inkscape:connector-curvature="3" />
   </g>
 </svg>

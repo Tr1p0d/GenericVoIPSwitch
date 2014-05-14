@@ -14,7 +14,7 @@
    id="svg2"
    version="1.1"
    inkscape:version="0.48.4 r9939"
-   sodipodi:docname="simplecall_fsm.svg">
+   sodipodi:docname="simplecall_fsm.pdf">
   <defs
      id="defs4">
     <marker
@@ -72,7 +72,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -435,71 +435,38 @@
     <text
        xml:space="preserve"
        style="font-size:16.68098068px;font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans Italic"
-       x="-271.95316"
-       y="365.32999"
+       x="40.376972"
+       y="197.53265"
        id="text5363-7-0-9-9-20"
        sodipodi:linespacing="125%"
        transform="scale(0.97881779,1.0216406)"><tspan
          sodipodi:role="line"
          id="tspan5365-7-7-1-4-7"
-         x="-271.95316"
-         y="365.32999">caller initiation sequence</tspan></text>
+         x="40.376972"
+         y="197.53265">caller initiation sequence</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:16.68098068px;font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans Italic"
-       x="797.02637"
-       y="374.29214"
+       x="483.23676"
+       y="193.91"
        id="text5363-7-0-9-9-20-3"
        sodipodi:linespacing="125%"
        transform="scale(0.97881779,1.0216406)"><tspan
          sodipodi:role="line"
-         x="797.02637"
-         y="374.29214"
+         x="483.23676"
+         y="193.91"
          id="tspan3043">callee initiation sequence</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:16.68098068px;font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans Italic"
-       x="-257.89124"
-       y="707.68646"
+       x="58.817352"
+       y="710.48309"
        id="text5363-7-0-9-9-20-3-1"
        sodipodi:linespacing="125%"
        transform="scale(0.97881779,1.0216406)"><tspan
          sodipodi:role="line"
          id="tspan5365-7-7-1-4-7-0-2"
-         x="-257.89124"
-         y="707.68646">caler teardown sequence</tspan></text>
-    <path
-       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m -271.73104,379.09552 213.647269,0"
-       id="path3049"
-       inkscape:connector-type="orthogonal"
-       inkscape:connector-curvature="0" />
-    <path
-       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 23.233509,415.461 -209.101579,-0.50507 0,-35.86042"
-       id="path3053"
-       inkscape:connector-curvature="0" />
-    <path
-       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 691.95449,425.05745 237.38585,-1.01015 -1.01015,-35.35534"
-       id="path3055"
-       inkscape:connector-curvature="0" />
-    <path
-       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 769.73624,387.68181 222.23356,0 0,1.01015"
-       id="path3058"
-       inkscape:connector-type="orthogonal"
-       inkscape:connector-curvature="0" />
-    <path
-       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m -265.71429,733.79075 228.571433,0 0,-1.42857"
-       id="path3060"
-       inkscape:connector-type="orthogonal"
-       inkscape:connector-curvature="0" />
-    <path
-       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m -185.71429,733.79075 1.42858,68.57143 201.428567,0"
-       id="path3062"
-       inkscape:connector-curvature="0" />
+         x="58.817352"
+         y="710.48309">caler teardown sequence</tspan></text>
   </g>
 </svg>

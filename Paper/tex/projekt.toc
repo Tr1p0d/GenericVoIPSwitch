@@ -1,64 +1,60 @@
 \select@language {english}
-\contentsline {chapter}{\numberline {1}Prologue}{2}
-\contentsline {section}{\numberline {1.1}Internet telephony}{3}
-\contentsline {section}{\numberline {1.2}H.323}{3}
-\contentsline {section}{\numberline {1.3}SIP}{4}
-\contentsline {section}{\numberline {1.4}LCPCPv1}{5}
-\contentsline {section}{\numberline {1.5}RTP}{5}
-\contentsline {section}{\numberline {1.6}Summary}{5}
-\contentsline {chapter}{\numberline {2}Declarative programming paradigm}{7}
-\contentsline {section}{\numberline {2.1}Functional programming}{7}
-\contentsline {subsection}{\numberline {2.1.1}Evaluation strategy}{8}
-\contentsline {subsubsection}{Call-by-Value}{8}
-\contentsline {subsubsection}{Call-by-Reference}{8}
-\contentsline {subsubsection}{Call-by-Name}{9}
-\contentsline {subsubsection}{Call-by-Need}{9}
-\contentsline {subsection}{\numberline {2.1.2}Type systems}{9}
-\contentsline {section}{\numberline {2.2}Summary}{10}
-\contentsline {chapter}{\numberline {3}Programming using Erlang}{11}
-\contentsline {section}{\numberline {3.1}High reliability}{11}
-\contentsline {subsection}{\numberline {3.1.1}Fault tolerace}{11}
-\contentsline {subsection}{\numberline {3.1.2}Hot-code swaping}{12}
-\contentsline {section}{\numberline {3.2}Massive concurrency}{12}
-\contentsline {section}{\numberline {3.3}Erlang history and philosophy}{13}
-\contentsline {section}{\numberline {3.4}Why Erlang}{13}
-\contentsline {section}{\numberline {3.5}Erlang type system}{14}
-\contentsline {subsection}{\numberline {3.5.1}TypEr}{14}
-\contentsline {subsection}{\numberline {3.5.2}Dializer}{14}
-\contentsline {section}{\numberline {3.6}Erlang evaluation strategy}{14}
-\contentsline {section}{\numberline {3.7}Open Telecom Platform}{14}
-\contentsline {section}{\numberline {3.8}Behaviours}{15}
-\contentsline {subsection}{\numberline {3.8.1}Generic servers}{15}
-\contentsline {subsection}{\numberline {3.8.2}Finite state machines}{16}
-\contentsline {subsection}{\numberline {3.8.3}Event handlers}{16}
-\contentsline {subsection}{\numberline {3.8.4}Applications}{17}
-\contentsline {chapter}{\numberline {4}Design and implementation of Generic VoIP Exchange}{18}
-\contentsline {section}{\numberline {4.1}Generic VoIP Exchange Core}{18}
-\contentsline {subsubsection}{Dialog router}{19}
-\contentsline {subsubsection}{Dialog Manager}{19}
-\contentsline {subsubsection}{Dialog finite state machine}{20}
-\contentsline {subsection}{\numberline {4.1.1}Generic Protocol}{20}
-\contentsline {subsubsection}{Generic message type header field}{22}
-\contentsline {subsubsection}{Generic message caller and callee header fields}{22}
-\contentsline {subsubsection}{Generic message downstreamRoute and upstreamRoute header field}{22}
-\contentsline {subsubsection}{Generic message routeToRecord header field}{22}
-\contentsline {subsubsection}{Generic message specificProtocol header field}{23}
-\contentsline {subsection}{\numberline {4.1.2}Example}{23}
-\contentsline {section}{\numberline {4.2}General VoIP Exchange peripherals}{24}
-\contentsline {subsection}{\numberline {4.2.1}SIP to Generic Protocol translation}{24}
-\contentsline {subsubsection}{SIP 3-way handshake}{25}
-\contentsline {subsubsection}{SIP/CANCEL vs SIP/BYE}{25}
-\contentsline {subsubsection}{Contacts header}{25}
-\contentsline {subsection}{\numberline {4.2.2}LCP peripheral}{26}
-\contentsline {section}{\numberline {4.3}Summary}{26}
-\contentsline {chapter}{\numberline {5}Exchange in action}{29}
-\contentsline {section}{\numberline {5.1}SIP registration}{29}
-\contentsline {section}{\numberline {5.2}SIP to SIP simple call}{31}
-\contentsline {chapter}{\numberline {6}Erlang role in implementation}{33}
-\contentsline {chapter}{\numberline {7}Automated software discrepancies discovery}{34}
-\contentsline {section}{\numberline {7.1}Type system and type inference}{34}
-\contentsline {section}{\numberline {7.2}Static Analysis}{34}
-\contentsline {section}{\numberline {7.3}Results after applying it to my source code}{34}
-\contentsline {chapter}{\numberline {8}Generic Exchange in contrast with Asterisk}{36}
-\contentsline {section}{\numberline {8.1}Summary}{37}
-\contentsline {chapter}{\numberline {9}Conclusion}{38}
+\contentsline {chapter}{\numberline {1}Prologue}{5}
+\contentsline {chapter}{\numberline {2}Internet telephony}{6}
+\contentsline {section}{\numberline {2.1}H.323}{7}
+\contentsline {section}{\numberline {2.2}SIP}{7}
+\contentsline {section}{\numberline {2.3}LCPCPv1}{8}
+\contentsline {section}{\numberline {2.4}RTP}{8}
+\contentsline {section}{\numberline {2.5}Summary}{9}
+\contentsline {chapter}{\numberline {3}Declarative programming paradigm}{10}
+\contentsline {section}{\numberline {3.1}Functional programming}{10}
+\contentsline {subsection}{\numberline {3.1.1}Evaluation strategy}{11}
+\contentsline {subsubsection}{Call-by-Value}{11}
+\contentsline {subsubsection}{Call-by-Reference}{11}
+\contentsline {subsubsection}{Call-by-Name}{12}
+\contentsline {subsubsection}{Call-by-Need}{12}
+\contentsline {subsection}{\numberline {3.1.2}Type systems}{12}
+\contentsline {section}{\numberline {3.2}Summary}{13}
+\contentsline {chapter}{\numberline {4}Programming using Erlang}{14}
+\contentsline {section}{\numberline {4.1}High reliability}{14}
+\contentsline {subsection}{\numberline {4.1.1}Fault tolerance}{14}
+\contentsline {subsection}{\numberline {4.1.2}Hot-code swapping}{15}
+\contentsline {section}{\numberline {4.2}Massive concurrency}{15}
+\contentsline {section}{\numberline {4.3}Erlang history and philosophy}{16}
+\contentsline {section}{\numberline {4.4}Why Erlang}{16}
+\contentsline {section}{\numberline {4.5}Erlang type system and static analysis}{17}
+\contentsline {subsection}{\numberline {4.5.1}TypEr}{17}
+\contentsline {subsection}{\numberline {4.5.2}DiaLYZer}{17}
+\contentsline {subsection}{\numberline {4.5.3}Result after applying static analysis to Generic Exchange source code}{17}
+\contentsline {section}{\numberline {4.6}Open Telecom Platform}{18}
+\contentsline {section}{\numberline {4.7}Behaviours}{18}
+\contentsline {subsection}{\numberline {4.7.1}Generic servers}{18}
+\contentsline {subsection}{\numberline {4.7.2}Finite state machines}{19}
+\contentsline {subsection}{\numberline {4.7.3}Event handlers}{19}
+\contentsline {subsection}{\numberline {4.7.4}Applications}{19}
+\contentsline {chapter}{\numberline {5}Design and implementation of Generic VoIP Exchange}{21}
+\contentsline {section}{\numberline {5.1}Generic VoIP Exchange Core}{21}
+\contentsline {subsubsection}{Dialog router}{22}
+\contentsline {subsubsection}{Dialog Manager}{22}
+\contentsline {subsubsection}{Dialog finite state machine}{23}
+\contentsline {subsection}{\numberline {5.1.1}Generic Protocol}{23}
+\contentsline {subsubsection}{Generic message type header field}{25}
+\contentsline {subsubsection}{Generic message caller and callee header fields}{25}
+\contentsline {subsubsection}{Generic message downstreamRoute and upstreamRoute header field}{26}
+\contentsline {subsubsection}{Generic message routeToRecord header field}{26}
+\contentsline {subsubsection}{Generic message specificProtocol header field}{26}
+\contentsline {subsection}{\numberline {5.1.2}Example}{26}
+\contentsline {section}{\numberline {5.2}General VoIP Exchange peripherals}{27}
+\contentsline {subsection}{\numberline {5.2.1}SIP to Generic Protocol translation}{27}
+\contentsline {subsubsection}{SIP 3-way handshake}{28}
+\contentsline {subsubsection}{SIP/CANCEL vs SIP/BYE}{29}
+\contentsline {subsubsection}{Contacts header}{29}
+\contentsline {subsection}{\numberline {5.2.2}LCP peripheral}{29}
+\contentsline {section}{\numberline {5.3}Summary}{29}
+\contentsline {subsection}{\numberline {5.3.1}Erlang role during implementation}{31}
+\contentsline {chapter}{\numberline {6}Scenarios and case studies}{33}
+\contentsline {section}{\numberline {6.1}SIP registration}{33}
+\contentsline {section}{\numberline {6.2}SIP to SIP simple call}{34}
+\contentsline {section}{\numberline {6.3}Generic Exchange in contrast with Asterisk}{36}
+\contentsline {section}{\numberline {6.4}Summary}{37}
+\contentsline {chapter}{\numberline {7}Conclusion}{38}

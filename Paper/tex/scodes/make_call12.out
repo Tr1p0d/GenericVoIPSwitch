@@ -1,0 +1,11 @@
+type : make_call
+target : <<1016@Nest>>
+caller : {1017, ielycgdbsgodvue@Nest, <<vrbod>>}
+calee : {1016, ielycgdbsgodvue@Nest, <<>>}
+upstreamRoute : []
+downStreamRoute : [{{10.0.0.139}, 5070}, z9hG4bKnbjmsugd},{{Nest},5060},1RWwgA}]
+routeToRecord : [],
+sequenceNum : 790,
+TTL : 69
+specificHeaders=[<<sdp not shown>>]
+
