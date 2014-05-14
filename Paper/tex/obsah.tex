@@ -211,7 +211,7 @@ A major drawback of previous evaluation mechanisms were in cases when function a
 \subsubsection{Call-by-Need}
 Call-by-Need, also called the Lazy evaluation delays argument evaluation until it is truly needed. Improvements to Call-by-Name is that arguments are evaluated only once. Such improvement significantly speeds-up overall program run, but since operation order becomes indeterminate it is hard to combine with imperative features such as exception handling. It is main reason why this approach is not widely used. Haskell programming language adopted Lazy evaluation and makes following construct possible\cite{lyah}. 
 
-\lstinputlisting[style=customhaskell, caption=map function example in Haskell programming language]{scodes/lazy_evaluation_example.hs}
+\lstinputlisting[style=customhaskell, caption=Example of a map function in Haskell]{scodes/lazy_evaluation_example.hs}
 
 In the preceding example is taken sixth element of list. But since our list is infinite in other than lazy evaluation concept program would stuck on evaluating the endless loop.
 
@@ -360,7 +360,7 @@ The main part of Core is the Generic Protocol. It is represented by a finite sta
 \begin{figure}[h!]
 \centering
 \includegraphics[scale=0.5]{fig/core_design}
-\caption[exchange core process diagram] {Generic Core process diagram}
+\caption[Generic Exchange Core process diagram] {Generic Core process diagram}
 \end{figure}
 
 \subsubsection{Dialog router}
@@ -408,7 +408,7 @@ Since we want a Generic Core to persist for a long time without a change, a smal
 
 The above finite state machine displays a Generic protocol and all possible transitions that could be taken during signaling. Transition conditions are not shown yet, because it would make whole protocol hard to understand, they will be shown in a particular use case later. When a signaling transaction is started, the exchange creates two of this finite state machines. One for every part of transaction (in our case client and server transaction). The reason why, there are two transactions is for cases where one transaction wont suffice such as when user calls itself. Now lets observe Generic Protocol Message structure (listing \ref{tab:GM}). 
 
-\lstinputlisting[caption=generic protocol message structure, style=customdat]{scodes/generic_protocol_dat.erl}
+\lstinputlisting[caption=Generic Protocol message structure, style=customdat]{scodes/generic_protocol_dat.erl}
 
 The finite state machine transitions from a state to a state as a reaction to Generic Messages. Messages are structured into fields, these fields were designed to be sufficient and to contain only the necessary information. Particularly the routing information and a message type. Protocol specific information which are not present in Generic Message are dumped during translation process. Lets take a closer look at the message structure now and we will demonstrate functionality on an example \ref{tab:GM}.
 
@@ -569,22 +569,22 @@ Caller at \textit{10.0.0.139:5070} asks the Generic Exchange at \textit{10.0.0.1
 
 SIP peripheral then translates the SIP message into Generic Message and passes it to the Generic Exchange Core.
 
-\lstinputlisting[caption=SIP registration request, style=customdat]{scodes/make_call11.out}
+\lstinputlisting[caption=Generic Protocol make\_call request, style=customdat]{scodes/make_call11.out}
 
 Core performs a lookup and finds callee 1016 in its association table. It then appends a route, and sends (listing 5.4) the Generic Message back to the SIP peripheral.
 
-\lstinputlisting[caption=SIP registration request, style=customdat]{scodes/make_call12.out}
+\lstinputlisting[caption=Routed Generic Protocol make\_call request, style=customdat]{scodes/make_call12.out}
 
 After peripherheral receives the Generic Message alongside next hop information, it translates it back into the SIP message and puts it on the wire.
 
-\lstinputlisting[caption=SIP registration request routed, style=customdat]{pkts/invite12.out}
+\lstinputlisting[caption=Routed SIP registration request, style=customdat]{pkts/invite12.out}
 
 Just as a matter of interest, in the figure \ref{GEsuptree} you can see Generic Exchange supervision tree as present in the system.
 
 \begin{figure}[h!]
 \centering
 \includegraphics[scale=0.5]{fig/exchange_design_supervision_tree}
-\caption[Generic exchange supervision tree] {Generic exchange supervision tree}
+\caption[Generic Exchange supervision tree] {Generic exchange supervision tree}
 \label{GEsuptree}
 \end{figure}
 
@@ -592,10 +592,10 @@ Just as a matter of interest, in the figure \ref{GEsuptree} you can see Generic 
 Apart from its significant difference compare to imperative languages. It made some programming expressions much more readable. As an example the following code snippets were taken directly from exchange source code.
 
 In the following example a translation from Generic protocol to SIP Via header filed is shown. The reverse is needed to maintain correct order of Vias which is reversed in Generic protocol.
-\lstinputlisting[style=customhaskell, caption=map function example in generic\_exchange\_sip\_generic.erl]{scodes/map_example.erl}
+\lstinputlisting[style=customhaskell, caption=Example of Erlang map function as present in generic\_exchange\_sip\_generic.erl]{scodes/map_example.erl}
 
 The following example takes care of translation of SIP Via header field into Generic protocol DownStreamroute which has similar meaning. Instead of complicated loop in arbitrary imperative language, use of foldr funcion makes reading and understanding easier:
-\lstinputlisting[style=customerl, caption=foldr function example in generic\_exchange\_sip\_generic.erl]{scodes/fold_example.erl}
+\lstinputlisting[style=customerl, caption=Example of Erlang map function as present in generic\_exchange\_sip\_generic.erl]{scodes/fold_example.erl}
 
 As a huge advantage I consider a combination of Erlang high-level properties combined with OTP and message-passing concurrency. Trough implementation phase I encountered numerous errors in design (that could be preceded by making deeper design) and other minor errors. Solving these errors never took me more than few minutes. In most cases it usually took me just a few seconds to figure out what's wrong. And trough whole implementation phase, I never used debugger. A huge part in this play Erlang atoms which help to identify software parts and messages nice and easy.
 
@@ -609,17 +609,24 @@ In this chapter we will observe a simple call example of 2 SIP clients. As examp
 \begin{figure}[h!]
 \centering
 \includegraphics[scale=0.2]{fig/VoIPnetwork}
-\caption[A sample VoIP network configuration] {A sample VoIP network configuration}
+\caption[VoIP network configuration] {VoIP network configuration}
 \end{figure}
 
 \section{SIP registration}
-In this section we will come trough an example of successful SIP registration and proper handling of method, which are not supported at this time. The registration process is initiated by a client. Client is configured with SIP registrar address and sends a registration request. 
+In this section we will come trough an example of successful SIP registration and proper handling of method, which are not supported at this time. The registration process is initiated by a client. Client is configured with SIP registrar address and sends a registration request. You can see whole process in the figure \ref{fig:regmsc}. See the proper handling of the PUBLISH request which is not supported.
+
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=0.5]{fig/SIP_register_MSC}
+\caption[SIP register MSC] {SIP registration message sequence chart}
+\label{fig:regmsc}
+\end{figure}
 
 \lstinputlisting[caption=SIP registration request, style=customdat]{pkts/register1.out}
 
 Currently there is no registration restriction implemented in the Generic Exchange. So there is no reason why exchange should reply with other response than 200. 
 
-\lstinputlisting[caption=SIP registration request, style=customdat]{pkts/ok1.out}
+\lstinputlisting[caption=SIP registration response, style=customdat]{pkts/ok1.out}
 
 Next a client attempts to publish its presence information using the SIP Publish request. 
 
@@ -627,16 +634,41 @@ Next a client attempts to publish its presence information using the SIP Publish
 
 Since Generic Exchange does not support this method nor its equivalent is implemented in the Generic Protocol, a 405 Method Not Allowed response is replied back to client. This behaviour is in complete harmony with initial design.
 
-\lstinputlisting[caption=SIP publish request, style=customdat]{pkts/mna1.out}
+\lstinputlisting[caption=SIP publish response, style=customdat]{pkts/mna1.out}
+
+\section{LCP registration}
+Next we will see the registration of LCP client ( in the figure \ref{fig:lcpmsc}). There will not be any messages displayed since LCPCPv1 is a binary protocol and messages are not easily readable. Instead, I will explain each message and the values that it carries. 
+
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=0.5]{fig/LCP_register_MSC}
+\caption[LCP register MSC] {LCP registration message sequence chart}
+\label{fig:lcpmsc}
+\end{figure}
+
+ LCP client initiates whole process by sending the \textit{TRANSPORT\_COOKIE\_IND} message. The cookie serves as a secret value that serves as a registration protection. The cookie is to LCPCPv1 softphone on the command line. On the exchange part the value is hardcoded and is \textit{cookie}. 
+
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=0.6]{fig/LCPCPv1sp}
+\caption[LCPCPv1 softphone] {LCPCPv1 softphone after successfull registration}
+\label{fig:lcpsoftphone}
+\end{figure}
+
+Generic Exchange responds with a \textit{DEVICE\_INIT\_REQ}, asking client to associate. This message does not hold any important values. 
+
+Client as expected returns a \textit{DEVICE\_INIT\_RESP} message which indicates that client is now associated. The message carries some basic information about the client devices such as the display, speaker or codecs. Now an association is completed. 
+
+Since LCPCPv1 client does not hold any information about itself, it is a good practice to inform the user that his LCPCPv1 device is registered. Generic Exchange then additionally sets a text on a client's display (as shown in the figure \ref{fig:lcpsoftphone}) utilizing the \textit{DATAGRAM\_CMD\_DSP\_TEXT\_CMD} message  about successfull association. The message carries information about display, message and where to place the message on the display.
 
 \section{SIP to SIP simple call}
 
-The following message sequence chart represents a typical SIP to SIP call flow. Since the number of messages in this use case is quite large, only a few sample but important messages will be picked and displayed. A major difference against a arbitrary SIP exchange is the order of SIP ACK requests. Since Generic Protocol does not have concept of three-way handshake. The ACK are either dumped at arrival or generated after 200 response in INVITE context is retrieved. This behaviour is perfectly OK as explained earlier.
+The following message sequence chart represents a typical SIP to SIP call flow. Since the number of messages in this use case is quite large, only a few sample but important messages will be picked and displayed. A major difference against an arbitrary SIP exchange is the order of SIP ACK requests. Since Generic Protocol does not have concept of three-way handshake. The ACK are either dumped at arrival or generated after 200 response in INVITE context is retrieved. This behaviour is perfectly OK as explained earlier.
 
 \begin{figure}[h!]
 \centering
 \includegraphics[scale=0.4]{fig/SIP_to_SIP_simplecall}
-\caption[SIP to SIP simplecall utilizing Generic Exchange] {SIP to SIP simplecall utilizing Generic Exchange}
+\caption[SIP to SIP simple call utilizing Generic Exchange] {SIP to SIP simple call utilizing Generic Exchange}
 \end{figure}
 
 The Invite SIP request displayed as received from network at SIP peripheral. 
@@ -644,9 +676,8 @@ The Invite SIP request displayed as received from network at SIP peripheral.
 \lstinputlisting[caption=SIP registration request, style=customdat]{pkts/invite11.out}
 
 The SIP Invite request after routing was performed. See that Via header was added and Contact header field was changed. See section \ref{CancelVsBye} for further information.
-\clearpage
 
-\lstinputlisting[caption=SIP registration request routed, style=customdat]{pkts/invite12.out}
+\lstinputlisting[caption=Routed SIP registration request, style=customdat]{pkts/invite12.out}
 
 \section{Generic Exchange in contrast with Asterisk}
 An important part of this thesis was to compare Generic Exchange with already existing VoIP Exchange. As an example exchange I choose Asterisk. Asterisk is an open source telephony switchni and PBX service for Linux. It was created in 1999 by Digium company. It us dual licensed under GPL\cite{GPL} and proprietary software license to allow distribution of proprietary unpublished components. Asterisk was mainly chosen for its support of VoIP services regardless of underlying signaling protocol. Which is exactly what Generic Exchange does. This chapter will compare architectures of both systems.

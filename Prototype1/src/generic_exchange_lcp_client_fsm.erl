@@ -47,7 +47,13 @@ associating({device_init_resp, _RESP}, _From, State=#lcp_client_state{
 	elcpcp:send_message({IP, Port}, #datagram_cmd{
 		protocol=cornet_msg, 
 		msg=#dsp_text_cmd{display_number=0, row=0, column=0, 
-                length=20, attributes=0, text= <<"exchange is proud">>}}
+                length=20, attributes=0, text= <<"Registered to Generic Exchange">>}}
+	),
+
+	elcpcp:send_message({IP, Port}, #datagram_cmd{
+		protocol=cornet_msg, 
+		msg=#dsp_text_cmd{display_number=0, row=1, column=0, 
+                length=20, attributes=0, text= <<" ">>}}
 	),
 
 	{reply, do_nothing, online, State};

@@ -3,17 +3,20 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Erlang supervision tree}}{15}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Erlang \textit {gen\_event} behaviour}}{19}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Erlang \textit {gen\_event} behaviour}}{20}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Erlang supervision tree}}{16}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Erlang \textit {gen\_event} behaviour}}{20}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Erlang \textit {gen\_event} behaviour}}{21}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces exchange core process diagram}}{22}
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Generic protocol}}{24}
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Generic Protocol use case}}{26}
-\contentsline {figure}{\numberline {5.4}{\ignorespaces Generic Exchange design}}{27}
-\contentsline {figure}{\numberline {5.5}{\ignorespaces SIP to SIP simple call MSC}}{30}
-\contentsline {figure}{\numberline {5.6}{\ignorespaces Generic exchange supervision tree}}{31}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Generic Exchange Core process diagram}}{23}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Generic protocol}}{25}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Generic Protocol use case}}{27}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Generic Exchange design}}{28}
+\contentsline {figure}{\numberline {5.5}{\ignorespaces SIP to SIP simple call MSC}}{31}
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Generic Exchange supervision tree}}{32}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces A sample VoIP network configuration}}{33}
-\contentsline {figure}{\numberline {6.2}{\ignorespaces SIP to SIP simplecall utilizing Generic Exchange}}{35}
+\contentsline {figure}{\numberline {6.1}{\ignorespaces VoIP network configuration}}{34}
+\contentsline {figure}{\numberline {6.2}{\ignorespaces SIP register MSC}}{34}
+\contentsline {figure}{\numberline {6.3}{\ignorespaces LCP register MSC}}{36}
+\contentsline {figure}{\numberline {6.4}{\ignorespaces LCPCPv1 softphone}}{36}
+\contentsline {figure}{\numberline {6.5}{\ignorespaces SIP to SIP simple call utilizing Generic Exchange}}{37}
 \addvspace {10\p@ }
