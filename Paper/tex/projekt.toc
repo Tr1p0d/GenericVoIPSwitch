@@ -31,7 +31,7 @@
 \contentsline {subsection}{\numberline {4.7.1}Generic servers}{19}
 \contentsline {subsection}{\numberline {4.7.2}Finite state machines}{20}
 \contentsline {subsection}{\numberline {4.7.3}Event handlers}{20}
-\contentsline {subsection}{\numberline {4.7.4}Applications}{20}
+\contentsline {subsection}{\numberline {4.7.4}Applications}{21}
 \contentsline {chapter}{\numberline {5}Design and implementation of Generic VoIP Exchange}{22}
 \contentsline {section}{\numberline {5.1}Generic VoIP Exchange Core}{22}
 \contentsline {subsubsection}{Dialog router}{23}
@@ -47,11 +47,11 @@
 \contentsline {section}{\numberline {5.2}General VoIP Exchange peripherals}{28}
 \contentsline {subsection}{\numberline {5.2.1}SIP to Generic Protocol translation}{28}
 \contentsline {subsubsection}{SIP 3-way handshake}{29}
-\contentsline {subsubsection}{SIP/CANCEL vs SIP/BYE}{30}
+\contentsline {subsubsection}{SIP/CANCEL vs SIP/BYE}{29}
 \contentsline {subsubsection}{Contacts header}{30}
 \contentsline {subsection}{\numberline {5.2.2}LCP peripheral}{30}
 \contentsline {section}{\numberline {5.3}Summary}{30}
-\contentsline {subsection}{\numberline {5.3.1}Erlang role during implementation}{32}
+\contentsline {subsection}{\numberline {5.3.1}Erlang role during implementation}{33}
 \contentsline {chapter}{\numberline {6}Scenarios and case studies}{34}
 \contentsline {section}{\numberline {6.1}SIP registration}{34}
 \contentsline {section}{\numberline {6.2}LCP registration}{36}

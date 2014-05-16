@@ -5,7 +5,7 @@
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {4.1}{\ignorespaces Erlang supervision tree}}{16}
 \contentsline {figure}{\numberline {4.2}{\ignorespaces Erlang \textit {gen\_event} behaviour}}{20}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Erlang \textit {gen\_event} behaviour}}{21}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Erlang \textit {gen\_event} behaviour}}{20}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {5.1}{\ignorespaces Generic Exchange Core process diagram}}{23}
 \contentsline {figure}{\numberline {5.2}{\ignorespaces Generic protocol}}{25}
@@ -17,6 +17,6 @@
 \contentsline {figure}{\numberline {6.1}{\ignorespaces VoIP network configuration}}{34}
 \contentsline {figure}{\numberline {6.2}{\ignorespaces SIP register MSC}}{34}
 \contentsline {figure}{\numberline {6.3}{\ignorespaces LCP register MSC}}{36}
-\contentsline {figure}{\numberline {6.4}{\ignorespaces LCPCPv1 softphone}}{36}
+\contentsline {figure}{\numberline {6.4}{\ignorespaces LCPCPv1 softphone}}{37}
 \contentsline {figure}{\numberline {6.5}{\ignorespaces SIP to SIP simple call utilizing Generic Exchange}}{37}
 \addvspace {10\p@ }

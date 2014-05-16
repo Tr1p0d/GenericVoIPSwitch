@@ -203,6 +203,7 @@ Call-by-value is the most common approach to evaluating function arguments. It i
 \subsubsection{Call-by-Reference}
 As a counterpart to the Call-by-Value approach, Call-by-Reference does not need to copy memory segments to pass parameters to a function. It rather passes reference. This approach is in some form or another implemented in most languages. Typically languages use Call-by-Value as default evaluation strategy but often support special syntax for Call-by-Reference approach. C programming language is an perfect example offering Call-by-Reference explicitly by introducing the pointer concept.
 
+\clearpage
 \lstinputlisting[style=customc, caption=Call-by-Reference example in C]{scodes/callbyref.c}
 
 \subsubsection{Call-by-Name}
@@ -335,7 +336,7 @@ Event handler behaviour (\textit{gen\_event}) consist of one event handling mana
 
 \begin{figure}[h!]
 \centering
-\includegraphics[scale=0.6]{fig/event_handler_example}
+\includegraphics[scale=0.5]{fig/event_handler_example}
 \caption[Erlang \textit{gen\_event} behaviour] {Example of \textit{gen\_event} behaviour hierarchy}
 \end{figure}
 
@@ -571,6 +572,8 @@ SIP peripheral then translates the SIP message into Generic Message and passes i
 
 \lstinputlisting[caption=Generic Protocol make\_call request, style=customdat]{scodes/make_call11.out}
 
+\clearpage
+
 Core performs a lookup and finds callee 1016 in its association table. It then appends a route, and sends (listing 5.4) the Generic Message back to the SIP peripheral.
 
 \lstinputlisting[caption=Routed Generic Protocol make\_call request, style=customdat]{scodes/make_call12.out}
@@ -622,6 +625,7 @@ In this section we will come trough an example of successful SIP registration an
 \label{fig:regmsc}
 \end{figure}
 
+\clearpage
 \lstinputlisting[caption=SIP registration request, style=customdat]{pkts/register1.out}
 
 Currently there is no registration restriction implemented in the Generic Exchange. So there is no reason why exchange should reply with other response than 200. 
@@ -633,6 +637,7 @@ Next a client attempts to publish its presence information using the SIP Publish
 \lstinputlisting[caption=SIP publish request, style=customdat]{pkts/publish1.out}
 
 Since Generic Exchange does not support this method nor its equivalent is implemented in the Generic Protocol, a 405 Method Not Allowed response is replied back to client. This behaviour is in complete harmony with initial design.
+\clearpage
 
 \lstinputlisting[caption=SIP publish response, style=customdat]{pkts/mna1.out}
 
@@ -671,6 +676,7 @@ The following message sequence chart represents a typical SIP to SIP call flow. 
 \caption[SIP to SIP simple call utilizing Generic Exchange] {SIP to SIP simple call utilizing Generic Exchange}
 \end{figure}
 
+\clearpage
 The Invite SIP request displayed as received from network at SIP peripheral. 
 
 \lstinputlisting[caption=SIP registration request, style=customdat]{pkts/invite11.out}
