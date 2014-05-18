@@ -1,0 +1,7 @@
+generic_exchange_lcp_gateway.erl:106: The variable Error can never match since previous clauses completely covered the type 'true'
+generic_exchange_sip_gateway.erl:107: Function handle_specific/3 will never be called
+generic_exchange_sip_generic.erl:7: Function sip_to_generic/3 has no local return
+generic_exchange_sip_generic.erl:262: Function extract_body_from_generic/1 will never be called
+generic_exchange_sip_generic.erl:287: Function generic_type_to_sip_class/2 will never be called
+generic_exchange_sip_message_factory.erl:7: Function method_not_allowed/1 has no local return
+generic_dialog_fsm.erl:258: The pattern [{DSIP, DSPort, _Opts} | _] can never match the type [{binary()} | {binary(),binary()},...]

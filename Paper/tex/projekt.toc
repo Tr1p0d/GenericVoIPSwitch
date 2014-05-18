@@ -4,7 +4,7 @@
 \contentsline {section}{\numberline {2.1}H.323}{8}
 \contentsline {section}{\numberline {2.2}SIP}{8}
 \contentsline {section}{\numberline {2.3}LCPCPv1}{9}
-\contentsline {section}{\numberline {2.4}RTP}{9}
+\contentsline {section}{\numberline {2.4}RTP}{10}
 \contentsline {section}{\numberline {2.5}Summary}{10}
 \contentsline {chapter}{\numberline {3}Declarative programming paradigm}{11}
 \contentsline {section}{\numberline {3.1}Functional programming}{11}
@@ -24,38 +24,40 @@
 \contentsline {section}{\numberline {4.4}Why Erlang}{17}
 \contentsline {section}{\numberline {4.5}Erlang type system and static analysis}{18}
 \contentsline {subsection}{\numberline {4.5.1}TypEr}{18}
-\contentsline {subsection}{\numberline {4.5.2}DiaLYZer}{18}
+\contentsline {subsection}{\numberline {4.5.2}Dialyzer}{18}
 \contentsline {subsection}{\numberline {4.5.3}Result after applying static analysis to Generic Exchange source code}{18}
 \contentsline {section}{\numberline {4.6}Open Telecom Platform}{19}
 \contentsline {section}{\numberline {4.7}Behaviours}{19}
-\contentsline {subsection}{\numberline {4.7.1}Generic servers}{19}
+\contentsline {subsection}{\numberline {4.7.1}Generic servers}{20}
 \contentsline {subsection}{\numberline {4.7.2}Finite state machines}{20}
-\contentsline {subsection}{\numberline {4.7.3}Event handlers}{20}
+\contentsline {subsection}{\numberline {4.7.3}Event handlers}{21}
 \contentsline {subsection}{\numberline {4.7.4}Applications}{21}
 \contentsline {chapter}{\numberline {5}Design and implementation of Generic VoIP Exchange}{22}
-\contentsline {section}{\numberline {5.1}Generic VoIP Exchange Core}{22}
-\contentsline {subsubsection}{Dialog router}{23}
-\contentsline {subsubsection}{Dialog Manager}{23}
+\contentsline {section}{\numberline {5.1}Generic VoIP Exchange Core}{23}
+\contentsline {subsection}{\numberline {5.1.1}Generic Core process strcuture}{24}
+\contentsline {subsubsection}{Dialog router}{24}
+\contentsline {subsubsection}{Dialog Manager}{24}
 \contentsline {subsubsection}{Dialog finite state machine}{24}
-\contentsline {subsection}{\numberline {5.1.1}Generic Protocol}{24}
+\contentsline {subsection}{\numberline {5.1.2}Generic Protocol}{25}
 \contentsline {subsubsection}{Generic message type header field}{26}
-\contentsline {subsubsection}{Generic message caller and callee header fields}{26}
+\contentsline {subsubsection}{Generic message caller and callee header fields}{27}
 \contentsline {subsubsection}{Generic message downstreamRoute and upstreamRoute header field}{27}
 \contentsline {subsubsection}{Generic message routeToRecord header field}{27}
 \contentsline {subsubsection}{Generic message specificProtocol header field}{27}
-\contentsline {subsection}{\numberline {5.1.2}Example}{27}
-\contentsline {section}{\numberline {5.2}General VoIP Exchange peripherals}{28}
-\contentsline {subsection}{\numberline {5.2.1}SIP to Generic Protocol translation}{28}
-\contentsline {subsubsection}{SIP 3-way handshake}{29}
-\contentsline {subsubsection}{SIP/CANCEL vs SIP/BYE}{29}
-\contentsline {subsubsection}{Contacts header}{30}
-\contentsline {subsection}{\numberline {5.2.2}LCP peripheral}{30}
-\contentsline {section}{\numberline {5.3}Summary}{30}
+\contentsline {subsection}{\numberline {5.1.3}Example}{27}
+\contentsline {section}{\numberline {5.2}General VoIP Exchange peripherals}{29}
+\contentsline {subsection}{\numberline {5.2.1}SIP peripheral}{29}
+\contentsline {subsubsection}{SIP to Generic Protocol translation}{30}
+\contentsline {subsubsection}{SIP 3-way handshake}{30}
+\contentsline {subsubsection}{SIP/CANCEL vs SIP/BYE}{31}
+\contentsline {subsubsection}{Contacts header}{31}
+\contentsline {subsection}{\numberline {5.2.2}LCPCPv1 peripheral}{31}
+\contentsline {section}{\numberline {5.3}Summary}{31}
 \contentsline {subsection}{\numberline {5.3.1}Erlang role during implementation}{33}
-\contentsline {chapter}{\numberline {6}Scenarios and case studies}{34}
-\contentsline {section}{\numberline {6.1}SIP registration}{34}
-\contentsline {section}{\numberline {6.2}LCP registration}{36}
-\contentsline {section}{\numberline {6.3}SIP to SIP simple call}{37}
-\contentsline {section}{\numberline {6.4}Generic Exchange in contrast with Asterisk}{38}
-\contentsline {section}{\numberline {6.5}Summary}{39}
-\contentsline {chapter}{\numberline {7}Conclusion}{40}
+\contentsline {chapter}{\numberline {6}Scenarios and case studies}{35}
+\contentsline {section}{\numberline {6.1}SIP registration}{35}
+\contentsline {section}{\numberline {6.2}LCP registration}{37}
+\contentsline {section}{\numberline {6.3}SIP to SIP simple call}{38}
+\contentsline {section}{\numberline {6.4}Generic Exchange in contrast with Asterisk}{39}
+\contentsline {section}{\numberline {6.5}Summary}{40}
+\contentsline {chapter}{\numberline {7}Conclusion}{41}

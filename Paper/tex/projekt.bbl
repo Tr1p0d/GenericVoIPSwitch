@@ -1,0 +1,94 @@
+\begin{thebibliography}{10}
+
+\bibitem{armstrong_history_erlang}
+JOE ARMSTRONG.
+\newblock {\em A History of Erlang}.
+\newblock ACM Press New York, 2007.
+
+\bibitem{Telekomunikace_VoIP}
+{DAVID BAZALA}.
+\newblock {\em Telekomunikace a VoIP telefonie}.
+\newblock Technická literatura BEN CZ, 2006.
+
+\bibitem{erlang_fsm}
+{ERICSON\_AB}.
+\newblock {Erlang/OTP generic finite state machine behaviour}.
+\newblock {\tt http://www.erlang.org/doc/design\_principles/fsm.html}, 2013.
+
+\bibitem{erlang_programming}
+{FRANCESCO CESARINI and SIMON THOMPSON}.
+\newblock {\em Erlang Programming : A Concurrent Approach to Software
+  Development}.
+\newblock O'Reilly Media, June 2009.
+
+\bibitem{lyse}
+{FRED HERBERT}.
+\newblock {\em Learn You Some Erlang for Great Good!}
+\newblock No Starch Press San Francisco, 2013.
+
+\bibitem{computer_protocols_desing_and_validation}
+{GERARD J. HOLZMANN}.
+\newblock {\em Desing and Validation of Computer Protocols}.
+\newblock Prentice Hall USA, 1991.
+
+\bibitem{SIPrfc2}
+{IETF NETWORK WORKING GROUP}.
+\newblock {SIP: Session Initiation Protocol}.
+\newblock RFC 2543, 1999.
+
+\bibitem{SIPrfc}
+{IETF NETWORK WORKING GROUP}.
+\newblock {SIP: Session Initiation Protocol}.
+\newblock RFC 3261, 2002.
+
+\bibitem{RTPstandard}
+{IETF NETWORK WORKING GROUP}.
+\newblock {RTP: A Transport Protocol for Real-Time Applications}.
+\newblock RFC 3550, July 2003.
+
+\bibitem{h225}
+{ITU-T}.
+\newblock {Call signalling protocols and media stream packetization for
+  packet-based multimedia communication systems}.
+\newblock H. 225, 1996.
+
+\bibitem{h245}
+{ITU-T}.
+\newblock {Control protocol for multimedia communication}.
+\newblock H. 245, 1996.
+
+\bibitem{h323standard}
+{ITU-T}.
+\newblock {Packet-based multimedia communications systems}.
+\newblock H. 323, 1996.
+
+\bibitem{LCPCPv1definition}
+{JAN WOZKIAK and ALES KOCOUREK and TOMAS KUKOSA}.
+\newblock {LCPCPv1 definition}.
+\newblock Technical report, 2011.
+
+\bibitem{armstrong_type_system}
+{JOE ARMSTRONG}.
+\newblock A post on erlang type system.
+\newblock Mailing List post.
+
+\bibitem{programming_erlang}
+{JOE ARMSTRONG}.
+\newblock {\em Programming Erlang}.
+\newblock The Pragmatic Bookshelf USA, 2013.
+
+\bibitem{VoIP_bez_znalosti}
+{KEVIN WALLACE}.
+\newblock {\em VoIP bez pøedchozích znalostí}.
+\newblock Computer Press CZ, 2006.
+
+\bibitem{lyah}
+{MIRAN LIPOVAÈA}.
+\newblock {\em Learn You a Haskell for Great Good!}
+\newblock No Starch Press San Francisco, 2011.
+
+\bibitem{GPL}
+{RICHARD STALLMAN}.
+\newblock {GNU General Public License}, June 2007.
+
+\end{thebibliography}

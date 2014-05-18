@@ -1,0 +1,56 @@
+This is BibTeX, Version 0.99d (TeX Live 2013/dev)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: projekt.aux
+The style file: plain.bst
+Database file #1: literatura.bib
+Warning--entry type for "armstrong_type_system" isn't style-file defined
+--line 63 of file literatura.bib
+Warning--empty institution in SIPrfc2
+Warning--empty institution in SIPrfc
+Warning--empty institution in RTPstandard
+Warning--empty institution in h225
+Warning--empty institution in h245
+Warning--empty institution in h323standard
+Warning--empty institution in LCPCPv1definition
+You've used 18 entries,
+            2118 wiz_defined-function locations,
+            585 strings with 5691 characters,
+and the built_in function-call counts, 3770 in all, are:
+= -- 348
+> -- 126
+< -- 6
++ -- 56
+- -- 36
+* -- 158
+:= -- 689
+add.period$ -- 53
+call.type$ -- 18
+change.case$ -- 65
+chr.to.int$ -- 0
+cite$ -- 25
+duplicate$ -- 179
+empty$ -- 348
+format.name$ -- 36
+if$ -- 775
+int.to.chr$ -- 0
+int.to.str$ -- 18
+missing$ -- 16
+newline$ -- 92
+num.names$ -- 36
+pop$ -- 117
+preamble$ -- 1
+purify$ -- 54
+quote$ -- 0
+skip$ -- 105
+stack$ -- 0
+substring$ -- 92
+swap$ -- 17
+text.length$ -- 6
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 56
+warning$ -- 7
+while$ -- 36
+width$ -- 20
+write$ -- 179
+(There were 8 warnings)
